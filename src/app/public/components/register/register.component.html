@@ -1,0 +1,79 @@
+<div class="container register-container">
+  <h1 class="text-center">Register</h1>
+  <div class="row align-items-center mt-3">
+    <div class="col-lg-6 col-md-8 offset-lg-3 offset-md-2">
+      <div class="card">
+        <div class="card-header red darken-4 white-text py-2">
+        </div>
+        <div class="card-body">
+          <form [formGroup]="registerForm" (ngSubmit)="register()" class="text-center">
+            <div class="md-form">
+              <input type="text" id="username" formControlName="username" class="form-control" mdbInput>
+              <label for="username">Username</label>
+              <mdb-error *ngIf="controlHasError('username', 'required')">Username is required</mdb-error>
+              <mdb-error *ngIf="controlHasError('username', 'minlength') || controlHasError('username', 'maxlength')">
+                Username must be between 3-50 characters
+              </mdb-error>
+            </div>
+            <div class="md-form">
+              <input type="text" id="email" formControlName="email" class="form-control" mdbInput>
+              <label for="email">Email</label>
+              <mdb-error *ngIf="controlHasError('email', 'required')">Email is required</mdb-error>
+              <mdb-error *ngIf="controlHasError('email', 'maxlength')">
+                Email must be at most 255 characters
+              </mdb-error>
+              <mdb-error *ngIf="!controlHasError('email', 'required') && controlHasError('email', 'email')">
+                Email is not valid
+              </mdb-error>
+            </div>
+            <div class="form-row">
+              <div class="col">
+                <div class="md-form form-col">
+                  <input type="text" id="firstName" formControlName="firstName" class="form-control" mdbInput>
+                  <label for="firstName">First name</label>
+                  <mdb-error *ngIf="controlHasError('firstName', 'required')">First name is required</mdb-error>
+                  <mdb-error
+                    *ngIf="controlHasError('firstName', 'minlength') || controlHasError('firstName', 'maxlength')">
+                    First name must be between 1-50 characters
+                  </mdb-error>
+                </div>
+              </div>
+              <div class="col">
+                <div class="md-form form-col">
+                  <input type="text" id="lastName" formControlName="lastName" class="form-control" mdbInput>
+                  <label for="lastName">Last name</label>
+                  <mdb-error *ngIf="controlHasError('lastName', 'required')">Last name is required</mdb-error>
+                  <mdb-error
+                    *ngIf="controlHasError('lastName', 'minlength') || controlHasError('lastName', 'maxlength')">
+                    Last name must be between 1-50 characters
+                  </mdb-error>
+                </div>
+              </div>
+            </div>
+            <div class="md-form">
+              <input type="password" id="password" formControlName="password" class="form-control" mdbInput>
+              <label for="password">Password</label>
+              <mdb-error *ngIf="controlHasError('password', 'required')">Password is required</mdb-error>
+              <mdb-error *ngIf="controlHasError('password', 'minlength') || controlHasError('password', 'maxlength')">
+                Password must be between 6-50 characters
+              </mdb-error>
+            </div>
+            <div class="md-form">
+              <input type="password" id="confirmPassword" formControlName="confirmPassword" class="form-control"
+                mdbInput>
+              <label for="confirmPassword">Confirm password</label>
+              <mdb-error *ngIf="controlHasError('confirmPassword', 'required')">Confirm password is required</mdb-error>
+              <mdb-error
+                *ngIf="registerForm.get('confirmPassword').touched && !controlHasError('confirmPassword', 'required') && registerForm.hasError('passwordMatch')">
+                Passwords do not match
+              </mdb-error>
+            </div>
+            <button mdbBtn color="red" outline="true" rounded="true" block="true"
+              class="mt-4 mb-2 waves-effect z-depth-0" mdbWavesEffect type="submit"
+              [disabled]="registerForm.invalid">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

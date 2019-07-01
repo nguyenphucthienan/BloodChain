@@ -6,7 +6,6 @@ import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
 import { Role } from '../models/role.interface';
-import { User } from '../models/user.interface';
 
 @Injectable()
 export class AuthService {
@@ -34,7 +33,8 @@ export class AuthService {
     return !this.jwtHelper.isTokenExpired(token);
   }
 
-  register(user: User) {
+  register({ username, password, email, firstName, lastName }: any) {
+    const user = { username, password, email, firstName, lastName }
     return this.http.post(`${this.AUTH_URL}/register`, user);
   }
 

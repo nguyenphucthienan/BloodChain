@@ -16,6 +16,9 @@
         <a class="nav-link waves-light" mdbWavesEffect routerLink="/about">About</a>
       </li>
       <li *ngIf="!isLoggedIn()" class="nav-item" routerLinkActive="active">
+        <a class="nav-link waves-light" mdbWavesEffect routerLink="/register">Register</a>
+      </li>
+      <li *ngIf="!isLoggedIn()" class="nav-item" routerLinkActive="active">
         <a class="nav-link waves-light" mdbWavesEffect routerLink="/login">Login</a>
       </li>
       <li *ngIf="isLoggedIn()" class="nav-item" routerLinkActive="active">
