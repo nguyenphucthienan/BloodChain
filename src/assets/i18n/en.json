@@ -16,6 +16,15 @@
       "logoutSuccess": "Logout successfully"
     }
   },
+  "sidebar": {
+    "title": {
+      "bloodCamps": "Blood Camps",
+      "bloodTestCenters": "Blood Test Centers",
+      "bloodSeparationCenters": "Blood Separation Centers",
+      "bloodBanks": "Blood Banks",
+      "hospital": "Hospitals"
+    }
+  },
   "about": {
     "title": "About",
     "label": {

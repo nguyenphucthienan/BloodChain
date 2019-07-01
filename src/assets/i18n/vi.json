@@ -16,6 +16,15 @@
       "logoutSuccess": "Đăng xuất thành công"
     }
   },
+  "sidebar": {
+    "title": {
+      "bloodCamps": "Trung tâm hiến máu",
+      "bloodTestCenters": "Trung tâm xét nghiệm",
+      "bloodSeparationCenters": "Trung tâm phân tách",
+      "bloodBanks": "Ngân hàng máu",
+      "hospital": "Bệnh viện"
+    }
+  },
   "about": {
     "title": "Về chúng tôi",
     "label": {

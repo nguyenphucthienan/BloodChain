@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { map } from 'rxjs/operators';
+import { switchMap } from 'rxjs/operators';
 import { AlertService } from 'src/app/core/services/alert.service';
 import { AuthService } from 'src/app/core/services/auth.service';
 
@@ -44,7 +44,7 @@ export class RegisterComponent implements OnInit {
         () => {
           this.translate.get('register.alert.registerSuccess')
             .pipe(
-              map(registerSuccess => {
+              switchMap(registerSuccess => {
                 this.alertService.success(registerSuccess);
                 return this.authService.login({
                   username: this.registerForm.controls.username.value,
