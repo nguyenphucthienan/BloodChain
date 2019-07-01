@@ -1,7 +1,8 @@
 <mdb-navbar mdbStickyHeader SideClass="navbar navbar-expand-lg navbar-dark red darken-4 white-text"
   [containerInside]="false">
   <mdb-navbar-brand>
-    <mdb-icon fas icon="angle-double-right" class="mr-2 sidebar-btn" (click)="toggleSidebar()"></mdb-icon>
+    <mdb-icon *ngIf="isLoggedIn()" fas icon="angle-double-right" class="mr-2 sidebar-btn" (click)="toggleSidebar()">
+    </mdb-icon>
     <a class="navbar-brand" routerLink="/">
       <mdb-icon fas icon="tint" class="mr-1"></mdb-icon>BloodChain
     </a>
@@ -9,21 +10,21 @@
   <links>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link waves-light" mdbWavesEffect routerLink="/campaigns">Campaigns</a>
+        <a class="nav-link waves-light" mdbWavesEffect routerLink="/campaigns">{{ 'header.title.campaigns' | translate }}</a>
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link waves-light" mdbWavesEffect routerLink="/about">About</a>
+        <a class="nav-link waves-light" mdbWavesEffect routerLink="/about">{{ 'header.title.about' | translate }}</a>
       </li>
       <li *ngIf="!isLoggedIn()" class="nav-item" routerLinkActive="active">
-        <a class="nav-link waves-light" mdbWavesEffect routerLink="/register">Register</a>
+        <a class="nav-link waves-light" mdbWavesEffect routerLink="/register">{{ 'header.title.register' | translate }}</a>
       </li>
       <li *ngIf="!isLoggedIn()" class="nav-item" routerLinkActive="active">
-        <a class="nav-link waves-light" mdbWavesEffect routerLink="/login">Login</a>
+        <a class="nav-link waves-light" mdbWavesEffect routerLink="/login">{{ 'header.title.login' | translate }}</a>
       </li>
       <li *ngIf="isLoggedIn()" class="nav-item" routerLinkActive="active">
-        <a class="nav-link waves-light" mdbWavesEffect (click)="logout()">Logout</a>
+        <a class="nav-link waves-light" mdbWavesEffect (click)="logout()">{{ 'header.title.logout' | translate }}</a>
       </li>
     </ul>
   </links>

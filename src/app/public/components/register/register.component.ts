@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
+import { map } from 'rxjs/operators';
 import { AlertService } from 'src/app/core/services/alert.service';
 import { AuthService } from 'src/app/core/services/auth.service';
 
@@ -17,7 +19,8 @@ export class RegisterComponent implements OnInit {
     private router: Router,
     private fb: FormBuilder,
     private authService: AuthService,
-    private alertService: AlertService
+    private alertService: AlertService,
+    private translate: TranslateService
   ) { }
 
   ngOnInit() {
@@ -39,16 +42,23 @@ export class RegisterComponent implements OnInit {
     this.authService.register(this.registerForm.value)
       .subscribe(
         () => {
-          this.alertService.success('Register successfully');
-          this.authService.login({
-            username: this.registerForm.controls.username.value,
-            password: this.registerForm.controls.password.value
-          })
-            .subscribe(() => {
+          this.translate.get('register.alert.registerSuccess')
+            .pipe(
+              map(registerSuccess => {
+                this.alertService.success(registerSuccess);
+                return this.authService.login({
+                  username: this.registerForm.controls.username.value,
+                  password: this.registerForm.controls.password.value
+                });
+              })
+            ).subscribe(() => {
               this.router.navigate(['/']);
             });
         },
-        error => this.alertService.error('Register failed')
+        error => {
+          this.translate.get('register.alert.registerFailed')
+            .subscribe(registerFailed => this.alertService.error(registerFailed));
+        }
       );
   }
 

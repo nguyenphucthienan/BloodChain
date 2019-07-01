@@ -1,0 +1,79 @@
+{
+  "common": {
+    "alert": {
+      "alreadyLoggedIn": "Bạn đã đăng nhập"
+    }
+  },
+  "header": {
+    "title": {
+      "register": "Đăng kí",
+      "login": "Đăng nhập",
+      "logout": "Đăng xuất",
+      "about": "Về chúng tôi",
+      "campaigns": "Chiến dịch"
+    },
+    "alert": {
+      "logoutSuccess": "Đăng xuất thành công"
+    }
+  },
+  "about": {
+    "title": "Về chúng tôi",
+    "label": {
+      "vnuhcm": "Đại học Quốc gia Thành phố Hồ Chí Minh",
+      "uit": "Trường Đại học Công nghệ Thông tin",
+      "se": "Khoa Công nghệ Phần mềm",
+      "thesis": "KHÓA LUẬN TỐT NGHIỆP"
+    }
+  },
+  "login": {
+    "title": "Đăng nhập",
+    "label": {
+      "username": "Tên đăng nhập",
+      "password": "Mật khẩu"
+    },
+    "button": {
+      "login": "Đăng nhập"
+    },
+    "message": {
+      "usernameRequired": "Tên đăng nhập không được bỏ trống",
+      "passwordRequired": "Mật khẩu không được bỏ trống"
+    },
+    "alert": {
+      "loginSuccess": "Đăng nhập thành công",
+      "loginFailed": "Đăng nhập không thành công"
+    }
+  },
+  "register": {
+    "title": "Đăng kí",
+    "label": {
+      "username": "Tên đăng nhập",
+      "email": "Email",
+      "firstName": "Họ",
+      "lastName": "Tên",
+      "password": "Mật khẩu",
+      "confirmPassword": "Xác nhận lại mật khẩu"
+    },
+    "button": {
+      "register": "Đăng kí"
+    },
+    "message": {
+      "usernameRequired": "Tên đăng nhập không được bỏ trống",
+      "usernameLength": "Tên đăng nhập phải từ 3 đến 50 kí tự",
+      "emailRequired": "Email không được bỏ trống",
+      "emailMaxLength": "Email tối đa 255 kí tự",
+      "emailNotValid": "Email không hợp lệ",
+      "firstNameRequired": "Họ không được bỏ trống",
+      "firstNameLength": "Họ phải từ 1 đến 50 kí tự",
+      "lastNameRequired": "Tên không được bỏ trống",
+      "lastNameLength": "Tên phải từ 3 đến 50 kí tự",
+      "passwordRequired": "Mật khẩu không được bỏ trống",
+      "passwordLength": "Mật khẩu phải từ 6 đến 50 kí tự",
+      "confirmPasswordRequired": "Mật khẩu không được bỏ trống",
+      "passwordNotMatch": "Mật khẩu xác nhận không khớp"
+    },
+    "alert": {
+      "registerSuccess": "Đăng kí thành công",
+      "registerFailed": "Đăng kí không thành công"
+    }
+  }
+}

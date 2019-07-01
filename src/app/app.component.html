@@ -1,7 +1,7 @@
 <ng-sidebar-container>
 
   <!-- Sidebar -->
-  <ng-sidebar [closeOnClickOutside]="true" [(opened)]="sidebarOpened">
+  <ng-sidebar [closeOnClickOutside]="true" [autoFocus]="false" [(opened)]="sidebarOpened">
     <app-sidebar (sidebarToggled)="toggleSidebar()"></app-sidebar>
   </ng-sidebar>
 

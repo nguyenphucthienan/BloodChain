@@ -21,6 +21,8 @@
     "@angular/router": "~7.2.0",
     "@auth0/angular-jwt": "^2.1.0",
     "@fortawesome/fontawesome-free": "^5.9.0",
+    "@ngx-translate/core": "^11.0.1",
+    "@ngx-translate/http-loader": "^4.0.0",
     "@types/chart.js": "^2.7.54",
     "angular-bootstrap-md": "^7.5.4",
     "chart.js": "^2.5.0",

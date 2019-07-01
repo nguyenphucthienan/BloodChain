@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { AlertService } from 'src/app/core/services/alert.service';
 import { AuthService } from 'src/app/core/services/auth.service';
 
@@ -15,7 +16,8 @@ export class HeaderComponent implements OnInit {
   constructor(
     private router: Router,
     private authService: AuthService,
-    private alertService: AlertService) { }
+    private alertService: AlertService,
+    private translate: TranslateService) { }
 
   ngOnInit() {
   }
@@ -30,8 +32,9 @@ export class HeaderComponent implements OnInit {
 
   logout() {
     this.authService.logout();
-    this.alertService.info('Logout successfully');
     this.router.navigate(['/']);
+    this.translate.get('header.alert.logoutSuccess')
+      .subscribe(logoutSuccess => this.alertService.info(logoutSuccess));
   }
 
 }

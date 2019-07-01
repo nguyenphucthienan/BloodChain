@@ -1,0 +1,79 @@
+{
+  "common": {
+    "alert": {
+      "alreadyLoggedIn": "You are already logged in"
+    }
+  },
+  "header": {
+    "title": {
+      "register": "Register",
+      "login": "Login",
+      "logout": "Logout",
+      "about": "About",
+      "campaigns": "Campaigns"
+    },
+    "alert": {
+      "logoutSuccess": "Logout successfully"
+    }
+  },
+  "about": {
+    "title": "About",
+    "label": {
+      "vnuhcm": "Vietnam National University, HCMC",
+      "uit": "University of Information Technology",
+      "se": "Software Engineering Faculty",
+      "thesis": "THESIS"
+    }
+  },
+  "login": {
+    "title": "Login",
+    "label": {
+      "username": "Username",
+      "password": "Password"
+    },
+    "button": {
+      "login": "Login"
+    },
+    "message": {
+      "usernameRequired": "Username is required",
+      "passwordRequired": "Password is required"
+    },
+    "alert": {
+      "loginSuccess": "Login successfully",
+      "loginFailed": "Login failed"
+    }
+  },
+  "register": {
+    "title": "Register",
+    "label": {
+      "username": "Username",
+      "email": "Email",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "password": "Password",
+      "confirmPassword": "Confirm password"
+    },
+    "button": {
+      "register": "Register"
+    },
+    "message": {
+      "usernameRequired": "Username is required",
+      "usernameLength": "Username must be between 3-50 characters",
+      "emailRequired": "Email is required",
+      "emailMaxLength": "Email must be at most 255 characters",
+      "emailNotValid": "Email is not valid",
+      "firstNameRequired": "First name is required",
+      "firstNameLength": "First name must be between 1-50 characters",
+      "lastNameRequired": "Last name is required",
+      "lastNameLength": "Last name must be between 1-50 characters",
+      "passwordRequired": "Password is required",
+      "passwordLength": "Password must be between 6-50 characters",
+      "confirmPasswordRequired": "Confirm password is required",
+      "passwordNotMatch": "Passwords do not match"
+    },
+    "alert": {
+      "registerSuccess": "Register successfully",
+      "registerFailed": "Register failed"
+    }
+  }
+}

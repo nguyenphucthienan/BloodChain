@@ -1,3 +1,7 @@
 export const environment = {
-  production: true
+  production: true,
+  apiUrl: 'https://bloodchain.herokuapp.com/api',
+  whitelistedDomains: ['bloodchain.herokuapp.com'],
+  blacklistedRoutes: ['bloodchain.herokuapp.com/api/auth'],
+  authTokenName: 'auth-token'
 };
