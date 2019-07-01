@@ -34,7 +34,7 @@ export class AuthService {
   }
 
   register({ username, password, email, firstName, lastName }: any) {
-    const user = { username, password, email, firstName, lastName }
+    const user = { username, password, email, firstName, lastName };
     return this.http.post(`${this.AUTH_URL}/register`, user);
   }
 

@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    translate: TranslateService
+    private translate: TranslateService
   ) {
     const browserLang = translate.getBrowserLang();
     translate.addLangs(['en', 'vi']);
