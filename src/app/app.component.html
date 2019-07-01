@@ -2,25 +2,7 @@
 
   <!-- Sidebar -->
   <ng-sidebar [closeOnClickOutside]="true" [(opened)]="sidebarOpened">
-    <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark red darken-4 white-text" [containerInside]="false">
-      <mdb-navbar-brand>
-        <a class="navbar-brand" routerLink="/">
-          <mdb-icon fas icon="tint" class="mr-1"></mdb-icon>BloodChain
-        </a>
-      </mdb-navbar-brand>
-      <mdb-icon fas icon="angle-double-left" class="ml-auto sidebar-btn" (click)="toggleSidebar()"></mdb-icon>
-    </mdb-navbar>
-    <div class="list-group list-group-flush m-3">
-      <a routerLink="/register" routerLinkActive="active" class="list-group-item list-group-item-action waves-effect">
-        <mdb-icon fas icon="user" class="mr-3"></mdb-icon>Profile
-      </a>
-      <a routerLink="/login" routerLinkActive="active" class="list-group-item list-group-item-action waves-effect">
-        <mdb-icon fas icon="table" class="mr-3"></mdb-icon>Tables
-      </a>
-      <a routerLink="/about" routerLinkActive="active" class="list-group-item list-group-item-action waves-effect">
-        <mdb-icon far icon="map" class="mr-3"></mdb-icon>Maps
-      </a>
-    </div>
+    <app-sidebar (sidebarToggled)="toggleSidebar()"></app-sidebar>
   </ng-sidebar>
 
   <!-- Page content -->

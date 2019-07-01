@@ -12,8 +12,6 @@ export class HeaderComponent implements OnInit {
 
   @Output() sidebarToggled = new EventEmitter();
 
-  private sidebarOpened = false;
-
   constructor(
     private router: Router,
     private authService: AuthService,
@@ -23,8 +21,7 @@ export class HeaderComponent implements OnInit {
   }
 
   toggleSidebar() {
-    this.sidebarOpened = !this.sidebarOpened;
-    this.sidebarToggled.emit(this.sidebarOpened);
+    this.sidebarToggled.emit();
   }
 
   isLoggedIn() {
