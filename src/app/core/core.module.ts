@@ -7,6 +7,7 @@ import { ProgressAnimationType, ToastrModule } from 'ngx-toastr';
 import { environment } from 'src/environments/environment';
 
 import { SharedModule } from '../shared/shared.module';
+import { NotLoggedInGuard } from './guards/not-logged-in.guard';
 import { AlertService } from './services/alert.service';
 import { AuthService } from './services/auth.service';
 
@@ -40,6 +41,7 @@ const toastrOptions = {
   ],
   providers: [
     AuthService,
+    NotLoggedInGuard,
     AlertService
   ]
 })

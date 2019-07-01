@@ -35,17 +35,16 @@ export class AuthService {
   }
 
   register(user: User) {
-    return this.http.post(`${this.AUTH_URL}/sign-up`, user);
+    return this.http.post(`${this.AUTH_URL}/register`, user);
   }
 
-  login(model: { usernameOrEmail: string, password: string }) {
-    return this.http.post(`${this.AUTH_URL}/sign-in`, model)
+  login(model: { username: string, password: string }) {
+    return this.http.post(`${this.AUTH_URL}/login`, model)
       .pipe(
         map(({ accessToken }: any) => {
           if (accessToken) {
             const decodedToken = this.jwtHelper.decodeToken(accessToken);
-            const userRoles = decodedToken.roles as Array<Role>;
-            const userRoleNames = userRoles.map(role => role.name);
+            const userRoleNames = decodedToken.roles;
 
             if (userRoleNames.length > 0) {
               localStorage.setItem(environment.authTokenName, accessToken);

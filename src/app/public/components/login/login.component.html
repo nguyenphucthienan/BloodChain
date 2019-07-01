@@ -1,0 +1,28 @@
+<div class="container login-container">
+  <h1 class="text-center">Login</h1>
+  <div class="row align-items-center mt-3">
+    <div class="col-lg-6 col-md-8 offset-lg-3 offset-md-2">
+      <div class="card">
+        <div class="card-header red darken-4 white-text py-2">
+        </div>
+        <div class="card-body">
+          <form [formGroup]="loginForm" (ngSubmit)="login()" class="text-center">
+            <div class="md-form">
+              <input type="text" id="username" formControlName="username" class="form-control" mdbInput>
+              <label for="username">Username</label>
+              <mdb-error *ngIf="controlHasError('username', 'required')">Username is required</mdb-error>
+            </div>
+            <div class="md-form">
+              <input type="password" id="password" formControlName="password" class="form-control" mdbInput>
+              <label for="password">Password</label>
+              <mdb-error *ngIf="controlHasError('password', 'required')">Password is required</mdb-error>
+            </div>
+            <button mdbBtn color="red" outline="true" rounded="true" block="true"
+              class="mt-4 mb-2 waves-effect z-depth-0" mdbWavesEffect type="submit"
+              [disabled]="loginForm.invalid">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
