@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { RoleName } from '../core/constant/role-name';
+import { HasRoleGuard } from '../core/guards/has-role.guard';
 import { AdminBloodBankManagerComponent } from './components/admin-blood-bank-manager/admin-blood-bank-manager.component';
 import { AdminBloodCampManagerComponent } from './components/admin-blood-camp-manager/admin-blood-camp-manager.component';
 import {
@@ -14,23 +16,33 @@ import { AdminHospitalManagerComponent } from './components/admin-hospital-manag
 const routes: Routes = [
   {
     path: 'admin/blood-camps',
-    component: AdminBloodCampManagerComponent
+    component: AdminBloodCampManagerComponent,
+    canActivate: [HasRoleGuard],
+    data: { roles: [RoleName.ADMIN] }
   },
   {
     path: 'admin/blood-test-centers',
-    component: AdminBloodTestCenterManagerComponent
+    component: AdminBloodTestCenterManagerComponent,
+    canActivate: [HasRoleGuard],
+    data: { roles: [RoleName.ADMIN] }
   },
   {
     path: 'admin/blood-separation-centers',
-    component: AdminBloodSeparationCenterManagerComponent
+    component: AdminBloodSeparationCenterManagerComponent,
+    canActivate: [HasRoleGuard],
+    data: { roles: [RoleName.ADMIN] }
   },
   {
     path: 'admin/blood-banks',
-    component: AdminBloodBankManagerComponent
+    component: AdminBloodBankManagerComponent,
+    canActivate: [HasRoleGuard],
+    data: { roles: [RoleName.ADMIN] }
   },
   {
     path: 'admin/hospitals',
-    component: AdminHospitalManagerComponent
+    component: AdminHospitalManagerComponent,
+    canActivate: [HasRoleGuard],
+    data: { roles: [RoleName.ADMIN] }
   }
 ];
 

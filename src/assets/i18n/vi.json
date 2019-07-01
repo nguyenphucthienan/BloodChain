@@ -1,7 +1,9 @@
 {
   "common": {
     "alert": {
-      "alreadyLoggedIn": "Bạn đã đăng nhập"
+      "alreadyLoggedIn": "Bạn đã đăng nhập",
+      "mustBeLoggedIn": "Bạn chưa đăng nhập",
+      "cannotAccess": "Bạn không thể vào trang này"
     }
   },
   "header": {

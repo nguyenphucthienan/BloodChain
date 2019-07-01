@@ -1,7 +1,9 @@
 {
   "common": {
     "alert": {
-      "alreadyLoggedIn": "You are already logged in"
+      "alreadyLoggedIn": "You are already logged in",
+      "mustBeLoggedIn": "You must be logged in",
+      "cannotAccess": "You cannot access this area"
     }
   },
   "header": {

@@ -27,6 +27,7 @@ export class SidebarComponent implements OnInit {
     this.authService.decodedToken$
       .subscribe(decodedToken => {
         if (decodedToken) {
+          this.resetSidebar();
           const roles = decodedToken.roles as Array<string>;
           roles.forEach(role => {
             switch (role) {
@@ -41,6 +42,10 @@ export class SidebarComponent implements OnInit {
 
   toggleSidebar() {
     this.sidebarToggled.emit();
+  }
+
+  private resetSidebar() {
+    this.showAdminRoutes = false;
   }
 
 }

@@ -5,8 +5,6 @@ import { BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
-import { Role } from '../models/role.interface';
-
 @Injectable()
 export class AuthService {
 
@@ -75,13 +73,10 @@ export class AuthService {
 
   isRoleMatch(allowedRoles: string[]): boolean {
     let result = false;
-
     if (this.decodedToken) {
-      const userRoles = this.decodedToken.roles as Array<Role>;
-      const userRoleNames = userRoles.map(role => role.name);
-
+      const userRoles = this.decodedToken.roles as Array<string>;
       allowedRoles.forEach(allowedRole => {
-        if (userRoleNames.includes(allowedRole)) {
+        if (userRoles.includes(allowedRole)) {
           result = true;
           return;
         }
