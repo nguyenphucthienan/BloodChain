@@ -8,6 +8,7 @@ import { environment } from 'src/environments/environment';
 
 import { SharedModule } from '../shared/shared.module';
 import { AlertService } from './services/alert.service';
+import { AuthService } from './services/auth.service';
 
 export function tokenGetter() {
   return localStorage.getItem(environment.authTokenName);
@@ -38,6 +39,7 @@ const toastrOptions = {
     SharedModule
   ],
   providers: [
+    AuthService,
     AlertService
   ]
 })
