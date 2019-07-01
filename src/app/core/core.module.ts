@@ -3,6 +3,7 @@ import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
+import { SidebarModule } from 'ng-sidebar';
 import { ProgressAnimationType, ToastrModule } from 'ngx-toastr';
 import { environment } from 'src/environments/environment';
 
@@ -37,12 +38,16 @@ const toastrOptions = {
     BrowserAnimationsModule,
     JwtModule.forRoot(jwtOptions),
     ToastrModule.forRoot(toastrOptions),
+    SidebarModule.forRoot(),
     SharedModule
   ],
   providers: [
     AuthService,
     NotLoggedInGuard,
     AlertService
+  ],
+  exports:[
+    SidebarModule.forRoot().ngModule
   ]
 })
 export class CoreModule {

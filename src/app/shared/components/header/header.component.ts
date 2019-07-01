@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertService } from 'src/app/core/services/alert.service';
 import { AuthService } from 'src/app/core/services/auth.service';
@@ -10,12 +10,21 @@ import { AuthService } from 'src/app/core/services/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
+  @Output() sidebarToggled = new EventEmitter();
+
+  private sidebarOpened = false;
+
   constructor(
     private router: Router,
     private authService: AuthService,
     private alertService: AlertService) { }
 
   ngOnInit() {
+  }
+
+  toggleSidebar() {
+    this.sidebarOpened = !this.sidebarOpened;
+    this.sidebarToggled.emit(this.sidebarOpened);
   }
 
   isLoggedIn() {
