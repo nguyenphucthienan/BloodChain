@@ -9,29 +9,29 @@ export class PaginationComponent implements OnInit, OnChanges {
 
   @Input() totalItems = 0;
   @Input() itemsPerPage = 1;
-  @Input() pagesPerSide = 2;
-  @Input() showDots = false;
 
   @Output() pageChanged = new EventEmitter();
 
   totalPages = 0;
   currentPage = 1;
-  totalPagesArray: any[];
 
   constructor() { }
 
   ngOnInit() {
     this.totalPages = Math.ceil(this.totalItems / this.itemsPerPage);
-    this.totalPagesArray = this.fakeArray(this.totalPages);
   }
 
   ngOnChanges() {
     this.totalPages = Math.ceil(this.totalItems / this.itemsPerPage);
-    this.totalPagesArray = this.fakeArray(this.totalPages);
   }
 
-  select(index: number) {
-    this.currentPage = index;
+  change(event: any) {
+    const page = event.target.value;
+    if (page < 1 || page > this.totalPages) {
+      return;
+    }
+
+    this.currentPage = event.target.value;
     this.pageChanged.emit(this.currentPage);
   }
 
@@ -57,12 +57,6 @@ export class PaginationComponent implements OnInit, OnChanges {
   last() {
     this.currentPage = this.totalPages;
     this.pageChanged.emit(this.currentPage);
-  }
-
-  private fakeArray(numberOfItems: number) {
-    return (numberOfItems > 0)
-      ? new Array(numberOfItems)
-      : [];
   }
 
 }

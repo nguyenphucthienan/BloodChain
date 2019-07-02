@@ -6,19 +6,16 @@
     <li class="page-item" [class.disabled]="currentPage === 1">
       <a class="page-link" (click)="previous()"><i class="fa fa-angle-left"></i></a>
     </li>
-    <li class="page-item" *ngIf="showDots && (currentPage - pagesPerSide >= 1)">
-      <a class="page-link">...</a>
-    </li>
-    <li *ngFor="let el of totalPagesArray; let index = index" class="page-item"
-      [class.active]="currentPage === index + 1">
-      <a class="page-link"
-        *ngIf="(index + 1 > currentPage - pagesPerSide - 1) && (index + 1 < currentPage + pagesPerSide + 1)"
-        (click)="select(index + 1)">
-        {{ index + 1 }}
-      </a>
-    </li>
-    <li class="page-item" *ngIf="showDots && (currentPage + pagesPerSide <= totalPages)">
-      <a class="page-link">...</a>
+    <li>
+      <div class="md-form input-group mt-0 mb-0">
+        <div class="input-group-prepend">
+          <span class="input-group-text md-addon">
+            {{ 'pagination.label.page' | translate }}
+          </span>
+        </div>
+        <input type="number" class="form-control" [min]="1" [max]="totalPages" [value]="currentPage"
+          (change)="change($event)">
+      </div>
     </li>
     <li class="page-item" [class.disabled]="currentPage === totalPages">
       <a class="page-link" (click)="next()"><i class="fa fa-angle-right"></i></a>
