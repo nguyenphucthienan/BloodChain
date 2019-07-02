@@ -1,2 +1,5 @@
-<h1 class="text-center">{{ 'bloodCamps.title' | translate }}</h1>
-{{ bloodCamps | json }}
+<div class="container-fluid">
+  <h1 class="text-center">{{ 'bloodCamps.title' | translate }}</h1>
+  <app-datatable [tableService]="bloodCampManagerTableService" (cellChanged)="onTableCellChanged($event)">
+  </app-datatable>
+</div>

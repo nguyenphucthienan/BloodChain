@@ -1,40 +1,41 @@
-import { Component, OnInit } from '@angular/core';
-import { BloodCamp } from 'src/app/core/models/blood-camp.interface';
-import { FilterMode } from 'src/app/core/models/filter-mode.interface';
-import { Pagination } from 'src/app/core/models/pagination.interface';
-import { BloodCampService } from 'src/app/core/services/blood-camp.service';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { DatatableComponent } from 'src/app/datatable/datatable.component';
+import { TableActionType } from 'src/app/datatable/models/table-action.interface';
+import { TableCellChange } from 'src/app/datatable/models/table-cell-change.interface';
+
+import { BloodCampManagerTableService } from '../../services/blood-camp-manager-table.service';
 
 @Component({
   selector: 'app-admin-blood-camp-manager',
   templateUrl: './admin-blood-camp-manager.component.html',
-  styleUrls: ['./admin-blood-camp-manager.component.scss']
+  styleUrls: ['./admin-blood-camp-manager.component.scss'],
+  providers: [BloodCampManagerTableService]
 })
 export class AdminBloodCampManagerComponent implements OnInit {
 
-  bloodCamps: BloodCamp[] = [];
+  @ViewChild(DatatableComponent) datatable: DatatableComponent;
 
-  pagination: Pagination = {
-    page: 1,
-    size: 10
-  };
-
-  filterMode: FilterMode = {};
-
-  constructor(private bloodCampService: BloodCampService) { }
+  constructor(public bloodCampManagerTableService: BloodCampManagerTableService) { }
 
   ngOnInit() {
-    this.getBloodCamps();
   }
 
-  getBloodCamps() {
-    this.bloodCampService.getBloodCamps(
-      this.pagination,
-      undefined,
-      this.filterMode
-    ).subscribe((response: any) => {
-      this.bloodCamps = response.items;
-      this.pagination = response.pagination;
-    });
+  onTableCellChanged(tableCellChange: TableCellChange) {
+    const action = tableCellChange.newValue;
+    switch (action.type) {
+      case TableActionType.GetDetail:
+        this.navigateToBloodCampDetail(tableCellChange.row.cells._id.value);
+        break;
+      case TableActionType.Delete:
+        this.openDeleteBloodCampModal(tableCellChange.row.cells._id.value);
+        break;
+    }
+  }
+
+  navigateToBloodCampDetail(id: string) {
+  }
+
+  openDeleteBloodCampModal(id: string) {
   }
 
 }

@@ -1,0 +1,7 @@
+<div class="d-flex flex-row justify-content-center">
+  <button *ngFor="let action of actions" [ngClass]="'btn btn-sm ' + action.class" [title]="action.text"
+    (click)="onActionClicked(action)">
+    <span [ngClass]="action.icon"></span>
+    <span *ngIf="showText"> {{ action.text }}</span>
+  </button>
+</div>

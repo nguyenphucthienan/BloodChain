@@ -1,0 +1,30 @@
+<nav *ngIf="totalItems > 0">
+  <ul class="pagination">
+    <li class="page-item" [class.disabled]="currentPage === 1">
+      <a class="page-link" (click)="first()"><i class="fa fa-angle-double-left"></i></a>
+    </li>
+    <li class="page-item" [class.disabled]="currentPage === 1">
+      <a class="page-link" (click)="previous()"><i class="fa fa-angle-left"></i></a>
+    </li>
+    <li class="page-item" *ngIf="showDots && (currentPage - pagesPerSide >= 1)">
+      <a class="page-link">...</a>
+    </li>
+    <li *ngFor="let el of totalPagesArray; let index = index" class="page-item"
+      [class.active]="currentPage === index + 1">
+      <a class="page-link"
+        *ngIf="(index + 1 > currentPage - pagesPerSide - 1) && (index + 1 < currentPage + pagesPerSide + 1)"
+        (click)="select(index + 1)">
+        {{ index + 1 }}
+      </a>
+    </li>
+    <li class="page-item" *ngIf="showDots && (currentPage + pagesPerSide <= totalPages)">
+      <a class="page-link">...</a>
+    </li>
+    <li class="page-item" [class.disabled]="currentPage === totalPages">
+      <a class="page-link" (click)="next()"><i class="fa fa-angle-right"></i></a>
+    </li>
+    <li class="page-item" [class.disabled]="currentPage === totalPages">
+      <a class="page-link" (click)="last()"><i class="fa fa-angle-double-right"></i></a>
+    </li>
+  </ul>
+</nav>

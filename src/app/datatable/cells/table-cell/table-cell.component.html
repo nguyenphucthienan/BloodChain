@@ -1,0 +1,23 @@
+<ng-container [ngSwitch]="cellType">
+  <app-id-table-cell *ngSwitchCase="'IdTableCellComponent'" [column]="column" [row]="row" [cell]="cell">
+  </app-id-table-cell>
+  <app-text-table-cell *ngSwitchCase="'TextTableCellComponent'" [column]="column" [row]="row" [cell]="cell">
+  </app-text-table-cell>
+  <app-object-text-table-cell *ngSwitchCase="'ObjectTextTableCellComponent'" [column]="column" [row]="row"
+    [cell]="cell"></app-object-text-table-cell>
+  <app-piped-text-table-cell *ngSwitchCase="'PipedTextTableCellComponent'" [column]="column" [row]="row" [cell]="cell">
+  </app-piped-text-table-cell>
+  <app-boolean-table-cell *ngSwitchCase="'BooleanTableCellComponent'" [column]="column" [row]="row" [cell]="cell">
+  </app-boolean-table-cell>
+  <app-date-table-cell *ngSwitchCase="'DateTableCellComponent'" [column]="column" [row]="row" [cell]="cell">
+  </app-date-table-cell>
+  <app-date-time-table-cell *ngSwitchCase="'DateTimeTableCellComponent'" [column]="column" [row]="row" [cell]="cell">
+  </app-date-time-table-cell>
+  <app-image-table-cell *ngSwitchCase="'ImageTableCellComponent'" [column]="column" [row]="row" [cell]="cell">
+  </app-image-table-cell>
+  <app-actions-table-cell *ngSwitchCase="'ActionsTableCellComponent'" [column]="column" [row]="row" [cell]="cell"
+    [cellChanged]="cellChanged"></app-actions-table-cell>
+  <app-array-list-table-cell *ngSwitchCase="'ArrayListTableCellComponent'" [column]="column" [row]="row" [cell]="cell">
+  </app-array-list-table-cell>
+  <app-text-table-cell *ngSwitchDefault [column]="column" [row]="row" [cell]="cell"></app-text-table-cell>
+</ng-container>

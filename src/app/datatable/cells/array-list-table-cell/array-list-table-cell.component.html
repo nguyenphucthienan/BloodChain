@@ -1,0 +1,22 @@
+<ng-container *ngIf="!collapsible">
+  <span *ngFor="let el of elements; let last = last">
+    {{ el }}
+    <br *ngIf="!last">
+  </span>
+</ng-container>
+<ng-container *ngIf="collapsible">
+  <span *ngFor="let el of elements; let index = index; let last = last">
+    <ng-container *ngIf="index < maxItems">
+      {{ el }}
+      <br *ngIf="isCollapsed && index < (maxItems - 1) && !last || !isCollapsed">
+    </ng-container>
+    <ng-container *ngIf="!isCollapsed && index >= maxItems">
+      {{ el }}
+      <br *ngIf="!last">
+    </ng-container>
+  </span>
+  <br *ngIf="elements.length > maxItems">
+  <span *ngIf="elements.length > maxItems" (click)="toggleCollapse()" class="collapsible font-italic text-primary">
+    {{ collapsible && isCollapsed ? 'Show more' : 'Show less' }}
+  </span>
+</ng-container>

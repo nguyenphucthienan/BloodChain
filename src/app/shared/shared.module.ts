@@ -9,6 +9,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { SidebarModule } from 'ng-sidebar';
 
 import { HeaderComponent } from './components/header/header.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 export function createTranslateLoader(http: HttpClient) {
@@ -18,7 +19,8 @@ export function createTranslateLoader(http: HttpClient) {
 @NgModule({
   declarations: [
     HeaderComponent,
-    SidebarComponent
+    SidebarComponent,
+    PaginationComponent
   ],
   imports: [
     CommonModule,
@@ -43,7 +45,8 @@ export function createTranslateLoader(http: HttpClient) {
     SidebarModule.forRoot().ngModule,
     TranslateModule.forRoot().ngModule,
     HeaderComponent,
-    SidebarComponent
+    SidebarComponent,
+    PaginationComponent
   ],
 })
 export class SharedModule { }
