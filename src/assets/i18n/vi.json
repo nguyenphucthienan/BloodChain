@@ -1,9 +1,20 @@
 {
   "common": {
+    "label": {
+      "search": "Tìm kiếm"
+    },
     "alert": {
       "alreadyLoggedIn": "Bạn đã đăng nhập",
       "mustBeLoggedIn": "Bạn chưa đăng nhập",
       "cannotAccess": "Bạn không thể vào trang này"
+    },
+    "column": {
+      "id": "ID",
+      "actions": "Hành động"
+    },
+    "tooltip": {
+      "detail": "Chi tiết",
+      "delete": "Xóa"
     }
   },
   "header": {
@@ -89,5 +100,14 @@
   },
   "bloodCamps": {
     "title": "Trung tâm hiến máu"
+  },
+  "bloodCampManager": {
+    "column": {
+      "name": "Tên",
+      "address": "Địa chỉ"
+    },
+    "placeholder": {
+      "search": "Theo tên (tối thiểu 3 kí tự)"
+    }
   }
 }

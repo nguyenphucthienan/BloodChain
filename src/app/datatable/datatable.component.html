@@ -8,7 +8,7 @@
         <th *ngFor="let column of columns" scope="col" (click)="changeSortMode(column)"
           class="align-middle text-truncate" [class.text-center]="column.center" [class.text-nowrap]="column.nowrap"
           [class.header-clickable]="column.sortable" [style.min-width]="column.minWidth">
-          {{ column.text }}
+          {{ column.text | translate }}
           <mdb-icon *ngIf="column.sortable" fas [icon]="getHeaderIconClass(column)"></mdb-icon>
         </th>
       </tr>

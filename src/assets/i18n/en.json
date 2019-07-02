@@ -1,9 +1,20 @@
 {
   "common": {
+    "label": {
+      "search": "Search"
+    },
     "alert": {
       "alreadyLoggedIn": "You are already logged in",
       "mustBeLoggedIn": "You must be logged in",
       "cannotAccess": "You cannot access this area"
+    },
+    "column": {
+      "id": "ID",
+      "actions": "Actions"
+    },
+    "tooltip": {
+      "detail": "Detail",
+      "delete": "Delete"
     }
   },
   "header": {
@@ -89,5 +100,14 @@
   },
   "bloodCamps": {
     "title": "Blood Camps"
+  },
+  "bloodCampManager": {
+    "column": {
+      "name": "Name",
+      "address": "Address"
+    },
+    "placeholder": {
+      "search": "Name (min 3 characters)"
+    }
   }
 }

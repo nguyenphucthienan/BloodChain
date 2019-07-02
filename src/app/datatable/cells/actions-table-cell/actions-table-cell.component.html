@@ -1,7 +1,7 @@
 <div class="d-flex flex-row justify-content-center">
-  <button *ngFor="let action of actions" [ngClass]="'btn btn-sm ' + action.class" [title]="action.text"
-    (click)="onActionClicked(action)">
+  <button *ngFor="let action of actions" [ngClass]="'btn btn-sm ' + action.class"
+    [attr.title]="action.text | translate" (click)="onActionClicked(action)">
     <span [ngClass]="action.icon"></span>
-    <span *ngIf="showText"> {{ action.text }}</span>
+    <span *ngIf="showText"> {{ action.text | translate }}</span>
   </button>
 </div>

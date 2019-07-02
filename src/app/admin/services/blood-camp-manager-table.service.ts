@@ -16,8 +16,8 @@ export class BloodCampManagerTableService implements TableService {
 
   columns: TableColumn[] = [
     { name: '_id', text: 'ID', type: 'IdTableCellComponent', center: true, sortable: true },
-    { name: 'name', text: 'Name', type: 'TextTableCellComponent', sortable: true },
     { name: 'address', text: 'Address', type: 'TextTableCellComponent', sortable: true },
+    { name: 'name', text: 'Name', type: 'TextTableCellComponent', sortable: true },
     { name: 'actions', text: 'Actions', type: 'ActionsTableCellComponent', center: true }
   ];
 
@@ -36,8 +36,8 @@ export class BloodCampManagerTableService implements TableService {
   filterMode: FilterMode = {};
 
   actions: TableAction[] = [
-    { class: 'btn-primary', icon: 'fa fa-info-circle', text: 'Detail', type: TableActionType.GetDetail },
-    { class: 'btn-danger', icon: 'fa fa-trash-alt', text: 'Delete', type: TableActionType.Delete }
+    { class: 'btn-primary', icon: 'fa fa-info-circle', text: 'common.tooltip.detail', type: TableActionType.GetDetail },
+    { class: 'btn-danger', icon: 'fa fa-trash-alt', text: 'common.tooltip.delete', type: TableActionType.Delete }
   ];
 
   constructor(
