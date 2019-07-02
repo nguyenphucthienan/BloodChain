@@ -6,10 +6,26 @@ table.table {
   }
 }
 
-.header-clickable {
+.sortable {
   cursor: pointer;
 }
 
 hr {
   margin-top: 0;
+}
+
+thead tr th {
+  position: relative;
+}
+
+span.column-resizer {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  width: 4px;
+  height: 100%;
+  cursor: col-resize;
 }

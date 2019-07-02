@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, Renderer2 } from '@angular/core';
 
 import { SortMode } from '../core/models/sort-mode.interface';
 import { TableUtils } from '../utils/table-utils';
@@ -6,6 +6,8 @@ import { TableColumn } from './models/table-column.interface';
 import { TableRow } from './models/table-row.interface';
 import { TableRowSelectTrackingService } from './services/table-row-select-tracking.service';
 import { TableService } from './services/table.service';
+
+declare const $: any;
 
 @Component({
   selector: 'app-datatable',
@@ -23,7 +25,15 @@ export class DatatableComponent implements OnInit {
   rows: TableRow[] = [];
   selectAllOnPage: boolean;
 
-  constructor(private tableRowSelectTrackingService: TableRowSelectTrackingService) { }
+  start: any;
+  pressed: boolean;
+  startX: number;
+  startWidth: number;
+
+  constructor(
+    private tableRowSelectTrackingService: TableRowSelectTrackingService,
+    public renderer: Renderer2
+  ) { }
 
   async ngOnInit() {
     this.columns = this.tableService.getDataColumns();
@@ -98,6 +108,31 @@ export class DatatableComponent implements OnInit {
     }
 
     this.getTableData();
+  }
+
+  onMouseDown(event: any) {
+    this.start = event.target;
+    this.pressed = true;
+    this.startX = event.x;
+    this.startWidth = $(this.start).parent().width();
+    this.resizeColumns();
+  }
+
+  private resizeColumns() {
+    this.renderer.listen('body', 'mousemove', (event) => {
+      if (this.pressed) {
+        const width = this.startWidth + (event.clientX - this.startX);
+        $(this.start).parent().css({ 'min-width': width, 'max-width': width });
+        const index = $(this.start).parent().index() + 1;
+        $('.table tr td:nth-child(' + index + ')').css({ 'min-width': width, 'max-width': width });
+      }
+    });
+
+    this.renderer.listen('body', 'mouseup', (event) => {
+      if (this.pressed) {
+        this.pressed = false;
+      }
+    });
   }
 
 }

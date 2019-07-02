@@ -15,7 +15,7 @@ export class MapInputComponent implements OnInit {
   @Input() zoom = 15;
   @Input() height = '300px';
 
-  @Output() markerSelected = new EventEmitter();
+  @Output() locationChanged = new EventEmitter();
 
   @ViewChild('search') searchElementRef: ElementRef;
 
@@ -67,7 +67,7 @@ export class MapInputComponent implements OnInit {
   private changeLocation(event: any) {
     this.lat = event.coords.lat;
     this.lng = event.coords.lng;
-    this.markerSelected.emit({ lat: this.lat, lng: this.lng });
+    this.locationChanged.emit({ lat: this.lat, lng: this.lng });
   }
 
 }

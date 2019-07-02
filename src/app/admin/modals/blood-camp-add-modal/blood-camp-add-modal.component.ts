@@ -50,7 +50,7 @@ export class BloodCampAddModalComponent implements OnInit {
       );
   }
 
-  onLocationSelected(location: any) {
+  onLocationChanged(location: any) {
     this.addForm.patchValue({
       location: {
         type: 'Point',

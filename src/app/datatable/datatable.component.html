@@ -1,15 +1,17 @@
 <div class="table-responsive">
-  <table class="table table-hover">
+  <table class="table table-hover table-bordered">
     <thead class="thead-light">
       <tr>
         <th *ngIf="selectableRow" class="text-center align-middle" nowrap>
           <input type="checkbox" [checked]="selectAllOnPage" (change)="selectAllHeader($event.target.checked)">
         </th>
-        <th *ngFor="let column of columns" scope="col" (click)="changeSortMode(column)"
-          class="align-middle text-truncate" [class.text-center]="column.center" [class.text-nowrap]="column.nowrap"
-          [class.header-clickable]="column.sortable" [style.min-width]="column.minWidth">
+        <th *ngFor="let column of columns; let last=last" scope="col" class="align-middle text-truncate"
+          [class.text-center]="column.center" [class.text-nowrap]="column.nowrap" [style.min-width]="column.minWidth">
+          <span *ngIf="!last" class="column-resizer" (mousedown)="onMouseDown($event)"></span>
           {{ column.text | translate }}
-          <mdb-icon *ngIf="column.sortable" fas [icon]="getHeaderIconClass(column)"></mdb-icon>
+          <mdb-icon *ngIf="column.sortable" fas [icon]="getHeaderIconClass(column)" class="sortable"
+            (click)="changeSortMode(column)">
+          </mdb-icon>
         </th>
       </tr>
     </thead>
@@ -25,10 +27,30 @@
         </td>
       </tr>
     </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="100%">
+          <div class="d-flex justify-content-between mt-2 mb-2">
+            <div class="font-weight-bold ml-4">
+              Page: {{ tableService.pagination.page }}/{{ tableService.pagination.totalPages }}
+            </div>
+            <div class="font-weight-bold mr-4">
+              Results: {{ (tableService.pagination.page - 1) * tableService.pagination.size + 1 }} to
+              {{ tableService.pagination.page * tableService.pagination.size > tableService.pagination.totalItems 
+                ? tableService.pagination.totalItems : 
+                tableService.pagination.page * tableService.pagination.size
+               }} of {{ tableService.pagination.totalItems }}
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tfoot>
   </table>
 </div>
 <hr>
-<div *ngIf="tableService.pagination" class="d-flex flex-column justify-content-center align-items-center">
-  <app-pagination [totalItems]="tableService.pagination.totalItems" [itemsPerPage]="tableService.pagination.size"
-    (pageChanged)="onPageChanged($event)"></app-pagination>
+<div *ngIf="tableService.pagination" class="d-flex flex-column justify-content-center mt-3">
+  <div class=" d-flex justify-content-center align-items-center">
+    <app-pagination [totalItems]="tableService.pagination.totalItems" [itemsPerPage]="tableService.pagination.size"
+      (pageChanged)="onPageChanged($event)"></app-pagination>
+  </div>
 </div>

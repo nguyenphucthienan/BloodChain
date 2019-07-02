@@ -15,10 +15,12 @@ import { TableService } from 'src/app/datatable/services/table.service';
 export class BloodCampManagerTableService implements TableService {
 
   columns: TableColumn[] = [
-    { name: '_id', text: 'ID', type: 'IdTableCellComponent', center: true, sortable: true },
-    { name: 'address', text: 'Address', type: 'TextTableCellComponent', sortable: true },
-    { name: 'name', text: 'Name', type: 'TextTableCellComponent', sortable: true },
-    { name: 'actions', text: 'Actions', type: 'ActionsTableCellComponent', center: true }
+    { name: '_id', text: 'common.column.id', type: 'IdTableCellComponent', center: true, sortable: true },
+    { name: 'name', text: 'common.column.name', type: 'TextTableCellComponent', sortable: true },
+    { name: 'address', text: 'common.column.address', type: 'TextTableCellComponent', sortable: true },
+    { name: 'email', text: 'common.column.email', type: 'TextTableCellComponent', sortable: true },
+    { name: 'phone', text: 'common.column.phone', type: 'TextTableCellComponent', sortable: true },
+    { name: 'actions', text: 'common.column.actions', type: 'ActionsTableCellComponent', center: true }
   ];
 
   rows: TableRow[];
