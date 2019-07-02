@@ -4,6 +4,8 @@
       "search": "Search"
     },
     "button": {
+      "yes": "Yes",
+      "no": "No",
       "add": "Add",
       "cancel": "Cancel"
     },
@@ -27,6 +29,9 @@
       "refresh": "Refresh",
       "detail": "Detail",
       "delete": "Delete"
+    },
+    "message": {
+      "areYouSure": "Are you sure you want to delete"
     }
   },
   "header": {
@@ -134,7 +139,8 @@
       "search": "Search by name (min 3 characters)"
     },
     "modal": {
-      "add": "Add New Blood Camp"
+      "add": "Add New Blood Camp",
+      "delete": "Delete Blood Camp"
     },
     "label": {
       "name": "Name",
@@ -150,7 +156,9 @@
     },
     "alert": {
       "addSuccess": "Add blood camp successfully",
-      "addFailed": "Add blood camp failed"
+      "addFailed": "Add blood camp failed",
+      "deleteSuccess": "Delete blood camp successfully",
+      "deleteFailed": "Delete blood camp failed"
     }
   }
 }

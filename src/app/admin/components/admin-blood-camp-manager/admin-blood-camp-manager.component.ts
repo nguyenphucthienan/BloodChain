@@ -6,8 +6,10 @@ import { BloodCamp } from 'src/app/core/models/blood-camp.interface';
 import { DatatableComponent } from 'src/app/datatable/datatable.component';
 import { TableActionType } from 'src/app/datatable/models/table-action.interface';
 import { TableCellChange } from 'src/app/datatable/models/table-cell-change.interface';
+import { TableRow } from 'src/app/datatable/models/table-row.interface';
 
 import { BloodCampAddModalComponent } from '../../modals/blood-camp-add-modal/blood-camp-add-modal.component';
+import { BloodCampDeleteModalComponent } from '../../modals/blood-camp-delete-modal/blood-camp-delete-modal.component';
 import { BloodCampManagerTableService } from '../../services/blood-camp-manager-table.service';
 
 @Component({
@@ -78,7 +80,7 @@ export class AdminBloodCampManagerComponent implements OnInit, AfterViewInit, On
         this.navigateToBloodCampDetail(tableCellChange.row.cells._id.value);
         break;
       case TableActionType.Delete:
-        this.openDeleteBloodCampModal(tableCellChange.row.cells._id.value);
+        this.openBloodCampDeleteModal(tableCellChange.row);
         break;
     }
   }
@@ -86,7 +88,28 @@ export class AdminBloodCampManagerComponent implements OnInit, AfterViewInit, On
   navigateToBloodCampDetail(id: string) {
   }
 
-  openDeleteBloodCampModal(id: string) {
+  openBloodCampDeleteModal(rowData: TableRow) {
+    this.modalRef = this.modalService.show(BloodCampDeleteModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        rowData
+      }
+    });
+
+    this.modalRef.content.bloodCampDeleted
+      .subscribe(() => this.onBloodCampDeleted());
+  }
+
+  onBloodCampDeleted() {
+    this.modalRef.hide();
+    this.datatable.refresh();
   }
 
   ngOnDestroy() {

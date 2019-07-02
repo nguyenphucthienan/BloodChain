@@ -4,6 +4,8 @@
       "search": "Tìm kiếm"
     },
     "button": {
+      "yes": "Đồng ý",
+      "no": "Không",
       "add": "Thêm",
       "cancel": "Hủy"
     },
@@ -27,6 +29,9 @@
       "refresh": "Làm mới",
       "detail": "Chi tiết",
       "delete": "Xóa"
+    },
+    "message": {
+      "areYouSure": "Bạn có chắc chắn rằng bạn muốn xóa"
     }
   },
   "header": {
@@ -134,7 +139,8 @@
       "search": "Tìm kiếm theo tên (tối thiểu 3 kí tự)"
     },
     "modal": {
-      "add": "Thêm trung tâm"
+      "add": "Thêm trung tâm",
+      "delete": "Xóa trung tâm"
     },
     "label": {
       "name": "Tên",
@@ -150,7 +156,9 @@
     },
     "alert": {
       "addSuccess": "Thêm trung tâm thành công",
-      "addFailed": "Thêm trung tâm không thành công"
+      "addFailed": "Thêm trung tâm không thành công",
+      "deleteSuccess": "Xóa trung tâm thành công",
+      "deleteFailed": "Xóa trung tâm không thành công"
     }
   }
 }
