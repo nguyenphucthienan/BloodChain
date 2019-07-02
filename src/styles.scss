@@ -1,7 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 
+mdb-modal-container {
+  overflow-y: auto !important;
+}
+
 .ng-sidebar--opened {
   background-color: #fff;
   box-shadow: 0 0 2.5em rgba(85, 85, 85, 0.5);
   width: 20rem;
+}
+
+.pac-container {
+  z-index: 9999 !important;
 }

@@ -4,7 +4,8 @@
       "search": "Search"
     },
     "button": {
-      "add": "Add"
+      "add": "Add",
+      "cancel": "Cancel"
     },
     "alert": {
       "alreadyLoggedIn": "You are already logged in",
@@ -14,6 +15,9 @@
     "column": {
       "id": "ID",
       "actions": "Actions"
+    },
+    "placeholder": {
+      "searchLocation": "Search location"
     },
     "tooltip": {
       "detail": "Detail",
@@ -118,11 +122,21 @@
     "modal": {
       "add": "Add New Blood Camp"
     },
+    "label": {
+      "name": "Name",
+      "address": "Address",
+      "email": "Email",
+      "phone": "Phone"
+    },
     "message": {
       "nameRequired": "Name is required",
       "addressRequired": "Address is required",
       "emailRequired": "Email is required",
       "phoneRequired": "Phone is required"
+    },
+    "alert": {
+      "addSuccess": "Add blood camp successfully",
+      "addFailed": "Add blood camp failed"
     }
   }
 }

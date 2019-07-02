@@ -9,36 +9,39 @@
     <div class="modal-body">
       <div class="md-form">
         <input type="text" id="name" formControlName="name" class="form-control" mdbInput>
-        <label for="name">Name</label>
+        <label for="name">{{ 'bloodCampManager.label.name' | translate }}</label>
         <mdb-error *ngIf="controlHasError('name', 'required')">
           {{ 'bloodCampManager.message.nameRequired' | translate }}
         </mdb-error>
       </div>
       <div class="md-form">
         <input type="text" id="address" formControlName="address" class="form-control" mdbInput>
-        <label for="address">Address</label>
+        <label for="address">{{ 'bloodCampManager.label.address' | translate }}</label>
         <mdb-error *ngIf="controlHasError('address', 'required')">
           {{ 'bloodCampManager.message.addressRequired' | translate }}
         </mdb-error>
       </div>
       <div class="md-form">
         <input type="text" id="email" formControlName="email" class="form-control" mdbInput>
-        <label for="email">Email</label>
+        <label for="email">{{ 'bloodCampManager.label.email' | translate }}</label>
         <mdb-error *ngIf="controlHasError('email', 'required')">
           {{ 'bloodCampManager.message.emailRequired' | translate }}
         </mdb-error>
       </div>
       <div class="md-form">
         <input type="text" id="phone" formControlName="phone" class="form-control" mdbInput>
-        <label for="phone">Phone</label>
+        <label for="phone">{{ 'bloodCampManager.label.phone' | translate }}</label>
         <mdb-error *ngIf="controlHasError('phone', 'required')">
           {{ 'bloodCampManager.message.phoneRequired' | translate }}
         </mdb-error>
       </div>
+      <div class="md-form">
+        <app-map-input (markerSelected)="onLocationSelected($event)"></app-map-input>
+      </div>
     </div>
     <div class="modal-footer">
       <button type="button" mdbBtn color="secondary" class=" waves-light" (click)="modalRef.hide()"
-        mdbWavesEffect>Cancel</button>
+        mdbWavesEffect>{{ 'common.button.cancel' | translate }}</button>
       <button mdbBtn type="submit" color="primary" mdbWavesEffect [disabled]="addForm.invalid">
         {{ 'common.button.add' | translate }}
       </button>

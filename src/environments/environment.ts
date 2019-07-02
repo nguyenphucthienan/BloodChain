@@ -7,7 +7,8 @@ export const environment = {
   apiUrl: 'http://localhost:3000/api',
   whitelistedDomains: ['localhost:3000'],
   blacklistedRoutes: ['localhost:3000/api/auth'],
-  authTokenName: 'auth-token'
+  authTokenName: 'auth-token',
+  mapApiKey: 'AIzaSyB2MsjvYImNAUWNxbWSiZGQ5TdxNaPbPcY'
 };
 
 /*

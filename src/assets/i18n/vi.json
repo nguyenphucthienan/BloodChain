@@ -4,7 +4,8 @@
       "search": "Tìm kiếm"
     },
     "button": {
-      "add": "Thêm"
+      "add": "Thêm",
+      "cancel": "Hủy"
     },
     "alert": {
       "alreadyLoggedIn": "Bạn đã đăng nhập",
@@ -14,6 +15,9 @@
     "column": {
       "id": "ID",
       "actions": "Hành động"
+    },
+    "placeholder": {
+      "searchLocation": "Tìm kiếm địa điểm"
     },
     "tooltip": {
       "detail": "Chi tiết",
@@ -118,11 +122,21 @@
     "modal": {
       "add": "Thêm trung tâm"
     },
+    "label": {
+      "name": "Tên",
+      "address": "Địa chỉ",
+      "email": "Email",
+      "phone": "Số điện thoại"
+    },
     "message": {
       "nameRequired": "Tên không được bỏ trống",
       "addressRequired": "Địa chỉ không được bỏ trống",
       "emailRequired": "Email không được bỏ trống",
       "phoneRequired": "Số điện thoại không được bỏ trống"
+    },
+    "alert": {
+      "addSuccess": "Thêm trung tâm thành công",
+      "addFailed": "Thêm trung tâm không thành công"
     }
   }
 }
