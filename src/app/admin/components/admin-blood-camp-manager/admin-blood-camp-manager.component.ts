@@ -1,10 +1,13 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { fromEvent, Subscription } from 'rxjs';
 import { debounceTime, map, tap } from 'rxjs/operators';
+import { BloodCamp } from 'src/app/core/models/blood-camp.interface';
 import { DatatableComponent } from 'src/app/datatable/datatable.component';
 import { TableActionType } from 'src/app/datatable/models/table-action.interface';
 import { TableCellChange } from 'src/app/datatable/models/table-cell-change.interface';
 
+import { BloodCampAddModalComponent } from '../../modals/blood-camp-add-modal/blood-camp-add-modal.component';
 import { BloodCampManagerTableService } from '../../services/blood-camp-manager-table.service';
 
 @Component({
@@ -19,8 +22,12 @@ export class AdminBloodCampManagerComponent implements OnInit, AfterViewInit, On
   @ViewChild('search') search: ElementRef;
 
   searchSubscription: Subscription;
+  modalRef: MDBModalRef;
 
-  constructor(public bloodCampManagerTableService: BloodCampManagerTableService) { }
+  constructor(
+    public bloodCampManagerTableService: BloodCampManagerTableService,
+    private modalService: MDBModalService
+  ) { }
 
   ngOnInit() {
   }
@@ -41,6 +48,27 @@ export class AdminBloodCampManagerComponent implements OnInit, AfterViewInit, On
       this.bloodCampManagerTableService.filterMode.name = value;
       this.datatable.refresh();
     }
+  }
+
+  openBloodCampAddModal() {
+    this.modalRef = this.modalService.show(BloodCampAddModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-lg modal-dialog-centered',
+      containerClass: 'top',
+      animated: true
+    });
+
+    this.modalRef.content.bloodCampAdded
+      .subscribe((bloodCamp: BloodCamp) => this.onBloodCampAdded(bloodCamp));
+  }
+
+  onBloodCampAdded(bloodCamp: BloodCamp) {
+    this.modalRef.hide();
+    this.datatable.refresh();
   }
 
   onTableCellChanged(tableCellChange: TableCellChange) {

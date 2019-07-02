@@ -3,6 +3,9 @@
     "label": {
       "search": "Tìm kiếm"
     },
+    "button": {
+      "add": "Thêm"
+    },
     "alert": {
       "alreadyLoggedIn": "Bạn đã đăng nhập",
       "mustBeLoggedIn": "Bạn chưa đăng nhập",
@@ -106,8 +109,20 @@
       "name": "Tên",
       "address": "Địa chỉ"
     },
+    "button": {
+      "add": "Thêm trung tâm"
+    },
     "placeholder": {
       "search": "Theo tên (tối thiểu 3 kí tự)"
+    },
+    "modal": {
+      "add": "Thêm trung tâm"
+    },
+    "message": {
+      "nameRequired": "Tên không được bỏ trống",
+      "addressRequired": "Địa chỉ không được bỏ trống",
+      "emailRequired": "Email không được bỏ trống",
+      "phoneRequired": "Số điện thoại không được bỏ trống"
     }
   }
 }

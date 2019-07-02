@@ -13,6 +13,7 @@ import {
   AdminBloodTestCenterManagerComponent,
 } from './components/admin-blood-test-center-manager/admin-blood-test-center-manager.component';
 import { AdminHospitalManagerComponent } from './components/admin-hospital-manager/admin-hospital-manager.component';
+import { BloodCampAddModalComponent } from './modals/blood-camp-add-modal/blood-camp-add-modal.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +22,16 @@ import { AdminHospitalManagerComponent } from './components/admin-hospital-manag
     AdminBloodTestCenterManagerComponent,
     AdminBloodSeparationCenterManagerComponent,
     AdminBloodBankManagerComponent,
-    AdminHospitalManagerComponent
+    AdminHospitalManagerComponent,
+    BloodCampAddModalComponent
   ],
   imports: [
     SharedModule,
     DatatableModule,
     AdminRoutingModule
+  ],
+  entryComponents: [
+    BloodCampAddModalComponent
   ]
 })
 export class AdminModule { }

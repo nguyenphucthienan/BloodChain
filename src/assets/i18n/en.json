@@ -3,6 +3,9 @@
     "label": {
       "search": "Search"
     },
+    "button": {
+      "add": "Add"
+    },
     "alert": {
       "alreadyLoggedIn": "You are already logged in",
       "mustBeLoggedIn": "You must be logged in",
@@ -106,8 +109,20 @@
       "name": "Name",
       "address": "Address"
     },
+    "button": {
+      "add": "Add Blood Camp"
+    },
     "placeholder": {
       "search": "Name (min 3 characters)"
+    },
+    "modal": {
+      "add": "Add New Blood Camp"
+    },
+    "message": {
+      "nameRequired": "Name is required",
+      "addressRequired": "Address is required",
+      "emailRequired": "Email is required",
+      "phoneRequired": "Phone is required"
     }
   }
 }
