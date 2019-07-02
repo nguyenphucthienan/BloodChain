@@ -86,5 +86,8 @@
       "registerSuccess": "Đăng kí thành công",
       "registerFailed": "Đăng kí không thành công"
     }
+  },
+  "bloodCamps": {
+    "title": "Trung tâm hiến máu"
   }
 }
