@@ -16,6 +16,7 @@ declare const $: any;
 })
 export class DatatableComponent implements OnInit {
 
+  @Input() tableName: string;
   @Input() tableService: TableService;
   @Input() selectableRow: boolean;
 

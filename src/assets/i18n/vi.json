@@ -24,6 +24,7 @@
       "searchLocation": "Tìm kiếm địa điểm"
     },
     "tooltip": {
+      "refresh": "Làm mới",
       "detail": "Chi tiết",
       "delete": "Xóa"
     }
@@ -47,6 +48,19 @@
       "bloodSeparationCenters": "Trung tâm phân tách",
       "bloodBanks": "Ngân hàng máu",
       "hospital": "Bệnh viện"
+    }
+  },
+  "pagination": {
+    "label": {
+      "page": "Trang",
+      "results": "Kết quả",
+      "to": "tới",
+      "of": "của"
+    }
+  },
+  "table": {
+    "name": {
+      "bloodCampManager": "TRUNG TÂM HIẾN MÁU"
     }
   },
   "about": {
@@ -117,7 +131,7 @@
       "add": "Thêm trung tâm"
     },
     "placeholder": {
-      "search": "Theo tên (tối thiểu 3 kí tự)"
+      "search": "Tìm kiếm theo tên (tối thiểu 3 kí tự)"
     },
     "modal": {
       "add": "Thêm trung tâm"

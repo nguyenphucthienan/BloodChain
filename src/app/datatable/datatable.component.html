@@ -1,4 +1,10 @@
-<div class="table-responsive">
+<div class="d-flex justify-content-between align-items-center">
+  <span *ngIf="tableName" class="font-weight-bold">{{ tableName }}</span>
+  <button class="btn btn-light btn-action" [attr.title]="'common.tooltip.refresh' | translate" (click)="refresh()">
+    <span class="fa fa-sync"></span>
+  </button>
+</div>
+<div class="table-responsive mt-3">
   <table class="table table-hover table-bordered">
     <thead class="thead-light">
       <tr>
@@ -32,14 +38,19 @@
         <td colspan="100%">
           <div class="d-flex justify-content-between mt-2 mb-2">
             <div class="font-weight-bold ml-4">
-              Page: {{ tableService.pagination.page }}/{{ tableService.pagination.totalPages }}
+              {{ 'pagination.label.page' | translate }}:
+              {{ tableService.pagination.page }}/{{ tableService.pagination.totalPages }}
             </div>
             <div class="font-weight-bold mr-4">
-              Results: {{ (tableService.pagination.page - 1) * tableService.pagination.size + 1 }} to
+              {{ 'pagination.label.results' | translate }}:
+              {{ (tableService.pagination.page - 1) * tableService.pagination.size + 1 }}
+              {{ 'pagination.label.to' | translate }}
               {{ tableService.pagination.page * tableService.pagination.size > tableService.pagination.totalItems 
                 ? tableService.pagination.totalItems : 
                 tableService.pagination.page * tableService.pagination.size
-               }} of {{ tableService.pagination.totalItems }}
+               }}
+              {{ 'pagination.label.of' | translate }}
+              {{ tableService.pagination.totalItems }}
             </div>
           </div>
         </td>

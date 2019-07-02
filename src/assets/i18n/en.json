@@ -24,6 +24,7 @@
       "searchLocation": "Search location"
     },
     "tooltip": {
+      "refresh": "Refresh",
       "detail": "Detail",
       "delete": "Delete"
     }
@@ -47,6 +48,19 @@
       "bloodSeparationCenters": "Blood Separation Centers",
       "bloodBanks": "Blood Banks",
       "hospital": "Hospitals"
+    }
+  },
+  "pagination": {
+    "label": {
+      "page": "Page",
+      "results": "Results",
+      "to": "to",
+      "of": "of"
+    }
+  },
+  "table": {
+    "name": {
+      "bloodCampManager": "BLOOD CAMPS"
     }
   },
   "about": {
@@ -117,7 +131,7 @@
       "add": "Add Blood Camp"
     },
     "placeholder": {
-      "search": "Name (min 3 characters)"
+      "search": "Search by name (min 3 characters)"
     },
     "modal": {
       "add": "Add New Blood Camp"
