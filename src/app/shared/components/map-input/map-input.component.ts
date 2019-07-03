@@ -26,7 +26,10 @@ export class MapInputComponent implements OnInit {
 
   ngOnInit() {
     this.mapsAPILoader.load().then(() => {
-      this.setCurrentLocation();
+      if (!this.lat || !this.lng) {
+        this.setCurrentLocation();
+      }
+
       const autocomplete = new google.maps.places.Autocomplete(
         this.searchElementRef.nativeElement, {
           // types: ['address']

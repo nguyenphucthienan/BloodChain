@@ -15,6 +15,7 @@ import {
 import { AdminHospitalManagerComponent } from './components/admin-hospital-manager/admin-hospital-manager.component';
 import { BloodCampAddModalComponent } from './modals/blood-camp-add-modal/blood-camp-add-modal.component';
 import { BloodCampDeleteModalComponent } from './modals/blood-camp-delete-modal/blood-camp-delete-modal.component';
+import { BloodCampUpdateModalComponent } from './modals/blood-camp-update-modal/blood-camp-update-modal.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { BloodCampDeleteModalComponent } from './modals/blood-camp-delete-modal/
     AdminBloodBankManagerComponent,
     AdminHospitalManagerComponent,
     BloodCampAddModalComponent,
+    BloodCampUpdateModalComponent,
     BloodCampDeleteModalComponent
   ],
   imports: [
@@ -34,6 +36,7 @@ import { BloodCampDeleteModalComponent } from './modals/blood-camp-delete-modal/
   ],
   entryComponents: [
     BloodCampAddModalComponent,
+    BloodCampUpdateModalComponent,
     BloodCampDeleteModalComponent
   ]
 })

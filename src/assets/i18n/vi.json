@@ -7,12 +7,14 @@
       "yes": "Đồng ý",
       "no": "Không",
       "add": "Thêm",
+      "update": "Cập nhật",
       "cancel": "Hủy"
     },
     "alert": {
       "alreadyLoggedIn": "Bạn đã đăng nhập",
       "mustBeLoggedIn": "Bạn chưa đăng nhập",
-      "cannotAccess": "Bạn không thể vào trang này"
+      "cannotAccess": "Bạn không thể vào trang này",
+      "getDataFailed": "Tải dữ liệu không thành công"
     },
     "column": {
       "id": "ID",
@@ -28,6 +30,7 @@
     "tooltip": {
       "refresh": "Làm mới",
       "detail": "Chi tiết",
+      "update": "Cập nhật",
       "delete": "Xóa"
     },
     "message": {
@@ -140,6 +143,7 @@
     },
     "modal": {
       "add": "Thêm trung tâm",
+      "update": "Cập nhật trung tâm",
       "delete": "Xóa trung tâm"
     },
     "label": {
@@ -157,6 +161,8 @@
     "alert": {
       "addSuccess": "Thêm trung tâm thành công",
       "addFailed": "Thêm trung tâm không thành công",
+      "updateSuccess": "Cập nhật trung tâm thành công",
+      "updateFailed": "Cập nhật trung tâm không thành công",
       "deleteSuccess": "Xóa trung tâm thành công",
       "deleteFailed": "Xóa trung tâm không thành công"
     }

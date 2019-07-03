@@ -8,8 +8,7 @@ export interface TableAction {
 
 export enum TableActionType {
   GetDetail,
-  Edit,
+  Update,
   Delete,
-  DeleteAll,
-  EditHotelOwners
+  DeleteAll
 }

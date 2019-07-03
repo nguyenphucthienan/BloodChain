@@ -7,12 +7,14 @@
       "yes": "Yes",
       "no": "No",
       "add": "Add",
+      "update": "Update",
       "cancel": "Cancel"
     },
     "alert": {
       "alreadyLoggedIn": "You are already logged in",
       "mustBeLoggedIn": "You must be logged in",
-      "cannotAccess": "You cannot access this area"
+      "cannotAccess": "You cannot access this area",
+      "getDataFailed": "Get data failed"
     },
     "column": {
       "id": "ID",
@@ -28,6 +30,7 @@
     "tooltip": {
       "refresh": "Refresh",
       "detail": "Detail",
+      "update": "Update",
       "delete": "Delete"
     },
     "message": {
@@ -140,6 +143,7 @@
     },
     "modal": {
       "add": "Add New Blood Camp",
+      "update": "Update Blood Camp",
       "delete": "Delete Blood Camp"
     },
     "label": {
@@ -157,6 +161,8 @@
     "alert": {
       "addSuccess": "Add blood camp successfully",
       "addFailed": "Add blood camp failed",
+      "updateSuccess": "Update blood camp successfully",
+      "updateFailed": "Update blood camp failed",
       "deleteSuccess": "Delete blood camp successfully",
       "deleteFailed": "Delete blood camp failed"
     }

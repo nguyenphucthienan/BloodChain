@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { map } from 'rxjs/operators';
 import { FilterMode } from 'src/app/core/models/filter-mode.interface';
 import { Pagination } from 'src/app/core/models/pagination.interface';
@@ -38,13 +39,15 @@ export class BloodCampManagerTableService implements TableService {
   filterMode: FilterMode = {};
 
   actions: TableAction[] = [
-    { class: 'btn-primary', icon: 'fa fa-info-circle', text: 'common.tooltip.detail', type: TableActionType.GetDetail },
+    { class: 'btn-info', icon: 'fa fa-info-circle', text: 'common.tooltip.detail', type: TableActionType.GetDetail },
+    { class: 'btn-dark', icon: 'fa fa-edit', text: 'common.tooltip.update', type: TableActionType.Update },
     { class: 'btn-danger', icon: 'fa fa-trash-alt', text: 'common.tooltip.delete', type: TableActionType.Delete }
   ];
 
   constructor(
     private bloodCampService: BloodCampService,
-    private alertService: AlertService
+    private alertService: AlertService,
+    private translate: TranslateService
   ) { }
 
   getDataColumns() {
@@ -90,7 +93,10 @@ export class BloodCampManagerTableService implements TableService {
 
         return this.rows;
       })
-      .catch(error => this.alertService.error('Get data failed'));
+      .catch(error => {
+        this.translate.get('common.alert.getDataFailed')
+          .subscribe(getDataFailed => this.alertService.success(getDataFailed));
+      });
   }
 
 }

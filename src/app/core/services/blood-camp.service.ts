@@ -48,7 +48,7 @@ export class BloodCampService {
     return this.http.post<BloodCamp>(`${this.bloodCampsUrl}`, bloodCamp);
   }
 
-  editBloodCamp(id: string, bloodCamp: BloodCamp): Observable<BloodCamp> {
+  updateBloodCamp(id: string, bloodCamp: BloodCamp): Observable<BloodCamp> {
     return this.http.put<BloodCamp>(`${this.bloodCampsUrl}/${id}`, bloodCamp);
   }
 

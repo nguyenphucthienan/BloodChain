@@ -10,16 +10,11 @@
     <span class="font-weight-bold">{{ bloodCampName }}</span>?
   </div>
   <div class="modal-footer">
-    <div class="col-6">
-      <button type="button" mdbBtn color="secondary" block="true" class="waves-light" (click)="modalRef.hide()"
-        mdbWavesEffect>
-        {{ 'common.button.no' | translate }}
-      </button>
-    </div>
-    <div class="col-6">
-      <button mdbBtn type="submit" color="primary" block="true" mdbWavesEffect (click)="deleteBloodCamp()">
-        {{ 'common.button.yes' | translate }}
-      </button>
-    </div>
+    <button type="button" mdbBtn color="secondary" class="waves-light" (click)="modalRef.hide()" mdbWavesEffect>
+      {{ 'common.button.no' | translate }}
+    </button>
+    <button mdbBtn type="submit" color="primary" (click)="deleteBloodCamp()" mdbWavesEffect>
+      {{ 'common.button.yes' | translate }}
+    </button>
   </div>
 </div>

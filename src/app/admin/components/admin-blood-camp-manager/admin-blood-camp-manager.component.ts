@@ -10,6 +10,7 @@ import { TableRow } from 'src/app/datatable/models/table-row.interface';
 
 import { BloodCampAddModalComponent } from '../../modals/blood-camp-add-modal/blood-camp-add-modal.component';
 import { BloodCampDeleteModalComponent } from '../../modals/blood-camp-delete-modal/blood-camp-delete-modal.component';
+import { BloodCampUpdateModalComponent } from '../../modals/blood-camp-update-modal/blood-camp-update-modal.component';
 import { BloodCampManagerTableService } from '../../services/blood-camp-manager-table.service';
 
 @Component({
@@ -52,6 +53,24 @@ export class AdminBloodCampManagerComponent implements OnInit, AfterViewInit, On
     }
   }
 
+  onTableCellChanged(tableCellChange: TableCellChange) {
+    const action = tableCellChange.newValue;
+    switch (action.type) {
+      case TableActionType.GetDetail:
+        this.navigateToBloodCampDetail(tableCellChange.row.cells._id.value);
+        break;
+      case TableActionType.Update:
+        this.openBloodCampUpdateModal(tableCellChange.row);
+        break;
+      case TableActionType.Delete:
+        this.openBloodCampDeleteModal(tableCellChange.row);
+        break;
+    }
+  }
+
+  navigateToBloodCampDetail(id: string) {
+  }
+
   openBloodCampAddModal() {
     this.modalRef = this.modalService.show(BloodCampAddModalComponent, {
       backdrop: true,
@@ -73,19 +92,28 @@ export class AdminBloodCampManagerComponent implements OnInit, AfterViewInit, On
     this.datatable.refresh();
   }
 
-  onTableCellChanged(tableCellChange: TableCellChange) {
-    const action = tableCellChange.newValue;
-    switch (action.type) {
-      case TableActionType.GetDetail:
-        this.navigateToBloodCampDetail(tableCellChange.row.cells._id.value);
-        break;
-      case TableActionType.Delete:
-        this.openBloodCampDeleteModal(tableCellChange.row);
-        break;
-    }
+  openBloodCampUpdateModal(rowData: TableRow) {
+    this.modalRef = this.modalService.show(BloodCampUpdateModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-lg modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        rowData,
+      }
+    });
+
+    this.modalRef.content.bloodCampUpdated
+      .subscribe((bloodCamp: BloodCamp) => this.onBloodCampUpdated(bloodCamp));
   }
 
-  navigateToBloodCampDetail(id: string) {
+  onBloodCampUpdated(bloodCamp: BloodCamp) {
+    this.modalRef.hide();
+    this.datatable.refresh();
   }
 
   openBloodCampDeleteModal(rowData: TableRow) {
