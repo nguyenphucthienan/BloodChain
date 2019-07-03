@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { fromEvent, Subscription } from 'rxjs';
 import { debounceTime, map, tap } from 'rxjs/operators';
@@ -29,10 +29,12 @@ export class AdminBloodCampManagerComponent implements OnInit, AfterViewInit, On
 
   constructor(
     public bloodCampManagerTableService: BloodCampManagerTableService,
+    private renderer: Renderer2,
     private modalService: MDBModalService
   ) { }
 
   ngOnInit() {
+    this.renderer.addClass(document.body, 'grey-background');
   }
 
   ngAfterViewInit() {
@@ -141,6 +143,7 @@ export class AdminBloodCampManagerComponent implements OnInit, AfterViewInit, On
   }
 
   ngOnDestroy() {
+    this.renderer.removeClass(document.body, 'grey-background');
     this.searchSubscription.unsubscribe();
   }
 

@@ -52,6 +52,15 @@
       "logoutSuccess": "Logout successfully"
     }
   },
+  "breadcumb": {
+    "admin": "Admin",
+    "users": "Users",
+    "bloodCamps": "Blood Camps",
+    "bloodTestCenters": "Blood Test Centers",
+    "bloodSeparationCenters": "Blood Separation Centers",
+    "bloodBanks": "Blood Banks",
+    "hospital": "Hospitals"
+  },
   "sidebar": {
     "title": {
       "users": "Users",

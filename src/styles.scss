@@ -10,6 +10,16 @@ mdb-modal-container {
   width: 20rem;
 }
 
+.grey-background {
+  background-color: #eee;
+}
+
+ol.breadcrumb {
+  padding: 0px;
+  margin-bottom: 0px;
+  background-color: #fff;
+}
+
 .pac-container {
   z-index: 9999 !important;
 }

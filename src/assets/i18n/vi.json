@@ -52,6 +52,15 @@
       "logoutSuccess": "Đăng xuất thành công"
     }
   },
+  "breadcumbs": {
+    "admin": "Quản trị",
+    "users": "Người dùng",
+    "bloodCamps": "Trung tâm hiến máu",
+    "bloodTestCenters": "Trung tâm xét nghiệm",
+    "bloodSeparationCenters": "Trung tâm phân tách",
+    "bloodBanks": "Ngân hàng máu",
+    "hospital": "Bệnh viện"
+  },
   "sidebar": {
     "title": {
       "users": "Người dùng",

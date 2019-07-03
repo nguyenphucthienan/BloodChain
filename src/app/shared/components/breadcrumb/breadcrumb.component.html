@@ -1,0 +1,6 @@
+<mdb-breadcrumb>
+  <mdb-breadcrumb-item *ngFor="let breadcrumb of breadcrumbs; let last=last;" [class.active]="last"
+    [routerLink]="breadcrumb.url">
+    {{ breadcrumb.label | translate }}
+  </mdb-breadcrumb-item>
+</mdb-breadcrumb>

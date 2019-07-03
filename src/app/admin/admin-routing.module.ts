@@ -16,40 +16,46 @@ import { AdminUserManagerComponent } from './components/admin-user-manager/admin
 
 const routes: Routes = [
   {
-    path: 'admin/users',
-    component: AdminUserManagerComponent,
+    path: 'admin',
     canActivate: [HasRoleGuard],
-    data: { roles: [RoleName.ADMIN] }
-  },
-  {
-    path: 'admin/blood-camps',
-    component: AdminBloodCampManagerComponent,
-    canActivate: [HasRoleGuard],
-    data: { roles: [RoleName.ADMIN] }
-  },
-  {
-    path: 'admin/blood-test-centers',
-    component: AdminBloodTestCenterManagerComponent,
-    canActivate: [HasRoleGuard],
-    data: { roles: [RoleName.ADMIN] }
-  },
-  {
-    path: 'admin/blood-separation-centers',
-    component: AdminBloodSeparationCenterManagerComponent,
-    canActivate: [HasRoleGuard],
-    data: { roles: [RoleName.ADMIN] }
-  },
-  {
-    path: 'admin/blood-banks',
-    component: AdminBloodBankManagerComponent,
-    canActivate: [HasRoleGuard],
-    data: { roles: [RoleName.ADMIN] }
-  },
-  {
-    path: 'admin/hospitals',
-    component: AdminHospitalManagerComponent,
-    canActivate: [HasRoleGuard],
-    data: { roles: [RoleName.ADMIN] }
+    data: { roles: [RoleName.ADMIN], breadcrumb: 'breadcumb.admin' },
+    children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'users'
+      },
+      {
+        path: 'users',
+        component: AdminUserManagerComponent,
+        data: { breadcrumb: 'breadcumb.users' }
+      },
+      {
+        path: 'blood-camps',
+        component: AdminBloodCampManagerComponent,
+        data: { breadcrumb: 'breadcumb.bloodCamps' }
+      },
+      {
+        path: 'blood-test-centers',
+        component: AdminBloodTestCenterManagerComponent,
+        data: { breadcrumb: 'breadcumb.bloodTestCenters' }
+      },
+      {
+        path: 'blood-separation-centers',
+        component: AdminBloodSeparationCenterManagerComponent,
+        data: { breadcrumb: 'breadcumb.bloodSeparationCenters' }
+      },
+      {
+        path: 'blood-banks',
+        component: AdminBloodBankManagerComponent,
+        data: { breadcrumb: 'breadcumb.bloodBanks' }
+      },
+      {
+        path: 'hospitals',
+        component: AdminHospitalManagerComponent,
+        data: { breadcrumb: 'breadcumb.hospitals' }
+      }
+    ]
   }
 ];
 

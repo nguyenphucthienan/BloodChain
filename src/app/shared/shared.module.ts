@@ -10,6 +10,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { SidebarModule } from 'ng-sidebar';
 import { environment } from 'src/environments/environment';
 
+import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MapInputComponent } from './components/map-input/map-input.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
@@ -24,7 +25,8 @@ export function createTranslateLoader(http: HttpClient) {
     HeaderComponent,
     SidebarComponent,
     PaginationComponent,
-    MapInputComponent
+    MapInputComponent,
+    BreadcrumbComponent
   ],
   imports: [
     CommonModule,
@@ -56,7 +58,8 @@ export function createTranslateLoader(http: HttpClient) {
     HeaderComponent,
     SidebarComponent,
     PaginationComponent,
-    MapInputComponent
+    MapInputComponent,
+    BreadcrumbComponent
   ],
 })
 export class SharedModule { }

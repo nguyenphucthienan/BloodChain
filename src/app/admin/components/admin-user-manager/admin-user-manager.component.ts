@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { fromEvent, Subscription } from 'rxjs';
 import { debounceTime, map, tap } from 'rxjs/operators';
@@ -26,10 +26,12 @@ export class AdminUserManagerComponent implements OnInit, AfterViewInit, OnDestr
 
   constructor(
     public userManagerTableService: UserManagerTableService,
+    private renderer: Renderer2,
     private modalService: MDBModalService
   ) { }
 
   ngOnInit() {
+    this.renderer.addClass(document.body, 'grey-background');
   }
 
   ngAfterViewInit() {
@@ -93,6 +95,7 @@ export class AdminUserManagerComponent implements OnInit, AfterViewInit, OnDestr
   }
 
   ngOnDestroy() {
+    this.renderer.removeClass(document.body, 'grey-background');
     this.searchSubscription.unsubscribe();
   }
 
