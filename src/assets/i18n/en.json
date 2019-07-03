@@ -19,6 +19,9 @@
     "column": {
       "id": "ID",
       "name": "Name",
+      "username": "Username",
+      "firstName": "First Name",
+      "lastName": "Last Name",
       "address": "Address",
       "email": "Email",
       "phone": "Phone",
@@ -51,6 +54,7 @@
   },
   "sidebar": {
     "title": {
+      "users": "Users",
       "bloodCamps": "Blood Camps",
       "bloodTestCenters": "Blood Test Centers",
       "bloodSeparationCenters": "Blood Separation Centers",
@@ -68,6 +72,7 @@
   },
   "table": {
     "name": {
+      "userManager": "USERS",
       "bloodCampManager": "BLOOD CAMPS"
     }
   },
@@ -131,8 +136,22 @@
       "registerFailed": "Register failed"
     }
   },
+  "users": {
+    "title": "Users"
+  },
   "bloodCamps": {
     "title": "Blood Camps"
+  },
+  "userManager": {
+    "button": {
+      "add": "Add User"
+    },
+    "column": {
+      "roles": "Roles"
+    },
+    "placeholder": {
+      "search": "Search by username (min 3 characters)"
+    }
   },
   "bloodCampManager": {
     "button": {

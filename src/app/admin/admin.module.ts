@@ -13,6 +13,7 @@ import {
   AdminBloodTestCenterManagerComponent,
 } from './components/admin-blood-test-center-manager/admin-blood-test-center-manager.component';
 import { AdminHospitalManagerComponent } from './components/admin-hospital-manager/admin-hospital-manager.component';
+import { AdminUserManagerComponent } from './components/admin-user-manager/admin-user-manager.component';
 import { BloodCampAddModalComponent } from './modals/blood-camp-add-modal/blood-camp-add-modal.component';
 import { BloodCampDeleteModalComponent } from './modals/blood-camp-delete-modal/blood-camp-delete-modal.component';
 import { BloodCampUpdateModalComponent } from './modals/blood-camp-update-modal/blood-camp-update-modal.component';
@@ -20,6 +21,7 @@ import { BloodCampUpdateModalComponent } from './modals/blood-camp-update-modal/
 @NgModule({
   declarations: [
     AdminComponent,
+    AdminUserManagerComponent,
     AdminBloodCampManagerComponent,
     AdminBloodTestCenterManagerComponent,
     AdminBloodSeparationCenterManagerComponent,

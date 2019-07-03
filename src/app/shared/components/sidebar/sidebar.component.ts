@@ -10,6 +10,7 @@ import { AuthService } from 'src/app/core/services/auth.service';
 export class SidebarComponent implements OnInit {
 
   readonly adminRoutes = [
+    { path: '/admin/users', title: 'sidebar.title.users', icon: 'users' },
     { path: '/admin/blood-camps', title: 'sidebar.title.bloodCamps', icon: 'map' },
     { path: '/admin/blood-test-centers', title: 'sidebar.title.bloodTestCenters', icon: 'vial' },
     { path: '/admin/blood-separation-centers', title: 'sidebar.title.bloodSeparationCenters', icon: 'columns' },

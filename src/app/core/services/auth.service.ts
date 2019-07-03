@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 @Injectable()
 export class AuthService {
 
-  private readonly AUTH_URL = `${environment.apiUrl}/auth`;
+  private readonly authUrl = `${environment.apiUrl}/auth`;
 
   private jwtHelper = new JwtHelperService();
   private decodedToken: any;
@@ -33,11 +33,11 @@ export class AuthService {
 
   register({ username, password, email, firstName, lastName }: any) {
     const user = { username, password, email, firstName, lastName };
-    return this.http.post(`${this.AUTH_URL}/register`, user);
+    return this.http.post(`${this.authUrl}/register`, user);
   }
 
   login(model: { username: string, password: string }) {
-    return this.http.post(`${this.AUTH_URL}/login`, model)
+    return this.http.post(`${this.authUrl}/login`, model)
       .pipe(
         map(({ accessToken }: any) => {
           if (accessToken) {
@@ -68,7 +68,7 @@ export class AuthService {
   getMyUserInfo() {
     const token = localStorage.getItem(environment.authTokenName);
     const headers = new HttpHeaders({ Authorization: `Bearer ${token}` });
-    return this.http.get(`${this.AUTH_URL}/me`, { headers });
+    return this.http.get(`${this.authUrl}/me`, { headers });
   }
 
   isRoleMatch(allowedRoles: string[]): boolean {

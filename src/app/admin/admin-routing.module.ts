@@ -12,8 +12,15 @@ import {
   AdminBloodTestCenterManagerComponent,
 } from './components/admin-blood-test-center-manager/admin-blood-test-center-manager.component';
 import { AdminHospitalManagerComponent } from './components/admin-hospital-manager/admin-hospital-manager.component';
+import { AdminUserManagerComponent } from './components/admin-user-manager/admin-user-manager.component';
 
 const routes: Routes = [
+  {
+    path: 'admin/users',
+    component: AdminUserManagerComponent,
+    canActivate: [HasRoleGuard],
+    data: { roles: [RoleName.ADMIN] }
+  },
   {
     path: 'admin/blood-camps',
     component: AdminBloodCampManagerComponent,

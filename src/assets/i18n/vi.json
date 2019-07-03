@@ -19,6 +19,9 @@
     "column": {
       "id": "ID",
       "name": "Tên",
+      "username": "Tên đăng nhập",
+      "firstName": "Họ",
+      "lastName": "Tên",
       "address": "Địa chỉ",
       "email": "Email",
       "phone": "Số điện thoại",
@@ -51,6 +54,7 @@
   },
   "sidebar": {
     "title": {
+      "users": "Người dùng",
       "bloodCamps": "Trung tâm hiến máu",
       "bloodTestCenters": "Trung tâm xét nghiệm",
       "bloodSeparationCenters": "Trung tâm phân tách",
@@ -68,6 +72,7 @@
   },
   "table": {
     "name": {
+      "userManager": "NGƯỜI DÙNG",
       "bloodCampManager": "TRUNG TÂM HIẾN MÁU"
     }
   },
@@ -131,8 +136,22 @@
       "registerFailed": "Đăng kí không thành công"
     }
   },
+  "users": {
+    "title": "Người dùng"
+  },
   "bloodCamps": {
     "title": "Trung tâm hiến máu"
+  },
+  "userManager": {
+    "button": {
+      "add": "Thêm người dùng"
+    },
+    "column": {
+      "roles": "Vai trò"
+    },
+    "placeholder": {
+      "search": "Tìm kiếm theo tên đăng nhập (tối thiểu 3 kí tự)"
+    }
   },
   "bloodCampManager": {
     "button": {

@@ -5,16 +5,16 @@ import { ParamsBuilder } from 'src/app/utils/params-builder';
 import { UrlUtils } from 'src/app/utils/url-utils';
 import { environment } from 'src/environments/environment';
 
-import { BloodCamp } from '../models/blood-camp.interface';
 import { FilterMode } from '../models/filter-mode.interface';
 import { Pagination } from '../models/pagination.interface';
 import { SortMode } from '../models/sort-mode.interface';
+import { User } from '../models/user.interface';
 
 @Injectable()
-export class BloodCampService {
+export class UserService {
 
-  private readonly bloodCampsUrl = `${environment.apiUrl}/blood-camps`;
-  private readonly bloodCampUrl = `${environment.apiUrl}/users/{id}`;
+  private readonly usersUrl = `${environment.apiUrl}/users`;
+  private readonly userUrl = `${environment.apiUrl}/users/{id}`;
 
   private readonly defaultPagination: Pagination = {
     page: 1,
@@ -28,37 +28,37 @@ export class BloodCampService {
 
   constructor(private http: HttpClient) { }
 
-  getBloodCamps(
+  getUsers(
     pagination: Pagination = this.defaultPagination,
     sortMode: SortMode = this.defaultSortMode,
     filterMode?: FilterMode
-  ): Observable<BloodCamp[]> {
+  ): Observable<User[]> {
     const params = new ParamsBuilder()
       .applyPagination(pagination)
       .applySort(sortMode)
       .applyFilter(filterMode)
       .build();
 
-    return this.http.get<BloodCamp[]>(`${this.bloodCampsUrl}`, { params });
+    return this.http.get<User[]>(`${this.usersUrl}`, { params });
   }
 
-  getBloodCamp(id: string): Observable<BloodCamp> {
-    const url = UrlUtils.resolvePathVariables(this.bloodCampUrl, { id });
-    return this.http.get<BloodCamp>(url);
+  getUser(id: string): Observable<User> {
+    const url = UrlUtils.resolvePathVariables(this.userUrl, { id });
+    return this.http.get<User>(url);
   }
 
-  createBloodCamp(bloodCamp: BloodCamp): Observable<BloodCamp> {
-    return this.http.post<BloodCamp>(`${this.bloodCampsUrl}`, bloodCamp);
+  createUser(user: User): Observable<User> {
+    return this.http.post<User>(`${this.usersUrl}`, user);
   }
 
-  updateBloodCamp(id: string, bloodCamp: BloodCamp): Observable<BloodCamp> {
-    const url = UrlUtils.resolvePathVariables(this.bloodCampUrl, { id });
-    return this.http.put<BloodCamp>(url, bloodCamp);
+  updateUser(id: string, user: User): Observable<User> {
+    const url = UrlUtils.resolvePathVariables(this.userUrl, { id });
+    return this.http.put<User>(url, user);
   }
 
-  deleteBloodCamp(id: string): Observable<BloodCamp> {
-    const url = UrlUtils.resolvePathVariables(this.bloodCampUrl, { id });
-    return this.http.delete<BloodCamp>(url);
+  deleteUser(id: string): Observable<User> {
+    const url = UrlUtils.resolvePathVariables(this.userUrl, { id });
+    return this.http.delete<User>(url);
   }
 
 }
