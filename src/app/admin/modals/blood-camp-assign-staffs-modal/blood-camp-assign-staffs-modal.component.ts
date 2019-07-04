@@ -69,7 +69,7 @@ export class BloodCampAssignStaffsModalComponent implements OnInit {
       });
   }
 
-  update() {
+  assignStaffs() {
     this.userService.assignOrganization(
       this.staffsForm.value.userIds,
       RoleName.BLOOD_CAMP,

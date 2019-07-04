@@ -43,11 +43,16 @@
             </div>
             <div class="font-weight-bold mr-4">
               {{ 'pagination.label.results' | translate }}:
-              {{ (tableService.pagination.page - 1) * tableService.pagination.size + 1 }}
+              {{ 
+                tableService.pagination.totalItems > 0 
+                ? (tableService.pagination.page - 1) * tableService.pagination.size + 1 
+                : 0
+              }}
               {{ 'pagination.label.to' | translate }}
-              {{ tableService.pagination.page * tableService.pagination.size > tableService.pagination.totalItems 
-                ? tableService.pagination.totalItems : 
-                tableService.pagination.page * tableService.pagination.size
+              {{ 
+                tableService.pagination.page * tableService.pagination.size > tableService.pagination.totalItems 
+                ? tableService.pagination.totalItems
+                : tableService.pagination.page * tableService.pagination.size
                }}
               {{ 'pagination.label.of' | translate }}
               {{ tableService.pagination.totalItems }}

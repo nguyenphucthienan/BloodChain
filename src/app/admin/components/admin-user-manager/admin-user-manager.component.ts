@@ -46,7 +46,7 @@ export class AdminUserManagerComponent implements OnInit, AfterViewInit, OnDestr
 
   searchUser(value: string) {
     if (value.length === 0 || value.length > 2) {
-      this.userManagerTableService.pagination.page = 0;
+      this.userManagerTableService.pagination.page = 1;
       this.userManagerTableService.filterMode.username = value;
       this.datatable.refresh();
     }

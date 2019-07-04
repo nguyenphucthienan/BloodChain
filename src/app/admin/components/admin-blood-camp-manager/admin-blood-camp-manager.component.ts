@@ -52,7 +52,7 @@ export class AdminBloodCampManagerComponent implements OnInit, AfterViewInit, On
 
   searchBloodCamp(value: string) {
     if (value.length === 0 || value.length > 2) {
-      this.bloodCampManagerTableService.pagination.page = 0;
+      this.bloodCampManagerTableService.pagination.page = 1;
       this.bloodCampManagerTableService.filterMode.name = value;
       this.datatable.refresh();
     }

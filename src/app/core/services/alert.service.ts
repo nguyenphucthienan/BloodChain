@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { ToastrService } from 'ngx-toastr';
 
 @Injectable()
 export class AlertService {
 
-  constructor(private toastr: ToastrService) { }
+  constructor(
+    private toastr: ToastrService,
+    private translate: TranslateService
+  ) { }
 
   success(message: string, title: string = 'Success') {
     this.toastr.success(message, title);
