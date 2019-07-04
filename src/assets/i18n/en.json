@@ -62,6 +62,7 @@
   },
   "breadcumb": {
     "admin": "Admin",
+    "manager": "Manager",
     "users": "Users",
     "bloodCamps": "Blood Camps",
     "bloodTestCenters": "Blood Test Centers",

@@ -62,6 +62,7 @@
   },
   "breadcumbs": {
     "admin": "Quản trị",
+    "manager": "Quản lí",
     "users": "Người dùng",
     "bloodCamps": "Trung tâm hiến máu",
     "bloodTestCenters": "Trung tâm xét nghiệm",
