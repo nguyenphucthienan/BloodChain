@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { TranslateService } from '@ngx-translate/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MDBModalRef } from 'angular-bootstrap-md';
 import { concat, Observable, of, Subject } from 'rxjs';
 import { catchError, debounceTime, distinctUntilChanged, filter, map, switchMap, tap } from 'rxjs/operators';
@@ -36,13 +35,12 @@ export class BloodCampAssignStaffsModalComponent implements OnInit {
     private fb: FormBuilder,
     private userService: UserService,
     private bloodCampService: BloodCampService,
-    private alertService: AlertService,
-    private translate: TranslateService
+    private alertService: AlertService
   ) { }
 
   ngOnInit() {
     this.staffsForm = this.fb.group({
-      userIds: [null]
+      userIds: [[], Validators.required]
     });
 
     this.bloodCampService.getStaffsOfBloodCamp(this.bloodCampId)
@@ -77,13 +75,9 @@ export class BloodCampAssignStaffsModalComponent implements OnInit {
     ).subscribe(
       (result: any) => {
         this.bloodCampStaffUpdated.emit(result);
-        this.translate.get('common.alert.assignStaffsSuccess')
-          .subscribe(assignStaffsSuccess => this.alertService.success(assignStaffsSuccess));
+        this.alertService.success('common.alert.assignStaffsSuccess');
       },
-      error => {
-        this.translate.get('common.alert.assignStaffsFailed')
-          .subscribe(assignStaffsFailed => this.alertService.error(assignStaffsFailed));
-      }
+      error => this.alertService.error('common.alert.assignStaffsFailed')
     );
   }
 

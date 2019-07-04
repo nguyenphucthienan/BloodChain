@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { TranslateService } from '@ngx-translate/core';
 import { MDBModalRef } from 'angular-bootstrap-md';
 import { BloodCamp } from 'src/app/core/models/blood-camp.interface';
 import { AlertService } from 'src/app/core/services/alert.service';
@@ -24,8 +23,7 @@ export class BloodCampUpdateModalComponent implements OnInit {
     public modalRef: MDBModalRef,
     private fb: FormBuilder,
     private bloodCampService: BloodCampService,
-    private alertService: AlertService,
-    private translate: TranslateService
+    private alertService: AlertService
   ) { }
 
   ngOnInit() {
@@ -50,13 +48,9 @@ export class BloodCampUpdateModalComponent implements OnInit {
     ).subscribe(
       (bloodCamp: BloodCamp) => {
         this.bloodCampUpdated.emit(bloodCamp);
-        this.translate.get('bloodCampManager.alert.updateSuccess')
-          .subscribe(updateSuccess => this.alertService.success(updateSuccess));
+        this.alertService.success('bloodCampManager.alert.updateSuccess');
       },
-      error => {
-        this.translate.get('bloodCampManager.alert.updateFailed')
-          .subscribe(updateFailed => this.alertService.error(updateFailed));
-      }
+      error => this.alertService.error('bloodCampManager.alert.updateFailed')
     );
   }
 

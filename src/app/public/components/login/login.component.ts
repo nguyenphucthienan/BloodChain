@@ -3,8 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertService } from 'src/app/core/services/alert.service';
 import { AuthService } from 'src/app/core/services/auth.service';
-import { TranslateService } from '@ngx-translate/core';
-import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login',
@@ -19,8 +17,7 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private fb: FormBuilder,
     private authService: AuthService,
-    private alertService: AlertService,
-    private translate: TranslateService
+    private alertService: AlertService
   ) { }
 
   ngOnInit() {
@@ -34,18 +31,10 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.loginForm.value)
       .subscribe(
         () => {
-          this.translate.get('login.alert.loginSuccess')
-            .pipe(
-              tap(loginSucess => {
-                this.alertService.success(loginSucess);
-                this.router.navigate(['/']);
-              })
-            ).subscribe();
+          this.alertService.success('login.alert.loginSuccess');
+          this.router.navigate(['/']);
         },
-        error => {
-          this.translate.get('login.alert.loginFailed')
-            .subscribe(loginFailed => this.alertService.error(loginFailed));
-        }
+        error => this.alertService.error('login.alert.loginFailed')
       );
   }
 

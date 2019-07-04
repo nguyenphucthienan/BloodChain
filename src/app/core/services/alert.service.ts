@@ -10,20 +10,24 @@ export class AlertService {
     private translate: TranslateService
   ) { }
 
-  success(message: string, title: string = 'Success') {
-    this.toastr.success(message, title);
+  success(message: string, title: string = 'common.alert.success') {
+    this.translate.get([message, title])
+      .subscribe(result => this.toastr.success(result[message], result[title]));
   }
 
-  error(message: string, title: string = 'Error') {
-    this.toastr.error(message, title);
+  error(message: string, title: string = 'common.alert.error') {
+    this.translate.get([message, title])
+      .subscribe(result => this.toastr.error(result[message], result[title]));
   }
 
-  info(message: string, title: string = 'Info') {
-    this.toastr.info(message, title);
+  info(message: string, title: string = 'common.alert.info') {
+    this.translate.get([message, title])
+      .subscribe(result => this.toastr.info(result[message], result[title]));
   }
 
-  warning(message: string, title: string = 'Warning') {
-    this.toastr.warning(message, title);
+  warning(message: string, title: string = 'common.alert.warning') {
+    this.translate.get([message, title])
+      .subscribe(result => this.toastr.warning(result[message], result[title]));
   }
 
 }

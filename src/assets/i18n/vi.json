@@ -11,6 +11,10 @@
       "cancel": "Hủy"
     },
     "alert": {
+      "success": "Thành công",
+      "error": "Lỗi",
+      "info": "Thông tin",
+      "warning": "Cảnh báo",
       "alreadyLoggedIn": "Bạn đã đăng nhập",
       "mustBeLoggedIn": "Bạn chưa đăng nhập",
       "cannotAccess": "Bạn không thể vào trang này",

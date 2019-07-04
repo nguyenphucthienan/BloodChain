@@ -4,7 +4,6 @@ import { MDBModalRef } from 'angular-bootstrap-md';
 import { BloodCamp } from 'src/app/core/models/blood-camp.interface';
 import { AlertService } from 'src/app/core/services/alert.service';
 import { BloodCampService } from 'src/app/core/services/blood-camp.service';
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-blood-camp-add-modal',
@@ -21,8 +20,7 @@ export class BloodCampAddModalComponent implements OnInit {
     public modalRef: MDBModalRef,
     private fb: FormBuilder,
     private bloodCampService: BloodCampService,
-    private alertService: AlertService,
-    private translate: TranslateService
+    private alertService: AlertService
   ) { }
 
   ngOnInit() {
@@ -40,13 +38,9 @@ export class BloodCampAddModalComponent implements OnInit {
       .subscribe(
         (bloodCamp: BloodCamp) => {
           this.bloodCampAdded.emit(bloodCamp);
-          this.translate.get('bloodCampManager.alert.addSuccess')
-            .subscribe(addSuccess => this.alertService.success(addSuccess));
+          this.alertService.success('bloodCampManager.alert.addSuccess');
         },
-        error => {
-          this.translate.get('bloodCampManager.alert.addFailed')
-            .subscribe(addFailed => this.alertService.success(addFailed));
-        }
+        error => this.alertService.error('bloodCampManager.alert.addFailed')
       );
   }
 

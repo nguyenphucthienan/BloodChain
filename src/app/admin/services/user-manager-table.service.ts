@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 import { map } from 'rxjs/operators';
 import { FilterMode } from 'src/app/core/models/filter-mode.interface';
 import { Pagination } from 'src/app/core/models/pagination.interface';
@@ -47,8 +46,7 @@ export class UserManagerTableService implements TableService {
 
   constructor(
     private userService: UserService,
-    private alertService: AlertService,
-    private translate: TranslateService
+    private alertService: AlertService
   ) { }
 
   getDataColumns() {
@@ -101,10 +99,7 @@ export class UserManagerTableService implements TableService {
 
         return this.rows;
       })
-      .catch(error => {
-        this.translate.get('common.alert.getDataFailed')
-          .subscribe(getDataFailed => this.alertService.error(getDataFailed));
-      });
+      .catch(error => this.alertService.error('common.alert.getDataFailed'));
   }
 
 }

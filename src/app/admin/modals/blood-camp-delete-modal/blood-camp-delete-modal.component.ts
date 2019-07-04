@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 import { MDBModalRef } from 'angular-bootstrap-md';
 import { AlertService } from 'src/app/core/services/alert.service';
 import { BloodCampService } from 'src/app/core/services/blood-camp.service';
@@ -21,8 +20,7 @@ export class BloodCampDeleteModalComponent implements OnInit {
   constructor(
     public modalRef: MDBModalRef,
     private bloodCampService: BloodCampService,
-    private alertService: AlertService,
-    private translate: TranslateService
+    private alertService: AlertService
   ) { }
 
   ngOnInit() {
@@ -34,13 +32,9 @@ export class BloodCampDeleteModalComponent implements OnInit {
       .subscribe(
         () => {
           this.bloodCampDeleted.emit();
-          this.translate.get('bloodCampManager.alert.deleteSuccess')
-            .subscribe(deleteSuccess => this.alertService.success(deleteSuccess));
+          this.alertService.success('bloodCampManager.alert.deleteSuccess');
         },
-        error => {
-          this.translate.get('bloodCampManager.alert.deleteFailed')
-            .subscribe(deleteFailed => this.alertService.success(deleteFailed));
-        }
+        error => this.alertService.success('bloodCampManager.alert.deleteFailed')
       );
   }
 
