@@ -10,5 +10,6 @@ export enum TableActionType {
   GetDetail,
   Update,
   Delete,
-  DeleteAll
+  DeleteAll,
+  Assign
 }

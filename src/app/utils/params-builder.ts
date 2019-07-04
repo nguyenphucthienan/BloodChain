@@ -12,6 +12,13 @@ export class ParamsBuilder {
     this.params = new HttpParams();
   }
 
+  setParam(key: string, value: string) {
+    this.params = this.params
+      .set(key, value);
+
+    return this;
+  }
+
   applyPagination(pagination: Pagination) {
     this.params = this.params
       .set('page', pagination.page.toString())

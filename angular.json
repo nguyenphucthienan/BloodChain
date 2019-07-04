@@ -34,6 +34,7 @@
               "node_modules/angular-bootstrap-md/scss/bootstrap/bootstrap.scss",
               "node_modules/angular-bootstrap-md/scss/mdb-free.scss",
               "node_modules/ngx-toastr/toastr.css",
+              "node_modules/@ng-select/ng-select/themes/material.theme.css",
               "src/styles.scss"
             ],
             "scripts": [

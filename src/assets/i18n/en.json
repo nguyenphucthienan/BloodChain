@@ -14,7 +14,9 @@
       "alreadyLoggedIn": "You are already logged in",
       "mustBeLoggedIn": "You must be logged in",
       "cannotAccess": "You cannot access this area",
-      "getDataFailed": "Get data failed"
+      "getDataFailed": "Get data failed",
+      "assignStaffsSuccess": "Assign staffs successfully",
+      "assignStaffsFailed": "Assign staffs failed"
     },
     "column": {
       "id": "ID",
@@ -28,13 +30,15 @@
       "actions": "Actions"
     },
     "placeholder": {
-      "searchLocation": "Search location"
+      "searchLocation": "Search location",
+      "searchByUsername": "Search by username (min 3 characters)"
     },
     "tooltip": {
       "refresh": "Refresh",
       "detail": "Detail",
       "update": "Update",
-      "delete": "Delete"
+      "delete": "Delete",
+      "assign": "Assign"
     },
     "message": {
       "areYouSure": "Are you sure you want to delete"
@@ -171,6 +175,7 @@
     },
     "modal": {
       "add": "Add New Blood Camp",
+      "assign": "Assign Staffs",
       "update": "Update Blood Camp",
       "delete": "Delete Blood Camp"
     },
@@ -178,7 +183,8 @@
       "name": "Name",
       "address": "Address",
       "email": "Email",
-      "phone": "Phone"
+      "phone": "Phone",
+      "searchStaffs": "Search and select staffs"
     },
     "message": {
       "nameRequired": "Name is required",

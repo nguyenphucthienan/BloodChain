@@ -12,6 +12,7 @@ import { NotLoggedInGuard } from './guards/not-logged-in.guard';
 import { AlertService } from './services/alert.service';
 import { AuthService } from './services/auth.service';
 import { BloodCampService } from './services/blood-camp.service';
+import { RoleService } from './services/role.service';
 import { UserService } from './services/user.service';
 
 export function tokenGetter() {
@@ -48,6 +49,7 @@ const toastrOptions = {
     HasRoleGuard,
     AlertService,
     UserService,
+    RoleService,
     BloodCampService
   ]
 })

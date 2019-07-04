@@ -9,12 +9,14 @@ import { BloodCamp } from '../models/blood-camp.interface';
 import { FilterMode } from '../models/filter-mode.interface';
 import { Pagination } from '../models/pagination.interface';
 import { SortMode } from '../models/sort-mode.interface';
+import { User } from '../models/user.interface';
 
 @Injectable()
 export class BloodCampService {
 
   private readonly bloodCampsUrl = `${environment.apiUrl}/blood-camps`;
-  private readonly bloodCampUrl = `${environment.apiUrl}/users/{id}`;
+  private readonly bloodCampUrl = `${environment.apiUrl}/blood-camps/{id}`;
+  private readonly bloodCampStaffsUrl = `${environment.apiUrl}/blood-camps/{id}/staffs`;
 
   private readonly defaultPagination: Pagination = {
     page: 1,
@@ -59,6 +61,11 @@ export class BloodCampService {
   deleteBloodCamp(id: string): Observable<BloodCamp> {
     const url = UrlUtils.resolvePathVariables(this.bloodCampUrl, { id });
     return this.http.delete<BloodCamp>(url);
+  }
+
+  getStaffsOfBloodCamp(id: string): Observable<User[]> {
+    const url = UrlUtils.resolvePathVariables(this.bloodCampStaffsUrl, { id });
+    return this.http.get<User[]>(url);
   }
 
 }

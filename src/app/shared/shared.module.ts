@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { NgSelectModule } from '@ng-select/ng-select';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
@@ -46,6 +47,7 @@ export function createTranslateLoader(http: HttpClient) {
       apiKey: environment.mapApiKey,
       libraries: ['places']
     }),
+    NgSelectModule
   ],
   exports: [
     CommonModule,
@@ -55,6 +57,7 @@ export function createTranslateLoader(http: HttpClient) {
     SidebarModule.forRoot().ngModule,
     TranslateModule.forRoot().ngModule,
     AgmCoreModule.forRoot().ngModule,
+    NgSelectModule,
     HeaderComponent,
     SidebarComponent,
     PaginationComponent,

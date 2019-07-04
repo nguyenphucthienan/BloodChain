@@ -9,6 +9,9 @@ import { TableCellChange } from 'src/app/datatable/models/table-cell-change.inte
 import { TableRow } from 'src/app/datatable/models/table-row.interface';
 
 import { BloodCampAddModalComponent } from '../../modals/blood-camp-add-modal/blood-camp-add-modal.component';
+import {
+  BloodCampAssignStaffsModalComponent,
+} from '../../modals/blood-camp-assign-staffs-modal/blood-camp-assign-staffs-modal.component';
 import { BloodCampDeleteModalComponent } from '../../modals/blood-camp-delete-modal/blood-camp-delete-modal.component';
 import { BloodCampUpdateModalComponent } from '../../modals/blood-camp-update-modal/blood-camp-update-modal.component';
 import { BloodCampManagerTableService } from '../../services/blood-camp-manager-table.service';
@@ -61,6 +64,9 @@ export class AdminBloodCampManagerComponent implements OnInit, AfterViewInit, On
       case TableActionType.GetDetail:
         this.navigateToBloodCampDetail(tableCellChange.row.cells._id.value);
         break;
+      case TableActionType.Assign:
+        this.openBloodCampAssignStaffsModal(tableCellChange.row.cells._id.value);
+        break;
       case TableActionType.Update:
         this.openBloodCampUpdateModal(tableCellChange.row);
         break;
@@ -92,6 +98,29 @@ export class AdminBloodCampManagerComponent implements OnInit, AfterViewInit, On
   onBloodCampAdded(bloodCamp: BloodCamp) {
     this.modalRef.hide();
     this.datatable.refresh();
+  }
+
+  openBloodCampAssignStaffsModal(id: string) {
+    this.modalRef = this.modalService.show(BloodCampAssignStaffsModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-lg modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        bloodCampId: id,
+      }
+    });
+
+    this.modalRef.content.bloodCampStaffUpdated
+      .subscribe((result: any) => this.onBloodCampAssignedStaffs(result));
+  }
+
+  onBloodCampAssignedStaffs(result: any) {
+    this.modalRef.hide();
   }
 
   openBloodCampUpdateModal(rowData: TableRow) {

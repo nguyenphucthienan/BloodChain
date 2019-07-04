@@ -103,7 +103,7 @@ export class UserManagerTableService implements TableService {
       })
       .catch(error => {
         this.translate.get('common.alert.getDataFailed')
-          .subscribe(getDataFailed => this.alertService.success(getDataFailed));
+          .subscribe(getDataFailed => this.alertService.error(getDataFailed));
       });
   }
 

@@ -14,7 +14,9 @@
       "alreadyLoggedIn": "Bạn đã đăng nhập",
       "mustBeLoggedIn": "Bạn chưa đăng nhập",
       "cannotAccess": "Bạn không thể vào trang này",
-      "getDataFailed": "Tải dữ liệu không thành công"
+      "getDataFailed": "Tải dữ liệu không thành công",
+      "assignStaffsSuccess": "Cấp quyền thành công",
+      "assignStaffsFailed": "Cấp quyền không thành công"
     },
     "column": {
       "id": "ID",
@@ -28,13 +30,15 @@
       "actions": "Hành động"
     },
     "placeholder": {
-      "searchLocation": "Tìm kiếm địa điểm"
+      "searchLocation": "Tìm kiếm địa điểm",
+      "searchByUsername": "Tìm kiếm theo tên đăng nhập (tối thiểu 3 kí tự)"
     },
     "tooltip": {
       "refresh": "Làm mới",
       "detail": "Chi tiết",
       "update": "Cập nhật",
-      "delete": "Xóa"
+      "delete": "Xóa",
+      "assign": "Cấp quyền"
     },
     "message": {
       "areYouSure": "Bạn có chắc chắn rằng bạn muốn xóa"
@@ -171,6 +175,7 @@
     },
     "modal": {
       "add": "Thêm trung tâm",
+      "assign": "Cấp quyền",
       "update": "Cập nhật trung tâm",
       "delete": "Xóa trung tâm"
     },
@@ -178,7 +183,8 @@
       "name": "Tên",
       "address": "Địa chỉ",
       "email": "Email",
-      "phone": "Số điện thoại"
+      "phone": "Số điện thoại",
+      "searchStaffs": "Tìm kiếm và thêm nhân viên"
     },
     "message": {
       "nameRequired": "Tên không được bỏ trống",
