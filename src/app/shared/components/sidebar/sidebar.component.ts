@@ -15,12 +15,17 @@ export class SidebarComponent implements OnInit {
     { path: '/admin/blood-test-centers', title: 'sidebar.title.bloodTestCenters', icon: 'vial' },
     { path: '/admin/blood-separation-centers', title: 'sidebar.title.bloodSeparationCenters', icon: 'columns' },
     { path: '/admin/blood-banks', title: 'sidebar.title.bloodBanks', icon: 'university' },
-    { path: '/admin/hospitals', title: 'sidebar.title.hospital', icon: 'hospital' },
+    { path: '/admin/hospitals', title: 'sidebar.title.hospital', icon: 'hospital' }
+  ];
+
+  readonly bloodCampRoutes = [
+    { path: '/manager/users', title: 'sidebar.title.users', icon: 'users' }
   ];
 
   @Output() sidebarToggled = new EventEmitter();
 
   showAdminRoutes = false;
+  showBloodCampRoutes = false;
 
   constructor(private authService: AuthService) { }
 
@@ -34,6 +39,9 @@ export class SidebarComponent implements OnInit {
             switch (role) {
               case RoleName.ADMIN:
                 this.showAdminRoutes = true;
+                break;
+              case RoleName.BLOOD_CAMP:
+                this.showBloodCampRoutes = true;
                 break;
             }
           });
