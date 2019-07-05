@@ -9,6 +9,9 @@ import { TableCellChange } from 'src/app/datatable/models/table-cell-change.inte
 import { TableRow } from 'src/app/datatable/models/table-row.interface';
 
 import {
+  BloodTestCenterDeleteModalComponent,
+} from '../../modals/blood-test-center-delete-modal/blood-test-center-delete-modal.component';
+import {
   BloodTestCenterUpdateModalComponent,
 } from '../../modals/blood-test-center-update-modal/blood-test-center-update-modal.component';
 import { BloodTestCenterManagerTableService } from '../../services/blood-test-center-manager-table.service';
@@ -146,22 +149,22 @@ export class AdminBloodTestCenterManagerComponent implements OnInit, AfterViewIn
   }
 
   openBloodTestCenterDeleteModal(rowData: TableRow) {
-    // this.modalRef = this.modalService.show(BloodTestCenterDeleteModalComponent, {
-    //   backdrop: true,
-    //   keyboard: true,
-    //   focus: true,
-    //   show: false,
-    //   ignoreBackdropClick: true,
-    //   class: 'modal-dialog-centered',
-    //   containerClass: 'top',
-    //   animated: true,
-    //   data: {
-    //     rowData
-    //   }
-    // });
+    this.modalRef = this.modalService.show(BloodTestCenterDeleteModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        rowData
+      }
+    });
 
-    // this.modalRef.content.bloodTestCenterDeleted
-    //   .subscribe(() => this.onBloodTestCenterDeleted());
+    this.modalRef.content.bloodTestCenterDeleted
+      .subscribe(() => this.onBloodTestCenterDeleted());
   }
 
   onBloodTestCenterDeleted() {
