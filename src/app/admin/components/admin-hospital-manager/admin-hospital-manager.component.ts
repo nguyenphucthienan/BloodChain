@@ -8,6 +8,7 @@ import { TableActionType } from 'src/app/datatable/models/table-action.interface
 import { TableCellChange } from 'src/app/datatable/models/table-cell-change.interface';
 import { TableRow } from 'src/app/datatable/models/table-row.interface';
 
+import { HospitalAddModalComponent } from '../../modals/hospital-add-modal/hospital-add-modal.component';
 import { HospitalManagerTableService } from '../../services/hospital-manager-table.service';
 
 @Component({
@@ -74,19 +75,19 @@ export class AdminHospitalManagerComponent implements OnInit, AfterViewInit, OnD
   }
 
   openHospitalAddModal() {
-    // this.modalRef = this.modalService.show(HospitalAddModalComponent, {
-    //   backdrop: true,
-    //   keyboard: true,
-    //   focus: true,
-    //   show: false,
-    //   ignoreBackdropClick: true,
-    //   class: 'modal-lg modal-dialog-centered',
-    //   containerClass: 'top',
-    //   animated: true
-    // });
+    this.modalRef = this.modalService.show(HospitalAddModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-lg modal-dialog-centered',
+      containerClass: 'top',
+      animated: true
+    });
 
-    // this.modalRef.content.hospitalAdded
-    //   .subscribe((hospital: Hospital) => this.onHospitalAdded(hospital));
+    this.modalRef.content.hospitalAdded
+      .subscribe((hospital: Hospital) => this.onHospitalAdded(hospital));
   }
 
   onHospitalAdded(hospital: Hospital) {
