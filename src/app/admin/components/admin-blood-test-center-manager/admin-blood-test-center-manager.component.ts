@@ -9,6 +9,9 @@ import { TableCellChange } from 'src/app/datatable/models/table-cell-change.inte
 import { TableRow } from 'src/app/datatable/models/table-row.interface';
 
 import {
+  BloodTestCenterAssignStaffsModalComponent,
+} from '../../modals/blood-test-center-assign-staffs-modal/blood-test-center-assign-staffs-modal.component';
+import {
   BloodTestCenterDeleteModalComponent,
 } from '../../modals/blood-test-center-delete-modal/blood-test-center-delete-modal.component';
 import {
@@ -102,22 +105,22 @@ export class AdminBloodTestCenterManagerComponent implements OnInit, AfterViewIn
   }
 
   openBloodTestCenterAssignStaffsModal(id: string) {
-    // this.modalRef = this.modalService.show(BloodTestCenterAssignStaffsModalComponent, {
-    //   backdrop: true,
-    //   keyboard: true,
-    //   focus: true,
-    //   show: false,
-    //   ignoreBackdropClick: true,
-    //   class: 'modal-lg modal-dialog-centered',
-    //   containerClass: 'top',
-    //   animated: true,
-    //   data: {
-    //     bloodTestCenterId: id,
-    //   }
-    // });
+    this.modalRef = this.modalService.show(BloodTestCenterAssignStaffsModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-lg modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        bloodTestCenterId: id,
+      }
+    });
 
-    // this.modalRef.content.bloodTestCenterStaffUpdated
-    //   .subscribe((result: any) => this.onBloodTestCenterAssignedStaffs(result));
+    this.modalRef.content.bloodTestCenterStaffUpdated
+      .subscribe((result: any) => this.onBloodTestCenterAssignedStaffs(result));
   }
 
   onBloodTestCenterAssignedStaffs(result: any) {
