@@ -9,7 +9,8 @@
       "add": "Add",
       "update": "Update",
       "cancel": "Cancel",
-      "reset": "Reset"
+      "reset": "Reset",
+      "print": "Print"
     },
     "alert": {
       "success": "Success",
@@ -171,8 +172,8 @@
     },
     "label": {
       "username": "Username",
-      "firstName": "First Name",
-      "lastName": "Last Name",
+      "firstName": "First name",
+      "lastName": "Last name",
       "address": "Address",
       "email": "Email",
       "phone": "Phone"
@@ -195,6 +196,9 @@
     },
     "placeholder": {
       "search": "Search by username (min 3 characters)"
+    },
+    "modal": {
+      "userInfo": "User Info"
     }
   },
   "bloodCampManager": {

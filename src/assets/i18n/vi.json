@@ -9,7 +9,8 @@
       "add": "Thêm",
       "update": "Cập nhật",
       "cancel": "Hủy",
-      "reset": "Làm lại"
+      "reset": "Làm lại",
+      "print": "In"
     },
     "alert": {
       "success": "Thành công",
@@ -195,6 +196,9 @@
     },
     "placeholder": {
       "search": "Tìm kiếm theo tên đăng nhập (tối thiểu 3 kí tự)"
+    },
+    "modal": {
+      "userInfo": "Thông tin người dùng"
     }
   },
   "bloodCampManager": {
