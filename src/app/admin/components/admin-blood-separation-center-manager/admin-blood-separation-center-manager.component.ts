@@ -11,6 +11,9 @@ import { TableRow } from 'src/app/datatable/models/table-row.interface';
 import {
   BloodSeparationCenterAddModalComponent,
 } from '../../modals/blood-separation-center-add-modal/blood-separation-center-add-modal.component';
+import {
+  BloodSeparationCenterUpdateModalComponent,
+} from '../../modals/blood-separation-center-update-modal/blood-separation-center-update-modal.component';
 import { BloodSeparationCenterManagerTableService } from '../../services/blood-separation-center-manager-table.service';
 
 @Component({
@@ -121,22 +124,22 @@ export class AdminBloodSeparationCenterManagerComponent implements OnInit, After
   }
 
   openBloodSeparationCenterUpdateModal(rowData: TableRow) {
-    // this.modalRef = this.modalService.show(BloodSeparationCenterUpdateModalComponent, {
-    //   backdrop: true,
-    //   keyboard: true,
-    //   focus: true,
-    //   show: false,
-    //   ignoreBackdropClick: true,
-    //   class: 'modal-lg modal-dialog-centered',
-    //   containerClass: 'top',
-    //   animated: true,
-    //   data: {
-    //     rowData,
-    //   }
-    // });
+    this.modalRef = this.modalService.show(BloodSeparationCenterUpdateModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-lg modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        rowData,
+      }
+    });
 
-    // this.modalRef.content.bloodSeparationCenterUpdated
-    //   .subscribe((bloodSeparationCenter: BloodSeparationCenter) => this.onBloodSeparationCenterUpdated(bloodSeparationCenter));
+    this.modalRef.content.bloodSeparationCenterUpdated
+      .subscribe((bloodSeparationCenter: BloodSeparationCenter) => this.onBloodSeparationCenterUpdated(bloodSeparationCenter));
   }
 
   onBloodSeparationCenterUpdated(bloodSeparationCenter: BloodSeparationCenter) {
