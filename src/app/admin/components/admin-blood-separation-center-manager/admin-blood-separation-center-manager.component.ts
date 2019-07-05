@@ -12,6 +12,9 @@ import {
   BloodSeparationCenterAddModalComponent,
 } from '../../modals/blood-separation-center-add-modal/blood-separation-center-add-modal.component';
 import {
+  BloodSeparationCenterAssignStaffsModalComponent,
+} from '../../modals/blood-separation-center-assign-staffs-modal/blood-separation-center-assign-staffs-modal.component';
+import {
   BloodSeparationCenterDeleteModalComponent,
 } from '../../modals/blood-separation-center-delete-modal/blood-separation-center-delete-modal.component';
 import {
@@ -104,22 +107,22 @@ export class AdminBloodSeparationCenterManagerComponent implements OnInit, After
   }
 
   openBloodSeparationCenterAssignStaffsModal(id: string) {
-    // this.modalRef = this.modalService.show(BloodSeparationCenterAssignStaffsModalComponent, {
-    //   backdrop: true,
-    //   keyboard: true,
-    //   focus: true,
-    //   show: false,
-    //   ignoreBackdropClick: true,
-    //   class: 'modal-lg modal-dialog-centered',
-    //   containerClass: 'top',
-    //   animated: true,
-    //   data: {
-    //     bloodSeparationCenterId: id,
-    //   }
-    // });
+    this.modalRef = this.modalService.show(BloodSeparationCenterAssignStaffsModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-lg modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        bloodSeparationCenterId: id,
+      }
+    });
 
-    // this.modalRef.content.bloodSeparationCenterStaffUpdated
-    //   .subscribe((result: any) => this.onBloodSeparationCenterAssignedStaffs(result));
+    this.modalRef.content.bloodSeparationCenterStaffUpdated
+      .subscribe((result: any) => this.onBloodSeparationCenterAssignedStaffs(result));
   }
 
   onBloodSeparationCenterAssignedStaffs(result: any) {
