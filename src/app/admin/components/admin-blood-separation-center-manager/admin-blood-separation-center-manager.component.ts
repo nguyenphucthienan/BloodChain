@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, Renderer2, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { fromEvent, Subscription } from 'rxjs';
 import { debounceTime, map, tap } from 'rxjs/operators';
@@ -8,6 +8,9 @@ import { TableActionType } from 'src/app/datatable/models/table-action.interface
 import { TableCellChange } from 'src/app/datatable/models/table-cell-change.interface';
 import { TableRow } from 'src/app/datatable/models/table-row.interface';
 
+import {
+  BloodSeparationCenterAddModalComponent,
+} from '../../modals/blood-separation-center-add-modal/blood-separation-center-add-modal.component';
 import { BloodSeparationCenterManagerTableService } from '../../services/blood-separation-center-manager-table.service';
 
 @Component({
@@ -74,19 +77,19 @@ export class AdminBloodSeparationCenterManagerComponent implements OnInit, After
   }
 
   openBloodSeparationCenterAddModal() {
-    // this.modalRef = this.modalService.show(BloodSeparationCenterAddModalComponent, {
-    //   backdrop: true,
-    //   keyboard: true,
-    //   focus: true,
-    //   show: false,
-    //   ignoreBackdropClick: true,
-    //   class: 'modal-lg modal-dialog-centered',
-    //   containerClass: 'top',
-    //   animated: true
-    // });
+    this.modalRef = this.modalService.show(BloodSeparationCenterAddModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-lg modal-dialog-centered',
+      containerClass: 'top',
+      animated: true
+    });
 
-    // this.modalRef.content.bloodSeparationCenterAdded
-    //   .subscribe((bloodSeparationCenter: BloodSeparationCenter) => this.onBloodSeparationCenterAdded(bloodSeparationCenter));
+    this.modalRef.content.bloodSeparationCenterAdded
+      .subscribe((bloodSeparationCenter: BloodSeparationCenter) => this.onBloodSeparationCenterAdded(bloodSeparationCenter));
   }
 
   onBloodSeparationCenterAdded(bloodSeparationCenter: BloodSeparationCenter) {

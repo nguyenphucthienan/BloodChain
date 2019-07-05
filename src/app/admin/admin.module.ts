@@ -24,6 +24,9 @@ import {
 import { BloodCampDeleteModalComponent } from './modals/blood-camp-delete-modal/blood-camp-delete-modal.component';
 import { BloodCampUpdateModalComponent } from './modals/blood-camp-update-modal/blood-camp-update-modal.component';
 import {
+  BloodSeparationCenterAddModalComponent,
+} from './modals/blood-separation-center-add-modal/blood-separation-center-add-modal.component';
+import {
   BloodTestCenterAssignStaffsModalComponent,
 } from './modals/blood-test-center-assign-staffs-modal/blood-test-center-assign-staffs-modal.component';
 import {
@@ -49,7 +52,8 @@ import {
     BloodTestCenterAddModalComponent,
     BloodTestCenterUpdateModalComponent,
     BloodTestCenterDeleteModalComponent,
-    BloodTestCenterAssignStaffsModalComponent
+    BloodTestCenterAssignStaffsModalComponent,
+    BloodSeparationCenterAddModalComponent
   ],
   imports: [
     SharedModule,
@@ -64,7 +68,8 @@ import {
     BloodTestCenterAddModalComponent,
     BloodTestCenterUpdateModalComponent,
     BloodTestCenterDeleteModalComponent,
-    BloodTestCenterAssignStaffsModalComponent
+    BloodTestCenterAssignStaffsModalComponent,
+    BloodSeparationCenterAddModalComponent
   ]
 })
 export class AdminModule { }
