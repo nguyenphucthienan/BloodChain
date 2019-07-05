@@ -1,6 +1,6 @@
 import { Point } from './point.interface';
 
-export interface BloodCamp {
+export interface BloodTestCenter {
   _id: string;
   name: string;
   email: string;

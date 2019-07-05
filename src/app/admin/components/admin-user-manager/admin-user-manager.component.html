@@ -11,7 +11,7 @@
           [attr.placeholder]="'userManager.placeholder.search' | translate" mdbInput>
       </div>
       <div class="d-flex justify-content-end mt-3">
-        <button type="button" class="btn btn-sm btn-primary" (click)="openUserAddModal()">
+        <button type="button" class="btn btn-sm btn-primary" [routerLink]="['/manager', 'users', 'add']">
           {{ 'userManager.button.add' | translate }}
         </button>
       </div>

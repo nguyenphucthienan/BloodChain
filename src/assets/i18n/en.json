@@ -94,7 +94,8 @@
   "table": {
     "name": {
       "userManager": "USERS",
-      "bloodCampManager": "BLOOD CAMPS"
+      "bloodCampManager": "BLOOD CAMPS",
+      "bloodTestCenterManager": "BLOOD TEST CENTERS"
     }
   },
   "about": {
@@ -235,6 +236,41 @@
       "updateFailed": "Update blood camp failed",
       "deleteSuccess": "Delete blood camp successfully",
       "deleteFailed": "Delete blood camp failed"
+    }
+  },
+  "bloodTestCenterManager": {
+    "button": {
+      "add": "Add Blood Test Center"
+    },
+    "placeholder": {
+      "search": "Search by name (min 3 characters)"
+    },
+    "modal": {
+      "add": "Add New Blood Test Center",
+      "assign": "Assign Staffs",
+      "update": "Update Blood Test Center",
+      "delete": "Delete Blood Test Center"
+    },
+    "label": {
+      "name": "Name",
+      "address": "Address",
+      "email": "Email",
+      "phone": "Phone",
+      "searchStaffs": "Search and select staffs"
+    },
+    "message": {
+      "nameRequired": "Name is required",
+      "addressRequired": "Address is required",
+      "emailRequired": "Email is required",
+      "phoneRequired": "Phone is required"
+    },
+    "alert": {
+      "addSuccess": "Add blood test center successfully",
+      "addFailed": "Add blood test center failed",
+      "updateSuccess": "Update blood test center successfully",
+      "updateFailed": "Update blood test center failed",
+      "deleteSuccess": "Delete blood test center successfully",
+      "deleteFailed": "Delete blood test center failed"
     }
   }
 }
