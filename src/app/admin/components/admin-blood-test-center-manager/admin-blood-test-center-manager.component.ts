@@ -9,6 +9,7 @@ import { TableCellChange } from 'src/app/datatable/models/table-cell-change.inte
 import { TableRow } from 'src/app/datatable/models/table-row.interface';
 
 import { BloodTestCenterManagerTableService } from '../../services/blood-test-center-manager-table.service';
+import { BloodTestCenterAddModalComponent } from '../blood-test-center-add-modal/blood-test-center-add-modal.component';
 
 @Component({
   selector: 'app-admin-blood-test-center-manager',
@@ -74,19 +75,19 @@ export class AdminBloodTestCenterManagerComponent implements OnInit, AfterViewIn
   }
 
   openBloodTestCenterAddModal() {
-    // this.modalRef = this.modalService.show(BloodTestCenterAddModalComponent, {
-    //   backdrop: true,
-    //   keyboard: true,
-    //   focus: true,
-    //   show: false,
-    //   ignoreBackdropClick: true,
-    //   class: 'modal-lg modal-dialog-centered',
-    //   containerClass: 'top',
-    //   animated: true
-    // });
+    this.modalRef = this.modalService.show(BloodTestCenterAddModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-lg modal-dialog-centered',
+      containerClass: 'top',
+      animated: true
+    });
 
-    // this.modalRef.content.bloodTestCenterAdded
-    //   .subscribe((bloodTestCenter: BloodTestCenter) => this.onBloodTestCenterAdded(bloodTestCenter));
+    this.modalRef.content.bloodTestCenterAdded
+      .subscribe((bloodTestCenter: BloodTestCenter) => this.onBloodTestCenterAdded(bloodTestCenter));
   }
 
   onBloodTestCenterAdded(bloodTestCenter: BloodTestCenter) {
