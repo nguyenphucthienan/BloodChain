@@ -96,7 +96,8 @@
       "userManager": "USERS",
       "bloodCampManager": "BLOOD CAMPS",
       "bloodTestCenterManager": "BLOOD TEST CENTERS",
-      "bloodSeparationCenterManager": "BLOOD SEPARATION CENTERS"
+      "bloodSeparationCenterManager": "BLOOD SEPARATION CENTERS",
+      "bloodBankManager": "BLOOD BANKS"
     }
   },
   "about": {
@@ -307,6 +308,41 @@
       "updateFailed": "Update blood separation center failed",
       "deleteSuccess": "Delete blood separation center successfully",
       "deleteFailed": "Delete blood separation center failed"
+    }
+  },
+  "bloodBankManager": {
+    "button": {
+      "add": "Add Blood Bank"
+    },
+    "placeholder": {
+      "search": "Search by name (min 3 characters)"
+    },
+    "modal": {
+      "add": "Add New Blood Bank",
+      "assign": "Assign Staffs",
+      "update": "Update Blood Bank",
+      "delete": "Delete Blood Bank"
+    },
+    "label": {
+      "name": "Name",
+      "address": "Address",
+      "email": "Email",
+      "phone": "Phone",
+      "searchStaffs": "Search and select staffs"
+    },
+    "message": {
+      "nameRequired": "Name is required",
+      "addressRequired": "Address is required",
+      "emailRequired": "Email is required",
+      "phoneRequired": "Phone is required"
+    },
+    "alert": {
+      "addSuccess": "Add blood bank successfully",
+      "addFailed": "Add blood bank failed",
+      "updateSuccess": "Update blood bank successfully",
+      "updateFailed": "Update blood bank failed",
+      "deleteSuccess": "Delete blood bank successfully",
+      "deleteFailed": "Delete blood bank failed"
     }
   }
 }

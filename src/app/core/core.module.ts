@@ -11,6 +11,7 @@ import { HasRoleGuard } from './guards/has-role.guard';
 import { NotLoggedInGuard } from './guards/not-logged-in.guard';
 import { AlertService } from './services/alert.service';
 import { AuthService } from './services/auth.service';
+import { BloodBankService } from './services/blood-bank.service';
 import { BloodCampService } from './services/blood-camp.service';
 import { BloodSeparationCenterService } from './services/blood-separation-center.service';
 import { BloodTestCenterService } from './services/blood-test-center.service';
@@ -54,7 +55,8 @@ const toastrOptions = {
     RoleService,
     BloodCampService,
     BloodTestCenterService,
-    BloodSeparationCenterService
+    BloodSeparationCenterService,
+    BloodBankService
   ]
 })
 export class CoreModule {
