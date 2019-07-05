@@ -1,0 +1,52 @@
+<div class="modal-content">
+  <form [formGroup]="updateForm" (ngSubmit)="updateBloodBank()">
+    <div class="modal-header">
+      <button type="button" class="close pull-right" (click)="modalRef.hide()">
+        <span aria-hidden="true">×</span>
+      </button>
+      <h4 class="modal-title w-100" id="myModalLabel">{{ 'bloodBankManager.modal.update' | translate }}</h4>
+    </div>
+    <div class="modal-body">
+      <div class="md-form">
+        <input type="text" id="name" formControlName="name" class="form-control" mdbInput>
+        <label for="name">{{ 'bloodBankManager.label.name' | translate }}</label>
+        <mdb-error *ngIf="controlHasError('name', 'required')">
+          {{ 'bloodBankManager.message.nameRequired' | translate }}
+        </mdb-error>
+      </div>
+      <div class="md-form">
+        <input type="text" id="address" formControlName="address" class="form-control" mdbInput>
+        <label for="address">{{ 'bloodBankManager.label.address' | translate }}</label>
+        <mdb-error *ngIf="controlHasError('address', 'required')">
+          {{ 'bloodBankManager.message.addressRequired' | translate }}
+        </mdb-error>
+      </div>
+      <div class="md-form">
+        <input type="text" id="email" formControlName="email" class="form-control" mdbInput>
+        <label for="email">{{ 'bloodBankManager.label.email' | translate }}</label>
+        <mdb-error *ngIf="controlHasError('email', 'required')">
+          {{ 'bloodBankManager.message.emailRequired' | translate }}
+        </mdb-error>
+      </div>
+      <div class="md-form">
+        <input type="text" id="phone" formControlName="phone" class="form-control" mdbInput>
+        <label for="phone">{{ 'bloodBankManager.label.phone' | translate }}</label>
+        <mdb-error *ngIf="controlHasError('phone', 'required')">
+          {{ 'bloodBankManager.message.phoneRequired' | translate }}
+        </mdb-error>
+      </div>
+      <div class="md-form">
+        <app-map-input [lng]="rowData.cells['location'].value.coordinates[0]"
+          [lat]="rowData.cells['location'].value.coordinates[1]" (locationChanged)="changeLocation($event)">
+        </app-map-input>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" mdbBtn color="secondary" class=" waves-light" (click)="modalRef.hide()"
+        mdbWavesEffect>{{ 'common.button.cancel' | translate }}</button>
+      <button mdbBtn type="submit" color="primary" mdbWavesEffect [disabled]="updateForm.invalid">
+        {{ 'common.button.update' | translate }}
+      </button>
+    </div>
+  </form>
+</div>

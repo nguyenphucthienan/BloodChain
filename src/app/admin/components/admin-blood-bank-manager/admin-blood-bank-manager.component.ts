@@ -8,8 +8,9 @@ import { TableActionType } from 'src/app/datatable/models/table-action.interface
 import { TableCellChange } from 'src/app/datatable/models/table-cell-change.interface';
 import { TableRow } from 'src/app/datatable/models/table-row.interface';
 
-import { BloodBankManagerTableService } from '../../services/blood-bank-manager-table.service';
 import { BloodBankAddModalComponent } from '../../modals/blood-bank-add-modal/blood-bank-add-modal.component';
+import { BloodBankUpdateModalComponent } from '../../modals/blood-bank-update-modal/blood-bank-update-modal.component';
+import { BloodBankManagerTableService } from '../../services/blood-bank-manager-table.service';
 
 @Component({
   selector: 'app-admin-blood-bank-manager',
@@ -119,22 +120,22 @@ export class AdminBloodBankManagerComponent implements OnInit, AfterViewInit, On
   }
 
   openBloodBankUpdateModal(rowData: TableRow) {
-    // this.modalRef = this.modalService.show(BloodBankUpdateModalComponent, {
-    //   backdrop: true,
-    //   keyboard: true,
-    //   focus: true,
-    //   show: false,
-    //   ignoreBackdropClick: true,
-    //   class: 'modal-lg modal-dialog-centered',
-    //   containerClass: 'top',
-    //   animated: true,
-    //   data: {
-    //     rowData,
-    //   }
-    // });
+    this.modalRef = this.modalService.show(BloodBankUpdateModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-lg modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        rowData,
+      }
+    });
 
-    // this.modalRef.content.bloodBankUpdated
-    //   .subscribe((bloodBank: BloodBank) => this.onBloodBankUpdated(bloodBank));
+    this.modalRef.content.bloodBankUpdated
+      .subscribe((bloodBank: BloodBank) => this.onBloodBankUpdated(bloodBank));
   }
 
   onBloodBankUpdated(bloodBank: BloodBank) {
