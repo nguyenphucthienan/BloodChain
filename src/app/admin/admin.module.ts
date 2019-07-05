@@ -23,6 +23,9 @@ import {
 } from './modals/blood-camp-assign-staffs-modal/blood-camp-assign-staffs-modal.component';
 import { BloodCampDeleteModalComponent } from './modals/blood-camp-delete-modal/blood-camp-delete-modal.component';
 import { BloodCampUpdateModalComponent } from './modals/blood-camp-update-modal/blood-camp-update-modal.component';
+import {
+  BloodTestCenterUpdateModalComponent,
+} from './modals/blood-test-center-update-modal/blood-test-center-update-modal.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,8 @@ import { BloodCampUpdateModalComponent } from './modals/blood-camp-update-modal/
     BloodCampUpdateModalComponent,
     BloodCampDeleteModalComponent,
     BloodCampAssignStaffsModalComponent,
-    BloodTestCenterAddModalComponent
+    BloodTestCenterAddModalComponent,
+    BloodTestCenterUpdateModalComponent
   ],
   imports: [
     SharedModule,
@@ -49,7 +53,8 @@ import { BloodCampUpdateModalComponent } from './modals/blood-camp-update-modal/
     BloodCampUpdateModalComponent,
     BloodCampDeleteModalComponent,
     BloodCampAssignStaffsModalComponent,
-    BloodTestCenterAddModalComponent
+    BloodTestCenterAddModalComponent,
+    BloodTestCenterUpdateModalComponent
   ]
 })
 export class AdminModule { }

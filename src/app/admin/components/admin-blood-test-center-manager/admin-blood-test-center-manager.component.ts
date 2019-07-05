@@ -8,6 +8,9 @@ import { TableActionType } from 'src/app/datatable/models/table-action.interface
 import { TableCellChange } from 'src/app/datatable/models/table-cell-change.interface';
 import { TableRow } from 'src/app/datatable/models/table-row.interface';
 
+import {
+  BloodTestCenterUpdateModalComponent,
+} from '../../modals/blood-test-center-update-modal/blood-test-center-update-modal.component';
 import { BloodTestCenterManagerTableService } from '../../services/blood-test-center-manager-table.service';
 import { BloodTestCenterAddModalComponent } from '../blood-test-center-add-modal/blood-test-center-add-modal.component';
 
@@ -119,22 +122,22 @@ export class AdminBloodTestCenterManagerComponent implements OnInit, AfterViewIn
   }
 
   openBloodTestCenterUpdateModal(rowData: TableRow) {
-    // this.modalRef = this.modalService.show(BloodTestCenterUpdateModalComponent, {
-    //   backdrop: true,
-    //   keyboard: true,
-    //   focus: true,
-    //   show: false,
-    //   ignoreBackdropClick: true,
-    //   class: 'modal-lg modal-dialog-centered',
-    //   containerClass: 'top',
-    //   animated: true,
-    //   data: {
-    //     rowData,
-    //   }
-    // });
+    this.modalRef = this.modalService.show(BloodTestCenterUpdateModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-lg modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        rowData,
+      }
+    });
 
-    // this.modalRef.content.bloodTestCenterUpdated
-    //   .subscribe((bloodTestCenter: BloodTestCenter) => this.onBloodTestCenterUpdated(bloodTestCenter));
+    this.modalRef.content.bloodTestCenterUpdated
+      .subscribe((bloodTestCenter: BloodTestCenter) => this.onBloodTestCenterUpdated(bloodTestCenter));
   }
 
   onBloodTestCenterUpdated(bloodTestCenter: BloodTestCenter) {
