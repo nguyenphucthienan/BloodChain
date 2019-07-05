@@ -69,7 +69,7 @@
     "bloodTestCenters": "Blood Test Centers",
     "bloodSeparationCenters": "Blood Separation Centers",
     "bloodBanks": "Blood Banks",
-    "hospital": "Hospitals",
+    "hospitals": "Hospitals",
     "manager": "Manager",
     "addUsers": "Add User"
   },
@@ -97,7 +97,8 @@
       "bloodCampManager": "BLOOD CAMPS",
       "bloodTestCenterManager": "BLOOD TEST CENTERS",
       "bloodSeparationCenterManager": "BLOOD SEPARATION CENTERS",
-      "bloodBankManager": "BLOOD BANKS"
+      "bloodBankManager": "BLOOD BANKS",
+      "hospitalManager": "HOSPITALS"
     }
   },
   "about": {
@@ -343,6 +344,41 @@
       "updateFailed": "Update blood bank failed",
       "deleteSuccess": "Delete blood bank successfully",
       "deleteFailed": "Delete blood bank failed"
+    }
+  },
+  "hospitalManager": {
+    "button": {
+      "add": "Add Hospital"
+    },
+    "placeholder": {
+      "search": "Search by name (min 3 characters)"
+    },
+    "modal": {
+      "add": "Add New Hospital",
+      "assign": "Assign Staffs",
+      "update": "Update Hospital",
+      "delete": "Delete Hospital"
+    },
+    "label": {
+      "name": "Name",
+      "address": "Address",
+      "email": "Email",
+      "phone": "Phone",
+      "searchStaffs": "Search and select staffs"
+    },
+    "message": {
+      "nameRequired": "Name is required",
+      "addressRequired": "Address is required",
+      "emailRequired": "Email is required",
+      "phoneRequired": "Phone is required"
+    },
+    "alert": {
+      "addSuccess": "Add hospital successfully",
+      "addFailed": "Add hospital failed",
+      "updateSuccess": "Update hospital successfully",
+      "updateFailed": "Update hospital failed",
+      "deleteSuccess": "Delete hospital successfully",
+      "deleteFailed": "Delete hospital failed"
     }
   }
 }

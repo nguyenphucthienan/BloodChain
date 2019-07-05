@@ -69,7 +69,7 @@
     "bloodTestCenters": "Trung tâm xét nghiệm",
     "bloodSeparationCenters": "Trung tâm phân tách",
     "bloodBanks": "Ngân hàng máu",
-    "hospital": "Bệnh viện",
+    "hospitals": "Bệnh viện",
     "manager": "Quản lí",
     "addUsers": "Thêm người dùng"
   },
@@ -97,7 +97,8 @@
       "bloodCampManager": "TRUNG TÂM HIẾN MÁU",
       "bloodTestCenterManager": "TRUNG TÂM XÉT NGHIỆM MÁU",
       "bloodSeparationCenterManager": "TRUNG TÂM PHÂN TÁCH MÁU",
-      "bloodBankManager": "NGÂN HÀNG MÁU"
+      "bloodBankManager": "NGÂN HÀNG MÁU",
+      "hospitalManager": "BỆNH VIỆN"
     }
   },
   "about": {
@@ -343,6 +344,41 @@
       "updateFailed": "Cập nhật ngân hàng máu không thành công",
       "deleteSuccess": "Xóa ngân hàng máu thành công",
       "deleteFailed": "Xóa ngân hàng máu không thành công"
+    }
+  },
+  "hospitalManager": {
+    "button": {
+      "add": "Thêm bệnh viện"
+    },
+    "placeholder": {
+      "search": "Tìm kiếm theo tên (tối thiểu 3 kí tự)"
+    },
+    "modal": {
+      "add": "Thêm bệnh viện",
+      "assign": "Cấp quyền",
+      "update": "Cập nhật bệnh viện",
+      "delete": "Xóa bệnh viện"
+    },
+    "label": {
+      "name": "Tên",
+      "address": "Địa chỉ",
+      "email": "Email",
+      "phone": "Số điện thoại",
+      "searchStaffs": "Tìm kiếm và thêm nhân viên"
+    },
+    "message": {
+      "nameRequired": "Tên không được bỏ trống",
+      "addressRequired": "Địa chỉ không được bỏ trống",
+      "emailRequired": "Email không được bỏ trống",
+      "phoneRequired": "Số điện thoại không được bỏ trống"
+    },
+    "alert": {
+      "addSuccess": "Thêm bệnh viện thành công",
+      "addFailed": "Thêm bệnh viện không thành công",
+      "updateSuccess": "Cập nhật bệnh viện thành công",
+      "updateFailed": "Cập nhật bệnh viện không thành công",
+      "deleteSuccess": "Xóa bệnh viện thành công",
+      "deleteFailed": "Xóa bệnh viện không thành công"
     }
   }
 }

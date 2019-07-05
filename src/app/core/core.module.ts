@@ -15,6 +15,7 @@ import { BloodBankService } from './services/blood-bank.service';
 import { BloodCampService } from './services/blood-camp.service';
 import { BloodSeparationCenterService } from './services/blood-separation-center.service';
 import { BloodTestCenterService } from './services/blood-test-center.service';
+import { HospitalService } from './services/hospital.service';
 import { RoleService } from './services/role.service';
 import { UserService } from './services/user.service';
 
@@ -56,7 +57,8 @@ const toastrOptions = {
     BloodCampService,
     BloodTestCenterService,
     BloodSeparationCenterService,
-    BloodBankService
+    BloodBankService,
+    HospitalService
   ]
 })
 export class CoreModule {
