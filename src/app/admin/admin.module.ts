@@ -51,6 +51,9 @@ import {
   BloodTestCenterUpdateModalComponent,
 } from './modals/blood-test-center-update-modal/blood-test-center-update-modal.component';
 import { HospitalAddModalComponent } from './modals/hospital-add-modal/hospital-add-modal.component';
+import {
+  HospitalAssignStaffsModalComponent,
+} from './modals/hospital-assign-staffs-modal/hospital-assign-staffs-modal.component';
 import { HospitalDeleteModalComponent } from './modals/hospital-delete-modal/hospital-delete-modal.component';
 import { HospitalUpdateModalComponent } from './modals/hospital-update-modal/hospital-update-modal.component';
 
@@ -81,7 +84,8 @@ import { HospitalUpdateModalComponent } from './modals/hospital-update-modal/hos
     BloodBankAssignStaffsModalComponent,
     HospitalAddModalComponent,
     HospitalUpdateModalComponent,
-    HospitalDeleteModalComponent
+    HospitalDeleteModalComponent,
+    HospitalAssignStaffsModalComponent
   ],
   imports: [
     SharedModule,
@@ -107,7 +111,8 @@ import { HospitalUpdateModalComponent } from './modals/hospital-update-modal/hos
     BloodBankAssignStaffsModalComponent,
     HospitalAddModalComponent,
     HospitalUpdateModalComponent,
-    HospitalDeleteModalComponent
+    HospitalDeleteModalComponent,
+    HospitalAssignStaffsModalComponent
   ]
 })
 export class AdminModule { }

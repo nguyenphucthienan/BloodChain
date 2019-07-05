@@ -9,6 +9,9 @@ import { TableCellChange } from 'src/app/datatable/models/table-cell-change.inte
 import { TableRow } from 'src/app/datatable/models/table-row.interface';
 
 import { HospitalAddModalComponent } from '../../modals/hospital-add-modal/hospital-add-modal.component';
+import {
+  HospitalAssignStaffsModalComponent,
+} from '../../modals/hospital-assign-staffs-modal/hospital-assign-staffs-modal.component';
 import { HospitalDeleteModalComponent } from '../../modals/hospital-delete-modal/hospital-delete-modal.component';
 import { HospitalUpdateModalComponent } from '../../modals/hospital-update-modal/hospital-update-modal.component';
 import { HospitalManagerTableService } from '../../services/hospital-manager-table.service';
@@ -98,22 +101,22 @@ export class AdminHospitalManagerComponent implements OnInit, AfterViewInit, OnD
   }
 
   openHospitalAssignStaffsModal(id: string) {
-    // this.modalRef = this.modalService.show(HospitalAssignStaffsModalComponent, {
-    //   backdrop: true,
-    //   keyboard: true,
-    //   focus: true,
-    //   show: false,
-    //   ignoreBackdropClick: true,
-    //   class: 'modal-lg modal-dialog-centered',
-    //   containerClass: 'top',
-    //   animated: true,
-    //   data: {
-    //     hospitalId: id,
-    //   }
-    // });
+    this.modalRef = this.modalService.show(HospitalAssignStaffsModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-lg modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        hospitalId: id,
+      }
+    });
 
-    // this.modalRef.content.hospitalStaffUpdated
-    //   .subscribe((result: any) => this.onHospitalAssignedStaffs(result));
+    this.modalRef.content.hospitalStaffUpdated
+      .subscribe((result: any) => this.onHospitalAssignedStaffs(result));
   }
 
   onHospitalAssignedStaffs(result: any) {
