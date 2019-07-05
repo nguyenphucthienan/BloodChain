@@ -8,7 +8,8 @@
       "no": "Không",
       "add": "Thêm",
       "update": "Cập nhật",
-      "cancel": "Hủy"
+      "cancel": "Hủy",
+      "reset": "Làm lại"
     },
     "alert": {
       "success": "Thành công",
@@ -62,13 +63,14 @@
   },
   "breadcumbs": {
     "admin": "Quản trị",
-    "manager": "Quản lí",
     "users": "Người dùng",
     "bloodCamps": "Trung tâm hiến máu",
     "bloodTestCenters": "Trung tâm xét nghiệm",
     "bloodSeparationCenters": "Trung tâm phân tách",
     "bloodBanks": "Ngân hàng máu",
-    "hospital": "Bệnh viện"
+    "hospital": "Bệnh viện",
+    "manager": "Quản lí",
+    "addUsers": "Thêm người dùng"
   },
   "sidebar": {
     "title": {
@@ -166,6 +168,30 @@
     },
     "column": {
       "roles": "Vai trò"
+    },
+    "label": {
+      "username": "Tên đăng nhập",
+      "firstName": "Họ",
+      "lastName": "Tên",
+      "address": "Địa chỉ",
+      "email": "Email",
+      "phone": "Số điện thoại"
+    },
+    "message": {
+      "usernameRequired": "Tên đăng nhập không được bỏ trống",
+      "usernameLength": "Tên đăng nhập phải từ 3 đến 50 kí tự",
+      "emailRequired": "Email không được bỏ trống",
+      "emailMaxLength": "Email tối đa 255 kí tự",
+      "emailNotValid": "Email không hợp lệ",
+      "firstNameRequired": "Họ không được bỏ trống",
+      "firstNameLength": "Họ phải từ 1 đến 50 kí tự",
+      "lastNameRequired": "Tên không được bỏ trống",
+      "lastNameLength": "Tên phải từ 3 đến 50 kí tự",
+      "addressRequired": "Địa chỉ không được bỏ trống"
+    },
+    "alert": {
+      "addSuccess": "Thêm người dùng thành công",
+      "addFailed": "Thêm người dùng không thành công"
     },
     "placeholder": {
       "search": "Tìm kiếm theo tên đăng nhập (tối thiểu 3 kí tự)"

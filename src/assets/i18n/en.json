@@ -8,7 +8,8 @@
       "no": "No",
       "add": "Add",
       "update": "Update",
-      "cancel": "Cancel"
+      "cancel": "Cancel",
+      "reset": "Reset"
     },
     "alert": {
       "success": "Success",
@@ -62,13 +63,14 @@
   },
   "breadcumb": {
     "admin": "Admin",
-    "manager": "Manager",
     "users": "Users",
     "bloodCamps": "Blood Camps",
     "bloodTestCenters": "Blood Test Centers",
     "bloodSeparationCenters": "Blood Separation Centers",
     "bloodBanks": "Blood Banks",
-    "hospital": "Hospitals"
+    "hospital": "Hospitals",
+    "manager": "Manager",
+    "addUsers": "Add User"
   },
   "sidebar": {
     "title": {
@@ -166,6 +168,30 @@
     },
     "column": {
       "roles": "Roles"
+    },
+    "label": {
+      "username": "Username",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "address": "Address",
+      "email": "Email",
+      "phone": "Phone"
+    },
+    "message": {
+      "usernameRequired": "Username is required",
+      "usernameLength": "Username must be between 3-50 characters",
+      "emailRequired": "Email is required",
+      "emailMaxLength": "Email must be at most 255 characters",
+      "emailNotValid": "Email is not valid",
+      "firstNameRequired": "First name is required",
+      "firstNameLength": "First name must be between 1-50 characters",
+      "lastNameRequired": "Last name is required",
+      "lastNameLength": "Last name must be between 1-50 characters",
+      "addressRequired": "Address is required"
+    },
+    "alert": {
+      "addSuccess": "Add user successfully",
+      "addFailed": "Add user failed"
     },
     "placeholder": {
       "search": "Search by username (min 3 characters)"

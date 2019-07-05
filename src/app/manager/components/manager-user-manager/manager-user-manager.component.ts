@@ -63,9 +63,6 @@ export class ManagerUserManagerComponent implements OnInit, AfterViewInit, OnDes
   navigateToUserDetail(id: string) {
   }
 
-  openUserAddModal() {
-  }
-
   onUserAdded(user: User) {
     this.modalRef.hide();
     this.datatable.refresh();
