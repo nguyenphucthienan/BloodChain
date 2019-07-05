@@ -12,6 +12,9 @@ import {
   BloodSeparationCenterAddModalComponent,
 } from '../../modals/blood-separation-center-add-modal/blood-separation-center-add-modal.component';
 import {
+  BloodSeparationCenterDeleteModalComponent,
+} from '../../modals/blood-separation-center-delete-modal/blood-separation-center-delete-modal.component';
+import {
   BloodSeparationCenterUpdateModalComponent,
 } from '../../modals/blood-separation-center-update-modal/blood-separation-center-update-modal.component';
 import { BloodSeparationCenterManagerTableService } from '../../services/blood-separation-center-manager-table.service';
@@ -148,22 +151,22 @@ export class AdminBloodSeparationCenterManagerComponent implements OnInit, After
   }
 
   openBloodSeparationCenterDeleteModal(rowData: TableRow) {
-    // this.modalRef = this.modalService.show(BloodSeparationCenterDeleteModalComponent, {
-    //   backdrop: true,
-    //   keyboard: true,
-    //   focus: true,
-    //   show: false,
-    //   ignoreBackdropClick: true,
-    //   class: 'modal-dialog-centered',
-    //   containerClass: 'top',
-    //   animated: true,
-    //   data: {
-    //     rowData
-    //   }
-    // });
+    this.modalRef = this.modalService.show(BloodSeparationCenterDeleteModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        rowData
+      }
+    });
 
-    // this.modalRef.content.bloodSeparationCenterDeleted
-    //   .subscribe(() => this.onBloodSeparationCenterDeleted());
+    this.modalRef.content.bloodSeparationCenterDeleted
+      .subscribe(() => this.onBloodSeparationCenterDeleted());
   }
 
   onBloodSeparationCenterDeleted() {
