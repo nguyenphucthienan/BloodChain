@@ -95,7 +95,8 @@
     "name": {
       "userManager": "NGƯỜI DÙNG",
       "bloodCampManager": "TRUNG TÂM HIẾN MÁU",
-      "bloodTestCenterManager": "TRUNG TÂM XÉT NGHIỆM MÁU"
+      "bloodTestCenterManager": "TRUNG TÂM XÉT NGHIỆM MÁU",
+      "bloodSeparationCenterManager": "TRUNG TÂM PHÂN TÁCH MÁU"
     }
   },
   "about": {
@@ -239,6 +240,41 @@
     }
   },
   "bloodTestCenterManager": {
+    "button": {
+      "add": "Thêm trung tâm"
+    },
+    "placeholder": {
+      "search": "Tìm kiếm theo tên (tối thiểu 3 kí tự)"
+    },
+    "modal": {
+      "add": "Thêm trung tâm",
+      "assign": "Cấp quyền",
+      "update": "Cập nhật trung tâm",
+      "delete": "Xóa trung tâm"
+    },
+    "label": {
+      "name": "Tên",
+      "address": "Địa chỉ",
+      "email": "Email",
+      "phone": "Số điện thoại",
+      "searchStaffs": "Tìm kiếm và thêm nhân viên"
+    },
+    "message": {
+      "nameRequired": "Tên không được bỏ trống",
+      "addressRequired": "Địa chỉ không được bỏ trống",
+      "emailRequired": "Email không được bỏ trống",
+      "phoneRequired": "Số điện thoại không được bỏ trống"
+    },
+    "alert": {
+      "addSuccess": "Thêm trung tâm thành công",
+      "addFailed": "Thêm trung tâm không thành công",
+      "updateSuccess": "Cập nhật trung tâm thành công",
+      "updateFailed": "Cập nhật trung tâm không thành công",
+      "deleteSuccess": "Xóa trung tâm thành công",
+      "deleteFailed": "Xóa trung tâm không thành công"
+    }
+  },
+  "bloodTestSeparationCenterManager": {
     "button": {
       "add": "Thêm trung tâm"
     },
