@@ -9,6 +9,7 @@ import { TableCellChange } from 'src/app/datatable/models/table-cell-change.inte
 import { TableRow } from 'src/app/datatable/models/table-row.interface';
 
 import { HospitalAddModalComponent } from '../../modals/hospital-add-modal/hospital-add-modal.component';
+import { HospitalUpdateModalComponent } from '../../modals/hospital-update-modal/hospital-update-modal.component';
 import { HospitalManagerTableService } from '../../services/hospital-manager-table.service';
 
 @Component({
@@ -119,22 +120,22 @@ export class AdminHospitalManagerComponent implements OnInit, AfterViewInit, OnD
   }
 
   openHospitalUpdateModal(rowData: TableRow) {
-    // this.modalRef = this.modalService.show(HospitalUpdateModalComponent, {
-    //   backdrop: true,
-    //   keyboard: true,
-    //   focus: true,
-    //   show: false,
-    //   ignoreBackdropClick: true,
-    //   class: 'modal-lg modal-dialog-centered',
-    //   containerClass: 'top',
-    //   animated: true,
-    //   data: {
-    //     rowData,
-    //   }
-    // });
+    this.modalRef = this.modalService.show(HospitalUpdateModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-lg modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        rowData,
+      }
+    });
 
-    // this.modalRef.content.hospitalUpdated
-    //   .subscribe((hospital: Hospital) => this.onHospitalUpdated(hospital));
+    this.modalRef.content.hospitalUpdated
+      .subscribe((hospital: Hospital) => this.onHospitalUpdated(hospital));
   }
 
   onHospitalUpdated(hospital: Hospital) {

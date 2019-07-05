@@ -51,6 +51,7 @@ import {
   BloodTestCenterUpdateModalComponent,
 } from './modals/blood-test-center-update-modal/blood-test-center-update-modal.component';
 import { HospitalAddModalComponent } from './modals/hospital-add-modal/hospital-add-modal.component';
+import { HospitalUpdateModalComponent } from './modals/hospital-update-modal/hospital-update-modal.component';
 
 @NgModule({
   declarations: [
@@ -77,7 +78,8 @@ import { HospitalAddModalComponent } from './modals/hospital-add-modal/hospital-
     BloodBankUpdateModalComponent,
     BloodBankDeleteModalComponent,
     BloodBankAssignStaffsModalComponent,
-    HospitalAddModalComponent
+    HospitalAddModalComponent,
+    HospitalUpdateModalComponent
   ],
   imports: [
     SharedModule,
@@ -101,7 +103,8 @@ import { HospitalAddModalComponent } from './modals/hospital-add-modal/hospital-
     BloodBankUpdateModalComponent,
     BloodBankDeleteModalComponent,
     BloodBankAssignStaffsModalComponent,
-    HospitalAddModalComponent
+    HospitalAddModalComponent,
+    HospitalUpdateModalComponent
   ]
 })
 export class AdminModule { }
