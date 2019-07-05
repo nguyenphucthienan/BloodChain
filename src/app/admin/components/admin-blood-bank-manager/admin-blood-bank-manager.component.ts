@@ -9,6 +9,9 @@ import { TableCellChange } from 'src/app/datatable/models/table-cell-change.inte
 import { TableRow } from 'src/app/datatable/models/table-row.interface';
 
 import { BloodBankAddModalComponent } from '../../modals/blood-bank-add-modal/blood-bank-add-modal.component';
+import {
+  BloodBankAssignStaffsModalComponent,
+} from '../../modals/blood-bank-assign-staffs-modal/blood-bank-assign-staffs-modal.component';
 import { BloodBankDeleteModalComponent } from '../../modals/blood-bank-delete-modal/blood-bank-delete-modal.component';
 import { BloodBankUpdateModalComponent } from '../../modals/blood-bank-update-modal/blood-bank-update-modal.component';
 import { BloodBankManagerTableService } from '../../services/blood-bank-manager-table.service';
@@ -98,22 +101,22 @@ export class AdminBloodBankManagerComponent implements OnInit, AfterViewInit, On
   }
 
   openBloodBankAssignStaffsModal(id: string) {
-    // this.modalRef = this.modalService.show(BloodBankAssignStaffsModalComponent, {
-    //   backdrop: true,
-    //   keyboard: true,
-    //   focus: true,
-    //   show: false,
-    //   ignoreBackdropClick: true,
-    //   class: 'modal-lg modal-dialog-centered',
-    //   containerClass: 'top',
-    //   animated: true,
-    //   data: {
-    //     bloodBankId: id,
-    //   }
-    // });
+    this.modalRef = this.modalService.show(BloodBankAssignStaffsModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-lg modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        bloodBankId: id,
+      }
+    });
 
-    // this.modalRef.content.bloodBankStaffUpdated
-    //   .subscribe((result: any) => this.onBloodBankAssignedStaffs(result));
+    this.modalRef.content.bloodBankStaffUpdated
+      .subscribe((result: any) => this.onBloodBankAssignedStaffs(result));
   }
 
   onBloodBankAssignedStaffs(result: any) {
