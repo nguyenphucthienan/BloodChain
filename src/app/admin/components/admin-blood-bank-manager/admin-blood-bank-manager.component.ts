@@ -9,6 +9,7 @@ import { TableCellChange } from 'src/app/datatable/models/table-cell-change.inte
 import { TableRow } from 'src/app/datatable/models/table-row.interface';
 
 import { BloodBankAddModalComponent } from '../../modals/blood-bank-add-modal/blood-bank-add-modal.component';
+import { BloodBankDeleteModalComponent } from '../../modals/blood-bank-delete-modal/blood-bank-delete-modal.component';
 import { BloodBankUpdateModalComponent } from '../../modals/blood-bank-update-modal/blood-bank-update-modal.component';
 import { BloodBankManagerTableService } from '../../services/blood-bank-manager-table.service';
 
@@ -144,22 +145,22 @@ export class AdminBloodBankManagerComponent implements OnInit, AfterViewInit, On
   }
 
   openBloodBankDeleteModal(rowData: TableRow) {
-    // this.modalRef = this.modalService.show(BloodBankDeleteModalComponent, {
-    //   backdrop: true,
-    //   keyboard: true,
-    //   focus: true,
-    //   show: false,
-    //   ignoreBackdropClick: true,
-    //   class: 'modal-dialog-centered',
-    //   containerClass: 'top',
-    //   animated: true,
-    //   data: {
-    //     rowData
-    //   }
-    // });
+    this.modalRef = this.modalService.show(BloodBankDeleteModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        rowData
+      }
+    });
 
-    // this.modalRef.content.bloodBankDeleted
-    //   .subscribe(() => this.onBloodBankDeleted());
+    this.modalRef.content.bloodBankDeleted
+      .subscribe(() => this.onBloodBankDeleted());
   }
 
   onBloodBankDeleted() {
