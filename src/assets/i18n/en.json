@@ -176,7 +176,8 @@
       "lastName": "Last name",
       "address": "Address",
       "email": "Email",
-      "phone": "Phone"
+      "phone": "Phone",
+      "temporaryPassword": "Temporary password"
     },
     "message": {
       "usernameRequired": "Username is required",

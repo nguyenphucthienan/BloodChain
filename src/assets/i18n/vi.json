@@ -176,7 +176,8 @@
       "lastName": "Tên",
       "address": "Địa chỉ",
       "email": "Email",
-      "phone": "Số điện thoại"
+      "phone": "Số điện thoại",
+      "temporaryPassword": "Mật khẩu tạm thời"
     },
     "message": {
       "usernameRequired": "Tên đăng nhập không được bỏ trống",

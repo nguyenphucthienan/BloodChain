@@ -13,12 +13,12 @@ export class UserAddSuccessModalComponent implements OnInit {
 
   @Output() closed = new EventEmitter();
 
+  qcCode: string;
+
   constructor(public modalRef: MDBModalRef) { }
 
   ngOnInit() {
-  }
-
-  printUser() {
+    this.qcCode = this.user.username;
   }
 
   close() {

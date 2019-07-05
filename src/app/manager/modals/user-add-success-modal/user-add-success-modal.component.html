@@ -5,29 +5,26 @@
     </button>
     <h4 class="modal-title w-100">{{ 'userManager.modal.userInfo' | translate }}</h4>
   </div>
-  <div class="modal-body">
-    <div>
-      <span class="font-weight-bold">Username: </span>
-      <span>{{ user.username }}</span>
+  <div id="print-section" class="modal-body">
+    <div class="d-flex justify-content-center">
+      <qrcode [qrdata]="qcCode" [size]="256" [level]="'M'"></qrcode>
     </div>
-    <div>
-      <span class="font-weight-bold">Password: </span>
-      <span>{{ user.rawPassword }}</span>
-    </div>
-    <div>
-      <span class="font-weight-bold">First name: </span>
-      <span>{{ user.firstName }}</span>
-    </div>
-    <div>
-      <span class="font-weight-bold">Last name: </span>
-      <span>{{ user.lastName }}</span>
+    <br>
+    <div class="text-center">
+      <h3 class="h3">{{ user.username }}</h3>
+      <h5 class="h5">{{ user.firstName}} {{ user.lastName}}</h5>
+      <hr>
+      <div>
+        <span class="font-weight-bold">{{ 'userManager.label.temporaryPassword' | translate }}: </span>
+        <span>{{ user.rawPassword }}</span>
+      </div>
     </div>
   </div>
   <div class="modal-footer">
     <button type="button" mdbBtn color="secondary" class="waves-light" (click)="close()" mdbWavesEffect>
       {{ 'common.button.cancel' | translate }}
     </button>
-    <button mdbBtn type="submit" color="primary" (click)="printUser()" mdbWavesEffect>
+    <button mdbBtn color="primary" printSectionId="print-section" ngxPrint [useExistingCss]="true" mdbWavesEffect>
       {{ 'common.button.print' | translate }}
     </button>
   </div>

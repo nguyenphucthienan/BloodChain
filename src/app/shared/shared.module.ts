@@ -8,7 +8,9 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { QRCodeModule } from 'angularx-qrcode';
 import { SidebarModule } from 'ng-sidebar';
+import { NgxPrintModule } from 'ngx-print';
 import { environment } from 'src/environments/environment';
 
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
@@ -47,7 +49,9 @@ export function createTranslateLoader(http: HttpClient) {
       apiKey: environment.mapApiKey,
       libraries: ['places']
     }),
-    NgSelectModule
+    NgSelectModule,
+    QRCodeModule,
+    NgxPrintModule
   ],
   exports: [
     CommonModule,
@@ -58,6 +62,8 @@ export function createTranslateLoader(http: HttpClient) {
     TranslateModule.forRoot().ngModule,
     AgmCoreModule.forRoot().ngModule,
     NgSelectModule,
+    QRCodeModule,
+    NgxPrintModule,
     HeaderComponent,
     SidebarComponent,
     PaginationComponent,
