@@ -48,6 +48,11 @@
     },
     "message": {
       "areYouSure": "Are you sure you want to delete"
+    },
+    "gender": {
+      "male": "Male",
+      "female": "Female",
+      "other": "Other"
     }
   },
   "header": {
@@ -135,6 +140,10 @@
       "email": "Email",
       "firstName": "First name",
       "lastName": "Last name",
+      "gender": "Gender",
+      "birthdate": "Birthdate",
+      "phone": "Phone",
+      "address": "Address",
       "password": "Password",
       "confirmPassword": "Confirm password"
     },
@@ -151,6 +160,8 @@
       "firstNameLength": "First name must be between 1-50 characters",
       "lastNameRequired": "Last name is required",
       "lastNameLength": "Last name must be between 1-50 characters",
+      "phoneRequired": "Phone is required",
+      "addressRequired": "Address is required",
       "passwordRequired": "Password is required",
       "passwordLength": "Password must be between 6-50 characters",
       "confirmPasswordRequired": "Confirm password is required",

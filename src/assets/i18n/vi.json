@@ -48,6 +48,11 @@
     },
     "message": {
       "areYouSure": "Bạn có chắc chắn rằng bạn muốn xóa"
+    },
+    "gender": {
+      "male": "Nam",
+      "female": "Nữ",
+      "other": "Khác"
     }
   },
   "header": {
@@ -135,6 +140,10 @@
       "email": "Email",
       "firstName": "Họ",
       "lastName": "Tên",
+      "gender": "Giới tính",
+      "birthdate": "Ngày sinh",
+      "phone": "Số điện thoại",
+      "address": "Địa chỉ",
       "password": "Mật khẩu",
       "confirmPassword": "Xác nhận lại mật khẩu"
     },
@@ -151,6 +160,8 @@
       "firstNameLength": "Họ phải từ 1 đến 50 kí tự",
       "lastNameRequired": "Tên không được bỏ trống",
       "lastNameLength": "Tên phải từ 3 đến 50 kí tự",
+      "phoneRequired": "Số điện thoại không được bỏ trống",
+      "addressRequired": "Địa chỉ không được bỏ trống",
       "passwordRequired": "Mật khẩu không được bỏ trống",
       "passwordLength": "Mật khẩu phải từ 6 đến 50 kí tự",
       "confirmPasswordRequired": "Mật khẩu không được bỏ trống",

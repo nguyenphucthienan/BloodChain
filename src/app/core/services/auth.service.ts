@@ -31,9 +31,8 @@ export class AuthService {
     return !this.jwtHelper.isTokenExpired(token);
   }
 
-  register({ username, password, email, firstName, lastName }: any) {
-    const user = { username, password, email, firstName, lastName };
-    return this.http.post(`${this.authUrl}/register`, user);
+  register(model: any) {
+    return this.http.post(`${this.authUrl}/register`, model);
   }
 
   login(model: { username: string, password: string }) {

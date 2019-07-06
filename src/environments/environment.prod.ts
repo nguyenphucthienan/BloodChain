@@ -3,5 +3,6 @@ export const environment = {
   apiUrl: 'https://bloodchain.herokuapp.com/api',
   whitelistedDomains: ['bloodchain.herokuapp.com'],
   blacklistedRoutes: ['bloodchain.herokuapp.com/api/auth'],
-  authTokenName: 'auth-token'
+  authTokenName: 'auth-token',
+  mapApiKey: 'AIzaSyB2MsjvYImNAUWNxbWSiZGQ5TdxNaPbPcY'
 };

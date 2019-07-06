@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { RouterModule } from '@angular/router';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
@@ -51,7 +53,9 @@ export function createTranslateLoader(http: HttpClient) {
     }),
     NgSelectModule,
     QRCodeModule,
-    NgxPrintModule
+    NgxPrintModule,
+    MatNativeDateModule,
+    MatDatepickerModule
   ],
   exports: [
     CommonModule,
@@ -64,11 +68,13 @@ export function createTranslateLoader(http: HttpClient) {
     NgSelectModule,
     QRCodeModule,
     NgxPrintModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
     HeaderComponent,
     SidebarComponent,
     PaginationComponent,
     MapInputComponent,
     BreadcrumbComponent
-  ],
+  ]
 })
 export class SharedModule { }
