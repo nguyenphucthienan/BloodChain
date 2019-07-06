@@ -11,7 +11,7 @@ import { ManagerUserManagerComponent } from './components/manager-user-manager/m
 const routes: Routes = [
   {
     path: 'manager',
-    data: { breadcrumb: 'breadcumb.manager' },
+    data: { breadcrumb: 'breadcrumb.manager.main' },
     children: [
       {
         path: '',
@@ -21,7 +21,7 @@ const routes: Routes = [
       {
         path: 'users',
         canActivate: [HasRoleGuard],
-        data: { roles: [RoleName.ADMIN, RoleName.BLOOD_CAMP], breadcrumb: 'breadcumb.users' },
+        data: { roles: [RoleName.ADMIN, RoleName.BLOOD_CAMP], breadcrumb: 'breadcrumb.manager.users' },
         children: [
           {
             path: '',
@@ -31,7 +31,7 @@ const routes: Routes = [
           {
             path: 'add',
             component: ManagerUserManagerAddUserComponent,
-            data: { breadcrumb: 'breadcumb.addUsers' }
+            data: { breadcrumb: 'breadcrumb.manager.addUsers' }
           }
         ]
       }

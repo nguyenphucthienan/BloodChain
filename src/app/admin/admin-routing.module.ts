@@ -18,7 +18,7 @@ const routes: Routes = [
   {
     path: 'admin',
     canActivate: [HasRoleGuard],
-    data: { roles: [RoleName.ADMIN], breadcrumb: 'breadcumb.admin' },
+    data: { roles: [RoleName.ADMIN], breadcrumb: 'breadcrumb.admin.main' },
     children: [
       {
         path: '',
@@ -28,32 +28,32 @@ const routes: Routes = [
       {
         path: 'users',
         component: AdminUserManagerComponent,
-        data: { breadcrumb: 'breadcumb.users' }
+        data: { breadcrumb: 'breadcrumb.admin.users' }
       },
       {
         path: 'blood-camps',
         component: AdminBloodCampManagerComponent,
-        data: { breadcrumb: 'breadcumb.bloodCamps' }
+        data: { breadcrumb: 'breadcrumb.admin.bloodCamps' }
       },
       {
         path: 'blood-test-centers',
         component: AdminBloodTestCenterManagerComponent,
-        data: { breadcrumb: 'breadcumb.bloodTestCenters' }
+        data: { breadcrumb: 'breadcrumb.admin.bloodTestCenters' }
       },
       {
         path: 'blood-separation-centers',
         component: AdminBloodSeparationCenterManagerComponent,
-        data: { breadcrumb: 'breadcumb.bloodSeparationCenters' }
+        data: { breadcrumb: 'breadcrumb.admin.bloodSeparationCenters' }
       },
       {
         path: 'blood-banks',
         component: AdminBloodBankManagerComponent,
-        data: { breadcrumb: 'breadcumb.bloodBanks' }
+        data: { breadcrumb: 'breadcrumb.admin.bloodBanks' }
       },
       {
         path: 'hospitals',
         component: AdminHospitalManagerComponent,
-        data: { breadcrumb: 'breadcumb.hospitals' }
+        data: { breadcrumb: 'breadcrumb.admin.hospitals' }
       }
     ]
   }

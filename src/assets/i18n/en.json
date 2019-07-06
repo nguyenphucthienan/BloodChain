@@ -70,16 +70,25 @@
       "logoutSuccess": "Logout successfully"
     }
   },
-  "breadcumb": {
-    "admin": "Admin",
-    "users": "Users",
-    "bloodCamps": "Blood Camps",
-    "bloodTestCenters": "Blood Test Centers",
-    "bloodSeparationCenters": "Blood Separation Centers",
-    "bloodBanks": "Blood Banks",
-    "hospitals": "Hospitals",
-    "manager": "Manager",
-    "addUsers": "Add User"
+  "breadcrumb": {
+    "admin": {
+      "main": "Admin",
+      "users": "Users",
+      "bloodCamps": "Blood Camps",
+      "bloodTestCenters": "Blood Test Centers",
+      "bloodSeparationCenters": "Blood Separation Centers",
+      "bloodBanks": "Blood Banks",
+      "hospitals": "Hospitals"
+    },
+    "manager": {
+      "main": "Manager",
+      "users": "Users",
+      "addUsers": "Add User"
+    },
+    "profile": {
+      "main": "Profile",
+      "editInfo": "Edit Info"
+    }
   },
   "sidebar": {
     "title": {
@@ -194,7 +203,7 @@
       "firstName": "First name",
       "lastName": "Last name",
       "gender": "Gender",
-      "birthdate":"Birthdate",
+      "birthdate": "Birthdate",
       "phone": "Phone",
       "address": "Address",
       "temporaryPassword": "Temporary password"

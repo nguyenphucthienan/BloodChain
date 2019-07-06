@@ -70,16 +70,25 @@
       "logoutSuccess": "Đăng xuất thành công"
     }
   },
-  "breadcumbs": {
-    "admin": "Quản trị",
-    "users": "Người dùng",
-    "bloodCamps": "Trung tâm hiến máu",
-    "bloodTestCenters": "Trung tâm xét nghiệm",
-    "bloodSeparationCenters": "Trung tâm phân tách",
-    "bloodBanks": "Ngân hàng máu",
-    "hospitals": "Bệnh viện",
-    "manager": "Quản lí",
-    "addUsers": "Thêm người dùng"
+  "breadcrumb": {
+    "admin": {
+      "main": "Quản trị",
+      "users": "Người dùng",
+      "bloodCamps": "Trung tâm hiến máu",
+      "bloodTestCenters": "Trung tâm xét nghiệm",
+      "bloodSeparationCenters": "Trung tâm phân tách",
+      "bloodBanks": "Ngân hàng máu",
+      "hospitals": "Bệnh viện"
+    },
+    "manager": {
+      "main": "Quản lí",
+      "users": "Người dùng",
+      "addUsers": "Thêm người dùng"
+    },
+    "profile": {
+      "main": "Hồ sơ",
+      "editInfo": "Thay đổi thông tin"
+    }
   },
   "sidebar": {
     "title": {
