@@ -8,7 +8,8 @@ export const environment = {
   whitelistedDomains: ['localhost:3000'],
   blacklistedRoutes: ['localhost:3000/api/auth'],
   authTokenName: 'auth-token',
-  mapApiKey: 'AIzaSyB2MsjvYImNAUWNxbWSiZGQ5TdxNaPbPcY'
+  mapApiKey: 'AIzaSyB2MsjvYImNAUWNxbWSiZGQ5TdxNaPbPcY',
+  defaultUserPhotoUrl: './assets/images/users/default.png'
 };
 
 /*

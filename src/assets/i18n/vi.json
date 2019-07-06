@@ -184,6 +184,46 @@
       "registerFailed": "Đăng kí không thành công"
     }
   },
+  "editUserInfo": {
+    "title": "Thay đổi thông tin",
+    "label": {
+      "email": "Email",
+      "firstName": "Họ",
+      "lastName": "Tên",
+      "gender": "Giới tính",
+      "birthdate": "Ngày sinh",
+      "phone": "Số điện thoại",
+      "address": "Địa chỉ",
+      "password": "Mật khẩu mới",
+      "confirmPassword": "Xác nhận lại mật khẩu"
+    },
+    "button": {
+      "saveChanges": "Lưu thay đổi",
+      "changePassword": "Đổi mật khẩu",
+      "changePhoto": "Đổi ảnh"
+    },
+    "message": {
+      "emailRequired": "Email không được bỏ trống",
+      "emailMaxLength": "Email tối đa 255 kí tự",
+      "emailNotValid": "Email không hợp lệ",
+      "firstNameRequired": "Họ không được bỏ trống",
+      "firstNameLength": "Họ phải từ 1 đến 50 kí tự",
+      "lastNameRequired": "Tên không được bỏ trống",
+      "lastNameLength": "Tên phải từ 3 đến 50 kí tự",
+      "phoneRequired": "Số điện thoại không được bỏ trống",
+      "addressRequired": "Địa chỉ không được bỏ trống",
+      "passwordRequired": "Mật khẩu không được bỏ trống",
+      "passwordLength": "Mật khẩu mới phải từ 6 đến 50 kí tự",
+      "confirmPasswordRequired": "Mật khẩu mới không được bỏ trống",
+      "passwordNotMatch": "Mật khẩu xác nhận không khớp"
+    },
+    "alert": {
+      "saveChangesSuccess": "Thay đổi thông tin thành công",
+      "saveChangesFailed": "Thay đổi thông tin không thành công",
+      "changePasswordSuccess": "Đổi mật khẩu thành công",
+      "changePasswordFailed": "Đổi mật khẩu không thành công"
+    }
+  },
   "users": {
     "title": "Người dùng"
   },

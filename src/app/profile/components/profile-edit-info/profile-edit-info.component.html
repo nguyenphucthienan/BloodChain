@@ -1,7 +1,135 @@
 <div class="container-fluid">
-  <div class="card mt-3">
-    <div class="card-body">
-      <app-breadcrumb></app-breadcrumb>
+  <h1 class="text-center">{{ 'editUserInfo.title' | translate }}</h1>
+  <div class="row justify-content-center mt-3">
+    <div class="col-lg-3">
+      <div class="card">
+        <div class="card-header red darken-4 white-text py-2">
+        </div>
+        <div class="card-body">
+          <div class="d-flex justify-content-center align-items-center">
+            <img [src]="defaultPhotoUrl" class="img-fluid rounded-circle photo">
+          </div>
+          <button mdbBtn color="red" outline="true" rounded="true" block="true" class="waves-effect z-depth-0 mt-4"
+            mdbWavesEffect (click)="openUploadPhotoModal()">
+            {{ 'editUserInfo.button.changePhoto' | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 mt-lg-0 mt-3">
+      <div class="card">
+        <div class="card-header red darken-4 white-text py-2">
+        </div>
+        <div class="card-body">
+          <form [formGroup]="updateInfoForm" (ngSubmit)="updateInfo()" class="text-center">
+            <div class="md-form">
+              <input type="text" id="email" formControlName="email" class="form-control" mdbInput>
+              <label for="email">{{ 'editUserInfo.label.email' | translate }}</label>
+              <mdb-error *ngIf="updateInfoFormControlHasError('email', 'required')">
+                {{ 'editUserInfo.message.emailRequired' | translate }}
+              </mdb-error>
+              <mdb-error *ngIf="updateInfoFormControlHasError('email', 'maxlength')">
+                {{ 'editUserInfo.message.emailMaxLength' | translate }}
+              </mdb-error>
+              <mdb-error
+                *ngIf="!updateInfoFormControlHasError('email', 'required') && updateInfoFormControlHasError('email', 'email')">
+                {{ 'editUserInfo.message.emailNotValid' | translate }}
+              </mdb-error>
+            </div>
+            <div class="form-row">
+              <div class="col">
+                <div class="md-form form-col">
+                  <input type="text" id="firstName" formControlName="firstName" class="form-control" mdbInput>
+                  <label for="firstName">{{ 'editUserInfo.label.firstName' | translate }}</label>
+                  <mdb-error *ngIf="updateInfoFormControlHasError('firstName', 'required')">
+                    {{ 'editUserInfo.message.firstNameRequired' | translate }}
+                  </mdb-error>
+                  <mdb-error
+                    *ngIf="updateInfoFormControlHasError('firstName', 'minlength') || updateInfoFormControlHasError('firstName', 'maxlength')">
+                    {{ 'editUserInfo.message.firstNameLength' | translate }}
+                  </mdb-error>
+                </div>
+              </div>
+              <div class="col">
+                <div class="md-form form-col">
+                  <input type="text" id="lastName" formControlName="lastName" class="form-control" mdbInput>
+                  <label for="lastName">{{ 'editUserInfo.label.lastName' | translate }}</label>
+                  <mdb-error *ngIf="updateInfoFormControlHasError('lastName', 'required')">
+                    {{ 'editUserInfo.message.lastNameRequired' | translate }}
+                  </mdb-error>
+                  <mdb-error
+                    *ngIf="updateInfoFormControlHasError('lastName', 'minlength') || updateInfoFormControlHasError('lastName', 'maxlength')">
+                    {{ 'editUserInfo.message.lastNameLength' | translate }}
+                  </mdb-error>
+                </div>
+              </div>
+            </div>
+            <div class="md-form">
+              <ng-select id="gender" [items]="genders$ | async" bindValue="value" bindLabel="label" [multiple]="false"
+                [clearable]="false" [placeholder]="'editUserInfo.label.gender' | translate" formControlName="gender">
+              </ng-select>
+            </div>
+            <div class="md-form">
+              <input type="text" id="birthdate" formControlName="birthdate" [matDatepicker]="birthdatePicker"
+                [matDatepickerFilter]="datePickerFilter" class="form-control" (focus)="openDatePicker(birthdatePicker)"
+                (click)="openDatePicker(birthdatePicker)" mdbInput readonly>
+              <label for="birthdate">{{ 'editUserInfo.label.birthdate' | translate }}</label>
+              <mat-datepicker #birthdatePicker="matDatepicker"></mat-datepicker>
+            </div>
+            <div class="md-form">
+              <input type="text" id="phone" formControlName="phone" class="form-control" mdbInput>
+              <label for="phone">{{ 'editUserInfo.label.phone' | translate }}</label>
+              <mdb-error *ngIf="updateInfoFormControlHasError('phone', 'required')">
+                {{ 'editUserInfo.message.phoneRequired' | translate }}
+              </mdb-error>
+            </div>
+            <div class="md-form">
+              <input type="text" id="address" formControlName="address" class="form-control" mdbInput>
+              <label for="address">{{ 'editUserInfo.label.address' | translate }}</label>
+              <mdb-error *ngIf="updateInfoFormControlHasError('address', 'required')">
+                {{ 'editUserInfo.message.addressRequired' | translate }}
+              </mdb-error>
+            </div>
+            <button mdbBtn color="red" outline="true" rounded="true" block="true"
+              class="mt-4 mb-2 waves-effect z-depth-0" mdbWavesEffect type="submit"
+              [disabled]="updateInfoForm.invalid">{{ 'editUserInfo.button.saveChanges' | translate }}</button>
+          </form>
+        </div>
+      </div>
+      <div class="card mt-3">
+        <div class="card-header red darken-4 white-text py-2">
+        </div>
+        <div class="card-body">
+          <form [formGroup]="changePasswordForm" (ngSubmit)="changePassword()" class="text-center">
+            <div class="md-form">
+              <input type="password" id="password" formControlName="password" class="form-control" mdbInput>
+              <label for="password">{{ 'editUserInfo.label.password' | translate }}</label>
+              <mdb-error *ngIf="changePasswordFormControlHasError('password', 'required')">
+                {{ 'editUserInfo.message.passwordRequired' | translate }}
+              </mdb-error>
+              <mdb-error
+                *ngIf="changePasswordFormControlHasError('password', 'minlength') || changePasswordFormControlHasError('password', 'maxlength')">
+                {{ 'editUserInfo.message.passwordLength' | translate }}
+              </mdb-error>
+            </div>
+            <div class="md-form">
+              <input type="password" id="confirmPassword" formControlName="confirmPassword" class="form-control"
+                mdbInput>
+              <label for="confirmPassword">{{ 'editUserInfo.label.confirmPassword' | translate }}</label>
+              <mdb-error *ngIf="changePasswordFormControlHasError('confirmPassword', 'required')">
+                {{ 'editUserInfo.message.confirmPasswordRequired' | translate }}
+              </mdb-error>
+              <mdb-error
+                *ngIf="changePasswordForm.get('confirmPassword').touched && !changePasswordFormControlHasError('confirmPassword', 'required') && changePasswordForm.hasError('passwordMatch')">
+                {{ 'editUserInfo.message.passwordNotMatch' | translate }}
+              </mdb-error>
+            </div>
+            <button mdbBtn color="red" outline="true" rounded="true" block="true"
+              class="mt-4 mb-2 waves-effect z-depth-0" mdbWavesEffect type="submit"
+              [disabled]="changePasswordForm.invalid">{{ 'editUserInfo.button.changePassword' | translate }}</button>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 </div>

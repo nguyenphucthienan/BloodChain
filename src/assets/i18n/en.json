@@ -184,6 +184,46 @@
       "registerFailed": "Register failed"
     }
   },
+  "editUserInfo": {
+    "title": "Edit Info",
+    "label": {
+      "email": "Email",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "gender": "Gender",
+      "birthdate": "Birthdate",
+      "phone": "Phone",
+      "address": "Address",
+      "password": "New password",
+      "confirmPassword": "Confirm new password"
+    },
+    "button": {
+      "saveChanges": "Save Changes",
+      "changePassword": "Change Password",
+      "changePhoto": "Change Photo"
+    },
+    "message": {
+      "emailRequired": "Email is required",
+      "emailMaxLength": "Email must be at most 255 characters",
+      "emailNotValid": "Email is not valid",
+      "firstNameRequired": "First name is required",
+      "firstNameLength": "First name must be between 1-50 characters",
+      "lastNameRequired": "Last name is required",
+      "lastNameLength": "Last name must be between 1-50 characters",
+      "phoneRequired": "Phone is required",
+      "addressRequired": "Address is required",
+      "passwordRequired": "New password is required",
+      "passwordLength": "New password must be between 6-50 characters",
+      "confirmPasswordRequired": "New confirm password is required",
+      "passwordNotMatch": "Passwords do not match"
+    },
+    "alert": {
+      "saveChangesSuccess": "Change user info successfully",
+      "saveChangesFailed": "Change password failed",
+      "changePasswordSuccess": "Change user info successfully",
+      "changePasswordFailed": "Change password failed"
+    }
+  },
   "users": {
     "title": "Users"
   },

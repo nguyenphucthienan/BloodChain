@@ -9,6 +9,8 @@ import { environment } from 'src/environments/environment';
 export class AuthService {
 
   private readonly authUrl = `${environment.apiUrl}/auth`;
+  private readonly meUrl = `${environment.apiUrl}/auth/me`;
+  private readonly changePasswordUrl = `${environment.apiUrl}/auth/me/password`;
 
   private jwtHelper = new JwtHelperService();
   private decodedToken: any;
@@ -67,7 +69,19 @@ export class AuthService {
   getMyUserInfo() {
     const token = localStorage.getItem(environment.authTokenName);
     const headers = new HttpHeaders({ Authorization: `Bearer ${token}` });
-    return this.http.get(`${this.authUrl}/me`, { headers });
+    return this.http.get(this.meUrl, { headers });
+  }
+
+  updateUserInfo(updateModel: any) {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({ Authorization: `Bearer ${token}` });
+    return this.http.put(this.meUrl, updateModel, { headers });
+  }
+
+  changeUserPassword(changePasswordModel: any) {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({ Authorization: `Bearer ${token}` });
+    return this.http.put(this.changePasswordUrl, changePasswordModel, { headers });
   }
 
   isRoleMatch(allowedRoles: string[]): boolean {
