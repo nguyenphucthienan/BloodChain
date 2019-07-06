@@ -4,6 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { RoleName } from '../core/constant/role-name';
 import { HasRoleGuard } from '../core/guards/has-role.guard';
 import {
+  ManagerBloodPackManagerComponent,
+} from './components/manager-blood-pack-manager/manager-blood-pack-manager.component';
+import {
   ManagerUserManagerAddUserComponent,
 } from './components/manager-user-manager-add-user/manager-user-manager-add-user.component';
 import { ManagerUserManagerComponent } from './components/manager-user-manager/manager-user-manager.component';
@@ -21,7 +24,10 @@ const routes: Routes = [
       {
         path: 'users',
         canActivate: [HasRoleGuard],
-        data: { roles: [RoleName.ADMIN, RoleName.BLOOD_CAMP], breadcrumb: 'breadcrumb.manager.users' },
+        data: {
+          roles: [RoleName.ADMIN, RoleName.BLOOD_CAMP],
+          breadcrumb: 'breadcrumb.manager.users'
+        },
         children: [
           {
             path: '',
@@ -32,6 +38,21 @@ const routes: Routes = [
             path: 'add',
             component: ManagerUserManagerAddUserComponent,
             data: { breadcrumb: 'breadcrumb.manager.addUsers' }
+          }
+        ]
+      },
+      {
+        path: 'blood-packs',
+        canActivate: [HasRoleGuard],
+        data: {
+          roles: [RoleName.ADMIN, RoleName.BLOOD_CAMP],
+          breadcrumb: 'breadcrumb.manager.bloodPacks'
+        },
+        children: [
+          {
+            path: '',
+            pathMatch: 'full',
+            component: ManagerBloodPackManagerComponent
           }
         ]
       }

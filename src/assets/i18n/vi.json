@@ -83,7 +83,9 @@
     "manager": {
       "main": "Quản lí",
       "users": "Người dùng",
-      "addUsers": "Thêm người dùng"
+      "addUsers": "Thêm người dùng",
+      "bloodPacks": "Túi máu",
+      "addBloodPacks": "Thêm túi máu"
     },
     "profile": {
       "main": "Hồ sơ",
@@ -97,7 +99,8 @@
       "bloodTestCenters": "Trung tâm xét nghiệm",
       "bloodSeparationCenters": "Trung tâm phân tách",
       "bloodBanks": "Ngân hàng máu",
-      "hospital": "Bệnh viện"
+      "hospitals": "Bệnh viện",
+      "bloodPacks": "Túi máu"
     }
   },
   "pagination": {
@@ -115,7 +118,8 @@
       "bloodTestCenterManager": "TRUNG TÂM XÉT NGHIỆM MÁU",
       "bloodSeparationCenterManager": "TRUNG TÂM PHÂN TÁCH MÁU",
       "bloodBankManager": "NGÂN HÀNG MÁU",
-      "hospitalManager": "BỆNH VIỆN"
+      "hospitalManager": "BỆNH VIỆN",
+      "bloodPackManager": "TÚI MÁU"
     }
   },
   "about": {
@@ -445,6 +449,36 @@
       "updateFailed": "Cập nhật bệnh viện không thành công",
       "deleteSuccess": "Xóa bệnh viện thành công",
       "deleteFailed": "Xóa bệnh viện không thành công"
+    }
+  },
+  "bloodPackManager": {
+    "button": {
+      "add": "Thêm túi máu"
+    },
+    "column": {
+      "donor": "Người hiến",
+      "volume": "Thể tích",
+      "bloodCamp": "Trung tâm hiến máu"
+    },
+    "label": {
+      "donor": "Người hiến",
+      "volume": "Thể tích",
+      "bloodCamp": "Trung tâm hiến máu"
+    },
+    "message": {
+      "donorRequired": "Người hiến không được bỏ trống",
+      "volumeRequired": "Thể tích không được bỏ trống",
+      "bloodCampRequired": "Trung tâm hiến máu không được bỏ trống"
+    },
+    "alert": {
+      "addSuccess": "Thêm túi máu thành công",
+      "addFailed": "Thêm túi máu không thành công"
+    },
+    "placeholder": {
+      "search": "Tìm kiếm theo ID"
+    },
+    "modal": {
+      "add": "Thêm túi máu"
     }
   }
 }

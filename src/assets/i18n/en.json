@@ -83,7 +83,9 @@
     "manager": {
       "main": "Manager",
       "users": "Users",
-      "addUsers": "Add User"
+      "addUsers": "Add User",
+      "bloodPacks": "Blood Packs",
+      "addBloodPacks": "Add Blood Pack"
     },
     "profile": {
       "main": "Profile",
@@ -97,7 +99,8 @@
       "bloodTestCenters": "Blood Test Centers",
       "bloodSeparationCenters": "Blood Separation Centers",
       "bloodBanks": "Blood Banks",
-      "hospital": "Hospitals"
+      "hospitals": "Hospitals",
+      "bloodPacks": "Blood Packs"
     }
   },
   "pagination": {
@@ -115,7 +118,8 @@
       "bloodTestCenterManager": "BLOOD TEST CENTERS",
       "bloodSeparationCenterManager": "BLOOD SEPARATION CENTERS",
       "bloodBankManager": "BLOOD BANKS",
-      "hospitalManager": "HOSPITALS"
+      "hospitalManager": "HOSPITALS",
+      "bloodPackManager": "BLOOD PACKS"
     }
   },
   "about": {
@@ -445,6 +449,36 @@
       "updateFailed": "Update hospital failed",
       "deleteSuccess": "Delete hospital successfully",
       "deleteFailed": "Delete hospital failed"
+    }
+  },
+  "bloodPackManager": {
+    "button": {
+      "add": "Add Blood Pack"
+    },
+    "column": {
+      "donor": "Donor",
+      "volume": "Volume",
+      "bloodCamp": "Blood Camp"
+    },
+    "label": {
+      "donor": "Donor",
+      "volume": "Volume",
+      "bloodCamp": "Blood camp"
+    },
+    "message": {
+      "donorRequired": "Donor is required",
+      "volumeRequired": "Volume is required",
+      "bloodCampRequired": "Blood camp is required"
+    },
+    "alert": {
+      "addSuccess": "Add blood pack successfully",
+      "addFailed": "Add blood pack failed"
+    },
+    "placeholder": {
+      "search": "Search by ID"
+    },
+    "modal": {
+      "add": "Add Blood Pack"
     }
   }
 }

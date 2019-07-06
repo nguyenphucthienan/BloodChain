@@ -15,6 +15,7 @@ import { AlertService } from './services/alert.service';
 import { AuthService } from './services/auth.service';
 import { BloodBankService } from './services/blood-bank.service';
 import { BloodCampService } from './services/blood-camp.service';
+import { BloodPackService } from './services/blood-pack.service';
 import { BloodSeparationCenterService } from './services/blood-separation-center.service';
 import { BloodTestCenterService } from './services/blood-test-center.service';
 import { HospitalService } from './services/hospital.service';
@@ -61,6 +62,7 @@ const toastrOptions = {
     BloodSeparationCenterService,
     BloodBankService,
     HospitalService,
+    BloodPackService,
     {
       provide: DateAdapter,
       useClass: MomentDateAdapter,

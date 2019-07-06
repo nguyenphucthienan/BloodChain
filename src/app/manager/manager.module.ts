@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { DatatableModule } from '../datatable/datatable.module';
 import { SharedModule } from '../shared/shared.module';
 import {
+  ManagerBloodPackManagerComponent,
+} from './components/manager-blood-pack-manager/manager-blood-pack-manager.component';
+import {
   ManagerUserManagerAddUserComponent,
 } from './components/manager-user-manager-add-user/manager-user-manager-add-user.component';
 import { ManagerUserManagerComponent } from './components/manager-user-manager/manager-user-manager.component';
@@ -14,7 +17,8 @@ import { UserManagerLiteTableService } from './services/user-manager-lite-table.
   declarations: [
     ManagerUserManagerComponent,
     ManagerUserManagerAddUserComponent,
-    UserAddSuccessModalComponent
+    UserAddSuccessModalComponent,
+    ManagerBloodPackManagerComponent
   ],
   imports: [
     SharedModule,
