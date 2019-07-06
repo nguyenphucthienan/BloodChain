@@ -30,6 +30,7 @@
       "username": "Username",
       "firstName": "First Name",
       "lastName": "Last Name",
+      "gender": "Gender",
       "address": "Address",
       "email": "Email",
       "phone": "Phone",
@@ -187,11 +188,13 @@
     },
     "label": {
       "username": "Username",
+      "email": "Email",
       "firstName": "First name",
       "lastName": "Last name",
-      "address": "Address",
-      "email": "Email",
+      "gender": "Gender",
+      "birthdate":"Birthdate",
       "phone": "Phone",
+      "address": "Address",
       "temporaryPassword": "Temporary password"
     },
     "message": {
@@ -204,6 +207,7 @@
       "firstNameLength": "First name must be between 1-50 characters",
       "lastNameRequired": "Last name is required",
       "lastNameLength": "Last name must be between 1-50 characters",
+      "phoneRequired": "Phone is required",
       "addressRequired": "Address is required"
     },
     "alert": {

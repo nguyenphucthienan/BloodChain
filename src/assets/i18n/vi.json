@@ -30,6 +30,7 @@
       "username": "Tên đăng nhập",
       "firstName": "Họ",
       "lastName": "Tên",
+      "gender": "Giới tính",
       "address": "Địa chỉ",
       "email": "Email",
       "phone": "Số điện thoại",
@@ -187,11 +188,13 @@
     },
     "label": {
       "username": "Tên đăng nhập",
+      "email": "Email",
       "firstName": "Họ",
       "lastName": "Tên",
-      "address": "Địa chỉ",
-      "email": "Email",
+      "gender": "Giới tính",
+      "birthdate": "Ngày sinh",
       "phone": "Số điện thoại",
+      "address": "Địa chỉ",
       "temporaryPassword": "Mật khẩu tạm thời"
     },
     "message": {
@@ -204,6 +207,7 @@
       "firstNameLength": "Họ phải từ 1 đến 50 kí tự",
       "lastNameRequired": "Tên không được bỏ trống",
       "lastNameLength": "Tên phải từ 3 đến 50 kí tự",
+      "phoneRequired": "Số điện thoại không được bỏ trống",
       "addressRequired": "Địa chỉ không được bỏ trống"
     },
     "alert": {

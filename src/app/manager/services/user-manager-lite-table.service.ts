@@ -19,8 +19,10 @@ export class UserManagerLiteTableService implements TableService {
     { name: 'username', text: 'common.column.username', type: 'TextTableCellComponent', sortable: true },
     { name: 'roles', text: 'userManager.column.roles', type: 'ArrayListTableCellComponent', sortable: true },
     { name: 'email', text: 'common.column.email', type: 'TextTableCellComponent', sortable: true },
+    { name: 'gender', text: 'common.column.gender', type: 'TextTableCellComponent', sortable: true },
     { name: 'firstName', text: 'common.column.firstName', type: 'TextTableCellComponent', sortable: true },
     { name: 'lastName', text: 'common.column.lastName', type: 'TextTableCellComponent', sortable: true },
+    { name: 'phone', text: 'common.column.phone', type: 'TextTableCellComponent', sortable: true },
     { name: 'actions', text: 'common.column.actions', type: 'ActionsTableCellComponent', center: true }
   ];
 
