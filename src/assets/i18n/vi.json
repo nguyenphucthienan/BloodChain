@@ -62,6 +62,8 @@
       "login": "Đăng nhập",
       "logout": "Đăng xuất",
       "about": "Về chúng tôi",
+      "profile": "Hồ sơ",
+      "editInfo": "Thay đổi thông tin",
       "campaigns": "Chiến dịch"
     },
     "alert": {

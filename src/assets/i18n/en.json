@@ -62,6 +62,8 @@
       "login": "Login",
       "logout": "Logout",
       "about": "About",
+      "profile": "Profile",
+      "editInfo": "Edit Info",
       "campaigns": "Campaigns"
     },
     "alert": {
