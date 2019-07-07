@@ -29,7 +29,10 @@ export class ManagerBloodPackManagerDonationHistoryComponent implements OnInit {
 
   changeUser(user: User) {
     this.bloodDonationHistoryLiteTableService.filterMode.donor = user && user._id;
-    this.bloodDonationHistoryLiteTableService.pagination.page = 1;
+    this.bloodDonationHistoryLiteTableService.pagination = {
+      ...this.bloodDonationHistoryLiteTableService.pagination,
+      page: 1
+    };
     this.datatable.refresh();
   }
 
