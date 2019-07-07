@@ -48,6 +48,7 @@
       "assign": "Cấp quyền"
     },
     "message": {
+      "noData": "Không có dữ liệu",
       "areYouSure": "Bạn có chắc chắn rằng bạn muốn xóa"
     },
     "gender": {
@@ -119,7 +120,8 @@
       "bloodSeparationCenterManager": "TRUNG TÂM PHÂN TÁCH MÁU",
       "bloodBankManager": "NGÂN HÀNG MÁU",
       "hospitalManager": "BỆNH VIỆN",
-      "bloodPackManager": "TÚI MÁU"
+      "bloodPackManager": "TÚI MÁU",
+      "donationHistory": "LỊCH SỬ HIẾN MÁU"
     }
   },
   "about": {
@@ -458,9 +460,12 @@
     "column": {
       "donor": "Người hiến",
       "volume": "Thể tích (ml)",
-      "bloodCamp": "Trung tâm hiến máu"
+      "bloodCamp": "Trung tâm hiến máu",
+      "createdAt": "Thời gian"
     },
     "label": {
+      "donorInfo": "THÔNG TIN NGƯỜI HIẾN",
+      "addBloodPack": "THÊM TÚI MÁU",
       "username": "Tên đăng nhập",
       "email": "Email",
       "firstName": "Họ",
@@ -471,7 +476,7 @@
       "address": "Địa chỉ",
       "donorId": "ID Người hiến",
       "volume": "Thể tích (ml)",
-      "searchDonor": "Search donor"
+      "search": "Tìm người hiến"
     },
     "message": {
       "donorRequired": "Người hiến không được bỏ trống",
@@ -484,9 +489,6 @@
     },
     "placeholder": {
       "search": "Tìm kiếm (tối thiểu 3 kí tự)"
-    },
-    "modal": {
-      "add": "Thêm túi máu"
     }
   }
 }

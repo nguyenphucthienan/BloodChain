@@ -18,6 +18,9 @@
       <div class="card mt-3 flex-card">
         <div class="card-body">
           <form [formGroup]="userForm">
+            <div class="d-flex">
+              <span class="font-weight-bold">{{ 'bloodPackManager.label.donorInfo' | translate }}</span>
+            </div>
             <div class="md-form">
               <input type="text" id="username" formControlName="username" class="form-control" mdbInput>
               <label for="username">{{ 'bloodPackManager.label.username' | translate }}</label>
@@ -81,12 +84,17 @@
     <div class="col-md-6 pl-md-0">
       <div class="card mt-3 flex-card">
         <div class="card-body">
+          <app-manager-blood-pack-manager-donation-history>
+          </app-manager-blood-pack-manager-donation-history>
         </div>
       </div>
     </div>
   </div>
   <div class="card mt-3">
     <div class="card-body">
+      <div class="d-flex">
+        <span class="font-weight-bold">{{ 'bloodPackManager.label.addBloodPack' | translate }}</span>
+      </div>
       <form [formGroup]="addForm" (ngSubmit)="addBloodPack()">
         <div class="md-form">
           <input type="text" id="donor" formControlName="donor" class="form-control" mdbInput>

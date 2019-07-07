@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnDestroy, OnInit, Output, Renderer2 } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output, Renderer2, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
@@ -10,12 +10,19 @@ import { AlertService } from 'src/app/core/services/alert.service';
 import { BloodPackService } from 'src/app/core/services/blood-pack.service';
 import { UserService } from 'src/app/core/services/user.service';
 
+import {
+  ManagerBloodPackManagerDonationHistoryComponent,
+} from '../manager-blood-pack-manager-donation-history/manager-blood-pack-manager-donation-history.component';
+
 @Component({
   selector: 'app-manager-blood-pack-manager-add-blood-pack',
   templateUrl: './manager-blood-pack-manager-add-blood-pack.component.html',
   styleUrls: ['./manager-blood-pack-manager-add-blood-pack.component.scss']
 })
 export class ManagerBloodPackManagerAddBloodPackComponent implements OnInit, OnDestroy {
+
+  @ViewChild(ManagerBloodPackManagerDonationHistoryComponent)
+  donationHistory: ManagerBloodPackManagerDonationHistoryComponent;
 
   @Output() bloodPackAdded = new EventEmitter();
 
@@ -26,6 +33,7 @@ export class ManagerBloodPackManagerAddBloodPackComponent implements OnInit, OnD
   users$: Observable<User[]>;
   usersInput$ = new Subject<string>();
   usersLoading = false;
+  user: User;
 
   constructor(
     private fb: FormBuilder,
@@ -101,6 +109,8 @@ export class ManagerBloodPackManagerAddBloodPackComponent implements OnInit, OnD
     this.addForm.patchValue({
       donor: user._id
     });
+
+    this.donationHistory.changeUser(user);
   }
 
   addBloodPack() {
@@ -141,6 +151,7 @@ export class ManagerBloodPackManagerAddBloodPackComponent implements OnInit, OnD
   resetForm() {
     this.userForm.reset();
     this.addForm.reset();
+    this.donationHistory.changeUser(null);
   }
 
   controlHasError(controlName: string, errorName: string): boolean {

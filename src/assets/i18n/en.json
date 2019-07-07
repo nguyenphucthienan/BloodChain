@@ -48,6 +48,7 @@
       "assign": "Assign"
     },
     "message": {
+      "noData": "No data",
       "areYouSure": "Are you sure you want to delete"
     },
     "gender": {
@@ -119,7 +120,8 @@
       "bloodSeparationCenterManager": "BLOOD SEPARATION CENTERS",
       "bloodBankManager": "BLOOD BANKS",
       "hospitalManager": "HOSPITALS",
-      "bloodPackManager": "BLOOD PACKS"
+      "bloodPackManager": "BLOOD PACKS",
+      "donationHistory": "DONATION HISTORY"
     }
   },
   "about": {
@@ -458,9 +460,12 @@
     "column": {
       "donor": "Donor",
       "volume": "Volume (ml)",
-      "bloodCamp": "Blood Camp"
+      "bloodCamp": "Blood Camp",
+      "createdAt": "Time"
     },
     "label": {
+      "donorInfo": "DONOR INFO",
+      "addBloodPack": "ADD BLOOD PACK",
       "username": "Username",
       "email": "Email",
       "firstName": "First name",
@@ -484,9 +489,6 @@
     },
     "placeholder": {
       "search": "Search (min 3 characters)"
-    },
-    "modal": {
-      "add": "Add Blood Pack"
     }
   }
 }

@@ -13,6 +13,7 @@ import { ManagerRoutingModule } from './manager-routing.module';
 import { UserAddSuccessModalComponent } from './modals/user-add-success-modal/user-add-success-modal.component';
 import { UserManagerLiteTableService } from './services/user-manager-lite-table.service';
 import { ManagerBloodPackManagerAddBloodPackComponent } from './components/manager-blood-pack-manager-add-blood-pack/manager-blood-pack-manager-add-blood-pack.component';
+import { ManagerBloodPackManagerDonationHistoryComponent } from './components/manager-blood-pack-manager-donation-history/manager-blood-pack-manager-donation-history.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ManagerBloodPackManagerAddBloodPackComponent } from './components/manag
     ManagerUserManagerAddUserComponent,
     UserAddSuccessModalComponent,
     ManagerBloodPackManagerComponent,
-    ManagerBloodPackManagerAddBloodPackComponent
+    ManagerBloodPackManagerAddBloodPackComponent,
+    ManagerBloodPackManagerDonationHistoryComponent
   ],
   imports: [
     SharedModule,

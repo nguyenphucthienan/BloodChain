@@ -12,26 +12,29 @@ import { TableRow } from 'src/app/datatable/models/table-row.interface';
 import { TableService } from 'src/app/datatable/services/table.service';
 
 @Injectable()
-export class BloodPackManagerLiteTableService implements TableService {
+export class BloodDonationHistoryLiteTableService implements TableService {
 
   columns: TableColumn[] = [
     { name: '_id', text: 'common.column.id', type: 'IdTableCellComponent', center: true, sortable: true },
-    { name: 'donor', text: 'bloodPackManager.column.donor', type: 'ObjectTextTableCellComponent', sortable: true },
-    { name: 'volume', text: 'bloodPackManager.column.volume', type: 'TextTableCellComponent', sortable: true },
     { name: 'createdAt', text: 'bloodPackManager.column.createdAt', type: 'DateTimeTableCellComponent', sortable: true },
+    { name: 'volume', text: 'bloodPackManager.column.volume', type: 'TextTableCellComponent', sortable: true },
     { name: 'bloodCamp', text: 'bloodPackManager.column.bloodCamp', type: 'ObjectTextTableCellComponent', sortable: true },
     { name: 'actions', text: 'common.column.actions', type: 'ActionsTableCellComponent', center: true }
   ];
 
   rows: TableRow[];
 
-  pagination: Pagination = {
+  defaultPagination: Pagination = {
     page: 1,
-    size: 10
+    size: 6,
+    totalItems: 0,
+    totalPages: 0
   };
 
+  pagination = this.defaultPagination;
+
   sortMode: SortMode = {
-    sortBy: '_id',
+    sortBy: 'createdAt',
     isSortAscending: false
   };
 
@@ -51,16 +54,21 @@ export class BloodPackManagerLiteTableService implements TableService {
   }
 
   getRawData() {
-    return this.bloodPackService.getBloodPacks(
-      this.pagination,
-      this.sortMode,
-      this.filterMode
-    ).pipe(
-      map((response: any) => {
-        this.pagination = response.pagination;
-        return response.items;
-      })
-    ).toPromise();
+    if (this.filterMode.donor) {
+      return this.bloodPackService.getBloodPacks(
+        this.pagination,
+        this.sortMode,
+        this.filterMode
+      ).pipe(
+        map((response: any) => {
+          this.pagination = response.pagination;
+          return response.items;
+        })
+      ).toPromise();
+    } else {
+      this.pagination = this.defaultPagination;
+      return Promise.resolve([]);
+    }
   }
 
   async getDataRows() {
@@ -74,12 +82,7 @@ export class BloodPackManagerLiteTableService implements TableService {
               continue;
             }
 
-            if (key === 'donor') {
-              cells[key] = {
-                value: row[key],
-                textProperty: 'username'
-              };
-            } else if (key === 'bloodCamp') {
+            if (key === 'bloodCamp') {
               cells[key] = {
                 value: row[key],
                 textProperty: 'name'
@@ -103,5 +106,4 @@ export class BloodPackManagerLiteTableService implements TableService {
       })
       .catch(error => this.alertService.error('common.alert.getDataFailed'));
   }
-
 }
