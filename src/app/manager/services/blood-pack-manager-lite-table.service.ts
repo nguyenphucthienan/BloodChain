@@ -18,7 +18,7 @@ export class BloodPackManagerLiteTableService implements TableService {
     { name: '_id', text: 'common.column.id', type: 'IdTableCellComponent', center: true, sortable: true },
     { name: 'donor', text: 'bloodPackManager.column.donor', type: 'ObjectTextTableCellComponent', sortable: true },
     { name: 'volume', text: 'bloodPackManager.column.volume', type: 'TextTableCellComponent', sortable: true },
-    { name: 'bloodCamp', text: 'bloodPackManager.column.bloodCamp', type: 'TextTableCellComponent', sortable: true },
+    { name: 'bloodCamp', text: 'bloodPackManager.column.bloodCamp', type: 'ObjectTextTableCellComponent', sortable: true },
     { name: 'actions', text: 'common.column.actions', type: 'ActionsTableCellComponent', center: true }
   ];
 
@@ -73,7 +73,12 @@ export class BloodPackManagerLiteTableService implements TableService {
               continue;
             }
 
-            if (key === 'donor' || key === 'bloodCamp') {
+            if (key === 'donor') {
+              cells[key] = {
+                value: row[key],
+                textProperty: 'username'
+              };
+            } else if (key === 'bloodCamp') {
               cells[key] = {
                 value: row[key],
                 textProperty: 'name'

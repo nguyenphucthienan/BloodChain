@@ -48,14 +48,22 @@ export class RegisterComponent implements OnInit {
         Validators.minLength(3),
         Validators.maxLength(20)
       ]],
-      email: ['', [Validators.required, Validators.email, Validators.maxLength(255)]],
+      email: ['', [
+        Validators.required,
+        Validators.email,
+        Validators.maxLength(255)
+      ]],
       firstName: ['', [Validators.required, Validators.maxLength(50)]],
       lastName: ['', [Validators.required, Validators.maxLength(50)]],
       gender: [this.genders[0].value, Validators.required],
       birthdate: [moment('1990-01-01').startOf('day'), Validators.required],
       phone: ['', Validators.required],
       address: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(50)]],
+      password: ['', [
+        Validators.required,
+        Validators.minLength(6),
+        Validators.maxLength(50)
+      ]],
       confirmPassword: ['', Validators.required]
     }, { validator: [this.passwordMatchValidator] });
   }

@@ -1,0 +1,117 @@
+<div class="container-fluid">
+  <div class="card mt-3">
+    <div class="card-body">
+      <app-breadcrumb></app-breadcrumb>
+    </div>
+  </div>
+  <div class="card mt-3">
+    <div class="card-body">
+      <ng-select [items]="users$ | async" bindValue="_id" bindLabel="username" [multiple]="false" [hideSelected]="true"
+        [loading]="usersLoading" [typeahead]="usersInput$"
+        [typeToSearchText]="'bloodPackManager.placeholder.search' | translate"
+        [placeholder]="'bloodPackManager.label.search' | translate" (change)="selectUser($event)">
+      </ng-select>
+    </div>
+  </div>
+  <div class="row row-eq-height">
+    <div class="col-md-6">
+      <div class="card mt-3 flex-card">
+        <div class="card-body">
+          <form [formGroup]="userForm">
+            <div class="md-form">
+              <input type="text" id="username" formControlName="username" class="form-control" mdbInput>
+              <label for="username">{{ 'bloodPackManager.label.username' | translate }}</label>
+            </div>
+            <div class="form-row">
+              <div class="col">
+                <div class="md-form form-col">
+                  <input type="text" id="firstName" formControlName="firstName" class="form-control" mdbInput>
+                  <label for="firstName">{{ 'bloodPackManager.label.firstName' | translate }}</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="md-form form-col">
+                  <input type="text" id="lastName" formControlName="lastName" class="form-control" mdbInput>
+                  <label for="lastName">{{ 'bloodPackManager.label.lastName' | translate }}</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col">
+                <div class="md-form form-col">
+                  <div class="md-form">
+                    <input type="text" id="email" formControlName="email" class="form-control" mdbInput>
+                    <label for="email">{{ 'bloodPackManager.label.email' | translate }}</label>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="md-form form-col">
+                  <div class="md-form">
+                    <input type="text" id="phone" formControlName="phone" class="form-control" mdbInput>
+                    <label for="phone">{{ 'bloodPackManager.label.phone' | translate }}</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col">
+                <div class="md-form form-col">
+                  <input type="text" id="gender" formControlName="gender" class="form-control" mdbInput>
+                  <label for="gender">{{ 'bloodPackManager.label.gender' | translate }}</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="md-form form-col">
+                  <input type="text" id="birthdate" formControlName="birthdate" class="form-control"
+                    [matDatepicker]="birthdatePicker" mdbInput readonly>
+                  <label for="birthdate">{{ 'bloodPackManager.label.birthdate' | translate }}</label>
+                  <mat-datepicker #birthdatePicker="matDatepicker"></mat-datepicker>
+                </div>
+              </div>
+            </div>
+            <div class="md-form">
+              <input type="text" id="address" formControlName="address" class="form-control" mdbInput>
+              <label for="address">{{ 'bloodPackManager.label.address' | translate }}</label>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 pl-md-0">
+      <div class="card mt-3 flex-card">
+        <div class="card-body">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card mt-3">
+    <div class="card-body">
+      <form [formGroup]="addForm" (ngSubmit)="addBloodPack()">
+        <div class="md-form">
+          <input type="text" id="donor" formControlName="donor" class="form-control" mdbInput>
+          <label for="donor">{{ 'bloodPackManager.label.donorId' | translate }}</label>
+          <mdb-error *ngIf="controlHasError('donor', 'required')">
+            {{ 'bloodPackManager.message.donorRequired' | translate }}
+          </mdb-error>
+        </div>
+        <div class="md-form">
+          <div class="md-form">
+            <input type="number" id="volume" formControlName="volume" class="form-control" mdbInput>
+            <label for="volume">{{ 'bloodPackManager.label.volume' | translate }}</label>
+            <mdb-error *ngIf="controlHasError('volume', 'required')">
+              {{ 'bloodPackManager.message.volumeRequired' | translate }}
+            </mdb-error>
+          </div>
+        </div>
+        <div class="d-flex justify-content-end">
+          <button type="button" mdbBtn color="secondary" class=" waves-light" mdbWavesEffect
+            (click)="resetForm()">{{ 'common.button.reset' | translate }}</button>
+          <button mdbBtn type="submit" color="primary" mdbWavesEffect [disabled]="addForm.invalid">
+            {{ 'common.button.add' | translate }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

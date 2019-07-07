@@ -12,13 +12,15 @@ import { ManagerUserManagerComponent } from './components/manager-user-manager/m
 import { ManagerRoutingModule } from './manager-routing.module';
 import { UserAddSuccessModalComponent } from './modals/user-add-success-modal/user-add-success-modal.component';
 import { UserManagerLiteTableService } from './services/user-manager-lite-table.service';
+import { ManagerBloodPackManagerAddBloodPackComponent } from './components/manager-blood-pack-manager-add-blood-pack/manager-blood-pack-manager-add-blood-pack.component';
 
 @NgModule({
   declarations: [
     ManagerUserManagerComponent,
     ManagerUserManagerAddUserComponent,
     UserAddSuccessModalComponent,
-    ManagerBloodPackManagerComponent
+    ManagerBloodPackManagerComponent,
+    ManagerBloodPackManagerAddBloodPackComponent
   ],
   imports: [
     SharedModule,

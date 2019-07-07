@@ -457,13 +457,21 @@
     },
     "column": {
       "donor": "Donor",
-      "volume": "Volume",
+      "volume": "Volume (ml)",
       "bloodCamp": "Blood Camp"
     },
     "label": {
-      "donor": "Donor",
-      "volume": "Volume",
-      "bloodCamp": "Blood camp"
+      "username": "Username",
+      "email": "Email",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "gender": "Gender",
+      "birthdate": "Birthdate",
+      "phone": "Phone",
+      "address": "Address",
+      "donorId": "Donor ID",
+      "volume": "Volume (ml)",
+      "search": "Search donor"
     },
     "message": {
       "donorRequired": "Donor is required",
@@ -475,7 +483,7 @@
       "addFailed": "Add blood pack failed"
     },
     "placeholder": {
-      "search": "Search by ID"
+      "search": "Search (min 3 characters)"
     },
     "modal": {
       "add": "Add Blood Pack"

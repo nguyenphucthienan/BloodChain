@@ -56,7 +56,11 @@ export class ManagerUserManagerAddUserComponent implements OnInit, OnDestroy {
         Validators.minLength(3),
         Validators.maxLength(20)
       ]],
-      email: ['', [Validators.required, Validators.email, Validators.maxLength(255)]],
+      email: ['', [
+        Validators.required,
+        Validators.email,
+        Validators.maxLength(255)
+      ]],
       firstName: ['', [Validators.required, Validators.maxLength(50)]],
       lastName: ['', [Validators.required, Validators.maxLength(50)]],
       gender: [this.genders[0].value, Validators.required],

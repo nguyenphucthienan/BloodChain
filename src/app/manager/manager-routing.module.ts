@@ -4,6 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { RoleName } from '../core/constant/role-name';
 import { HasRoleGuard } from '../core/guards/has-role.guard';
 import {
+  ManagerBloodPackManagerAddBloodPackComponent,
+} from './components/manager-blood-pack-manager-add-blood-pack/manager-blood-pack-manager-add-blood-pack.component';
+import {
   ManagerBloodPackManagerComponent,
 } from './components/manager-blood-pack-manager/manager-blood-pack-manager.component';
 import {
@@ -53,6 +56,11 @@ const routes: Routes = [
             path: '',
             pathMatch: 'full',
             component: ManagerBloodPackManagerComponent
+          },
+          {
+            path: 'add',
+            component: ManagerBloodPackManagerAddBloodPackComponent,
+            data: { breadcrumb: 'breadcrumb.manager.addBloodPacks' }
           }
         ]
       }

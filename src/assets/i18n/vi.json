@@ -457,13 +457,21 @@
     },
     "column": {
       "donor": "Người hiến",
-      "volume": "Thể tích",
+      "volume": "Thể tích (ml)",
       "bloodCamp": "Trung tâm hiến máu"
     },
     "label": {
-      "donor": "Người hiến",
-      "volume": "Thể tích",
-      "bloodCamp": "Trung tâm hiến máu"
+      "username": "Tên đăng nhập",
+      "email": "Email",
+      "firstName": "Họ",
+      "lastName": "Tên",
+      "gender": "Giới tính",
+      "birthdate": "Ngày sinh",
+      "phone": "Số điện thoại",
+      "address": "Địa chỉ",
+      "donorId": "ID Người hiến",
+      "volume": "Thể tích (ml)",
+      "searchDonor": "Search donor"
     },
     "message": {
       "donorRequired": "Người hiến không được bỏ trống",
@@ -475,7 +483,7 @@
       "addFailed": "Thêm túi máu không thành công"
     },
     "placeholder": {
-      "search": "Tìm kiếm theo ID"
+      "search": "Tìm kiếm (tối thiểu 3 kí tự)"
     },
     "modal": {
       "add": "Thêm túi máu"
