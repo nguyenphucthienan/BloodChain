@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { QRCodeModule } from 'angularx-qrcode';
 import { SidebarModule } from 'ng-sidebar';
@@ -20,6 +21,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { MapInputComponent } from './components/map-input/map-input.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { ScanQrcodeModalComponent } from './modals/scan-qrcode-modal/scan-qrcode-modal.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -31,7 +33,8 @@ export function createTranslateLoader(http: HttpClient) {
     SidebarComponent,
     PaginationComponent,
     MapInputComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    ScanQrcodeModalComponent
   ],
   imports: [
     CommonModule,
@@ -53,6 +56,7 @@ export function createTranslateLoader(http: HttpClient) {
     }),
     NgSelectModule,
     QRCodeModule,
+    ZXingScannerModule,
     NgxPrintModule,
     MatNativeDateModule,
     MatDatepickerModule
@@ -74,7 +78,11 @@ export function createTranslateLoader(http: HttpClient) {
     SidebarComponent,
     PaginationComponent,
     MapInputComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    ScanQrcodeModalComponent
+  ],
+  entryComponents: [
+    ScanQrcodeModalComponent
   ]
 })
 export class SharedModule { }

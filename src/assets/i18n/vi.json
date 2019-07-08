@@ -47,6 +47,9 @@
       "delete": "Xóa",
       "assign": "Cấp quyền"
     },
+    "modal": {
+      "scanQrCode": "Quét QR Code"
+    },
     "message": {
       "noData": "Không có dữ liệu",
       "areYouSure": "Bạn có chắc chắn rằng bạn muốn xóa"
@@ -240,7 +243,8 @@
   },
   "userManager": {
     "button": {
-      "add": "Thêm người dùng"
+      "add": "Thêm người dùng",
+      "scanQrCode": "Quét QR Code"
     },
     "column": {
       "roles": "Vai trò"
@@ -459,7 +463,8 @@
   },
   "bloodPackManager": {
     "button": {
-      "add": "Thêm túi máu"
+      "add": "Thêm túi máu",
+      "transfer": "Chuyển túi máu"
     },
     "column": {
       "donor": "Người hiến",

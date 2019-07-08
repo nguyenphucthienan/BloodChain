@@ -8,6 +8,7 @@ import { User } from 'src/app/core/models/user.interface';
 import { AlertService } from 'src/app/core/services/alert.service';
 import { BloodPackService } from 'src/app/core/services/blood-pack.service';
 import { UserService } from 'src/app/core/services/user.service';
+import { ScanQrcodeModalComponent } from 'src/app/shared/modals/scan-qrcode-modal/scan-qrcode-modal.component';
 
 import {
   BloodPackAddSuccessModalComponent,
@@ -112,6 +113,27 @@ export class BloodCampBloodPackManagerAddBloodPackComponent implements OnInit, O
     });
 
     this.donationHistory.changeUser(user);
+  }
+
+  openScanQrCodeModal() {
+    this.modalRef = this.modalService.show(ScanQrcodeModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-lg modal-dialog-centered',
+      containerClass: 'top',
+      animated: true
+    });
+
+    this.modalRef.content.scanSuccess
+      .subscribe((userId) => this.onQrCodeScanSuccess(userId));
+  }
+
+  onQrCodeScanSuccess(userId: string) {
+    this.userService.getUser(userId)
+      .subscribe((user: User) => this.selectUser(user));
   }
 
   addBloodPack() {

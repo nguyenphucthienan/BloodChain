@@ -47,6 +47,9 @@
       "delete": "Delete",
       "assign": "Assign"
     },
+    "modal": {
+      "scanQrCode": "Scan QR Code"
+    },
     "message": {
       "noData": "No data",
       "areYouSure": "Are you sure you want to delete"
@@ -245,7 +248,8 @@
   },
   "userManager": {
     "button": {
-      "add": "Add User"
+      "add": "Add User",
+      "scanQrCode": "Scan QR Code"
     },
     "column": {
       "roles": "Roles"
@@ -464,7 +468,8 @@
   },
   "bloodPackManager": {
     "button": {
-      "add": "Add Blood Pack"
+      "add": "Add Blood Pack",
+      "transfer": "Transfer Blood Packs"
     },
     "column": {
       "donor": "Donor",

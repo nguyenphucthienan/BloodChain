@@ -11,6 +11,9 @@
           [attr.placeholder]="'bloodPackManager.placeholder.search' | translate" mdbInput>
       </div>
       <div class="d-flex justify-content-end mt-3">
+        <button type="button" class="btn btn-sm btn-primary">
+          {{ 'bloodPackManager.button.transfer' | translate }}
+        </button>
         <button type="button" class="btn btn-sm btn-primary"
           [routerLink]="['/manager', 'blood-camp', 'blood-packs', 'add']">
           {{ 'bloodPackManager.button.add' | translate }}
