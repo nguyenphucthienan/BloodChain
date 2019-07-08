@@ -113,6 +113,7 @@
   "pagination": {
     "label": {
       "page": "Page",
+      "limit": "Limit",
       "results": "Results",
       "to": "to",
       "of": "of"

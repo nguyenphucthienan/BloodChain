@@ -108,6 +108,7 @@
   "pagination": {
     "label": {
       "page": "Trang",
+      "limit": "Giới hạn",
       "results": "Kết quả",
       "to": "tới",
       "of": "của"

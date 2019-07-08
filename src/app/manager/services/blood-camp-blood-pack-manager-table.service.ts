@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { RoleName } from 'src/app/core/constant/role-name';
 import { FilterMode } from 'src/app/core/models/filter-mode.interface';
 import { Pagination } from 'src/app/core/models/pagination.interface';
 import { SortMode } from 'src/app/core/models/sort-mode.interface';
@@ -34,7 +35,9 @@ export class BloodCampBloodPackManagerTableService implements TableService {
     isSortAscending: false
   };
 
-  filterMode: FilterMode = {};
+  filterMode: FilterMode = {
+    organization: RoleName.BLOOD_CAMP
+  };
 
   actions: TableAction[] = [
     { class: 'btn-info', icon: 'fa fa-info-circle', text: 'common.tooltip.detail', type: TableActionType.GetDetail }

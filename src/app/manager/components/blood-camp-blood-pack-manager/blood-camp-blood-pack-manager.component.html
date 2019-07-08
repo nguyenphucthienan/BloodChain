@@ -21,7 +21,8 @@
   <div class="card mt-3">
     <div class="card-body">
       <app-datatable [tableName]="'table.name.bloodPackManager' | translate"
-        [tableService]="bloodCampBloodPackManagerTableService" (cellChanged)="onTableCellChanged($event)">
+        [tableService]="bloodCampBloodPackManagerTableService" (cellChanged)="onTableCellChanged($event)"
+        [selectableRow]="true">
       </app-datatable>
     </div>
   </div>
