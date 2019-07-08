@@ -1,6 +1,5 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output, Renderer2, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { TranslateService } from '@ngx-translate/core';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { concat, Observable, of, Subject } from 'rxjs';
 import { catchError, debounceTime, distinctUntilChanged, filter, map, switchMap, tap } from 'rxjs/operators';
@@ -10,6 +9,9 @@ import { AlertService } from 'src/app/core/services/alert.service';
 import { BloodPackService } from 'src/app/core/services/blood-pack.service';
 import { UserService } from 'src/app/core/services/user.service';
 
+import {
+  BloodPackAddSuccessModalComponent,
+} from '../../modals/blood-pack-add-success-modal/blood-pack-add-success-modal.component';
 import {
   ManagerBloodPackManagerDonationHistoryComponent,
 } from '../manager-blood-pack-manager-donation-history/manager-blood-pack-manager-donation-history.component';
@@ -41,7 +43,6 @@ export class ManagerBloodPackManagerAddBloodPackComponent implements OnInit, OnD
     private bloodPackService: BloodPackService,
     private renderer: Renderer2,
     private alertService: AlertService,
-    private translate: TranslateService,
     private modalService: MDBModalService
   ) { }
 
@@ -126,22 +127,22 @@ export class ManagerBloodPackManagerAddBloodPackComponent implements OnInit, OnD
   }
 
   openBloodPackAddSuccessModal(bloodPack: BloodPack) {
-    // this.modalRef = this.modalService.show(BloodPackAddSuccessModalComponent, {
-    //   backdrop: true,
-    //   keyboard: true,
-    //   focus: true,
-    //   show: false,
-    //   ignoreBackdropClick: true,
-    //   class: 'modal-dialog-centered',
-    //   containerClass: 'top',
-    //   animated: true,
-    //   data: {
-    //     bloodPack
-    //   }
-    // });
+    this.modalRef = this.modalService.show(BloodPackAddSuccessModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        bloodPack
+      }
+    });
 
-    // this.modalRef.content.closed
-    //   .subscribe(() => this.onBloodPackAddSuccessModalClosed());
+    this.modalRef.content.closed
+      .subscribe(() => this.onBloodPackAddSuccessModalClosed());
   }
 
   onBloodPackAddSuccessModalClosed() {

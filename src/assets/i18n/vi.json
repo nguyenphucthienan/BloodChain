@@ -244,10 +244,12 @@
       "roles": "Vai trò"
     },
     "label": {
+      "id": "ID",
       "username": "Tên đăng nhập",
       "email": "Email",
       "firstName": "Họ",
       "lastName": "Tên",
+      "fullName": "Họ tên",
       "gender": "Giới tính",
       "birthdate": "Ngày sinh",
       "phone": "Số điện thoại",
@@ -463,10 +465,14 @@
       "bloodCamp": "Trung tâm hiến máu",
       "createdAt": "Thời gian"
     },
+    "modal": {
+      "bloodPackInfo": "Thông tin túi máu"
+    },
     "label": {
       "donorInfo": "THÔNG TIN NGƯỜI HIẾN",
       "addBloodPack": "THÊM TÚI MÁU",
       "username": "Tên đăng nhập",
+      "id": "ID",
       "email": "Email",
       "firstName": "Họ",
       "lastName": "Tên",
@@ -476,6 +482,7 @@
       "address": "Địa chỉ",
       "donorId": "ID Người hiến",
       "volume": "Thể tích (ml)",
+      "time": "Thời gian",
       "search": "Tìm người hiến"
     },
     "message": {

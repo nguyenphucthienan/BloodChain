@@ -7,17 +7,27 @@
   </div>
   <div id="print-section" class="modal-body">
     <div class="d-flex justify-content-center">
-      <qrcode [qrdata]="qcCode" [size]="256" [level]="'M'"></qrcode>
+      <qrcode [qrdata]="qrCode" [size]="256" [level]="'M'"></qrcode>
     </div>
-    <br>
+    <hr>
     <div class="text-center">
-      <h3 class="h3">{{ user.username }}</h3>
-      <h5 class="h5">{{ user.firstName}} {{ user.lastName}}</h5>
+      <h5>
+        <span class="font-weight-bold">{{ 'userManager.label.id' | translate }}: </span>
+        <span>{{ user._id }}</span>
+      </h5>
+      <h5>
+        <span class="font-weight-bold">{{ 'userManager.label.username' | translate }}: </span>
+        <span>{{ user.username }}</span>
+      </h5>
+      <h5>
+        <span class="font-weight-bold">{{ 'userManager.label.fullName' | translate }}: </span>
+        <span>{{ user.firstName}} {{ user.lastName}}</span>
+      </h5>
       <hr>
-      <div>
+      <h5 class="temporary-password">
         <span class="font-weight-bold">{{ 'userManager.label.temporaryPassword' | translate }}: </span>
         <span>{{ user.rawPassword }}</span>
-      </div>
+      </h5>
     </div>
   </div>
   <div class="modal-footer">

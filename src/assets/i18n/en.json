@@ -244,10 +244,12 @@
       "roles": "Roles"
     },
     "label": {
+      "id": "ID",
       "username": "Username",
       "email": "Email",
       "firstName": "First name",
       "lastName": "Last name",
+      "fullName": "Full name",
       "gender": "Gender",
       "birthdate": "Birthdate",
       "phone": "Phone",
@@ -463,9 +465,13 @@
       "bloodCamp": "Blood Camp",
       "createdAt": "Time"
     },
+    "modal": {
+      "bloodPackInfo": "Blood Pack Info"
+    },
     "label": {
       "donorInfo": "DONOR INFO",
       "addBloodPack": "ADD BLOOD PACK",
+      "id": "ID",
       "username": "Username",
       "email": "Email",
       "firstName": "First name",
@@ -476,6 +482,7 @@
       "address": "Address",
       "donorId": "Donor ID",
       "volume": "Volume (ml)",
+      "time": "Time",
       "search": "Search donor"
     },
     "message": {
