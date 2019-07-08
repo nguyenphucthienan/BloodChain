@@ -17,11 +17,11 @@ import {
 } from '../manager-blood-pack-manager-donation-history/manager-blood-pack-manager-donation-history.component';
 
 @Component({
-  selector: 'app-manager-blood-pack-manager-add-blood-pack',
-  templateUrl: './manager-blood-pack-manager-add-blood-pack.component.html',
-  styleUrls: ['./manager-blood-pack-manager-add-blood-pack.component.scss']
+  selector: 'app-blood-camp-blood-pack-manager-add-blood-pack',
+  templateUrl: './blood-camp-blood-pack-manager-add-blood-pack.component.html',
+  styleUrls: ['./blood-camp-blood-pack-manager-add-blood-pack.component.scss']
 })
-export class ManagerBloodPackManagerAddBloodPackComponent implements OnInit, OnDestroy {
+export class BloodCampBloodPackManagerAddBloodPackComponent implements OnInit, OnDestroy {
 
   @ViewChild(ManagerBloodPackManagerDonationHistoryComponent)
   donationHistory: ManagerBloodPackManagerDonationHistoryComponent;
@@ -146,7 +146,7 @@ export class ManagerBloodPackManagerAddBloodPackComponent implements OnInit, OnD
   }
 
   onBloodPackAddSuccessModalClosed() {
-    this.resetForm();
+    this.donationHistory.datatable.refresh();
   }
 
   resetForm() {

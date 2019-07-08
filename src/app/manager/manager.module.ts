@@ -3,14 +3,14 @@ import { NgModule } from '@angular/core';
 import { DatatableModule } from '../datatable/datatable.module';
 import { SharedModule } from '../shared/shared.module';
 import {
-  ManagerBloodPackManagerAddBloodPackComponent,
-} from './components/manager-blood-pack-manager-add-blood-pack/manager-blood-pack-manager-add-blood-pack.component';
+  BloodCampBloodPackManagerAddBloodPackComponent,
+} from './components/blood-camp-blood-pack-manager-add-blood-pack/blood-camp-blood-pack-manager-add-blood-pack.component';
+import {
+  BloodCampBloodPackManagerComponent,
+} from './components/blood-camp-blood-pack-manager/blood-camp-blood-pack-manager.component';
 import {
   ManagerBloodPackManagerDonationHistoryComponent,
 } from './components/manager-blood-pack-manager-donation-history/manager-blood-pack-manager-donation-history.component';
-import {
-  ManagerBloodPackManagerComponent,
-} from './components/manager-blood-pack-manager/manager-blood-pack-manager.component';
 import {
   ManagerUserManagerAddUserComponent,
 } from './components/manager-user-manager-add-user/manager-user-manager-add-user.component';
@@ -27,10 +27,10 @@ import { UserManagerLiteTableService } from './services/user-manager-lite-table.
     ManagerUserManagerComponent,
     ManagerUserManagerAddUserComponent,
     UserAddSuccessModalComponent,
-    ManagerBloodPackManagerComponent,
-    ManagerBloodPackManagerAddBloodPackComponent,
     ManagerBloodPackManagerDonationHistoryComponent,
-    BloodPackAddSuccessModalComponent
+    BloodPackAddSuccessModalComponent,
+    BloodCampBloodPackManagerComponent,
+    BloodCampBloodPackManagerAddBloodPackComponent
   ],
   imports: [
     SharedModule,

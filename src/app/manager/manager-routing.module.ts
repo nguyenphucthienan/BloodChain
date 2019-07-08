@@ -4,11 +4,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { RoleName } from '../core/constant/role-name';
 import { HasRoleGuard } from '../core/guards/has-role.guard';
 import {
-  ManagerBloodPackManagerAddBloodPackComponent,
-} from './components/manager-blood-pack-manager-add-blood-pack/manager-blood-pack-manager-add-blood-pack.component';
+  BloodCampBloodPackManagerAddBloodPackComponent,
+} from './components/blood-camp-blood-pack-manager-add-blood-pack/blood-camp-blood-pack-manager-add-blood-pack.component';
 import {
-  ManagerBloodPackManagerComponent,
-} from './components/manager-blood-pack-manager/manager-blood-pack-manager.component';
+  BloodCampBloodPackManagerComponent,
+} from './components/blood-camp-blood-pack-manager/blood-camp-blood-pack-manager.component';
 import {
   ManagerUserManagerAddUserComponent,
 } from './components/manager-user-manager-add-user/manager-user-manager-add-user.component';
@@ -45,33 +45,34 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'blood-packs',
-        data: { breadcrumb: 'breadcrumb.manager.bloodPacks' },
+        path: 'blood-camp',
+        data: { breadcrumb: 'breadcrumb.manager.bloodCamp.main' },
         children: [
           {
             path: '',
             pathMatch: 'full',
-            canActivate: [HasRoleGuard],
-            data: {
-              roles: [
-                RoleName.ADMIN,
-                RoleName.BLOOD_CAMP,
-                RoleName.BLOOD_TEST_CENTER,
-                RoleName.BLOOD_SEPARATION_CENTER,
-                RoleName.BLOOD_BANK,
-                RoleName.HOSPITAL
-              ],
-              breadcrumb: 'breadcrumb.manager.bloodPacks'
-            },
-            component: ManagerBloodPackManagerComponent
+            redirectTo: 'blood-packs'
           },
           {
-            path: 'add',
-            component: ManagerBloodPackManagerAddBloodPackComponent,
-            data: {
-              roles: [RoleName.DONOR],
-              breadcrumb: 'breadcrumb.manager.addBloodPacks'
-            }
+            path: 'blood-packs',
+            data: { breadcrumb: 'breadcrumb.manager.bloodCamp.bloodPacks.main' },
+            children: [
+              {
+                path: '',
+                pathMatch: 'full',
+                canActivate: [HasRoleGuard],
+                data: { roles: [RoleName.BLOOD_CAMP] },
+                component: BloodCampBloodPackManagerComponent
+              },
+              {
+                path: 'add',
+                component: BloodCampBloodPackManagerAddBloodPackComponent,
+                data: {
+                  roles: [RoleName.BLOOD_CAMP],
+                  breadcrumb: 'breadcrumb.manager.bloodCamp.bloodPacks.addBloodPacks'
+                }
+              }
+            ]
           }
         ]
       }

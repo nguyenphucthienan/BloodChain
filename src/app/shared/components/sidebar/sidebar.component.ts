@@ -21,7 +21,7 @@ export class SidebarComponent implements OnInit {
 
   readonly bloodCampRoutes = [
     { path: '/manager/users', title: 'sidebar.title.users', icon: 'users' },
-    { path: '/manager/blood-packs', title: 'sidebar.title.bloodPacks', icon: 'cube' }
+    { path: '/manager/blood-camp/blood-packs', title: 'sidebar.title.bloodPacks', icon: 'cube' }
   ];
 
   @Output() sidebarToggled = new EventEmitter();

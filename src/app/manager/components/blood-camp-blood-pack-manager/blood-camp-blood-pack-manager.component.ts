@@ -6,15 +6,15 @@ import { DatatableComponent } from 'src/app/datatable/datatable.component';
 import { TableActionType } from 'src/app/datatable/models/table-action.interface';
 import { TableCellChange } from 'src/app/datatable/models/table-cell-change.interface';
 
-import { BloodPackManagerLiteTableService } from '../../services/blood-pack-manager-lite-table.service';
+import { BloodCampBloodPackManagerTableService } from '../../services/blood-camp-blood-pack-manager-table.service';
 
 @Component({
-  selector: 'app-manager-blood-pack-manager',
-  templateUrl: './manager-blood-pack-manager.component.html',
-  styleUrls: ['./manager-blood-pack-manager.component.scss'],
-  providers: [BloodPackManagerLiteTableService]
+  selector: 'app-blood-camp-blood-pack-manager',
+  templateUrl: './blood-camp-blood-pack-manager.component.html',
+  styleUrls: ['./blood-camp-blood-pack-manager.component.scss'],
+  providers: [BloodCampBloodPackManagerTableService]
 })
-export class ManagerBloodPackManagerComponent implements OnInit, AfterViewInit, OnDestroy {
+export class BloodCampBloodPackManagerComponent implements OnInit, AfterViewInit, OnDestroy {
 
   @ViewChild(DatatableComponent) datatable: DatatableComponent;
   @ViewChild('search') search: ElementRef;
@@ -23,7 +23,7 @@ export class ManagerBloodPackManagerComponent implements OnInit, AfterViewInit, 
   modalRef: MDBModalRef;
 
   constructor(
-    public bloodPackManagerLiteTableService: BloodPackManagerLiteTableService,
+    public bloodCampBloodPackManagerTableService: BloodCampBloodPackManagerTableService,
     private renderer: Renderer2
   ) { }
 
@@ -43,8 +43,8 @@ export class ManagerBloodPackManagerComponent implements OnInit, AfterViewInit, 
 
   searchBloodPack(value: string) {
     if (value.length === 0 || value.length > 2) {
-      this.bloodPackManagerLiteTableService.pagination.page = 1;
-      this.bloodPackManagerLiteTableService.filterMode._id = value;
+      this.bloodCampBloodPackManagerTableService.pagination.page = 1;
+      this.bloodCampBloodPackManagerTableService.filterMode._id = value;
       this.datatable.refresh();
     }
   }

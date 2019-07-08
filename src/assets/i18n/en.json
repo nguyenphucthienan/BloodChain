@@ -86,8 +86,13 @@
       "main": "Manager",
       "users": "Users",
       "addUsers": "Add User",
-      "bloodPacks": "Blood Packs",
-      "addBloodPacks": "Add Blood Pack"
+      "bloodCamp": {
+        "main": "Blood Camp",
+        "bloodPacks": {
+          "main": "Blood Packs",
+          "addBloodPacks": "Add Blood Pack"
+        }
+      }
     },
     "profile": {
       "main": "Profile",
