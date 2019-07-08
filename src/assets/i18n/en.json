@@ -79,7 +79,8 @@
       "bloodTestCenters": "Blood Test Centers",
       "bloodSeparationCenters": "Blood Separation Centers",
       "bloodBanks": "Blood Banks",
-      "hospitals": "Hospitals"
+      "hospitals": "Hospitals",
+      "bloodPacks": "Blood Packs"
     },
     "manager": {
       "main": "Manager",

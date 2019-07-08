@@ -15,7 +15,8 @@ export class SidebarComponent implements OnInit {
     { path: '/admin/blood-test-centers', title: 'sidebar.title.bloodTestCenters', icon: 'vial' },
     { path: '/admin/blood-separation-centers', title: 'sidebar.title.bloodSeparationCenters', icon: 'columns' },
     { path: '/admin/blood-banks', title: 'sidebar.title.bloodBanks', icon: 'university' },
-    { path: '/admin/hospitals', title: 'sidebar.title.hospitals', icon: 'hospital' }
+    { path: '/admin/hospitals', title: 'sidebar.title.hospitals', icon: 'hospital' },
+    { path: '/admin/blood-packs', title: 'sidebar.title.bloodPacks', icon: 'cube' }
   ];
 
   readonly bloodCampRoutes = [

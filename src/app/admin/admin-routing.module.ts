@@ -5,6 +5,7 @@ import { RoleName } from '../core/constant/role-name';
 import { HasRoleGuard } from '../core/guards/has-role.guard';
 import { AdminBloodBankManagerComponent } from './components/admin-blood-bank-manager/admin-blood-bank-manager.component';
 import { AdminBloodCampManagerComponent } from './components/admin-blood-camp-manager/admin-blood-camp-manager.component';
+import { AdminBloodPackManagerComponent } from './components/admin-blood-pack-manager/admin-blood-pack-manager.component';
 import {
   AdminBloodSeparationCenterManagerComponent,
 } from './components/admin-blood-separation-center-manager/admin-blood-separation-center-manager.component';
@@ -54,6 +55,11 @@ const routes: Routes = [
         path: 'hospitals',
         component: AdminHospitalManagerComponent,
         data: { breadcrumb: 'breadcrumb.admin.hospitals' }
+      },
+      {
+        path: 'blood-packs',
+        component: AdminBloodPackManagerComponent,
+        data: { breadcrumb: 'breadcrumb.admin.bloodPacks' }
       }
     ]
   }

@@ -79,7 +79,8 @@
       "bloodTestCenters": "Trung tâm xét nghiệm",
       "bloodSeparationCenters": "Trung tâm phân tách",
       "bloodBanks": "Ngân hàng máu",
-      "hospitals": "Bệnh viện"
+      "hospitals": "Bệnh viện",
+      "bloodPacks": "Túi máu"
     },
     "manager": {
       "main": "Quản lí",

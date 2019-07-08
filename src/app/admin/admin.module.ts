@@ -6,6 +6,7 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
 import { AdminBloodBankManagerComponent } from './components/admin-blood-bank-manager/admin-blood-bank-manager.component';
 import { AdminBloodCampManagerComponent } from './components/admin-blood-camp-manager/admin-blood-camp-manager.component';
+import { AdminBloodPackManagerComponent } from './components/admin-blood-pack-manager/admin-blood-pack-manager.component';
 import {
   AdminBloodSeparationCenterManagerComponent,
 } from './components/admin-blood-separation-center-manager/admin-blood-separation-center-manager.component';
@@ -85,7 +86,8 @@ import { HospitalUpdateModalComponent } from './modals/hospital-update-modal/hos
     HospitalAddModalComponent,
     HospitalUpdateModalComponent,
     HospitalDeleteModalComponent,
-    HospitalAssignStaffsModalComponent
+    HospitalAssignStaffsModalComponent,
+    AdminBloodPackManagerComponent
   ],
   imports: [
     SharedModule,

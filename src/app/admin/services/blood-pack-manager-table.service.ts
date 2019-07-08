@@ -12,13 +12,14 @@ import { TableRow } from 'src/app/datatable/models/table-row.interface';
 import { TableService } from 'src/app/datatable/services/table.service';
 
 @Injectable()
-export class BloodPackManagerLiteTableService implements TableService {
+export class BloodPackManagerTableService implements TableService {
 
   columns: TableColumn[] = [
     { name: '_id', text: 'common.column.id', type: 'IdTableCellComponent', center: true, sortable: true },
     { name: 'donor', text: 'bloodPackManager.column.donor', type: 'ObjectTextTableCellComponent', sortable: true },
     { name: 'volume', text: 'bloodPackManager.column.volume', type: 'TextTableCellComponent', sortable: true },
     { name: 'createdAt', text: 'bloodPackManager.column.createdAt', type: 'DateTimeTableCellComponent', sortable: true },
+    { name: 'bloodCamp', text: 'bloodPackManager.column.bloodCamp', type: 'ObjectTextTableCellComponent', sortable: true },
     { name: 'actions', text: 'common.column.actions', type: 'ActionsTableCellComponent', center: true }
   ];
 
@@ -77,6 +78,11 @@ export class BloodPackManagerLiteTableService implements TableService {
               cells[key] = {
                 value: row[key],
                 textProperty: 'username'
+              };
+            } else if (key === 'bloodCamp') {
+              cells[key] = {
+                value: row[key],
+                textProperty: 'name'
               };
             } else {
               cells[key] = {

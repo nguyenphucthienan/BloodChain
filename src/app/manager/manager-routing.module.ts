@@ -46,21 +46,32 @@ const routes: Routes = [
       },
       {
         path: 'blood-packs',
-        canActivate: [HasRoleGuard],
-        data: {
-          roles: [RoleName.ADMIN, RoleName.BLOOD_CAMP],
-          breadcrumb: 'breadcrumb.manager.bloodPacks'
-        },
+        data: { breadcrumb: 'breadcrumb.manager.bloodPacks' },
         children: [
           {
             path: '',
             pathMatch: 'full',
+            canActivate: [HasRoleGuard],
+            data: {
+              roles: [
+                RoleName.ADMIN,
+                RoleName.BLOOD_CAMP,
+                RoleName.BLOOD_TEST_CENTER,
+                RoleName.BLOOD_SEPARATION_CENTER,
+                RoleName.BLOOD_BANK,
+                RoleName.HOSPITAL
+              ],
+              breadcrumb: 'breadcrumb.manager.bloodPacks'
+            },
             component: ManagerBloodPackManagerComponent
           },
           {
             path: 'add',
             component: ManagerBloodPackManagerAddBloodPackComponent,
-            data: { breadcrumb: 'breadcrumb.manager.addBloodPacks' }
+            data: {
+              roles: [RoleName.DONOR],
+              breadcrumb: 'breadcrumb.manager.addBloodPacks'
+            }
           }
         ]
       }
