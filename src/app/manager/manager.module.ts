@@ -6,6 +6,9 @@ import {
   BloodCampBloodPackManagerAddBloodPackComponent,
 } from './components/blood-camp-blood-pack-manager-add-blood-pack/blood-camp-blood-pack-manager-add-blood-pack.component';
 import {
+  BloodCampBloodPackManagerTransferBloodPackComponent,
+} from './components/blood-camp-blood-pack-manager-transfer-blood-pack/blood-camp-blood-pack-manager-transfer-blood-pack.component';
+import {
   BloodCampBloodPackManagerComponent,
 } from './components/blood-camp-blood-pack-manager/blood-camp-blood-pack-manager.component';
 import {
@@ -30,7 +33,8 @@ import { UserManagerLiteTableService } from './services/user-manager-lite-table.
     ManagerBloodPackManagerDonationHistoryComponent,
     BloodPackAddSuccessModalComponent,
     BloodCampBloodPackManagerComponent,
-    BloodCampBloodPackManagerAddBloodPackComponent
+    BloodCampBloodPackManagerAddBloodPackComponent,
+    BloodCampBloodPackManagerTransferBloodPackComponent
   ],
   imports: [
     SharedModule,
@@ -42,7 +46,7 @@ import { UserManagerLiteTableService } from './services/user-manager-lite-table.
   ],
   entryComponents: [
     UserAddSuccessModalComponent,
-    BloodPackAddSuccessModalComponent
+    BloodPackAddSuccessModalComponent,
   ]
 })
 export class ManagerModule { }

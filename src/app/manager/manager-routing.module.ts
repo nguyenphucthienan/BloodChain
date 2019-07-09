@@ -7,6 +7,9 @@ import {
   BloodCampBloodPackManagerAddBloodPackComponent,
 } from './components/blood-camp-blood-pack-manager-add-blood-pack/blood-camp-blood-pack-manager-add-blood-pack.component';
 import {
+  BloodCampBloodPackManagerTransferBloodPackComponent,
+} from './components/blood-camp-blood-pack-manager-transfer-blood-pack/blood-camp-blood-pack-manager-transfer-blood-pack.component';
+import {
   BloodCampBloodPackManagerComponent,
 } from './components/blood-camp-blood-pack-manager/blood-camp-blood-pack-manager.component';
 import {
@@ -46,7 +49,11 @@ const routes: Routes = [
       },
       {
         path: 'blood-camp',
-        data: { breadcrumb: 'breadcrumb.manager.bloodCamp.main' },
+        canActivate: [HasRoleGuard],
+        data: {
+          roles: [RoleName.BLOOD_CAMP],
+          breadcrumb: 'breadcrumb.manager.bloodCamp.main'
+        },
         children: [
           {
             path: '',
@@ -60,17 +67,17 @@ const routes: Routes = [
               {
                 path: '',
                 pathMatch: 'full',
-                canActivate: [HasRoleGuard],
-                data: { roles: [RoleName.BLOOD_CAMP] },
                 component: BloodCampBloodPackManagerComponent
               },
               {
                 path: 'add',
                 component: BloodCampBloodPackManagerAddBloodPackComponent,
-                data: {
-                  roles: [RoleName.BLOOD_CAMP],
-                  breadcrumb: 'breadcrumb.manager.bloodCamp.bloodPacks.addBloodPacks'
-                }
+                data: { breadcrumb: 'breadcrumb.manager.bloodCamp.bloodPacks.addBloodPacks' }
+              },
+              {
+                path: 'transfer',
+                component: BloodCampBloodPackManagerTransferBloodPackComponent,
+                data: { breadcrumb: 'breadcrumb.manager.bloodCamp.bloodPacks.transferBloodPacks' }
               }
             ]
           }

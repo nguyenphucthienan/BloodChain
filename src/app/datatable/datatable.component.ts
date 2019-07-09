@@ -12,7 +12,8 @@ declare const $: any;
 @Component({
   selector: 'app-datatable',
   templateUrl: './datatable.component.html',
-  styleUrls: ['./datatable.component.scss']
+  styleUrls: ['./datatable.component.scss'],
+  providers: [TableRowSelectTrackingService]
 })
 export class DatatableComponent implements OnInit {
 
@@ -26,10 +27,10 @@ export class DatatableComponent implements OnInit {
   rows: TableRow[] = [];
   selectAllOnPage: boolean;
 
-  start: any;
-  pressed: boolean;
-  startX: number;
-  startWidth: number;
+  private start: any;
+  private pressed: boolean;
+  private startX: number;
+  private startWidth: number;
 
   constructor(
     private tableRowSelectTrackingService: TableRowSelectTrackingService,
@@ -58,6 +59,10 @@ export class DatatableComponent implements OnInit {
 
   onCellChanged(event: any) {
     this.cellChanged.emit(event);
+  }
+
+  getSelectedRowIds() {
+    return this.tableRowSelectTrackingService.getInfo();
   }
 
   selectAllHeader(checked: boolean) {

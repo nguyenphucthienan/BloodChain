@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { MDBModalRef } from 'angular-bootstrap-md';
 import { fromEvent, Subscription } from 'rxjs';
 import { debounceTime, map, tap } from 'rxjs/operators';
@@ -24,6 +25,7 @@ export class BloodCampBloodPackManagerComponent implements OnInit, AfterViewInit
 
   constructor(
     public bloodCampBloodPackManagerTableService: BloodCampBloodPackManagerTableService,
+    private router: Router,
     private renderer: Renderer2
   ) { }
 
@@ -56,6 +58,21 @@ export class BloodCampBloodPackManagerComponent implements OnInit, AfterViewInit
         this.navigateToBloodPackDetail(tableCellChange.row.cells._id.value);
         break;
     }
+  }
+
+  async navigateToTransferBloodPack() {
+    const selectedIds = Array.from(this.datatable.getSelectedRowIds().selectedIds);
+    const selectedBloodPacks = this.datatable.rows
+      .filter(row => selectedIds.includes(row.cells._id.value))
+      .map(row => ({
+        _id: row.cells._id.value,
+        donor: row.cells.donor.value,
+        volume: row.cells.volume.value
+      }));
+
+    this.router.navigate(['/manager', 'blood-camp', 'blood-packs', 'transfer'], {
+      state: { bloodPacks: selectedBloodPacks }
+    });
   }
 
   navigateToBloodPackDetail(id: string) {

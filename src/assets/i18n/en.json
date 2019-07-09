@@ -93,7 +93,8 @@
         "main": "Blood Camp",
         "bloodPacks": {
           "main": "Blood Packs",
-          "addBloodPacks": "Add Blood Pack"
+          "addBloodPacks": "Add Blood Pack",
+          "transferBloodPacks": "Transfer Blood Pack"
         }
       }
     },
@@ -495,7 +496,8 @@
       "donorId": "Donor ID",
       "volume": "Volume (ml)",
       "time": "Time",
-      "search": "Search donor"
+      "searchDonor": "Search donor",
+      "searchBloodPack": "Search blood pack"
     },
     "message": {
       "donorRequired": "Donor is required",

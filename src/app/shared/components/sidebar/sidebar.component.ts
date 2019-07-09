@@ -57,6 +57,7 @@ export class SidebarComponent implements OnInit {
 
   private resetSidebar() {
     this.showAdminRoutes = false;
+    this.showBloodCampRoutes = false;
   }
 
 }
