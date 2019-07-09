@@ -34,7 +34,7 @@ import { UserManagerLiteTableService } from './services/user-manager-lite-table.
     BloodPackAddSuccessModalComponent,
     BloodCampBloodPackManagerComponent,
     BloodCampBloodPackManagerAddBloodPackComponent,
-    BloodCampBloodPackManagerTransferBloodPackComponent
+    BloodCampBloodPackManagerTransferBloodPackComponent,
   ],
   imports: [
     SharedModule,

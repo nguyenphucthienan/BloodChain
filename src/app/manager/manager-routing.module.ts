@@ -72,7 +72,7 @@ const routes: Routes = [
               {
                 path: 'add',
                 component: BloodCampBloodPackManagerAddBloodPackComponent,
-                data: { breadcrumb: 'breadcrumb.manager.bloodCamp.bloodPacks.addBloodPacks' }
+                data: { breadcrumb: 'breadcrumb.manager.bloodCamp.bloodPacks.addBloodPack' }
               },
               {
                 path: 'transfer',

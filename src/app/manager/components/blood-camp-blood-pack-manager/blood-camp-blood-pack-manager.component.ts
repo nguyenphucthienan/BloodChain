@@ -62,16 +62,11 @@ export class BloodCampBloodPackManagerComponent implements OnInit, AfterViewInit
 
   async navigateToTransferBloodPack() {
     const selectedIds = Array.from(this.datatable.getSelectedRowIds().selectedIds);
-    const selectedBloodPacks = this.datatable.rows
-      .filter(row => selectedIds.includes(row.cells._id.value))
-      .map(row => ({
-        _id: row.cells._id.value,
-        donor: row.cells.donor.value,
-        volume: row.cells.volume.value
-      }));
+    const selectedRows = this.datatable.rows
+      .filter(row => selectedIds.includes(row.cells._id.value));
 
     this.router.navigate(['/manager', 'blood-camp', 'blood-packs', 'transfer'], {
-      state: { bloodPacks: selectedBloodPacks }
+      state: { bloodPacks: selectedRows }
     });
   }
 

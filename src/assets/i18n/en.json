@@ -93,8 +93,8 @@
         "main": "Blood Camp",
         "bloodPacks": {
           "main": "Blood Packs",
-          "addBloodPacks": "Add Blood Pack",
-          "transferBloodPacks": "Transfer Blood Pack"
+          "addBloodPack": "Add Blood Pack",
+          "transferBloodPacks": "Transfer Blood Packs"
         }
       }
     },
