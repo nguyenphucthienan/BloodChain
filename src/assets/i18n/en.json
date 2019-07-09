@@ -506,7 +506,9 @@
     },
     "alert": {
       "addSuccess": "Add blood pack successfully",
-      "addFailed": "Add blood pack failed"
+      "addFailed": "Add blood pack failed",
+      "alreadySelected": "Blood pack has already been selected",
+      "cannotSelect": "You cannot select this blood pack"
     },
     "placeholder": {
       "search": "Search (min 3 characters)"

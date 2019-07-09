@@ -501,7 +501,9 @@
     },
     "alert": {
       "addSuccess": "Thêm túi máu thành công",
-      "addFailed": "Thêm túi máu không thành công"
+      "addFailed": "Thêm túi máu không thành công",
+      "alreadySelected": "Túi máu đã được chọn",
+      "cannotSelect": "Bạn không thể chọn túi máu này"
     },
     "placeholder": {
       "search": "Tìm kiếm (tối thiểu 3 kí tự)"

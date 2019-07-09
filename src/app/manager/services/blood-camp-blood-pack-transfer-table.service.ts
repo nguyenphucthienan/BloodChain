@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import { FilterMode } from 'src/app/core/models/filter-mode.interface';
 import { Pagination } from 'src/app/core/models/pagination.interface';
 import { SortMode } from 'src/app/core/models/sort-mode.interface';
+import { AlertService } from 'src/app/core/services/alert.service';
 import { TableAction, TableActionType } from 'src/app/datatable/models/table-action.interface';
+import { TableCell } from 'src/app/datatable/models/table-cell.interface';
 import { TableColumn } from 'src/app/datatable/models/table-column.interface';
 import { TableRow } from 'src/app/datatable/models/table-row.interface';
 import { TableService } from 'src/app/datatable/services/table.service';
@@ -22,7 +24,7 @@ export class BloodCampBloodPackTransferTableService implements TableService {
 
   pagination: Pagination = {
     page: 1,
-    size: 8
+    size: 6
   };
 
   sortMode: SortMode = {
@@ -36,7 +38,7 @@ export class BloodCampBloodPackTransferTableService implements TableService {
     { class: 'btn-info', icon: 'fa fa-info-circle', text: 'common.tooltip.detail', type: TableActionType.GetDetail }
   ];
 
-  constructor() { }
+  constructor(private alertService: AlertService) { }
 
   getDataColumns() {
     return this.columns;
@@ -44,11 +46,6 @@ export class BloodCampBloodPackTransferTableService implements TableService {
 
   getRawData() {
     throw new Error('Not implemented');
-  }
-
-  setDataRows(rows: TableRow[]) {
-    this.rows = rows;
-    this.calculatePagination();
   }
 
   getDataRows() {
@@ -59,6 +56,46 @@ export class BloodCampBloodPackTransferTableService implements TableService {
     return this.rows
       .sort((a, b) => a.cells[sortBy].value > b.cells[sortBy].value === isSortAscending ? 1 : -1)
       .slice(from, to);
+  }
+
+  setDataRows(rows: TableRow[]) {
+    this.rows = rows;
+    this.calculatePagination();
+  }
+
+  addRawDataRow(rawDataRow: any) {
+    const existingIds = this.rows.map(row => row.cells._id.value);
+    if (existingIds.includes(rawDataRow._id)) {
+      this.alertService.error('bloodPackManager.alert.alreadySelected');
+      return;
+    }
+
+    const cells: TableCell = {} as any;
+    for (const key in rawDataRow) {
+      if (!rawDataRow.hasOwnProperty(key)) {
+        continue;
+      }
+
+      if (key === 'donor') {
+        cells[key] = {
+          value: rawDataRow[key],
+          textProperty: 'username'
+        };
+      } else {
+        cells[key] = {
+          value: rawDataRow[key]
+        };
+      }
+    }
+
+    cells.actions = {
+      value: this.actions,
+      showText: false
+    };
+
+    const newRow = { cells };
+    this.rows.push(newRow);
+    this.calculatePagination();
   }
 
   private calculatePagination() {

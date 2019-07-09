@@ -6,6 +6,11 @@
   </div>
   <div class="card mt-3">
     <div class="card-body">
+      <ng-select [items]="bloodPacks$ | async" bindValue="_id" bindLabel="_id" [multiple]="false" [hideSelected]="true"
+        [loading]="bloodPacksLoading" [typeahead]="bloodPacksInput$"
+        [typeToSearchText]="'bloodPackManager.placeholder.search' | translate"
+        [placeholder]="'bloodPackManager.label.searchBloodPack' | translate" (change)="selectBloodPack($event)">
+      </ng-select>
       <div class="d-flex justify-content-end">
         <button type="button" class="btn btn-sm btn-primary">
           {{ 'userManager.button.scanQrCode' | translate }}
