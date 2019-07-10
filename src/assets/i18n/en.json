@@ -335,7 +335,11 @@
     },
     "alert": {
       "addSuccess": "Add test type successfully",
-      "addFailed": "Add test type failed"
+      "addFailed": "Add test type failed",
+      "updateSuccess": "Update test type successfully",
+      "updateFailed": "Update test type failed",
+      "deleteSuccess": "Delete test type successfully",
+      "deleteFailed": "Delete test type failed"
     },
     "placeholder": {
       "search": "Search by name (min 3 characters)"

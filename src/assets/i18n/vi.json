@@ -331,7 +331,11 @@
     },
     "alert": {
       "addSuccess": "Thêm loại xét nghiệm thành công",
-      "addFailed": "Thêm loại xét nghiệm không thành công"
+      "addFailed": "Thêm loại xét nghiệm không thành công",
+      "updateSuccess": "Cập nhật loại xét nghiệm thành công",
+      "updateFailed": "Cập nhật loại xét nghiệm không thành công",
+      "deleteSuccess": "Xóa loại xét nghiệm thành công",
+      "deleteFailed": "Xóa loại xét nghiệm không thành công"
     },
     "placeholder": {
       "search": "Tìm kiếm theo tên (tối thiểu 3 kí tự)"

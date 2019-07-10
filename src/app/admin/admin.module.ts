@@ -59,6 +59,7 @@ import {
 } from './modals/hospital-assign-staffs-modal/hospital-assign-staffs-modal.component';
 import { HospitalDeleteModalComponent } from './modals/hospital-delete-modal/hospital-delete-modal.component';
 import { HospitalUpdateModalComponent } from './modals/hospital-update-modal/hospital-update-modal.component';
+import { TestTypeUpdateModalComponent } from './modals/test-type-update-modal/test-type-update-modal.component';
 
 @NgModule({
   declarations: [
@@ -91,7 +92,8 @@ import { HospitalUpdateModalComponent } from './modals/hospital-update-modal/hos
     HospitalAssignStaffsModalComponent,
     AdminBloodPackManagerComponent,
     AdminTestTypeManagerComponent,
-    TestTypeAddModalComponent
+    TestTypeAddModalComponent,
+    TestTypeUpdateModalComponent
   ],
   imports: [
     SharedModule,
@@ -119,7 +121,8 @@ import { HospitalUpdateModalComponent } from './modals/hospital-update-modal/hos
     HospitalUpdateModalComponent,
     HospitalDeleteModalComponent,
     HospitalAssignStaffsModalComponent,
-    TestTypeAddModalComponent
+    TestTypeAddModalComponent,
+    TestTypeUpdateModalComponent
   ]
 })
 export class AdminModule { }
