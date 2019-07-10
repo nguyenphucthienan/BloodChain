@@ -13,13 +13,17 @@ import {
   AdminBloodTestCenterManagerComponent,
 } from './components/admin-blood-test-center-manager/admin-blood-test-center-manager.component';
 import { AdminHospitalManagerComponent } from './components/admin-hospital-manager/admin-hospital-manager.component';
+import { AdminTestTypeManagerComponent } from './components/admin-test-type-manager/admin-test-type-manager.component';
 import { AdminUserManagerComponent } from './components/admin-user-manager/admin-user-manager.component';
 
 const routes: Routes = [
   {
     path: 'admin',
     canActivate: [HasRoleGuard],
-    data: { roles: [RoleName.ADMIN], breadcrumb: 'breadcrumb.admin.main' },
+    data: {
+      roles: [RoleName.ADMIN],
+      breadcrumb: 'breadcrumb.admin.main'
+    },
     children: [
       {
         path: '',
@@ -30,6 +34,11 @@ const routes: Routes = [
         path: 'users',
         component: AdminUserManagerComponent,
         data: { breadcrumb: 'breadcrumb.admin.users' }
+      },
+      {
+        path: 'test-types',
+        component: AdminTestTypeManagerComponent,
+        data: { breadcrumb: 'breadcrumb.admin.testTypes' }
       },
       {
         path: 'blood-camps',

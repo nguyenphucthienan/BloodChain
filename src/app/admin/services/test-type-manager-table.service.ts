@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
-import { RoleName } from 'src/app/core/constant/role-name';
 import { FilterMode } from 'src/app/core/models/filter-mode.interface';
 import { Pagination } from 'src/app/core/models/pagination.interface';
 import { SortMode } from 'src/app/core/models/sort-mode.interface';
 import { AlertService } from 'src/app/core/services/alert.service';
-import { BloodPackService } from 'src/app/core/services/blood-pack.service';
+import { TestTypeService } from 'src/app/core/services/test-type.service';
 import { TableAction, TableActionType } from 'src/app/datatable/models/table-action.interface';
 import { TableCell } from 'src/app/datatable/models/table-cell.interface';
 import { TableColumn } from 'src/app/datatable/models/table-column.interface';
@@ -13,14 +12,12 @@ import { TableRow } from 'src/app/datatable/models/table-row.interface';
 import { TableService } from 'src/app/datatable/services/table.service';
 
 @Injectable()
-export class BloodTestCenterBloodPackManagerTableService implements TableService {
+export class TestTypeManagerTableService implements TableService {
 
   columns: TableColumn[] = [
     { name: '_id', text: 'common.column.id', type: 'IdTableCellComponent', center: true, sortable: true },
-    { name: 'donor', text: 'bloodPackManager.column.donor', type: 'ObjectTextTableCellComponent', sortable: true },
-    { name: 'volume', text: 'bloodPackManager.column.volume', type: 'TextTableCellComponent', sortable: true },
-    { name: 'createdAt', text: 'bloodPackManager.column.createdAt', type: 'DateTimeTableCellComponent', sortable: true },
-    { name: 'tested', text: 'bloodPackManager.column.tested', type: 'BooleanTableCellComponent', center: true, sortable: true },
+    { name: 'name', text: 'common.column.name', type: 'TextTableCellComponent', sortable: true },
+    { name: 'description', text: 'testTypeManager.column.description', type: 'TextTableCellComponent', sortable: true },
     { name: 'actions', text: 'common.column.actions', type: 'ActionsTableCellComponent', center: true }
   ];
 
@@ -32,20 +29,20 @@ export class BloodTestCenterBloodPackManagerTableService implements TableService
   };
 
   sortMode: SortMode = {
-    sortBy: '_id',
+    sortBy: 'createdAt',
     isSortAscending: false
   };
 
-  filterMode: FilterMode = {
-    organization: RoleName.BLOOD_TEST_CENTER
-  };
+  filterMode: FilterMode = {};
 
   actions: TableAction[] = [
-    { class: 'btn-info', icon: 'fa fa-info-circle', text: 'common.tooltip.detail', type: TableActionType.GetDetail }
+    { class: 'btn-info', icon: 'fa fa-info-circle', text: 'common.tooltip.detail', type: TableActionType.GetDetail },
+    { class: 'btn-dark', icon: 'fa fa-edit', text: 'common.tooltip.update', type: TableActionType.Update },
+    { class: 'btn-danger', icon: 'fa fa-trash-alt', text: 'common.tooltip.delete', type: TableActionType.Delete }
   ];
 
   constructor(
-    private bloodPackService: BloodPackService,
+    private testTypeService: TestTypeService,
     private alertService: AlertService
   ) { }
 
@@ -54,7 +51,7 @@ export class BloodTestCenterBloodPackManagerTableService implements TableService
   }
 
   getRawData() {
-    return this.bloodPackService.getBloodPacks(
+    return this.testTypeService.getTestTypes(
       this.pagination,
       this.sortMode,
       this.filterMode
@@ -77,16 +74,9 @@ export class BloodTestCenterBloodPackManagerTableService implements TableService
               continue;
             }
 
-            if (key === 'donor') {
-              cells[key] = {
-                value: row[key],
-                textProperty: 'username'
-              };
-            } else {
-              cells[key] = {
-                value: row[key]
-              };
-            }
+            cells[key] = {
+              value: row[key]
+            };
           }
 
           cells.actions = {

@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <div class="card mt-3">
+    <div class="card-body">
+      <app-breadcrumb></app-breadcrumb>
+    </div>
+  </div>
+  <div class="card mt-3">
+    <div class="card-body">
+      <div class="md-form mt-0 mb-0">
+        <input #search type="text" class="form-control"
+          [attr.placeholder]="'testTypeManager.placeholder.search' | translate" mdbInput>
+      </div>
+      <div class="d-flex justify-content-end mt-3">
+        <button type="button" class="btn btn-sm btn-primary" (click)="openTestTypeAddModal()">
+          {{ 'testTypeManager.button.add' | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="card mt-3">
+    <div class="card-body">
+      <app-datatable [tableName]="'table.name.testTypeManager' | translate" [tableService]="testTypeManagerTableService"
+        (cellChanged)="onTableCellChanged($event)">
+      </app-datatable>
+    </div>
+  </div>
+</div>

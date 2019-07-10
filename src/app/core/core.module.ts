@@ -20,6 +20,7 @@ import { BloodSeparationCenterService } from './services/blood-separation-center
 import { BloodTestCenterService } from './services/blood-test-center.service';
 import { HospitalService } from './services/hospital.service';
 import { RoleService } from './services/role.service';
+import { TestTypeService } from './services/test-type.service';
 import { UserService } from './services/user.service';
 
 export function tokenGetter() {
@@ -57,6 +58,7 @@ const toastrOptions = {
     AlertService,
     UserService,
     RoleService,
+    TestTypeService,
     BloodCampService,
     BloodTestCenterService,
     BloodSeparationCenterService,

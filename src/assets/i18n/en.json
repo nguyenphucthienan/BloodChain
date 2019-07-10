@@ -81,6 +81,7 @@
     "admin": {
       "main": "Admin",
       "users": "Users",
+      "testTypes": "Test Types",
       "bloodCamps": "Blood Camps",
       "bloodTestCenters": "Blood Test Centers",
       "bloodSeparationCenters": "Blood Separation Centers",
@@ -125,6 +126,7 @@
     },
     "title": {
       "users": "Users",
+      "testTypes": "Test Types",
       "bloodCamps": "Blood Camps",
       "bloodTestCenters": "Blood Test Centers",
       "bloodSeparationCenters": "Blood Separation Centers",
@@ -145,6 +147,7 @@
   "table": {
     "name": {
       "userManager": "USERS",
+      "testTypeManager": "TEST TYPES",
       "bloodCampManager": "BLOOD CAMPS",
       "bloodTestCenterManager": "BLOOD TEST CENTERS",
       "bloodSeparationCenterManager": "BLOOD SEPARATION CENTERS",
@@ -309,6 +312,27 @@
     },
     "modal": {
       "userInfo": "User Info"
+    }
+  },
+  "testTypeManager": {
+    "button": {
+      "add": "Add Test Type"
+    },
+    "column": {
+      "description": "Description"
+    },
+    "label": {
+      "description": "Description"
+    },
+    "message": {
+      "descriptionRequired": "Description is required"
+    },
+    "alert": {
+      "addSuccess": "Add test type successfully",
+      "addFailed": "Add test type failed"
+    },
+    "placeholder": {
+      "search": "Search by name (min 3 characters)"
     }
   },
   "bloodCampManager": {

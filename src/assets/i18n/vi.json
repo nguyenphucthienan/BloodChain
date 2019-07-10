@@ -81,6 +81,7 @@
     "admin": {
       "main": "Quản trị",
       "users": "Người dùng",
+      "testTypes": "Loại xét nghiệm",
       "bloodCamps": "Trung tâm hiến máu",
       "bloodTestCenters": "Trung tâm xét nghiệm",
       "bloodSeparationCenters": "Trung tâm phân tách",
@@ -121,6 +122,7 @@
     },
     "title": {
       "users": "Người dùng",
+      "testTypes": "Loại xét nghiệm",
       "bloodCamps": "Trung tâm hiến máu",
       "bloodTestCenters": "Trung tâm xét nghiệm",
       "bloodSeparationCenters": "Trung tâm phân tách",
@@ -141,6 +143,7 @@
   "table": {
     "name": {
       "userManager": "NGƯỜI DÙNG",
+      "testTypeManager": "LOẠI XÉT NGHIỆM",
       "bloodCampManager": "TRUNG TÂM HIẾN MÁU",
       "bloodTestCenterManager": "TRUNG TÂM XÉT NGHIỆM MÁU",
       "bloodSeparationCenterManager": "TRUNG TÂM PHÂN TÁCH MÁU",
@@ -305,6 +308,27 @@
     },
     "modal": {
       "userInfo": "Thông tin người dùng"
+    }
+  },
+  "testTypeManager": {
+    "button": {
+      "add": "Thêm loại xét nghiệm"
+    },
+    "column": {
+      "description": "Description"
+    },
+    "label": {
+      "description": "Miêu tả"
+    },
+    "message": {
+      "descriptionRequired": "Miêu tả không được bỏ trống"
+    },
+    "alert": {
+      "addSuccess": "Thêm loại xét nghiệm thành công",
+      "addFailed": "Thêm loại xét nghiệm không thành công"
+    },
+    "placeholder": {
+      "search": "Tìm kiếm theo tên (tối thiểu 3 kí tự)"
     }
   },
   "bloodCampManager": {
@@ -517,7 +541,7 @@
       "volume": "Thể tích (ml)",
       "time": "Thời gian",
       "bloodTestCenterId": "ID trung tâm xét nghiệm",
-      "description": "Chú thích",
+      "description": "Miêu tả",
       "searchDonor": "Tìm người hiến",
       "searchBloodPack": "Tìm túi máu",
       "searchBloodTestCenter": "Tìm trung tâm hiến máu"
@@ -527,7 +551,7 @@
       "volumeRequired": "Thể tích không được bỏ trống",
       "bloodCampRequired": "Trung tâm hiến máu không được bỏ trống",
       "bloodTestCenterIdRequired": "ID trung tâm xét nghiệm không được bỏ trống",
-      "descriptionRequired": "Chú thích không được bỏ trống",
+      "descriptionRequired": "Miêu tả không được bỏ trống",
       "transferTheseBloodPacks": "chuyển những túi máu này"
     },
     "alert": {

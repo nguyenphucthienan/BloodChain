@@ -14,6 +14,7 @@ import {
   AdminBloodTestCenterManagerComponent,
 } from './components/admin-blood-test-center-manager/admin-blood-test-center-manager.component';
 import { AdminHospitalManagerComponent } from './components/admin-hospital-manager/admin-hospital-manager.component';
+import { AdminTestTypeManagerComponent } from './components/admin-test-type-manager/admin-test-type-manager.component';
 import { AdminUserManagerComponent } from './components/admin-user-manager/admin-user-manager.component';
 import {
   BloodTestCenterAddModalComponent,
@@ -87,7 +88,8 @@ import { HospitalUpdateModalComponent } from './modals/hospital-update-modal/hos
     HospitalUpdateModalComponent,
     HospitalDeleteModalComponent,
     HospitalAssignStaffsModalComponent,
-    AdminBloodPackManagerComponent
+    AdminBloodPackManagerComponent,
+    AdminTestTypeManagerComponent
   ],
   imports: [
     SharedModule,
