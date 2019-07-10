@@ -102,6 +102,15 @@
     }
   },
   "sidebar": {
+    "section": {
+      "admin": "Quản trị",
+      "manager": "Quản lí",
+      "bloodCamp": "TT Hiến Máu",
+      "bloodTestCenter": "TT Xét Nghiệm Máu",
+      "bloodSeparationCenter": "TT Phân Tách Máu",
+      "bloodBank": "Ngân Hàng Máu",
+      "hospital": "Bệnh Viện"
+    },
     "title": {
       "users": "Người dùng",
       "bloodCamps": "Trung tâm hiến máu",

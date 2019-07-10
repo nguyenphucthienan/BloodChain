@@ -19,15 +19,29 @@ export class SidebarComponent implements OnInit {
     { path: '/admin/blood-packs', title: 'sidebar.title.bloodPacks', icon: 'cube' }
   ];
 
+  readonly managerRoutes = [
+    { path: '/manager/users', title: 'sidebar.title.users', icon: 'users' }
+  ];
+
   readonly bloodCampRoutes = [
-    { path: '/manager/users', title: 'sidebar.title.users', icon: 'users' },
     { path: '/manager/blood-camp/blood-packs', title: 'sidebar.title.bloodPacks', icon: 'cube' }
+  ];
+
+  readonly bloodTestCenterRoutes = [
+    { path: '/manager/blood-test-center/blood-packs', title: 'sidebar.title.bloodPacks', icon: 'cube' }
   ];
 
   @Output() sidebarToggled = new EventEmitter();
 
-  showAdminRoutes = false;
-  showBloodCampRoutes = false;
+  sectionPermissions = {
+    admin: false,
+    manager: false,
+    bloodCamp: false,
+    bloodTestCenter: false,
+    bloodSeparationCenter: false,
+    bloodBank: false,
+    hospital: false
+  };
 
   constructor(private authService: AuthService) { }
 
@@ -40,10 +54,16 @@ export class SidebarComponent implements OnInit {
           roles.forEach(role => {
             switch (role) {
               case RoleName.ADMIN:
-                this.showAdminRoutes = true;
+                this.sectionPermissions.admin = true;
+                this.sectionPermissions.manager = true;
                 break;
               case RoleName.BLOOD_CAMP:
-                this.showBloodCampRoutes = true;
+                this.sectionPermissions.manager = true;
+                this.sectionPermissions.bloodCamp = true;
+                break;
+              case RoleName.BLOOD_TEST_CENTER:
+                this.sectionPermissions.manager = true;
+                this.sectionPermissions.bloodTestCenter = true;
                 break;
             }
           });
@@ -56,8 +76,13 @@ export class SidebarComponent implements OnInit {
   }
 
   private resetSidebar() {
-    this.showAdminRoutes = false;
-    this.showBloodCampRoutes = false;
+    for (const key in this.sectionPermissions) {
+      if (!this.sectionPermissions.hasOwnProperty(key)) {
+        continue;
+      }
+
+      this.sectionPermissions[key] = false;
+    }
   }
 
 }

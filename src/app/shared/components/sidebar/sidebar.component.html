@@ -7,15 +7,33 @@
   <mdb-icon fas icon="angle-double-left" class="ml-auto sidebar-btn" (click)="toggleSidebar()"></mdb-icon>
 </mdb-navbar>
 <div class="list-group list-group-flush m-3">
-  <ng-container *ngIf="showAdminRoutes">
+  <ng-container *ngIf="sectionPermissions.admin">
+    <h5>{{ 'sidebar.section.admin' | translate }}</h5>
     <a *ngFor="let route of adminRoutes" [routerLink]="route.path" routerLinkActive="active"
       class="list-group-item list-group-item-action waves-effect">
       <mdb-icon fas [icon]="route.icon" class="mr-3"></mdb-icon>{{ route.title | translate }}
     </a>
     <hr>
   </ng-container>
-  <ng-container *ngIf="showBloodCampRoutes">
+  <ng-container *ngIf="sectionPermissions.manager">
+    <h5>{{ 'sidebar.section.manager' | translate }}</h5>
+    <a *ngFor="let route of managerRoutes" [routerLink]="route.path" routerLinkActive="active"
+      class="list-group-item list-group-item-action waves-effect">
+      <mdb-icon fas [icon]="route.icon" class="mr-3"></mdb-icon>{{ route.title | translate }}
+    </a>
+    <hr>
+  </ng-container>
+  <ng-container *ngIf="sectionPermissions.bloodCamp">
+    <h5>{{ 'sidebar.section.bloodCamp' | translate }}</h5>
     <a *ngFor="let route of bloodCampRoutes" [routerLink]="route.path" routerLinkActive="active"
+      class="list-group-item list-group-item-action waves-effect">
+      <mdb-icon fas [icon]="route.icon" class="mr-3"></mdb-icon>{{ route.title | translate }}
+    </a>
+    <hr>
+  </ng-container>
+  <ng-container *ngIf="sectionPermissions.bloodTestCenter">
+    <h5>{{ 'sidebar.section.bloodTestCenter' | translate }}</h5>
+    <a *ngFor="let route of bloodTestCenterRoutes" [routerLink]="route.path" routerLinkActive="active"
       class="list-group-item list-group-item-action waves-effect">
       <mdb-icon fas [icon]="route.icon" class="mr-3"></mdb-icon>{{ route.title | translate }}
     </a>

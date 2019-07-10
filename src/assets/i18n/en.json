@@ -107,6 +107,15 @@
     }
   },
   "sidebar": {
+    "section": {
+      "admin": "Admin",
+      "manager": "Manager",
+      "bloodCamp": "Blood Camp",
+      "bloodTestCenter": "Blood Test Center",
+      "bloodSeparationCenter": "Blood Separation Center",
+      "bloodBank": "Blood Bank",
+      "hospital": "Hospital"
+    },
     "title": {
       "users": "Users",
       "bloodCamps": "Blood Camps",

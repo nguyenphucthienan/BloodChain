@@ -31,7 +31,14 @@ const routes: Routes = [
         path: 'users',
         canActivate: [HasRoleGuard],
         data: {
-          roles: [RoleName.ADMIN, RoleName.BLOOD_CAMP],
+          roles: [
+            RoleName.ADMIN,
+            RoleName.BLOOD_CAMP,
+            RoleName.BLOOD_TEST_CENTER,
+            RoleName.BLOOD_SEPARATION_CENTER,
+            RoleName.BLOOD_BANK,
+            RoleName.HOSPITAL
+          ],
           breadcrumb: 'breadcrumb.manager.users'
         },
         children: [
