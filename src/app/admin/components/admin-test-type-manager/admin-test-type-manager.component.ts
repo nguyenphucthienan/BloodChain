@@ -9,6 +9,7 @@ import { TableCellChange } from 'src/app/datatable/models/table-cell-change.inte
 import { TableRow } from 'src/app/datatable/models/table-row.interface';
 
 import { TestTypeAddModalComponent } from '../../modals/test-type-add-modal/test-type-add-modal.component';
+import { TestTypeDeleteModalComponent } from '../../modals/test-type-delete-modal/test-type-delete-modal.component';
 import { TestTypeUpdateModalComponent } from '../../modals/test-type-update-modal/test-type-update-modal.component';
 import { TestTypeManagerTableService } from '../../services/test-type-manager-table.service';
 
@@ -118,22 +119,22 @@ export class AdminTestTypeManagerComponent implements OnInit, AfterViewInit, OnD
   }
 
   openTestTypeDeleteModal(rowData: TableRow) {
-    // this.modalRef = this.modalService.show(TestTypeDeleteModalComponent, {
-    //   backdrop: true,
-    //   keyboard: true,
-    //   focus: true,
-    //   show: false,
-    //   ignoreBackdropClick: true,
-    //   class: 'modal-dialog-centered',
-    //   containerClass: 'top',
-    //   animated: true,
-    //   data: {
-    //     rowData
-    //   }
-    // });
+    this.modalRef = this.modalService.show(TestTypeDeleteModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        rowData
+      }
+    });
 
-    // this.modalRef.content.testTypeDeleted
-    //   .subscribe(() => this.onTestTypeDeleted());
+    this.modalRef.content.testTypeDeleted
+      .subscribe(() => this.onTestTypeDeleted());
   }
 
   onTestTypeDeleted() {

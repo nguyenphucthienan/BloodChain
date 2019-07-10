@@ -59,17 +59,22 @@ import {
 import { HospitalDeleteModalComponent } from './modals/hospital-delete-modal/hospital-delete-modal.component';
 import { HospitalUpdateModalComponent } from './modals/hospital-update-modal/hospital-update-modal.component';
 import { TestTypeAddModalComponent } from './modals/test-type-add-modal/test-type-add-modal.component';
+import { TestTypeDeleteModalComponent } from './modals/test-type-delete-modal/test-type-delete-modal.component';
 import { TestTypeUpdateModalComponent } from './modals/test-type-update-modal/test-type-update-modal.component';
 
 @NgModule({
   declarations: [
     AdminComponent,
     AdminUserManagerComponent,
+    AdminTestTypeManagerComponent,
     AdminBloodCampManagerComponent,
     AdminBloodTestCenterManagerComponent,
     AdminBloodSeparationCenterManagerComponent,
     AdminBloodBankManagerComponent,
     AdminHospitalManagerComponent,
+    TestTypeAddModalComponent,
+    TestTypeUpdateModalComponent,
+    TestTypeDeleteModalComponent,
     BloodCampAddModalComponent,
     BloodCampUpdateModalComponent,
     BloodCampDeleteModalComponent,
@@ -91,9 +96,7 @@ import { TestTypeUpdateModalComponent } from './modals/test-type-update-modal/te
     HospitalDeleteModalComponent,
     HospitalAssignStaffsModalComponent,
     AdminBloodPackManagerComponent,
-    AdminTestTypeManagerComponent,
-    TestTypeAddModalComponent,
-    TestTypeUpdateModalComponent
+
   ],
   imports: [
     SharedModule,
@@ -101,6 +104,9 @@ import { TestTypeUpdateModalComponent } from './modals/test-type-update-modal/te
     AdminRoutingModule
   ],
   entryComponents: [
+    TestTypeAddModalComponent,
+    TestTypeUpdateModalComponent,
+    TestTypeDeleteModalComponent,
     BloodCampAddModalComponent,
     BloodCampUpdateModalComponent,
     BloodCampDeleteModalComponent,
@@ -120,9 +126,7 @@ import { TestTypeUpdateModalComponent } from './modals/test-type-update-modal/te
     HospitalAddModalComponent,
     HospitalUpdateModalComponent,
     HospitalDeleteModalComponent,
-    HospitalAssignStaffsModalComponent,
-    TestTypeAddModalComponent,
-    TestTypeUpdateModalComponent
+    HospitalAssignStaffsModalComponent
   ]
 })
 export class AdminModule { }
