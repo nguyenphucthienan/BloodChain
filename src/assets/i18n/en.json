@@ -318,10 +318,16 @@
     "button": {
       "add": "Add Test Type"
     },
+    "modal": {
+      "add": "Add New Test Type",
+      "update": "Update Test Type",
+      "delete": "Delete Test Type"
+    },
     "column": {
       "description": "Description"
     },
     "label": {
+      "name": "Name",
       "description": "Description"
     },
     "message": {

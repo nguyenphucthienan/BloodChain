@@ -9,6 +9,7 @@ import { TableCellChange } from 'src/app/datatable/models/table-cell-change.inte
 import { TableRow } from 'src/app/datatable/models/table-row.interface';
 
 import { TestTypeManagerTableService } from '../../services/test-type-manager-table.service';
+import { TestTypeAddModalComponent } from '../test-type-add-modal/test-type-add-modal.component';
 
 @Component({
   selector: 'app-admin-test-type-manager',
@@ -71,19 +72,19 @@ export class AdminTestTypeManagerComponent implements OnInit, AfterViewInit, OnD
   }
 
   openTestTypeAddModal() {
-    // this.modalRef = this.modalService.show(TestTypeAddModalComponent, {
-    //   backdrop: true,
-    //   keyboard: true,
-    //   focus: true,
-    //   show: false,
-    //   ignoreBackdropClick: true,
-    //   class: 'modal-lg modal-dialog-centered',
-    //   containerClass: 'top',
-    //   animated: true
-    // });
+    this.modalRef = this.modalService.show(TestTypeAddModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-lg modal-dialog-centered',
+      containerClass: 'top',
+      animated: true
+    });
 
-    // this.modalRef.content.testTypeAdded
-    //   .subscribe((testType: TestType) => this.onTestTypeAdded(testType));
+    this.modalRef.content.testTypeAdded
+      .subscribe((testType: TestType) => this.onTestTypeAdded(testType));
   }
 
   onTestTypeAdded(testType: TestType) {

@@ -314,10 +314,16 @@
     "button": {
       "add": "Thêm loại xét nghiệm"
     },
+    "modal": {
+      "add": "Thêm loại xét nghiệm",
+      "update": "Cập nhật loại xét nghiệm",
+      "delete": "Xóa loại xét nghiệm"
+    },
     "column": {
       "description": "Description"
     },
     "label": {
+      "name": "Tên",
       "description": "Miêu tả"
     },
     "message": {
