@@ -9,6 +9,9 @@ import { TableCellChange } from 'src/app/datatable/models/table-cell-change.inte
 import { TableRow } from 'src/app/datatable/models/table-row.interface';
 
 import {
+  BloodTestCenterAddModalComponent,
+} from '../../modals/blood-test-center-add-modal/blood-test-center-add-modal.component';
+import {
   BloodTestCenterAssignStaffsModalComponent,
 } from '../../modals/blood-test-center-assign-staffs-modal/blood-test-center-assign-staffs-modal.component';
 import {
@@ -18,7 +21,6 @@ import {
   BloodTestCenterUpdateModalComponent,
 } from '../../modals/blood-test-center-update-modal/blood-test-center-update-modal.component';
 import { BloodTestCenterManagerTableService } from '../../services/blood-test-center-manager-table.service';
-import { BloodTestCenterAddModalComponent } from '../blood-test-center-add-modal/blood-test-center-add-modal.component';
 
 @Component({
   selector: 'app-admin-blood-test-center-manager',

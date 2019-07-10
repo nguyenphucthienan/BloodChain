@@ -8,9 +8,9 @@ import { TableActionType } from 'src/app/datatable/models/table-action.interface
 import { TableCellChange } from 'src/app/datatable/models/table-cell-change.interface';
 import { TableRow } from 'src/app/datatable/models/table-row.interface';
 
+import { TestTypeAddModalComponent } from '../../modals/test-type-add-modal/test-type-add-modal.component';
 import { TestTypeUpdateModalComponent } from '../../modals/test-type-update-modal/test-type-update-modal.component';
 import { TestTypeManagerTableService } from '../../services/test-type-manager-table.service';
-import { TestTypeAddModalComponent } from '../test-type-add-modal/test-type-add-modal.component';
 
 @Component({
   selector: 'app-admin-test-type-manager',

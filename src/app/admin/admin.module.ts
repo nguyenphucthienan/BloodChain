@@ -16,10 +16,6 @@ import {
 import { AdminHospitalManagerComponent } from './components/admin-hospital-manager/admin-hospital-manager.component';
 import { AdminTestTypeManagerComponent } from './components/admin-test-type-manager/admin-test-type-manager.component';
 import { AdminUserManagerComponent } from './components/admin-user-manager/admin-user-manager.component';
-import {
-  BloodTestCenterAddModalComponent,
-} from './components/blood-test-center-add-modal/blood-test-center-add-modal.component';
-import { TestTypeAddModalComponent } from './components/test-type-add-modal/test-type-add-modal.component';
 import { BloodBankAddModalComponent } from './modals/blood-bank-add-modal/blood-bank-add-modal.component';
 import {
   BloodBankAssignStaffsModalComponent,
@@ -45,6 +41,9 @@ import {
   BloodSeparationCenterUpdateModalComponent,
 } from './modals/blood-separation-center-update-modal/blood-separation-center-update-modal.component';
 import {
+  BloodTestCenterAddModalComponent,
+} from './modals/blood-test-center-add-modal/blood-test-center-add-modal.component';
+import {
   BloodTestCenterAssignStaffsModalComponent,
 } from './modals/blood-test-center-assign-staffs-modal/blood-test-center-assign-staffs-modal.component';
 import {
@@ -59,6 +58,7 @@ import {
 } from './modals/hospital-assign-staffs-modal/hospital-assign-staffs-modal.component';
 import { HospitalDeleteModalComponent } from './modals/hospital-delete-modal/hospital-delete-modal.component';
 import { HospitalUpdateModalComponent } from './modals/hospital-update-modal/hospital-update-modal.component';
+import { TestTypeAddModalComponent } from './modals/test-type-add-modal/test-type-add-modal.component';
 import { TestTypeUpdateModalComponent } from './modals/test-type-update-modal/test-type-update-modal.component';
 
 @NgModule({

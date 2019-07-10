@@ -15,7 +15,8 @@
         </mdb-error>
       </div>
       <div class="md-form">
-        <input type="text" id="description" formControlName="description" class="form-control" mdbInput>
+        <textarea type="text" id="description" formControlName="description"
+          class="md-textarea md-textarea-auto form-control" mdbInput></textarea>
         <label for="description">{{ 'testTypeManager.label.description' | translate }}</label>
         <mdb-error *ngIf="controlHasError('description', 'required')">
           {{ 'testTypeManager.message.descriptionRequired' | translate }}
