@@ -8,7 +8,7 @@ import { MDBModalRef } from 'angular-bootstrap-md';
 })
 export class ScanQrcodeModalComponent implements OnInit {
 
-  @Output() scanSuccess = new EventEmitter();
+  @Output() scanSuccess = new EventEmitter<string>();
   @Output() closed = new EventEmitter();
 
   constructor(public modalRef: MDBModalRef) { }

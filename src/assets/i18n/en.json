@@ -559,6 +559,8 @@
       "donorId": "Donor ID",
       "volume": "Volume (ml)",
       "time": "Time",
+      "bloodCamp": "Blood camp",
+      "bloodTestCenter": "Blood test center",
       "bloodTestCenterId": "Blood test center ID",
       "description": "Description",
       "searchDonor": "Search donor",

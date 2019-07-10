@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -15,7 +16,8 @@ import { ScanQrcodeModalComponent } from 'src/app/shared/modals/scan-qrcode-moda
 @Component({
   selector: 'app-blood-test-center-blood-pack-manager-update-result',
   templateUrl: './blood-test-center-blood-pack-manager-update-result.component.html',
-  styleUrls: ['./blood-test-center-blood-pack-manager-update-result.component.scss']
+  styleUrls: ['./blood-test-center-blood-pack-manager-update-result.component.scss'],
+  providers: [DatePipe]
 })
 export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnInit, OnDestroy {
 
@@ -38,6 +40,7 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
     private bloodPackService: BloodPackService,
     private alertService: AlertService,
     private modalService: MDBModalService,
+    private datePipe: DatePipe
   ) {
     const navigation = this.router.getCurrentNavigation();
     if (navigation.extras.state) {
@@ -87,8 +90,11 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
     });
 
     this.bloodPackForm = this.fb.group({
-      volume: ['', [Validators.required, Validators.min(1)]],
-      bloodTestCenter: [null, Validators.required]
+      id: ['', Validators.required],
+      volume: [null, [Validators.required, Validators.min(1)]],
+      time: [null, Validators.required],
+      bloodCamp: ['', Validators.required],
+      bloodTestCenter: ['', Validators.required]
     });
 
     this.userForm.disable();
@@ -120,6 +126,14 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
               address: donor.address,
               location: donor.location
             });
+
+            this.bloodPackForm.patchValue({
+              id: bloodPack._id,
+              volume: bloodPack.volume,
+              time: this.datePipe.transform(new Date(bloodPack.createdAt), 'medium'),
+              bloodCamp: bloodPack.bloodCamp.name,
+              bloodTestCenter: bloodPack.bloodTestCenter.name
+            });
           });
       });
   }
@@ -137,7 +151,7 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
     });
 
     this.modalRef.content.scanSuccess
-      .subscribe((userId) => this.onQrCodeScanSuccess(userId));
+      .subscribe((userId: string) => this.onQrCodeScanSuccess(userId));
   }
 
   onQrCodeScanSuccess(bloodPackId: string) {

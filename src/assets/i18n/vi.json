@@ -555,6 +555,8 @@
       "donorId": "ID Người hiến",
       "volume": "Thể tích (ml)",
       "time": "Thời gian",
+      "bloodCamp": "Trung tâm hiến máu",
+      "bloodTestCenter": "Trung tâm xét nghiệm",
       "bloodTestCenterId": "ID trung tâm xét nghiệm",
       "description": "Miêu tả",
       "searchDonor": "Tìm người hiến",
