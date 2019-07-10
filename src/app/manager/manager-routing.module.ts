@@ -13,6 +13,9 @@ import {
   BloodCampBloodPackManagerComponent,
 } from './components/blood-camp-blood-pack-manager/blood-camp-blood-pack-manager.component';
 import {
+  BloodTestCenterBloodPackManagerUpdateResultComponent,
+} from './components/blood-test-center-blood-pack-manager-update-result/blood-test-center-blood-pack-manager-update-result.component';
+import {
   BloodTestCenterBloodPackManagerComponent,
 } from './components/blood-test-center-blood-pack-manager/blood-test-center-blood-pack-manager.component';
 import {
@@ -114,6 +117,11 @@ const routes: Routes = [
                 path: '',
                 pathMatch: 'full',
                 component: BloodTestCenterBloodPackManagerComponent
+              },
+              {
+                path: 'update',
+                component: BloodTestCenterBloodPackManagerUpdateResultComponent,
+                data: { breadcrumb: 'breadcrumb.bloodTestCenter.bloodPacks.updateTestResult' }
               }
             ]
           }

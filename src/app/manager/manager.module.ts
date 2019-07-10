@@ -12,6 +12,12 @@ import {
   BloodCampBloodPackManagerComponent,
 } from './components/blood-camp-blood-pack-manager/blood-camp-blood-pack-manager.component';
 import {
+  BloodTestCenterBloodPackManagerUpdateResultComponent,
+} from './components/blood-test-center-blood-pack-manager-update-result/blood-test-center-blood-pack-manager-update-result.component';
+import {
+  BloodTestCenterBloodPackManagerComponent,
+} from './components/blood-test-center-blood-pack-manager/blood-test-center-blood-pack-manager.component';
+import {
   ManagerBloodPackManagerDonationHistoryComponent,
 } from './components/manager-blood-pack-manager-donation-history/manager-blood-pack-manager-donation-history.component';
 import {
@@ -30,7 +36,6 @@ import {
 } from './modals/blood-pack-transfer-result-modal/blood-pack-transfer-result-modal.component';
 import { UserAddSuccessModalComponent } from './modals/user-add-success-modal/user-add-success-modal.component';
 import { UserManagerLiteTableService } from './services/user-manager-lite-table.service';
-import { BloodTestCenterBloodPackManagerComponent } from './components/blood-test-center-blood-pack-manager/blood-test-center-blood-pack-manager.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +50,7 @@ import { BloodTestCenterBloodPackManagerComponent } from './components/blood-tes
     BloodPackTransferConfirmModalComponent,
     BloodPackTransferResultModalComponent,
     BloodTestCenterBloodPackManagerComponent,
+    BloodTestCenterBloodPackManagerUpdateResultComponent,
   ],
   imports: [
     SharedModule,

@@ -39,7 +39,6 @@ export class BloodCampBloodPackManagerTransferBloodPackComponent implements OnIn
   bloodPacks$: Observable<BloodPack[]>;
   bloodPacksInput$ = new Subject<string>();
   bloodPacksLoading = false;
-  bloodPack: BloodPack;
 
   bloodTestCenters$: Observable<BloodPack[]>;
   bloodTestCentersInput$ = new Subject<string>();

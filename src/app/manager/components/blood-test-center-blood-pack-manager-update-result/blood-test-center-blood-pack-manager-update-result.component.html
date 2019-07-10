@@ -1,0 +1,106 @@
+<div class="container-fluid">
+  <div class="card mt-3">
+    <div class="card-body">
+      <app-breadcrumb></app-breadcrumb>
+    </div>
+  </div>
+  <div class="card mt-3">
+    <div class="card-body">
+      <ng-select [items]="bloodPacks$ | async" bindValue="_id" bindLabel="_id" [multiple]="false" [hideSelected]="true"
+        [loading]="bloodPacksLoading" [typeahead]="bloodPacksInput$"
+        [typeToSearchText]="'bloodPackManager.placeholder.search' | translate"
+        [placeholder]="'bloodPackManager.label.searchBloodPack' | translate" (change)="selectBloodPack($event)">
+      </ng-select>
+      <div class="d-flex justify-content-end">
+        <button type="button" class="btn btn-sm btn-primary" (click)="openScanQrCodeModal()">
+          {{ 'bloodPackManager.button.scanQrCode' | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row row-eq-height">
+    <div class="col-md-6">
+      <div class="card mt-3 flex-card">
+        <div class="card-body">
+          <form [formGroup]="userForm">
+            <div class="d-flex">
+              <span class="font-weight-bold">{{ 'bloodPackManager.label.donorInfo' | translate }}</span>
+            </div>
+            <div class="md-form">
+              <input type="text" id="username" formControlName="username" class="form-control" mdbInput>
+              <label for="username">{{ 'bloodPackManager.label.username' | translate }}</label>
+            </div>
+            <div class="form-row">
+              <div class="col">
+                <div class="md-form form-col">
+                  <input type="text" id="firstName" formControlName="firstName" class="form-control" mdbInput>
+                  <label for="firstName">{{ 'bloodPackManager.label.firstName' | translate }}</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="md-form form-col">
+                  <input type="text" id="lastName" formControlName="lastName" class="form-control" mdbInput>
+                  <label for="lastName">{{ 'bloodPackManager.label.lastName' | translate }}</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col">
+                <div class="md-form form-col">
+                  <div class="md-form">
+                    <input type="text" id="email" formControlName="email" class="form-control" mdbInput>
+                    <label for="email">{{ 'bloodPackManager.label.email' | translate }}</label>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="md-form form-col">
+                  <div class="md-form">
+                    <input type="text" id="phone" formControlName="phone" class="form-control" mdbInput>
+                    <label for="phone">{{ 'bloodPackManager.label.phone' | translate }}</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col">
+                <div class="md-form form-col">
+                  <input type="text" id="gender" formControlName="gender" class="form-control" mdbInput>
+                  <label for="gender">{{ 'bloodPackManager.label.gender' | translate }}</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="md-form form-col">
+                  <input type="text" id="birthdate" formControlName="birthdate" class="form-control"
+                    [matDatepicker]="birthdatePicker" mdbInput readonly>
+                  <label for="birthdate">{{ 'bloodPackManager.label.birthdate' | translate }}</label>
+                  <mat-datepicker #birthdatePicker="matDatepicker"></mat-datepicker>
+                </div>
+              </div>
+            </div>
+            <div class="md-form">
+              <input type="text" id="address" formControlName="address" class="form-control" mdbInput>
+              <label for="address">{{ 'bloodPackManager.label.address' | translate }}</label>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 pl-md-0">
+      <div class="card mt-3 flex-card">
+        <div class="card-body">
+          <div class="d-flex">
+            <span class="font-weight-bold">{{ 'bloodPackManager.label.bloodPackInfo' | translate }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card mt-3">
+    <div class="card-body">
+      <div class="d-flex">
+        <span class="font-weight-bold">{{ 'bloodPackManager.label.updateTestResult' | translate }}</span>
+      </div>
+    </div>
+  </div>
+</div>

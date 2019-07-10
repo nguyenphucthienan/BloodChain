@@ -103,6 +103,7 @@
     "bloodTestCenter": {
       "main": "Trung tâm xét nghiệm",
       "bloodPacks": "Túi máu",
+      "updateTestResult": "Cập nhật kết quả",
       "transferBloodPacks": "Chuyển túi máu"
     },
     "profile": {
@@ -327,6 +328,7 @@
       "description": "Miêu tả"
     },
     "message": {
+      "nameRequired": "Tên không được bỏ trống",
       "descriptionRequired": "Miêu tả không được bỏ trống"
     },
     "alert": {
@@ -519,6 +521,7 @@
   "bloodPackManager": {
     "button": {
       "add": "Thêm túi máu",
+      "updateTestResult": "Cập nhật kết quả xét nghiệm",
       "transfer": "Chuyển túi máu",
       "scanQrCode": "Quét QR Code"
     },
@@ -535,9 +538,11 @@
     },
     "label": {
       "donorInfo": "THÔNG TIN NGƯỜI HIẾN",
-      "addBloodPack": "THÊM TÚI MÁU",
       "bloodTestCenterInfo": "THÔNG TIN TRUNG TÂM XÉT NGHIỆM",
+      "bloodPackInfo": "THÔNG TIN TÚI MÁU",
+      "addBloodPack": "THÊM TÚI MÁU",
       "transferBloodPacks": "CHUYỂN TÚI MÁU",
+      "updateTestResult": "CẬP NHẬT KẾT QUẢ XÉT NGHIỆM",
       "username": "Tên đăng nhập",
       "id": "ID",
       "email": "Email",

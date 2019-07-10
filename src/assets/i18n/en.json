@@ -106,6 +106,7 @@
       "main": "Blood Test Center",
       "bloodPacks": {
         "main": "Blood Packs",
+        "updateTestResult": "Update Test Result",
         "transferBloodPacks": "Transfer Blood Packs"
       }
     },
@@ -331,6 +332,7 @@
       "description": "Description"
     },
     "message": {
+      "nameRequired": "Name is required",
       "descriptionRequired": "Description is required"
     },
     "alert": {
@@ -523,6 +525,7 @@
   "bloodPackManager": {
     "button": {
       "add": "Add Blood Pack",
+      "updateTestResult": "Update Test Result",
       "transfer": "Transfer Blood Packs",
       "scanQrCode": "Scan QR Code"
     },
@@ -539,9 +542,11 @@
     },
     "label": {
       "donorInfo": "DONOR INFO",
-      "addBloodPack": "ADD BLOOD PACK",
       "bloodTestCenterInfo": "BLOOD TEST CENTER INFO",
+      "bloodPackInfo": "BLOOD PACK INFO",
+      "addBloodPack": "ADD BLOOD PACK",
       "transferBloodPacks": "TRANSFER BLOOD PACKS",
+      "updateTestResult": "UPDATE TEST RESULT",
       "id": "ID",
       "username": "Username",
       "email": "Email",

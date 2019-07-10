@@ -59,10 +59,13 @@ export class BloodTestCenterBloodPackManagerComponent implements OnInit, AfterVi
       case TableActionType.GetDetail:
         this.navigateToBloodPackDetail(tableCellChange.row.cells._id.value);
         break;
+      case TableActionType.Update:
+        this.navigateToUpdateBloodPackResult(tableCellChange.row.cells._id.value);
+        break;
     }
   }
 
-  async navigateToTransferBloodPack() {
+  navigateToTransferBloodPack() {
     const selectedIds = Array.from(this.datatable.getSelectedRowIds().selectedIds);
     const selectedRows = this.datatable.rows
       .filter(row => selectedIds.includes(row.cells._id.value));
@@ -73,6 +76,12 @@ export class BloodTestCenterBloodPackManagerComponent implements OnInit, AfterVi
   }
 
   navigateToBloodPackDetail(id: string) {
+  }
+
+  navigateToUpdateBloodPackResult(id: string) {
+    this.router.navigate(['/manager', 'blood-test-center', 'blood-packs', 'update'], {
+      state: { bloodPackId: id }
+    });
   }
 
   ngOnDestroy() {
