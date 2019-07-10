@@ -19,6 +19,9 @@ import { ScanQrcodeModalComponent } from 'src/app/shared/modals/scan-qrcode-moda
 import {
   BloodPackTransferConfirmModalComponent,
 } from '../../modals/blood-pack-transfer-confirm-modal/blood-pack-transfer-confirm-modal.component';
+import {
+  BloodPackTransferResultModalComponent,
+} from '../../modals/blood-pack-transfer-result-modal/blood-pack-transfer-result-modal.component';
 import { BloodCampBloodPackTransferTableService } from '../../services/blood-camp-blood-pack-transfer-table.service';
 
 @Component({
@@ -217,7 +220,26 @@ export class BloodCampBloodPackManagerTransferBloodPackComponent implements OnIn
   onTransferBloodPacksConfirmed(bloodPackIds: string[]) {
     this.transferForm.patchValue({ bloodPackIds });
     this.bloodPackService.transferBloodPacksToBloodTestCenter(this.transferForm.getRawValue())
-      .subscribe(() => this.alertService.success('common.alert.transferSuccess'));
+      .subscribe((results) => this.openBloodPackTransferResultModal(results));
+  }
+
+  openBloodPackTransferResultModal({ success, errors }) {
+    this.modalRef = this.modalService.show(BloodPackTransferResultModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        success,
+        errors
+      }
+    });
+
+    this.modalRef.content.closed.subscribe(() => this.resetForm());
   }
 
   resetForm() {
