@@ -1,13 +1,16 @@
 import { Component, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { concat, Observable, of, Subject } from 'rxjs';
 import { catchError, debounceTime, distinctUntilChanged, filter, map, switchMap, tap } from 'rxjs/operators';
 import { BloodPack } from 'src/app/core/models/blood-pack.interface';
+import { BloodTestCenter } from 'src/app/core/models/blood-test-center.interface';
 import { User } from 'src/app/core/models/user.interface';
 import { AlertService } from 'src/app/core/services/alert.service';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { BloodPackService } from 'src/app/core/services/blood-pack.service';
+import { BloodTestCenterService } from 'src/app/core/services/blood-test-center.service';
 import { DatatableComponent } from 'src/app/datatable/datatable.component';
 import { TableActionType } from 'src/app/datatable/models/table-action.interface';
 import { TableCellChange } from 'src/app/datatable/models/table-cell-change.interface';
@@ -32,11 +35,21 @@ export class BloodCampBloodPackManagerTransferBloodPackComponent implements OnIn
   bloodPacksLoading = false;
   bloodPack: BloodPack;
 
+  bloodTestCenters$: Observable<BloodPack[]>;
+  bloodTestCentersInput$ = new Subject<string>();
+  bloodTestCentersLoading = false;
+  bloodTestCenter: BloodTestCenter;
+
+  bloodTestCenterForm: FormGroup;
+  transferForm: FormGroup;
+
   constructor(
     private router: Router,
     private renderer: Renderer2,
+    private fb: FormBuilder,
     private authService: AuthService,
     private bloodPackService: BloodPackService,
+    private bloodTestCenterService: BloodTestCenterService,
     private alertService: AlertService,
     private modalService: MDBModalService,
     public bloodCampBloodPackTransferTableService: BloodCampBloodPackTransferTableService
@@ -66,6 +79,36 @@ export class BloodCampBloodPackManagerTransferBloodPackComponent implements OnIn
         ))
       )
     );
+
+    this.bloodTestCenters$ = concat(
+      of([]), // default items
+      this.bloodTestCentersInput$.pipe(
+        debounceTime(200),
+        distinctUntilChanged(),
+        filter(name => name && name.length > 2),
+        tap(() => this.bloodTestCentersLoading = true),
+        switchMap(id => this.bloodTestCenterService.searchBloodTestCenters(id).pipe(
+          map((response: any) => response.items),
+          catchError(() => of([])), // empty list on error
+          tap(() => this.bloodTestCentersLoading = false)
+        ))
+      )
+    );
+
+    this.bloodTestCenterForm = this.fb.group({
+      name: ['', Validators.required],
+      address: ['', Validators.required],
+      phone: ['', Validators.required],
+      email: ['', Validators.required],
+      location: [null, Validators.required]
+    });
+
+    this.bloodTestCenterForm.disable();
+    this.transferForm = this.fb.group({
+      bloodPackIds: [[]],
+      bloodTestCenterId: [{ value: '', disabled: true }, Validators.required],
+      description: ['', [Validators.required, Validators.maxLength(1000)]],
+    });
   }
 
   selectBloodPack(bloodPack: BloodPack) {
@@ -109,6 +152,20 @@ export class BloodCampBloodPackManagerTransferBloodPackComponent implements OnIn
       );
   }
 
+  selectBloodTestCenter(bloodTestCenter: BloodTestCenter) {
+    this.bloodTestCenterForm.patchValue({
+      name: bloodTestCenter.name,
+      address: bloodTestCenter.address,
+      phone: bloodTestCenter.phone,
+      email: bloodTestCenter.email,
+      location: bloodTestCenter.location
+    });
+
+    this.transferForm.patchValue({
+      bloodTestCenterId: bloodTestCenter._id
+    });
+  }
+
   onTableCellChanged(tableCellChange: TableCellChange) {
     const action = tableCellChange.newValue;
     switch (action.type) {
@@ -124,8 +181,30 @@ export class BloodCampBloodPackManagerTransferBloodPackComponent implements OnIn
   }
 
   removeBloodPackFromList(id: string) {
-    this.bloodCampBloodPackTransferTableService.removeRow(id);
+    this.bloodCampBloodPackTransferTableService.removeDataRow(id);
     this.datatable.refresh();
+  }
+
+  transferBloodPacks() {
+    const bloodPackIds = this.bloodCampBloodPackTransferTableService.getAllRowIds();
+    if (bloodPackIds.length === 0) {
+      this.alertService.error('bloodPackManager.alert.noBloodPack');
+    }
+
+    this.transferForm.patchValue({ bloodPackIds });
+    console.log(this.transferForm.getRawValue());
+  }
+
+  resetForm() {
+    this.bloodTestCenterForm.reset();
+    this.transferForm.reset();
+    this.bloodCampBloodPackTransferTableService.removeAllDataRows();
+    this.datatable.refresh();
+  }
+
+  controlHasError(controlName: string, errorName: string): boolean {
+    return this.transferForm.get(controlName).touched
+      && this.transferForm.get(controlName).hasError(errorName);
   }
 
   ngOnDestroy() {

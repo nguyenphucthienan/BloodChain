@@ -10,7 +10,8 @@
       "update": "Cập nhật",
       "cancel": "Hủy",
       "reset": "Làm lại",
-      "print": "In"
+      "print": "In",
+      "transfer": "Chuyển"
     },
     "alert": {
       "success": "Thành công",
@@ -466,7 +467,8 @@
   "bloodPackManager": {
     "button": {
       "add": "Thêm túi máu",
-      "transfer": "Chuyển túi máu"
+      "transfer": "Chuyển túi máu",
+      "scanQrCode": "Quét QR Code"
     },
     "column": {
       "donor": "Người hiến",
@@ -480,6 +482,8 @@
     "label": {
       "donorInfo": "THÔNG TIN NGƯỜI HIẾN",
       "addBloodPack": "THÊM TÚI MÁU",
+      "bloodTestCenterInfo": "THÔNG TIN TRUNG TÂM XÉT NGHIỆM",
+      "transferBloodPacks": "CHUYỂN TÚI MÁU",
       "username": "Tên đăng nhập",
       "id": "ID",
       "email": "Email",
@@ -492,19 +496,25 @@
       "donorId": "ID Người hiến",
       "volume": "Thể tích (ml)",
       "time": "Thời gian",
+      "bloodTestCenterId": "ID trung tâm xét nghiệm",
+      "description": "Chú thích",
       "searchDonor": "Tìm người hiến",
-      "searchBloodPack": "Tìm túi máu"
+      "searchBloodPack": "Tìm túi máu",
+      "searchBloodTestCenter": "Tìm trung tâm hiến máu"
     },
     "message": {
       "donorRequired": "Người hiến không được bỏ trống",
       "volumeRequired": "Thể tích không được bỏ trống",
-      "bloodCampRequired": "Trung tâm hiến máu không được bỏ trống"
+      "bloodCampRequired": "Trung tâm hiến máu không được bỏ trống",
+      "bloodTestCenterIdRequired": "ID trung tâm xét nghiệm không được bỏ trống",
+      "descriptionRequired": "Chú thích không được bỏ trống"
     },
     "alert": {
       "addSuccess": "Thêm túi máu thành công",
       "addFailed": "Thêm túi máu không thành công",
       "alreadySelected": "Túi máu đã được chọn",
-      "cannotSelect": "Bạn không thể chọn túi máu này"
+      "cannotSelect": "Bạn không thể chọn túi máu này",
+      "noBloodPack": "Không có túi máu nào được chọn"
     },
     "placeholder": {
       "search": "Tìm kiếm (tối thiểu 3 kí tự)"

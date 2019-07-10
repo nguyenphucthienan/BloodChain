@@ -68,4 +68,13 @@ export class BloodTestCenterService {
     return this.http.get<User[]>(url);
   }
 
+  searchBloodTestCenters(name: string): Observable<BloodTestCenter[]> {
+    const params = new ParamsBuilder()
+      .setParam('name', name)
+      .applySort({ sortBy: 'name', isSortAscending: true })
+      .build();
+
+    return this.http.get<BloodTestCenter[]>(this.bloodTestCentersUrl, { params });
+  }
+
 }

@@ -24,7 +24,7 @@ export class BloodCampBloodPackTransferTableService implements TableService {
 
   pagination: Pagination = {
     page: 1,
-    size: 6
+    size: 5
   };
 
   sortMode: SortMode = {
@@ -106,9 +106,17 @@ export class BloodCampBloodPackTransferTableService implements TableService {
     this.calculatePagination();
   }
 
-  removeRow(id: string) {
+  removeDataRow(id: string) {
     this.rows = this.rows.filter(row => row.cells._id.value !== id);
     this.calculatePagination();
+  }
+
+  removeAllDataRows() {
+    this.setDataRows([]);
+  }
+
+  getAllRowIds() {
+    return this.rows.map(row => row.cells._id.value);
   }
 
   private calculatePagination() {

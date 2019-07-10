@@ -10,7 +10,8 @@
       "update": "Update",
       "cancel": "Cancel",
       "reset": "Reset",
-      "print": "Print"
+      "print": "Print",
+      "transfer": "Transfer"
     },
     "alert": {
       "success": "Success",
@@ -471,7 +472,8 @@
   "bloodPackManager": {
     "button": {
       "add": "Add Blood Pack",
-      "transfer": "Transfer Blood Packs"
+      "transfer": "Transfer Blood Packs",
+      "scanQrCode": "Scan QR Code"
     },
     "column": {
       "donor": "Donor",
@@ -485,6 +487,8 @@
     "label": {
       "donorInfo": "DONOR INFO",
       "addBloodPack": "ADD BLOOD PACK",
+      "bloodTestCenterInfo": "BLOOD TEST CENTER INFO",
+      "transferBloodPacks": "TRANSFER BLOOD PACKS",
       "id": "ID",
       "username": "Username",
       "email": "Email",
@@ -497,19 +501,25 @@
       "donorId": "Donor ID",
       "volume": "Volume (ml)",
       "time": "Time",
+      "bloodTestCenterId": "Blood test center ID",
+      "description": "Description",
       "searchDonor": "Search donor",
-      "searchBloodPack": "Search blood pack"
+      "searchBloodPack": "Search blood pack",
+      "searchBloodTestCenter": "Search blood test center"
     },
     "message": {
       "donorRequired": "Donor is required",
       "volumeRequired": "Volume is required",
-      "bloodCampRequired": "Blood camp is required"
+      "bloodCampRequired": "Blood camp is required",
+      "bloodTestCenterIdRequired": "Blood test center ID is required",
+      "descriptionRequired": "Description is required"
     },
     "alert": {
       "addSuccess": "Add blood pack successfully",
       "addFailed": "Add blood pack failed",
       "alreadySelected": "Blood pack has already been selected",
-      "cannotSelect": "You cannot select this blood pack"
+      "cannotSelect": "You cannot select this blood pack",
+      "noBloodPack": "No blood pack was selected"
     },
     "placeholder": {
       "search": "Search (min 3 characters)"
