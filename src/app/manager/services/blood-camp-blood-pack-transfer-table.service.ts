@@ -24,7 +24,9 @@ export class BloodCampBloodPackTransferTableService implements TableService {
 
   pagination: Pagination = {
     page: 1,
-    size: 5
+    size: 5,
+    totalItems: 0,
+    totalPages: 0
   };
 
   sortMode: SortMode = {

@@ -16,6 +16,9 @@ import { TableActionType } from 'src/app/datatable/models/table-action.interface
 import { TableCellChange } from 'src/app/datatable/models/table-cell-change.interface';
 import { ScanQrcodeModalComponent } from 'src/app/shared/modals/scan-qrcode-modal/scan-qrcode-modal.component';
 
+import {
+  BloodPackTransferConfirmModalComponent,
+} from '../../modals/blood-pack-transfer-confirm-modal/blood-pack-transfer-confirm-modal.component';
 import { BloodCampBloodPackTransferTableService } from '../../services/blood-camp-blood-pack-transfer-table.service';
 
 @Component({
@@ -189,10 +192,32 @@ export class BloodCampBloodPackManagerTransferBloodPackComponent implements OnIn
     const bloodPackIds = this.bloodCampBloodPackTransferTableService.getAllRowIds();
     if (bloodPackIds.length === 0) {
       this.alertService.error('bloodPackManager.alert.noBloodPack');
+      return;
     }
 
+    this.openBloodPackTransferConfirmModal(bloodPackIds);
+  }
+
+  openBloodPackTransferConfirmModal(bloodPackIds: string[]) {
+    this.modalRef = this.modalService.show(BloodPackTransferConfirmModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-dialog-centered',
+      containerClass: 'top',
+      animated: true
+    });
+
+    this.modalRef.content.confirmed
+      .subscribe(() => this.onTransferBloodPacksConfirmed(bloodPackIds));
+  }
+
+  onTransferBloodPacksConfirmed(bloodPackIds: string[]) {
     this.transferForm.patchValue({ bloodPackIds });
-    console.log(this.transferForm.getRawValue());
+    this.bloodPackService.transferBloodPacksToBloodTestCenter(this.transferForm.getRawValue())
+      .subscribe(() => this.alertService.success('common.alert.transferSuccess'));
   }
 
   resetForm() {

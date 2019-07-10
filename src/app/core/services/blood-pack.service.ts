@@ -15,6 +15,7 @@ export class BloodPackService {
 
   private readonly bloodPacksUrl = `${environment.apiUrl}/blood-packs`;
   private readonly bloodPackUrl = `${environment.apiUrl}/blood-packs/{id}`;
+  private readonly transferToBloodTestCenterUrl = `${environment.apiUrl}/blood-packs/transfer/blood-test-center`;
 
   private readonly defaultPagination: Pagination = {
     page: 1,
@@ -59,6 +60,10 @@ export class BloodPackService {
   deleteBloodPack(id: string): Observable<BloodPack> {
     const url = UrlUtils.resolvePathVariables(this.bloodPackUrl, { id });
     return this.http.delete<BloodPack>(url);
+  }
+
+  transferBloodPacksToBloodTestCenter(transferModel: any): Observable<any> {
+    return this.http.post<any>(this.transferToBloodTestCenterUrl, transferModel);
   }
 
 }

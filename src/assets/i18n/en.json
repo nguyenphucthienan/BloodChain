@@ -54,7 +54,8 @@
     },
     "message": {
       "noData": "No data",
-      "areYouSure": "Are you sure you want to delete"
+      "areYouSure": "Are you sure you want to",
+      "areYouSureDelete": "Are you sure you want to delete"
     },
     "gender": {
       "male": "Male",
@@ -482,7 +483,8 @@
       "createdAt": "Time"
     },
     "modal": {
-      "bloodPackInfo": "Blood Pack Info"
+      "bloodPackInfo": "Blood Pack Info",
+      "transferBloodPacks": "Transfer Blood Packs"
     },
     "label": {
       "donorInfo": "DONOR INFO",
@@ -512,7 +514,8 @@
       "volumeRequired": "Volume is required",
       "bloodCampRequired": "Blood camp is required",
       "bloodTestCenterIdRequired": "Blood test center ID is required",
-      "descriptionRequired": "Description is required"
+      "descriptionRequired": "Description is required",
+      "transferTheseBloodPacks": "transfer these blood packs"
     },
     "alert": {
       "addSuccess": "Add blood pack successfully",

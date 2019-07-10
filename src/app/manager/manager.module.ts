@@ -22,6 +22,9 @@ import { ManagerRoutingModule } from './manager-routing.module';
 import {
   BloodPackAddSuccessModalComponent,
 } from './modals/blood-pack-add-success-modal/blood-pack-add-success-modal.component';
+import {
+  BloodPackTransferConfirmModalComponent,
+} from './modals/blood-pack-transfer-confirm-modal/blood-pack-transfer-confirm-modal.component';
 import { UserAddSuccessModalComponent } from './modals/user-add-success-modal/user-add-success-modal.component';
 import { UserManagerLiteTableService } from './services/user-manager-lite-table.service';
 
@@ -35,6 +38,7 @@ import { UserManagerLiteTableService } from './services/user-manager-lite-table.
     BloodCampBloodPackManagerComponent,
     BloodCampBloodPackManagerAddBloodPackComponent,
     BloodCampBloodPackManagerTransferBloodPackComponent,
+    BloodPackTransferConfirmModalComponent,
   ],
   imports: [
     SharedModule,
@@ -47,6 +51,7 @@ import { UserManagerLiteTableService } from './services/user-manager-lite-table.
   entryComponents: [
     UserAddSuccessModalComponent,
     BloodPackAddSuccessModalComponent,
+    BloodPackTransferConfirmModalComponent
   ]
 })
 export class ManagerModule { }

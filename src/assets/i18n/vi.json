@@ -54,7 +54,8 @@
     },
     "message": {
       "noData": "Không có dữ liệu",
-      "areYouSure": "Bạn có chắc chắn rằng bạn muốn xóa"
+      "areYouSure": "Bạn có chắc chắn rằng bạn muốn",
+      "areYouSureDelete": "Bạn có chắc chắn rằng bạn muốn xóa"
     },
     "gender": {
       "male": "Nam",
@@ -477,7 +478,8 @@
       "createdAt": "Thời gian"
     },
     "modal": {
-      "bloodPackInfo": "Thông tin túi máu"
+      "bloodPackInfo": "Thông tin túi máu",
+      "transferBloodPacks": "Chuyển túi máu"
     },
     "label": {
       "donorInfo": "THÔNG TIN NGƯỜI HIẾN",
@@ -507,7 +509,8 @@
       "volumeRequired": "Thể tích không được bỏ trống",
       "bloodCampRequired": "Trung tâm hiến máu không được bỏ trống",
       "bloodTestCenterIdRequired": "ID trung tâm xét nghiệm không được bỏ trống",
-      "descriptionRequired": "Chú thích không được bỏ trống"
+      "descriptionRequired": "Chú thích không được bỏ trống",
+      "transferTheseBloodPacks": "chuyển những túi máu này"
     },
     "alert": {
       "addSuccess": "Thêm túi máu thành công",
