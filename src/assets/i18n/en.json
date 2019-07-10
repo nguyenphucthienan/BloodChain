@@ -91,14 +91,21 @@
     "manager": {
       "main": "Manager",
       "users": "Users",
-      "addUsers": "Add User",
-      "bloodCamp": {
-        "main": "Blood Camp",
-        "bloodPacks": {
-          "main": "Blood Packs",
-          "addBloodPack": "Add Blood Pack",
-          "transferBloodPacks": "Transfer Blood Packs"
-        }
+      "addUsers": "Add User"
+    },
+    "bloodCamp": {
+      "main": "Blood Camp",
+      "bloodPacks": {
+        "main": "Blood Packs",
+        "addBloodPack": "Add Blood Pack",
+        "transferBloodPacks": "Transfer Blood Packs"
+      }
+    },
+    "bloodTestCenter": {
+      "main": "Blood Test Center",
+      "bloodPacks": {
+        "main": "Blood Packs",
+        "transferBloodPacks": "Transfer Blood Packs"
       }
     },
     "profile": {
@@ -489,7 +496,8 @@
       "donor": "Donor",
       "volume": "Volume (ml)",
       "bloodCamp": "Blood Camp",
-      "createdAt": "Time"
+      "createdAt": "Time",
+      "tested": "Tested"
     },
     "modal": {
       "bloodPackInfo": "Blood Pack Info",

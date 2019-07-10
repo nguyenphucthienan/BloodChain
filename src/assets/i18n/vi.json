@@ -91,9 +91,17 @@
     "manager": {
       "main": "Quản lí",
       "users": "Người dùng",
-      "addUsers": "Thêm người dùng",
+      "addUsers": "Thêm người dùng"
+    },
+    "bloodCamp": {
+      "main": "Trung tâm hiến máu",
       "bloodPacks": "Túi máu",
       "addBloodPack": "Thêm túi máu",
+      "transferBloodPacks": "Chuyển túi máu"
+    },
+    "bloodTestCenter": {
+      "main": "Trung tâm xét nghiệm",
+      "bloodPacks": "Túi máu",
       "transferBloodPacks": "Chuyển túi máu"
     },
     "profile": {
@@ -484,7 +492,8 @@
       "donor": "Người hiến",
       "volume": "Thể tích (ml)",
       "bloodCamp": "Trung tâm hiến máu",
-      "createdAt": "Thời gian"
+      "createdAt": "Thời gian",
+      "tested": "Đã xét nghiệm"
     },
     "modal": {
       "bloodPackInfo": "Thông tin túi máu",

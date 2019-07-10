@@ -30,6 +30,7 @@ import {
 } from './modals/blood-pack-transfer-result-modal/blood-pack-transfer-result-modal.component';
 import { UserAddSuccessModalComponent } from './modals/user-add-success-modal/user-add-success-modal.component';
 import { UserManagerLiteTableService } from './services/user-manager-lite-table.service';
+import { BloodTestCenterBloodPackManagerComponent } from './components/blood-test-center-blood-pack-manager/blood-test-center-blood-pack-manager.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { UserManagerLiteTableService } from './services/user-manager-lite-table.
     BloodCampBloodPackManagerTransferBloodPackComponent,
     BloodPackTransferConfirmModalComponent,
     BloodPackTransferResultModalComponent,
+    BloodTestCenterBloodPackManagerComponent,
   ],
   imports: [
     SharedModule,
