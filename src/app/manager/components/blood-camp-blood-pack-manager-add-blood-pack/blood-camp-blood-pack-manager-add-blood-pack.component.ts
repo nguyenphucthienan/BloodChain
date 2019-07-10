@@ -133,7 +133,10 @@ export class BloodCampBloodPackManagerAddBloodPackComponent implements OnInit, O
 
   onQrCodeScanSuccess(userId: string) {
     this.userService.getUser(userId)
-      .subscribe((user: User) => this.selectUser(user));
+      .subscribe(
+        (user: User) => this.selectUser(user),
+        error => this.alertService.error('common.alert.qrCodeInvalid')
+      );
   }
 
   addBloodPack() {

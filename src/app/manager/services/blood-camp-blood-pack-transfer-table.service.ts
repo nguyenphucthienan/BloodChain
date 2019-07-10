@@ -35,7 +35,8 @@ export class BloodCampBloodPackTransferTableService implements TableService {
   filterMode: FilterMode = {};
 
   actions: TableAction[] = [
-    { class: 'btn-info', icon: 'fa fa-info-circle', text: 'common.tooltip.detail', type: TableActionType.GetDetail }
+    { class: 'btn-info', icon: 'fa fa-info-circle', text: 'common.tooltip.detail', type: TableActionType.GetDetail },
+    { class: 'btn-danger', icon: 'fa fa-times', text: 'common.tooltip.delete', type: TableActionType.Delete }
   ];
 
   constructor(private alertService: AlertService) { }
@@ -59,7 +60,14 @@ export class BloodCampBloodPackTransferTableService implements TableService {
   }
 
   setDataRows(rows: TableRow[]) {
-    this.rows = rows;
+    this.rows = [...rows];
+    this.rows.forEach(row => {
+      row.cells.actions = {
+        value: this.actions,
+        showText: false
+      };
+    });
+
     this.calculatePagination();
   }
 
@@ -95,6 +103,11 @@ export class BloodCampBloodPackTransferTableService implements TableService {
 
     const newRow = { cells };
     this.rows.push(newRow);
+    this.calculatePagination();
+  }
+
+  removeRow(id: string) {
+    this.rows = this.rows.filter(row => row.cells._id.value !== id);
     this.calculatePagination();
   }
 

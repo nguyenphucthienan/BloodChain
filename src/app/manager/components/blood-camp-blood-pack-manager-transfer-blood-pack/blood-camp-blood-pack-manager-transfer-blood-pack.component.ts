@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { concat, Observable, of, Subject } from 'rxjs';
 import { catchError, debounceTime, distinctUntilChanged, filter, map, switchMap, tap } from 'rxjs/operators';
 import { BloodPack } from 'src/app/core/models/blood-pack.interface';
@@ -10,6 +11,7 @@ import { BloodPackService } from 'src/app/core/services/blood-pack.service';
 import { DatatableComponent } from 'src/app/datatable/datatable.component';
 import { TableActionType } from 'src/app/datatable/models/table-action.interface';
 import { TableCellChange } from 'src/app/datatable/models/table-cell-change.interface';
+import { ScanQrcodeModalComponent } from 'src/app/shared/modals/scan-qrcode-modal/scan-qrcode-modal.component';
 
 import { BloodCampBloodPackTransferTableService } from '../../services/blood-camp-blood-pack-transfer-table.service';
 
@@ -23,6 +25,8 @@ export class BloodCampBloodPackManagerTransferBloodPackComponent implements OnIn
 
   @ViewChild(DatatableComponent) datatable: DatatableComponent;
 
+  modalRef: MDBModalRef;
+
   bloodPacks$: Observable<BloodPack[]>;
   bloodPacksInput$ = new Subject<string>();
   bloodPacksLoading = false;
@@ -34,6 +38,7 @@ export class BloodCampBloodPackManagerTransferBloodPackComponent implements OnIn
     private authService: AuthService,
     private bloodPackService: BloodPackService,
     private alertService: AlertService,
+    private modalService: MDBModalService,
     public bloodCampBloodPackTransferTableService: BloodCampBloodPackTransferTableService
   ) {
     const navigation = this.router.getCurrentNavigation();
@@ -68,10 +73,6 @@ export class BloodCampBloodPackManagerTransferBloodPackComponent implements OnIn
       return;
     }
 
-    this.addBlookPack(bloodPack);
-  }
-
-  addBlookPack(bloodPack: BloodPack) {
     this.authService.getMyUserInfo()
       .subscribe((user: User) => {
         if (user.bloodCamp._id !== bloodPack.currentLocation) {
@@ -84,16 +85,47 @@ export class BloodCampBloodPackManagerTransferBloodPackComponent implements OnIn
       });
   }
 
+  openScanQrCodeModal() {
+    this.modalRef = this.modalService.show(ScanQrcodeModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-lg modal-dialog-centered',
+      containerClass: 'top',
+      animated: true
+    });
+
+    this.modalRef.content.scanSuccess
+      .subscribe((userId) => this.onQrCodeScanSuccess(userId));
+  }
+
+  onQrCodeScanSuccess(bloodPackId: string) {
+    this.bloodPackService.getBloodPack(bloodPackId)
+      .subscribe(
+        (bloodPack: BloodPack) => this.selectBloodPack(bloodPack),
+        error => this.alertService.error('common.alert.qrCodeInvalid')
+      );
+  }
+
   onTableCellChanged(tableCellChange: TableCellChange) {
     const action = tableCellChange.newValue;
     switch (action.type) {
       case TableActionType.GetDetail:
         this.navigateToBloodPackDetail(tableCellChange.row.cells._id.value);
         break;
+      case TableActionType.Delete:
+        this.removeBloodPackFromList(tableCellChange.row.cells._id.value);
     }
   }
 
   navigateToBloodPackDetail(id: string) {
+  }
+
+  removeBloodPackFromList(id: string) {
+    this.bloodCampBloodPackTransferTableService.removeRow(id);
+    this.datatable.refresh();
   }
 
   ngOnDestroy() {

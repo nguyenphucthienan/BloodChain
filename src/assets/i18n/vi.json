@@ -21,6 +21,7 @@
       "mustBeLoggedIn": "Bạn chưa đăng nhập",
       "cannotAccess": "Bạn không thể vào trang này",
       "getDataFailed": "Tải dữ liệu không thành công",
+      "qrCodeInvalid": "QR Code không hợp lệ",
       "assignStaffsSuccess": "Cấp quyền thành công",
       "assignStaffsFailed": "Cấp quyền không thành công"
     },
