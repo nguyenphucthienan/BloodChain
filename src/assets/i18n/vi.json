@@ -1,7 +1,9 @@
 {
   "common": {
     "label": {
-      "search": "Tìm kiếm"
+      "search": "Tìm kiếm",
+      "yes": "Có",
+      "no": "Không"
     },
     "button": {
       "yes": "Đồng ý",
@@ -562,7 +564,7 @@
       "volume": "Thể tích (ml)",
       "time": "Thời gian",
       "tested": "Đã xét nghiệm",
-      "testPassed": "Kết quả",
+      "testPassed": "Kết quả máu hợp lệ",
       "bloodCamp": "Trung tâm hiến máu",
       "bloodTestCenter": "Trung tâm xét nghiệm",
       "bloodTestCenterId": "ID trung tâm xét nghiệm",

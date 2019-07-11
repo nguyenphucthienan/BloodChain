@@ -117,8 +117,8 @@
               <div class="col">
                 <div class="md-form form-col">
                   <div class="md-form">
-                    <input type="text" id="tested" formControlName="tested" [value]="bloodPackForm.get('tested').value"
-                      class="form-control" mdbInput>
+                    <input type="text" id="tested" formControlName="tested"
+                      [value]="bloodPackForm.get('tested').value | booleanYesNo | async" class="form-control" mdbInput>
                     <label for="tested">{{ 'bloodPackManager.label.tested' | translate }}</label>
                   </div>
                 </div>
@@ -127,7 +127,8 @@
                 <div class="md-form form-col">
                   <div class="md-form">
                     <input type="text" id="testPassed" formControlName="testPassed"
-                      [value]="bloodPackForm.get('testPassed').value" class="form-control" mdbInput>
+                      [value]="bloodPackForm.get('testPassed').value | booleanYesNo | async" class="form-control"
+                      mdbInput>
                     <label for="testPassed">{{ 'bloodPackManager.label.testPassed' | translate }}</label>
                   </div>
                 </div>

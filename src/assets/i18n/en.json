@@ -1,7 +1,9 @@
 {
   "common": {
     "label": {
-      "search": "Search"
+      "search": "Search",
+      "yes": "Yes",
+      "no": "No"
     },
     "button": {
       "yes": "Yes",

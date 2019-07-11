@@ -22,6 +22,7 @@ import { MapInputComponent } from './components/map-input/map-input.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ScanQrcodeModalComponent } from './modals/scan-qrcode-modal/scan-qrcode-modal.component';
+import { BooleanYesNoPipe } from './pipes/boolean-yes-no.pipe';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -34,7 +35,8 @@ export function createTranslateLoader(http: HttpClient) {
     PaginationComponent,
     MapInputComponent,
     BreadcrumbComponent,
-    ScanQrcodeModalComponent
+    ScanQrcodeModalComponent,
+    BooleanYesNoPipe
   ],
   imports: [
     CommonModule,
@@ -79,7 +81,8 @@ export function createTranslateLoader(http: HttpClient) {
     PaginationComponent,
     MapInputComponent,
     BreadcrumbComponent,
-    ScanQrcodeModalComponent
+    ScanQrcodeModalComponent,
+    BooleanYesNoPipe
   ],
   entryComponents: [
     ScanQrcodeModalComponent
