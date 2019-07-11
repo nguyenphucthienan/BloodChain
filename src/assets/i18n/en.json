@@ -570,6 +570,7 @@
       "description": "Description",
       "testName": "Test name",
       "result": "Result",
+      "bloodType": "Blood type",
       "searchDonor": "Search donor",
       "searchBloodPack": "Search blood pack",
       "searchBloodTestCenter": "Search blood test center"

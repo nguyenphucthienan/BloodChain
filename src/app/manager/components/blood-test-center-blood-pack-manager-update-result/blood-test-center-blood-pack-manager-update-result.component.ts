@@ -6,6 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { concat, Observable, of, Subject } from 'rxjs';
 import { catchError, debounceTime, distinctUntilChanged, filter, map, switchMap, tap } from 'rxjs/operators';
+import { BloodType } from 'src/app/core/constant/blood-type';
 import { BloodPack } from 'src/app/core/models/blood-pack.interface';
 import { TestType } from 'src/app/core/models/test-type.interface';
 import { User } from 'src/app/core/models/user.interface';
@@ -23,6 +24,17 @@ import { ScanQrcodeModalComponent } from 'src/app/shared/modals/scan-qrcode-moda
   providers: [DatePipe]
 })
 export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnInit, OnDestroy {
+
+  readonly bloodTypes = [
+    { label: BloodType.A_POSITIVE, value: BloodType.A_POSITIVE },
+    { label: BloodType.A_NEGATIVE, value: BloodType.AB_NEGATIVE },
+    { label: BloodType.B_POSITIVE, value: BloodType.B_POSITIVE },
+    { label: BloodType.B_NEGATIVE, value: BloodType.B_NEGATIVE },
+    { label: BloodType.O_POSITIVE, value: BloodType.O_POSITIVE },
+    { label: BloodType.O_NEGATIVE, value: BloodType.O_NEGATIVE },
+    { label: BloodType.AB_POSITIVE, value: BloodType.AB_POSITIVE },
+    { label: BloodType.AB_NEGATIVE, value: BloodType.AB_NEGATIVE },
+  ];
 
   readonly resultTranslations = [
     { translation: 'common.result.passed', value: true },
@@ -127,9 +139,9 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
     });
 
     this.updateForm = this.fb.group({
-      bloodType: [null, Validators.required],
       testResults: this.fb.array([this.createTestField()], Validators.required),
-      description: ['', Validators.required]
+      bloodType: [null, Validators.required],
+      testDescription: ['', Validators.required]
     });
 
     this.userForm.disable();
@@ -204,6 +216,10 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
     this.userForm.reset();
     this.bloodPackForm.reset();
     this.updateForm.reset();
+
+    while (this.testResultFormGroup.length > 1) {
+      this.testResultFormGroup.removeAt(1);
+    }
   }
 
   updateTestResults() {
@@ -222,13 +238,11 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
   }
 
   removeTestField(index: number) {
-    const testResults = this.updateForm.get('testResults') as FormArray;
-    testResults.removeAt(index);
+    this.testResultFormGroup.removeAt(index);
   }
 
   addTestField() {
-    const testResults = this.updateForm.get('testResults') as FormArray;
-    testResults.push(this.createTestField());
+    this.testResultFormGroup.push(this.createTestField());
   }
 
   controlHasError(controlName: string, errorName: string): boolean {

@@ -566,6 +566,7 @@
       "description": "Miêu tả",
       "testName": "Tên xét nghiệm",
       "result": "Kết quả",
+      "bloodType": "Nhóm máu",
       "searchDonor": "Tìm người hiến",
       "searchBloodPack": "Tìm túi máu",
       "searchBloodTestCenter": "Tìm trung tâm hiến máu"
