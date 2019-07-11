@@ -5,6 +5,9 @@ import { SharedModule } from '../shared/shared.module';
 import { ActionsTableCellComponent } from './cells/actions-table-cell/actions-table-cell.component';
 import { ArrayListTableCellComponent } from './cells/array-list-table-cell/array-list-table-cell.component';
 import { BooleanTableCellComponent } from './cells/boolean-table-cell/boolean-table-cell.component';
+import {
+  BooleanTwoValuesTableCellComponent,
+} from './cells/boolean-two-values-table-cell/boolean-two-values-table-cell.component';
 import { DateTableCellComponent } from './cells/date-table-cell/date-table-cell.component';
 import { DateTimeTableCellComponent } from './cells/date-time-table-cell/date-time-table-cell.component';
 import { IdTableCellComponent } from './cells/id-table-cell/id-table-cell.component';
@@ -24,6 +27,7 @@ import { DatatableComponent } from './datatable.component';
     ObjectTextTableCellComponent,
     PipedTextTableCellComponent,
     BooleanTableCellComponent,
+    BooleanTwoValuesTableCellComponent,
     ActionsTableCellComponent,
     ImageTableCellComponent,
     DateTableCellComponent,

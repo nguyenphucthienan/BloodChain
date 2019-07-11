@@ -539,7 +539,8 @@
       "volume": "Volume (ml)",
       "bloodCamp": "Blood Camp",
       "createdAt": "Time",
-      "tested": "Tested"
+      "tested": "Tested",
+      "testPassed": "Test Passed"
     },
     "modal": {
       "bloodPackInfo": "Blood Pack Info",

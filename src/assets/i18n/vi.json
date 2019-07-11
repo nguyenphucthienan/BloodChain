@@ -535,7 +535,8 @@
       "volume": "Thể tích (ml)",
       "bloodCamp": "Trung tâm hiến máu",
       "createdAt": "Thời gian",
-      "tested": "Đã xét nghiệm"
+      "tested": "Đã xét nghiệm",
+      "testPassed": "Kết quả"
     },
     "modal": {
       "bloodPackInfo": "Thông tin túi máu",
