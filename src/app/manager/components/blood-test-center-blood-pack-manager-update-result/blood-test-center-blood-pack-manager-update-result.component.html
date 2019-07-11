@@ -162,13 +162,16 @@
             [placeholder]="'bloodPackManager.label.bloodType' | translate" formControlName="bloodType">
           </ng-select>
         </div>
-        <div class="md-form">
+        <div class="md-form mt-3">
           <textarea type="text" id="testDescription" formControlName="testDescription"
             class="md-textarea md-textarea-auto form-control" mdbInput></textarea>
           <label for="testDescription">{{ 'bloodPackManager.label.description' | translate }}</label>
+          <mdb-error *ngIf="updateForm.hasError('testTypeRepeated')">
+            {{ 'bloodPackManager.message.testTypeRepeated' | translate }}
+          </mdb-error>
         </div>
         <div class="d-flex justify-content-end mt-3">
-          <button type="button" mdbBtn color="secondary" class=" waves-light" mdbWavesEffect (click)="resetForm()">
+          <button type="button" mdbBtn color="secondary" class=" waves-light" mdbWavesEffect (click)="resetForms()">
             {{ 'common.button.reset' | translate }}
           </button>
           <button type="button" mdbBtn color="secondary" class=" waves-light" mdbWavesEffect (click)="addTestField()">

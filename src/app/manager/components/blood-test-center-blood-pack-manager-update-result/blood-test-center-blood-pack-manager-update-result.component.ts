@@ -44,6 +44,7 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
   bloodPacks$: Observable<BloodPack[]>;
   bloodPacksInput$ = new Subject<string>();
   bloodPacksLoading = false;
+  bloodPack: BloodPack;
 
   testTypes: TestType[] = [];
   results: any[] = [];
@@ -142,7 +143,7 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
       testResults: this.fb.array([this.createTestField()], Validators.required),
       bloodType: [null, Validators.required],
       testDescription: ['', Validators.required]
-    });
+    }, { validator: [this.testResultRepeatedValidator] });
 
     this.userForm.disable();
     this.bloodPackForm.disable();
@@ -153,6 +154,7 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
       return;
     }
 
+    this.bloodPack = bloodPack;
     this.authService.getMyUserInfo()
       .subscribe((user: User) => {
         if (user.bloodTestCenter._id !== bloodPack.currentLocation) {
@@ -181,6 +183,24 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
               bloodCamp: bloodPack.bloodCamp.name,
               bloodTestCenter: bloodPack.bloodTestCenter.name
             });
+
+            if (bloodPack.tested) {
+              let numOfFields = 1;
+              if (bloodPack.testResults && bloodPack.testResults.length > 0) {
+                numOfFields = bloodPack.testResults.length;
+              }
+
+              this.resetTestResultFormGroup();
+              for (let i = 1; i < numOfFields; i++) {
+                this.addTestField();
+              }
+
+              this.updateForm.patchValue({
+                testResults: bloodPack.testResults,
+                bloodType: bloodPack.bloodType,
+                testDescription: bloodPack.testDescription
+              });
+            }
           });
       });
   }
@@ -212,18 +232,27 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
   navigateToBloodPackDetail(id: string) {
   }
 
-  resetForm() {
+  resetForms() {
     this.userForm.reset();
     this.bloodPackForm.reset();
     this.updateForm.reset();
+    this.resetTestResultFormGroup();
+  }
 
+  private resetTestResultFormGroup() {
     while (this.testResultFormGroup.length > 1) {
       this.testResultFormGroup.removeAt(1);
     }
   }
 
   updateTestResults() {
-    console.log(this.updateForm.value);
+    this.bloodPackService.updateBloodPackTestResults(this.bloodPack._id, this.updateForm.value)
+      .subscribe(
+        (bloodPack: BloodPack) => {
+          this.alertService.success('bloodPackManager.alert.updateTestResultSuccess');
+          this.resetForms();
+        },
+        error => this.alertService.error('bloodPackManager.alert.updateTestResultFailed'));
   }
 
   get testResultFormGroup() {
@@ -237,12 +266,46 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
     });
   }
 
+  createTestFieldArray(quantity: number = 1) {
+    if (quantity < 1) {
+      return;
+    }
+
+    const testFields = this.fb.array([]);
+    for (let i = 0; i < quantity; i++) {
+      testFields.push(this.fb.group({
+        testType: [null, Validators.required],
+        passed: [null, Validators.required]
+      }));
+    }
+
+    return testFields;
+  }
+
   removeTestField(index: number) {
     this.testResultFormGroup.removeAt(index);
   }
 
   addTestField() {
     this.testResultFormGroup.push(this.createTestField());
+  }
+
+  private testResultRepeatedValidator(g: FormGroup) {
+    const testResults = g.get('testResults') as FormArray;
+    const testTypes = {};
+
+    if (testResults) {
+      for (const testResult of testResults.controls) {
+        const testType = testResult.get('testType').value;
+        if (!testTypes[testType]) {
+          testTypes[testType] = true;
+        } else {
+          return { testTypeRepeated: true };
+        }
+      }
+    }
+
+    return null;
   }
 
   controlHasError(controlName: string, errorName: string): boolean {

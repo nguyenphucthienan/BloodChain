@@ -577,11 +577,14 @@
       "bloodCampRequired": "Trung tâm hiến máu không được bỏ trống",
       "bloodTestCenterIdRequired": "ID trung tâm xét nghiệm không được bỏ trống",
       "descriptionRequired": "Miêu tả không được bỏ trống",
-      "transferTheseBloodPacks": "chuyển những túi máu này"
+      "transferTheseBloodPacks": "chuyển những túi máu này",
+      "testTypeRepeated": "Loại xét nghiệm bị trùng lặp"
     },
     "alert": {
       "addSuccess": "Thêm túi máu thành công",
       "addFailed": "Thêm túi máu không thành công",
+      "updateTestResultSuccess": "Cập nhật kết quả xét nghiệm thành công",
+      "updateTestResultFailed": "Cập nhật kết quả xét nghiệm không thành công",
       "alreadySelected": "Túi máu đã được chọn",
       "cannotSelect": "Bạn không thể chọn túi máu này",
       "noBloodPack": "Không có túi máu nào được chọn"

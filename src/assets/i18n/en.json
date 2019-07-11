@@ -581,11 +581,14 @@
       "bloodCampRequired": "Blood camp is required",
       "bloodTestCenterIdRequired": "Blood test center ID is required",
       "descriptionRequired": "Description is required",
-      "transferTheseBloodPacks": "transfer these blood packs"
+      "transferTheseBloodPacks": "transfer these blood packs",
+      "testTypeRepeated": "Test types have been repeated"
     },
     "alert": {
       "addSuccess": "Add blood pack successfully",
       "addFailed": "Add blood pack failed",
+      "updateTestResultSuccess": "Update test result successfully",
+      "updateTestResultFailed": "Update test result failed",
       "alreadySelected": "Blood pack has already been selected",
       "cannotSelect": "You cannot select this blood pack",
       "noBloodPack": "No blood pack was selected"
