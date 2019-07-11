@@ -240,8 +240,8 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
   }
 
   private resetTestResultFormGroup() {
-    while (this.testResultFormGroup.length > 1) {
-      this.testResultFormGroup.removeAt(1);
+    while (this.testResultFormArray.length > 1) {
+      this.testResultFormArray.removeAt(1);
     }
   }
 
@@ -255,7 +255,7 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
         error => this.alertService.error('bloodPackManager.alert.updateTestResultFailed'));
   }
 
-  get testResultFormGroup() {
+  get testResultFormArray() {
     return this.updateForm.get('testResults') as FormArray;
   }
 
@@ -283,11 +283,11 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
   }
 
   removeTestField(index: number) {
-    this.testResultFormGroup.removeAt(index);
+    this.testResultFormArray.removeAt(index);
   }
 
   addTestField() {
-    this.testResultFormGroup.push(this.createTestField());
+    this.testResultFormArray.push(this.createTestField());
   }
 
   private testResultRepeatedValidator(g: FormGroup) {
@@ -297,15 +297,22 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
     if (testResults) {
       for (const testResult of testResults.controls) {
         const testType = testResult.get('testType').value;
-        if (!testTypes[testType]) {
-          testTypes[testType] = true;
-        } else {
-          return { testTypeRepeated: true };
+        if (testType) {
+          if (!testTypes[testType]) {
+            testTypes[testType] = true;
+          } else {
+            return { testTypeRepeated: true };
+          }
         }
       }
     }
 
     return null;
+  }
+
+  testResultFormGroupControlHasError(index: number, controlName: string, errorName: string): boolean {
+    return this.testResultFormArray.at(index).get(controlName).touched
+      && this.testResultFormArray.at(index).get(controlName).hasError(errorName);
   }
 
   controlHasError(controlName: string, errorName: string): boolean {

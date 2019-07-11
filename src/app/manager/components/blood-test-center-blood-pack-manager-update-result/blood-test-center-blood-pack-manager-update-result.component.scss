@@ -3,6 +3,10 @@
   margin-bottom: 1rem;
 }
 
+mdb-error.error-message {
+  top: 55px;
+}
+
 .update-form {
   .md-form {
     margin-top: 8px;
@@ -10,8 +14,8 @@
   }
 
   hr {
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top: 2px;
+    margin-bottom: 2px;
   }
 
   button.btn-sm {

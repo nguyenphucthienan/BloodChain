@@ -569,7 +569,7 @@
       "bloodTestCenter": "Blood test center",
       "bloodTestCenterId": "Blood test center ID",
       "description": "Description",
-      "testName": "Test name",
+      "testType": "Test type",
       "result": "Result",
       "bloodType": "Blood type",
       "searchDonor": "Search donor",
@@ -583,6 +583,9 @@
       "bloodTestCenterIdRequired": "Blood test center ID is required",
       "descriptionRequired": "Description is required",
       "transferTheseBloodPacks": "transfer these blood packs",
+      "testTypeRequired": "Test type is required",
+      "resultRequired": "Result is required",
+      "bloodTypeRequired": "Blood type is required",
       "testTypeRepeated": "Test types have been repeated"
     },
     "alert": {

@@ -124,14 +124,17 @@
         <span class="font-weight-bold">{{ 'bloodPackManager.label.updateTestResult' | translate }}</span>
       </div>
       <form [formGroup]="updateForm" (ngSubmit)="updateTestResults()" class="update-form">
-        <div formArrayName="testResults" *ngFor="let item of testResultFormGroup.controls; let index=index;">
+        <div formArrayName="testResults" *ngFor="let item of testResultFormArray.controls; let index=index;">
           <div [formGroupName]="index">
             <div class="form-row">
               <div class="col-md-6">
                 <div class="md-form form-col">
                   <ng-select [items]="testTypes" bindValue="_id" bindLabel="name" [multiple]="false" [clearable]="false"
-                    [placeholder]="'bloodPackManager.label.testName' | translate" formControlName="testType">
+                    [placeholder]="'bloodPackManager.label.testType' | translate" formControlName="testType">
                   </ng-select>
+                  <mdb-error *ngIf="testResultFormGroupControlHasError(index, 'testType', 'required')">
+                    {{ 'bloodPackManager.message.resultRequired' | translate }}
+                  </mdb-error>
                 </div>
               </div>
               <div class="col-md-6">
@@ -142,6 +145,9 @@
                         [clearable]="false" [placeholder]="'bloodPackManager.label.result' | translate"
                         formControlName="passed">
                       </ng-select>
+                      <mdb-error *ngIf="testResultFormGroupControlHasError(index, 'passed', 'required')">
+                        {{ 'bloodPackManager.message.resultRequired' | translate }}
+                      </mdb-error>
                     </div>
                   </div>
                   <div class="col-3 d-flex justify-content-center align-items-center">
@@ -161,13 +167,22 @@
           <ng-select [items]="bloodTypes" bindValue="value" bindLabel="label" [multiple]="false" [clearable]="false"
             [placeholder]="'bloodPackManager.label.bloodType' | translate" formControlName="bloodType">
           </ng-select>
+          <mdb-error *ngIf="controlHasError('bloodType', 'required')">
+            {{ 'bloodPackManager.message.bloodTypeRequired' | translate }}
+          </mdb-error>
         </div>
         <div class="md-form mt-3">
           <textarea type="text" id="testDescription" formControlName="testDescription"
             class="md-textarea md-textarea-auto form-control" mdbInput></textarea>
           <label for="testDescription">{{ 'bloodPackManager.label.description' | translate }}</label>
-          <mdb-error *ngIf="updateForm.hasError('testTypeRepeated')">
-            {{ 'bloodPackManager.message.testTypeRepeated' | translate }}
+          <mdb-error>
+            <span *ngIf=" controlHasError('testDescription', 'required')">
+              {{ 'bloodPackManager.message.descriptionRequired' | translate }}
+            </span>
+            <br>
+            <span *ngIf="updateForm.hasError('testTypeRepeated')">
+              {{ 'bloodPackManager.message.testTypeRepeated' | translate }}
+            </span>
           </mdb-error>
         </div>
         <div class="d-flex justify-content-end mt-3">
