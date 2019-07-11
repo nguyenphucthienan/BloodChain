@@ -136,7 +136,9 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
       volume: [null, [Validators.required, Validators.min(1)]],
       time: [null, Validators.required],
       bloodCamp: ['', Validators.required],
-      bloodTestCenter: ['', Validators.required]
+      bloodTestCenter: ['', Validators.required],
+      tested: [null, Validators.required],
+      testPassed: [null, Validators.required],
     });
 
     this.updateForm = this.fb.group({
@@ -181,7 +183,9 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
               volume: bloodPack.volume,
               time: this.datePipe.transform(new Date(bloodPack.createdAt), 'medium'),
               bloodCamp: bloodPack.bloodCamp.name,
-              bloodTestCenter: bloodPack.bloodTestCenter.name
+              bloodTestCenter: bloodPack.bloodTestCenter.name,
+              tested: bloodPack.tested,
+              testPassed: bloodPack.testPassed
             });
 
             if (bloodPack.tested) {

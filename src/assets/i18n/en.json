@@ -565,6 +565,8 @@
       "donorId": "Donor ID",
       "volume": "Volume (ml)",
       "time": "Time",
+      "tested": "Tested",
+      "testPassed": "Test passed",
       "bloodCamp": "Blood camp",
       "bloodTestCenter": "Blood test center",
       "bloodTestCenterId": "Blood test center ID",
