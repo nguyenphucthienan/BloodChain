@@ -123,6 +123,57 @@
       <div class="d-flex">
         <span class="font-weight-bold">{{ 'bloodPackManager.label.updateTestResult' | translate }}</span>
       </div>
+      <form [formGroup]="updateForm" (ngSubmit)="updateTestResults()" class="update-form">
+        <div formArrayName="testResults" *ngFor="let item of testResultFormGroup.controls; let index=index;">
+          <div [formGroupName]="index">
+            <div class="form-row">
+              <div class="col-md-6">
+                <div class="md-form form-col">
+                  <ng-select [items]="testTypes" bindValue="_id" bindLabel="name" [multiple]="false" [clearable]="false"
+                    [placeholder]="'bloodPackManager.label.testName' | translate" formControlName="testType">
+                  </ng-select>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-8">
+                    <div class="md-form form-col">
+                      <ng-select [items]="results" bindValue="value" bindLabel="label" [multiple]="false"
+                        [clearable]="false" [placeholder]="'bloodPackManager.label.result' | translate"
+                        formControlName="passed">
+                      </ng-select>
+                    </div>
+                  </div>
+                  <div class="col-4 d-flex justify-content-center align-items-center">
+                    <div class="md-form form-col">
+                      <button class="btn btn-sm btn-danger" (click)="removeTestField(index)">
+                        <span class="fa fa-times"></span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <div class="md-form mt-3">
+          <textarea type="text" id="description" formControlName="description"
+            class="md-textarea md-textarea-auto form-control" mdbInput></textarea>
+          <label for="name">{{ 'bloodPackManager.label.description' | translate }}</label>
+        </div>
+        <div class="d-flex justify-content-end mt-3">
+          <button type="button" mdbBtn color="secondary" class=" waves-light" mdbWavesEffect (click)="resetForm()">
+            {{ 'common.button.reset' | translate }}
+          </button>
+          <button type="button" mdbBtn color="secondary" class=" waves-light" mdbWavesEffect (click)="addTestField()">
+            {{ 'bloodPackManager.button.addTest' | translate }}
+          </button>
+          <button mdbBtn type="submit" color="primary" mdbWavesEffect [disabled]="updateForm.invalid">
+            {{ 'common.button.update' | translate }}
+          </button>
+        </div>
+      </form>
     </div>
   </div>
 </div>

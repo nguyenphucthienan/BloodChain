@@ -1,15 +1,18 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnDestroy, OnInit, Renderer2 } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { concat, Observable, of, Subject } from 'rxjs';
 import { catchError, debounceTime, distinctUntilChanged, filter, map, switchMap, tap } from 'rxjs/operators';
 import { BloodPack } from 'src/app/core/models/blood-pack.interface';
+import { TestType } from 'src/app/core/models/test-type.interface';
 import { User } from 'src/app/core/models/user.interface';
 import { AlertService } from 'src/app/core/services/alert.service';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { BloodPackService } from 'src/app/core/services/blood-pack.service';
+import { TestTypeService } from 'src/app/core/services/test-type.service';
 import { UserService } from 'src/app/core/services/user.service';
 import { ScanQrcodeModalComponent } from 'src/app/shared/modals/scan-qrcode-modal/scan-qrcode-modal.component';
 
@@ -21,15 +24,23 @@ import { ScanQrcodeModalComponent } from 'src/app/shared/modals/scan-qrcode-moda
 })
 export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnInit, OnDestroy {
 
-  modalRef: MDBModalRef;
+  readonly resultTranslations = [
+    { translation: 'common.result.passed', value: true },
+    { translation: 'common.result.failed', value: false }
+  ];
 
   bloodPacks$: Observable<BloodPack[]>;
   bloodPacksInput$ = new Subject<string>();
   bloodPacksLoading = false;
 
+  testTypes: TestType[] = [];
+  results: any[] = [];
+
   userForm: FormGroup;
   bloodPackForm: FormGroup;
   updateForm: FormGroup;
+
+  modalRef: MDBModalRef;
 
   constructor(
     private router: Router,
@@ -37,8 +48,10 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
     private fb: FormBuilder,
     private authService: AuthService,
     private userService: UserService,
+    private testTypeService: TestTypeService,
     private bloodPackService: BloodPackService,
     private alertService: AlertService,
+    private translate: TranslateService,
     private modalService: MDBModalService,
     private datePipe: DatePipe
   ) {
@@ -54,6 +67,11 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
 
   ngOnInit() {
     this.renderer.addClass(document.body, 'grey-background');
+    this.initDataFields();
+    this.initForms();
+  }
+
+  private initDataFields() {
     this.bloodPacks$ = concat(
       of([]), // default items
       this.bloodPacksInput$.pipe(
@@ -69,6 +87,17 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
       )
     );
 
+    this.testTypeService.getAllTestType()
+      .subscribe((testTypes: TestType[]) => this.testTypes = testTypes);
+
+    this.translate.get(this.resultTranslations.map(resultTranslation => resultTranslation.translation))
+      .subscribe(translations => this.results = this.resultTranslations.map(resultTranslation => ({
+        label: translations[resultTranslation.translation],
+        value: resultTranslation.value
+      })));
+  }
+
+  private initForms() {
     this.userForm = this.fb.group({
       username: ['', [
         Validators.required,
@@ -95,6 +124,12 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
       time: [null, Validators.required],
       bloodCamp: ['', Validators.required],
       bloodTestCenter: ['', Validators.required]
+    });
+
+    this.updateForm = this.fb.group({
+      bloodType: [null, Validators.required],
+      testResults: this.fb.array([this.createTestField()], Validators.required),
+      description: ['', Validators.required]
     });
 
     this.userForm.disable();
@@ -169,6 +204,31 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
     this.userForm.reset();
     this.bloodPackForm.reset();
     this.updateForm.reset();
+  }
+
+  updateTestResults() {
+    console.log(this.updateForm.value);
+  }
+
+  get testResultFormGroup() {
+    return this.updateForm.get('testResults') as FormArray;
+  }
+
+  createTestField() {
+    return this.fb.group({
+      testType: [null, Validators.required],
+      passed: [null, Validators.required]
+    });
+  }
+
+  removeTestField(index: number) {
+    const testResults = this.updateForm.get('testResults') as FormArray;
+    testResults.removeAt(index);
+  }
+
+  addTestField() {
+    const testResults = this.updateForm.get('testResults') as FormArray;
+    testResults.push(this.createTestField());
   }
 
   controlHasError(controlName: string, errorName: string): boolean {

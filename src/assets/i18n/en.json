@@ -61,6 +61,10 @@
       "male": "Male",
       "female": "Female",
       "other": "Other"
+    },
+    "result": {
+      "passed": "Passed",
+      "failed": "Failed"
     }
   },
   "header": {
@@ -525,6 +529,7 @@
   "bloodPackManager": {
     "button": {
       "add": "Add Blood Pack",
+      "addTest": "Add Test",
       "updateTestResult": "Update Test Result",
       "transfer": "Transfer Blood Packs",
       "scanQrCode": "Scan QR Code"
@@ -563,6 +568,8 @@
       "bloodTestCenter": "Blood test center",
       "bloodTestCenterId": "Blood test center ID",
       "description": "Description",
+      "testName": "Test name",
+      "result": "Result",
       "searchDonor": "Search donor",
       "searchBloodPack": "Search blood pack",
       "searchBloodTestCenter": "Search blood test center"

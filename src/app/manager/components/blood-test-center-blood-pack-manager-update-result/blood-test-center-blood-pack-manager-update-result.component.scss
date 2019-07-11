@@ -2,3 +2,20 @@
   height: calc(100% - 1rem);
   margin-bottom: 1rem;
 }
+
+.update-form {
+  .md-form {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+
+  hr {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  button.btn-sm {
+    margin: 3px;
+    padding: 6px 10px;
+  }
+}

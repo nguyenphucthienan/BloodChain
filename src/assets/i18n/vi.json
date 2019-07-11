@@ -61,6 +61,10 @@
       "male": "Nam",
       "female": "Nữ",
       "other": "Khác"
+    },
+    "result": {
+      "passed": "Âm tính",
+      "failed": "Dương tính"
     }
   },
   "header": {
@@ -521,6 +525,7 @@
   "bloodPackManager": {
     "button": {
       "add": "Thêm túi máu",
+      "addTest": "Thêm xét nghiệm",
       "updateTestResult": "Cập nhật kết quả xét nghiệm",
       "transfer": "Chuyển túi máu",
       "scanQrCode": "Quét QR Code"
@@ -559,6 +564,8 @@
       "bloodTestCenter": "Trung tâm xét nghiệm",
       "bloodTestCenterId": "ID trung tâm xét nghiệm",
       "description": "Miêu tả",
+      "testName": "Tên xét nghiệm",
+      "result": "Kết quả",
       "searchDonor": "Tìm người hiến",
       "searchBloodPack": "Tìm túi máu",
       "searchBloodTestCenter": "Tìm trung tâm hiến máu"
