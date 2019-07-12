@@ -29,7 +29,7 @@ export class BloodProductTypeService {
 
   constructor(private http: HttpClient) { }
 
-  getAllBloodProductType(): Observable<BloodProductType[]> {
+  getAllBloodProductTypes(): Observable<BloodProductType[]> {
     return this.http.get<BloodProductType[]>(`${this.allBloodProductTypesUrl}`);
   }
 

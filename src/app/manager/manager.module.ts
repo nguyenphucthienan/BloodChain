@@ -12,6 +12,9 @@ import {
   BloodCampBloodPackManagerComponent,
 } from './components/blood-camp-blood-pack-manager/blood-camp-blood-pack-manager.component';
 import {
+  BloodSeparationCenterBloodPackManagerUpdateResultComponent,
+} from './components/blood-separation-center-blood-pack-manager-update-result/blood-separation-center-blood-pack-manager-update-result.component';
+import {
   BloodSeparationCenterBloodPackManagerComponent,
 } from './components/blood-separation-center-blood-pack-manager/blood-separation-center-blood-pack-manager.component';
 import {
@@ -59,6 +62,7 @@ import { UserManagerLiteTableService } from './services/user-manager-lite-table.
     BloodTestCenterBloodPackManagerUpdateResultComponent,
     BloodTestCenterBloodPackManagerTransferBloodPackComponent,
     BloodSeparationCenterBloodPackManagerComponent,
+    BloodSeparationCenterBloodPackManagerUpdateResultComponent,
   ],
   imports: [
     SharedModule,

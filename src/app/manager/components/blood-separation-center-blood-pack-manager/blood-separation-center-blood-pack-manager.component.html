@@ -11,9 +11,6 @@
           [attr.placeholder]="'bloodPackManager.placeholder.search' | translate" mdbInput>
       </div>
       <div class="d-flex justify-content-end mt-3">
-        <button type="button" class="btn btn-sm btn-primary" (click)="navigateToTransferBloodPack()">
-          {{ 'bloodPackManager.button.transfer' | translate }}
-        </button>
         <button type="button" class="btn btn-sm btn-primary" (click)="navigateToUpdateBloodPackResult()">
           {{ 'bloodPackManager.button.updateSeparationResult' | translate }}
         </button>
@@ -23,8 +20,7 @@
   <div class="card mt-3">
     <div class="card-body">
       <app-datatable [tableName]="'table.name.bloodPackManager' | translate"
-        [tableService]="bloodSeparationCenterBloodPackManagerTableService" (cellChanged)="onTableCellChanged($event)"
-        [selectableRow]="true">
+        [tableService]="bloodSeparationCenterBloodPackManagerTableService" (cellChanged)="onTableCellChanged($event)">
       </app-datatable>
     </div>
   </div>

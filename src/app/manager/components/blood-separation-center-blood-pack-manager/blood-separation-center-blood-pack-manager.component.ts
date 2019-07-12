@@ -65,16 +65,6 @@ export class BloodSeparationCenterBloodPackManagerComponent implements OnInit, A
     }
   }
 
-  async navigateToTransferBloodPack() {
-    const selectedIds = Array.from(this.datatable.getSelectedRowIds().selectedIds);
-    const selectedRows = this.datatable.rows
-      .filter(row => selectedIds.includes(row.cells._id.value));
-
-    this.router.navigate(['/manager', 'blood-separation-center', 'blood-packs', 'transfer'], {
-      state: { bloodPacks: selectedRows }
-    });
-  }
-
   navigateToBloodPackDetail(id: string) {
   }
 

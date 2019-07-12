@@ -29,7 +29,7 @@ export class TestTypeService {
 
   constructor(private http: HttpClient) { }
 
-  getAllTestType(): Observable<TestType[]> {
+  getAllTestTypes(): Observable<TestType[]> {
     return this.http.get<TestType[]>(`${this.allTestTypesUrl}`);
   }
 

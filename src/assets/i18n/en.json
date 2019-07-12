@@ -120,7 +120,8 @@
     "bloodSeparationCenter": {
       "main": "Blood Separation Center",
       "bloodPacks": {
-        "main": "Blood Packs"
+        "main": "Blood Packs",
+        "updateSeparationResult": "Update Separation Result"
       }
     },
     "profile": {
@@ -601,6 +602,7 @@
       "addBloodPack": "ADD BLOOD PACK",
       "transferBloodPacks": "TRANSFER BLOOD PACKS",
       "updateTestResult": "UPDATE TEST RESULT",
+      "updateSeparationResult": "UPDATE SEPARATION RESULT",
       "id": "ID",
       "username": "Username",
       "email": "Email",

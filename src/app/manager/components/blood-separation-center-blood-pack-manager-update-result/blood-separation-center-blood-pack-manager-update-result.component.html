@@ -142,9 +142,9 @@
   <div class="card mt-3">
     <div class="card-body">
       <div class="d-flex">
-        <span class="font-weight-bold">{{ 'bloodPackManager.label.updateTestResult' | translate }}</span>
+        <span class="font-weight-bold">{{ 'bloodPackManager.label.updateSeparationResult' | translate }}</span>
       </div>
-      <form [formGroup]="updateForm" (ngSubmit)="updateTestResults()" class="update-form">
+      <!-- <form [formGroup]="updateForm" (ngSubmit)="updateTestResults()" class="update-form">
         <div formArrayName="testResults" *ngFor="let item of testResultFormArray.controls; let index=index;">
           <div [formGroupName]="index">
             <div class="form-row">
@@ -153,7 +153,7 @@
                   <ng-select [items]="testTypes" bindValue="_id" bindLabel="name" [multiple]="false" [clearable]="false"
                     [placeholder]="'bloodPackManager.label.testType' | translate" formControlName="testType">
                   </ng-select>
-                  <mdb-error *ngIf="testResultFormArrayControlHasError(index, 'testType', 'required')">
+                  <mdb-error *ngIf="testResultFormGroupControlHasError(index, 'testType', 'required')">
                     {{ 'bloodPackManager.message.resultRequired' | translate }}
                   </mdb-error>
                 </div>
@@ -166,7 +166,7 @@
                         [clearable]="false" [placeholder]="'bloodPackManager.label.result' | translate"
                         formControlName="passed">
                       </ng-select>
-                      <mdb-error *ngIf="testResultFormArrayControlHasError(index, 'passed', 'required')">
+                      <mdb-error *ngIf="testResultFormGroupControlHasError(index, 'passed', 'required')">
                         {{ 'bloodPackManager.message.resultRequired' | translate }}
                       </mdb-error>
                     </div>
@@ -217,7 +217,7 @@
             {{ 'common.button.update' | translate }}
           </button>
         </div>
-      </form>
+      </form> -->
     </div>
   </div>
 </div>

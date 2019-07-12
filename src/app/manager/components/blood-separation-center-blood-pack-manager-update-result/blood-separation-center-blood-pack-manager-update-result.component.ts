@@ -1,29 +1,28 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnDestroy, OnInit, Renderer2 } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { concat, Observable, of, Subject } from 'rxjs';
 import { catchError, debounceTime, distinctUntilChanged, filter, map, switchMap, tap } from 'rxjs/operators';
 import { BloodType } from 'src/app/core/constant/blood-type';
 import { BloodPack } from 'src/app/core/models/blood-pack.interface';
-import { TestType } from 'src/app/core/models/test-type.interface';
+import { BloodProductType } from 'src/app/core/models/blood-product-type.interface';
 import { User } from 'src/app/core/models/user.interface';
 import { AlertService } from 'src/app/core/services/alert.service';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { BloodPackService } from 'src/app/core/services/blood-pack.service';
-import { TestTypeService } from 'src/app/core/services/test-type.service';
+import { BloodProductTypeService } from 'src/app/core/services/blood-product-type.service';
 import { UserService } from 'src/app/core/services/user.service';
 import { ScanQrcodeModalComponent } from 'src/app/shared/modals/scan-qrcode-modal/scan-qrcode-modal.component';
 
 @Component({
-  selector: 'app-blood-test-center-blood-pack-manager-update-result',
-  templateUrl: './blood-test-center-blood-pack-manager-update-result.component.html',
-  styleUrls: ['./blood-test-center-blood-pack-manager-update-result.component.scss'],
+  selector: 'app-blood-separation-center-blood-pack-manager-update-result',
+  templateUrl: './blood-separation-center-blood-pack-manager-update-result.component.html',
+  styleUrls: ['./blood-separation-center-blood-pack-manager-update-result.component.scss'],
   providers: [DatePipe]
 })
-export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnInit, OnDestroy {
+export class BloodSeparationCenterBloodPackManagerUpdateResultComponent implements OnInit, OnDestroy {
 
   readonly bloodTypes = [
     { label: BloodType.A_POSITIVE, value: BloodType.A_POSITIVE },
@@ -36,17 +35,12 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
     { label: BloodType.AB_NEGATIVE, value: BloodType.AB_NEGATIVE },
   ];
 
-  readonly resultTranslations = [
-    { translation: 'common.result.passed', value: true },
-    { translation: 'common.result.failed', value: false }
-  ];
-
   bloodPacks$: Observable<BloodPack[]>;
   bloodPacksInput$ = new Subject<string>();
   bloodPacksLoading = false;
   bloodPack: BloodPack;
 
-  testTypes: TestType[] = [];
+  bloodProductTypes: BloodProductType[] = [];
   results: any[] = [];
 
   userForm: FormGroup;
@@ -61,10 +55,9 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
     private fb: FormBuilder,
     private authService: AuthService,
     private userService: UserService,
-    private testTypeService: TestTypeService,
+    private bloodProductTypeService: BloodProductTypeService,
     private bloodPackService: BloodPackService,
     private alertService: AlertService,
-    private translate: TranslateService,
     private modalService: MDBModalService,
     private datePipe: DatePipe
   ) {
@@ -100,14 +93,8 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
       )
     );
 
-    this.testTypeService.getAllTestTypes()
-      .subscribe((testTypes: TestType[]) => this.testTypes = testTypes);
-
-    this.translate.get(this.resultTranslations.map(resultTranslation => resultTranslation.translation))
-      .subscribe(translations => this.results = this.resultTranslations.map(resultTranslation => ({
-        label: translations[resultTranslation.translation],
-        value: resultTranslation.value
-      })));
+    this.bloodProductTypeService.getAllBloodProductTypes()
+      .subscribe((bloodProductTypes: BloodProductType[]) => this.bloodProductTypes = bloodProductTypes);
   }
 
   private initForms() {
@@ -141,11 +128,11 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
       testPassed: [null, Validators.required],
     });
 
-    this.updateForm = this.fb.group({
-      testResults: this.fb.array([this.createTestField()], Validators.required),
-      bloodType: [null, Validators.required],
-      testDescription: ['', Validators.required]
-    }, { validator: [this.testResultRepeatedValidator] });
+    // this.updateForm = this.fb.group({
+    //   testResults: this.fb.array([this.createTestField()], Validators.required),
+    //   bloodType: [null, Validators.required],
+    //   separationDescription: ['', Validators.required]
+    // }, { validator: [this.testResultRepeatedValidator] });
 
     this.userForm.disable();
     this.bloodPackForm.disable();
@@ -159,7 +146,7 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
     this.bloodPack = bloodPack;
     this.authService.getMyUserInfo()
       .subscribe((user: User) => {
-        if (user.bloodTestCenter._id !== bloodPack.currentLocation) {
+        if (user.bloodSeparationCenter._id !== bloodPack.currentLocation) {
           this.alertService.error('bloodPackManager.alert.cannotSelect');
           return;
         }
@@ -188,23 +175,23 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
               testPassed: bloodPack.testPassed
             });
 
-            if (bloodPack.tested) {
-              let numOfFields = 1;
-              if (bloodPack.testResults && bloodPack.testResults.length > 0) {
-                numOfFields = bloodPack.testResults.length;
-              }
+            // if (bloodPack.tested) {
+            //   let numOfFields = 1;
+            //   if (bloodPack.testResults && bloodPack.testResults.length > 0) {
+            //     numOfFields = bloodPack.testResults.length;
+            //   }
 
-              this.resetTestResultFormGroup();
-              for (let i = 1; i < numOfFields; i++) {
-                this.addTestField();
-              }
+            //   this.resetTestResultFormGroup();
+            //   for (let i = 1; i < numOfFields; i++) {
+            //     this.addTestField();
+            //   }
 
-              this.updateForm.patchValue({
-                testResults: bloodPack.testResults,
-                bloodType: bloodPack.bloodType,
-                testDescription: bloodPack.testDescription
-              });
-            }
+            //   this.updateForm.patchValue({
+            //     testResults: bloodPack.testResults,
+            //     bloodType: bloodPack.bloodType,
+            //     testDescription: bloodPack.testDescription
+            //   });
+            // }
           });
       });
   }
@@ -240,84 +227,84 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
     this.userForm.reset();
     this.bloodPackForm.reset();
     this.updateForm.reset();
-    this.resetTestResultFormGroup();
+    // this.resetTestResultFormGroup();
   }
 
-  private resetTestResultFormGroup() {
-    while (this.testResultFormArray.length > 1) {
-      this.testResultFormArray.removeAt(1);
-    }
-  }
+  // private resetTestResultFormGroup() {
+  //   while (this.testResultFormArray.length > 1) {
+  //     this.testResultFormArray.removeAt(1);
+  //   }
+  // }
 
   updateTestResults() {
-    this.bloodPackService.updateBloodPackTestResults(this.bloodPack._id, this.updateForm.value)
-      .subscribe(
-        (bloodPack: BloodPack) => {
-          this.alertService.success('bloodPackManager.alert.updateTestResultSuccess');
-          this.resetForms();
-        },
-        error => this.alertService.error('bloodPackManager.alert.updateTestResultFailed'));
+    // this.bloodPackService.updateBloodPackTestResults(this.bloodPack._id, this.updateForm.value)
+    //   .subscribe(
+    //     (bloodPack: BloodPack) => {
+    //       this.alertService.success('bloodPackManager.alert.updateTestResultSuccess');
+    //       this.resetForms();
+    //     },
+    //     error => this.alertService.error('bloodPackManager.alert.updateTestResultFailed'));
   }
 
-  get testResultFormArray() {
-    return this.updateForm.get('testResults') as FormArray;
-  }
+  // get testResultFormArray() {
+  //   return this.updateForm.get('testResults') as FormArray;
+  // }
 
-  createTestField() {
-    return this.fb.group({
-      testType: [null, Validators.required],
-      passed: [null, Validators.required]
-    });
-  }
+  // createTestField() {
+  //   return this.fb.group({
+  //     testType: [null, Validators.required],
+  //     passed: [null, Validators.required]
+  //   });
+  // }
 
-  createTestFieldArray(quantity: number = 1) {
-    if (quantity < 1) {
-      return;
-    }
+  // createTestFieldArray(quantity: number = 1) {
+  //   if (quantity < 1) {
+  //     return;
+  //   }
 
-    const testFields = this.fb.array([]);
-    for (let i = 0; i < quantity; i++) {
-      testFields.push(this.fb.group({
-        testType: [null, Validators.required],
-        passed: [null, Validators.required]
-      }));
-    }
+  //   const testFields = this.fb.array([]);
+  //   for (let i = 0; i < quantity; i++) {
+  //     testFields.push(this.fb.group({
+  //       testType: [null, Validators.required],
+  //       passed: [null, Validators.required]
+  //     }));
+  //   }
 
-    return testFields;
-  }
+  //   return testFields;
+  // }
 
-  removeTestField(index: number) {
-    this.testResultFormArray.removeAt(index);
-  }
+  // removeTestField(index: number) {
+  //   this.testResultFormArray.removeAt(index);
+  // }
 
-  addTestField() {
-    this.testResultFormArray.push(this.createTestField());
-  }
+  // addTestField() {
+  //   this.testResultFormArray.push(this.createTestField());
+  // }
 
-  private testResultRepeatedValidator(g: FormGroup) {
-    const testResults = g.get('testResults') as FormArray;
-    const testTypes = {};
+  // private testResultRepeatedValidator(g: FormGroup) {
+  //   const testResults = g.get('testResults') as FormArray;
+  //   const testTypes = {};
 
-    if (testResults) {
-      for (const testResult of testResults.controls) {
-        const testType = testResult.get('testType').value;
-        if (testType) {
-          if (!testTypes[testType]) {
-            testTypes[testType] = true;
-          } else {
-            return { testTypeRepeated: true };
-          }
-        }
-      }
-    }
+  //   if (testResults) {
+  //     for (const testResult of testResults.controls) {
+  //       const testType = testResult.get('testType').value;
+  //       if (testType) {
+  //         if (!testTypes[testType]) {
+  //           testTypes[testType] = true;
+  //         } else {
+  //           return { testTypeRepeated: true };
+  //         }
+  //       }
+  //     }
+  //   }
 
-    return null;
-  }
+  //   return null;
+  // }
 
-  testResultFormArrayControlHasError(index: number, controlName: string, errorName: string): boolean {
-    return this.testResultFormArray.at(index).get(controlName).touched
-      && this.testResultFormArray.at(index).get(controlName).hasError(errorName);
-  }
+  // testResultFormGroupControlHasError(index: number, controlName: string, errorName: string): boolean {
+  //   return this.testResultFormArray.at(index).get(controlName).touched
+  //     && this.testResultFormArray.at(index).get(controlName).hasError(errorName);
+  // }
 
   controlHasError(controlName: string, errorName: string): boolean {
     return this.updateForm.get(controlName).touched

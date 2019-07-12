@@ -116,7 +116,8 @@
     "bloodSeparationCenter": {
       "main": "Trung tâm phân tách máu",
       "bloodPacks": {
-        "main": "Túi máu"
+        "main": "Túi máu",
+        "updateSeparationResult": "Cập nhật kết quả"
       }
     },
     "profile": {
@@ -597,6 +598,7 @@
       "addBloodPack": "THÊM TÚI MÁU",
       "transferBloodPacks": "CHUYỂN TÚI MÁU",
       "updateTestResult": "CẬP NHẬT KẾT QUẢ XÉT NGHIỆM",
+      "updateSeparationResult": "CẬP NHẬT KẾT QUẢ PHÂN TÁCH",
       "username": "Tên đăng nhập",
       "id": "ID",
       "email": "Email",
