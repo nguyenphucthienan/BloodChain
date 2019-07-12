@@ -16,10 +16,9 @@ export class BloodPackManagerTableService implements TableService {
 
   columns: TableColumn[] = [
     { name: '_id', text: 'common.column.id', type: 'IdTableCellComponent', center: true, sortable: true },
+    { name: 'createdAt', text: 'bloodPackManager.column.createdAt', type: 'DateTimeTableCellComponent', sortable: true },
     { name: 'donor', text: 'bloodPackManager.column.donor', type: 'ObjectTextTableCellComponent', sortable: true },
     { name: 'volume', text: 'bloodPackManager.column.volume', type: 'TextTableCellComponent', sortable: true },
-    { name: 'bloodCamp', text: 'bloodPackManager.column.bloodCamp', type: 'ObjectTextTableCellComponent', sortable: true },
-    { name: 'bloodTestCenter', text: 'bloodPackManager.column.bloodTestCenter', type: 'ObjectTextTableCellComponent', sortable: true },
     { name: 'bloodType', text: 'bloodPackManager.column.bloodType', type: 'TextTableCellComponent', sortable: true },
     { name: 'tested', text: 'bloodPackManager.column.tested', type: 'BooleanTableCellComponent', center: true, sortable: true },
     {
@@ -88,12 +87,6 @@ export class BloodPackManagerTableService implements TableService {
               cells[key] = {
                 value: row[key],
                 textProperty: 'username'
-              };
-            } else if (key === 'bloodCamp'
-              || key === 'bloodTestCenter') {
-              cells[key] = {
-                value: row[key],
-                textProperty: 'name'
               };
             } else {
               cells[key] = {
