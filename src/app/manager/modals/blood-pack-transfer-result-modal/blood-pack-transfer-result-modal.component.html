@@ -12,8 +12,8 @@
         {{ id }}{{ last ? '' : ', ' }}
       </span>
     </div>
+    <br *ngIf="success && success.length > 0 && errors && errors.length > 0">
     <div *ngIf="errors && errors.length > 0">
-      <br>
       <h5 class="font-weight-bold">Failed IDs:</h5>
       <span *ngFor="let id of errors; let last=last;">
         {{ id }}{{ last ? '' : ', ' }}

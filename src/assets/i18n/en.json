@@ -602,7 +602,9 @@
       "updateTestResultFailed": "Update test result failed",
       "alreadySelected": "Blood pack has already been selected",
       "cannotSelect": "You cannot select this blood pack",
-      "noBloodPack": "No blood pack was selected"
+      "noBloodPack": "No blood pack was selected",
+      "hasNotBeenTested": "This blood pack has not been tested yet",
+      "testFailed": "This blood pack was failed the test"
     },
     "placeholder": {
       "search": "Search (min 3 characters)"

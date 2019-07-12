@@ -68,7 +68,9 @@ export class BloodTestCenterBloodPackManagerComponent implements OnInit, AfterVi
   navigateToTransferBloodPack() {
     const selectedIds = Array.from(this.datatable.getSelectedRowIds().selectedIds);
     const selectedRows = this.datatable.rows
-      .filter(row => selectedIds.includes(row.cells._id.value));
+      .filter(row => selectedIds.includes(row.cells._id.value)
+        && row.cells.tested.value
+        && row.cells.testPassed.value);
 
     this.router.navigate(['/manager', 'blood-test-center', 'blood-packs', 'transfer'], {
       state: { bloodPacks: selectedRows }

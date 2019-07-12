@@ -124,6 +124,16 @@ export class BloodTestCenterBloodPackManagerTransferBloodPackComponent implement
       return;
     }
 
+    if (!bloodPack.tested) {
+      this.alertService.error('bloodPackManager.alert.hasNotBeenTested');
+      return;
+    }
+
+    if (!bloodPack.testPassed) {
+      this.alertService.error('bloodPackManager.alert.testFailed');
+      return;
+    }
+
     this.authService.getMyUserInfo()
       .subscribe((user: User) => {
         if (user.bloodTestCenter._id !== bloodPack.currentLocation) {

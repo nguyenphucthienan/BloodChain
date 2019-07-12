@@ -598,7 +598,9 @@
       "updateTestResultFailed": "Cập nhật kết quả xét nghiệm không thành công",
       "alreadySelected": "Túi máu đã được chọn",
       "cannotSelect": "Bạn không thể chọn túi máu này",
-      "noBloodPack": "Không có túi máu nào được chọn"
+      "noBloodPack": "Không có túi máu nào được chọn",
+      "hasNotBeenTested": "Túi máu chưa được xét nghiệm",
+      "testFailed": "Túi máu không đạt yêu cầu"
     },
     "placeholder": {
       "search": "Tìm kiếm (tối thiểu 3 kí tự)"
