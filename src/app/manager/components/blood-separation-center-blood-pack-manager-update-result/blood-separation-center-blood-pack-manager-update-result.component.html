@@ -11,7 +11,7 @@
         [typeToSearchText]="'bloodPackManager.placeholder.search' | translate"
         [placeholder]="'bloodPackManager.label.searchBloodPack' | translate" (change)="selectBloodPack($event)">
       </ng-select>
-      <div class="d-flex justify-content-end">
+      <div class="d-flex flex-sm-row flex-column justify-content-end">
         <button type="button" class="btn btn-sm btn-primary" (click)="openScanQrCodeModal()">
           {{ 'bloodPackManager.button.scanQrCode' | translate }}
         </button>
@@ -144,36 +144,38 @@
       <div class="d-flex">
         <span class="font-weight-bold">{{ 'bloodPackManager.label.updateSeparationResult' | translate }}</span>
       </div>
-      <!-- <form [formGroup]="updateForm" (ngSubmit)="updateTestResults()" class="update-form">
-        <div formArrayName="testResults" *ngFor="let item of testResultFormArray.controls; let index=index;">
+      <form [formGroup]="updateForm" (ngSubmit)="updateSeparationResults()" class="update-form">
+        <div formArrayName="separationResults"
+          *ngFor="let item of separationResultFormArray.controls; let index=index;">
           <div [formGroupName]="index">
-            <div class="form-row">
+            <div class="form-row mb-md-1 mb-4">
               <div class="col-md-6">
                 <div class="md-form form-col">
-                  <ng-select [items]="testTypes" bindValue="_id" bindLabel="name" [multiple]="false" [clearable]="false"
-                    [placeholder]="'bloodPackManager.label.testType' | translate" formControlName="testType">
+                  <ng-select [items]="bloodProductTypes" bindValue="_id" bindLabel="name" [multiple]="false"
+                    [clearable]="false" [placeholder]="'bloodPackManager.label.bloodProductType' | translate"
+                    formControlName="bloodProductType">
                   </ng-select>
-                  <mdb-error *ngIf="testResultFormGroupControlHasError(index, 'testType', 'required')">
-                    {{ 'bloodPackManager.message.resultRequired' | translate }}
+                  <mdb-error *ngIf="separationResultFormArrayControlHasError(index, 'bloodProductType', 'required')">
+                    {{ 'bloodPackManager.message.bloodProductRequired' | translate }}
                   </mdb-error>
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="row">
+              <div class="col-md-6 d-flex">
+                <div class="row volume-row">
                   <div class="col-9">
                     <div class="md-form form-col">
-                      <ng-select [items]="results" bindValue="value" bindLabel="label" [multiple]="false"
-                        [clearable]="false" [placeholder]="'bloodPackManager.label.result' | translate"
-                        formControlName="passed">
-                      </ng-select>
-                      <mdb-error *ngIf="testResultFormGroupControlHasError(index, 'passed', 'required')">
-                        {{ 'bloodPackManager.message.resultRequired' | translate }}
+                      <input type="number" [min]="1" formControlName="volume" class="form-control volume-input"
+                        mdbInput>
+                      <label for="volume">{{ 'bloodPackManager.label.volume' | translate }}</label>
+                      <mdb-error *ngIf="separationResultFormArrayControlHasError(index, 'volume', 'required')"
+                        class="volume-message">
+                        {{ 'bloodPackManager.message.volumeRequired' | translate }}
                       </mdb-error>
                     </div>
                   </div>
                   <div class="col-3 d-flex justify-content-center align-items-center">
                     <div class="md-form form-col">
-                      <button class="btn btn-sm btn-danger" (click)="removeTestField(index)">
+                      <button class="btn btn-sm btn-danger" (click)="removeSeparationField(index)">
                         <span class="fa fa-times"></span>
                       </button>
                     </div>
@@ -185,39 +187,34 @@
           <hr>
         </div>
         <div class="md-form mt-3">
-          <ng-select [items]="bloodTypes" bindValue="value" bindLabel="label" [multiple]="false" [clearable]="false"
-            [placeholder]="'bloodPackManager.label.bloodType' | translate" formControlName="bloodType">
-          </ng-select>
-          <mdb-error *ngIf="controlHasError('bloodType', 'required')">
-            {{ 'bloodPackManager.message.bloodTypeRequired' | translate }}
-          </mdb-error>
-        </div>
-        <div class="md-form mt-3">
-          <textarea type="text" id="testDescription" formControlName="testDescription"
+          <textarea type="text" id="separationDescription" formControlName="separationDescription"
             class="md-textarea md-textarea-auto form-control" mdbInput></textarea>
-          <label for="testDescription">{{ 'bloodPackManager.label.description' | translate }}</label>
+          <label for="separationDescription">{{ 'bloodPackManager.label.description' | translate }}</label>
           <mdb-error>
-            <span *ngIf=" controlHasError('testDescription', 'required')">
+            <span *ngIf="controlHasError('separationDescription', 'required')">
               {{ 'bloodPackManager.message.descriptionRequired' | translate }}
             </span>
-            <br>
-            <span *ngIf="updateForm.hasError('testTypeRepeated')">
-              {{ 'bloodPackManager.message.testTypeRepeated' | translate }}
+            <br *ngIf="controlHasError('separationDescription', 'required') 
+              && updateForm.hasError('bloodProductTypeRepeated')">
+            <span *ngIf="updateForm.hasError('bloodProductTypeRepeated')">
+              {{ 'bloodPackManager.message.bloodProductTypeRepeated' | translate }}
             </span>
           </mdb-error>
         </div>
-        <div class="d-flex justify-content-end mt-3">
+        <br>
+        <div class="d-flex flex-sm-row flex-column justify-content-end mt-3">
           <button type="button" mdbBtn color="secondary" class=" waves-light" mdbWavesEffect (click)="resetForms()">
             {{ 'common.button.reset' | translate }}
           </button>
-          <button type="button" mdbBtn color="secondary" class=" waves-light" mdbWavesEffect (click)="addTestField()">
-            {{ 'bloodPackManager.button.addTest' | translate }}
+          <button type="button" mdbBtn color="secondary" class=" waves-light" mdbWavesEffect
+            (click)="addSeparationField()">
+            {{ 'bloodPackManager.button.addBloodProduct' | translate }}
           </button>
           <button mdbBtn type="submit" color="primary" mdbWavesEffect [disabled]="updateForm.invalid">
             {{ 'common.button.update' | translate }}
           </button>
         </div>
-      </form> -->
+      </form>
     </div>
   </div>
 </div>

@@ -194,7 +194,7 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
                 numOfFields = bloodPack.testResults.length;
               }
 
-              this.resetTestResultFormGroup();
+              this.resetTestResultFormArray();
               for (let i = 1; i < numOfFields; i++) {
                 this.addTestField();
               }
@@ -240,10 +240,10 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
     this.userForm.reset();
     this.bloodPackForm.reset();
     this.updateForm.reset();
-    this.resetTestResultFormGroup();
+    this.resetTestResultFormArray();
   }
 
-  private resetTestResultFormGroup() {
+  private resetTestResultFormArray() {
     while (this.testResultFormArray.length > 1) {
       this.testResultFormArray.removeAt(1);
     }

@@ -87,7 +87,7 @@ export class BloodCampBloodPackManagerAddBloodPackComponent implements OnInit, O
     this.userForm.disable();
     this.addForm = this.fb.group({
       donor: [{ value: null, disabled: true }, Validators.required],
-      volume: ['', [Validators.required, Validators.min(1)]]
+      volume: [null, [Validators.required, Validators.min(1)]]
     });
   }
 

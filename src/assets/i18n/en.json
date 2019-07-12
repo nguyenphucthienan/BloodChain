@@ -574,6 +574,7 @@
     "button": {
       "add": "Add Blood Pack",
       "addTest": "Add Test",
+      "addBloodProduct": "Add Blood Product",
       "updateTestResult": "Update Test Result",
       "updateSeparationResult": "Update Separation Result",
       "transfer": "Transfer Blood Packs",
@@ -623,6 +624,7 @@
       "bloodSeparationCenterId": "Blood separation center ID",
       "description": "Description",
       "testType": "Test type",
+      "bloodProductType": "Blood product type",
       "result": "Result",
       "bloodType": "Blood type",
       "searchDonor": "Search donor",
@@ -640,7 +642,8 @@
       "testTypeRequired": "Test type is required",
       "resultRequired": "Result is required",
       "bloodTypeRequired": "Blood type is required",
-      "testTypeRepeated": "Test types have been repeated"
+      "testTypeRepeated": "Test types have been repeated",
+      "bloodProductTypeRepeated": "Blood product types have been repeated"
     },
     "alert": {
       "addSuccess": "Add blood pack successfully",

@@ -570,6 +570,7 @@
     "button": {
       "add": "Thêm túi máu",
       "addTest": "Thêm xét nghiệm",
+      "addBloodProduct": "Thêm chế phẩm",
       "updateTestResult": "Cập nhật kết quả xét nghiệm",
       "updateSeparationResult": "Cập nhật kết quả phân tách",
       "transfer": "Chuyển túi máu",
@@ -619,6 +620,7 @@
       "bloodSeparationCenterId": "ID trung tâm phân tách máu",
       "description": "Miêu tả",
       "testType": "Loại xét nghiệm",
+      "bloodProductType": "Loại chế phẩm máu",
       "result": "Kết quả",
       "bloodType": "Nhóm máu",
       "searchDonor": "Tìm người hiến",
@@ -636,7 +638,8 @@
       "testTypeRequired": "Tên xét nghiệm không được bỏ trống",
       "resultRequired": "Kết quả không được bỏ trống",
       "bloodTypeRequired": "Nhóm máu không được bỏ trống",
-      "testTypeRepeated": "Loại xét nghiệm bị trùng lặp"
+      "testTypeRepeated": "Loại xét nghiệm bị trùng lặp",
+      "bloodProductTypeRepeated": "Loại chế phẩm máu không được trùng lặp"
     },
     "alert": {
       "addSuccess": "Thêm túi máu thành công",

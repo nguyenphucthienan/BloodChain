@@ -1,6 +1,6 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnDestroy, OnInit, Renderer2 } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { concat, Observable, of, Subject } from 'rxjs';
@@ -41,7 +41,6 @@ export class BloodSeparationCenterBloodPackManagerUpdateResultComponent implemen
   bloodPack: BloodPack;
 
   bloodProductTypes: BloodProductType[] = [];
-  results: any[] = [];
 
   userForm: FormGroup;
   bloodPackForm: FormGroup;
@@ -128,11 +127,10 @@ export class BloodSeparationCenterBloodPackManagerUpdateResultComponent implemen
       testPassed: [null, Validators.required],
     });
 
-    // this.updateForm = this.fb.group({
-    //   testResults: this.fb.array([this.createTestField()], Validators.required),
-    //   bloodType: [null, Validators.required],
-    //   separationDescription: ['', Validators.required]
-    // }, { validator: [this.testResultRepeatedValidator] });
+    this.updateForm = this.fb.group({
+      separationResults: this.fb.array([this.createSeparationField()], Validators.required),
+      separationDescription: ['', Validators.required]
+    }, { validator: [this.separationResultRepeatedValidator] });
 
     this.userForm.disable();
     this.bloodPackForm.disable();
@@ -227,16 +225,17 @@ export class BloodSeparationCenterBloodPackManagerUpdateResultComponent implemen
     this.userForm.reset();
     this.bloodPackForm.reset();
     this.updateForm.reset();
-    // this.resetTestResultFormGroup();
+    this.resetSeparationResultFormArray();
   }
 
-  // private resetTestResultFormGroup() {
-  //   while (this.testResultFormArray.length > 1) {
-  //     this.testResultFormArray.removeAt(1);
-  //   }
-  // }
+  private resetSeparationResultFormArray() {
+    while (this.separationResultFormArray.length > 1) {
+      this.separationResultFormArray.removeAt(1);
+    }
+  }
 
-  updateTestResults() {
+  updateSeparationResults() {
+    console.log(this.updateForm.value);
     // this.bloodPackService.updateBloodPackTestResults(this.bloodPack._id, this.updateForm.value)
     //   .subscribe(
     //     (bloodPack: BloodPack) => {
@@ -246,16 +245,16 @@ export class BloodSeparationCenterBloodPackManagerUpdateResultComponent implemen
     //     error => this.alertService.error('bloodPackManager.alert.updateTestResultFailed'));
   }
 
-  // get testResultFormArray() {
-  //   return this.updateForm.get('testResults') as FormArray;
-  // }
+  get separationResultFormArray() {
+    return this.updateForm.get('separationResults') as FormArray;
+  }
 
-  // createTestField() {
-  //   return this.fb.group({
-  //     testType: [null, Validators.required],
-  //     passed: [null, Validators.required]
-  //   });
-  // }
+  createSeparationField() {
+    return this.fb.group({
+      bloodProductType: [null, Validators.required],
+      volume: [null, [Validators.required, Validators.min(1)]]
+    });
+  }
 
   // createTestFieldArray(quantity: number = 1) {
   //   if (quantity < 1) {
@@ -273,38 +272,38 @@ export class BloodSeparationCenterBloodPackManagerUpdateResultComponent implemen
   //   return testFields;
   // }
 
-  // removeTestField(index: number) {
-  //   this.testResultFormArray.removeAt(index);
-  // }
+  removeSeparationField(index: number) {
+    this.separationResultFormArray.removeAt(index);
+  }
 
-  // addTestField() {
-  //   this.testResultFormArray.push(this.createTestField());
-  // }
+  addSeparationField() {
+    this.separationResultFormArray.push(this.createSeparationField());
+  }
 
-  // private testResultRepeatedValidator(g: FormGroup) {
-  //   const testResults = g.get('testResults') as FormArray;
-  //   const testTypes = {};
+  private separationResultRepeatedValidator(g: FormGroup) {
+    const separationResults = g.get('separationResults') as FormArray;
+    const bloodProductTypes = {};
 
-  //   if (testResults) {
-  //     for (const testResult of testResults.controls) {
-  //       const testType = testResult.get('testType').value;
-  //       if (testType) {
-  //         if (!testTypes[testType]) {
-  //           testTypes[testType] = true;
-  //         } else {
-  //           return { testTypeRepeated: true };
-  //         }
-  //       }
-  //     }
-  //   }
+    if (separationResults) {
+      for (const separationResult of separationResults.controls) {
+        const bloodProductType = separationResult.get('bloodProductType').value;
+        if (bloodProductType) {
+          if (!bloodProductTypes[bloodProductType]) {
+            bloodProductTypes[bloodProductType] = true;
+          } else {
+            return { bloodProductTypeRepeated: true };
+          }
+        }
+      }
+    }
 
-  //   return null;
-  // }
+    return null;
+  }
 
-  // testResultFormGroupControlHasError(index: number, controlName: string, errorName: string): boolean {
-  //   return this.testResultFormArray.at(index).get(controlName).touched
-  //     && this.testResultFormArray.at(index).get(controlName).hasError(errorName);
-  // }
+  separationResultFormArrayControlHasError(index: number, controlName: string, errorName: string): boolean {
+    return this.separationResultFormArray.at(index).get(controlName).touched
+      && this.separationResultFormArray.at(index).get(controlName).hasError(errorName);
+  }
 
   controlHasError(controlName: string, errorName: string): boolean {
     return this.updateForm.get(controlName).touched
