@@ -70,4 +70,13 @@ export class BloodSeparationCenterService {
     return this.http.get<User[]>(url);
   }
 
+  searchBloodSeparationCenters(name: string): Observable<BloodSeparationCenter[]> {
+    const params = new ParamsBuilder()
+      .setParam('name', name)
+      .applySort({ sortBy: 'name', isSortAscending: true })
+      .build();
+
+    return this.http.get<BloodSeparationCenter[]>(this.bloodSeparationCentersUrl, { params });
+  }
+
 }

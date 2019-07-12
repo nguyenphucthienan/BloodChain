@@ -1,0 +1,104 @@
+<div class="container-fluid">
+  <div class="card mt-3">
+    <div class="card-body">
+      <app-breadcrumb></app-breadcrumb>
+    </div>
+  </div>
+  <div class="card mt-3">
+    <div class="card-body">
+      <ng-select [items]="bloodPacks$ | async" bindValue="_id" bindLabel="_id" [multiple]="false" [hideSelected]="true"
+        [loading]="bloodPacksLoading" [typeahead]="bloodPacksInput$"
+        [typeToSearchText]="'bloodPackManager.placeholder.search' | translate"
+        [placeholder]="'bloodPackManager.label.searchBloodPack' | translate" (change)="selectBloodPack($event)">
+      </ng-select>
+      <div class="d-flex justify-content-end">
+        <button type="button" class="btn btn-sm btn-primary" (click)="openScanQrCodeModal()">
+          {{ 'bloodPackManager.button.scanQrCode' | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row row-eq-height">
+    <div class="col-md-6">
+      <div class="card mt-3 flex-card">
+        <div class="card-body">
+          <app-datatable [tableName]="'table.name.bloodPackManager' | translate"
+            [tableService]="bloodTestCenterBloodPackTransferTableService" (cellChanged)="onTableCellChanged($event)">
+          </app-datatable>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 pl-md-0">
+      <div class="card mt-3 flex-card">
+        <div class="card-body">
+          <div class="d-flex">
+            <span class="font-weight-bold">{{ 'bloodPackManager.label.bloodSeparationCenterInfo' | translate }}</span>
+          </div>
+          <div class="md-form">
+            <ng-select [items]="bloodSeparationsCenters$ | async" bindValue="_id" bindLabel="name" [multiple]="false"
+              [hideSelected]="true" [loading]="bloodSeparationsCentersLoading"
+              [typeahead]="bloodSeparationsCentersInput$"
+              [typeToSearchText]="'bloodPackManager.placeholder.search' | translate"
+              [placeholder]="'bloodPackManager.label.searchBloodSeparationCenter' | translate"
+              (change)="selectBloodSeparationCenter($event)">
+            </ng-select>
+          </div>
+          <form [formGroup]="bloodSeparationCenterForm">
+            <div class="md-form">
+              <input type="text" id="name" formControlName="name" class="form-control" mdbInput>
+              <label for="name">{{ 'bloodSeparationCenterManager.label.name' | translate }}</label>
+            </div>
+            <div class="md-form">
+              <input type="text" id="address" formControlName="address" class="form-control" mdbInput>
+              <label for="address">{{ 'bloodSeparationCenterManager.label.address' | translate }}</label>
+            </div>
+            <div class="md-form">
+              <input type="text" id="email" formControlName="email" class="form-control" mdbInput>
+              <label for="email">{{ 'bloodSeparationCenterManager.label.email' | translate }}</label>
+            </div>
+            <div class="md-form">
+              <input type="text" id="phone" formControlName="phone" class="form-control" mdbInput>
+              <label for="phone">{{ 'bloodSeparationCenterManager.label.phone' | translate }}</label>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card mt-3">
+    <div class="card-body">
+      <div class="d-flex">
+        <span class="font-weight-bold">{{ 'bloodPackManager.label.transferBloodPacks' | translate }}</span>
+      </div>
+      <form [formGroup]="transferForm" (ngSubmit)="transferBloodPacks()">
+        <div class="md-form">
+          <input type="text" id="bloodSeparationCenterId" formControlName="bloodSeparationCenterId" class="form-control"
+            mdbInput>
+          <label for="bloodSeparationCenterId">
+            {{ 'bloodPackManager.label.bloodSeparationCenterId' | translate }}
+          </label>
+          <mdb-error *ngIf="controlHasError('bloodSeparationCenterId', 'required')">
+            {{ 'bloodPackManager.message.bloodTestSeparationIdRequired' | translate }}
+          </mdb-error>
+        </div>
+        <div class="md-form">
+          <div class="md-form">
+            <textarea type="text" id="description" formControlName="description"
+              class="md-textarea md-textarea-auto form-control" mdbInput></textarea>
+            <label for="description">{{ 'bloodPackManager.label.description' | translate }}</label>
+            <mdb-error *ngIf="controlHasError('description', 'required')">
+              {{ 'bloodPackManager.message.descriptionRequired' | translate }}
+            </mdb-error>
+          </div>
+        </div>
+        <div class="d-flex justify-content-end">
+          <button type="button" mdbBtn color="secondary" class=" waves-light" mdbWavesEffect
+            (click)="resetForm()">{{ 'common.button.reset' | translate }}</button>
+          <button mdbBtn type="submit" color="primary" mdbWavesEffect [disabled]="transferForm.invalid">
+            {{ 'common.button.transfer' | translate }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

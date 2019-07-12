@@ -551,6 +551,7 @@
     "label": {
       "donorInfo": "DONOR INFO",
       "bloodTestCenterInfo": "BLOOD TEST CENTER INFO",
+      "bloodSeparationCenterInfo": "BLOOD SEPARATION CENTER INFO",
       "bloodPackInfo": "BLOOD PACK INFO",
       "addBloodPack": "ADD BLOOD PACK",
       "transferBloodPacks": "TRANSFER BLOOD PACKS",
@@ -572,13 +573,15 @@
       "bloodCamp": "Blood camp",
       "bloodTestCenter": "Blood test center",
       "bloodTestCenterId": "Blood test center ID",
+      "bloodSeparationCenterId": "Blood separation center ID",
       "description": "Description",
       "testType": "Test type",
       "result": "Result",
       "bloodType": "Blood type",
       "searchDonor": "Search donor",
       "searchBloodPack": "Search blood pack",
-      "searchBloodTestCenter": "Search blood test center"
+      "searchBloodTestCenter": "Search blood test center",
+      "searchBloodSeparationCenter": "Search blood separation center"
     },
     "message": {
       "donorRequired": "Donor is required",

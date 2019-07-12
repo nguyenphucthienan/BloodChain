@@ -547,6 +547,7 @@
     "label": {
       "donorInfo": "THÔNG TIN NGƯỜI HIẾN",
       "bloodTestCenterInfo": "THÔNG TIN TRUNG TÂM XÉT NGHIỆM",
+      "bloodSeparationCenterInfo": "THÔNG TIN TRUNG TÂM PHÂN TÁCH MÁU",
       "bloodPackInfo": "THÔNG TIN TÚI MÁU",
       "addBloodPack": "THÊM TÚI MÁU",
       "transferBloodPacks": "CHUYỂN TÚI MÁU",
@@ -568,13 +569,15 @@
       "bloodCamp": "Trung tâm hiến máu",
       "bloodTestCenter": "Trung tâm xét nghiệm",
       "bloodTestCenterId": "ID trung tâm xét nghiệm",
+      "bloodSeparationCenterId": "ID trung tâm phân tách máu",
       "description": "Miêu tả",
       "testType": "Loại xét nghiệm",
       "result": "Kết quả",
       "bloodType": "Nhóm máu",
       "searchDonor": "Tìm người hiến",
       "searchBloodPack": "Tìm túi máu",
-      "searchBloodTestCenter": "Tìm trung tâm hiến máu"
+      "searchBloodTestCenter": "Tìm trung tâm xét nghiệm máu",
+      "searchBloodSeparationCenter": "Tìm trung tâm phân tách máu"
     },
     "message": {
       "donorRequired": "Người hiến không được bỏ trống",
