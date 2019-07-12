@@ -9,6 +9,7 @@ import { TableCellChange } from 'src/app/datatable/models/table-cell-change.inte
 import { TableRow } from 'src/app/datatable/models/table-row.interface';
 
 import { BloodProductTypeManagerTableService } from '../../services/blood-product-type-manager-table.service';
+import { BloodProductTypeAddModalComponent } from '../../modals/blood-product-type-add-modal/blood-product-type-add-modal.component';
 
 @Component({
   selector: 'app-admin-blood-product-type-manager',
@@ -71,19 +72,19 @@ export class AdminBloodProductTypeManagerComponent implements OnInit, AfterViewI
   }
 
   openBloodProductTypeAddModal() {
-    // this.modalRef = this.modalService.show(BloodProductTypeAddModalComponent, {
-    //   backdrop: true,
-    //   keyboard: true,
-    //   focus: true,
-    //   show: false,
-    //   ignoreBackdropClick: true,
-    //   class: 'modal-lg modal-dialog-centered',
-    //   containerClass: 'top',
-    //   animated: true
-    // });
+    this.modalRef = this.modalService.show(BloodProductTypeAddModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-lg modal-dialog-centered',
+      containerClass: 'top',
+      animated: true
+    });
 
-    // this.modalRef.content.bloodProductTypeAdded
-    //   .subscribe((bloodProductType: BloodProductType) => this.onBloodProductTypeAdded(bloodProductType));
+    this.modalRef.content.bloodProductTypeAdded
+      .subscribe((bloodProductType: BloodProductType) => this.onBloodProductTypeAdded(bloodProductType));
   }
 
   onBloodProductTypeAdded(bloodProductType: BloodProductType) {
