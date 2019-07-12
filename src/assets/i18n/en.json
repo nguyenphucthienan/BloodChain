@@ -116,6 +116,12 @@
         "transferBloodPacks": "Transfer Blood Packs"
       }
     },
+    "bloodSeparationCenter": {
+      "main": "Blood Separation Center",
+      "bloodPacks": {
+        "main": "Blood Packs"
+      }
+    },
     "profile": {
       "main": "Profile",
       "editInfo": "Edit Info"
@@ -533,16 +539,20 @@
       "add": "Add Blood Pack",
       "addTest": "Add Test",
       "updateTestResult": "Update Test Result",
+      "updateSeparationResult": "Update Separation Result",
       "transfer": "Transfer Blood Packs",
       "scanQrCode": "Scan QR Code"
     },
     "column": {
       "donor": "Donor",
+      "bloodType": "Blood Type",
       "volume": "Volume (ml)",
       "bloodCamp": "Blood Camp",
+      "bloodTestCenter": "Blood Test Center",
       "createdAt": "Time",
       "tested": "Tested",
-      "testPassed": "Test Passed"
+      "testPassed": "Test Passed",
+      "separated": "Separated"
     },
     "modal": {
       "bloodPackInfo": "Blood Pack Info",

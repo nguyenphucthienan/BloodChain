@@ -13,6 +13,9 @@ import {
   BloodCampBloodPackManagerComponent,
 } from './components/blood-camp-blood-pack-manager/blood-camp-blood-pack-manager.component';
 import {
+  BloodSeparationCenterBloodPackManagerComponent,
+} from './components/blood-separation-center-blood-pack-manager/blood-separation-center-blood-pack-manager.component';
+import {
   BloodTestCenterBloodPackManagerTransferBloodPackComponent,
 } from './components/blood-test-center-blood-pack-manager-transfer-blood-pack/blood-test-center-blood-pack-manager-transfer-blood-pack.component';
 import {
@@ -130,6 +133,32 @@ const routes: Routes = [
                 path: 'transfer',
                 component: BloodTestCenterBloodPackManagerTransferBloodPackComponent,
                 data: { breadcrumb: 'breadcrumb.bloodTestCenter.bloodPacks.transferBloodPacks' }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        path: 'blood-separation-center',
+        canActivate: [HasRoleGuard],
+        data: {
+          roles: [RoleName.BLOOD_SEPARATION_CENTER],
+          breadcrumb: 'breadcrumb.bloodSeparationCenter.main'
+        },
+        children: [
+          {
+            path: '',
+            pathMatch: 'full',
+            redirectTo: 'blood-packs'
+          },
+          {
+            path: 'blood-packs',
+            data: { breadcrumb: 'breadcrumb.bloodSeparationCenter.bloodPacks.main' },
+            children: [
+              {
+                path: '',
+                pathMatch: 'full',
+                component: BloodSeparationCenterBloodPackManagerComponent
               }
             ]
           }

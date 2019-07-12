@@ -112,6 +112,12 @@
       "updateTestResult": "Cập nhật kết quả",
       "transferBloodPacks": "Chuyển túi máu"
     },
+    "bloodSeparationCenter": {
+      "main": "Trung tâm phân tách máu",
+      "bloodPacks": {
+        "main": "Túi máu"
+      }
+    },
     "profile": {
       "main": "Hồ sơ",
       "editInfo": "Thay đổi thông tin"
@@ -529,16 +535,20 @@
       "add": "Thêm túi máu",
       "addTest": "Thêm xét nghiệm",
       "updateTestResult": "Cập nhật kết quả xét nghiệm",
+      "updateSeparationResult": "Cập nhật kết quả phân tách",
       "transfer": "Chuyển túi máu",
       "scanQrCode": "Quét QR Code"
     },
     "column": {
       "donor": "Người hiến",
+      "bloodType": "Nhóm máu",
       "volume": "Thể tích (ml)",
       "bloodCamp": "Trung tâm hiến máu",
+      "bloodTestCenter": "Trung tâm xét nghiệm",
       "createdAt": "Thời gian",
       "tested": "Đã xét nghiệm",
-      "testPassed": "Kết quả"
+      "testPassed": "Kết quả",
+      "separated": "Đã phân tách"
     },
     "modal": {
       "bloodPackInfo": "Thông tin túi máu",

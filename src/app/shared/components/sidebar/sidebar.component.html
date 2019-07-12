@@ -39,4 +39,12 @@
     </a>
     <hr>
   </ng-container>
+  <ng-container *ngIf="sectionPermissions.bloodSeparationCenter">
+    <h5>{{ 'sidebar.section.bloodSeparationCenter' | translate }}</h5>
+    <a *ngFor="let route of bloodSeparationCenterRoutes" [routerLink]="route.path" routerLinkActive="active"
+      class="list-group-item list-group-item-action waves-effect">
+      <mdb-icon fas [icon]="route.icon" class="mr-3"></mdb-icon>{{ route.title | translate }}
+    </a>
+    <hr>
+  </ng-container>
 </div>
