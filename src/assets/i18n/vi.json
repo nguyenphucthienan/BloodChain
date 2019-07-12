@@ -88,6 +88,7 @@
       "main": "Quản trị",
       "users": "Người dùng",
       "testTypes": "Loại xét nghiệm",
+      "bloodProductTypes": "Loại chế phẩm máu",
       "bloodCamps": "Trung tâm hiến máu",
       "bloodTestCenters": "Trung tâm xét nghiệm",
       "bloodSeparationCenters": "Trung tâm phân tách",
@@ -136,6 +137,7 @@
     "title": {
       "users": "Người dùng",
       "testTypes": "Loại xét nghiệm",
+      "bloodProductTypes": "Loại chế phẩm máu",
       "bloodCamps": "Trung tâm hiến máu",
       "bloodTestCenters": "Trung tâm xét nghiệm",
       "bloodSeparationCenters": "Trung tâm phân tách",
@@ -157,6 +159,7 @@
     "name": {
       "userManager": "NGƯỜI DÙNG",
       "testTypeManager": "LOẠI XÉT NGHIỆM",
+      "bloodProductTypeManager": "LOẠI CHẾ PHẨM MÁU",
       "bloodCampManager": "TRUNG TÂM HIẾN MÁU",
       "bloodTestCenterManager": "TRUNG TÂM XÉT NGHIỆM MÁU",
       "bloodSeparationCenterManager": "TRUNG TÂM PHÂN TÁCH MÁU",
@@ -333,7 +336,7 @@
       "delete": "Xóa loại xét nghiệm"
     },
     "column": {
-      "description": "Description"
+      "description": "Miêu tả"
     },
     "label": {
       "name": "Tên",
@@ -350,6 +353,38 @@
       "updateFailed": "Cập nhật loại xét nghiệm không thành công",
       "deleteSuccess": "Xóa loại xét nghiệm thành công",
       "deleteFailed": "Xóa loại xét nghiệm không thành công"
+    },
+    "placeholder": {
+      "search": "Tìm kiếm theo tên (tối thiểu 3 kí tự)"
+    }
+  },
+  "bloodProductTypeManager": {
+    "button": {
+      "add": "Thêm loại chế phẩm máu"
+    },
+    "modal": {
+      "add": "Thêm loại chế phẩm máu",
+      "update": "Cập nhật loại chế phẩm máu",
+      "delete": "Xóa loại chế phẩm máu"
+    },
+    "column": {
+      "description": "Miêu tả"
+    },
+    "label": {
+      "name": "Tên",
+      "description": "Miêu tả"
+    },
+    "message": {
+      "nameRequired": "Tên không được bỏ trống",
+      "descriptionRequired": "Miêu tả không được bỏ trống"
+    },
+    "alert": {
+      "addSuccess": "Thêm loại chế phẩm máu thành công",
+      "addFailed": "Thêm loại chế phẩm máu không thành công",
+      "updateSuccess": "Cập nhật loại chế phẩm máu thành công",
+      "updateFailed": "Cập nhật loại chế phẩm máu không thành công",
+      "deleteSuccess": "Xóa loại chế phẩm máu thành công",
+      "deleteFailed": "Xóa loại chế phẩm máu không thành công"
     },
     "placeholder": {
       "search": "Tìm kiếm theo tên (tối thiểu 3 kí tự)"

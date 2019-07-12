@@ -7,6 +7,9 @@ import { AdminBloodBankManagerComponent } from './components/admin-blood-bank-ma
 import { AdminBloodCampManagerComponent } from './components/admin-blood-camp-manager/admin-blood-camp-manager.component';
 import { AdminBloodPackManagerComponent } from './components/admin-blood-pack-manager/admin-blood-pack-manager.component';
 import {
+  AdminBloodProductTypeManagerComponent,
+} from './components/admin-blood-product-type-manager/admin-blood-product-type-manager.component';
+import {
   AdminBloodSeparationCenterManagerComponent,
 } from './components/admin-blood-separation-center-manager/admin-blood-separation-center-manager.component';
 import {
@@ -39,6 +42,11 @@ const routes: Routes = [
         path: 'test-types',
         component: AdminTestTypeManagerComponent,
         data: { breadcrumb: 'breadcrumb.admin.testTypes' }
+      },
+      {
+        path: 'blood-product-types',
+        component: AdminBloodProductTypeManagerComponent,
+        data: { breadcrumb: 'breadcrumb.admin.bloodProductTypes' }
       },
       {
         path: 'blood-camps',

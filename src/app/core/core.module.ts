@@ -16,6 +16,7 @@ import { AuthService } from './services/auth.service';
 import { BloodBankService } from './services/blood-bank.service';
 import { BloodCampService } from './services/blood-camp.service';
 import { BloodPackService } from './services/blood-pack.service';
+import { BloodProductTypeService } from './services/blood-product-type.service';
 import { BloodSeparationCenterService } from './services/blood-separation-center.service';
 import { BloodTestCenterService } from './services/blood-test-center.service';
 import { HospitalService } from './services/hospital.service';
@@ -59,6 +60,7 @@ const toastrOptions = {
     UserService,
     RoleService,
     TestTypeService,
+    BloodProductTypeService,
     BloodCampService,
     BloodTestCenterService,
     BloodSeparationCenterService,

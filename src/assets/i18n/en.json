@@ -88,6 +88,7 @@
       "main": "Admin",
       "users": "Users",
       "testTypes": "Test Types",
+      "bloodProductTypes": "Blood Product Types",
       "bloodCamps": "Blood Camps",
       "bloodTestCenters": "Blood Test Centers",
       "bloodSeparationCenters": "Blood Separation Centers",
@@ -140,6 +141,7 @@
     "title": {
       "users": "Users",
       "testTypes": "Test Types",
+      "bloodProductTypes": "Blood Product Types",
       "bloodCamps": "Blood Camps",
       "bloodTestCenters": "Blood Test Centers",
       "bloodSeparationCenters": "Blood Separation Centers",
@@ -161,6 +163,7 @@
     "name": {
       "userManager": "USERS",
       "testTypeManager": "TEST TYPES",
+      "bloodProductTypeManager": "BLOOD PRODUCT TYPES",
       "bloodCampManager": "BLOOD CAMPS",
       "bloodTestCenterManager": "BLOOD TEST CENTERS",
       "bloodSeparationCenterManager": "BLOOD SEPARATION CENTERS",
@@ -354,6 +357,38 @@
       "updateFailed": "Update test type failed",
       "deleteSuccess": "Delete test type successfully",
       "deleteFailed": "Delete test type failed"
+    },
+    "placeholder": {
+      "search": "Search by name (min 3 characters)"
+    }
+  },
+  "bloodProductTypeManager": {
+    "button": {
+      "add": "Add Blood Product Type"
+    },
+    "modal": {
+      "add": "Add New Blood Product Type",
+      "update": "Update Blood Product Type",
+      "delete": "Delete Blood Product Type"
+    },
+    "column": {
+      "description": "Description"
+    },
+    "label": {
+      "name": "Name",
+      "description": "Description"
+    },
+    "message": {
+      "nameRequired": "Name is required",
+      "descriptionRequired": "Description is required"
+    },
+    "alert": {
+      "addSuccess": "Add blood product type successfully",
+      "addFailed": "Add blood product type failed",
+      "updateSuccess": "Update blood product type successfully",
+      "updateFailed": "Update blood product type failed",
+      "deleteSuccess": "Delete blood product type successfully",
+      "deleteFailed": "Delete blood product type failed"
     },
     "placeholder": {
       "search": "Search by name (min 3 characters)"
