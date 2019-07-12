@@ -35,6 +35,9 @@ import {
   BloodProductTypeAddModalComponent,
 } from './modals/blood-product-type-add-modal/blood-product-type-add-modal.component';
 import {
+  BloodProductTypeDeleteModalComponent,
+} from './modals/blood-product-type-delete-modal/blood-product-type-delete-modal.component';
+import {
   BloodProductTypeUpdateModalComponent,
 } from './modals/blood-product-type-update-modal/blood-product-type-update-modal.component';
 import {
@@ -76,6 +79,7 @@ import { TestTypeUpdateModalComponent } from './modals/test-type-update-modal/te
     AdminComponent,
     AdminUserManagerComponent,
     AdminTestTypeManagerComponent,
+    AdminBloodProductTypeManagerComponent,
     AdminBloodCampManagerComponent,
     AdminBloodTestCenterManagerComponent,
     AdminBloodSeparationCenterManagerComponent,
@@ -84,6 +88,9 @@ import { TestTypeUpdateModalComponent } from './modals/test-type-update-modal/te
     TestTypeAddModalComponent,
     TestTypeUpdateModalComponent,
     TestTypeDeleteModalComponent,
+    BloodProductTypeAddModalComponent,
+    BloodProductTypeUpdateModalComponent,
+    BloodProductTypeDeleteModalComponent,
     BloodCampAddModalComponent,
     BloodCampUpdateModalComponent,
     BloodCampDeleteModalComponent,
@@ -104,10 +111,7 @@ import { TestTypeUpdateModalComponent } from './modals/test-type-update-modal/te
     HospitalUpdateModalComponent,
     HospitalDeleteModalComponent,
     HospitalAssignStaffsModalComponent,
-    AdminBloodPackManagerComponent,
-    AdminBloodProductTypeManagerComponent,
-    BloodProductTypeAddModalComponent,
-    BloodProductTypeUpdateModalComponent,
+    AdminBloodPackManagerComponent
   ],
   imports: [
     SharedModule,
@@ -118,6 +122,9 @@ import { TestTypeUpdateModalComponent } from './modals/test-type-update-modal/te
     TestTypeAddModalComponent,
     TestTypeUpdateModalComponent,
     TestTypeDeleteModalComponent,
+    BloodProductTypeAddModalComponent,
+    BloodProductTypeUpdateModalComponent,
+    BloodProductTypeDeleteModalComponent,
     BloodCampAddModalComponent,
     BloodCampUpdateModalComponent,
     BloodCampDeleteModalComponent,
@@ -137,9 +144,7 @@ import { TestTypeUpdateModalComponent } from './modals/test-type-update-modal/te
     HospitalAddModalComponent,
     HospitalUpdateModalComponent,
     HospitalDeleteModalComponent,
-    HospitalAssignStaffsModalComponent,
-    BloodProductTypeAddModalComponent,
-    BloodProductTypeUpdateModalComponent
+    HospitalAssignStaffsModalComponent
   ]
 })
 export class AdminModule { }

@@ -12,6 +12,9 @@ import {
   BloodProductTypeAddModalComponent,
 } from '../../modals/blood-product-type-add-modal/blood-product-type-add-modal.component';
 import {
+  BloodProductTypeDeleteModalComponent,
+} from '../../modals/blood-product-type-delete-modal/blood-product-type-delete-modal.component';
+import {
   BloodProductTypeUpdateModalComponent,
 } from '../../modals/blood-product-type-update-modal/blood-product-type-update-modal.component';
 import { BloodProductTypeManagerTableService } from '../../services/blood-product-type-manager-table.service';
@@ -122,22 +125,22 @@ export class AdminBloodProductTypeManagerComponent implements OnInit, AfterViewI
   }
 
   openBloodProductTypeDeleteModal(rowData: TableRow) {
-    // this.modalRef = this.modalService.show(BloodProductTypeDeleteModalComponent, {
-    //   backdrop: true,
-    //   keyboard: true,
-    //   focus: true,
-    //   show: false,
-    //   ignoreBackdropClick: true,
-    //   class: 'modal-dialog-centered',
-    //   containerClass: 'top',
-    //   animated: true,
-    //   data: {
-    //     rowData
-    //   }
-    // });
+    this.modalRef = this.modalService.show(BloodProductTypeDeleteModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        rowData
+      }
+    });
 
-    // this.modalRef.content.bloodProductTypeDeleted
-    //   .subscribe(() => this.onBloodProductTypeDeleted());
+    this.modalRef.content.bloodProductTypeDeleted
+      .subscribe(() => this.onBloodProductTypeDeleted());
   }
 
   onBloodProductTypeDeleted() {
