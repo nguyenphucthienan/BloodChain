@@ -35,6 +35,9 @@ import {
   BloodProductTypeAddModalComponent,
 } from './modals/blood-product-type-add-modal/blood-product-type-add-modal.component';
 import {
+  BloodProductTypeUpdateModalComponent,
+} from './modals/blood-product-type-update-modal/blood-product-type-update-modal.component';
+import {
   BloodSeparationCenterAddModalComponent,
 } from './modals/blood-separation-center-add-modal/blood-separation-center-add-modal.component';
 import {
@@ -104,6 +107,7 @@ import { TestTypeUpdateModalComponent } from './modals/test-type-update-modal/te
     AdminBloodPackManagerComponent,
     AdminBloodProductTypeManagerComponent,
     BloodProductTypeAddModalComponent,
+    BloodProductTypeUpdateModalComponent,
   ],
   imports: [
     SharedModule,
@@ -134,7 +138,8 @@ import { TestTypeUpdateModalComponent } from './modals/test-type-update-modal/te
     HospitalUpdateModalComponent,
     HospitalDeleteModalComponent,
     HospitalAssignStaffsModalComponent,
-    BloodProductTypeAddModalComponent
+    BloodProductTypeAddModalComponent,
+    BloodProductTypeUpdateModalComponent
   ]
 })
 export class AdminModule { }

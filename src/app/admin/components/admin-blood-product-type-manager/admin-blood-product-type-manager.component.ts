@@ -8,8 +8,13 @@ import { TableActionType } from 'src/app/datatable/models/table-action.interface
 import { TableCellChange } from 'src/app/datatable/models/table-cell-change.interface';
 import { TableRow } from 'src/app/datatable/models/table-row.interface';
 
+import {
+  BloodProductTypeAddModalComponent,
+} from '../../modals/blood-product-type-add-modal/blood-product-type-add-modal.component';
+import {
+  BloodProductTypeUpdateModalComponent,
+} from '../../modals/blood-product-type-update-modal/blood-product-type-update-modal.component';
 import { BloodProductTypeManagerTableService } from '../../services/blood-product-type-manager-table.service';
-import { BloodProductTypeAddModalComponent } from '../../modals/blood-product-type-add-modal/blood-product-type-add-modal.component';
 
 @Component({
   selector: 'app-admin-blood-product-type-manager',
@@ -93,22 +98,22 @@ export class AdminBloodProductTypeManagerComponent implements OnInit, AfterViewI
   }
 
   openBloodProductTypeUpdateModal(rowData: TableRow) {
-    // this.modalRef = this.modalService.show(BloodProductTypeUpdateModalComponent, {
-    //   backdrop: true,
-    //   keyboard: true,
-    //   focus: true,
-    //   show: false,
-    //   ignoreBackdropClick: true,
-    //   class: 'modal-lg modal-dialog-centered',
-    //   containerClass: 'top',
-    //   animated: true,
-    //   data: {
-    //     rowData,
-    //   }
-    // });
+    this.modalRef = this.modalService.show(BloodProductTypeUpdateModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-lg modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        rowData,
+      }
+    });
 
-    // this.modalRef.content.bloodProductTypeUpdated
-    //   .subscribe((bloodProductType: BloodProductType) => this.onBloodProductTypeUpdated(bloodProductType));
+    this.modalRef.content.bloodProductTypeUpdated
+      .subscribe((bloodProductType: BloodProductType) => this.onBloodProductTypeUpdated(bloodProductType));
   }
 
   onBloodProductTypeUpdated(bloodProductType: BloodProductType) {
