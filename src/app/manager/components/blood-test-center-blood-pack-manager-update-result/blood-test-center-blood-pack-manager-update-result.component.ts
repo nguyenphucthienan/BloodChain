@@ -277,10 +277,7 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
 
     const testFields = this.fb.array([]);
     for (let i = 0; i < quantity; i++) {
-      testFields.push(this.fb.group({
-        testType: [null, Validators.required],
-        passed: [null, Validators.required]
-      }));
+      testFields.push(this.createTestField());
     }
 
     return testFields;

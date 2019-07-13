@@ -149,7 +149,7 @@
           *ngFor="let item of separationResultFormArray.controls; let index=index;">
           <div [formGroupName]="index">
             <div class="form-row mb-md-1 mb-4">
-              <div class="col-md-6">
+              <div class="col-md-4">
                 <div class="md-form form-col">
                   <ng-select [items]="bloodProductTypes" bindValue="_id" bindLabel="name" [multiple]="false"
                     [clearable]="false" [placeholder]="'bloodPackManager.label.bloodProductType' | translate"
@@ -160,9 +160,9 @@
                   </mdb-error>
                 </div>
               </div>
-              <div class="col-md-6 d-flex">
+              <div class="col-md-8 d-flex pl-md-4">
                 <div class="row volume-row">
-                  <div class="col-9">
+                  <div class="col-5 d-flex justify-content-center align-items-center">
                     <div class="md-form form-col">
                       <input type="number" [min]="1" formControlName="volume" class="form-control volume-input"
                         mdbInput>
@@ -173,8 +173,18 @@
                       </mdb-error>
                     </div>
                   </div>
-                  <div class="col-3 d-flex justify-content-center align-items-center">
+                  <div class="col-5 d-flex justify-content-center align-items-center">
                     <div class="md-form form-col">
+                      <input type="text" id="expirationDate" formControlName="expirationDate"
+                        [matDatepicker]="expirationDatePicker" class="form-control"
+                        (focus)="openDatePicker(expirationDatePicker)" (click)="openDatePicker(expirationDatePicker)"
+                        mdbInput readonly>
+                      <label for="birthdate">{{ 'bloodPackManager.label.expirationDate' | translate }}</label>
+                      <mat-datepicker #expirationDatePicker="matDatepicker"></mat-datepicker>
+                    </div>
+                  </div>
+                  <div class="col-2 d-flex justify-content-center align-items-center">
+                    <div class="md-form form-col d-flex justify-content-center align-items-center">
                       <button class="btn btn-sm btn-danger" (click)="removeSeparationField(index)">
                         <span class="fa fa-times"></span>
                       </button>

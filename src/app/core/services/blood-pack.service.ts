@@ -16,6 +16,7 @@ export class BloodPackService {
   private readonly bloodPacksUrl = `${environment.apiUrl}/blood-packs`;
   private readonly bloodPackUrl = `${environment.apiUrl}/blood-packs/{id}`;
   private readonly updateTestResultsUrl = `${environment.apiUrl}/blood-packs/{id}/test-results`;
+  private readonly updateSeparationResultsUrl = `${environment.apiUrl}/blood-packs/{id}/separation-results`;
   private readonly transferToBloodTestCenterUrl = `${environment.apiUrl}/blood-packs/transfer/blood-test-center`;
   private readonly transferToBloodSeparationCenterUrl = `${environment.apiUrl}/blood-packs/transfer/blood-separation-center`;
 
@@ -67,6 +68,11 @@ export class BloodPackService {
   updateBloodPackTestResults(id: string, updateTestResultModel: any): Observable<BloodPack> {
     const url = UrlUtils.resolvePathVariables(this.updateTestResultsUrl, { id });
     return this.http.put<BloodPack>(url, updateTestResultModel);
+  }
+
+  updateBloodPackSeparationResults(id: string, updateSeparationResultModel: any): Observable<BloodPack> {
+    const url = UrlUtils.resolvePathVariables(this.updateSeparationResultsUrl, { id });
+    return this.http.put<BloodPack>(url, updateSeparationResultModel);
   }
 
   transferBloodPacksToBloodTestCenter(transferModel: any): Observable<any> {

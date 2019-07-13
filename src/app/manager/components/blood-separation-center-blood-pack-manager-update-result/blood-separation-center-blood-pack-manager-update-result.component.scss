@@ -12,16 +12,13 @@ mdb-error.error-message {
     margin-top: 8px;
     margin-bottom: 8px;
 
-    .volume-input {
-      margin-top: 19px;
-    }
-
     mdb-error.volume-message {
       top: 45px;
     }
   }
 
-  .volume-row {
+  .volume-row,
+  .form-col {
     width: 100%;
   }
 

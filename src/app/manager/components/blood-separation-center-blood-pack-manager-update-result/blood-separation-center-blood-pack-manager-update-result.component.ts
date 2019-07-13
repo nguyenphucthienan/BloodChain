@@ -1,6 +1,7 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDatepicker } from '@angular/material/datepicker';
 import { Router } from '@angular/router';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { concat, Observable, of, Subject } from 'rxjs';
@@ -235,14 +236,13 @@ export class BloodSeparationCenterBloodPackManagerUpdateResultComponent implemen
   }
 
   updateSeparationResults() {
-    console.log(this.updateForm.value);
-    // this.bloodPackService.updateBloodPackTestResults(this.bloodPack._id, this.updateForm.value)
-    //   .subscribe(
-    //     (bloodPack: BloodPack) => {
-    //       this.alertService.success('bloodPackManager.alert.updateTestResultSuccess');
-    //       this.resetForms();
-    //     },
-    //     error => this.alertService.error('bloodPackManager.alert.updateTestResultFailed'));
+    this.bloodPackService.updateBloodPackSeparationResults(this.bloodPack._id, this.updateForm.value)
+      .subscribe(
+        (bloodPack: BloodPack) => {
+          this.alertService.success('bloodPackManager.alert.updateSeparationResultSuccess');
+          this.resetForms();
+        },
+        error => this.alertService.error('bloodPackManager.alert.updateSeparationResultFailed'));
   }
 
   get separationResultFormArray() {
@@ -252,25 +252,23 @@ export class BloodSeparationCenterBloodPackManagerUpdateResultComponent implemen
   createSeparationField() {
     return this.fb.group({
       bloodProductType: [null, Validators.required],
-      volume: [null, [Validators.required, Validators.min(1)]]
+      volume: [null, [Validators.required, Validators.min(1)]],
+      expirationDate: [null, Validators.required]
     });
   }
 
-  // createTestFieldArray(quantity: number = 1) {
-  //   if (quantity < 1) {
-  //     return;
-  //   }
+  createSeparationFieldArray(quantity: number = 1) {
+    if (quantity < 1) {
+      return;
+    }
 
-  //   const testFields = this.fb.array([]);
-  //   for (let i = 0; i < quantity; i++) {
-  //     testFields.push(this.fb.group({
-  //       testType: [null, Validators.required],
-  //       passed: [null, Validators.required]
-  //     }));
-  //   }
+    const separationFields = this.fb.array([]);
+    for (let i = 0; i < quantity; i++) {
+      separationFields.push(this.createSeparationField());
+    }
 
-  //   return testFields;
-  // }
+    return separationFields;
+  }
 
   removeSeparationField(index: number) {
     this.separationResultFormArray.removeAt(index);
@@ -278,6 +276,10 @@ export class BloodSeparationCenterBloodPackManagerUpdateResultComponent implemen
 
   addSeparationField() {
     this.separationResultFormArray.push(this.createSeparationField());
+  }
+
+  openDatePicker(picker: MatDatepicker<Date>) {
+    picker.open();
   }
 
   private separationResultRepeatedValidator(g: FormGroup) {
