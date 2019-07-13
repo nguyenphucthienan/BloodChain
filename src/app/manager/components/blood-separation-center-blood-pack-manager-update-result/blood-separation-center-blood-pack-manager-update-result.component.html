@@ -133,6 +133,16 @@
                   </div>
                 </div>
               </div>
+              <div class="col">
+                <div class="md-form form-col">
+                  <div class="md-form">
+                    <input type="text" id="separated" formControlName="separated"
+                      [value]="bloodPackForm.get('separated').value | booleanYesNo | async" class="form-control"
+                      mdbInput>
+                    <label for="separated">{{ 'bloodPackManager.label.separated' | translate }}</label>
+                  </div>
+                </div>
+              </div>
             </div>
           </form>
         </div>

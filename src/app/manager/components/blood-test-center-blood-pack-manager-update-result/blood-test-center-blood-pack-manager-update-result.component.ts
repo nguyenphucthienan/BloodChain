@@ -157,56 +157,54 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
     }
 
     this.bloodPack = bloodPack;
-    this.authService.getMyUserInfo()
-      .subscribe((user: User) => {
-        if (user.bloodTestCenter._id !== bloodPack.currentLocation) {
-          this.alertService.error('bloodPackManager.alert.cannotSelect');
-          return;
-        }
+    this.authService.getMyUserInfo().subscribe((user: User) => {
+      if (user.bloodTestCenter._id !== bloodPack.currentLocation) {
+        this.alertService.error('bloodPackManager.alert.cannotSelect');
+        return;
+      }
 
-        this.userService.getUser(bloodPack.donor._id)
-          .subscribe((donor: User) => {
-            this.userForm.patchValue({
-              username: donor.username,
-              firstName: donor.firstName,
-              lastName: donor.lastName,
-              gender: donor.gender,
-              birthdate: donor.birthdate,
-              email: donor.email,
-              phone: donor.phone,
-              address: donor.address,
-              location: donor.location
-            });
+      this.userService.getUser(bloodPack.donor._id).subscribe((donor: User) => {
+        this.userForm.patchValue({
+          username: donor.username,
+          firstName: donor.firstName,
+          lastName: donor.lastName,
+          gender: donor.gender,
+          birthdate: donor.birthdate,
+          email: donor.email,
+          phone: donor.phone,
+          address: donor.address,
+          location: donor.location
+        });
 
-            this.bloodPackForm.patchValue({
-              id: bloodPack._id,
-              volume: bloodPack.volume,
-              time: this.datePipe.transform(new Date(bloodPack.createdAt), 'medium'),
-              bloodCamp: bloodPack.bloodCamp.name,
-              bloodTestCenter: bloodPack.bloodTestCenter.name,
-              tested: bloodPack.tested,
-              testPassed: bloodPack.testPassed
-            });
+        this.bloodPackForm.patchValue({
+          id: bloodPack._id,
+          volume: bloodPack.volume,
+          time: this.datePipe.transform(new Date(bloodPack.createdAt), 'medium'),
+          bloodCamp: bloodPack.bloodCamp.name,
+          bloodTestCenter: bloodPack.bloodTestCenter.name,
+          tested: bloodPack.tested,
+          testPassed: bloodPack.testPassed
+        });
 
-            if (bloodPack.tested) {
-              let numOfFields = 1;
-              if (bloodPack.testResults && bloodPack.testResults.length > 0) {
-                numOfFields = bloodPack.testResults.length;
-              }
+        if (bloodPack.tested) {
+          let numOfFields = 1;
+          if (bloodPack.testResults && bloodPack.testResults.length > 0) {
+            numOfFields = bloodPack.testResults.length;
+          }
 
-              this.resetTestResultFormArray();
-              for (let i = 1; i < numOfFields; i++) {
-                this.addTestField();
-              }
+          this.resetTestResultFormArray();
+          for (let i = 1; i < numOfFields; i++) {
+            this.addTestField();
+          }
 
-              this.updateForm.patchValue({
-                testResults: bloodPack.testResults,
-                bloodType: bloodPack.bloodType,
-                testDescription: bloodPack.testDescription
-              });
-            }
+          this.updateForm.patchValue({
+            testResults: bloodPack.testResults,
+            bloodType: bloodPack.bloodType,
+            testDescription: bloodPack.testDescription
           });
+        }
       });
+    });
   }
 
   openScanQrCodeModal() {

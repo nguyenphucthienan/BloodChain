@@ -9,11 +9,13 @@ import { catchError, debounceTime, distinctUntilChanged, filter, map, switchMap,
 import { BloodType } from 'src/app/core/constant/blood-type';
 import { BloodPack } from 'src/app/core/models/blood-pack.interface';
 import { BloodProductType } from 'src/app/core/models/blood-product-type.interface';
+import { BloodProduct } from 'src/app/core/models/blood-product.interface';
 import { User } from 'src/app/core/models/user.interface';
 import { AlertService } from 'src/app/core/services/alert.service';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { BloodPackService } from 'src/app/core/services/blood-pack.service';
 import { BloodProductTypeService } from 'src/app/core/services/blood-product-type.service';
+import { BloodProductService } from 'src/app/core/services/blood-product.service';
 import { UserService } from 'src/app/core/services/user.service';
 import { ScanQrcodeModalComponent } from 'src/app/shared/modals/scan-qrcode-modal/scan-qrcode-modal.component';
 
@@ -57,6 +59,7 @@ export class BloodSeparationCenterBloodPackManagerUpdateResultComponent implemen
     private userService: UserService,
     private bloodProductTypeService: BloodProductTypeService,
     private bloodPackService: BloodPackService,
+    private bloodProductService: BloodProductService,
     private alertService: AlertService,
     private modalService: MDBModalService,
     private datePipe: DatePipe
@@ -126,6 +129,7 @@ export class BloodSeparationCenterBloodPackManagerUpdateResultComponent implemen
       bloodTestCenter: ['', Validators.required],
       tested: [null, Validators.required],
       testPassed: [null, Validators.required],
+      separated: [null, Validators.required]
     });
 
     this.updateForm = this.fb.group({
@@ -143,56 +147,69 @@ export class BloodSeparationCenterBloodPackManagerUpdateResultComponent implemen
     }
 
     this.bloodPack = bloodPack;
-    this.authService.getMyUserInfo()
-      .subscribe((user: User) => {
-        if (user.bloodSeparationCenter._id !== bloodPack.currentLocation) {
-          this.alertService.error('bloodPackManager.alert.cannotSelect');
-          return;
-        }
+    this.authService.getMyUserInfo().subscribe((user: User) => {
+      if (user.bloodSeparationCenter._id !== bloodPack.currentLocation) {
+        this.alertService.error('bloodPackManager.alert.cannotSelect');
+        return;
+      }
 
-        this.userService.getUser(bloodPack.donor._id)
-          .subscribe((donor: User) => {
-            this.userForm.patchValue({
-              username: donor.username,
-              firstName: donor.firstName,
-              lastName: donor.lastName,
-              gender: donor.gender,
-              birthdate: donor.birthdate,
-              email: donor.email,
-              phone: donor.phone,
-              address: donor.address,
-              location: donor.location
+      this.userService.getUser(bloodPack.donor._id).subscribe((donor: User) => {
+        this.userForm.patchValue({
+          username: donor.username,
+          firstName: donor.firstName,
+          lastName: donor.lastName,
+          gender: donor.gender,
+          birthdate: donor.birthdate,
+          email: donor.email,
+          phone: donor.phone,
+          address: donor.address,
+          location: donor.location
+        });
+
+        this.bloodPackForm.patchValue({
+          id: bloodPack._id,
+          volume: bloodPack.volume,
+          time: this.datePipe.transform(new Date(bloodPack.createdAt), 'medium'),
+          bloodCamp: bloodPack.bloodCamp.name,
+          bloodTestCenter: bloodPack.bloodTestCenter.name,
+          tested: bloodPack.tested,
+          testPassed: bloodPack.testPassed,
+          separated: bloodPack.separated
+        });
+
+        if (bloodPack.separated) {
+          this.bloodProductService.getBloodProducts(undefined, undefined, {
+            bloodPack: bloodPack._id
+          }).subscribe((response: any) => {
+            const bloodProducts = response.items;
+
+            let numOfFields = 1;
+            if (bloodProducts && bloodProducts.length > 0) {
+              numOfFields = bloodProducts.length;
+            }
+
+            this.resetSeparationResultFormArray();
+            for (let i = 1; i < numOfFields; i++) {
+              this.addSeparationField();
+            }
+
+            this.updateForm.patchValue({
+              separationResults: this.buildSeparationResults(bloodProducts),
+              separationDescription: bloodPack.separationDescription
             });
-
-            this.bloodPackForm.patchValue({
-              id: bloodPack._id,
-              volume: bloodPack.volume,
-              time: this.datePipe.transform(new Date(bloodPack.createdAt), 'medium'),
-              bloodCamp: bloodPack.bloodCamp.name,
-              bloodTestCenter: bloodPack.bloodTestCenter.name,
-              tested: bloodPack.tested,
-              testPassed: bloodPack.testPassed
-            });
-
-            // if (bloodPack.tested) {
-            //   let numOfFields = 1;
-            //   if (bloodPack.testResults && bloodPack.testResults.length > 0) {
-            //     numOfFields = bloodPack.testResults.length;
-            //   }
-
-            //   this.resetTestResultFormGroup();
-            //   for (let i = 1; i < numOfFields; i++) {
-            //     this.addTestField();
-            //   }
-
-            //   this.updateForm.patchValue({
-            //     testResults: bloodPack.testResults,
-            //     bloodType: bloodPack.bloodType,
-            //     testDescription: bloodPack.testDescription
-            //   });
-            // }
           });
+        }
       });
+    });
+  }
+
+  private buildSeparationResults(bloodProducts: BloodProduct[]) {
+    return bloodProducts.map(bloodProduct => ({
+      _id: bloodProduct._id,
+      bloodProductType: bloodProduct.bloodProductType._id,
+      volume: bloodProduct.volume,
+      expirationDate: bloodProduct.expirationDate
+    }));
   }
 
   openScanQrCodeModal() {
@@ -251,6 +268,7 @@ export class BloodSeparationCenterBloodPackManagerUpdateResultComponent implemen
 
   createSeparationField() {
     return this.fb.group({
+      _id: [null],
       bloodProductType: [null, Validators.required],
       volume: [null, [Validators.required, Validators.min(1)]],
       expirationDate: [null, Validators.required]
