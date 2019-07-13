@@ -248,6 +248,11 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
   }
 
   updateTestResults() {
+    if (!this.bloodPack) {
+      this.alertService.error('bloodPackManager.alert.noBloodPack');
+      return;
+    }
+
     this.bloodPackService.updateBloodPackTestResults(this.bloodPack._id, this.updateForm.value)
       .subscribe(
         (bloodPack: BloodPack) => {

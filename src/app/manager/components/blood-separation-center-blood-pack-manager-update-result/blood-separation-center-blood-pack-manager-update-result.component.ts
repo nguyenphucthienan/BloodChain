@@ -253,6 +253,11 @@ export class BloodSeparationCenterBloodPackManagerUpdateResultComponent implemen
   }
 
   updateSeparationResults() {
+    if (!this.bloodPack) {
+      this.alertService.error('bloodPackManager.alert.noBloodPack');
+      return;
+    }
+
     this.bloodPackService.updateBloodPackSeparationResults(this.bloodPack._id, this.updateForm.value)
       .subscribe(
         (bloodPack: BloodPack) => {
