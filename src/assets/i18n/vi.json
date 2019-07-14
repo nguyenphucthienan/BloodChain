@@ -736,7 +736,8 @@
       "noBloodProduct": "Không có chế phẩm máu nào được chọn"
     },
     "placeholder": {
-      "search": "Tìm kiếm (tối thiểu 3 kí tự)"
+      "search": "Tìm kiếm (tối thiểu 3 kí tự)",
+      "searchById": "Tìm kiếm theo ID"
     }
   }
 }

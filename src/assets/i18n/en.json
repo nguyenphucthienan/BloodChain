@@ -740,7 +740,8 @@
       "noBloodProduct": "No blood product was selected"
     },
     "placeholder": {
-      "search": "Search (min 3 characters)"
+      "search": "Search (min 3 characters)",
+      "searchById": "Search by ID"
     }
   }
 }
