@@ -33,6 +33,9 @@ import {
   BloodTestCenterBloodPackManagerComponent,
 } from './components/blood-test-center-blood-pack-manager/blood-test-center-blood-pack-manager.component';
 import {
+  HospitalBloodProductManagerComponent,
+} from './components/hospital-blood-product-manager/hospital-blood-product-manager.component';
+import {
   ManagerBloodPackManagerDonationHistoryComponent,
 } from './components/manager-blood-pack-manager-donation-history/manager-blood-pack-manager-donation-history.component';
 import {
@@ -75,6 +78,7 @@ import { UserManagerLiteTableService } from './services/user-manager-lite-table.
     BloodSeparationCenterBloodPackManagerUpdateResultComponent,
     BloodSeparationCenterBloodProductManagerComponent,
     BloodBankBloodProductManagerComponent,
+    HospitalBloodProductManagerComponent,
   ],
   imports: [
     SharedModule,

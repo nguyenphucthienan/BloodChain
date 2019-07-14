@@ -137,6 +137,13 @@
         "transferBloodProducts": "Transfer Blood Products"
       }
     },
+    "hospital": {
+      "main": "Hospital",
+      "bloodProducts": {
+        "main": "Blood Products",
+        "transferBloodProducts": "Transfer Blood Products"
+      }
+    },
     "profile": {
       "main": "Profile",
       "editInfo": "Edit Info"
