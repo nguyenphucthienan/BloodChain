@@ -661,7 +661,8 @@
       "testFailed": "Túi máu không đạt yêu cầu"
     },
     "placeholder": {
-      "search": "Tìm kiếm (tối thiểu 3 kí tự)"
+      "search": "Tìm kiếm (tối thiểu 3 kí tự)",
+      "searchById": "Tìm kiếm theo ID"
     }
   },
   "bloodProductManager": {

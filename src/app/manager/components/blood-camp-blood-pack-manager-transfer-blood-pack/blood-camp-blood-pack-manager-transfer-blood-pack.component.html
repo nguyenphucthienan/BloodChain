@@ -8,7 +8,7 @@
     <div class="card-body">
       <ng-select [items]="bloodPacks$ | async" bindValue="_id" bindLabel="_id" [multiple]="false" [hideSelected]="true"
         [loading]="bloodPacksLoading" [typeahead]="bloodPacksInput$"
-        [typeToSearchText]="'bloodPackManager.placeholder.search' | translate"
+        [typeToSearchText]="'bloodPackManager.placeholder.searchById' | translate"
         [placeholder]="'bloodPackManager.label.searchBloodPack' | translate" (change)="selectBloodPack($event)">
       </ng-select>
       <div class="d-flex flex-sm-row flex-column justify-content-end">
