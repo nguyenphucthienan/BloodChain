@@ -19,6 +19,9 @@ import {
   BloodSeparationCenterBloodPackManagerComponent,
 } from './components/blood-separation-center-blood-pack-manager/blood-separation-center-blood-pack-manager.component';
 import {
+  BloodSeparationCenterBloodProductManagerComponent,
+} from './components/blood-separation-center-blood-product-manager/blood-separation-center-blood-product-manager.component';
+import {
   BloodTestCenterBloodPackManagerTransferBloodPackComponent,
 } from './components/blood-test-center-blood-pack-manager-transfer-blood-pack/blood-test-center-blood-pack-manager-transfer-blood-pack.component';
 import {
@@ -187,6 +190,17 @@ const routes: Routes = [
                 component: BloodSeparationCenterBloodPackManagerUpdateResultComponent,
                 data: { breadcrumb: 'breadcrumb.bloodSeparationCenter.bloodPacks.updateSeparationResult' }
               },
+            ]
+          },
+          {
+            path: 'blood-products',
+            data: { breadcrumb: 'breadcrumb.bloodSeparationCenter.bloodProducts.main' },
+            children: [
+              {
+                path: '',
+                pathMatch: 'full',
+                component: BloodSeparationCenterBloodProductManagerComponent
+              }
             ]
           }
         ]

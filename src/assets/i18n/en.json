@@ -124,6 +124,10 @@
       "bloodPacks": {
         "main": "Blood Packs",
         "updateSeparationResult": "Update Separation Result"
+      },
+      "bloodProducts": {
+        "main": "Blood Products",
+        "transferBloodProducts": "Transfer Blood Products"
       }
     },
     "profile": {

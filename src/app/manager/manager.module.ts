@@ -18,6 +18,9 @@ import {
   BloodSeparationCenterBloodPackManagerComponent,
 } from './components/blood-separation-center-blood-pack-manager/blood-separation-center-blood-pack-manager.component';
 import {
+  BloodSeparationCenterBloodProductManagerComponent,
+} from './components/blood-separation-center-blood-product-manager/blood-separation-center-blood-product-manager.component';
+import {
   BloodTestCenterBloodPackManagerTransferBloodPackComponent,
 } from './components/blood-test-center-blood-pack-manager-transfer-blood-pack/blood-test-center-blood-pack-manager-transfer-blood-pack.component';
 import {
@@ -29,6 +32,9 @@ import {
 import {
   ManagerBloodPackManagerDonationHistoryComponent,
 } from './components/manager-blood-pack-manager-donation-history/manager-blood-pack-manager-donation-history.component';
+import {
+  ManagerBloodProductManagerComponent,
+} from './components/manager-blood-product-manager/manager-blood-product-manager.component';
 import {
   ManagerUserManagerAddUserComponent,
 } from './components/manager-user-manager-add-user/manager-user-manager-add-user.component';
@@ -45,7 +51,6 @@ import {
 } from './modals/blood-pack-transfer-result-modal/blood-pack-transfer-result-modal.component';
 import { UserAddSuccessModalComponent } from './modals/user-add-success-modal/user-add-success-modal.component';
 import { UserManagerLiteTableService } from './services/user-manager-lite-table.service';
-import { ManagerBloodProductManagerComponent } from './components/manager-blood-product-manager/manager-blood-product-manager.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +58,7 @@ import { ManagerBloodProductManagerComponent } from './components/manager-blood-
     ManagerUserManagerAddUserComponent,
     UserAddSuccessModalComponent,
     ManagerBloodPackManagerDonationHistoryComponent,
+    ManagerBloodProductManagerComponent,
     BloodPackAddSuccessModalComponent,
     BloodCampBloodPackManagerComponent,
     BloodCampBloodPackManagerAddBloodPackComponent,
@@ -64,7 +70,7 @@ import { ManagerBloodProductManagerComponent } from './components/manager-blood-
     BloodTestCenterBloodPackManagerTransferBloodPackComponent,
     BloodSeparationCenterBloodPackManagerComponent,
     BloodSeparationCenterBloodPackManagerUpdateResultComponent,
-    ManagerBloodProductManagerComponent,
+    BloodSeparationCenterBloodProductManagerComponent,
   ],
   imports: [
     SharedModule,

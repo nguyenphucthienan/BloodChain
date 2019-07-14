@@ -35,7 +35,8 @@ export class SidebarComponent implements OnInit {
   ];
 
   readonly bloodSeparationCenterRoutes = [
-    { path: '/manager/blood-separation-center/blood-packs', title: 'sidebar.title.bloodPacks', icon: 'cube' }
+    { path: '/manager/blood-separation-center/blood-packs', title: 'sidebar.title.bloodPacks', icon: 'cube' },
+    { path: '/manager/blood-separation-center/blood-products', title: 'sidebar.title.bloodProducts', icon: 'cubes' }
   ];
 
   @Output() sidebarToggled = new EventEmitter();

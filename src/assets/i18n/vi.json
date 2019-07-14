@@ -120,6 +120,10 @@
       "bloodPacks": {
         "main": "Túi máu",
         "updateSeparationResult": "Cập nhật kết quả"
+      },
+      "bloodProducts": {
+        "main": "Chế phẩm máu",
+        "transferBloodProducts": "Chuyển chế phẩm máu"
       }
     },
     "profile": {
