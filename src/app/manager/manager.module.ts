@@ -45,6 +45,7 @@ import {
 } from './modals/blood-pack-transfer-result-modal/blood-pack-transfer-result-modal.component';
 import { UserAddSuccessModalComponent } from './modals/user-add-success-modal/user-add-success-modal.component';
 import { UserManagerLiteTableService } from './services/user-manager-lite-table.service';
+import { ManagerBloodProductManagerComponent } from './components/manager-blood-product-manager/manager-blood-product-manager.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { UserManagerLiteTableService } from './services/user-manager-lite-table.
     BloodTestCenterBloodPackManagerTransferBloodPackComponent,
     BloodSeparationCenterBloodPackManagerComponent,
     BloodSeparationCenterBloodPackManagerUpdateResultComponent,
+    ManagerBloodProductManagerComponent,
   ],
   imports: [
     SharedModule,

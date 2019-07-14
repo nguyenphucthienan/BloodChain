@@ -94,12 +94,14 @@
       "bloodSeparationCenters": "Blood Separation Centers",
       "bloodBanks": "Blood Banks",
       "hospitals": "Hospitals",
-      "bloodPacks": "Blood Packs"
+      "bloodPacks": "Blood Packs",
+      "bloodProducts": "Blood Products"
     },
     "manager": {
       "main": "Manager",
       "users": "Users",
-      "addUsers": "Add User"
+      "addUsers": "Add User",
+      "bloodProducts": "Blood Products"
     },
     "bloodCamp": {
       "main": "Blood Camp",
@@ -148,7 +150,8 @@
       "bloodSeparationCenters": "Blood Separation Centers",
       "bloodBanks": "Blood Banks",
       "hospitals": "Hospitals",
-      "bloodPacks": "Blood Packs"
+      "bloodPacks": "Blood Packs",
+      "bloodProducts": "Blood Products"
     }
   },
   "pagination": {
@@ -171,7 +174,8 @@
       "bloodBankManager": "BLOOD BANKS",
       "hospitalManager": "HOSPITALS",
       "bloodPackManager": "BLOOD PACKS",
-      "donationHistory": "DONATION HISTORY"
+      "donationHistory": "DONATION HISTORY",
+      "bloodProductManager": "BLOOD PRODUCTS"
     }
   },
   "about": {
@@ -628,7 +632,7 @@
       "bloodProductType": "Blood product type",
       "result": "Result",
       "bloodType": "Blood type",
-      "expirationDate":"Expiration date",
+      "expirationDate": "Expiration date",
       "searchDonor": "Search donor",
       "searchBloodPack": "Search blood pack",
       "searchBloodTestCenter": "Search blood test center",
@@ -659,6 +663,62 @@
       "noBloodPack": "No blood pack was selected",
       "hasNotBeenTested": "This blood pack has not been tested yet",
       "testFailed": "This blood pack was failed the test"
+    },
+    "placeholder": {
+      "search": "Search (min 3 characters)"
+    }
+  },
+  "bloodProductManager": {
+    "button": {
+      "transfer": "Transfer Blood Products",
+      "scanQrCode": "Scan QR Code"
+    },
+    "column": {
+      "donor": "Donor",
+      "bloodType": "Blood Type",
+      "bloodProductType": "Blood Product Type",
+      "volume": "Volume (ml)",
+      "bloodTestCenter": "Blood Test Center",
+      "bloodSeparationCenter": "Blood Separation Center",
+      "createdAt": "Time",
+      "expirationDate": "Expiration Date"
+    },
+    "modal": {
+      "transferBloodProducts": "Transfer Blood Products"
+    },
+    "label": {
+      "donorInfo": "DONOR INFO",
+      "bloodSeparationCenterInfo": "BLOOD SEPARATION CENTER INFO",
+      "bloodProductInfo": "BLOOD PACK INFO",
+      "transferBloodProducts": "TRANSFER BLOOD PRODUCTS",
+      "id": "ID",
+      "username": "Username",
+      "email": "Email",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "gender": "Gender",
+      "birthdate": "Birthdate",
+      "phone": "Phone",
+      "address": "Address",
+      "donorId": "Donor ID",
+      "volume": "Volume (ml)",
+      "time": "Time",
+      "description": "Description",
+      "testType": "Test type",
+      "bloodProductType": "Blood product type",
+      "bloodType": "Blood type",
+      "expirationDate": "Expiration date",
+      "searchDonor": "Search donor",
+      "searchBloodProduct": "Search blood product"
+    },
+    "message": {
+      "descriptionRequired": "Description is required",
+      "transferTheseBloodProducts": "transfer these blood products"
+    },
+    "alert": {
+      "alreadySelected": "Blood product has already been selected",
+      "cannotSelect": "You cannot select this blood product",
+      "noBloodProduct": "No blood product was selected"
     },
     "placeholder": {
       "search": "Search (min 3 characters)"

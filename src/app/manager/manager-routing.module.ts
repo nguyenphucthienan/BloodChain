@@ -28,6 +28,9 @@ import {
   BloodTestCenterBloodPackManagerComponent,
 } from './components/blood-test-center-blood-pack-manager/blood-test-center-blood-pack-manager.component';
 import {
+  ManagerBloodProductManagerComponent,
+} from './components/manager-blood-product-manager/manager-blood-product-manager.component';
+import {
   ManagerUserManagerAddUserComponent,
 } from './components/manager-user-manager-add-user/manager-user-manager-add-user.component';
 import { ManagerUserManagerComponent } from './components/manager-user-manager/manager-user-manager.component';
@@ -68,6 +71,22 @@ const routes: Routes = [
             data: { breadcrumb: 'breadcrumb.manager.addUsers' }
           }
         ]
+      },
+      {
+        path: 'blood-products',
+        component: ManagerBloodProductManagerComponent,
+        canActivate: [HasRoleGuard],
+        data: {
+          roles: [
+            RoleName.ADMIN,
+            RoleName.BLOOD_CAMP,
+            RoleName.BLOOD_TEST_CENTER,
+            RoleName.BLOOD_SEPARATION_CENTER,
+            RoleName.BLOOD_BANK,
+            RoleName.HOSPITAL
+          ],
+          breadcrumb: 'breadcrumb.manager.bloodProducts'
+        }
       },
       {
         path: 'blood-camp',

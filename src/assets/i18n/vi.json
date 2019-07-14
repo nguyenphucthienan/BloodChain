@@ -94,12 +94,14 @@
       "bloodSeparationCenters": "Trung tâm phân tách",
       "bloodBanks": "Ngân hàng máu",
       "hospitals": "Bệnh viện",
-      "bloodPacks": "Túi máu"
+      "bloodPacks": "Túi máu",
+      "bloodProducts": "Chế phẩm máu"
     },
     "manager": {
       "main": "Quản lí",
       "users": "Người dùng",
-      "addUsers": "Thêm người dùng"
+      "addUsers": "Thêm người dùng",
+      "bloodProducts": "Chế phẩm máu"
     },
     "bloodCamp": {
       "main": "Trung tâm hiến máu",
@@ -144,7 +146,8 @@
       "bloodSeparationCenters": "Trung tâm phân tách",
       "bloodBanks": "Ngân hàng máu",
       "hospitals": "Bệnh viện",
-      "bloodPacks": "Túi máu"
+      "bloodPacks": "Túi máu",
+      "bloodProducts": "Chế phẩm máu"
     }
   },
   "pagination": {
@@ -167,7 +170,8 @@
       "bloodBankManager": "NGÂN HÀNG MÁU",
       "hospitalManager": "BỆNH VIỆN",
       "bloodPackManager": "TÚI MÁU",
-      "donationHistory": "LỊCH SỬ HIẾN MÁU"
+      "donationHistory": "LỊCH SỬ HIẾN MÁU",
+      "bloodProductManager": "CHẾ PHẨM MÁU"
     }
   },
   "about": {
@@ -600,8 +604,8 @@
       "transferBloodPacks": "CHUYỂN TÚI MÁU",
       "updateTestResult": "CẬP NHẬT KẾT QUẢ XÉT NGHIỆM",
       "updateSeparationResult": "CẬP NHẬT KẾT QUẢ PHÂN TÁCH",
-      "username": "Tên đăng nhập",
       "id": "ID",
+      "username": "Tên đăng nhập",
       "email": "Email",
       "firstName": "Họ",
       "lastName": "Tên",
@@ -651,10 +655,66 @@
       "updateSeparationResultSuccess": "Cập nhật kết quả phân tách thành công",
       "updateSeparationResultFailed": "Cập nhật kết quả phân tách không thành công",
       "alreadySelected": "Túi máu đã được chọn",
-      "cannotSelect": "Bạn không thể chọn túi máu này",
+      "cannotSelect": "Không thể chọn túi máu này",
       "noBloodPack": "Không có túi máu nào được chọn",
       "hasNotBeenTested": "Túi máu chưa được xét nghiệm",
       "testFailed": "Túi máu không đạt yêu cầu"
+    },
+    "placeholder": {
+      "search": "Tìm kiếm (tối thiểu 3 kí tự)"
+    }
+  },
+  "bloodProductManager": {
+    "button": {
+      "transfer": "Chuyển chế phẩm máu",
+      "scanQrCode": "Quét QR Code"
+    },
+    "column": {
+      "donor": "Người hiến",
+      "bloodType": "Nhóm máu",
+      "bloodProductType": "Loại chế phẩm máu",
+      "volume": "Thể tích (ml)",
+      "bloodTestCenter": "Trung tâm xét nghiệm",
+      "bloodSeparationCenter": "Trung tâm phân tách máu",
+      "createdAt": "Thời gian",
+      "expirationDate": "Hạn sử dụng"
+    },
+    "modal": {
+      "transferBloodProducts": "Chuyển chế phẩm máu"
+    },
+    "label": {
+      "donorInfo": "THÔNG TIN NGƯỜI HIẾN",
+      "bloodSeparationCenterInfo": "THÔNG TIN TRUNG TÂM PHÂN TÁCH MÁU",
+      "bloodProductInfo": "THÔNG TIN CHẾ PHẨM MÁU",
+      "transferBloodPacks": "CHUYỂN CHẾ PHẨM MÁU",
+      "id": "ID",
+      "username": "Tên đăng nhập",
+      "email": "Email",
+      "firstName": "Họ",
+      "lastName": "Tên",
+      "gender": "Giới tính",
+      "birthdate": "Ngày sinh",
+      "phone": "Số điện thoại",
+      "address": "Địa chỉ",
+      "donorId": "ID Người hiến",
+      "volume": "Thể tích (ml)",
+      "time": "Thời gian",
+      "description": "Miêu tả",
+      "testType": "Loại xét nghiệm",
+      "bloodProductType": "Loại chế phẩm máu",
+      "bloodType": "Nhóm máu",
+      "expirationDate": "Hạn sử dụng",
+      "searchDonor": "Tìm người hiến",
+      "searchBloodProduct": "Tìm chế phẩm máu"
+    },
+    "message": {
+      "descriptionRequired": "Miêu tả không được bỏ trống",
+      "transferTheseBloodProducts": "chuyển những chế phẩm máu này"
+    },
+    "alert": {
+      "alreadySelected": "Chế phẩm máu đã được chọn",
+      "cannotSelect": "Không thể chọn chế phẩm máu này",
+      "noBloodProduct": "Không có chế phẩm máu nào được chọn"
     },
     "placeholder": {
       "search": "Tìm kiếm (tối thiểu 3 kí tự)"
