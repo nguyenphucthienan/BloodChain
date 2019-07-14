@@ -39,6 +39,14 @@ export class SidebarComponent implements OnInit {
     { path: '/manager/blood-separation-center/blood-products', title: 'sidebar.title.bloodProducts', icon: 'cubes' }
   ];
 
+  readonly bloodBankCenterRoutes = [
+    { path: '/manager/blood-bank/blood-products', title: 'sidebar.title.bloodProducts', icon: 'cubes' }
+  ];
+
+  readonly hospitalRoutes = [
+    { path: '/manager/hospital/blood-products', title: 'sidebar.title.bloodProducts', icon: 'cubes' }
+  ];
+
   @Output() sidebarToggled = new EventEmitter();
 
   sectionPermissions = {
@@ -76,6 +84,14 @@ export class SidebarComponent implements OnInit {
               case RoleName.BLOOD_SEPARATION_CENTER:
                 this.sectionPermissions.manager = true;
                 this.sectionPermissions.bloodSeparationCenter = true;
+                break;
+              case RoleName.BLOOD_BANK:
+                this.sectionPermissions.manager = true;
+                this.sectionPermissions.bloodBank = true;
+                break;
+              case RoleName.HOSPITAL:
+                this.sectionPermissions.manager = true;
+                this.sectionPermissions.hospital = true;
                 break;
             }
           });

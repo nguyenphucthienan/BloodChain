@@ -4,6 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { RoleName } from '../core/constant/role-name';
 import { HasRoleGuard } from '../core/guards/has-role.guard';
 import {
+  BloodBankBloodProductManagerComponent,
+} from './components/blood-bank-blood-product-manager/blood-bank-blood-product-manager.component';
+import {
   BloodCampBloodPackManagerAddBloodPackComponent,
 } from './components/blood-camp-blood-pack-manager-add-blood-pack/blood-camp-blood-pack-manager-add-blood-pack.component';
 import {
@@ -200,6 +203,32 @@ const routes: Routes = [
                 path: '',
                 pathMatch: 'full',
                 component: BloodSeparationCenterBloodProductManagerComponent
+              }
+            ]
+          }
+        ]
+      },
+      {
+        path: 'blood-bank',
+        canActivate: [HasRoleGuard],
+        data: {
+          roles: [RoleName.BLOOD_BANK],
+          breadcrumb: 'breadcrumb.bloodBank.main'
+        },
+        children: [
+          {
+            path: '',
+            pathMatch: 'full',
+            redirectTo: 'blood-products'
+          },
+          {
+            path: 'blood-products',
+            data: { breadcrumb: 'breadcrumb.bloodBank.bloodProducts.main' },
+            children: [
+              {
+                path: '',
+                pathMatch: 'full',
+                component: BloodBankBloodProductManagerComponent
               }
             ]
           }

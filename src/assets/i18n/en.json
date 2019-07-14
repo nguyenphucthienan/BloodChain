@@ -130,6 +130,13 @@
         "transferBloodProducts": "Transfer Blood Products"
       }
     },
+    "bloodBank": {
+      "main": "Blood Bank",
+      "bloodProducts": {
+        "main": "Blood Products",
+        "transferBloodProducts": "Transfer Blood Products"
+      }
+    },
     "profile": {
       "main": "Profile",
       "editInfo": "Edit Info"

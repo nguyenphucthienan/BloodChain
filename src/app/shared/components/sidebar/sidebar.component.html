@@ -47,4 +47,20 @@
     </a>
     <hr>
   </ng-container>
+  <ng-container *ngIf="sectionPermissions.bloodBank">
+    <h5>{{ 'sidebar.section.bloodBank' | translate }}</h5>
+    <a *ngFor="let route of bloodBankCenterRoutes" [routerLink]="route.path" routerLinkActive="active"
+      class="list-group-item list-group-item-action waves-effect">
+      <mdb-icon fas [icon]="route.icon" class="mr-3"></mdb-icon>{{ route.title | translate }}
+    </a>
+    <hr>
+  </ng-container>
+  <ng-container *ngIf="sectionPermissions.hospital">
+    <h5>{{ 'sidebar.section.hospital' | translate }}</h5>
+    <a *ngFor="let route of hospitalRoutes" [routerLink]="route.path" routerLinkActive="active"
+      class="list-group-item list-group-item-action waves-effect">
+      <mdb-icon fas [icon]="route.icon" class="mr-3"></mdb-icon>{{ route.title | translate }}
+    </a>
+    <hr>
+  </ng-container>
 </div>

@@ -126,6 +126,13 @@
         "transferBloodProducts": "Chuyển chế phẩm máu"
       }
     },
+    "bloodBank": {
+      "main": "Ngân hàng máu",
+      "bloodProducts": {
+        "main": "Chế phẩm máu",
+        "transferBloodProducts": "Chuyển chế phẩm máu"
+      }
+    },
     "profile": {
       "main": "Hồ sơ",
       "editInfo": "Thay đổi thông tin"
