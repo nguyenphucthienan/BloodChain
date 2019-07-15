@@ -220,7 +220,7 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
     });
 
     this.modalRef.content.scanSuccess
-      .subscribe((userId: string) => this.onQrCodeScanSuccess(userId));
+      .subscribe((bloodPackId: string) => this.onQrCodeScanSuccess(bloodPackId));
   }
 
   onQrCodeScanSuccess(bloodPackId: string) {

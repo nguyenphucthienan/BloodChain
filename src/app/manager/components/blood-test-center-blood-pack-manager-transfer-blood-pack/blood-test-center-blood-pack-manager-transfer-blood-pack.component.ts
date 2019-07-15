@@ -159,7 +159,7 @@ export class BloodTestCenterBloodPackManagerTransferBloodPackComponent implement
     });
 
     this.modalRef.content.scanSuccess
-      .subscribe((userId) => this.onQrCodeScanSuccess(userId));
+      .subscribe((bloodPackId: string) => this.onQrCodeScanSuccess(bloodPackId));
   }
 
   onQrCodeScanSuccess(bloodPackId: string) {

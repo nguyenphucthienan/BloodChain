@@ -1,10 +1,8 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { fromEvent, Subscription } from 'rxjs';
 import { debounceTime, map, tap } from 'rxjs/operators';
-import { BloodPackService } from 'src/app/core/services/blood-pack.service';
 import { DatatableComponent } from 'src/app/datatable/datatable.component';
 import { TableActionType } from 'src/app/datatable/models/table-action.interface';
 import { TableCellChange } from 'src/app/datatable/models/table-cell-change.interface';
@@ -30,9 +28,7 @@ export class BloodCampBloodPackManagerComponent implements OnInit, AfterViewInit
     public bloodCampBloodPackManagerTableService: BloodCampBloodPackManagerTableService,
     private router: Router,
     private renderer: Renderer2,
-    private bloodPackService: BloodPackService,
-    private modalService: MDBModalService,
-    private translate: TranslateService
+    private modalService: MDBModalService
   ) { }
 
   ngOnInit() {
@@ -50,7 +46,7 @@ export class BloodCampBloodPackManagerComponent implements OnInit, AfterViewInit
   }
 
   searchBloodPack(value: string) {
-    if (value.length === 0 || value.length > 2) {
+    if (value.length === 0 || value.length === 24) {
       this.bloodCampBloodPackManagerTableService.pagination.page = 1;
       this.bloodCampBloodPackManagerTableService.filterMode._id = value;
       this.datatable.refresh();

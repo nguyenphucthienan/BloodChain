@@ -128,7 +128,7 @@ export class BloodCampBloodPackManagerAddBloodPackComponent implements OnInit, O
     });
 
     this.modalRef.content.scanSuccess
-      .subscribe((userId) => this.onQrCodeScanSuccess(userId));
+      .subscribe((userId: string) => this.onQrCodeScanSuccess(userId));
   }
 
   onQrCodeScanSuccess(userId: string) {
