@@ -44,8 +44,9 @@
             </ng-select>
           </div>
           <div class="md-form select-control">
-            <ng-select #organizationSelect [items]="organizations$ | async" bindValue="_id" bindLabel="name" [multiple]="false"
-              [hideSelected]="true" [loading]="organizationsLoading" [typeahead]="organizationsInput$"
+            <ng-select #organizationSelect [items]="organizations$ | async" bindValue="_id" bindLabel="name"
+              [multiple]="false" [hideSelected]="true" [loading]="organizationsLoading"
+              [typeahead]="organizationsInput$"
               [typeToSearchText]="'bloodProductManager.placeholder.search' | translate"
               [placeholder]="'bloodProductManager.label.organizationName' | translate"
               (change)="selectOrganization($event)">
@@ -80,9 +81,9 @@
       </div>
       <form [formGroup]="transferForm" (ngSubmit)="transferBloodProducts()">
         <div class="md-form">
-          <input type="text" id="organizationId" formControlName="organizationId" class="form-control" mdbInput>
-          <label for="organizationId">{{ 'bloodProductManager.label.organizationId' | translate }}</label>
-          <mdb-error *ngIf="controlHasError('organizationId', 'required')">
+          <input type="text" id="toOrganizationId" formControlName="toOrganizationId" class="form-control" mdbInput>
+          <label for="toOrganizationId">{{ 'bloodProductManager.label.organizationId' | translate }}</label>
+          <mdb-error *ngIf="controlHasError('toOrganizationId', 'required')">
             {{ 'bloodProductManager.message.bloodTestCenterIdRequired' | translate }}
           </mdb-error>
         </div>

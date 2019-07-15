@@ -20,9 +20,11 @@ import { TableCellChange } from 'src/app/datatable/models/table-cell-change.inte
 import { ScanQrcodeModalComponent } from 'src/app/shared/modals/scan-qrcode-modal/scan-qrcode-modal.component';
 
 import {
+  BloodProductTransferConfirmModalComponent,
+} from '../../modals/blood-product-transfer-confirm-modal/blood-product-transfer-confirm-modal.component';
+import {
   BloodSeparationCenterBloodProductTransferTableService,
 } from '../../services/blood-separation-center-blood-product-transfer-table.service';
-import { BloodProductTransferConfirmModalComponent } from '../../modals/blood-product-transfer-confirm-modal/blood-product-transfer-confirm-modal.component';
 
 @Component({
   selector: 'app-blood-separation-center-blood-product-manager-transfer-blood-product',
@@ -53,6 +55,7 @@ export class BloodSeparationCenterBloodProductManagerTransferBloodProductCompone
 
   organizationTypes: any[] = [];
   organizationType: any;
+  toOrganizationType: RoleName;
 
   organizationForm: FormGroup;
   transferForm: FormGroup;
@@ -160,12 +163,13 @@ export class BloodSeparationCenterBloodProductManagerTransferBloodProductCompone
     this.organizationForm.disable();
     this.transferForm = this.fb.group({
       bloodProductIds: [[]],
-      organizationId: [{ value: '', disabled: true }, Validators.required],
+      toOrganizationId: [{ value: '', disabled: true }, Validators.required],
       description: ['', [Validators.required, Validators.maxLength(1000)]],
     });
   }
 
   selectOrganizationType(organizationType: any) {
+    this.toOrganizationType = organizationType.value;
     this.organizationSelect.clearModel();
     this.initOrganizationDataField(organizationType.value);
     this.organizationForm.reset();
@@ -187,7 +191,7 @@ export class BloodSeparationCenterBloodProductManagerTransferBloodProductCompone
     });
 
     this.transferForm.patchValue({
-      organizationId: organization._id
+      toOrganizationId: organization._id
     });
   }
 
@@ -279,8 +283,11 @@ export class BloodSeparationCenterBloodProductManagerTransferBloodProductCompone
 
   onTransferBloodProductsConfirmed(bloodProductIds: string[]) {
     this.transferForm.patchValue({ bloodProductIds });
-    // this.bloodProductService.transferBloodProductsToBloodTestCenter(this.transferForm.getRawValue())
-    //   .subscribe((results) => this.openBloodProductTransferResultModal(results));
+    this.bloodProductService.transferBloodProductsToBloodBank(
+      RoleName.BLOOD_SEPARATION_CENTER,
+      this.toOrganizationType,
+      this.transferForm.getRawValue()
+    ).subscribe((results) => this.openBloodProductTransferResultModal(results));
   }
 
   openBloodProductTransferResultModal({ success, errors }) {

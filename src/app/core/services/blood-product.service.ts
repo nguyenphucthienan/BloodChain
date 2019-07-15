@@ -9,12 +9,14 @@ import { BloodProduct } from '../models/blood-product.interface';
 import { FilterMode } from '../models/filter-mode.interface';
 import { Pagination } from '../models/pagination.interface';
 import { SortMode } from '../models/sort-mode.interface';
+import { RoleName } from '../constant/role-name';
 
 @Injectable()
 export class BloodProductService {
 
   private readonly bloodProductsUrl = `${environment.apiUrl}/blood-products`;
   private readonly bloodProductUrl = `${environment.apiUrl}/blood-products/{id}`;
+  private readonly transferProductsUrl = `${environment.apiUrl}/blood-products/transfer`;
 
   private readonly defaultPagination: Pagination = {
     page: 1,
@@ -55,6 +57,15 @@ export class BloodProductService {
   deleteBloodProduct(id: string): Observable<BloodProduct> {
     const url = UrlUtils.resolvePathVariables(this.bloodProductUrl, { id });
     return this.http.delete<BloodProduct>(url);
+  }
+
+  transferBloodProductsToBloodBank(
+    fromOrganizationType: RoleName,
+    toOrganizationType: RoleName,
+    transferModel: any
+  ): Observable<any> {
+    const model = { ...transferModel, fromOrganizationType, toOrganizationType };
+    return this.http.post<any>(this.transferProductsUrl, model);
   }
 
 }
