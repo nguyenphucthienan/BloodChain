@@ -2,7 +2,6 @@ import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, Renderer2, Vie
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { fromEvent, Subscription } from 'rxjs';
 import { debounceTime, map, tap } from 'rxjs/operators';
-import { User } from 'src/app/core/models/user.interface';
 import { DatatableComponent } from 'src/app/datatable/datatable.component';
 import { TableActionType } from 'src/app/datatable/models/table-action.interface';
 import { TableCellChange } from 'src/app/datatable/models/table-cell-change.interface';
@@ -61,11 +60,6 @@ export class ManagerUserManagerComponent implements OnInit, AfterViewInit, OnDes
   }
 
   navigateToUserDetail(id: string) {
-  }
-
-  onUserAdded(user: User) {
-    this.modalRef.hide();
-    this.datatable.refresh();
   }
 
   ngOnDestroy() {

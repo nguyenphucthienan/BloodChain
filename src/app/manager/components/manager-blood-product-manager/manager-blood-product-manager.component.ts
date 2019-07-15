@@ -66,7 +66,7 @@ export class ManagerBloodProductManagerComponent implements OnInit, AfterViewIni
     });
 
     this.modalRef.content.scanSuccess
-      .subscribe((userId: string) => this.onQrCodeScanSuccess(userId));
+      .subscribe((bloodProductId: string) => this.onQrCodeScanSuccess(bloodProductId));
   }
 
   onQrCodeScanSuccess(bloodProductId: string) {
