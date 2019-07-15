@@ -89,7 +89,7 @@ export class DatatableComponent implements OnInit {
 
   private checkSelectAllOnPage() {
     if (this.selectableRow) {
-      this.selectAllOnPage = this.rows
+      this.selectAllOnPage = this.rows.length > 0 && this.rows
         .every(row => this.tableRowSelectTrackingService.getStateId(row.cells._id.value));
     }
   }
