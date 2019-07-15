@@ -39,6 +39,9 @@ import {
   BloodTestCenterBloodPackManagerComponent,
 } from './components/blood-test-center-blood-pack-manager/blood-test-center-blood-pack-manager.component';
 import {
+  HospitalBloodProductManagerTransferBloodProductComponent,
+} from './components/hospital-blood-product-manager-transfer-blood-product/hospital-blood-product-manager-transfer-blood-product.component';
+import {
   HospitalBloodProductManagerComponent,
 } from './components/hospital-blood-product-manager/hospital-blood-product-manager.component';
 import {
@@ -95,6 +98,7 @@ import { UserManagerLiteTableService } from './services/user-manager-lite-table.
     BloodProductTransferConfirmModalComponent,
     BloodProductTransferResultModalComponent,
     BloodBankBloodProductManagerTransferBloodProductComponent,
+    HospitalBloodProductManagerTransferBloodProductComponent,
   ],
   imports: [
     SharedModule,

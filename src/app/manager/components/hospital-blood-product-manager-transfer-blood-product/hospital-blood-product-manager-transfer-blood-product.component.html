@@ -1,0 +1,109 @@
+<div class="container-fluid">
+  <div class="card mt-3">
+    <div class="card-body">
+      <app-breadcrumb></app-breadcrumb>
+    </div>
+  </div>
+  <div class="card mt-3">
+    <div class="card-body">
+      <ng-select [items]="bloodProducts$ | async" bindValue="_id" bindLabel="_id" [multiple]="false"
+        [hideSelected]="true" [loading]="bloodProductsLoading" [typeahead]="bloodProductsInput$"
+        [typeToSearchText]="'bloodProductManager.placeholder.searchById' | translate"
+        [placeholder]="'bloodProductManager.label.searchBloodProduct' | translate"
+        (change)="selectBloodProduct($event)">
+      </ng-select>
+      <div class="d-flex flex-sm-row flex-column justify-content-end">
+        <button type="button" class="btn btn-sm btn-primary" (click)="openScanQrCodeModal()">
+          {{ 'bloodProductManager.button.scanQrCode' | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row row-eq-height">
+    <div class="col-md-6">
+      <div class="card mt-3 flex-card">
+        <div class="card-body">
+          <app-datatable [tableName]="'table.name.bloodProductManager' | translate"
+            [tableService]="hospitalBloodProductTransferTableService" (cellChanged)="onTableCellChanged($event)">
+          </app-datatable>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 pl-md-0">
+      <div class="card mt-3 flex-card">
+        <div class="card-body">
+          <div class="d-flex">
+            <span class="font-weight-bold">{{ 'bloodProductManager.label.organizationInfo' | translate }}</span>
+          </div>
+          <div class="md-form select-control">
+            <ng-select #organizationTypeSelect [items]="organizationTypes" bindValue="value" bindLabel="label"
+              [multiple]="false" [clearable]="false"
+              [placeholder]="'bloodProductManager.label.organizationType' | translate"
+              (change)="selectOrganizationType($event)">
+            </ng-select>
+          </div>
+          <div class="md-form select-control">
+            <ng-select #organizationSelect [items]="organizations$ | async" bindValue="_id" bindLabel="name"
+              [multiple]="false" [hideSelected]="true" [loading]="organizationsLoading"
+              [typeahead]="organizationsInput$"
+              [typeToSearchText]="'bloodProductManager.placeholder.search' | translate"
+              [placeholder]="'bloodProductManager.label.organizationName' | translate"
+              (change)="selectOrganization($event)">
+            </ng-select>
+          </div>
+          <form [formGroup]="organizationForm">
+            <div class="md-form">
+              <input type="text" id="name" formControlName="name" class="form-control" mdbInput>
+              <label for="name">{{ 'bloodTestCenterManager.label.name' | translate }}</label>
+            </div>
+            <div class="md-form">
+              <input type="text" id="address" formControlName="address" class="form-control" mdbInput>
+              <label for="address">{{ 'bloodTestCenterManager.label.address' | translate }}</label>
+            </div>
+            <div class="md-form">
+              <input type="text" id="email" formControlName="email" class="form-control" mdbInput>
+              <label for="email">{{ 'bloodTestCenterManager.label.email' | translate }}</label>
+            </div>
+            <div class="md-form">
+              <input type="text" id="phone" formControlName="phone" class="form-control" mdbInput>
+              <label for="phone">{{ 'bloodTestCenterManager.label.phone' | translate }}</label>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card mt-3">
+    <div class="card-body">
+      <div class="d-flex">
+        <span class="font-weight-bold">{{ 'bloodProductManager.label.transferBloodProducts' | translate }}</span>
+      </div>
+      <form [formGroup]="transferForm" (ngSubmit)="transferBloodProducts()">
+        <div class="md-form">
+          <input type="text" id="toOrganizationId" formControlName="toOrganizationId" class="form-control" mdbInput>
+          <label for="toOrganizationId">{{ 'bloodProductManager.label.organizationId' | translate }}</label>
+          <mdb-error *ngIf="controlHasError('toOrganizationId', 'required')">
+            {{ 'bloodProductManager.message.bloodTestCenterIdRequired' | translate }}
+          </mdb-error>
+        </div>
+        <div class="md-form">
+          <div class="md-form">
+            <textarea type="text" id="description" formControlName="description"
+              class="md-textarea md-textarea-auto form-control" mdbInput></textarea>
+            <label for="description">{{ 'bloodProductManager.label.description' | translate }}</label>
+            <mdb-error *ngIf="controlHasError('description', 'required')">
+              {{ 'bloodProductManager.message.descriptionRequired' | translate }}
+            </mdb-error>
+          </div>
+        </div>
+        <div class="d-flex flex-sm-row flex-column justify-content-end">
+          <button type="button" mdbBtn color="secondary" class=" waves-light" mdbWavesEffect
+            (click)="resetForm()">{{ 'common.button.reset' | translate }}</button>
+          <button mdbBtn type="submit" color="primary" mdbWavesEffect [disabled]="transferForm.invalid">
+            {{ 'common.button.transfer' | translate }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

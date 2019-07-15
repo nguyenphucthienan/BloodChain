@@ -4,6 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { RoleName } from '../core/constant/role-name';
 import { HasRoleGuard } from '../core/guards/has-role.guard';
 import {
+  BloodBankBloodProductManagerTransferBloodProductComponent,
+} from './components/blood-bank-blood-product-manager-transfer-blood-product/blood-bank-blood-product-manager-transfer-blood-product.component';
+import {
   BloodBankBloodProductManagerComponent,
 } from './components/blood-bank-blood-product-manager/blood-bank-blood-product-manager.component';
 import {
@@ -37,6 +40,9 @@ import {
   BloodTestCenterBloodPackManagerComponent,
 } from './components/blood-test-center-blood-pack-manager/blood-test-center-blood-pack-manager.component';
 import {
+  HospitalBloodProductManagerTransferBloodProductComponent,
+} from './components/hospital-blood-product-manager-transfer-blood-product/hospital-blood-product-manager-transfer-blood-product.component';
+import {
   HospitalBloodProductManagerComponent,
 } from './components/hospital-blood-product-manager/hospital-blood-product-manager.component';
 import {
@@ -46,7 +52,6 @@ import {
   ManagerUserManagerAddUserComponent,
 } from './components/manager-user-manager-add-user/manager-user-manager-add-user.component';
 import { ManagerUserManagerComponent } from './components/manager-user-manager/manager-user-manager.component';
-import { BloodBankBloodProductManagerTransferBloodProductComponent } from './components/blood-bank-blood-product-manager-transfer-blood-product/blood-bank-blood-product-manager-transfer-blood-product.component';
 
 const routes: Routes = [
   {
@@ -272,6 +277,11 @@ const routes: Routes = [
                 path: '',
                 pathMatch: 'full',
                 component: HospitalBloodProductManagerComponent
+              },
+              {
+                path: 'transfer',
+                component: HospitalBloodProductManagerTransferBloodProductComponent,
+                data: { breadcrumb: 'breadcrumb.bloodBank.bloodProducts.transferBloodProducts' }
               }
             ]
           }
