@@ -158,6 +158,12 @@ export class BloodCampBloodPackManagerTransferBloodPackComponent implements OnIn
   }
 
   selectBloodTestCenter(bloodTestCenter: BloodTestCenter) {
+    if (!bloodTestCenter) {
+      this.bloodTestCenterForm.reset();
+      this.transferForm.reset();
+      return;
+    }
+
     this.bloodTestCenterForm.patchValue({
       name: bloodTestCenter.name,
       address: bloodTestCenter.address,

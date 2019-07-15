@@ -171,6 +171,12 @@ export class BloodTestCenterBloodPackManagerTransferBloodPackComponent implement
   }
 
   selectBloodSeparationCenter(bloodSeparationCenter: BloodSeparationCenter) {
+    if (!bloodSeparationCenter) {
+      this.bloodSeparationCenterForm.reset();
+      this.transferForm.reset();
+      return;
+    }
+
     this.bloodSeparationCenterForm.patchValue({
       name: bloodSeparationCenter.name,
       address: bloodSeparationCenter.address,

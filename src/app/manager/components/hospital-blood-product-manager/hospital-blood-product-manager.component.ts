@@ -88,7 +88,7 @@ export class HospitalBloodProductManagerComponent implements OnInit, AfterViewIn
     const selectedRows = this.datatable.rows
       .filter(row => selectedIds.includes(row.cells._id.value));
 
-    this.router.navigate(['/manager', 'blood-separation-center', 'blood-products', 'transfer'], {
+    this.router.navigate(['/manager', 'hospital', 'blood-products', 'transfer'], {
       state: { bloodProducts: selectedRows }
     });
   }
