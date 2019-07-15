@@ -23,6 +23,9 @@ import {
   BloodProductTransferConfirmModalComponent,
 } from '../../modals/blood-product-transfer-confirm-modal/blood-product-transfer-confirm-modal.component';
 import {
+  BloodProductTransferResultModalComponent,
+} from '../../modals/blood-product-transfer-result-modal/blood-product-transfer-result-modal.component';
+import {
   BloodSeparationCenterBloodProductTransferTableService,
 } from '../../services/blood-separation-center-blood-product-transfer-table.service';
 
@@ -291,22 +294,22 @@ export class BloodSeparationCenterBloodProductManagerTransferBloodProductCompone
   }
 
   openBloodProductTransferResultModal({ success, errors }) {
-    // this.modalRef = this.modalService.show(BloodProductTransferResultModalComponent, {
-    //   backdrop: true,
-    //   keyboard: true,
-    //   focus: true,
-    //   show: false,
-    //   ignoreBackdropClick: true,
-    //   class: 'modal-dialog-centered',
-    //   containerClass: 'top',
-    //   animated: true,
-    //   data: {
-    //     success,
-    //     errors
-    //   }
-    // });
+    this.modalRef = this.modalService.show(BloodProductTransferResultModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        success,
+        errors
+      }
+    });
 
-    // this.modalRef.content.closed.subscribe(() => this.resetForm());
+    this.modalRef.content.closed.subscribe(() => this.resetForm());
   }
 
   resetForm() {

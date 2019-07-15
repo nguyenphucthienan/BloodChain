@@ -5,11 +5,11 @@ import { ParamsBuilder } from 'src/app/utils/params-builder';
 import { UrlUtils } from 'src/app/utils/url-utils';
 import { environment } from 'src/environments/environment';
 
+import { RoleName } from '../constant/role-name';
 import { BloodProduct } from '../models/blood-product.interface';
 import { FilterMode } from '../models/filter-mode.interface';
 import { Pagination } from '../models/pagination.interface';
 import { SortMode } from '../models/sort-mode.interface';
-import { RoleName } from '../constant/role-name';
 
 @Injectable()
 export class BloodProductService {

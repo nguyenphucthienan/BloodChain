@@ -61,6 +61,9 @@ import {
 import {
   BloodProductTransferConfirmModalComponent,
 } from './modals/blood-product-transfer-confirm-modal/blood-product-transfer-confirm-modal.component';
+import {
+  BloodProductTransferResultModalComponent,
+} from './modals/blood-product-transfer-result-modal/blood-product-transfer-result-modal.component';
 import { UserAddSuccessModalComponent } from './modals/user-add-success-modal/user-add-success-modal.component';
 import { UserManagerLiteTableService } from './services/user-manager-lite-table.service';
 
@@ -87,6 +90,7 @@ import { UserManagerLiteTableService } from './services/user-manager-lite-table.
     BloodBankBloodProductManagerComponent,
     HospitalBloodProductManagerComponent,
     BloodProductTransferConfirmModalComponent,
+    BloodProductTransferResultModalComponent,
   ],
   imports: [
     SharedModule,
@@ -102,6 +106,7 @@ import { UserManagerLiteTableService } from './services/user-manager-lite-table.
     BloodPackTransferConfirmModalComponent,
     BloodPackTransferResultModalComponent,
     BloodProductTransferConfirmModalComponent,
+    BloodProductTransferResultModalComponent
   ]
 })
 export class ManagerModule { }
