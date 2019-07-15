@@ -22,6 +22,7 @@ import { ScanQrcodeModalComponent } from 'src/app/shared/modals/scan-qrcode-moda
 import {
   BloodSeparationCenterBloodProductTransferTableService,
 } from '../../services/blood-separation-center-blood-product-transfer-table.service';
+import { BloodProductTransferConfirmModalComponent } from '../../modals/blood-product-transfer-confirm-modal/blood-product-transfer-confirm-modal.component';
 
 @Component({
   selector: 'app-blood-separation-center-blood-product-manager-transfer-blood-product',
@@ -261,19 +262,19 @@ export class BloodSeparationCenterBloodProductManagerTransferBloodProductCompone
   }
 
   openBloodProductTransferConfirmModal(bloodProductIds: string[]) {
-    // this.modalRef = this.modalService.show(BloodProductTransferConfirmModalComponent, {
-    //   backdrop: true,
-    //   keyboard: true,
-    //   focus: true,
-    //   show: false,
-    //   ignoreBackdropClick: true,
-    //   class: 'modal-dialog-centered',
-    //   containerClass: 'top',
-    //   animated: true
-    // });
+    this.modalRef = this.modalService.show(BloodProductTransferConfirmModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-dialog-centered',
+      containerClass: 'top',
+      animated: true
+    });
 
-    // this.modalRef.content.confirmed
-    //   .subscribe(() => this.onTransferBloodProductsConfirmed(bloodProductIds));
+    this.modalRef.content.confirmed
+      .subscribe(() => this.onTransferBloodProductsConfirmed(bloodProductIds));
   }
 
   onTransferBloodProductsConfirmed(bloodProductIds: string[]) {
