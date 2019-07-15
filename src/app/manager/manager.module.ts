@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { DatatableModule } from '../datatable/datatable.module';
 import { SharedModule } from '../shared/shared.module';
 import {
+  BloodBankBloodProductManagerTransferBloodProductComponent,
+} from './components/blood-bank-blood-product-manager-transfer-blood-product/blood-bank-blood-product-manager-transfer-blood-product.component';
+import {
   BloodBankBloodProductManagerComponent,
 } from './components/blood-bank-blood-product-manager/blood-bank-blood-product-manager.component';
 import {
@@ -91,6 +94,7 @@ import { UserManagerLiteTableService } from './services/user-manager-lite-table.
     HospitalBloodProductManagerComponent,
     BloodProductTransferConfirmModalComponent,
     BloodProductTransferResultModalComponent,
+    BloodBankBloodProductManagerTransferBloodProductComponent,
   ],
   imports: [
     SharedModule,

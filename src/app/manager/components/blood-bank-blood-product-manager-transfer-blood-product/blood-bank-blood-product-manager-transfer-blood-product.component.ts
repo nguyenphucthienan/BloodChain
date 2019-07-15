@@ -25,17 +25,15 @@ import {
 import {
   BloodProductTransferResultModalComponent,
 } from '../../modals/blood-product-transfer-result-modal/blood-product-transfer-result-modal.component';
-import {
-  BloodSeparationCenterBloodProductTransferTableService,
-} from '../../services/blood-separation-center-blood-product-transfer-table.service';
+import { BloodBankBloodProductTransferTableService } from '../../services/blood-bank-blood-product-transfer-table.service';
 
 @Component({
-  selector: 'app-blood-separation-center-blood-product-manager-transfer-blood-product',
-  templateUrl: './blood-separation-center-blood-product-manager-transfer-blood-product.component.html',
-  styleUrls: ['./blood-separation-center-blood-product-manager-transfer-blood-product.component.scss'],
-  providers: [BloodSeparationCenterBloodProductTransferTableService]
+  selector: 'app-blood-bank-blood-product-manager-transfer-blood-product',
+  templateUrl: './blood-bank-blood-product-manager-transfer-blood-product.component.html',
+  styleUrls: ['./blood-bank-blood-product-manager-transfer-blood-product.component.scss'],
+  providers: [BloodBankBloodProductTransferTableService]
 })
-export class BloodSeparationCenterBloodProductManagerTransferBloodProductComponent implements OnInit, OnDestroy {
+export class BloodBankBloodProductManagerTransferBloodProductComponent implements OnInit, OnDestroy {
 
   readonly organizationTypeTranslations = [
     { translation: 'bloodProductManager.organization.bloodBank', value: RoleName.BLOOD_BANK },
@@ -74,13 +72,13 @@ export class BloodSeparationCenterBloodProductManagerTransferBloodProductCompone
     private alertService: AlertService,
     private modalService: MDBModalService,
     private translate: TranslateService,
-    public bloodSeparationCenterBloodProductTransferTableService: BloodSeparationCenterBloodProductTransferTableService
+    public bloodBankBloodProductTransferTableService: BloodBankBloodProductTransferTableService
   ) {
     const navigation = this.router.getCurrentNavigation();
     if (navigation.extras.state) {
       const { bloodProducts } = navigation.extras.state;
       if (bloodProducts) {
-        this.bloodSeparationCenterBloodProductTransferTableService.setDataRows(bloodProducts);
+        this.bloodBankBloodProductTransferTableService.setDataRows(bloodProducts);
       }
     }
   }
@@ -210,7 +208,7 @@ export class BloodSeparationCenterBloodProductManagerTransferBloodProductCompone
           return;
         }
 
-        this.bloodSeparationCenterBloodProductTransferTableService.addRawDataRow(bloodProduct);
+        this.bloodBankBloodProductTransferTableService.addRawDataRow(bloodProduct);
         this.datatable.refresh();
       });
   }
@@ -254,12 +252,12 @@ export class BloodSeparationCenterBloodProductManagerTransferBloodProductCompone
   }
 
   removeBloodProductFromList(id: string) {
-    this.bloodSeparationCenterBloodProductTransferTableService.removeDataRow(id);
+    this.bloodBankBloodProductTransferTableService.removeDataRow(id);
     this.datatable.refresh();
   }
 
   transferBloodProducts() {
-    const bloodProductIds = this.bloodSeparationCenterBloodProductTransferTableService.getAllRowIds();
+    const bloodProductIds = this.bloodBankBloodProductTransferTableService.getAllRowIds();
     if (bloodProductIds.length === 0) {
       this.alertService.error('bloodProductManager.alert.noBloodProduct');
       return;
@@ -287,7 +285,7 @@ export class BloodSeparationCenterBloodProductManagerTransferBloodProductCompone
   onTransferBloodProductsConfirmed(bloodProductIds: string[]) {
     this.transferForm.patchValue({ bloodProductIds });
     this.bloodProductService.transferBloodProducts(
-      RoleName.BLOOD_SEPARATION_CENTER,
+      RoleName.BLOOD_BANK,
       this.toOrganizationType,
       this.transferForm.getRawValue()
     ).subscribe((results) => this.openBloodProductTransferResultModal(results));
@@ -316,7 +314,7 @@ export class BloodSeparationCenterBloodProductManagerTransferBloodProductCompone
     this.organizationSelect.clearModel();
     this.organizationForm.reset();
     this.transferForm.reset();
-    this.bloodSeparationCenterBloodProductTransferTableService.removeAllDataRows();
+    this.bloodBankBloodProductTransferTableService.removeAllDataRows();
     this.datatable.refresh();
   }
 

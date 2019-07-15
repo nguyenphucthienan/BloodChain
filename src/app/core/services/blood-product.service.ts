@@ -59,7 +59,7 @@ export class BloodProductService {
     return this.http.delete<BloodProduct>(url);
   }
 
-  transferBloodProductsToBloodBank(
+  transferBloodProducts(
     fromOrganizationType: RoleName,
     toOrganizationType: RoleName,
     transferModel: any

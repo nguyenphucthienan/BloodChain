@@ -46,6 +46,7 @@ import {
   ManagerUserManagerAddUserComponent,
 } from './components/manager-user-manager-add-user/manager-user-manager-add-user.component';
 import { ManagerUserManagerComponent } from './components/manager-user-manager/manager-user-manager.component';
+import { BloodBankBloodProductManagerTransferBloodProductComponent } from './components/blood-bank-blood-product-manager-transfer-blood-product/blood-bank-blood-product-manager-transfer-blood-product.component';
 
 const routes: Routes = [
   {
@@ -240,6 +241,11 @@ const routes: Routes = [
                 path: '',
                 pathMatch: 'full',
                 component: BloodBankBloodProductManagerComponent
+              },
+              {
+                path: 'transfer',
+                component: BloodBankBloodProductManagerTransferBloodProductComponent,
+                data: { breadcrumb: 'breadcrumb.bloodBank.bloodProducts.transferBloodProducts' }
               }
             ]
           }
