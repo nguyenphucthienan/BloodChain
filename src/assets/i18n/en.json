@@ -707,8 +707,8 @@
     },
     "label": {
       "donorInfo": "DONOR INFO",
-      "bloodSeparationCenterInfo": "BLOOD SEPARATION CENTER INFO",
-      "bloodProductInfo": "BLOOD PACK INFO",
+      "organizationInfo": "ORGANIZATION INFO",
+      "bloodProductInfo": "BLOOD PRODUCT INFO",
       "transferBloodProducts": "TRANSFER BLOOD PRODUCTS",
       "id": "ID",
       "username": "Username",
@@ -727,6 +727,9 @@
       "bloodProductType": "Blood product type",
       "bloodType": "Blood type",
       "expirationDate": "Expiration date",
+      "organizationType": "Organization type",
+      "organizationName": "Organization name",
+      "organizationId": "Organization ID",
       "searchDonor": "Search donor",
       "searchBloodProduct": "Search blood product"
     },
@@ -742,6 +745,10 @@
     "placeholder": {
       "search": "Search (min 3 characters)",
       "searchById": "Search by ID"
+    },
+    "organization": {
+      "bloodBank": "Blood Bank",
+      "hospital": "Hospital"
     }
   }
 }

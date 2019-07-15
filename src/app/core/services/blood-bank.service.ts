@@ -68,4 +68,13 @@ export class BloodBankService {
     return this.http.get<User[]>(url);
   }
 
+  searchBloodBanks(name: string): Observable<BloodBank[]> {
+    const params = new ParamsBuilder()
+      .setParam('name', name)
+      .applySort({ sortBy: 'name', isSortAscending: true })
+      .build();
+
+    return this.http.get<BloodBank[]>(this.bloodBanksUrl, { params });
+  }
+
 }

@@ -22,6 +22,9 @@ import {
   BloodSeparationCenterBloodPackManagerComponent,
 } from './components/blood-separation-center-blood-pack-manager/blood-separation-center-blood-pack-manager.component';
 import {
+  BloodSeparationCenterBloodProductManagerTransferBloodProductComponent,
+} from './components/blood-separation-center-blood-product-manager-transfer-blood-product/blood-separation-center-blood-product-manager-transfer-blood-product.component';
+import {
   BloodSeparationCenterBloodProductManagerComponent,
 } from './components/blood-separation-center-blood-product-manager/blood-separation-center-blood-product-manager.component';
 import {
@@ -195,7 +198,7 @@ const routes: Routes = [
                 path: 'update',
                 component: BloodSeparationCenterBloodPackManagerUpdateResultComponent,
                 data: { breadcrumb: 'breadcrumb.bloodSeparationCenter.bloodPacks.updateSeparationResult' }
-              },
+              }
             ]
           },
           {
@@ -206,6 +209,11 @@ const routes: Routes = [
                 path: '',
                 pathMatch: 'full',
                 component: BloodSeparationCenterBloodProductManagerComponent
+              },
+              {
+                path: 'transfer',
+                component: BloodSeparationCenterBloodProductManagerTransferBloodProductComponent,
+                data: { breadcrumb: 'breadcrumb.bloodSeparationCenter.bloodProducts.transferBloodProducts' }
               }
             ]
           }

@@ -23,8 +23,8 @@
   <div class="card mt-3">
     <div class="card-body">
       <app-datatable [tableName]="'table.name.bloodProductManager' | translate"
-        [tableService]="bloodSeparationCenterBloodProductManagerTableService"
-        (cellChanged)="onTableCellChanged($event)">
+        [tableService]="bloodSeparationCenterBloodProductManagerTableService" (cellChanged)="onTableCellChanged($event)"
+        [selectableRow]="true">
       </app-datatable>
     </div>
   </div>

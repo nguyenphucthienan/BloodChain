@@ -703,7 +703,7 @@
     },
     "label": {
       "donorInfo": "THÔNG TIN NGƯỜI HIẾN",
-      "bloodSeparationCenterInfo": "THÔNG TIN TRUNG TÂM PHÂN TÁCH MÁU",
+      "organizationInfo": "THÔNG TIN TỔ CHỨC",
       "bloodProductInfo": "THÔNG TIN CHẾ PHẨM MÁU",
       "transferBloodPacks": "CHUYỂN CHẾ PHẨM MÁU",
       "id": "ID",
@@ -723,6 +723,9 @@
       "bloodProductType": "Loại chế phẩm máu",
       "bloodType": "Nhóm máu",
       "expirationDate": "Hạn sử dụng",
+      "organizationType": "Loại tổ chức",
+      "organizationName": "Tên tổ chức",
+      "organizationId": "ID tổ chức",
       "searchDonor": "Tìm người hiến",
       "searchBloodProduct": "Tìm chế phẩm máu"
     },
@@ -738,6 +741,10 @@
     "placeholder": {
       "search": "Tìm kiếm (tối thiểu 3 kí tự)",
       "searchById": "Tìm kiếm theo ID"
+    },
+    "organization": {
+      "bloodBank": "Ngân hàng máu",
+      "hospital": "Bệnh viện"
     }
   }
 }

@@ -21,6 +21,9 @@ import {
   BloodSeparationCenterBloodPackManagerComponent,
 } from './components/blood-separation-center-blood-pack-manager/blood-separation-center-blood-pack-manager.component';
 import {
+  BloodSeparationCenterBloodProductManagerTransferBloodProductComponent,
+} from './components/blood-separation-center-blood-product-manager-transfer-blood-product/blood-separation-center-blood-product-manager-transfer-blood-product.component';
+import {
   BloodSeparationCenterBloodProductManagerComponent,
 } from './components/blood-separation-center-blood-product-manager/blood-separation-center-blood-product-manager.component';
 import {
@@ -77,6 +80,7 @@ import { UserManagerLiteTableService } from './services/user-manager-lite-table.
     BloodSeparationCenterBloodPackManagerComponent,
     BloodSeparationCenterBloodPackManagerUpdateResultComponent,
     BloodSeparationCenterBloodProductManagerComponent,
+    BloodSeparationCenterBloodProductManagerTransferBloodProductComponent,
     BloodBankBloodProductManagerComponent,
     HospitalBloodProductManagerComponent,
   ],

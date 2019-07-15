@@ -68,4 +68,13 @@ export class HospitalService {
     return this.http.get<User[]>(url);
   }
 
+  searchHospitals(name: string): Observable<Hospital[]> {
+    const params = new ParamsBuilder()
+      .setParam('name', name)
+      .applySort({ sortBy: 'name', isSortAscending: true })
+      .build();
+
+    return this.http.get<Hospital[]>(this.hospitalsUrl, { params });
+  }
+
 }
