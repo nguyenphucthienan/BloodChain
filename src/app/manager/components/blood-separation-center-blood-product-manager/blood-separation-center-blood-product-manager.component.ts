@@ -68,7 +68,7 @@ export class BloodSeparationCenterBloodProductManagerComponent implements OnInit
     });
 
     this.modalRef.content.scanSuccess
-      .subscribe((userId: string) => this.onQrCodeScanSuccess(userId));
+      .subscribe((bloodProductId: string) => this.onQrCodeScanSuccess(bloodProductId));
   }
 
   onQrCodeScanSuccess(bloodProductId: string) {

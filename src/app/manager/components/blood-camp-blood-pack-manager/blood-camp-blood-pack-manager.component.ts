@@ -1,11 +1,14 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { MDBModalRef } from 'angular-bootstrap-md';
+import { TranslateService } from '@ngx-translate/core';
+import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { fromEvent, Subscription } from 'rxjs';
 import { debounceTime, map, tap } from 'rxjs/operators';
+import { BloodPackService } from 'src/app/core/services/blood-pack.service';
 import { DatatableComponent } from 'src/app/datatable/datatable.component';
 import { TableActionType } from 'src/app/datatable/models/table-action.interface';
 import { TableCellChange } from 'src/app/datatable/models/table-cell-change.interface';
+import { ScanQrcodeModalComponent } from 'src/app/shared/modals/scan-qrcode-modal/scan-qrcode-modal.component';
 
 import { BloodCampBloodPackManagerTableService } from '../../services/blood-camp-blood-pack-manager-table.service';
 
@@ -26,7 +29,10 @@ export class BloodCampBloodPackManagerComponent implements OnInit, AfterViewInit
   constructor(
     public bloodCampBloodPackManagerTableService: BloodCampBloodPackManagerTableService,
     private router: Router,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    private bloodPackService: BloodPackService,
+    private modalService: MDBModalService,
+    private translate: TranslateService
   ) { }
 
   ngOnInit() {
@@ -49,6 +55,27 @@ export class BloodCampBloodPackManagerComponent implements OnInit, AfterViewInit
       this.bloodCampBloodPackManagerTableService.filterMode._id = value;
       this.datatable.refresh();
     }
+  }
+
+  openScanQrCodeModal() {
+    this.modalRef = this.modalService.show(ScanQrcodeModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-lg modal-dialog-centered',
+      containerClass: 'top',
+      animated: true
+    });
+
+    this.modalRef.content.scanSuccess
+      .subscribe((bloodPackId: string) => this.onQrCodeScanSuccess(bloodPackId));
+  }
+
+  onQrCodeScanSuccess(bloodPackId: string) {
+    this.bloodCampBloodPackManagerTableService.filterMode._id = bloodPackId;
+    this.datatable.refresh();
   }
 
   onTableCellChanged(tableCellChange: TableCellChange) {

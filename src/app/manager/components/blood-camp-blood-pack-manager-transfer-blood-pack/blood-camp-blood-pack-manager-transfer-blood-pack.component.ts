@@ -146,7 +146,7 @@ export class BloodCampBloodPackManagerTransferBloodPackComponent implements OnIn
     });
 
     this.modalRef.content.scanSuccess
-      .subscribe((userId) => this.onQrCodeScanSuccess(userId));
+      .subscribe((bloodPackId: string) => this.onQrCodeScanSuccess(bloodPackId));
   }
 
   onQrCodeScanSuccess(bloodPackId: string) {
