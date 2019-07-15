@@ -225,7 +225,7 @@ export class BloodSeparationCenterBloodPackManagerUpdateResultComponent implemen
     });
 
     this.modalRef.content.scanSuccess
-      .subscribe((userId: string) => this.onQrCodeScanSuccess(userId));
+      .subscribe((bloodPackId: string) => this.onQrCodeScanSuccess(bloodPackId));
   }
 
   onQrCodeScanSuccess(bloodPackId: string) {

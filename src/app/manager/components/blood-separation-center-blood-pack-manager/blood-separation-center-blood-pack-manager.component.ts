@@ -1,11 +1,12 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { MDBModalRef } from 'angular-bootstrap-md';
+import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { fromEvent, Subscription } from 'rxjs';
 import { debounceTime, map, tap } from 'rxjs/operators';
 import { DatatableComponent } from 'src/app/datatable/datatable.component';
 import { TableActionType } from 'src/app/datatable/models/table-action.interface';
 import { TableCellChange } from 'src/app/datatable/models/table-cell-change.interface';
+import { ScanQrcodeModalComponent } from 'src/app/shared/modals/scan-qrcode-modal/scan-qrcode-modal.component';
 
 import {
   BloodSeparationCenterBloodPackManagerTableService,
@@ -28,7 +29,8 @@ export class BloodSeparationCenterBloodPackManagerComponent implements OnInit, A
   constructor(
     public bloodSeparationCenterBloodPackManagerTableService: BloodSeparationCenterBloodPackManagerTableService,
     private router: Router,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    private modalService: MDBModalService
   ) { }
 
   ngOnInit() {
@@ -46,11 +48,32 @@ export class BloodSeparationCenterBloodPackManagerComponent implements OnInit, A
   }
 
   searchBloodPack(value: string) {
-    if (value.length === 0 || value.length > 2) {
+    if (value.length === 0 || value.length === 24) {
       this.bloodSeparationCenterBloodPackManagerTableService.pagination.page = 1;
       this.bloodSeparationCenterBloodPackManagerTableService.filterMode._id = value;
       this.datatable.refresh();
     }
+  }
+
+  openScanQrCodeModal() {
+    this.modalRef = this.modalService.show(ScanQrcodeModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-lg modal-dialog-centered',
+      containerClass: 'top',
+      animated: true
+    });
+
+    this.modalRef.content.scanSuccess
+      .subscribe((bloodPackId: string) => this.onQrCodeScanSuccess(bloodPackId));
+  }
+
+  onQrCodeScanSuccess(bloodPackId: string) {
+    this.bloodSeparationCenterBloodPackManagerTableService.filterMode._id = bloodPackId;
+    this.datatable.refresh();
   }
 
   onTableCellChanged(tableCellChange: TableCellChange) {
