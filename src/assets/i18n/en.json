@@ -207,6 +207,12 @@
       "thesis": "THESIS"
     }
   },
+  "not-found": {
+    "title": "404",
+    "label": {
+      "not-found": "Page not found"
+    }
+  },
   "login": {
     "title": "Login",
     "label": {

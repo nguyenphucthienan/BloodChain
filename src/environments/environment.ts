@@ -9,7 +9,10 @@ export const environment = {
   blacklistedRoutes: ['localhost:3000/api/auth'],
   authTokenName: 'auth-token',
   mapApiKey: 'AIzaSyB2MsjvYImNAUWNxbWSiZGQ5TdxNaPbPcY',
-  defaultUserPhotoUrl: './assets/images/users/default.png'
+  photoUrl: {
+    notFound: './assets/images/pages/not-found.svg',
+    defaultUser: './assets/images/users/default.png'
+  }
 };
 
 /*

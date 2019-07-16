@@ -5,6 +5,7 @@ import { NotLoggedInGuard } from './core/guards/not-logged-in.guard';
 import { AboutComponent } from './public/components/about/about.component';
 import { LandingComponent } from './public/components/landing/landing.component';
 import { LoginComponent } from './public/components/login/login.component';
+import { NotFoundComponent } from './public/components/not-found/not-found.component';
 import { RegisterComponent } from './public/components/register/register.component';
 
 const routes: Routes = [
@@ -26,6 +27,14 @@ const routes: Routes = [
     path: 'register',
     component: RegisterComponent,
     canActivate: [NotLoggedInGuard]
+  },
+  {
+    path: '404',
+    component: NotFoundComponent,
+  },
+  {
+    path: '**',
+    redirectTo: '/404'
   }
 ];
 

@@ -203,6 +203,12 @@
       "thesis": "KHÓA LUẬN TỐT NGHIỆP"
     }
   },
+  "not-found": {
+    "title": "404",
+    "label": {
+      "not-found": "Không tìm thấy trang"
+    }
+  },
   "login": {
     "title": "Đăng nhập",
     "label": {

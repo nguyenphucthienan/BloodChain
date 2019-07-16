@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDatepicker } from '@angular/material/datepicker';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import * as moment from 'moment';
@@ -19,7 +19,7 @@ import { environment } from 'src/environments/environment';
 })
 export class ProfileEditInfoComponent implements OnInit {
 
-  readonly defaultPhotoUrl = environment.defaultUserPhotoUrl;
+  readonly defaultPhotoUrl = environment.photoUrl.defaultUser;
 
   private readonly genders = [
     { translation: 'common.gender.male', value: 'Male' },
@@ -35,7 +35,6 @@ export class ProfileEditInfoComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private route: ActivatedRoute,
     private fb: FormBuilder,
     private modalService: MDBModalService,
     private authService: AuthService,

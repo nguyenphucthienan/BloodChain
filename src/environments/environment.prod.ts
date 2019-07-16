@@ -5,5 +5,8 @@ export const environment = {
   blacklistedRoutes: ['bloodchain.herokuapp.com/api/auth'],
   authTokenName: 'auth-token',
   mapApiKey: 'AIzaSyB2MsjvYImNAUWNxbWSiZGQ5TdxNaPbPcY',
-  defaultUserPhotoUrl: './assets/images/users/default.png'
+  photoUrl: {
+    notFound: './assets/images/pages/not-found.svg',
+    defaultUser: './assets/images/users/default.png'
+  }
 };

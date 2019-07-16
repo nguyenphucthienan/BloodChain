@@ -21,7 +21,7 @@ export class UserResolver implements Resolve<User> {
       .pipe(
         catchError(error => {
           this.alertService.error('common.alert.getDataFailed');
-          this.router.navigate(['/manager', 'users']);
+          this.router.navigate(['/404']);
           return of(null);
         })
       );

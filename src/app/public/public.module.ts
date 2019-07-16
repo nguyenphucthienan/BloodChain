@@ -5,6 +5,7 @@ import { SharedModule } from '../shared/shared.module';
 import { AboutComponent } from './components/about/about.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { LoginComponent } from './components/login/login.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
@@ -12,7 +13,8 @@ import { RegisterComponent } from './components/register/register.component';
     LandingComponent,
     AboutComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    NotFoundComponent
   ],
   imports: [
     SharedModule,
