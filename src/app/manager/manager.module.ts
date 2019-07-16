@@ -54,6 +54,9 @@ import {
   ManagerBloodPackManagerComponent,
 } from './components/manager-blood-pack-manager/manager-blood-pack-manager.component';
 import {
+  ManagerBloodProductManagerBloodProductDetailComponent,
+} from './components/manager-blood-product-manager-blood-product-detail/manager-blood-product-manager-blood-product-detail.component';
+import {
   ManagerBloodProductManagerComponent,
 } from './components/manager-blood-product-manager/manager-blood-product-manager.component';
 import {
@@ -86,6 +89,7 @@ import {
 import { UserAddSuccessModalComponent } from './modals/user-add-success-modal/user-add-success-modal.component';
 import { UserQrcodeModalComponent } from './modals/user-qrcode-modal/user-qrcode-modal.component';
 import { BloodPackResolver } from './resolvers/blood-pack.resolver';
+import { BloodProductResolver } from './resolvers/blood-product.resolver';
 import { UserResolver } from './resolvers/user.resolver';
 
 @NgModule({
@@ -98,6 +102,7 @@ import { UserResolver } from './resolvers/user.resolver';
     ManagerBloodPackManagerBloodPackDetailComponent,
     ManagerBloodPackManagerDonationHistoryComponent,
     ManagerBloodProductManagerComponent,
+    ManagerBloodProductManagerBloodProductDetailComponent,
     BloodPackAddSuccessModalComponent,
     BloodCampBloodPackManagerComponent,
     BloodCampBloodPackManagerAddBloodPackComponent,
@@ -128,7 +133,8 @@ import { UserResolver } from './resolvers/user.resolver';
   ],
   providers: [
     UserResolver,
-    BloodPackResolver
+    BloodPackResolver,
+    BloodProductResolver
   ],
   entryComponents: [
     UserAddSuccessModalComponent,

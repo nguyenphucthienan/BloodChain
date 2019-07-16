@@ -84,6 +84,7 @@ export class ManagerBloodProductManagerComponent implements OnInit, AfterViewIni
   }
 
   navigateToBloodProductDetail(id: string) {
+    this.router.navigate(['/manager', 'blood-products', id]);
   }
 
   ngOnDestroy() {

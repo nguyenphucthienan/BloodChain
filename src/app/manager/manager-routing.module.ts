@@ -52,6 +52,9 @@ import {
   ManagerBloodPackManagerComponent,
 } from './components/manager-blood-pack-manager/manager-blood-pack-manager.component';
 import {
+  ManagerBloodProductManagerBloodProductDetailComponent,
+} from './components/manager-blood-product-manager-blood-product-detail/manager-blood-product-manager-blood-product-detail.component';
+import {
   ManagerBloodProductManagerComponent,
 } from './components/manager-blood-product-manager/manager-blood-product-manager.component';
 import {
@@ -62,6 +65,7 @@ import {
 } from './components/manager-user-manager-user-detail/manager-user-manager-user-detail.component';
 import { ManagerUserManagerComponent } from './components/manager-user-manager/manager-user-manager.component';
 import { BloodPackResolver } from './resolvers/blood-pack.resolver';
+import { BloodProductResolver } from './resolvers/blood-product.resolver';
 import { UserResolver } from './resolvers/user.resolver';
 
 const routes: Routes = [
@@ -137,7 +141,6 @@ const routes: Routes = [
       },
       {
         path: 'blood-products',
-        component: ManagerBloodProductManagerComponent,
         canActivate: [HasRoleGuard],
         data: {
           roles: [
@@ -149,7 +152,20 @@ const routes: Routes = [
             RoleName.HOSPITAL
           ],
           breadcrumb: 'breadcrumb.manager.bloodProducts.main'
-        }
+        },
+        children: [
+          {
+            path: '',
+            pathMatch: 'full',
+            component: ManagerBloodProductManagerComponent,
+          },
+          {
+            path: ':id',
+            component: ManagerBloodProductManagerBloodProductDetailComponent,
+            resolve: { bloodProduct: BloodProductResolver },
+            data: { breadcrumb: 'breadcrumb.manager.bloodPacks.bloodProductDetail' }
+          }
+        ]
       },
       {
         path: 'blood-camp',

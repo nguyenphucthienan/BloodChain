@@ -1,7 +1,7 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { BloodPack } from 'src/app/core/models/blood-pack.interface';
 import { User } from 'src/app/core/models/user.interface';
@@ -34,6 +34,7 @@ export class ManagerBloodPackManagerBloodPackDetailComponent implements OnInit, 
 
   constructor(
     public bloodPackDetailBloodProductTableService: BloodPackDetailBloodProductTableService,
+    private router: Router,
     private route: ActivatedRoute,
     private fb: FormBuilder,
     private renderer: Renderer2,
@@ -144,6 +145,7 @@ export class ManagerBloodPackManagerBloodPackDetailComponent implements OnInit, 
   }
 
   navigateToBloodProductDetail(id: string) {
+    this.router.navigate(['/manager', 'blood-products', id]);
   }
 
   ngOnDestroy() {
