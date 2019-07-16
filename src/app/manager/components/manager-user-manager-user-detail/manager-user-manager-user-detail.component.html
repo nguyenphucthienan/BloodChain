@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <div class="card mt-3">
+    <div class="card-body">
+      <app-breadcrumb></app-breadcrumb>
+    </div>
+  </div>
+  <div class="card mt-3">
+    <div class="card-body">
+      <div class="d-flex flex-sm-row flex-column justify-content-end">
+        <button type="button" class="btn btn-sm btn-primary">
+          {{ 'userManager.button.printQrCode' | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row row-eq-height">
+    <div class="col-md-6">
+      <div class="card mt-3 flex-card">
+        <div class="card-body">
+          <div class="d-flex">
+            <span class="font-weight-bold">{{ 'userManager.label.userInfo' | translate }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 pl-md-0">
+      <div class="card mt-3 flex-card">
+        <div class="card-body">
+          <div class="d-flex">
+            <span class="font-weight-bold">{{ 'userManager.label.mapInfo' | translate }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card mt-3">
+    <div class="card-body">
+    </div>
+  </div>
+</div>

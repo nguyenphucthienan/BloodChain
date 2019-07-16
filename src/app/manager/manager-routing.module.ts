@@ -51,6 +51,9 @@ import {
 import {
   ManagerUserManagerAddUserComponent,
 } from './components/manager-user-manager-add-user/manager-user-manager-add-user.component';
+import {
+  ManagerUserManagerUserDetailComponent,
+} from './components/manager-user-manager-user-detail/manager-user-manager-user-detail.component';
 import { ManagerUserManagerComponent } from './components/manager-user-manager/manager-user-manager.component';
 
 const routes: Routes = [
@@ -87,6 +90,11 @@ const routes: Routes = [
             path: 'add',
             component: ManagerUserManagerAddUserComponent,
             data: { breadcrumb: 'breadcrumb.manager.addUsers' }
+          },
+          {
+            path: ':id',
+            component: ManagerUserManagerUserDetailComponent,
+            data: { breadcrumb: 'breadcrumb.manager.userDetail' }
           }
         ]
       },

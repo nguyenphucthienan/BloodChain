@@ -101,6 +101,7 @@
       "main": "Manager",
       "users": "Users",
       "addUsers": "Add User",
+      "userDetail": "User Detail",
       "bloodProducts": "Blood Products"
     },
     "bloodCamp": {
@@ -312,12 +313,15 @@
   "userManager": {
     "button": {
       "add": "Add User",
-      "scanQrCode": "Scan QR Code"
+      "scanQrCode": "Scan QR Code",
+      "printQrCode": "Print QR Code"
     },
     "column": {
       "roles": "Roles"
     },
     "label": {
+      "userInfo": "USER INFO",
+      "mapInfo": "MAP",
       "id": "ID",
       "username": "Username",
       "email": "Email",

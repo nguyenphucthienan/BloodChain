@@ -101,6 +101,7 @@
       "main": "Quản lí",
       "users": "Người dùng",
       "addUsers": "Thêm người dùng",
+      "userDetail": "Thông tin người dùng",
       "bloodProducts": "Chế phẩm máu"
     },
     "bloodCamp": {
@@ -308,12 +309,15 @@
   "userManager": {
     "button": {
       "add": "Thêm người dùng",
-      "scanQrCode": "Quét QR Code"
+      "scanQrCode": "Quét QR Code",
+      "printQrCode": "In QR Code"
     },
     "column": {
       "roles": "Vai trò"
     },
     "label": {
+      "userInfo": "THÔNG TIN NGƯỜI DÙNG",
+      "mapInfo": "BẢN ĐỒ",
       "id": "ID",
       "username": "Tên đăng nhập",
       "email": "Email",

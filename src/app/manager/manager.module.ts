@@ -53,6 +53,9 @@ import {
 import {
   ManagerUserManagerAddUserComponent,
 } from './components/manager-user-manager-add-user/manager-user-manager-add-user.component';
+import {
+  ManagerUserManagerUserDetailComponent,
+} from './components/manager-user-manager-user-detail/manager-user-manager-user-detail.component';
 import { ManagerUserManagerComponent } from './components/manager-user-manager/manager-user-manager.component';
 import { ManagerRoutingModule } from './manager-routing.module';
 import {
@@ -80,6 +83,7 @@ import { UserManagerLiteTableService } from './services/user-manager-lite-table.
   declarations: [
     ManagerUserManagerComponent,
     ManagerUserManagerAddUserComponent,
+    ManagerUserManagerUserDetailComponent,
     UserAddSuccessModalComponent,
     ManagerBloodPackManagerDonationHistoryComponent,
     ManagerBloodProductManagerComponent,
@@ -102,7 +106,7 @@ import { UserManagerLiteTableService } from './services/user-manager-lite-table.
     BloodProductTransferConfirmModalComponent,
     BloodProductTransferResultModalComponent,
     BloodBankBloodProductManagerTransferBloodProductComponent,
-    HospitalBloodProductManagerTransferBloodProductComponent
+    HospitalBloodProductManagerTransferBloodProductComponent,
   ],
   imports: [
     SharedModule,
