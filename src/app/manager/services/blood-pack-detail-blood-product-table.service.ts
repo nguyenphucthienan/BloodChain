@@ -4,7 +4,7 @@ import { FilterMode } from 'src/app/core/models/filter-mode.interface';
 import { Pagination } from 'src/app/core/models/pagination.interface';
 import { SortMode } from 'src/app/core/models/sort-mode.interface';
 import { AlertService } from 'src/app/core/services/alert.service';
-import { BloodPackService } from 'src/app/core/services/blood-pack.service';
+import { BloodProductService } from 'src/app/core/services/blood-product.service';
 import { TableAction, TableActionType } from 'src/app/datatable/models/table-action.interface';
 import { TableCell } from 'src/app/datatable/models/table-cell.interface';
 import { TableColumn } from 'src/app/datatable/models/table-column.interface';
@@ -12,23 +12,15 @@ import { TableRow } from 'src/app/datatable/models/table-row.interface';
 import { TableService } from 'src/app/datatable/services/table.service';
 
 @Injectable()
-export class UserDetailBloodDonationHistoryTableService implements TableService {
+export class BloodPackDetailBloodProductTableService implements TableService {
 
   columns: TableColumn[] = [
     { name: '_id', text: 'common.column.id', type: 'IdTableCellComponent', center: true, sortable: true },
-    { name: 'createdAt', text: 'bloodPackManager.column.createdAt', type: 'DateTimeTableCellComponent', sortable: true },
-    { name: 'volume', text: 'bloodPackManager.column.volume', type: 'TextTableCellComponent', sortable: true },
-    { name: 'bloodCamp', text: 'bloodPackManager.column.bloodCamp', type: 'ObjectTextTableCellComponent', sortable: true },
+    { name: 'createdAt', text: 'bloodProductManager.column.createdAt', type: 'DateTimeTableCellComponent', sortable: true },
+    { name: 'bloodProductType', text: 'bloodProductManager.column.bloodProductType', type: 'ObjectTextTableCellComponent', sortable: true },
     { name: 'bloodType', text: 'bloodPackManager.column.bloodType', type: 'TextTableCellComponent', sortable: true },
-    { name: 'tested', text: 'bloodPackManager.column.tested', type: 'BooleanTableCellComponent', center: true, sortable: true },
-    {
-      name: 'testPassed',
-      text: 'bloodPackManager.column.testPassed',
-      type: 'BooleanTwoValuesTableCellComponent',
-      center: true,
-      sortable: true
-    },
-    { name: 'separated', text: 'bloodPackManager.column.separated', type: 'BooleanTableCellComponent', center: true, sortable: true },
+    { name: 'volume', text: 'bloodProductManager.column.volume', type: 'TextTableCellComponent', sortable: true },
+    { name: 'expirationDate', text: 'bloodProductManager.column.expirationDate', type: 'DateTableCellComponent', sortable: true },
     { name: 'actions', text: 'common.column.actions', type: 'ActionsTableCellComponent', center: true }
   ];
 
@@ -40,7 +32,7 @@ export class UserDetailBloodDonationHistoryTableService implements TableService 
   };
 
   sortMode: SortMode = {
-    sortBy: 'createdAt',
+    sortBy: '_id',
     isSortAscending: false
   };
 
@@ -51,7 +43,7 @@ export class UserDetailBloodDonationHistoryTableService implements TableService 
   ];
 
   constructor(
-    private bloodPackService: BloodPackService,
+    private bloodProductService: BloodProductService,
     private alertService: AlertService
   ) { }
 
@@ -60,8 +52,8 @@ export class UserDetailBloodDonationHistoryTableService implements TableService 
   }
 
   getRawData() {
-    if (this.filterMode.donor) {
-      return this.bloodPackService.getBloodPacks(
+    if (this.filterMode.bloodPack) {
+      return this.bloodProductService.getBloodProducts(
         this.pagination,
         this.sortMode,
         this.filterMode
@@ -87,7 +79,13 @@ export class UserDetailBloodDonationHistoryTableService implements TableService 
               continue;
             }
 
-            if (key === 'bloodCamp') {
+            if (key === 'donor') {
+              cells[key] = {
+                value: row[key],
+                textProperty: 'username'
+              };
+            } else if (key === 'bloodProductType'
+              || key === 'bloodSeparationCenter') {
               cells[key] = {
                 value: row[key],
                 textProperty: 'name'

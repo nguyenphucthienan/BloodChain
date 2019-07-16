@@ -1,32 +1,38 @@
 import { DatePipe } from '@angular/common';
-import { Component, OnDestroy, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { BloodPack } from 'src/app/core/models/blood-pack.interface';
 import { User } from 'src/app/core/models/user.interface';
 import { UserService } from 'src/app/core/services/user.service';
+import { DatatableComponent } from 'src/app/datatable/datatable.component';
 import { TableActionType } from 'src/app/datatable/models/table-action.interface';
 import { TableCellChange } from 'src/app/datatable/models/table-cell-change.interface';
+
+import { BloodPackDetailBloodProductTableService } from '../../services/blood-pack-detail-blood-product-table.service';
 
 @Component({
   selector: 'app-manager-blood-pack-manager-blood-pack-detail',
   templateUrl: './manager-blood-pack-manager-blood-pack-detail.component.html',
   styleUrls: ['./manager-blood-pack-manager-blood-pack-detail.component.scss'],
   providers: [
+    BloodPackDetailBloodProductTableService,
     DatePipe
   ]
 })
 export class ManagerBloodPackManagerBloodPackDetailComponent implements OnInit, OnDestroy {
 
+  @ViewChild(DatatableComponent) datatable: DatatableComponent;
+
   bloodPack: BloodPack;
+  modalRef: MDBModalRef;
 
   userForm: FormGroup;
   bloodPackForm: FormGroup;
 
-  modalRef: MDBModalRef;
-
   constructor(
+    public bloodPackDetailBloodProductTableService: BloodPackDetailBloodProductTableService,
     private route: ActivatedRoute,
     private fb: FormBuilder,
     private renderer: Renderer2,
@@ -67,6 +73,9 @@ export class ManagerBloodPackManagerBloodPackDetailComponent implements OnInit, 
           testPassed: this.bloodPack.testPassed,
           separated: this.bloodPack.separated
         });
+
+        this.bloodPackDetailBloodProductTableService.filterMode.bloodPack = this.bloodPack._id;
+        this.datatable.refresh();
       });
     });
   }
