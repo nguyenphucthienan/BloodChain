@@ -73,7 +73,7 @@
             </div>
           </div>
         </div>
-        <div class="form-row">
+        <div class="form-row d-flex align-items-center">
           <div class="col">
             <div class="md-form form-col md-form-gender">
               <ng-select id="gender" [items]="genders$ | async" bindValue="value" bindLabel="label" [multiple]="false"
@@ -99,7 +99,7 @@
           </mdb-error>
         </div>
         <div class="md-form">
-          <app-map-input (locationChanged)="onLocationChanged($event)"></app-map-input>
+          <app-map-input [height]="'400px'" (locationChanged)="onLocationChanged($event)"></app-map-input>
         </div>
         <hr>
         <div class="d-flex flex-sm-row flex-column justify-content-end">

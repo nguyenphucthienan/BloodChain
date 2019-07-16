@@ -110,7 +110,7 @@
       },
       "bloodProducts": {
         "main": "Blood Products",
-        "bloodProductDetail": "BloodProductDetail"
+        "bloodProductDetail": "Blood Product Detail"
       }
     },
     "bloodCamp": {

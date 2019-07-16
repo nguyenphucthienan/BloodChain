@@ -26,7 +26,7 @@ export class BloodDonationHistoryLiteTableService implements TableService {
 
   defaultPagination: Pagination = {
     page: 1,
-    size: 6,
+    size: 5,
     totalItems: 0,
     totalPages: 0
   };
