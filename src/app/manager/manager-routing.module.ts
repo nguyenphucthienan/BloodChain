@@ -55,6 +55,7 @@ import {
   ManagerUserManagerUserDetailComponent,
 } from './components/manager-user-manager-user-detail/manager-user-manager-user-detail.component';
 import { ManagerUserManagerComponent } from './components/manager-user-manager/manager-user-manager.component';
+import { UserResolver } from './resolvers/user.resolver';
 
 const routes: Routes = [
   {
@@ -94,6 +95,7 @@ const routes: Routes = [
           {
             path: ':id',
             component: ManagerUserManagerUserDetailComponent,
+            resolve: { user: UserResolver },
             data: { breadcrumb: 'breadcrumb.manager.userDetail' }
           }
         ]

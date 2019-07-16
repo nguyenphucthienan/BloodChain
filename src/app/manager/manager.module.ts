@@ -77,7 +77,7 @@ import {
   BloodProductTransferResultModalComponent,
 } from './modals/blood-product-transfer-result-modal/blood-product-transfer-result-modal.component';
 import { UserAddSuccessModalComponent } from './modals/user-add-success-modal/user-add-success-modal.component';
-import { UserManagerLiteTableService } from './services/user-manager-lite-table.service';
+import { UserResolver } from './resolvers/user.resolver';
 
 @NgModule({
   declarations: [
@@ -114,7 +114,7 @@ import { UserManagerLiteTableService } from './services/user-manager-lite-table.
     ManagerRoutingModule
   ],
   providers: [
-    UserManagerLiteTableService
+    UserResolver
   ],
   entryComponents: [
     UserAddSuccessModalComponent,
