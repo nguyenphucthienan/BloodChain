@@ -19,6 +19,10 @@ import { BloodProductService } from 'src/app/core/services/blood-product.service
 import { UserService } from 'src/app/core/services/user.service';
 import { ScanQrcodeModalComponent } from 'src/app/shared/modals/scan-qrcode-modal/scan-qrcode-modal.component';
 
+import {
+  BloodPackUpdateSeparationResultResultModalComponent,
+} from '../../modals/blood-pack-update-separation-result-result-modal/blood-pack-update-separation-result-result-modal.component';
+
 @Component({
   selector: 'app-blood-separation-center-blood-pack-manager-update-result',
   templateUrl: './blood-separation-center-blood-pack-manager-update-result.component.html',
@@ -262,9 +266,32 @@ export class BloodSeparationCenterBloodPackManagerUpdateResultComponent implemen
       .subscribe(
         (bloodPack: BloodPack) => {
           this.alertService.success('bloodPackManager.alert.updateSeparationResultSuccess');
-          this.resetForms();
+          this.openBloodPackUpdateResultSuccessModal(bloodPack);
         },
         error => this.alertService.error('bloodPackManager.alert.updateSeparationResultFailed'));
+  }
+
+  openBloodPackUpdateResultSuccessModal(bloodPack: BloodPack) {
+    this.modalRef = this.modalService.show(BloodPackUpdateSeparationResultResultModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-lg modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        bloodPack
+      }
+    });
+
+    this.modalRef.content.closed
+      .subscribe(() => this.onBloodPackAddSuccessModalClosed());
+  }
+
+  onBloodPackAddSuccessModalClosed() {
+    this.resetForms();
   }
 
   get separationResultFormArray() {

@@ -65,6 +65,9 @@ import {
   BloodPackTransferResultModalComponent,
 } from './modals/blood-pack-transfer-result-modal/blood-pack-transfer-result-modal.component';
 import {
+  BloodPackUpdateSeparationResultResultModalComponent,
+} from './modals/blood-pack-update-separation-result-result-modal/blood-pack-update-separation-result-result-modal.component';
+import {
   BloodProductTransferConfirmModalComponent,
 } from './modals/blood-product-transfer-confirm-modal/blood-product-transfer-confirm-modal.component';
 import {
@@ -86,6 +89,7 @@ import { UserManagerLiteTableService } from './services/user-manager-lite-table.
     BloodCampBloodPackManagerTransferBloodPackComponent,
     BloodPackTransferConfirmModalComponent,
     BloodPackTransferResultModalComponent,
+    BloodPackUpdateSeparationResultResultModalComponent,
     BloodTestCenterBloodPackManagerComponent,
     BloodTestCenterBloodPackManagerUpdateResultComponent,
     BloodTestCenterBloodPackManagerTransferBloodPackComponent,
@@ -98,7 +102,7 @@ import { UserManagerLiteTableService } from './services/user-manager-lite-table.
     BloodProductTransferConfirmModalComponent,
     BloodProductTransferResultModalComponent,
     BloodBankBloodProductManagerTransferBloodProductComponent,
-    HospitalBloodProductManagerTransferBloodProductComponent,
+    HospitalBloodProductManagerTransferBloodProductComponent
   ],
   imports: [
     SharedModule,
@@ -113,6 +117,7 @@ import { UserManagerLiteTableService } from './services/user-manager-lite-table.
     BloodPackAddSuccessModalComponent,
     BloodPackTransferConfirmModalComponent,
     BloodPackTransferResultModalComponent,
+    BloodPackUpdateSeparationResultResultModalComponent,
     BloodProductTransferConfirmModalComponent,
     BloodProductTransferResultModalComponent
   ]

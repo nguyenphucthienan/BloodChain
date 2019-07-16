@@ -185,6 +185,7 @@
       "bloodCampManager": "TRUNG TÂM HIẾN MÁU",
       "bloodTestCenterManager": "TRUNG TÂM XÉT NGHIỆM MÁU",
       "bloodSeparationCenterManager": "TRUNG TÂM PHÂN TÁCH MÁU",
+      "bloodSeparationResults": "KẾT QUẢ PHÂN TÁCH",
       "bloodBankManager": "NGÂN HÀNG MÁU",
       "hospitalManager": "BỆNH VIỆN",
       "bloodPackManager": "TÚI MÁU",
@@ -611,6 +612,7 @@
     },
     "modal": {
       "bloodPackInfo": "Thông tin túi máu",
+      "bloodSeparationResults": "Kết quả phân tách",
       "transferBloodPacks": "Chuyển túi máu"
     },
     "label": {

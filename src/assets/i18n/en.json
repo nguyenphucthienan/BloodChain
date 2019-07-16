@@ -189,6 +189,7 @@
       "bloodCampManager": "BLOOD CAMPS",
       "bloodTestCenterManager": "BLOOD TEST CENTERS",
       "bloodSeparationCenterManager": "BLOOD SEPARATION CENTERS",
+      "bloodSeparationResults": "BLOOD SEPARATION RESULTS",
       "bloodBankManager": "BLOOD BANKS",
       "hospitalManager": "HOSPITALS",
       "bloodPackManager": "BLOOD PACKS",
@@ -615,6 +616,7 @@
     },
     "modal": {
       "bloodPackInfo": "Blood Pack Info",
+      "bloodSeparationResults": "Blood Separation Results",
       "transferBloodPacks": "Transfer Blood Packs"
     },
     "label": {
