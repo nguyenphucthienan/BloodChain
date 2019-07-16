@@ -77,6 +77,7 @@ import {
   BloodProductTransferResultModalComponent,
 } from './modals/blood-product-transfer-result-modal/blood-product-transfer-result-modal.component';
 import { UserAddSuccessModalComponent } from './modals/user-add-success-modal/user-add-success-modal.component';
+import { UserQrcodeModalComponent } from './modals/user-qrcode-modal/user-qrcode-modal.component';
 import { UserResolver } from './resolvers/user.resolver';
 
 @NgModule({
@@ -107,6 +108,7 @@ import { UserResolver } from './resolvers/user.resolver';
     BloodProductTransferResultModalComponent,
     BloodBankBloodProductManagerTransferBloodProductComponent,
     HospitalBloodProductManagerTransferBloodProductComponent,
+    UserQrcodeModalComponent,
   ],
   imports: [
     SharedModule,
@@ -123,7 +125,8 @@ import { UserResolver } from './resolvers/user.resolver';
     BloodPackTransferResultModalComponent,
     BloodPackUpdateSeparationResultResultModalComponent,
     BloodProductTransferConfirmModalComponent,
-    BloodProductTransferResultModalComponent
+    BloodProductTransferResultModalComponent,
+    UserQrcodeModalComponent,
   ]
 })
 export class ManagerModule { }
