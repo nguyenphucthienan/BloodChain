@@ -67,6 +67,7 @@ import { ManagerRoutingModule } from './manager-routing.module';
 import {
   BloodPackAddSuccessModalComponent,
 } from './modals/blood-pack-add-success-modal/blood-pack-add-success-modal.component';
+import { BloodPackQrcodeModalComponent } from './modals/blood-pack-qrcode-modal/blood-pack-qrcode-modal.component';
 import {
   BloodPackTransferConfirmModalComponent,
 } from './modals/blood-pack-transfer-confirm-modal/blood-pack-transfer-confirm-modal.component';
@@ -118,6 +119,7 @@ import { UserResolver } from './resolvers/user.resolver';
     BloodBankBloodProductManagerTransferBloodProductComponent,
     HospitalBloodProductManagerTransferBloodProductComponent,
     UserQrcodeModalComponent,
+    BloodPackQrcodeModalComponent,
   ],
   imports: [
     SharedModule,
@@ -137,6 +139,7 @@ import { UserResolver } from './resolvers/user.resolver';
     BloodProductTransferConfirmModalComponent,
     BloodProductTransferResultModalComponent,
     UserQrcodeModalComponent,
+    BloodPackQrcodeModalComponent,
   ]
 })
 export class ManagerModule { }

@@ -1,10 +1,9 @@
-import { Component, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { Point } from 'src/app/core/models/point.interface';
 import { User } from 'src/app/core/models/user.interface';
-import { DatatableComponent } from 'src/app/datatable/datatable.component';
 import { TableActionType } from 'src/app/datatable/models/table-action.interface';
 import { TableCellChange } from 'src/app/datatable/models/table-cell-change.interface';
 
@@ -18,8 +17,6 @@ import { UserDetailBloodDonationHistoryTableService } from '../../services/user-
   providers: [UserDetailBloodDonationHistoryTableService]
 })
 export class ManagerUserManagerUserDetailComponent implements OnInit, OnDestroy {
-
-  @ViewChild(DatatableComponent) datatable: DatatableComponent;
 
   user: User;
   userForm: FormGroup;
@@ -74,7 +71,6 @@ export class ManagerUserManagerUserDetailComponent implements OnInit, OnDestroy 
       });
 
       this.userDetailBloodDonationHistoryTableService.filterMode.donor = this.user._id;
-      this.datatable.refresh();
     });
   }
 

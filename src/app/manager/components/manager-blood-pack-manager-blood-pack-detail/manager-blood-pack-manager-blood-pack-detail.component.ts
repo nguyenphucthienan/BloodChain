@@ -10,6 +10,7 @@ import { DatatableComponent } from 'src/app/datatable/datatable.component';
 import { TableActionType } from 'src/app/datatable/models/table-action.interface';
 import { TableCellChange } from 'src/app/datatable/models/table-cell-change.interface';
 
+import { BloodPackQrcodeModalComponent } from '../../modals/blood-pack-qrcode-modal/blood-pack-qrcode-modal.component';
 import { BloodPackDetailBloodProductTableService } from '../../services/blood-pack-detail-blood-product-table.service';
 
 @Component({
@@ -118,19 +119,19 @@ export class ManagerBloodPackManagerBloodPackDetailComponent implements OnInit, 
   }
 
   openBloodPackQrCodeModal() {
-    // this.modalRef = this.modalService.show(UserQrcodeModalComponent, {
-    //   backdrop: true,
-    //   keyboard: true,
-    //   focus: true,
-    //   show: false,
-    //   ignoreBackdropClick: true,
-    //   class: 'modal-dialog-centered',
-    //   containerClass: 'top',
-    //   animated: true,
-    //   data: {
-    //     bloodPack: this.bloodPack
-    //   }
-    // });
+    this.modalRef = this.modalService.show(BloodPackQrcodeModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        bloodPack: this.bloodPack
+      }
+    });
   }
 
   onTableCellChanged(tableCellChange: TableCellChange) {
