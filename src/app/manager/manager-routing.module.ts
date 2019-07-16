@@ -163,7 +163,7 @@ const routes: Routes = [
             path: ':id',
             component: ManagerBloodProductManagerBloodProductDetailComponent,
             resolve: { bloodProduct: BloodProductResolver },
-            data: { breadcrumb: 'breadcrumb.manager.bloodPacks.bloodProductDetail' }
+            data: { breadcrumb: 'breadcrumb.manager.bloodProducts.bloodProductDetail' }
           }
         ]
       },
