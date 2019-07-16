@@ -12,13 +12,23 @@ import { TableRow } from 'src/app/datatable/models/table-row.interface';
 import { TableService } from 'src/app/datatable/services/table.service';
 
 @Injectable()
-export class BloodDonationHistoryLiteTableService implements TableService {
+export class UserDetailBloodDonationHistoryTableService implements TableService {
 
   columns: TableColumn[] = [
     { name: '_id', text: 'common.column.id', type: 'IdTableCellComponent', center: true, sortable: true },
     { name: 'createdAt', text: 'bloodPackManager.column.createdAt', type: 'DateTimeTableCellComponent', sortable: true },
     { name: 'volume', text: 'bloodPackManager.column.volume', type: 'TextTableCellComponent', sortable: true },
     { name: 'bloodCamp', text: 'bloodPackManager.column.bloodCamp', type: 'ObjectTextTableCellComponent', sortable: true },
+    { name: 'bloodType', text: 'bloodPackManager.column.bloodType', type: 'TextTableCellComponent', sortable: true },
+    { name: 'tested', text: 'bloodPackManager.column.tested', type: 'BooleanTableCellComponent', center: true, sortable: true },
+    {
+      name: 'testPassed',
+      text: 'bloodPackManager.column.testPassed',
+      type: 'BooleanTwoValuesTableCellComponent',
+      center: true,
+      sortable: true
+    },
+    { name: 'separated', text: 'bloodPackManager.column.separated', type: 'BooleanTableCellComponent', center: true, sortable: true },
     { name: 'actions', text: 'common.column.actions', type: 'ActionsTableCellComponent', center: true }
   ];
 
@@ -26,7 +36,7 @@ export class BloodDonationHistoryLiteTableService implements TableService {
 
   defaultPagination: Pagination = {
     page: 1,
-    size: 6,
+    size: 10,
     totalItems: 0,
     totalPages: 0
   };

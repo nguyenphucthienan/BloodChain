@@ -3,11 +3,16 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Point } from 'src/app/core/models/point.interface';
 import { User } from 'src/app/core/models/user.interface';
+import { TableActionType } from 'src/app/datatable/models/table-action.interface';
+import { TableCellChange } from 'src/app/datatable/models/table-cell-change.interface';
+
+import { UserDetailBloodDonationHistoryTableService } from '../../services/user-detail-blood-donation-history-table.service';
 
 @Component({
   selector: 'app-manager-user-manager-user-detail',
   templateUrl: './manager-user-manager-user-detail.component.html',
-  styleUrls: ['./manager-user-manager-user-detail.component.scss']
+  styleUrls: ['./manager-user-manager-user-detail.component.scss'],
+  providers: [UserDetailBloodDonationHistoryTableService]
 })
 export class ManagerUserManagerUserDetailComponent implements OnInit, OnDestroy {
 
@@ -16,6 +21,7 @@ export class ManagerUserManagerUserDetailComponent implements OnInit, OnDestroy 
   point: Point;
 
   constructor(
+    public userDetailBloodDonationHistoryTableService: UserDetailBloodDonationHistoryTableService,
     private route: ActivatedRoute,
     private fb: FormBuilder,
     private renderer: Renderer2
@@ -58,7 +64,21 @@ export class ManagerUserManagerUserDetailComponent implements OnInit, OnDestroy 
         address: this.user.address,
         location: this.user.location
       });
+
+      this.userDetailBloodDonationHistoryTableService.filterMode.donor = this.user._id;
     });
+  }
+
+  onTableCellChanged(tableCellChange: TableCellChange) {
+    const action = tableCellChange.newValue;
+    switch (action.type) {
+      case TableActionType.GetDetail:
+        this.navigateToBloodPackDetail(tableCellChange.row.cells._id.value);
+        break;
+    }
+  }
+
+  navigateToBloodPackDetail(id: string) {
   }
 
   ngOnDestroy() {

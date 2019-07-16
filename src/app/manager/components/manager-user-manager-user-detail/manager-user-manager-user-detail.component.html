@@ -93,6 +93,7 @@
               <agm-marker [latitude]="point.coordinates[1]" [longitude]="point.coordinates[0]">
               </agm-marker>
             </agm-map>
+            <span *ngIf="!point" class="font-weight-bold">{{ 'common.message.noData' | translate }}</span>
           </div>
         </div>
       </div>
@@ -100,6 +101,9 @@
   </div>
   <div class="card mt-3">
     <div class="card-body">
+      <app-datatable [tableName]="'table.name.donationHistory' | translate"
+        [tableService]="userDetailBloodDonationHistoryTableService" (cellChanged)="onTableCellChanged($event)">
+      </app-datatable>
     </div>
   </div>
 </div>
