@@ -1,4 +1,4 @@
 export interface Point {
   type: 'Point';
-  coordinate: Array<number>;
+  coordinates: Array<number>;
 }

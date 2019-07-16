@@ -8,8 +8,8 @@ import { Component, ElementRef, EventEmitter, Input, NgZone, OnInit, Output, Vie
 })
 export class MapInputComponent implements OnInit {
 
-  @Input() lat;
-  @Input() lng;
+  @Input() lat: number;
+  @Input() lng: number;
   @Input() zoom = 15;
   @Input() height = '300px';
 

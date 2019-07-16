@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { Point } from 'src/app/core/models/point.interface';
 import { User } from 'src/app/core/models/user.interface';
 
 @Component({
@@ -12,6 +13,7 @@ export class ManagerUserManagerUserDetailComponent implements OnInit, OnDestroy 
 
   user: User;
   userForm: FormGroup;
+  point: Point;
 
   constructor(
     private route: ActivatedRoute,
@@ -44,6 +46,7 @@ export class ManagerUserManagerUserDetailComponent implements OnInit, OnDestroy 
     this.userForm.disable();
     this.route.data.subscribe(data => {
       this.user = data.user;
+      this.point = this.user.location;
       this.userForm.patchValue({
         username: this.user.username,
         firstName: this.user.firstName,
