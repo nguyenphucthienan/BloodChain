@@ -6,6 +6,7 @@ import { debounceTime, map, tap } from 'rxjs/operators';
 import { DatatableComponent } from 'src/app/datatable/datatable.component';
 import { TableActionType } from 'src/app/datatable/models/table-action.interface';
 import { TableCellChange } from 'src/app/datatable/models/table-cell-change.interface';
+import { ScanQrcodeModalComponent } from 'src/app/shared/modals/scan-qrcode-modal/scan-qrcode-modal.component';
 
 import { UserManagerLiteTableService } from '../../services/user-manager-lite-table.service';
 
@@ -50,6 +51,27 @@ export class ManagerUserManagerComponent implements OnInit, AfterViewInit, OnDes
       this.userManagerLiteTableService.filterMode.username = value;
       this.datatable.refresh();
     }
+  }
+
+  openScanQrCodeModal() {
+    this.modalRef = this.modalService.show(ScanQrcodeModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-lg modal-dialog-centered',
+      containerClass: 'top',
+      animated: true
+    });
+
+    this.modalRef.content.scanSuccess
+      .subscribe((userId: string) => this.onQrCodeScanSuccess(userId));
+  }
+
+  onQrCodeScanSuccess(userId: string) {
+    this.userManagerLiteTableService.filterMode._id = userId;
+    this.datatable.refresh();
   }
 
   onTableCellChanged(tableCellChange: TableCellChange) {
