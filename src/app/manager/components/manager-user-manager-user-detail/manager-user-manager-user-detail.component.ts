@@ -55,7 +55,7 @@ export class ManagerUserManagerUserDetailComponent implements OnInit, OnDestroy 
     });
 
     this.userForm.disable();
-    this.route.data.subscribe(data => {
+    this.route.data.subscribe((data: any) => {
       this.user = data.user;
       this.point = this.user.location;
       this.userForm.patchValue({

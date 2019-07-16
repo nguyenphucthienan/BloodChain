@@ -45,6 +45,9 @@ import {
   HospitalBloodProductManagerComponent,
 } from './components/hospital-blood-product-manager/hospital-blood-product-manager.component';
 import {
+  ManagerBloodPackManagerBloodPackDetailComponent,
+} from './components/manager-blood-pack-manager-blood-pack-detail/manager-blood-pack-manager-blood-pack-detail.component';
+import {
   ManagerBloodPackManagerDonationHistoryComponent,
 } from './components/manager-blood-pack-manager-donation-history/manager-blood-pack-manager-donation-history.component';
 import {
@@ -81,6 +84,7 @@ import {
 } from './modals/blood-product-transfer-result-modal/blood-product-transfer-result-modal.component';
 import { UserAddSuccessModalComponent } from './modals/user-add-success-modal/user-add-success-modal.component';
 import { UserQrcodeModalComponent } from './modals/user-qrcode-modal/user-qrcode-modal.component';
+import { BloodPackResolver } from './resolvers/blood-pack.resolver';
 import { UserResolver } from './resolvers/user.resolver';
 
 @NgModule({
@@ -90,6 +94,7 @@ import { UserResolver } from './resolvers/user.resolver';
     ManagerUserManagerUserDetailComponent,
     UserAddSuccessModalComponent,
     ManagerBloodPackManagerComponent,
+    ManagerBloodPackManagerBloodPackDetailComponent,
     ManagerBloodPackManagerDonationHistoryComponent,
     ManagerBloodProductManagerComponent,
     BloodPackAddSuccessModalComponent,
@@ -120,7 +125,8 @@ import { UserResolver } from './resolvers/user.resolver';
     ManagerRoutingModule
   ],
   providers: [
-    UserResolver
+    UserResolver,
+    BloodPackResolver
   ],
   entryComponents: [
     UserAddSuccessModalComponent,

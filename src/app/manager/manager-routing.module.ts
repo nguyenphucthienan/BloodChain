@@ -46,6 +46,9 @@ import {
   HospitalBloodProductManagerComponent,
 } from './components/hospital-blood-product-manager/hospital-blood-product-manager.component';
 import {
+  ManagerBloodPackManagerBloodPackDetailComponent,
+} from './components/manager-blood-pack-manager-blood-pack-detail/manager-blood-pack-manager-blood-pack-detail.component';
+import {
   ManagerBloodPackManagerComponent,
 } from './components/manager-blood-pack-manager/manager-blood-pack-manager.component';
 import {
@@ -58,6 +61,7 @@ import {
   ManagerUserManagerUserDetailComponent,
 } from './components/manager-user-manager-user-detail/manager-user-manager-user-detail.component';
 import { ManagerUserManagerComponent } from './components/manager-user-manager/manager-user-manager.component';
+import { BloodPackResolver } from './resolvers/blood-pack.resolver';
 import { UserResolver } from './resolvers/user.resolver';
 
 const routes: Routes = [
@@ -82,7 +86,7 @@ const routes: Routes = [
             RoleName.BLOOD_BANK,
             RoleName.HOSPITAL
           ],
-          breadcrumb: 'breadcrumb.manager.users'
+          breadcrumb: 'breadcrumb.manager.users.main'
         },
         children: [
           {
@@ -93,19 +97,18 @@ const routes: Routes = [
           {
             path: 'add',
             component: ManagerUserManagerAddUserComponent,
-            data: { breadcrumb: 'breadcrumb.manager.addUsers' }
+            data: { breadcrumb: 'breadcrumb.manager.users.addUsers' }
           },
           {
             path: ':id',
             component: ManagerUserManagerUserDetailComponent,
             resolve: { user: UserResolver },
-            data: { breadcrumb: 'breadcrumb.manager.userDetail' }
+            data: { breadcrumb: 'breadcrumb.manager.users.userDetail' }
           }
         ]
       },
       {
         path: 'blood-packs',
-        component: ManagerBloodPackManagerComponent,
         canActivate: [HasRoleGuard],
         data: {
           roles: [
@@ -116,8 +119,21 @@ const routes: Routes = [
             RoleName.BLOOD_BANK,
             RoleName.HOSPITAL
           ],
-          breadcrumb: 'breadcrumb.manager.bloodPacks'
-        }
+          breadcrumb: 'breadcrumb.manager.bloodPacks.main'
+        },
+        children: [
+          {
+            path: '',
+            pathMatch: 'full',
+            component: ManagerBloodPackManagerComponent
+          },
+          {
+            path: ':id',
+            component: ManagerBloodPackManagerBloodPackDetailComponent,
+            resolve: { bloodPack: BloodPackResolver },
+            data: { breadcrumb: 'breadcrumb.manager.bloodPacks.bloodPackDetail' }
+          }
+        ]
       },
       {
         path: 'blood-products',
@@ -132,7 +148,7 @@ const routes: Routes = [
             RoleName.BLOOD_BANK,
             RoleName.HOSPITAL
           ],
-          breadcrumb: 'breadcrumb.manager.bloodProducts'
+          breadcrumb: 'breadcrumb.manager.bloodProducts.main'
         }
       },
       {

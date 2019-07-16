@@ -42,7 +42,7 @@ export class AdminBloodPackManagerComponent implements OnInit, AfterViewInit, On
   }
 
   searchBloodPack(value: string) {
-    if (value.length === 0 || value.length > 2) {
+    if (value.length === 0 || value.length === 24) {
       this.bloodPackManagerTableService.pagination.page = 1;
       this.bloodPackManagerTableService.filterMode._id = value;
       this.datatable.refresh();

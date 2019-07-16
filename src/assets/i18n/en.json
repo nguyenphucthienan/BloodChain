@@ -99,11 +99,19 @@
     },
     "manager": {
       "main": "Manager",
-      "users": "Users",
-      "addUsers": "Add User",
-      "userDetail": "User Detail",
-      "bloodPacks": "Blood Packs",
-      "bloodProducts": "Blood Products"
+      "users": {
+        "main": "Users",
+        "addUsers": "Add User",
+        "userDetail": "User Detail"
+      },
+      "bloodPacks": {
+        "main": "Blood Packs",
+        "bloodPackDetail": "Blood Pack Detail"
+      },
+      "bloodProducts": {
+        "main": "Blood Products",
+        "bloodProductDetail": "BloodProductDetail"
+      }
     },
     "bloodCamp": {
       "main": "Blood Camp",
@@ -657,6 +665,7 @@
       "bloodCamp": "Blood camp",
       "bloodTestCenter": "Blood test center",
       "bloodTestCenterId": "Blood test center ID",
+      "bloodSeparationCenter": "Blood separation center",
       "bloodSeparationCenterId": "Blood separation center ID",
       "description": "Description",
       "testType": "Test type",
