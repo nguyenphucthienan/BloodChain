@@ -8,7 +8,7 @@ import { TableActionType } from 'src/app/datatable/models/table-action.interface
 import { TableCellChange } from 'src/app/datatable/models/table-cell-change.interface';
 import { ScanQrcodeModalComponent } from 'src/app/shared/modals/scan-qrcode-modal/scan-qrcode-modal.component';
 
-import { BloodProductManagerLiteTableService } from '../../services/blood-pack-manager-lite-table.service';
+import { BloodProductManagerLiteTableService } from '../../services/blood-product-manager-lite-table.service';
 
 @Component({
   selector: 'app-manager-blood-product-manager',

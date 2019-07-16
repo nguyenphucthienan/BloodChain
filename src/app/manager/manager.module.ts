@@ -48,6 +48,9 @@ import {
   ManagerBloodPackManagerDonationHistoryComponent,
 } from './components/manager-blood-pack-manager-donation-history/manager-blood-pack-manager-donation-history.component';
 import {
+  ManagerBloodPackManagerComponent,
+} from './components/manager-blood-pack-manager/manager-blood-pack-manager.component';
+import {
   ManagerBloodProductManagerComponent,
 } from './components/manager-blood-product-manager/manager-blood-product-manager.component';
 import {
@@ -86,6 +89,7 @@ import { UserResolver } from './resolvers/user.resolver';
     ManagerUserManagerAddUserComponent,
     ManagerUserManagerUserDetailComponent,
     UserAddSuccessModalComponent,
+    ManagerBloodPackManagerComponent,
     ManagerBloodPackManagerDonationHistoryComponent,
     ManagerBloodProductManagerComponent,
     BloodPackAddSuccessModalComponent,

@@ -46,6 +46,9 @@ import {
   HospitalBloodProductManagerComponent,
 } from './components/hospital-blood-product-manager/hospital-blood-product-manager.component';
 import {
+  ManagerBloodPackManagerComponent,
+} from './components/manager-blood-pack-manager/manager-blood-pack-manager.component';
+import {
   ManagerBloodProductManagerComponent,
 } from './components/manager-blood-product-manager/manager-blood-product-manager.component';
 import {
@@ -99,6 +102,22 @@ const routes: Routes = [
             data: { breadcrumb: 'breadcrumb.manager.userDetail' }
           }
         ]
+      },
+      {
+        path: 'blood-packs',
+        component: ManagerBloodPackManagerComponent,
+        canActivate: [HasRoleGuard],
+        data: {
+          roles: [
+            RoleName.ADMIN,
+            RoleName.BLOOD_CAMP,
+            RoleName.BLOOD_TEST_CENTER,
+            RoleName.BLOOD_SEPARATION_CENTER,
+            RoleName.BLOOD_BANK,
+            RoleName.HOSPITAL
+          ],
+          breadcrumb: 'breadcrumb.manager.bloodPacks'
+        }
       },
       {
         path: 'blood-products',

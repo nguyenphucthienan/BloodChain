@@ -18,11 +18,12 @@ export class SidebarComponent implements OnInit {
     { path: '/admin/blood-separation-centers', title: 'sidebar.title.bloodSeparationCenters', icon: 'columns' },
     { path: '/admin/blood-banks', title: 'sidebar.title.bloodBanks', icon: 'university' },
     { path: '/admin/hospitals', title: 'sidebar.title.hospitals', icon: 'hospital' },
-    { path: '/admin/blood-packs', title: 'sidebar.title.bloodPacks', icon: 'cube' }
+    // { path: '/admin/blood-packs', title: 'sidebar.title.bloodPacks', icon: 'cube' }
   ];
 
   readonly managerRoutes = [
     { path: '/manager/users', title: 'sidebar.title.users', icon: 'users' },
+    { path: '/manager/blood-packs', title: 'sidebar.title.bloodPacks', icon: 'cube' },
     { path: '/manager/blood-products', title: 'sidebar.title.bloodProducts', icon: 'cubes' }
   ];
 
