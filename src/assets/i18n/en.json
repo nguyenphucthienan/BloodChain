@@ -725,6 +725,7 @@
       "expirationDate": "Expiration Date"
     },
     "modal": {
+      "bloodProductInfo": "Blood Product Info",
       "transferBloodProducts": "Transfer Blood Products"
     },
     "label": {

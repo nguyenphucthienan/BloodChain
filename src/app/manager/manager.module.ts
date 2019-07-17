@@ -80,6 +80,7 @@ import {
 import {
   BloodPackUpdateSeparationResultResultModalComponent,
 } from './modals/blood-pack-update-separation-result-result-modal/blood-pack-update-separation-result-result-modal.component';
+import { BloodProductQrcodeModalComponent } from './modals/blood-product-qrcode-modal/blood-product-qrcode-modal.component';
 import {
   BloodProductTransferConfirmModalComponent,
 } from './modals/blood-product-transfer-confirm-modal/blood-product-transfer-confirm-modal.component';
@@ -125,6 +126,7 @@ import { UserResolver } from './resolvers/user.resolver';
     HospitalBloodProductManagerTransferBloodProductComponent,
     UserQrcodeModalComponent,
     BloodPackQrcodeModalComponent,
+    BloodProductQrcodeModalComponent
   ],
   imports: [
     SharedModule,
@@ -146,6 +148,7 @@ import { UserResolver } from './resolvers/user.resolver';
     BloodProductTransferResultModalComponent,
     UserQrcodeModalComponent,
     BloodPackQrcodeModalComponent,
+    BloodProductQrcodeModalComponent
   ]
 })
 export class ManagerModule { }

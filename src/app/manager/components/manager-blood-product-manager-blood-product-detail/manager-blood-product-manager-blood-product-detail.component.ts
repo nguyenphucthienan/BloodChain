@@ -7,6 +7,10 @@ import { BloodPack } from 'src/app/core/models/blood-pack.interface';
 import { BloodProduct } from 'src/app/core/models/blood-product.interface';
 import { BloodPackService } from 'src/app/core/services/blood-pack.service';
 
+import {
+  BloodProductQrcodeModalComponent,
+} from '../../modals/blood-product-qrcode-modal/blood-product-qrcode-modal.component';
+
 @Component({
   selector: 'app-manager-blood-product-manager-blood-product-detail',
   templateUrl: './manager-blood-product-manager-blood-product-detail.component.html',
@@ -110,19 +114,19 @@ export class ManagerBloodProductManagerBloodProductDetailComponent implements On
   }
 
   openBloodProductQrCodeModal() {
-    // this.modalRef = this.modalService.show(BloodPackQrcodeModalComponent, {
-    //   backdrop: true,
-    //   keyboard: true,
-    //   focus: true,
-    //   show: false,
-    //   ignoreBackdropClick: true,
-    //   class: 'modal-dialog-centered',
-    //   containerClass: 'top',
-    //   animated: true,
-    //   data: {
-    //     bloodPack: this.bloodPack
-    //   }
-    // });
+    this.modalRef = this.modalService.show(BloodProductQrcodeModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        bloodProduct: this.bloodProduct
+      }
+    });
   }
 
   ngOnDestroy() {
