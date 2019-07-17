@@ -1,7 +1,13 @@
 <mdb-breadcrumb>
   <ng-container *ngFor="let breadcrumb of breadcrumbs; let last=last;">
-    <mdb-breadcrumb-item *ngIf="breadcrumb.label" [class.active]="last" [routerLink]="breadcrumb.url">
-      {{ breadcrumb.label | translate }}
-    </mdb-breadcrumb-item>
+    <ng-container *ngIf="breadcrumb.label">
+      <mdb-breadcrumb-item *ngIf="breadcrumb.clickable" class="clickable" [class.active]="last"
+        [routerLink]="breadcrumb.url">
+        {{ breadcrumb.label | translate }}
+      </mdb-breadcrumb-item>
+      <mdb-breadcrumb-item *ngIf="!breadcrumb.clickable" [class.active]="last">
+        {{ breadcrumb.label | translate }}
+      </mdb-breadcrumb-item>
+    </ng-container>
   </ng-container>
 </mdb-breadcrumb>
