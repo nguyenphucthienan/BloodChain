@@ -96,6 +96,7 @@ export class BloodSeparationCenterBloodProductManagerComponent implements OnInit
   }
 
   navigateToBloodProductDetail(id: string) {
+    this.router.navigate(['/manager', 'blood-products', id]);
   }
 
   ngOnDestroy() {

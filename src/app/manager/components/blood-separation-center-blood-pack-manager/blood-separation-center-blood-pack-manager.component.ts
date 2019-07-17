@@ -89,6 +89,7 @@ export class BloodSeparationCenterBloodPackManagerComponent implements OnInit, A
   }
 
   navigateToBloodPackDetail(id: string) {
+    this.router.navigate(['/manager', 'blood-packs', id]);
   }
 
   navigateToUpdateBloodPackResult(id?: string) {

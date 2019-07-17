@@ -101,6 +101,7 @@ export class BloodTestCenterBloodPackManagerComponent implements OnInit, AfterVi
   }
 
   navigateToBloodPackDetail(id: string) {
+    this.router.navigate(['/manager', 'blood-packs', id]);
   }
 
   navigateToUpdateBloodPackResult(id?: string) {

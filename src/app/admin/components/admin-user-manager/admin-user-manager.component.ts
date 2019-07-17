@@ -9,6 +9,7 @@ import { TableCellChange } from 'src/app/datatable/models/table-cell-change.inte
 import { TableRow } from 'src/app/datatable/models/table-row.interface';
 
 import { UserManagerTableService } from '../../services/user-manager-table.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-user-manager',
@@ -26,6 +27,7 @@ export class AdminUserManagerComponent implements OnInit, AfterViewInit, OnDestr
 
   constructor(
     public userManagerTableService: UserManagerTableService,
+    private router: Router,
     private renderer: Renderer2,
     private modalService: MDBModalService
   ) { }
@@ -68,6 +70,7 @@ export class AdminUserManagerComponent implements OnInit, AfterViewInit, OnDestr
   }
 
   navigateToUserDetail(id: string) {
+    this.router.navigate(['/manager', 'users', id]);
   }
 
   openUserAddModal() {
