@@ -7,6 +7,7 @@ import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import * as moment from 'moment';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Point } from 'src/app/core/models/point.interface';
 import { User } from 'src/app/core/models/user.interface';
 import { AlertService } from 'src/app/core/services/alert.service';
 import { AuthService } from 'src/app/core/services/auth.service';
@@ -29,6 +30,7 @@ export class ProfileEditInfoComponent implements OnInit {
 
   genders$: Observable<any>;
   user: User;
+  point: Point;
   updateInfoForm: FormGroup;
   changePasswordForm: FormGroup;
   modalRef: MDBModalRef;
@@ -58,7 +60,8 @@ export class ProfileEditInfoComponent implements OnInit {
       gender: [this.genders[0].value, Validators.required],
       birthdate: [moment('1990-01-01').startOf('day'), Validators.required],
       phone: ['', Validators.required],
-      address: ['', Validators.required]
+      address: ['', Validators.required],
+      location: [null, Validators.required]
     });
 
     this.changePasswordForm = this.fb.group({
@@ -69,6 +72,12 @@ export class ProfileEditInfoComponent implements OnInit {
     this.authService.getMyUserInfo()
       .subscribe((user: User) => {
         this.user = user;
+        if (this.user.location) {
+          this.point = this.user.location;
+          const { 0: lng, 1: lat } = this.user.location.coordinates;
+          this.changeLocation({ lng, lat });
+        }
+
         this.updateInfoForm.patchValue({
           email: this.user.email,
           firstName: this.user.firstName,
@@ -77,6 +86,7 @@ export class ProfileEditInfoComponent implements OnInit {
           birthdate: this.user.birthdate,
           phone: this.user.phone,
           address: this.user.address,
+          location: this.user.location
         });
       });
   }
@@ -110,6 +120,15 @@ export class ProfileEditInfoComponent implements OnInit {
 
   datePickerFilter(momentDate: any): boolean {
     return momentDate.isSameOrBefore(moment().startOf('day'));
+  }
+
+  changeLocation(location: any) {
+    this.updateInfoForm.patchValue({
+      location: {
+        type: 'Point',
+        coordinates: [location.lng, location.lat]
+      }
+    });
   }
 
   private passwordMatchValidator(g: FormGroup) {

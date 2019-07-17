@@ -1,7 +1,7 @@
-<div class="container-fluid">
+<div class="container">
   <h1 class="text-center">{{ 'editUserInfo.title' | translate }}</h1>
   <div class="row justify-content-center mt-3">
-    <div class="col-lg-3">
+    <div class="col-lg-4">
       <div class="card">
         <div class="card-header red darken-4 white-text py-2">
         </div>
@@ -16,7 +16,7 @@
         </div>
       </div>
     </div>
-    <div class="col-lg-6 mt-lg-0 mt-3">
+    <div class="col-lg-8 mt-lg-0 pl-md-0 mt-3">
       <div class="card">
         <div class="card-header red darken-4 white-text py-2">
         </div>
@@ -89,6 +89,10 @@
               <mdb-error *ngIf="updateInfoFormControlHasError('address', 'required')">
                 {{ 'editUserInfo.message.addressRequired' | translate }}
               </mdb-error>
+            </div>
+            <div class="md-form">
+              <app-map-input [height]="'350px'" [lng]="point && point.coordinates[0]"
+                [lat]="point && point.coordinates[1]" (locationChanged)="changeLocation($event)"></app-map-input>
             </div>
             <button mdbBtn color="red" outline="true" rounded="true" block="true"
               class="mt-4 mb-2 waves-effect z-depth-0" mdbWavesEffect type="submit"
