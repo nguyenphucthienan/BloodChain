@@ -11,17 +11,11 @@
     </div>
     <hr>
     <div class="text-center">
-      <h5>
+      <h3 class="h3">{{ user.firstName }} {{ user.lastName }}</h3>
+      <h2 class="h2">{{ user.username }}</h2>
+      <h5 class="mt-3">
         <span class="font-weight-bold">{{ 'userManager.label.id' | translate }}: </span>
         <span>{{ user._id }}</span>
-      </h5>
-      <h5>
-        <span class="font-weight-bold">{{ 'userManager.label.username' | translate }}: </span>
-        <span>{{ user.username }}</span>
-      </h5>
-      <h5>
-        <span class="font-weight-bold">{{ 'userManager.label.fullName' | translate }}: </span>
-        <span>{{ user.firstName}} {{ user.lastName}}</span>
       </h5>
     </div>
   </div>
