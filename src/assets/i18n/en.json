@@ -303,6 +303,7 @@
       "emailRequired": "Email is required",
       "emailMaxLength": "Email must be at most 255 characters",
       "emailNotValid": "Email is not valid",
+      "emailExists": "Email has been used",
       "firstNameRequired": "First name is required",
       "firstNameLength": "First name must be between 1-50 characters",
       "lastNameRequired": "Last name is required",

@@ -1,13 +1,14 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output, Renderer2 } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDatepicker } from '@angular/material/datepicker';
 import { TranslateService } from '@ngx-translate/core';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import * as moment from 'moment';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { debounceTime, map } from 'rxjs/operators';
 import { User } from 'src/app/core/models/user.interface';
 import { AlertService } from 'src/app/core/services/alert.service';
+import { AuthService } from 'src/app/core/services/auth.service';
 import { UserService } from 'src/app/core/services/user.service';
 
 import { UserAddSuccessModalComponent } from '../../modals/user-add-success-modal/user-add-success-modal.component';
@@ -33,6 +34,7 @@ export class ManagerUserManagerAddUserComponent implements OnInit, OnDestroy {
 
   constructor(
     private fb: FormBuilder,
+    private authService: AuthService,
     private userService: UserService,
     private renderer: Renderer2,
     private alertService: AlertService,
@@ -55,12 +57,12 @@ export class ManagerUserManagerAddUserComponent implements OnInit, OnDestroy {
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(20)
-      ]],
+      ], this.usernameExistsValidator.bind(this)],
       email: ['', [
         Validators.required,
         Validators.email,
         Validators.maxLength(255)
-      ]],
+      ], this.emailExistsValidator.bind(this)],
       firstName: ['', [Validators.required, Validators.maxLength(50)]],
       lastName: ['', [Validators.required, Validators.maxLength(50)]],
       gender: [this.genders[0].value, Validators.required],
@@ -129,6 +131,32 @@ export class ManagerUserManagerAddUserComponent implements OnInit, OnDestroy {
         coordinates: [location.lng, location.lat]
       }
     });
+  }
+
+  private usernameExistsValidator(c: FormControl) {
+    return this.authService.checkUsernameExists(c.value)
+      .pipe(
+        debounceTime(250),
+        map((result: any) => {
+          if (result.exists) {
+            return { exists: true };
+          }
+          return null;
+        })
+      );
+  }
+
+  private emailExistsValidator(c: FormControl) {
+    return this.authService.checkEmailExists(c.value)
+      .pipe(
+        debounceTime(250),
+        map((result: any) => {
+          if (result.exists) {
+            return { exists: true };
+          }
+          return null;
+        })
+      );
   }
 
   controlHasError(controlName: string, errorName: string): boolean {

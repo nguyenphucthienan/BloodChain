@@ -35,6 +35,9 @@
                 *ngIf="!updateInfoFormControlHasError('email', 'required') && updateInfoFormControlHasError('email', 'email')">
                 {{ 'editUserInfo.message.emailNotValid' | translate }}
               </mdb-error>
+              <mdb-error *ngIf="updateInfoFormControlHasError('email', 'exists')">
+                {{ 'editUserInfo.message.emailExists' | translate }}
+              </mdb-error>
             </div>
             <div class="form-row">
               <div class="col">

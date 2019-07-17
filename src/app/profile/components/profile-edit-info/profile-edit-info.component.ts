@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDatepicker } from '@angular/material/datepicker';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import * as moment from 'moment';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { debounceTime, map } from 'rxjs/operators';
 import { Point } from 'src/app/core/models/point.interface';
 import { User } from 'src/app/core/models/user.interface';
 import { AlertService } from 'src/app/core/services/alert.service';
@@ -54,7 +54,11 @@ export class ProfileEditInfoComponent implements OnInit {
       );
 
     this.updateInfoForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email, Validators.maxLength(255)]],
+      email: ['', [
+        Validators.required,
+        Validators.email,
+        Validators.maxLength(255)
+      ], this.emailExistsValidator.bind(this)],
       firstName: ['', [Validators.required, Validators.maxLength(50)]],
       lastName: ['', [Validators.required, Validators.maxLength(50)]],
       gender: [this.genders[0].value, Validators.required],
@@ -69,6 +73,13 @@ export class ProfileEditInfoComponent implements OnInit {
       confirmPassword: ['', Validators.required]
     }, { validator: [this.passwordMatchValidator] });
 
+    this.getUserInfo();
+  }
+
+  openUploadPhotoModal() {
+  }
+
+  private getUserInfo() {
     this.authService.getMyUserInfo()
       .subscribe((user: User) => {
         this.user = user;
@@ -91,13 +102,13 @@ export class ProfileEditInfoComponent implements OnInit {
       });
   }
 
-  openUploadPhotoModal() {
-  }
-
   updateInfo() {
     this.authService.updateUserInfo(this.updateInfoForm.value)
       .subscribe(
-        () => this.alertService.success('Update user info successfully'),
+        () => {
+          this.getUserInfo();
+          this.alertService.success('Update user info successfully');
+        },
         error => this.alertService.error('Update user info failed')
       );
   }
@@ -129,6 +140,23 @@ export class ProfileEditInfoComponent implements OnInit {
         coordinates: [location.lng, location.lat]
       }
     });
+  }
+
+  private emailExistsValidator(c: FormControl) {
+    if (c.value === this.user.email) {
+      return of(null);
+    }
+
+    return this.authService.checkEmailExists(c.value)
+      .pipe(
+        debounceTime(250),
+        map((result: any) => {
+          if (result.exists) {
+            return { exists: true };
+          }
+          return null;
+        })
+      );
   }
 
   private passwordMatchValidator(g: FormGroup) {
