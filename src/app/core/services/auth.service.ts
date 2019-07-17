@@ -1,14 +1,18 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { ParamsBuilder } from 'src/app/utils/params-builder';
 import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class AuthService {
 
-  private readonly authUrl = `${environment.apiUrl}/auth`;
+  private readonly loginUrl = `${environment.apiUrl}/auth/login`;
+  private readonly checkUsernameUrl = `${environment.apiUrl}/auth/check-username`;
+  private readonly checkEmailUrl = `${environment.apiUrl}/auth/check-email`;
+  private readonly registerUrl = `${environment.apiUrl}/auth/register`;
   private readonly meUrl = `${environment.apiUrl}/auth/me`;
   private readonly changePasswordUrl = `${environment.apiUrl}/auth/me/password`;
 
@@ -33,12 +37,28 @@ export class AuthService {
     return !this.jwtHelper.isTokenExpired(token);
   }
 
+  checkUsernameExists(username: string): Observable<boolean> {
+    const params = new ParamsBuilder()
+      .setParam('username', username)
+      .build();
+
+    return this.http.get<boolean>(this.checkUsernameUrl, { params });
+  }
+
+  checkEmailExists(email: string): Observable<boolean> {
+    const params = new ParamsBuilder()
+      .setParam('email', email)
+      .build();
+
+    return this.http.get<boolean>(this.checkEmailUrl, { params });
+  }
+
   register(model: any) {
-    return this.http.post(`${this.authUrl}/register`, model);
+    return this.http.post(this.registerUrl, model);
   }
 
   login(model: { username: string, password: string }) {
-    return this.http.post(`${this.authUrl}/login`, model)
+    return this.http.post(this.loginUrl, model)
       .pipe(
         map(({ accessToken }: any) => {
           if (accessToken) {

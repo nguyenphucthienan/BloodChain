@@ -16,6 +16,9 @@
               <mdb-error *ngIf="controlHasError('username', 'minlength') || controlHasError('username', 'maxlength')">
                 {{ 'register.message.usernameLength' | translate }}
               </mdb-error>
+              <mdb-error *ngIf="controlHasError('username', 'exists')">
+                {{ 'register.message.usernameExists' | translate }}
+              </mdb-error>
             </div>
             <div class="md-form">
               <input type="text" id="email" formControlName="email" class="form-control" mdbInput>
@@ -28,6 +31,9 @@
               </mdb-error>
               <mdb-error *ngIf="!controlHasError('email', 'required') && controlHasError('email', 'email')">
                 {{ 'register.message.emailNotValid' | translate }}
+              </mdb-error>
+              <mdb-error *ngIf="controlHasError('email', 'exists')">
+                {{ 'register.message.emailExists' | translate }}
               </mdb-error>
             </div>
             <div class="form-row">

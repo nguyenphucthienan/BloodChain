@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDatepicker } from '@angular/material/datepicker';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import * as moment from 'moment';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { debounceTime, map } from 'rxjs/operators';
 import { AlertService } from 'src/app/core/services/alert.service';
 import { AuthService } from 'src/app/core/services/auth.service';
 
@@ -47,12 +47,12 @@ export class RegisterComponent implements OnInit {
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(20)
-      ]],
+      ], this.usernameExistsValidator.bind(this)],
       email: ['', [
         Validators.required,
         Validators.email,
         Validators.maxLength(255)
-      ]],
+      ], this.emailExistsValidator.bind(this)],
       firstName: ['', [Validators.required, Validators.maxLength(50)]],
       lastName: ['', [Validators.required, Validators.maxLength(50)]],
       gender: [this.genders[0].value, Validators.required],
@@ -90,6 +90,32 @@ export class RegisterComponent implements OnInit {
 
   datePickerFilter(momentDate: any): boolean {
     return momentDate.isSameOrBefore(moment().startOf('day'));
+  }
+
+  private usernameExistsValidator(c: FormControl) {
+    return this.authService.checkUsernameExists(c.value)
+      .pipe(
+        debounceTime(250),
+        map((result: any) => {
+          if (result.exists) {
+            return { exists: true };
+          }
+          return null;
+        })
+      );
+  }
+
+  private emailExistsValidator(c: FormControl) {
+    return this.authService.checkEmailExists(c.value)
+      .pipe(
+        debounceTime(250),
+        map((result: any) => {
+          if (result.exists) {
+            return { exists: true };
+          }
+          return null;
+        })
+      );
   }
 
   private passwordMatchValidator(g: FormGroup) {
