@@ -351,9 +351,11 @@
     "message": {
       "usernameRequired": "Tên đăng nhập không được bỏ trống",
       "usernameLength": "Tên đăng nhập phải từ 3 đến 50 kí tự",
+      "usernameExists": "Tên đăng nhập đã được sử dụng",
       "emailRequired": "Email không được bỏ trống",
       "emailMaxLength": "Email tối đa 255 kí tự",
       "emailNotValid": "Email không hợp lệ",
+      "emailExists": "Email đã được sử dụng",
       "firstNameRequired": "Họ không được bỏ trống",
       "firstNameLength": "Họ phải từ 1 đến 50 kí tự",
       "lastNameRequired": "Tên không được bỏ trống",
