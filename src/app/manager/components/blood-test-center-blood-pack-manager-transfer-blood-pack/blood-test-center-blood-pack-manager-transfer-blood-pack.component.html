@@ -34,7 +34,7 @@
           <div class="d-flex">
             <span class="font-weight-bold">{{ 'bloodPackManager.label.bloodSeparationCenterInfo' | translate }}</span>
           </div>
-          <div class="md-form">
+          <div class="md-form select-container">
             <ng-select [items]="bloodSeparationsCenters$ | async" bindValue="_id" bindLabel="name" [multiple]="false"
               [hideSelected]="true" [loading]="bloodSeparationsCentersLoading"
               [typeahead]="bloodSeparationsCentersInput$"

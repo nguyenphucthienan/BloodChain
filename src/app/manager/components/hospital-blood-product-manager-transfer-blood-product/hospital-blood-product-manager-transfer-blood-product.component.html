@@ -35,14 +35,14 @@
           <div class="d-flex">
             <span class="font-weight-bold">{{ 'bloodProductManager.label.organizationInfo' | translate }}</span>
           </div>
-          <div class="md-form select-control">
+          <div class="md-form select-container">
             <ng-select #organizationTypeSelect [items]="organizationTypes" bindValue="value" bindLabel="label"
               [multiple]="false" [clearable]="false"
               [placeholder]="'bloodProductManager.label.organizationType' | translate"
               (change)="selectOrganizationType($event)">
             </ng-select>
           </div>
-          <div class="md-form select-control">
+          <div class="md-form select-container">
             <ng-select #organizationSelect [items]="organizations$ | async" bindValue="_id" bindLabel="name"
               [multiple]="false" [hideSelected]="true" [loading]="organizationsLoading"
               [typeahead]="organizationsInput$"
