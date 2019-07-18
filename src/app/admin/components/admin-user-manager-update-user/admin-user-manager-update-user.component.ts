@@ -12,9 +12,8 @@ import { User } from 'src/app/core/models/user.interface';
 import { AlertService } from 'src/app/core/services/alert.service';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { UserService } from 'src/app/core/services/user.service';
-import {
-  UserAddSuccessModalComponent,
-} from 'src/app/manager/modals/user-add-success-modal/user-add-success-modal.component';
+
+import { UserUpdateSuccessModalComponent } from '../../modals/user-update-success-modal/user-update-success-modal.component';
 
 @Component({
   selector: 'app-admin-user-manager-update-user',
@@ -100,7 +99,7 @@ export class AdminUserManagerUpdateUserComponent implements OnInit, OnDestroy {
   }
 
   openUserUpdateSuccessModal(user: User) {
-    this.modalRef = this.modalService.show(UserAddSuccessModalComponent, {
+    this.modalRef = this.modalService.show(UserUpdateSuccessModalComponent, {
       backdrop: true,
       keyboard: true,
       focus: true,
@@ -151,8 +150,7 @@ export class AdminUserManagerUpdateUserComponent implements OnInit, OnDestroy {
       gender: this.user.gender,
       birthdate: this.user.birthdate,
       phone: this.user.phone,
-      address: this.user.address,
-      location: this.user.location
+      address: this.user.address
     });
   }
 

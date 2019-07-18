@@ -97,8 +97,7 @@ export class ProfileEditInfoComponent implements OnInit {
           gender: this.user.gender,
           birthdate: this.user.birthdate,
           phone: this.user.phone,
-          address: this.user.address,
-          location: this.user.location
+          address: this.user.address
         });
       });
   }

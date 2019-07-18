@@ -76,6 +76,7 @@ import { HospitalUpdateModalComponent } from './modals/hospital-update-modal/hos
 import { TestTypeAddModalComponent } from './modals/test-type-add-modal/test-type-add-modal.component';
 import { TestTypeDeleteModalComponent } from './modals/test-type-delete-modal/test-type-delete-modal.component';
 import { TestTypeUpdateModalComponent } from './modals/test-type-update-modal/test-type-update-modal.component';
+import { UserUpdateSuccessModalComponent } from './modals/user-update-success-modal/user-update-success-modal.component';
 
 @NgModule({
   declarations: [
@@ -89,6 +90,7 @@ import { TestTypeUpdateModalComponent } from './modals/test-type-update-modal/te
     AdminBloodSeparationCenterManagerComponent,
     AdminBloodBankManagerComponent,
     AdminHospitalManagerComponent,
+    UserUpdateSuccessModalComponent,
     TestTypeAddModalComponent,
     TestTypeUpdateModalComponent,
     TestTypeDeleteModalComponent,
@@ -123,6 +125,7 @@ import { TestTypeUpdateModalComponent } from './modals/test-type-update-modal/te
     AdminRoutingModule
   ],
   entryComponents: [
+    UserUpdateSuccessModalComponent,
     TestTypeAddModalComponent,
     TestTypeUpdateModalComponent,
     TestTypeDeleteModalComponent,
