@@ -86,7 +86,10 @@
   "breadcrumb": {
     "admin": {
       "main": "Quản trị",
-      "users": "Người dùng",
+      "users": {
+        "main": "Người dùng",
+        "updateUser": "Cập nhật người dùng"
+      },
       "testTypes": "Loại xét nghiệm",
       "bloodProductTypes": "Loại chế phẩm máu",
       "bloodCamps": "Trung tâm hiến máu",
@@ -101,7 +104,7 @@
       "main": "Quản lí",
       "users": {
         "main": "Người dùng",
-        "addUsers": "Thêm người dùng",
+        "addUser": "Thêm người dùng",
         "userDetail": "Thông tin người dùng"
       },
       "bloodPacks": {

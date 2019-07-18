@@ -86,7 +86,10 @@
   "breadcrumb": {
     "admin": {
       "main": "Admin",
-      "users": "Users",
+      "users": {
+        "main": "Users",
+        "updateUser": "Update User"
+      },
       "testTypes": "Test Types",
       "bloodProductTypes": "Blood Product Types",
       "bloodCamps": "Blood Camps",
@@ -101,7 +104,7 @@
       "main": "Manager",
       "users": {
         "main": "Users",
-        "addUsers": "Add User",
+        "addUser": "Add User",
         "userDetail": "User Detail"
       },
       "bloodPacks": {

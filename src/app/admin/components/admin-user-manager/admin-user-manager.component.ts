@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { fromEvent, Subscription } from 'rxjs';
 import { debounceTime, map, tap } from 'rxjs/operators';
@@ -9,7 +10,6 @@ import { TableCellChange } from 'src/app/datatable/models/table-cell-change.inte
 import { TableRow } from 'src/app/datatable/models/table-row.interface';
 
 import { UserManagerTableService } from '../../services/user-manager-table.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-user-manager',
@@ -61,7 +61,7 @@ export class AdminUserManagerComponent implements OnInit, AfterViewInit, OnDestr
         this.navigateToUserDetail(tableCellChange.row.cells._id.value);
         break;
       case TableActionType.Update:
-        this.openUserUpdateModal(tableCellChange.row);
+        this.navigateToUserUpdate(tableCellChange.row.cells._id.value);
         break;
       case TableActionType.Delete:
         this.openUserDeleteModal(tableCellChange.row);
@@ -81,12 +81,8 @@ export class AdminUserManagerComponent implements OnInit, AfterViewInit, OnDestr
     this.datatable.refresh();
   }
 
-  openUserUpdateModal(rowData: TableRow) {
-  }
-
-  onUserUpdated(user: User) {
-    this.modalRef.hide();
-    this.datatable.refresh();
+  navigateToUserUpdate(id: string) {
+    this.router.navigate(['/admin', 'users', id, 'update']);
   }
 
   openUserDeleteModal(rowData: TableRow) {

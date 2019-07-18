@@ -17,6 +17,9 @@ import {
 } from './components/admin-blood-test-center-manager/admin-blood-test-center-manager.component';
 import { AdminHospitalManagerComponent } from './components/admin-hospital-manager/admin-hospital-manager.component';
 import { AdminTestTypeManagerComponent } from './components/admin-test-type-manager/admin-test-type-manager.component';
+import {
+  AdminUserManagerUpdateUserComponent,
+} from './components/admin-user-manager-update-user/admin-user-manager-update-user.component';
 import { AdminUserManagerComponent } from './components/admin-user-manager/admin-user-manager.component';
 
 const routes: Routes = [
@@ -35,8 +38,19 @@ const routes: Routes = [
       },
       {
         path: 'users',
-        component: AdminUserManagerComponent,
-        data: { breadcrumb: 'breadcrumb.admin.users' }
+        data: { breadcrumb: 'breadcrumb.admin.users.main' },
+        children: [
+          {
+            path: '',
+            pathMatch: 'full',
+            component: AdminUserManagerComponent
+          },
+          {
+            path: ':id/update',
+            component: AdminUserManagerUpdateUserComponent,
+            data: { breadcrumb: 'breadcrumb.admin.users.updateUser' }
+          }
+        ]
       },
       {
         path: 'test-types',

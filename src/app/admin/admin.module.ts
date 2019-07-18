@@ -18,6 +18,9 @@ import {
 } from './components/admin-blood-test-center-manager/admin-blood-test-center-manager.component';
 import { AdminHospitalManagerComponent } from './components/admin-hospital-manager/admin-hospital-manager.component';
 import { AdminTestTypeManagerComponent } from './components/admin-test-type-manager/admin-test-type-manager.component';
+import {
+  AdminUserManagerUpdateUserComponent,
+} from './components/admin-user-manager-update-user/admin-user-manager-update-user.component';
 import { AdminUserManagerComponent } from './components/admin-user-manager/admin-user-manager.component';
 import { BloodBankAddModalComponent } from './modals/blood-bank-add-modal/blood-bank-add-modal.component';
 import {
@@ -78,6 +81,7 @@ import { TestTypeUpdateModalComponent } from './modals/test-type-update-modal/te
   declarations: [
     AdminComponent,
     AdminUserManagerComponent,
+    AdminUserManagerUpdateUserComponent,
     AdminTestTypeManagerComponent,
     AdminBloodProductTypeManagerComponent,
     AdminBloodCampManagerComponent,

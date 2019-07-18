@@ -101,7 +101,7 @@ const routes: Routes = [
           {
             path: 'add',
             component: ManagerUserManagerAddUserComponent,
-            data: { breadcrumb: 'breadcrumb.manager.users.addUsers' }
+            data: { breadcrumb: 'breadcrumb.manager.users.addUser' }
           },
           {
             path: ':id',
