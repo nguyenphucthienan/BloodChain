@@ -105,14 +105,16 @@
           </mdb-error>
         </div>
         <div class="md-form">
-          <app-map-input [height]="'400px'" (locationChanged)="onLocationChanged($event)"></app-map-input>
+          <app-map-input [height]="'400px'" [lng]="point && point.coordinates[0]" [lat]="point && point.coordinates[1]"
+            (locationChanged)="changeLocation($event)"></app-map-input>
         </div>
         <hr>
         <div class="d-flex flex-sm-row flex-column justify-content-end">
           <button type="button" mdbBtn color="secondary" class=" waves-light" mdbWavesEffect
-            (click)="resetForm()">{{ 'common.button.reset' | translate }}</button>
+            (click)="cancel()">{{ 'common.button.cancel' | translate }}
+          </button>
           <button mdbBtn type="submit" color="primary" mdbWavesEffect [disabled]="updateForm.invalid">
-            {{ 'common.button.add' | translate }}
+            {{ 'common.button.update' | translate }}
           </button>
         </div>
       </form>

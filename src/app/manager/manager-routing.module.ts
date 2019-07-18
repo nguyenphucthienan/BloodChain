@@ -3,6 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { RoleName } from '../core/constant/role-name';
 import { HasRoleGuard } from '../core/guards/has-role.guard';
+import { BloodPackResolver } from '../core/resolvers/blood-pack.resolver';
+import { BloodProductResolver } from '../core/resolvers/blood-product.resolver';
+import { UserResolver } from '../core/resolvers/user.resolver';
 import {
   BloodBankBloodProductManagerTransferBloodProductComponent,
 } from './components/blood-bank-blood-product-manager-transfer-blood-product/blood-bank-blood-product-manager-transfer-blood-product.component';
@@ -64,9 +67,6 @@ import {
   ManagerUserManagerUserDetailComponent,
 } from './components/manager-user-manager-user-detail/manager-user-manager-user-detail.component';
 import { ManagerUserManagerComponent } from './components/manager-user-manager/manager-user-manager.component';
-import { BloodPackResolver } from './resolvers/blood-pack.resolver';
-import { BloodProductResolver } from './resolvers/blood-product.resolver';
-import { UserResolver } from './resolvers/user.resolver';
 
 const routes: Routes = [
   {

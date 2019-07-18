@@ -89,9 +89,6 @@ import {
 } from './modals/blood-product-transfer-result-modal/blood-product-transfer-result-modal.component';
 import { UserAddSuccessModalComponent } from './modals/user-add-success-modal/user-add-success-modal.component';
 import { UserQrcodeModalComponent } from './modals/user-qrcode-modal/user-qrcode-modal.component';
-import { BloodPackResolver } from './resolvers/blood-pack.resolver';
-import { BloodProductResolver } from './resolvers/blood-product.resolver';
-import { UserResolver } from './resolvers/user.resolver';
 
 @NgModule({
   declarations: [
@@ -132,11 +129,6 @@ import { UserResolver } from './resolvers/user.resolver';
     SharedModule,
     DatatableModule,
     ManagerRoutingModule
-  ],
-  providers: [
-    UserResolver,
-    BloodPackResolver,
-    BloodProductResolver
   ],
   entryComponents: [
     UserAddSuccessModalComponent,

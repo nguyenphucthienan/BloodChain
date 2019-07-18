@@ -1,11 +1,13 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output, Renderer2 } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDatepicker } from '@angular/material/datepicker';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import * as moment from 'moment';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { debounceTime, map } from 'rxjs/operators';
+import { Point } from 'src/app/core/models/point.interface';
 import { User } from 'src/app/core/models/user.interface';
 import { AlertService } from 'src/app/core/services/alert.service';
 import { AuthService } from 'src/app/core/services/auth.service';
@@ -27,14 +29,18 @@ export class AdminUserManagerUpdateUserComponent implements OnInit, OnDestroy {
     { translation: 'common.gender.other', value: 'Other' }
   ];
 
-  @Output() userAdded = new EventEmitter();
+  @Output() userUpdated = new EventEmitter();
 
   genders$: Observable<any>;
+  user: User;
+  point: Point;
   updateForm: FormGroup;
   modalRef: MDBModalRef;
 
   constructor(
     private fb: FormBuilder,
+    private router: Router,
+    private route: ActivatedRoute,
     private authService: AuthService,
     private userService: UserService,
     private renderer: Renderer2,
@@ -72,13 +78,20 @@ export class AdminUserManagerUpdateUserComponent implements OnInit, OnDestroy {
       address: ['', Validators.required],
       location: [null, Validators.required]
     });
+
+    this.route.data.subscribe((data: any) => {
+      if (data.user) {
+        this.changeUser(data.user);
+      }
+    });
   }
 
   updateUser() {
-    this.userService.createUser(this.updateForm.value)
+    this.userService.updateUser(this.user._id, this.updateForm.value)
       .subscribe(
         (user: User) => {
-          this.userAdded.emit(user);
+          this.changeUser(user);
+          this.userUpdated.emit(user);
           this.alertService.success('userManager.alert.updateSuccess');
           this.openUserUpdateSuccessModal(user);
         },
@@ -109,12 +122,8 @@ export class AdminUserManagerUpdateUserComponent implements OnInit, OnDestroy {
     // this.resetForm();
   }
 
-  resetForm() {
-    this.updateForm.reset();
-    this.updateForm.patchValue({
-      gender: this.genders[0].value,
-      birthdate: moment('1990-01-01').startOf('day')
-    });
+  cancel() {
+    this.router.navigate(['/admin', 'users']);
   }
 
   openDatePicker(picker: MatDatepicker<Date>) {
@@ -125,7 +134,29 @@ export class AdminUserManagerUpdateUserComponent implements OnInit, OnDestroy {
     return momentDate.isSameOrBefore(moment().startOf('day'));
   }
 
-  onLocationChanged(location: any) {
+  private changeUser(user: User) {
+    this.user = user;
+
+    if (this.user.location) {
+      this.point = this.user.location;
+      const { 0: lng, 1: lat } = this.user.location.coordinates;
+      this.changeLocation({ lng, lat });
+    }
+
+    this.updateForm.patchValue({
+      username: this.user.username,
+      email: this.user.email,
+      firstName: this.user.firstName,
+      lastName: this.user.lastName,
+      gender: this.user.gender,
+      birthdate: this.user.birthdate,
+      phone: this.user.phone,
+      address: this.user.address,
+      location: this.user.location
+    });
+  }
+
+  changeLocation(location: any) {
     this.updateForm.patchValue({
       location: {
         type: 'Point',
@@ -135,6 +166,10 @@ export class AdminUserManagerUpdateUserComponent implements OnInit, OnDestroy {
   }
 
   private usernameExistsValidator(c: FormControl) {
+    if (c.value === this.user.username) {
+      return of(null);
+    }
+
     return this.authService.checkUsernameExists(c.value)
       .pipe(
         debounceTime(250),
@@ -148,6 +183,10 @@ export class AdminUserManagerUpdateUserComponent implements OnInit, OnDestroy {
   }
 
   private emailExistsValidator(c: FormControl) {
+    if (c.value === this.user.email) {
+      return of(null);
+    }
+
     return this.authService.checkEmailExists(c.value)
       .pipe(
         debounceTime(250),

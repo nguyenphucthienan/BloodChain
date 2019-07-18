@@ -368,7 +368,9 @@
     },
     "alert": {
       "addSuccess": "Thêm người dùng thành công",
-      "addFailed": "Thêm người dùng không thành công"
+      "addFailed": "Thêm người dùng không thành công",
+      "updateSuccess": "Cập nhật người dùng thành công",
+      "updateFailed": "Cập nhật người dùng không thành công"
     },
     "placeholder": {
       "search": "Tìm kiếm theo tên đăng nhập (tối thiểu 3 kí tự)"

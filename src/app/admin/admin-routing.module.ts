@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { RoleName } from '../core/constant/role-name';
 import { HasRoleGuard } from '../core/guards/has-role.guard';
+import { UserResolver } from '../core/resolvers/user.resolver';
 import { AdminBloodBankManagerComponent } from './components/admin-blood-bank-manager/admin-blood-bank-manager.component';
 import { AdminBloodCampManagerComponent } from './components/admin-blood-camp-manager/admin-blood-camp-manager.component';
 import { AdminBloodPackManagerComponent } from './components/admin-blood-pack-manager/admin-blood-pack-manager.component';
@@ -48,6 +49,7 @@ const routes: Routes = [
           {
             path: ':id/update',
             component: AdminUserManagerUpdateUserComponent,
+            resolve: { user: UserResolver },
             data: { breadcrumb: 'breadcrumb.admin.users.updateUser' }
           }
         ]

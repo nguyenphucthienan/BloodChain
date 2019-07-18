@@ -83,6 +83,7 @@ export class ProfileEditInfoComponent implements OnInit {
     this.authService.getMyUserInfo()
       .subscribe((user: User) => {
         this.user = user;
+
         if (this.user.location) {
           this.point = this.user.location;
           const { 0: lng, 1: lat } = this.user.location.coordinates;
