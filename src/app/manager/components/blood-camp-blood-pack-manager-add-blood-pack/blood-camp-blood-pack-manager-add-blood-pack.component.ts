@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output, Renderer2, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { concat, Observable, of, Subject } from 'rxjs';
 import { catchError, debounceTime, distinctUntilChanged, filter, map, switchMap, tap } from 'rxjs/operators';
 import { BloodPack } from 'src/app/core/models/blood-pack.interface';
@@ -44,7 +45,8 @@ export class BloodCampBloodPackManagerAddBloodPackComponent implements OnInit, O
     private bloodPackService: BloodPackService,
     private renderer: Renderer2,
     private alertService: AlertService,
-    private modalService: MDBModalService
+    private modalService: MDBModalService,
+    private spinnerService: NgxSpinnerService
   ) { }
 
   ngOnInit() {
@@ -140,14 +142,19 @@ export class BloodCampBloodPackManagerAddBloodPackComponent implements OnInit, O
   }
 
   addBloodPack() {
+    this.spinnerService.show();
     this.bloodPackService.createBloodPack(this.addForm.getRawValue())
       .subscribe(
         (bloodPack: BloodPack) => {
+          this.spinnerService.hide();
           this.bloodPackAdded.emit(bloodPack);
           this.alertService.success('bloodPackManager.alert.addSuccess');
           this.openBloodPackAddSuccessModal(bloodPack);
         },
-        error => this.alertService.error('bloodPackManager.alert.addFailed')
+        error => {
+          this.spinnerService.hide();
+          this.alertService.error('bloodPackManager.alert.addFailed');
+        }
       );
   }
 

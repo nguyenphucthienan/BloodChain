@@ -14,6 +14,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { QRCodeModule } from 'angularx-qrcode';
 import { SidebarModule } from 'ng-sidebar';
 import { NgxPrintModule } from 'ngx-print';
+import { NgxSpinnerModule } from 'ngx-spinner';
 import { environment } from 'src/environments/environment';
 
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
@@ -56,6 +57,7 @@ export function createTranslateLoader(http: HttpClient) {
       apiKey: environment.mapApiKey,
       libraries: ['places']
     }),
+    NgxSpinnerModule,
     NgSelectModule,
     QRCodeModule,
     ZXingScannerModule,
@@ -71,6 +73,7 @@ export function createTranslateLoader(http: HttpClient) {
     SidebarModule.forRoot().ngModule,
     TranslateModule.forRoot().ngModule,
     AgmCoreModule.forRoot().ngModule,
+    NgxSpinnerModule,
     NgSelectModule,
     QRCodeModule,
     NgxPrintModule,

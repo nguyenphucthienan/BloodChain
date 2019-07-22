@@ -1,10 +1,8 @@
 <ng-sidebar-container>
-
   <!-- Sidebar -->
   <ng-sidebar [closeOnClickOutside]="true" [autoFocus]="false" [(opened)]="sidebarOpened">
     <app-sidebar (sidebarToggled)="toggleSidebar()"></app-sidebar>
   </ng-sidebar>
-
   <!-- Page content -->
   <div ng-sidebar-content>
     <app-header (sidebarToggled)="toggleSidebar()"></app-header>
@@ -12,5 +10,6 @@
       <router-outlet></router-outlet>
     </div>
   </div>
-
 </ng-sidebar-container>
+<ngx-spinner bdColor="rgb(0, 0, 0, 0.5)" size="large" color="#dc3545" type="ball-atom" [fullScreen]="true">
+</ngx-spinner>
