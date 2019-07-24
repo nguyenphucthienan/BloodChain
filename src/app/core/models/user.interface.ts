@@ -8,6 +8,7 @@ import { Role } from './role.interface';
 
 export interface User {
   _id: string;
+  createdAt: Date;
   username: string;
   firstName: string;
   lastName: string;

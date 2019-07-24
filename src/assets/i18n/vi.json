@@ -331,7 +331,8 @@
     "button": {
       "add": "Thêm người dùng",
       "scanQrCode": "Quét QR Code",
-      "printQrCode": "In QR Code"
+      "printQrCode": "In QR Code",
+      "editInfo": "Thay đổi thông tin"
     },
     "column": {
       "roles": "Vai trò"
@@ -340,6 +341,7 @@
       "userInfo": "THÔNG TIN NGƯỜI DÙNG",
       "mapInfo": "BẢN ĐỒ",
       "id": "ID",
+      "createdAt": "Ngày tham gia",
       "username": "Tên đăng nhập",
       "email": "Email",
       "firstName": "Họ",

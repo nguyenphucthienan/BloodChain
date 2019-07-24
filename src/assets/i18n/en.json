@@ -335,7 +335,8 @@
     "button": {
       "add": "Add User",
       "scanQrCode": "Scan QR Code",
-      "printQrCode": "Print QR Code"
+      "printQrCode": "Print QR Code",
+      "editInfo": "Edit Info"
     },
     "column": {
       "roles": "Roles"
@@ -344,6 +345,7 @@
       "userInfo": "USER INFO",
       "mapInfo": "MAP INFO",
       "id": "ID",
+      "createdAt": "Joined at",
       "username": "Username",
       "email": "Email",
       "firstName": "First name",

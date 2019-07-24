@@ -4,17 +4,26 @@ import { RouterModule, Routes } from '@angular/router';
 import { RoleName } from '../core/constant/role-name';
 import { HasRoleGuard } from '../core/guards/has-role.guard';
 import { ProfileEditInfoComponent } from './components/profile-edit-info/profile-edit-info.component';
+import { ProfileComponent } from './profile.component';
 
 const routes: Routes = [
   {
     path: 'profile',
     canActivate: [HasRoleGuard],
-    data: { roles: [RoleName.DONOR], breadcrumb: 'breadcrumb.profile.main' },
+    data: {
+      roles: [RoleName.DONOR],
+      breadcrumb: 'breadcrumb.profile.main'
+    },
     children: [
       {
+        path: '',
+        pathMatch: 'full',
+        component: ProfileComponent
+      },
+      {
         path: 'edit',
-        data: { breadcrumb: 'breadcrumb.profile.editInfo' },
-        component: ProfileEditInfoComponent
+        component: ProfileEditInfoComponent,
+        data: { breadcrumb: 'breadcrumb.profile.editInfo' }
       }
     ]
   }
