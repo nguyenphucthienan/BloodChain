@@ -141,6 +141,16 @@
   </div>
   <div class="card mt-3">
     <div class="card-body">
+      <div class="d-flex">
+        <span class="font-weight-bold">{{ 'bloodPackManager.label.transferHistory' | translate }}</span>
+      </div>
+      <div class="mt-3">
+        {{ transferHistories | json }}
+      </div>
+    </div>
+  </div>
+  <div class="card mt-3">
+    <div class="card-body">
       <app-datatable [tableName]="'table.name.bloodProductManager' | translate"
         [tableService]="bloodPackDetailBloodProductTableService" (cellChanged)="onTableCellChanged($event)">
       </app-datatable>
