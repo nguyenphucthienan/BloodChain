@@ -10,7 +10,7 @@ import { User } from '../core/models/user.interface';
 import { AuthService } from '../core/services/auth.service';
 import { TableActionType } from '../datatable/models/table-action.interface';
 import { TableCellChange } from '../datatable/models/table-cell-change.interface';
-import { UserQrcodeModalComponent } from '../manager/modals/user-qrcode-modal/user-qrcode-modal.component';
+import { ProfileUserQrcodeModalComponent } from './modals/profile-user-qrcode-modal/profile-user-qrcode-modal.component';
 
 @Component({
   selector: 'app-profile',
@@ -84,7 +84,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
       return;
     }
 
-    this.modalRef = this.modalService.show(UserQrcodeModalComponent, {
+    this.modalRef = this.modalService.show(ProfileUserQrcodeModalComponent, {
       backdrop: true,
       keyboard: true,
       focus: true,
