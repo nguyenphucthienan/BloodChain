@@ -1,0 +1,19 @@
+mgl-timeline {
+  padding: 20px 0px;
+
+  mgl-timeline-entry.expanded {
+    mgl-timeline-entry-header {
+      div {
+        color: #fff;
+      }
+    }
+  }
+
+  mgl-timeline-entry {
+    margin-bottom: 20px;
+  }
+
+  mgl-timeline-entry.last {
+    margin-bottom: 0px;
+  }
+}

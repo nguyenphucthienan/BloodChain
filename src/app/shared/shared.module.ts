@@ -11,12 +11,16 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { MglTimelineModule } from 'angular-mgl-timeline';
 import { QRCodeModule } from 'angularx-qrcode';
 import { SidebarModule } from 'ng-sidebar';
 import { NgxPrintModule } from 'ngx-print';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { environment } from 'src/environments/environment';
 
+import {
+  BloodPackTransferHistoriesComponent,
+} from './components/blood-pack-transfer-histories/blood-pack-transfer-histories.component';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MapInputComponent } from './components/map-input/map-input.component';
@@ -37,7 +41,8 @@ export function createTranslateLoader(http: HttpClient) {
     MapInputComponent,
     BreadcrumbComponent,
     ScanQrcodeModalComponent,
-    BooleanYesNoPipe
+    BooleanYesNoPipe,
+    BloodPackTransferHistoriesComponent
   ],
   imports: [
     CommonModule,
@@ -63,7 +68,8 @@ export function createTranslateLoader(http: HttpClient) {
     ZXingScannerModule,
     NgxPrintModule,
     MatNativeDateModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MglTimelineModule
   ],
   exports: [
     CommonModule,
@@ -79,12 +85,14 @@ export function createTranslateLoader(http: HttpClient) {
     NgxPrintModule,
     MatNativeDateModule,
     MatDatepickerModule,
+    MglTimelineModule,
     HeaderComponent,
     SidebarComponent,
     PaginationComponent,
     MapInputComponent,
     BreadcrumbComponent,
     ScanQrcodeModalComponent,
+    BloodPackTransferHistoriesComponent,
     BooleanYesNoPipe
   ],
   entryComponents: [

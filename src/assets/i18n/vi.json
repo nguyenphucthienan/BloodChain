@@ -513,7 +513,7 @@
       "deleteFailed": "Xóa trung tâm không thành công"
     }
   },
-  "bloodTestSeparationCenterManager": {
+  "bloodSeparationCenterManager": {
     "button": {
       "add": "Thêm trung tâm"
     },
@@ -680,6 +680,8 @@
       "result": "Kết quả",
       "bloodType": "Nhóm máu",
       "expirationDate": "Hạn sử dụng",
+      "from": "Nơi chuyển",
+      "to": "Nơi nhận",
       "searchDonor": "Tìm người hiến",
       "searchBloodPack": "Tìm túi máu",
       "searchBloodTestCenter": "Tìm trung tâm xét nghiệm máu",

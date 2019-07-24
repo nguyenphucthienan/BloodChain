@@ -4,9 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { BloodPack } from 'src/app/core/models/blood-pack.interface';
-import { TransferHistory } from 'src/app/core/models/transfer-history.interface';
 import { User } from 'src/app/core/models/user.interface';
-import { BloodPackService } from 'src/app/core/services/blood-pack.service';
 import { UserService } from 'src/app/core/services/user.service';
 import { DatatableComponent } from 'src/app/datatable/datatable.component';
 import { TableActionType } from 'src/app/datatable/models/table-action.interface';
@@ -29,7 +27,6 @@ export class ManagerBloodPackManagerBloodPackDetailComponent implements OnInit, 
   @ViewChild(DatatableComponent) datatable: DatatableComponent;
 
   bloodPack: BloodPack;
-  transferHistories: TransferHistory[] = [];
   modalRef: MDBModalRef;
 
   userForm: FormGroup;
@@ -42,7 +39,6 @@ export class ManagerBloodPackManagerBloodPackDetailComponent implements OnInit, 
     private fb: FormBuilder,
     private renderer: Renderer2,
     private userService: UserService,
-    private bloodPackService: BloodPackService,
     private modalService: MDBModalService,
     private datePipe: DatePipe
   ) { }
@@ -79,9 +75,6 @@ export class ManagerBloodPackManagerBloodPackDetailComponent implements OnInit, 
           testPassed: this.bloodPack.testPassed,
           separated: this.bloodPack.separated
         });
-
-        this.bloodPackService.getBloodPackTransferHistories(this.bloodPack._id)
-          .subscribe(transferHistories => this.transferHistories = transferHistories);
 
         this.bloodPackDetailBloodProductTableService.filterMode.bloodPack = this.bloodPack._id;
         this.datatable.refresh();
