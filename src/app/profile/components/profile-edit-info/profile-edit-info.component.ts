@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDatepicker } from '@angular/material/datepicker';
 import { Router } from '@angular/router';
@@ -18,7 +18,7 @@ import { environment } from 'src/environments/environment';
   templateUrl: './profile-edit-info.component.html',
   styleUrls: ['./profile-edit-info.component.scss']
 })
-export class ProfileEditInfoComponent implements OnInit {
+export class ProfileEditInfoComponent implements OnInit, OnDestroy {
 
   readonly defaultPhotoUrl = environment.photoUrl.defaultUser;
 
@@ -38,6 +38,7 @@ export class ProfileEditInfoComponent implements OnInit {
   constructor(
     private router: Router,
     private fb: FormBuilder,
+    private renderer: Renderer2,
     private modalService: MDBModalService,
     private authService: AuthService,
     private alertService: AlertService,
@@ -45,6 +46,7 @@ export class ProfileEditInfoComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.renderer.addClass(document.body, 'grey-background');
     this.genders$ = this.translate.get(this.genders.map(gender => gender.translation))
       .pipe(
         map(result => this.genders.map(gender => ({
@@ -173,6 +175,10 @@ export class ProfileEditInfoComponent implements OnInit {
   changePasswordFormControlHasError(controlName: string, errorName: string): boolean {
     return this.changePasswordForm.get(controlName).touched
       && this.changePasswordForm.get(controlName).hasError(errorName);
+  }
+
+  ngOnDestroy() {
+    this.renderer.removeClass(document.body, 'grey-background');
   }
 
 }

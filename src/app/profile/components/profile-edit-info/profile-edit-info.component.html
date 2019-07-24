@@ -1,10 +1,12 @@
-<div class="container">
-  <h1 class="text-center">{{ 'editUserInfo.title' | translate }}</h1>
+<div class="container-fluid">
+  <div class="card mt-3">
+    <div class="card-body">
+      <app-breadcrumb></app-breadcrumb>
+    </div>
+  </div>
   <div class="row justify-content-center mt-3">
     <div class="col-lg-4">
       <div class="card">
-        <div class="card-header red darken-4 white-text py-2">
-        </div>
         <div class="card-body">
           <div class="d-flex justify-content-center align-items-center">
             <img [src]="defaultPhotoUrl" class="img-fluid rounded-circle photo">
@@ -15,11 +17,41 @@
           </button>
         </div>
       </div>
+      <div class="card mt-3">
+        <div class="card-body">
+          <form [formGroup]="changePasswordForm" (ngSubmit)="changePassword()" class="text-center">
+            <div class="md-form">
+              <input type="password" id="password" formControlName="password" class="form-control" mdbInput>
+              <label for="password">{{ 'editUserInfo.label.password' | translate }}</label>
+              <mdb-error *ngIf="changePasswordFormControlHasError('password', 'required')">
+                {{ 'editUserInfo.message.passwordRequired' | translate }}
+              </mdb-error>
+              <mdb-error
+                *ngIf="changePasswordFormControlHasError('password', 'minlength') || changePasswordFormControlHasError('password', 'maxlength')">
+                {{ 'editUserInfo.message.passwordLength' | translate }}
+              </mdb-error>
+            </div>
+            <div class="md-form">
+              <input type="password" id="confirmPassword" formControlName="confirmPassword" class="form-control"
+                mdbInput>
+              <label for="confirmPassword">{{ 'editUserInfo.label.confirmPassword' | translate }}</label>
+              <mdb-error *ngIf="changePasswordFormControlHasError('confirmPassword', 'required')">
+                {{ 'editUserInfo.message.confirmPasswordRequired' | translate }}
+              </mdb-error>
+              <mdb-error
+                *ngIf="changePasswordForm.get('confirmPassword').touched && !changePasswordFormControlHasError('confirmPassword', 'required') && changePasswordForm.hasError('passwordMatch')">
+                {{ 'editUserInfo.message.passwordNotMatch' | translate }}
+              </mdb-error>
+            </div>
+            <button mdbBtn color="red" outline="true" rounded="true" block="true"
+              class="mt-4 mb-2 waves-effect z-depth-0" mdbWavesEffect type="submit"
+              [disabled]="changePasswordForm.invalid">{{ 'editUserInfo.button.changePassword' | translate }}</button>
+          </form>
+        </div>
+      </div>
     </div>
     <div class="col-lg-8 mt-lg-0 pl-md-0 mt-3">
       <div class="card">
-        <div class="card-header red darken-4 white-text py-2">
-        </div>
         <div class="card-body">
           <form [formGroup]="updateInfoForm" (ngSubmit)="updateInfo()" class="text-center">
             <div class="md-form">
@@ -103,40 +135,7 @@
           </form>
         </div>
       </div>
-      <div class="card mt-3">
-        <div class="card-header red darken-4 white-text py-2">
-        </div>
-        <div class="card-body">
-          <form [formGroup]="changePasswordForm" (ngSubmit)="changePassword()" class="text-center">
-            <div class="md-form">
-              <input type="password" id="password" formControlName="password" class="form-control" mdbInput>
-              <label for="password">{{ 'editUserInfo.label.password' | translate }}</label>
-              <mdb-error *ngIf="changePasswordFormControlHasError('password', 'required')">
-                {{ 'editUserInfo.message.passwordRequired' | translate }}
-              </mdb-error>
-              <mdb-error
-                *ngIf="changePasswordFormControlHasError('password', 'minlength') || changePasswordFormControlHasError('password', 'maxlength')">
-                {{ 'editUserInfo.message.passwordLength' | translate }}
-              </mdb-error>
-            </div>
-            <div class="md-form">
-              <input type="password" id="confirmPassword" formControlName="confirmPassword" class="form-control"
-                mdbInput>
-              <label for="confirmPassword">{{ 'editUserInfo.label.confirmPassword' | translate }}</label>
-              <mdb-error *ngIf="changePasswordFormControlHasError('confirmPassword', 'required')">
-                {{ 'editUserInfo.message.confirmPasswordRequired' | translate }}
-              </mdb-error>
-              <mdb-error
-                *ngIf="changePasswordForm.get('confirmPassword').touched && !changePasswordFormControlHasError('confirmPassword', 'required') && changePasswordForm.hasError('passwordMatch')">
-                {{ 'editUserInfo.message.passwordNotMatch' | translate }}
-              </mdb-error>
-            </div>
-            <button mdbBtn color="red" outline="true" rounded="true" block="true"
-              class="mt-4 mb-2 waves-effect z-depth-0" mdbWavesEffect type="submit"
-              [disabled]="changePasswordForm.invalid">{{ 'editUserInfo.button.changePassword' | translate }}</button>
-          </form>
-        </div>
-      </div>
+
     </div>
   </div>
 </div>
