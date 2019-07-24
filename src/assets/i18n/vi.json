@@ -155,7 +155,8 @@
     },
     "profile": {
       "main": "Hồ sơ",
-      "editInfo": "Thay đổi thông tin"
+      "editInfo": "Thay đổi thông tin",
+      "donationHistory": "Lịch sử hiến máu"
     }
   },
   "sidebar": {
@@ -166,7 +167,8 @@
       "bloodTestCenter": "TT Xét Nghiệm Máu",
       "bloodSeparationCenter": "TT Phân Tách Máu",
       "bloodBank": "Ngân Hàng Máu",
-      "hospital": "Bệnh Viện"
+      "hospital": "Bệnh Viện",
+      "donor": "Người hiến máu"
     },
     "title": {
       "users": "Người dùng",
@@ -178,7 +180,9 @@
       "bloodBanks": "Ngân hàng máu",
       "hospitals": "Bệnh viện",
       "bloodPacks": "Túi máu",
-      "bloodProducts": "Chế phẩm máu"
+      "bloodProducts": "Chế phẩm máu",
+      "myProfile": "Hồ sơ",
+      "donationHistory": "Lịch sử hiến máu"
     }
   },
   "pagination": {

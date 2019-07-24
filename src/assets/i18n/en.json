@@ -159,7 +159,8 @@
     },
     "profile": {
       "main": "Profile",
-      "editInfo": "Edit Info"
+      "editInfo": "Edit Info",
+      "donationHistory": "Donation History"
     }
   },
   "sidebar": {
@@ -170,7 +171,8 @@
       "bloodTestCenter": "Blood Test Center",
       "bloodSeparationCenter": "Blood Separation Center",
       "bloodBank": "Blood Bank",
-      "hospital": "Hospital"
+      "hospital": "Hospital",
+      "donor": "Donor"
     },
     "title": {
       "users": "Users",
@@ -182,7 +184,9 @@
       "bloodBanks": "Blood Banks",
       "hospitals": "Hospitals",
       "bloodPacks": "Blood Packs",
-      "bloodProducts": "Blood Products"
+      "bloodProducts": "Blood Products",
+      "myProfile": "My Profile",
+      "donationHistory": "Donation History"
     }
   },
   "pagination": {
