@@ -221,6 +221,7 @@
       "consume": "Consume"
     },
     "label": {
+      "id": "ID",
       "from": "From",
       "to": "To",
       "time": "Time",

@@ -217,6 +217,7 @@
       "consume": "Sử dụng"
     },
     "label": {
+      "id": "ID",
       "from": "Nơi chuyển",
       "to": "Nơi nhận",
       "time": "Thời gian",

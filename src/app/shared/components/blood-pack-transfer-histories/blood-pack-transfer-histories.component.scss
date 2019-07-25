@@ -16,4 +16,9 @@ mgl-timeline {
   mgl-timeline-entry.last {
     margin-bottom: 0px;
   }
+
+  mgl-timeline-entry-header:hover,
+  mgl-timeline-entry-dot:hover {
+    cursor: pointer;
+  }
 }
