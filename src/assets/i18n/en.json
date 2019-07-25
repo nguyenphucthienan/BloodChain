@@ -742,7 +742,8 @@
   "bloodProductManager": {
     "button": {
       "transfer": "Transfer Blood Products",
-      "scanQrCode": "Scan QR Code"
+      "scanQrCode": "Scan QR Code",
+      "viewBloodPackDetail": "View Blood Pack Detail"
     },
     "column": {
       "donor": "Donor",

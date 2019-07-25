@@ -7,6 +7,10 @@
   <div class="card mt-3">
     <div class="card-body">
       <div class="d-flex flex-sm-row flex-column justify-content-end">
+        <button type="button" class="btn btn-sm btn-primary"
+          [routerLink]="['/manager', 'blood-packs', bloodProduct.bloodPack._id]">
+          {{ 'bloodProductManager.button.viewBloodPackDetail' | translate }}
+        </button>
         <button type="button" class="btn btn-sm btn-primary" (click)="openBloodProductQrCodeModal()">
           {{ 'userManager.button.printQrCode' | translate }}
         </button>
@@ -20,6 +24,10 @@
           <form [formGroup]="bloodPackForm">
             <div class="d-flex">
               <span class="font-weight-bold">{{ 'bloodPackManager.label.bloodPackInfo' | translate }}</span>
+            </div>
+            <div class="md-form">
+              <input type="text" id="id" formControlName="id" class="form-control" mdbInput>
+              <label for="id">{{ 'bloodPackManager.label.id' | translate }}</label>
             </div>
             <div class="md-form">
               <input type="text" id="volume" formControlName="volume" class="form-control" mdbInput>

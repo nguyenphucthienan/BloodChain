@@ -738,7 +738,8 @@
   "bloodProductManager": {
     "button": {
       "transfer": "Chuyển chế phẩm máu",
-      "scanQrCode": "Quét QR Code"
+      "scanQrCode": "Quét QR Code",
+      "viewBloodPackDetail": "Xem thông tin túi máu"
     },
     "column": {
       "donor": "Người hiến",
