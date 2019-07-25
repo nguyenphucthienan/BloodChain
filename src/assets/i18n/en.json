@@ -159,8 +159,11 @@
     },
     "profile": {
       "main": "Profile",
-      "editInfo": "Edit Info",
-      "donationHistory": "Donation History"
+      "editInfo": "Edit Info"
+    },
+    "donationHistory": {
+      "main": "Donation History",
+      "bloodPackDetail": "Blood Pack Detail"
     }
   },
   "sidebar": {

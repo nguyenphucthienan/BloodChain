@@ -1,21 +1,21 @@
 import { Component, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { User } from 'src/app/core/models/user.interface';
-import { AuthService } from 'src/app/core/services/auth.service';
-import { TableActionType } from 'src/app/datatable/models/table-action.interface';
-import { TableCellChange } from 'src/app/datatable/models/table-cell-change.interface';
 import { environment } from 'src/environments/environment';
 
-import { ProfileBloodDonationHistoryTableService } from '../../services/profile-blood-donation-history-table.service';
+import { User } from '../core/models/user.interface';
+import { AuthService } from '../core/services/auth.service';
+import { TableActionType } from '../datatable/models/table-action.interface';
+import { TableCellChange } from '../datatable/models/table-cell-change.interface';
+import { DonationHistoryTableService } from './services/donation-history-table.service';
 
 @Component({
-  selector: 'app-profile-donation-history',
-  templateUrl: './profile-donation-history.component.html',
-  styleUrls: ['./profile-donation-history.component.scss'],
-  providers: [ProfileBloodDonationHistoryTableService]
+  selector: 'app-donation-history',
+  templateUrl: './donation-history.component.html',
+  styleUrls: ['./donation-history.component.scss'],
+  providers: [DonationHistoryTableService]
 })
-export class ProfileDonationHistoryComponent implements OnInit, OnDestroy {
+export class DonationHistoryComponent implements OnInit, OnDestroy {
 
   readonly defaultPhotoUrl = environment.photoUrl.defaultUser;
 
@@ -26,7 +26,7 @@ export class ProfileDonationHistoryComponent implements OnInit, OnDestroy {
     private router: Router,
     private renderer: Renderer2,
     private authService: AuthService,
-    public profileBloodDonationHistoryTableService: ProfileBloodDonationHistoryTableService
+    public donationHistoryTableService: DonationHistoryTableService
   ) { }
 
   ngOnInit() {
@@ -44,7 +44,7 @@ export class ProfileDonationHistoryComponent implements OnInit, OnDestroy {
   }
 
   navigateToBloodPackDetail(id: string) {
-    this.router.navigate(['/profile', 'blood-packs', id]);
+    this.router.navigate(['/donation-history', 'blood-packs', id]);
   }
 
   ngOnDestroy() {

@@ -14,8 +14,8 @@
   </div>
   <div class="card mt-3">
     <div class="card-body">
-      <app-datatable [tableName]="'table.name.donationHistory' | translate"
-        [tableService]="profileBloodDonationHistoryTableService" (cellChanged)="onTableCellChanged($event)">
+      <app-datatable [tableName]="'table.name.donationHistory' | translate" [tableService]="donationHistoryTableService"
+        (cellChanged)="onTableCellChanged($event)">
       </app-datatable>
     </div>
   </div>

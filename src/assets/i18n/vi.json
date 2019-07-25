@@ -155,8 +155,11 @@
     },
     "profile": {
       "main": "Hồ sơ",
-      "editInfo": "Thay đổi thông tin",
-      "donationHistory": "Lịch sử hiến máu"
+      "editInfo": "Thay đổi thông tin"
+    },
+    "donationHistory": {
+      "main": "Lịch sử hiến máu",
+      "bloodPackDetail": "Thông tin túi máu"
     }
   },
   "sidebar": {
