@@ -1,0 +1,102 @@
+<div class="container-fluid">
+  <div class="card mt-3">
+    <div class="card-body">
+      <app-breadcrumb></app-breadcrumb>
+    </div>
+  </div>
+  <div class="card mt-3">
+    <div class="card-body">
+      <div class="d-flex flex-sm-row flex-column justify-content-end">
+        <button type="button" class="btn btn-sm btn-primary">
+          {{ 'userManager.button.printQrCode' | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card mt-3 flex-card">
+        <div class="card-body">
+          <form [formGroup]="bloodPackForm">
+            <div class="d-flex">
+              <span class="font-weight-bold">{{ 'bloodPackManager.label.bloodPackInfo' | translate }}</span>
+            </div>
+            <div class="md-form">
+              <input type="text" id="id" formControlName="id" class="form-control" mdbInput>
+              <label for="id">{{ 'bloodPackManager.label.id' | translate }}</label>
+            </div>
+            <div class="md-form">
+              <input type="text" id="time" formControlName="time" class="form-control" mdbInput>
+              <label for="time">{{ 'bloodPackManager.label.time' | translate }}</label>
+            </div>
+            <div class="md-form">
+              <input type="text" id="volume" formControlName="volume" class="form-control" mdbInput>
+              <label for="volume">{{ 'bloodPackManager.label.volume' | translate }}</label>
+            </div>
+            <div class="md-form">
+              <input type="text" id="bloodType" formControlName="bloodType" class="form-control" mdbInput>
+              <label for="bloodType">{{ 'bloodPackManager.label.bloodType' | translate }}</label>
+            </div>
+            <div class="md-form">
+              <input type="text" id="bloodCamp" formControlName="bloodCamp" class="form-control" mdbInput>
+              <label for="bloodCamp">{{ 'bloodPackManager.label.bloodCamp' | translate }}</label>
+            </div>
+            <div class="md-form">
+              <input type="text" id="bloodTestCenter" formControlName="bloodTestCenter" class="form-control" mdbInput>
+              <label for="bloodTestCenter">{{ 'bloodPackManager.label.bloodTestCenter' | translate }}</label>
+            </div>
+            <div class="md-form">
+              <input type="text" id="bloodSeparationCenter" formControlName="bloodSeparationCenter" class="form-control"
+                mdbInput>
+              <label
+                for="bloodSeparationCenter">{{ 'bloodPackManager.label.bloodSeparationCenter' | translate }}</label>
+            </div>
+            <div class="form-row">
+              <div class="col">
+                <div class="md-form form-col">
+                  <input type="text" id="tested" formControlName="tested"
+                    [value]="bloodPackForm.get('tested').value | booleanYesNo | async" class="form-control" mdbInput>
+                  <label for="tested">{{ 'bloodPackManager.label.tested' | translate }}</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="md-form form-col">
+                  <input type="text" id="testPassed" formControlName="testPassed"
+                    [value]="bloodPackForm.get('testPassed').value | booleanYesNo | async" class="form-control"
+                    mdbInput>
+                  <label for="testPassed">{{ 'bloodPackManager.label.testPassed' | translate }}</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="md-form form-col">
+                  <input type="text" id="separated" formControlName="separated"
+                    [value]="bloodPackForm.get('separated').value | booleanYesNo | async" class="form-control" mdbInput>
+                  <label for="separated">{{ 'bloodPackManager.label.separated' | translate }}</label>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 pl-md-0">
+      <div class="card mt-3 flex-card">
+        <div class="card-body">
+          <div class="d-flex">
+            <span class="font-weight-bold">{{ 'bloodPackManager.label.bloodTestResult' | translate }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card mt-3">
+    <div class="card-body">
+      <div class="d-flex">
+        <span class="font-weight-bold">{{ 'bloodPackManager.label.transferHistory' | translate }}</span>
+      </div>
+      <div class="mt-3">
+        <app-blood-pack-transfer-histories [bloodPackId]="bloodPack._id"></app-blood-pack-transfer-histories>
+      </div>
+    </div>
+  </div>
+</div>

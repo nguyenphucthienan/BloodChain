@@ -3,6 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { RoleName } from '../core/constant/role-name';
 import { HasRoleGuard } from '../core/guards/has-role.guard';
+import { BloodPackResolver } from '../core/resolvers/blood-pack.resolver';
+import {
+  DonationHistoryBloodPackDetailComponent,
+} from './components/donation-history-blood-pack-detail/donation-history-blood-pack-detail.component';
 import { DonationHistoryComponent } from './donation-history.component';
 
 const routes: Routes = [
@@ -18,6 +22,12 @@ const routes: Routes = [
         path: '',
         pathMatch: 'full',
         component: DonationHistoryComponent
+      },
+      {
+        path: 'blood-packs/:id',
+        component: DonationHistoryBloodPackDetailComponent,
+        resolve: { bloodPack: BloodPackResolver },
+        data: { breadcrumb: 'breadcrumb.donationHistory.bloodPackDetail' }
       }
     ]
   }
