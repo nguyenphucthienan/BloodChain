@@ -1,15 +1,12 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { environment } from 'src/environments/environment';
 
 import { Point } from '../core/models/point.interface';
 import { User } from '../core/models/user.interface';
 import { AuthService } from '../core/services/auth.service';
-import { TableActionType } from '../datatable/models/table-action.interface';
-import { TableCellChange } from '../datatable/models/table-cell-change.interface';
 import { ProfileUserQrcodeModalComponent } from './modals/profile-user-qrcode-modal/profile-user-qrcode-modal.component';
 
 @Component({
@@ -29,7 +26,6 @@ export class ProfileComponent implements OnInit, OnDestroy {
   modalRef: MDBModalRef;
 
   constructor(
-    private router: Router,
     private fb: FormBuilder,
     private renderer: Renderer2,
     private authService: AuthService,
@@ -99,19 +95,6 @@ export class ProfileComponent implements OnInit, OnDestroy {
         user: this.user
       }
     });
-  }
-
-  onTableCellChanged(tableCellChange: TableCellChange) {
-    const action = tableCellChange.newValue;
-    switch (action.type) {
-      case TableActionType.GetDetail:
-        this.navigateToBloodPackDetail(tableCellChange.row.cells._id.value);
-        break;
-    }
-  }
-
-  navigateToBloodPackDetail(id: string) {
-    this.router.navigate(['/manager', 'blood-packs', id]);
   }
 
   ngOnDestroy() {

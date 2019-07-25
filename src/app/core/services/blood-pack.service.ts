@@ -15,6 +15,7 @@ import { TransferHistory } from '../models/transfer-history.interface';
 export class BloodPackService {
 
   private readonly bloodPacksUrl = `${environment.apiUrl}/blood-packs`;
+  private readonly myBloodPacksUrl = `${environment.apiUrl}/blood-packs/my-blood-packs`;
   private readonly bloodPackUrl = `${environment.apiUrl}/blood-packs/{id}`;
   private readonly bloodPackTransferHisoriesUrl = `${environment.apiUrl}/blood-packs/{id}/transfer-histories`;
   private readonly updateTestResultsUrl = `${environment.apiUrl}/blood-packs/{id}/test-results`;
@@ -46,6 +47,20 @@ export class BloodPackService {
       .build();
 
     return this.http.get<BloodPack[]>(`${this.bloodPacksUrl}`, { params });
+  }
+
+  getMyBloodPacks(
+    pagination: Pagination = this.defaultPagination,
+    sortMode: SortMode = this.defaultSortMode,
+    filterMode?: FilterMode
+  ): Observable<BloodPack[]> {
+    const params = new ParamsBuilder()
+      .applyPagination(pagination)
+      .applySort(sortMode)
+      .applyFilter(filterMode)
+      .build();
+
+    return this.http.get<BloodPack[]>(`${this.myBloodPacksUrl}`, { params });
   }
 
   getBloodPack(id: string): Observable<BloodPack> {

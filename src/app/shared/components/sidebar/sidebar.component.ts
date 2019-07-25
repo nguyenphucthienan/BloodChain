@@ -50,7 +50,7 @@ export class SidebarComponent implements OnInit {
 
   readonly donorRoutes = [
     { path: '/profile', title: 'sidebar.title.myProfile', icon: 'user' },
-    { path: '/profile/donation-history', title: 'sidebar.title.donationHistory', icon: 'laptop-medical' }
+    { path: '/donation-history', title: 'sidebar.title.donationHistory', icon: 'laptop-medical' }
   ];
 
   @Output() sidebarToggled = new EventEmitter();

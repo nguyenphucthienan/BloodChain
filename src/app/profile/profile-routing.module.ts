@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { RoleName } from '../core/constant/role-name';
 import { HasRoleGuard } from '../core/guards/has-role.guard';
+import { ProfileDonationHistoryComponent } from './components/profile-donation-history/profile-donation-history.component';
 import { ProfileEditInfoComponent } from './components/profile-edit-info/profile-edit-info.component';
 import { ProfileComponent } from './profile.component';
 
@@ -26,6 +27,11 @@ const routes: Routes = [
         data: { breadcrumb: 'breadcrumb.profile.editInfo' }
       }
     ]
+  },
+  {
+    path: 'donation-history',
+    component: ProfileDonationHistoryComponent,
+    data: { breadcrumb: 'breadcrumb.profile.donationHistory' }
   }
 ];
 

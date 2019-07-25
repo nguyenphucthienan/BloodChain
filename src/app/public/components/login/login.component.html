@@ -11,17 +11,20 @@
               <input type="text" id="username" formControlName="username" class="form-control" mdbInput>
               <label for="username">{{ 'login.label.username' | translate }}</label>
               <mdb-error *ngIf="controlHasError('username', 'required')">
-                {{ 'login.message.usernameRequired' | translate }}</mdb-error>
+                {{ 'login.message.usernameRequired' | translate }}
+              </mdb-error>
             </div>
             <div class="md-form">
               <input type="password" id="password" formControlName="password" class="form-control" mdbInput>
               <label for="password">{{ 'login.label.password' | translate }}</label>
               <mdb-error *ngIf="controlHasError('password', 'required')">
-                {{ 'login.message.passwordRequired' | translate }}</mdb-error>
+                {{ 'login.message.passwordRequired' | translate }}
+              </mdb-error>
             </div>
             <button mdbBtn color="red" outline="true" rounded="true" block="true"
-              class="mt-4 mb-2 waves-effect z-depth-0" mdbWavesEffect type="submit"
-              [disabled]="loginForm.invalid">{{ 'login.button.login' | translate }}</button>
+              class="mt-4 mb-2 waves-effect z-depth-0" mdbWavesEffect type="submit" [disabled]="loginForm.invalid">
+              {{ 'login.button.login' | translate }}
+            </button>
           </form>
         </div>
       </div>
