@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/cor
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { concat, Observable, of, Subject } from 'rxjs';
 import { catchError, debounceTime, distinctUntilChanged, filter, map, switchMap, tap } from 'rxjs/operators';
 import { BloodPack } from 'src/app/core/models/blood-pack.interface';
@@ -59,6 +60,7 @@ export class BloodTestCenterBloodPackManagerTransferBloodPackComponent implement
     private bloodSeparationCenterService: BloodSeparationCenterService,
     private alertService: AlertService,
     private modalService: MDBModalService,
+    private spinnerService: NgxSpinnerService,
     public bloodTestCenterBloodPackTransferTableService: BloodTestCenterBloodPackTransferTableService
   ) {
     const navigation = this.router.getCurrentNavigation();
@@ -236,9 +238,16 @@ export class BloodTestCenterBloodPackManagerTransferBloodPackComponent implement
   }
 
   onTransferBloodPacksConfirmed(bloodPackIds: string[]) {
+    this.spinnerService.show();
     this.transferForm.patchValue({ bloodPackIds });
     this.bloodPackService.transferBloodPacksToBloodSeparationCenter(this.transferForm.getRawValue())
-      .subscribe((results) => this.openBloodPackTransferResultModal(results));
+      .subscribe(
+        results => {
+          this.openBloodPackTransferResultModal(results);
+          this.spinnerService.hide();
+        },
+        error => this.spinnerService.hide()
+      );
   }
 
   openBloodPackTransferResultModal({ success, errors }) {

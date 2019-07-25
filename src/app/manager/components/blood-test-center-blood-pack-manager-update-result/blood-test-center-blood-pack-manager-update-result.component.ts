@@ -4,6 +4,7 @@ import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { concat, Observable, of, Subject } from 'rxjs';
 import { catchError, debounceTime, distinctUntilChanged, filter, map, switchMap, tap } from 'rxjs/operators';
 import { BloodType } from 'src/app/core/constant/blood-type';
@@ -66,6 +67,7 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
     private alertService: AlertService,
     private translate: TranslateService,
     private modalService: MDBModalService,
+    private spinnerService: NgxSpinnerService,
     private datePipe: DatePipe
   ) {
     const navigation = this.router.getCurrentNavigation();
@@ -253,13 +255,18 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
       return;
     }
 
+    this.spinnerService.show();
     this.bloodPackService.updateBloodPackTestResults(this.bloodPack._id, this.updateForm.value)
       .subscribe(
         (bloodPack: BloodPack) => {
+          this.spinnerService.hide();
           this.alertService.success('bloodPackManager.alert.updateTestResultSuccess');
           this.resetForms();
         },
-        error => this.alertService.error('bloodPackManager.alert.updateTestResultFailed'));
+        error => {
+          this.spinnerService.hide();
+          this.alertService.error('bloodPackManager.alert.updateTestResultFailed');
+        });
   }
 
   get testResultFormArray() {

@@ -4,6 +4,7 @@ import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDatepicker } from '@angular/material/datepicker';
 import { Router } from '@angular/router';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { concat, Observable, of, Subject } from 'rxjs';
 import { catchError, debounceTime, distinctUntilChanged, filter, map, switchMap, tap } from 'rxjs/operators';
 import { BloodType } from 'src/app/core/constant/blood-type';
@@ -66,6 +67,7 @@ export class BloodSeparationCenterBloodPackManagerUpdateResultComponent implemen
     private bloodProductService: BloodProductService,
     private alertService: AlertService,
     private modalService: MDBModalService,
+    private spinnerService: NgxSpinnerService,
     private datePipe: DatePipe
   ) {
     const navigation = this.router.getCurrentNavigation();
@@ -262,13 +264,18 @@ export class BloodSeparationCenterBloodPackManagerUpdateResultComponent implemen
       return;
     }
 
+    this.spinnerService.show();
     this.bloodPackService.updateBloodPackSeparationResults(this.bloodPack._id, this.updateForm.value)
       .subscribe(
         (bloodPack: BloodPack) => {
+          this.spinnerService.hide();
           this.alertService.success('bloodPackManager.alert.updateSeparationResultSuccess');
           this.openBloodPackUpdateResultSuccessModal(bloodPack);
         },
-        error => this.alertService.error('bloodPackManager.alert.updateSeparationResultFailed'));
+        error => {
+          this.spinnerService.hide();
+          this.alertService.error('bloodPackManager.alert.updateSeparationResultFailed');
+        });
   }
 
   openBloodPackUpdateResultSuccessModal(bloodPack: BloodPack) {

@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { NgSelectComponent } from '@ng-select/ng-select';
 import { TranslateService } from '@ngx-translate/core';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { concat, Observable, of, Subject } from 'rxjs';
 import { catchError, debounceTime, distinctUntilChanged, filter, map, switchMap, tap } from 'rxjs/operators';
 import { RoleName } from 'src/app/core/constant/role-name';
@@ -71,6 +72,7 @@ export class BloodBankBloodProductManagerTransferBloodProductComponent implement
     private bloodProductService: BloodProductService,
     private alertService: AlertService,
     private modalService: MDBModalService,
+    private spinnerService: NgxSpinnerService,
     private translate: TranslateService,
     public bloodBankBloodProductTransferTableService: BloodBankBloodProductTransferTableService
   ) {
@@ -283,12 +285,19 @@ export class BloodBankBloodProductManagerTransferBloodProductComponent implement
   }
 
   onTransferBloodProductsConfirmed(bloodProductIds: string[]) {
+    this.spinnerService.show();
     this.transferForm.patchValue({ bloodProductIds });
     this.bloodProductService.transferBloodProducts(
       RoleName.BLOOD_BANK,
       this.toOrganizationType,
       this.transferForm.getRawValue()
-    ).subscribe((results) => this.openBloodProductTransferResultModal(results));
+    ).subscribe(
+      results => {
+        this.openBloodProductTransferResultModal(results);
+        this.spinnerService.hide();
+      },
+      error => this.spinnerService.hide()
+    );
   }
 
   openBloodProductTransferResultModal({ success, errors }) {
