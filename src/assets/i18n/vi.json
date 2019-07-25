@@ -210,6 +210,19 @@
       "bloodProductManager": "CHẾ PHẨM MÁU"
     }
   },
+  "timeline": {
+    "title": {
+      "bloodPack": "Túi máu",
+      "bloodProduct": "Chế phẩm máu",
+      "consume": "Sử dụng"
+    },
+    "label": {
+      "from": "Nơi chuyển",
+      "to": "Nơi nhận",
+      "time": "Thời gian",
+      "description": "Miêu tả"
+    }
+  },
   "about": {
     "title": "Về chúng tôi",
     "label": {
@@ -686,8 +699,6 @@
       "result": "Kết quả",
       "bloodType": "Nhóm máu",
       "expirationDate": "Hạn sử dụng",
-      "from": "Nơi chuyển",
-      "to": "Nơi nhận",
       "searchDonor": "Tìm người hiến",
       "searchBloodPack": "Tìm túi máu",
       "searchBloodTestCenter": "Tìm trung tâm xét nghiệm máu",

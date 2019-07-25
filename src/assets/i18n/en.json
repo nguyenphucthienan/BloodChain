@@ -214,6 +214,19 @@
       "bloodProductManager": "BLOOD PRODUCTS"
     }
   },
+  "timeline": {
+    "title": {
+      "bloodPack": "Blood Pack",
+      "bloodProduct": "Blood Product",
+      "consume": "Consume"
+    },
+    "label": {
+      "from": "From",
+      "to": "To",
+      "time": "Time",
+      "description": "Description"
+    }
+  },
   "about": {
     "title": "About",
     "label": {
@@ -690,8 +703,6 @@
       "result": "Result",
       "bloodType": "Blood type",
       "expirationDate": "Expiration date",
-      "from": "From",
-      "to": "To",
       "searchDonor": "Search donor",
       "searchBloodPack": "Search blood pack",
       "searchBloodTestCenter": "Search blood test center",
