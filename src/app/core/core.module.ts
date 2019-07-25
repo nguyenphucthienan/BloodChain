@@ -14,6 +14,7 @@ import { NotLoggedInGuard } from './guards/not-logged-in.guard';
 import { BloodPackResolver } from './resolvers/blood-pack.resolver';
 import { BloodProductResolver } from './resolvers/blood-product.resolver';
 import { MyUserResolver } from './resolvers/my-user.resolver';
+import { TestTypesResolver } from './resolvers/test-types.resolver';
 import { UserResolver } from './resolvers/user.resolver';
 import { AlertService } from './services/alert.service';
 import { AuthService } from './services/auth.service';
@@ -73,6 +74,7 @@ const toastrOptions = {
     HospitalService,
     BloodPackService,
     BloodProductService,
+    TestTypesResolver,
     UserResolver,
     MyUserResolver,
     BloodPackResolver,

@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { RoleName } from '../core/constant/role-name';
 import { HasRoleGuard } from '../core/guards/has-role.guard';
 import { BloodPackResolver } from '../core/resolvers/blood-pack.resolver';
+import { TestTypesResolver } from '../core/resolvers/test-types.resolver';
 import {
   DonationHistoryBloodPackDetailComponent,
 } from './components/donation-history-blood-pack-detail/donation-history-blood-pack-detail.component';
@@ -26,7 +27,10 @@ const routes: Routes = [
       {
         path: 'blood-packs/:id',
         component: DonationHistoryBloodPackDetailComponent,
-        resolve: { bloodPack: BloodPackResolver },
+        resolve: {
+          testTypes: TestTypesResolver,
+          bloodPack: BloodPackResolver
+        },
         data: { breadcrumb: 'breadcrumb.donationHistory.bloodPackDetail' }
       }
     ]

@@ -82,9 +82,32 @@
     <div class="col-md-6 pl-md-0">
       <div class="card mt-3 flex-card">
         <div class="card-body">
-          <div class="d-flex">
-            <span class="font-weight-bold">{{ 'bloodPackManager.label.bloodTestResult' | translate }}</span>
-          </div>
+          <form [formGroup]="testResultForm" class="update-form">
+            <div class="d-flex">
+              <span class="font-weight-bold">{{ 'bloodPackManager.label.bloodTestResult' | translate }}</span>
+            </div>
+            <div *ngIf="testResultFormArray.controls.length === 0" class="font-weight-bold mt-3">
+              {{ 'common.message.noData' | translate }}
+            </div>
+            <div formArrayName="testResults" *ngFor="let item of testResultFormArray.controls; let index=index;">
+              <div [formGroupName]="index">
+                <div class="form-row">
+                  <div class="col-md-8">
+                    <div class="md-form test-control">
+                      <input type="text" id="testType" formControlName="testType" class="form-control" mdbInput>
+                      <label for="testType">{{ 'bloodPackManager.label.testType' | translate }}</label>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="md-form test-control">
+                      <input type="text" id="passed" formControlName="passed" class="form-control" mdbInput>
+                      <label for="passed">{{ 'bloodPackManager.label.result' | translate }}</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
