@@ -22,6 +22,10 @@
               <span class="font-weight-bold">{{ 'bloodPackManager.label.donorInfo' | translate }}</span>
             </div>
             <div class="md-form">
+              <input type="text" id="id" formControlName="id" class="form-control" mdbInput>
+              <label for="id">{{ 'bloodPackManager.label.id' | translate }}</label>
+            </div>
+            <div class="md-form">
               <input type="text" id="username" formControlName="username" class="form-control" mdbInput>
               <label for="username">{{ 'bloodPackManager.label.username' | translate }}</label>
             </div>
@@ -89,12 +93,12 @@
               <span class="font-weight-bold">{{ 'bloodPackManager.label.bloodPackInfo' | translate }}</span>
             </div>
             <div class="md-form">
-              <input type="text" id="volume" formControlName="volume" class="form-control" mdbInput>
-              <label for="volume">{{ 'bloodPackManager.label.volume' | translate }}</label>
-            </div>
-            <div class="md-form">
               <input type="text" id="time" formControlName="time" class="form-control" mdbInput>
               <label for="time">{{ 'bloodPackManager.label.time' | translate }}</label>
+            </div>
+            <div class="md-form">
+              <input type="text" id="volume" formControlName="volume" class="form-control" mdbInput>
+              <label for="volume">{{ 'bloodPackManager.label.volume' | translate }}</label>
             </div>
             <div class="md-form">
               <input type="text" id="bloodCamp" formControlName="bloodCamp" class="form-control" mdbInput>

@@ -51,6 +51,7 @@ export class ManagerBloodPackManagerBloodPackDetailComponent implements OnInit, 
       this.bloodPack = data.bloodPack;
       this.userService.getUser(this.bloodPack.donor._id).subscribe((donor: User) => {
         this.userForm.patchValue({
+          id: donor._id,
           username: donor.username,
           firstName: donor.firstName,
           lastName: donor.lastName,
@@ -84,6 +85,7 @@ export class ManagerBloodPackManagerBloodPackDetailComponent implements OnInit, 
 
   private initForms() {
     this.userForm = this.fb.group({
+      id: [null, Validators.required],
       username: ['', [
         Validators.required,
         Validators.minLength(3),
