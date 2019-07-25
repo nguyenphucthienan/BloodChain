@@ -40,6 +40,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.renderer.addClass(document.body, 'grey-background');
     this.userForm = this.fb.group({
+      id: ['', Validators.required],
       username: ['', [
         Validators.required,
         Validators.minLength(3),
@@ -65,6 +66,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
       this.user = user;
       this.point = this.user.location;
       this.userForm.patchValue({
+        id: this.user._id,
         username: this.user.username,
         firstName: this.user.firstName,
         lastName: this.user.lastName,

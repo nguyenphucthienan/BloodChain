@@ -108,6 +108,7 @@ export class BloodSeparationCenterBloodPackManagerUpdateResultComponent implemen
 
   private initForms() {
     this.userForm = this.fb.group({
+      id: ['', Validators.required],
       username: ['', [
         Validators.required,
         Validators.minLength(3),
@@ -161,6 +162,7 @@ export class BloodSeparationCenterBloodPackManagerUpdateResultComponent implemen
 
       this.userService.getUser(bloodPack.donor._id).subscribe((donor: User) => {
         this.userForm.patchValue({
+          id: donor._id,
           username: donor.username,
           firstName: donor.firstName,
           lastName: donor.lastName,

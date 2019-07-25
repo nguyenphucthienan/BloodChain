@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -14,7 +15,10 @@ import { UserDetailBloodDonationHistoryTableService } from '../../services/user-
   selector: 'app-manager-user-manager-user-detail',
   templateUrl: './manager-user-manager-user-detail.component.html',
   styleUrls: ['./manager-user-manager-user-detail.component.scss'],
-  providers: [UserDetailBloodDonationHistoryTableService]
+  providers: [
+    UserDetailBloodDonationHistoryTableService,
+    DatePipe
+  ]
 })
 export class ManagerUserManagerUserDetailComponent implements OnInit, OnDestroy {
 
@@ -30,12 +34,15 @@ export class ManagerUserManagerUserDetailComponent implements OnInit, OnDestroy 
     private router: Router,
     private fb: FormBuilder,
     private renderer: Renderer2,
-    private modalService: MDBModalService
+    private modalService: MDBModalService,
+    private datePipe: DatePipe
   ) { }
 
   ngOnInit() {
     this.renderer.addClass(document.body, 'grey-background');
     this.userForm = this.fb.group({
+      id: ['', Validators.required],
+      createdAt: [null, Validators.required],
       username: ['', [
         Validators.required,
         Validators.minLength(3),
@@ -60,6 +67,8 @@ export class ManagerUserManagerUserDetailComponent implements OnInit, OnDestroy 
       this.user = data.user;
       this.point = this.user.location;
       this.userForm.patchValue({
+        id: this.user._id,
+        createdAt: this.datePipe.transform(new Date(this.user.createdAt)),
         username: this.user.username,
         firstName: this.user.firstName,
         lastName: this.user.lastName,
