@@ -10,6 +10,7 @@ export const environment = {
   authTokenName: 'auth-token',
   mapApiKey: 'AIzaSyB2MsjvYImNAUWNxbWSiZGQ5TdxNaPbPcY',
   photoUrl: {
+    logo: './assets/images/landing/logo.svg',
     notFound: './assets/images/pages/not-found.svg',
     defaultUser: './assets/images/users/default.png'
   }

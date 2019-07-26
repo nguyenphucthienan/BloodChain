@@ -231,6 +231,12 @@
       "description": "Description"
     }
   },
+  "landing": {
+    "title": {
+      "aSingleGeture": "A single gesture can create a million smiles, and",
+      "oneBloodDonation": "One blood donation can save up to three lives"
+    }
+  },
   "about": {
     "title": "About",
     "label": {

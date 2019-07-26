@@ -227,6 +227,12 @@
       "description": "Miêu tả"
     }
   },
+  "landing": {
+    "title": {
+      "aSingleGeture": "Một cử chỉ nhỏ có thể tạo nên hàng triệu nụ cười, và",
+      "oneBloodDonation": "Một lần hiến máu có thể cứu lấy mạng sống của ba người"
+    }
+  },
   "about": {
     "title": "Về chúng tôi",
     "label": {
