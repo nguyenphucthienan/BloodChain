@@ -1,1 +1,6 @@
-<span>{{ id }}</span>
+<span placement="right" [mdbPopover]="popTemplate" triggers="focus">
+  {{ shortenedId }}
+</span>
+<ng-template #popTemplate>
+  {{ id }}
+</ng-template>

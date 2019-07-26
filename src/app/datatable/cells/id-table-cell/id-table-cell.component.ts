@@ -10,13 +10,15 @@ import { AbstractTableCellComponent } from '../abstract-table-cell/abstract-tabl
 export class IdTableCellComponent extends AbstractTableCellComponent {
 
   id: string;
+  shortenedId: string;
 
   constructor() {
     super();
   }
 
   updateValue() {
-    this.id = this.cell && this.cell.value.substr(-4);
+    this.id = this.cell && this.cell.value;
+    this.shortenedId = this.cell && this.cell.value.substr(-4);
   }
 
 }
