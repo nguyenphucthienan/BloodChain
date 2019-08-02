@@ -8,6 +8,10 @@
     <div class="card-body">
       <div class="d-flex flex-sm-row flex-column justify-content-end">
         <button type="button" class="btn btn-sm btn-primary"
+          [routerLink]="['/manager', 'users', bloodProduct.donor._id]">
+          {{ 'bloodProductManager.button.viewDonorDetail' | translate }}
+      </button>
+        <button type="button" class="btn btn-sm btn-primary"
           [routerLink]="['/manager', 'blood-packs', bloodProduct.bloodPack._id]">
           {{ 'bloodProductManager.button.viewBloodPackDetail' | translate }}
         </button>

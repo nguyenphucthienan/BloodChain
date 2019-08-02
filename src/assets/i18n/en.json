@@ -659,6 +659,7 @@
       "updateTestResult": "Update Test Result",
       "updateSeparationResult": "Update Separation Result",
       "transfer": "Transfer Blood Packs",
+      "viewDonorDetail": "View Donor Detail",
       "scanQrCode": "Scan QR Code"
     },
     "column": {
@@ -754,6 +755,7 @@
     "button": {
       "transfer": "Transfer Blood Products",
       "scanQrCode": "Scan QR Code",
+      "viewDonorDetail": "View Donor Detail",
       "viewBloodPackDetail": "View Blood Pack Detail"
     },
     "column": {

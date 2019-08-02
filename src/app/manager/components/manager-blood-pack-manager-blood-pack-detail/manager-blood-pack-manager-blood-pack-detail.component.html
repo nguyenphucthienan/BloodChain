@@ -7,6 +7,10 @@
   <div class="card mt-3">
     <div class="card-body">
       <div class="d-flex flex-sm-row flex-column justify-content-end">
+        <button type="button" class="btn btn-sm btn-primary"
+          [routerLink]="['/manager', 'users', bloodPack.donor._id]">
+          {{ 'bloodPackManager.button.viewDonorDetail' | translate }}
+        </button>
         <button type="button" class="btn btn-sm btn-primary" (click)="openBloodPackQrCodeModal()">
           {{ 'userManager.button.printQrCode' | translate }}
         </button>

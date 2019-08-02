@@ -655,6 +655,7 @@
       "updateTestResult": "Cập nhật kết quả xét nghiệm",
       "updateSeparationResult": "Cập nhật kết quả phân tách",
       "transfer": "Chuyển túi máu",
+      "viewDonorDetail": "Xem thông tin người hiến",
       "scanQrCode": "Quét QR Code"
     },
     "column": {
@@ -750,6 +751,7 @@
     "button": {
       "transfer": "Chuyển chế phẩm máu",
       "scanQrCode": "Quét QR Code",
+      "viewDonorDetail": "Xem thông tin người hiến",
       "viewBloodPackDetail": "Xem thông tin túi máu"
     },
     "column": {
