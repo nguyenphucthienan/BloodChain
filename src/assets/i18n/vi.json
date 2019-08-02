@@ -770,7 +770,8 @@
     },
     "modal": {
       "bloodProductInfo": "Thông tin chế phẩm máu",
-      "transferBloodProducts": "Chuyển chế phẩm máu"
+      "transferBloodProducts": "Chuyển chế phẩm máu",
+      "consumeBloodProducts": "Sử dụng chế phẩm máu"
     },
     "label": {
       "donorInfo": "THÔNG TIN NGƯỜI HIẾN",
@@ -805,7 +806,8 @@
     "message": {
       "descriptionRequired": "Miêu tả không được bỏ trống",
       "patientNameRequired": "Tên bệnh nhân không được bỏ trống",
-      "transferTheseBloodProducts": "chuyển những chế phẩm máu này"
+      "transferTheseBloodProducts": "chuyển những chế phẩm máu này",
+      "consumeTheseBloodProducts": "sử dụng những chế phẩm máu này"
     },
     "alert": {
       "alreadySelected": "Chế phẩm máu đã được chọn",

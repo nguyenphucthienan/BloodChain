@@ -5,7 +5,6 @@ import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { concat, Observable, of, Subject } from 'rxjs';
 import { catchError, debounceTime, distinctUntilChanged, filter, map, switchMap, tap } from 'rxjs/operators';
-import { RoleName } from 'src/app/core/constant/role-name';
 import { BloodProduct } from 'src/app/core/models/blood-product.interface';
 import { User } from 'src/app/core/models/user.interface';
 import { AlertService } from 'src/app/core/services/alert.service';
@@ -16,6 +15,9 @@ import { TableActionType } from 'src/app/datatable/models/table-action.interface
 import { TableCellChange } from 'src/app/datatable/models/table-cell-change.interface';
 import { ScanQrcodeModalComponent } from 'src/app/shared/modals/scan-qrcode-modal/scan-qrcode-modal.component';
 
+import {
+  BloodProductConsumeConfirmModalComponent,
+} from '../../modals/blood-product-consume-confirm-modal/blood-product-consume-confirm-modal.component';
 import { HospitalBloodProductConsumeTableService } from '../../services/hospital-blood-product-consume-table.service';
 
 @Component({
@@ -26,20 +28,14 @@ import { HospitalBloodProductConsumeTableService } from '../../services/hospital
 })
 export class HospitalBloodProductManagerConsumeBloodProductComponent implements OnInit, OnDestroy {
 
-  readonly organizationTypeTranslations = [
-    { translation: 'bloodProductManager.organization.bloodBank', value: RoleName.BLOOD_BANK },
-    { translation: 'bloodProductManager.organization.hospital', value: RoleName.HOSPITAL }
-  ];
-
   @ViewChild(DatatableComponent) datatable: DatatableComponent;
-
-  modalRef: MDBModalRef;
 
   bloodProducts$: Observable<BloodProduct[]>;
   bloodProductsInput$ = new Subject<string>();
   bloodProductsLoading = false;
 
   consumeForm: FormGroup;
+  modalRef: MDBModalRef;
 
   constructor(
     private router: Router,
@@ -67,6 +63,14 @@ export class HospitalBloodProductManagerConsumeBloodProductComponent implements 
     this.initDataFields();
   }
 
+  private initForms() {
+    this.consumeForm = this.fb.group({
+      bloodProductIds: [[]],
+      patientName: ['', Validators.required],
+      description: ['', [Validators.required, Validators.maxLength(1000)]],
+    });
+  }
+
   private initDataFields() {
     this.bloodProducts$ = concat(
       of([]), // default items
@@ -82,14 +86,6 @@ export class HospitalBloodProductManagerConsumeBloodProductComponent implements 
         ))
       )
     );
-  }
-
-  private initForms() {
-    this.consumeForm = this.fb.group({
-      bloodProductIds: [[]],
-      patientName: ['', Validators.required],
-      description: ['', [Validators.required, Validators.maxLength(1000)]],
-    });
   }
 
   selectBloodProduct(bloodProduct: BloodProduct) {
@@ -153,29 +149,29 @@ export class HospitalBloodProductManagerConsumeBloodProductComponent implements 
   }
 
   consumeBloodProducts() {
-    // const bloodProductIds = this.hospitalBloodProductConsumeTableService.getAllRowIds();
-    // if (bloodProductIds.length === 0) {
-    //   this.alertService.error('bloodProductManager.alert.noBloodProduct');
-    //   return;
-    // }
+    const bloodProductIds = this.hospitalBloodProductConsumeTableService.getAllRowIds();
+    if (bloodProductIds.length === 0) {
+      this.alertService.error('bloodProductManager.alert.noBloodProduct');
+      return;
+    }
 
-    // this.openBloodProductTransferConfirmModal(bloodProductIds);
+    this.openBloodProductConsumeConfirmModal(bloodProductIds);
   }
 
   openBloodProductConsumeConfirmModal(bloodProductIds: string[]) {
-    // this.modalRef = this.modalService.show(BloodProductTransferConfirmModalComponent, {
-    //   backdrop: true,
-    //   keyboard: true,
-    //   focus: true,
-    //   show: false,
-    //   ignoreBackdropClick: true,
-    //   class: 'modal-dialog-centered',
-    //   containerClass: 'top',
-    //   animated: true
-    // });
+    this.modalRef = this.modalService.show(BloodProductConsumeConfirmModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-dialog-centered',
+      containerClass: 'top',
+      animated: true
+    });
 
-    // this.modalRef.content.confirmed
-    //   .subscribe(() => this.onTransferBloodProductsConfirmed(bloodProductIds));
+    this.modalRef.content.confirmed
+      .subscribe(() => this.onConsumeBloodProductsConfirmed(bloodProductIds));
   }
 
   onConsumeBloodProductsConfirmed(bloodProductIds: string[]) {

@@ -83,6 +83,9 @@ import {
 import {
   BloodPackUpdateSeparationResultResultModalComponent,
 } from './modals/blood-pack-update-separation-result-result-modal/blood-pack-update-separation-result-result-modal.component';
+import {
+  BloodProductConsumeConfirmModalComponent,
+} from './modals/blood-product-consume-confirm-modal/blood-product-consume-confirm-modal.component';
 import { BloodProductQrcodeModalComponent } from './modals/blood-product-qrcode-modal/blood-product-qrcode-modal.component';
 import {
   BloodProductTransferConfirmModalComponent,
@@ -122,6 +125,7 @@ import { UserQrcodeModalComponent } from './modals/user-qrcode-modal/user-qrcode
     HospitalBloodProductManagerComponent,
     BloodProductTransferConfirmModalComponent,
     BloodProductTransferResultModalComponent,
+    BloodProductConsumeConfirmModalComponent,
     BloodBankBloodProductManagerTransferBloodProductComponent,
     HospitalBloodProductManagerTransferBloodProductComponent,
     HospitalBloodProductManagerConsumeBloodProductComponent,
@@ -142,6 +146,7 @@ import { UserQrcodeModalComponent } from './modals/user-qrcode-modal/user-qrcode
     BloodPackUpdateSeparationResultResultModalComponent,
     BloodProductTransferConfirmModalComponent,
     BloodProductTransferResultModalComponent,
+    BloodProductConsumeConfirmModalComponent,
     UserQrcodeModalComponent,
     BloodPackQrcodeModalComponent,
     BloodProductQrcodeModalComponent

@@ -774,7 +774,8 @@
     },
     "modal": {
       "bloodProductInfo": "Blood Product Info",
-      "transferBloodProducts": "Transfer Blood Products"
+      "transferBloodProducts": "Transfer Blood Products",
+      "consumeBloodProducts": "Consume Blood Products"
     },
     "label": {
       "donorInfo": "DONOR INFO",
@@ -809,7 +810,8 @@
     "message": {
       "descriptionRequired": "Description is required",
       "patientNameRequired": "Patient's name is required",
-      "transferTheseBloodProducts": "transfer these blood products"
+      "transferTheseBloodProducts": "transfer these blood products",
+      "consumeTheseBloodProducts": "consume these blood products"
     },
     "alert": {
       "alreadySelected": "Blood product has already been selected",
