@@ -13,7 +13,8 @@
       "cancel": "Cancel",
       "reset": "Reset",
       "print": "Print",
-      "transfer": "Transfer"
+      "transfer": "Transfer",
+      "consume": "Consume"
     },
     "alert": {
       "success": "Success",
@@ -154,7 +155,8 @@
       "main": "Hospital",
       "bloodProducts": {
         "main": "Blood Products",
-        "transferBloodProducts": "Transfer Blood Products"
+        "transferBloodProducts": "Transfer Blood Products",
+        "consumeBloodProducts": "Consume Blood Products"
       }
     },
     "profile": {
@@ -754,6 +756,7 @@
   "bloodProductManager": {
     "button": {
       "transfer": "Transfer Blood Products",
+      "consume": "Consume Blood Products",
       "scanQrCode": "Scan QR Code",
       "viewDonorDetail": "View Donor Detail",
       "viewBloodPackDetail": "View Blood Pack Detail"
@@ -766,7 +769,8 @@
       "bloodTestCenter": "Blood Test Center",
       "bloodSeparationCenter": "Blood Separation Center",
       "createdAt": "Time",
-      "expirationDate": "Expiration Date"
+      "expirationDate": "Expiration Date",
+      "consumed": "Consumed"
     },
     "modal": {
       "bloodProductInfo": "Blood Product Info",
@@ -777,6 +781,7 @@
       "organizationInfo": "ORGANIZATION INFO",
       "bloodProductInfo": "BLOOD PRODUCT INFO",
       "transferBloodProducts": "TRANSFER BLOOD PRODUCTS",
+      "consumeBloodProducts": "CONSUME BLOOD PRODUCTS",
       "id": "ID",
       "username": "Username",
       "email": "Email",
@@ -797,11 +802,13 @@
       "organizationType": "Organization type",
       "organizationName": "Organization name",
       "organizationId": "Organization ID",
+      "patientName": "Patient's name",
       "searchDonor": "Search donor",
       "searchBloodProduct": "Search blood product"
     },
     "message": {
       "descriptionRequired": "Description is required",
+      "patientNameRequired": "Patient's name is required",
       "transferTheseBloodProducts": "transfer these blood products"
     },
     "alert": {

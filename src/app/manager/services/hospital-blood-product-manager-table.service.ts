@@ -23,6 +23,7 @@ export class HospitalBloodProductManagerTableService implements TableService {
     { name: 'bloodType', text: 'bloodPackManager.column.bloodType', type: 'TextTableCellComponent', sortable: true },
     { name: 'volume', text: 'bloodProductManager.column.volume', type: 'TextTableCellComponent', sortable: true },
     { name: 'expirationDate', text: 'bloodProductManager.column.expirationDate', type: 'DateTableCellComponent', sortable: true },
+    { name: 'consumed', text: 'bloodProductManager.column.consumed', type: 'BooleanTableCellComponent', sortable: true },
     { name: 'actions', text: 'common.column.actions', type: 'ActionsTableCellComponent', center: true }
   ];
 

@@ -43,6 +43,9 @@ import {
   BloodTestCenterBloodPackManagerComponent,
 } from './components/blood-test-center-blood-pack-manager/blood-test-center-blood-pack-manager.component';
 import {
+  HospitalBloodProductManagerConsumeBloodProductComponent,
+} from './components/hospital-blood-product-manager-consume-blood-product/hospital-blood-product-manager-consume-blood-product.component';
+import {
   HospitalBloodProductManagerTransferBloodProductComponent,
 } from './components/hospital-blood-product-manager-transfer-blood-product/hospital-blood-product-manager-transfer-blood-product.component';
 import {
@@ -342,7 +345,12 @@ const routes: Routes = [
               {
                 path: 'transfer',
                 component: HospitalBloodProductManagerTransferBloodProductComponent,
-                data: { breadcrumb: 'breadcrumb.bloodBank.bloodProducts.transferBloodProducts' }
+                data: { breadcrumb: 'breadcrumb.hospital.bloodProducts.transferBloodProducts' }
+              },
+              {
+                path: 'consume',
+                component: HospitalBloodProductManagerConsumeBloodProductComponent,
+                data: { breadcrumb: 'breadcrumb.hospital.bloodProducts.consumeBloodProducts' }
               }
             ]
           }

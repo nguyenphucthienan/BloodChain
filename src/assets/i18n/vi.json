@@ -13,7 +13,8 @@
       "cancel": "Hủy",
       "reset": "Làm lại",
       "print": "In",
-      "transfer": "Chuyển"
+      "transfer": "Chuyển",
+      "consume": "Sử dụng"
     },
     "alert": {
       "success": "Thành công",
@@ -150,7 +151,8 @@
       "main": "Bệnh viện",
       "bloodProducts": {
         "main": "Chế phẩm máu",
-        "transferBloodProducts": "Chuyển chế phẩm máu"
+        "transferBloodProducts": "Chuyển chế phẩm máu",
+        "consumeBloodProducts": "Sử dụng chế phẩm máu"
       }
     },
     "profile": {
@@ -750,6 +752,7 @@
   "bloodProductManager": {
     "button": {
       "transfer": "Chuyển chế phẩm máu",
+      "consume": "Sử dụng chế phẩm máu",
       "scanQrCode": "Quét QR Code",
       "viewDonorDetail": "Xem thông tin người hiến",
       "viewBloodPackDetail": "Xem thông tin túi máu"
@@ -762,7 +765,8 @@
       "bloodTestCenter": "Trung tâm xét nghiệm",
       "bloodSeparationCenter": "Trung tâm phân tách máu",
       "createdAt": "Thời gian",
-      "expirationDate": "Hạn sử dụng"
+      "expirationDate": "Hạn sử dụng",
+      "consumed": "Đã sử dụng"
     },
     "modal": {
       "bloodProductInfo": "Thông tin chế phẩm máu",
@@ -773,6 +777,7 @@
       "organizationInfo": "THÔNG TIN TỔ CHỨC",
       "bloodProductInfo": "THÔNG TIN CHẾ PHẨM MÁU",
       "transferBloodPacks": "CHUYỂN CHẾ PHẨM MÁU",
+      "consumeBloodProducts": "SỬ DỤNG CHẾ PHẨM MÁU",
       "id": "ID",
       "username": "Tên đăng nhập",
       "email": "Email",
@@ -793,11 +798,13 @@
       "organizationType": "Loại tổ chức",
       "organizationName": "Tên tổ chức",
       "organizationId": "ID tổ chức",
+      "patientName": "Tên bệnh nhân",
       "searchDonor": "Tìm người hiến",
       "searchBloodProduct": "Tìm chế phẩm máu"
     },
     "message": {
       "descriptionRequired": "Miêu tả không được bỏ trống",
+      "patientNameRequired": "Tên bệnh nhân không được bỏ trống",
       "transferTheseBloodProducts": "chuyển những chế phẩm máu này"
     },
     "alert": {

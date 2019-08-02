@@ -83,12 +83,24 @@ export class HospitalBloodProductManagerComponent implements OnInit, AfterViewIn
     }
   }
 
-  async navigateToTransferBloodProduct() {
+  navigateToTransferBloodProduct() {
     const selectedIds = Array.from(this.datatable.getSelectedRowIds().selectedIds);
     const selectedRows = this.datatable.rows
       .filter(row => selectedIds.includes(row.cells._id.value));
 
     this.router.navigate(['/manager', 'hospital', 'blood-products', 'transfer'], {
+      state: { bloodProducts: selectedRows }
+    });
+  }
+
+  navigateToConsumeBloodProduct() {
+    const selectedIds = Array.from(this.datatable.getSelectedRowIds().selectedIds);
+    const selectedRows = this.datatable.rows
+      .filter(row => selectedIds.includes(row.cells._id.value)
+        && row.cells.consumed
+        && !row.cells.consumed.value);
+
+    this.router.navigate(['/manager', 'hospital', 'blood-products', 'consume'], {
       state: { bloodProducts: selectedRows }
     });
   }

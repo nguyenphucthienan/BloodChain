@@ -85,7 +85,7 @@ export class BloodSeparationCenterBloodProductManagerComponent implements OnInit
     }
   }
 
-  async navigateToTransferBloodProduct() {
+  navigateToTransferBloodProduct() {
     const selectedIds = Array.from(this.datatable.getSelectedRowIds().selectedIds);
     const selectedRows = this.datatable.rows
       .filter(row => selectedIds.includes(row.cells._id.value));

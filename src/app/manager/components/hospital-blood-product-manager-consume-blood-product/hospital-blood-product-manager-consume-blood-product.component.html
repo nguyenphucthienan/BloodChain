@@ -1,0 +1,63 @@
+<div class="container-fluid">
+  <div class="card mt-3">
+    <div class="card-body">
+      <app-breadcrumb></app-breadcrumb>
+    </div>
+  </div>
+
+  <div class="card mt-3">
+    <div class="card-body">
+      <ng-select [items]="bloodProducts$ | async" bindValue="_id" bindLabel="_id" [multiple]="false"
+        [hideSelected]="true" [loading]="bloodProductsLoading" [typeahead]="bloodProductsInput$"
+        [typeToSearchText]="'bloodProductManager.placeholder.searchById' | translate"
+        [placeholder]="'bloodProductManager.label.searchBloodProduct' | translate"
+        (change)="selectBloodProduct($event)">
+      </ng-select>
+      <div class="d-flex flex-sm-row flex-column justify-content-end">
+        <button type="button" class="btn btn-sm btn-primary" (click)="openScanQrCodeModal()">
+          {{ 'bloodProductManager.button.scanQrCode' | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="card mt-3">
+    <div class="card-body">
+      <app-datatable [tableName]="'table.name.bloodProductManager' | translate"
+        [tableService]="hospitalBloodProductConsumeTableService" (cellChanged)="onTableCellChanged($event)">
+      </app-datatable>
+    </div>
+  </div>
+  <div class="card mt-3">
+    <div class="card-body">
+      <div class="d-flex">
+        <span class="font-weight-bold">{{ 'bloodProductManager.label.consumeBloodProducts' | translate }}</span>
+      </div>
+      <form [formGroup]="consumeForm" (ngSubmit)="consumeBloodProducts()">
+        <div class="md-form">
+          <input type="text" id="patientName" formControlName="patientName" class="form-control" mdbInput>
+          <label for="patientName">{{ 'bloodProductManager.label.patientName' | translate }}</label>
+          <mdb-error *ngIf="controlHasError('patientName', 'required')">
+            {{ 'bloodProductManager.message.patientNameRequired' | translate }}
+          </mdb-error>
+        </div>
+        <div class="md-form">
+          <div class="md-form">
+            <textarea type="text" id="description" formControlName="description"
+              class="md-textarea md-textarea-auto form-control" mdbInput></textarea>
+            <label for="description">{{ 'bloodProductManager.label.description' | translate }}</label>
+            <mdb-error *ngIf="controlHasError('description', 'required')">
+              {{ 'bloodProductManager.message.descriptionRequired' | translate }}
+            </mdb-error>
+          </div>
+        </div>
+        <div class="d-flex flex-sm-row flex-column justify-content-end">
+          <button type="button" mdbBtn color="secondary" class=" waves-light" mdbWavesEffect
+            (click)="resetForm()">{{ 'common.button.reset' | translate }}</button>
+          <button mdbBtn type="submit" color="primary" mdbWavesEffect [disabled]="consumeForm.invalid">
+            {{ 'common.button.consume' | translate }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

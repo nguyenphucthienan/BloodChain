@@ -39,6 +39,9 @@ import {
   BloodTestCenterBloodPackManagerComponent,
 } from './components/blood-test-center-blood-pack-manager/blood-test-center-blood-pack-manager.component';
 import {
+  HospitalBloodProductManagerConsumeBloodProductComponent,
+} from './components/hospital-blood-product-manager-consume-blood-product/hospital-blood-product-manager-consume-blood-product.component';
+import {
   HospitalBloodProductManagerTransferBloodProductComponent,
 } from './components/hospital-blood-product-manager-transfer-blood-product/hospital-blood-product-manager-transfer-blood-product.component';
 import {
@@ -121,6 +124,7 @@ import { UserQrcodeModalComponent } from './modals/user-qrcode-modal/user-qrcode
     BloodProductTransferResultModalComponent,
     BloodBankBloodProductManagerTransferBloodProductComponent,
     HospitalBloodProductManagerTransferBloodProductComponent,
+    HospitalBloodProductManagerConsumeBloodProductComponent,
     UserQrcodeModalComponent,
     BloodPackQrcodeModalComponent,
     BloodProductQrcodeModalComponent
