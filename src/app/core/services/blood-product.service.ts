@@ -17,6 +17,7 @@ export class BloodProductService {
   private readonly bloodProductsUrl = `${environment.apiUrl}/blood-products`;
   private readonly bloodProductUrl = `${environment.apiUrl}/blood-products/{id}`;
   private readonly transferProductsUrl = `${environment.apiUrl}/blood-products/transfer`;
+  private readonly consumeProductsUrl = `${environment.apiUrl}/blood-products/consume`;
 
   private readonly defaultPagination: Pagination = {
     page: 1,
@@ -66,6 +67,10 @@ export class BloodProductService {
   ): Observable<any> {
     const model = { ...transferModel, fromOrganizationType, toOrganizationType };
     return this.http.post<any>(this.transferProductsUrl, model);
+  }
+
+  consumeBloodProducts(transferModel: any): Observable<any> {
+    return this.http.post<any>(this.consumeProductsUrl, transferModel);
   }
 
 }

@@ -18,6 +18,9 @@ import { ScanQrcodeModalComponent } from 'src/app/shared/modals/scan-qrcode-moda
 import {
   BloodProductConsumeConfirmModalComponent,
 } from '../../modals/blood-product-consume-confirm-modal/blood-product-consume-confirm-modal.component';
+import {
+  BloodProductConsumeResultModalComponent,
+} from '../../modals/blood-product-consume-result-modal/blood-product-consume-result-modal.component';
 import { HospitalBloodProductConsumeTableService } from '../../services/hospital-blood-product-consume-table.service';
 
 @Component({
@@ -175,38 +178,35 @@ export class HospitalBloodProductManagerConsumeBloodProductComponent implements 
   }
 
   onConsumeBloodProductsConfirmed(bloodProductIds: string[]) {
-    // this.spinnerService.show();
-    // this.consumeForm.patchValue({ bloodProductIds });
-    // this.bloodProductService.transferBloodProducts(
-    //   RoleName.HOSPITAL,
-    //   this.toOrganizationType,
-    //   this.consumeForm.getRawValue()
-    // ).subscribe(
-    //   results => {
-    //     this.openBloodProductTransferResultModal(results);
-    //     this.spinnerService.hide();
-    //   },
-    //   error => this.spinnerService.hide()
-    // );
+    this.spinnerService.show();
+    this.consumeForm.patchValue({ bloodProductIds });
+    this.bloodProductService.consumeBloodProducts(this.consumeForm.getRawValue())
+      .subscribe(
+        results => {
+          this.openBloodProductConsumeResultModal(results);
+          this.spinnerService.hide();
+        },
+        error => this.spinnerService.hide()
+      );
   }
 
-  openBloodProductTransferResultModal({ success, errors }) {
-    // this.modalRef = this.modalService.show(BloodProductTransferResultModalComponent, {
-    //   backdrop: true,
-    //   keyboard: true,
-    //   focus: true,
-    //   show: false,
-    //   ignoreBackdropClick: true,
-    //   class: 'modal-dialog-centered',
-    //   containerClass: 'top',
-    //   animated: true,
-    //   data: {
-    //     success,
-    //     errors
-    //   }
-    // });
+  openBloodProductConsumeResultModal({ success, errors }) {
+    this.modalRef = this.modalService.show(BloodProductConsumeResultModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        success,
+        errors
+      }
+    });
 
-    // this.modalRef.content.closed.subscribe(() => this.resetForm());
+    this.modalRef.content.closed.subscribe(() => this.resetForm());
   }
 
   resetForm() {
