@@ -10,7 +10,7 @@
         <button type="button" class="btn btn-sm btn-primary"
           [routerLink]="['/manager', 'users', bloodProduct.donor._id]">
           {{ 'bloodProductManager.button.viewDonorDetail' | translate }}
-      </button>
+        </button>
         <button type="button" class="btn btn-sm btn-primary"
           [routerLink]="['/manager', 'blood-packs', bloodProduct.bloodPack._id]">
           {{ 'bloodProductManager.button.viewBloodPackDetail' | translate }}
@@ -133,21 +133,33 @@
               <input type="text" id="volume" formControlName="volume" class="form-control" mdbInput>
               <label for="volume">{{ 'bloodProductManager.label.volume' | translate }}</label>
             </div>
-            <div class="md-form">
-              <input type="text" id="bloodProductType" formControlName="bloodProductType" class="form-control" mdbInput>
-              <label for="bloodProductType">{{ 'bloodProductManager.label.bloodProductType' | translate }}</label>
-            </div>
             <div class="form-row">
               <div class="col">
                 <div class="md-form form-col">
                   <input type="text" id="bloodType" formControlName="bloodType" class="form-control" mdbInput>
-                  <label for="bloodType">{{ 'bloodPackManager.label.bloodType' | translate }}</label>
+                  <label for="bloodType">{{ 'bloodProductManager.label.bloodType' | translate }}</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="md-form form-col">
+                  <input type="text" id="bloodProductType" formControlName="bloodProductType" class="form-control"
+                    mdbInput>
+                  <label for="bloodProductType">{{ 'bloodProductManager.label.bloodProductType' | translate }}</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-row last-row">
+              <div class="col">
+                <div class="md-form form-col">
+                  <input type="text" id="used" formControlName="used"
+                    [value]="bloodProductForm.get('used').value | booleanYesNo | async" class="form-control" mdbInput>
+                  <label for="used">{{ 'bloodProductManager.label.used' | translate }}</label>
                 </div>
               </div>
               <div class="col">
                 <div class="md-form form-col">
                   <input type="text" id="expirationDate" formControlName="expirationDate" class="form-control" mdbInput>
-                  <label for="expirationDate">{{ 'bloodPackManager.label.expirationDate' | translate }}</label>
+                  <label for="expirationDate">{{ 'bloodProductManager.label.expirationDate' | translate }}</label>
                 </div>
               </div>
             </div>

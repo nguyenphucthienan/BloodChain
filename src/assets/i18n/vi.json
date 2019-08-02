@@ -802,6 +802,7 @@
       "bloodProductType": "Loại chế phẩm máu",
       "bloodType": "Nhóm máu",
       "expirationDate": "Hạn sử dụng",
+      "used": "Đã sử dụng",
       "organizationType": "Loại tổ chức",
       "organizationName": "Tên tổ chức",
       "organizationId": "ID tổ chức",

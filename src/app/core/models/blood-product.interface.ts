@@ -13,6 +13,7 @@ export interface BloodProduct {
   volume: number;
   bloodType: string;
   expirationDate: Date;
+  used: boolean;
   description: string;
   currentLocation: string;
 }

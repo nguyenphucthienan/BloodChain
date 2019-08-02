@@ -70,6 +70,7 @@ export class ManagerBloodProductManagerBloodProductDetailComponent implements On
             bloodType: this.bloodProduct.bloodType,
             bloodProductType: this.bloodProduct.bloodProductType && this.bloodProduct.bloodProductType.name,
             expirationDate: this.datePipe.transform(new Date(this.bloodProduct.expirationDate)),
+            used: this.bloodProduct.used
           });
         });
     });
@@ -107,7 +108,8 @@ export class ManagerBloodProductManagerBloodProductDetailComponent implements On
       bloodType: [null, Validators.required],
       bloodProductType: [null, Validators.required],
       bloodSeparationCenter: ['', Validators.required],
-      expirationDate: [null, Validators.required]
+      expirationDate: [null, Validators.required],
+      used: [null, Validators.required]
     });
 
     this.userForm.disable();

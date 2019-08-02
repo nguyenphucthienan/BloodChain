@@ -806,6 +806,7 @@
       "bloodProductType": "Blood product type",
       "bloodType": "Blood type",
       "expirationDate": "Expiration date",
+      "used": "Used",
       "organizationType": "Organization type",
       "organizationName": "Organization name",
       "organizationId": "Organization ID",
