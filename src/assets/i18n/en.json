@@ -14,7 +14,7 @@
       "reset": "Reset",
       "print": "Print",
       "transfer": "Transfer",
-      "consume": "Consume"
+      "use": "Use"
     },
     "alert": {
       "success": "Success",
@@ -156,7 +156,7 @@
       "bloodProducts": {
         "main": "Blood Products",
         "transferBloodProducts": "Transfer Blood Products",
-        "consumeBloodProducts": "Consume Blood Products"
+        "useBloodProducts": "Use Blood Products"
       }
     },
     "profile": {
@@ -222,14 +222,13 @@
   "timeline": {
     "title": {
       "bloodPack": "Blood Pack",
-      "bloodProduct": "Blood Product",
-      "consume": "Consumed"
+      "bloodProduct": "Blood Product"
     },
     "label": {
       "id": "ID",
       "from": "From",
       "to": "To",
-      "consumedAt": "Consumed at",
+      "usedAt": "Used at",
       "patientName": "Patient's name",
       "time": "Time",
       "description": "Description"
@@ -237,7 +236,7 @@
     "message": {
       "bloodPackTransfered": "Your blood pack has been transfer.",
       "bloodProductTransfered": "One of your blood products has been transfer.",
-      "bloodProductConsumed": "One of your blood products has been consumed."
+      "bloodProductUsed": "One of your blood products has been used."
     }
   },
   "landing": {
@@ -763,7 +762,7 @@
   "bloodProductManager": {
     "button": {
       "transfer": "Transfer Blood Products",
-      "consume": "Consume Blood Products",
+      "use": "Use Blood Products",
       "scanQrCode": "Scan QR Code",
       "viewDonorDetail": "View Donor Detail",
       "viewBloodPackDetail": "View Blood Pack Detail"
@@ -777,19 +776,19 @@
       "bloodSeparationCenter": "Blood Separation Center",
       "createdAt": "Time",
       "expirationDate": "Expiration Date",
-      "consumed": "Consumed"
+      "used": "Used"
     },
     "modal": {
       "bloodProductInfo": "Blood Product Info",
       "transferBloodProducts": "Transfer Blood Products",
-      "consumeBloodProducts": "Consume Blood Products"
+      "useBloodProducts": "Use Blood Products"
     },
     "label": {
       "donorInfo": "DONOR INFO",
       "organizationInfo": "ORGANIZATION INFO",
       "bloodProductInfo": "BLOOD PRODUCT INFO",
       "transferBloodProducts": "TRANSFER BLOOD PRODUCTS",
-      "consumeBloodProducts": "CONSUME BLOOD PRODUCTS",
+      "useBloodProducts": "USE BLOOD PRODUCTS",
       "id": "ID",
       "username": "Username",
       "email": "Email",
@@ -818,7 +817,7 @@
       "descriptionRequired": "Description is required",
       "patientNameRequired": "Patient's name is required",
       "transferTheseBloodProducts": "transfer these blood products",
-      "consumeTheseBloodProducts": "consume these blood products"
+      "useTheseBloodProducts": "use these blood products"
     },
     "alert": {
       "alreadySelected": "Blood product has already been selected",

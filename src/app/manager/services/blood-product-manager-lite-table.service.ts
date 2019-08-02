@@ -22,7 +22,7 @@ export class BloodProductManagerLiteTableService implements TableService {
     { name: 'bloodType', text: 'bloodPackManager.column.bloodType', type: 'TextTableCellComponent', sortable: true },
     { name: 'volume', text: 'bloodProductManager.column.volume', type: 'TextTableCellComponent', sortable: true },
     { name: 'expirationDate', text: 'bloodProductManager.column.expirationDate', type: 'DateTableCellComponent', sortable: true },
-    { name: 'consumed', text: 'bloodProductManager.column.consumed', type: 'BooleanTableCellComponent', center: true, sortable: true },
+    { name: 'used', text: 'bloodProductManager.column.used', type: 'BooleanTableCellComponent', center: true, sortable: true },
     {
       name: 'bloodSeparationCenter',
       text: 'bloodProductManager.column.bloodSeparationCenter',

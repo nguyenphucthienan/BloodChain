@@ -14,7 +14,7 @@
       "reset": "Làm lại",
       "print": "In",
       "transfer": "Chuyển",
-      "consume": "Sử dụng"
+      "use": "Sử dụng"
     },
     "alert": {
       "success": "Thành công",
@@ -152,7 +152,7 @@
       "bloodProducts": {
         "main": "Chế phẩm máu",
         "transferBloodProducts": "Chuyển chế phẩm máu",
-        "consumeBloodProducts": "Sử dụng chế phẩm máu"
+        "useBloodProducts": "Sử dụng chế phẩm máu"
       }
     },
     "profile": {
@@ -218,14 +218,13 @@
   "timeline": {
     "title": {
       "bloodPack": "Túi máu",
-      "bloodProduct": "Chế phẩm máu",
-      "consumed": "Sử dụng"
+      "bloodProduct": "Chế phẩm máu"
     },
     "label": {
       "id": "ID",
       "from": "Nơi chuyển",
       "to": "Nơi nhận",
-      "consumedAt": "Nơi sử dụng",
+      "usedAt": "Nơi sử dụng",
       "patientName": "Bệnh nhân",
       "time": "Thời gian",
       "description": "Miêu tả"
@@ -233,7 +232,7 @@
     "message": {
       "bloodPackTransfered": "Túi máu của bạn đã được chuyển đi.",
       "bloodProductTransfered": "Một chế phẩm máu của bạn đã được chuyển đi.",
-      "bloodProductConsumed": "Một chế phẩm máu của bạn đã được sử dụng."
+      "bloodProductUsed": "Một chế phẩm máu của bạn đã được sử dụng."
     }
   },
   "landing": {
@@ -759,7 +758,7 @@
   "bloodProductManager": {
     "button": {
       "transfer": "Chuyển chế phẩm máu",
-      "consume": "Sử dụng chế phẩm máu",
+      "use": "Sử dụng chế phẩm máu",
       "scanQrCode": "Quét QR Code",
       "viewDonorDetail": "Xem thông tin người hiến",
       "viewBloodPackDetail": "Xem thông tin túi máu"
@@ -773,19 +772,19 @@
       "bloodSeparationCenter": "Trung tâm phân tách máu",
       "createdAt": "Thời gian",
       "expirationDate": "Hạn sử dụng",
-      "consumed": "Đã sử dụng"
+      "used": "Đã sử dụng"
     },
     "modal": {
       "bloodProductInfo": "Thông tin chế phẩm máu",
       "transferBloodProducts": "Chuyển chế phẩm máu",
-      "consumeBloodProducts": "Sử dụng chế phẩm máu"
+      "useBloodProducts": "Sử dụng chế phẩm máu"
     },
     "label": {
       "donorInfo": "THÔNG TIN NGƯỜI HIẾN",
       "organizationInfo": "THÔNG TIN TỔ CHỨC",
       "bloodProductInfo": "THÔNG TIN CHẾ PHẨM MÁU",
       "transferBloodPacks": "CHUYỂN CHẾ PHẨM MÁU",
-      "consumeBloodProducts": "SỬ DỤNG CHẾ PHẨM MÁU",
+      "useBloodProducts": "SỬ DỤNG CHẾ PHẨM MÁU",
       "id": "ID",
       "username": "Tên đăng nhập",
       "email": "Email",
@@ -814,7 +813,7 @@
       "descriptionRequired": "Miêu tả không được bỏ trống",
       "patientNameRequired": "Tên bệnh nhân không được bỏ trống",
       "transferTheseBloodProducts": "chuyển những chế phẩm máu này",
-      "consumeTheseBloodProducts": "sử dụng những chế phẩm máu này"
+      "useTheseBloodProducts": "sử dụng những chế phẩm máu này"
     },
     "alert": {
       "alreadySelected": "Chế phẩm máu đã được chọn",

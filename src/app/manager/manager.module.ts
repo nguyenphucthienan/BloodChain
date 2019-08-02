@@ -39,11 +39,11 @@ import {
   BloodTestCenterBloodPackManagerComponent,
 } from './components/blood-test-center-blood-pack-manager/blood-test-center-blood-pack-manager.component';
 import {
-  HospitalBloodProductManagerConsumeBloodProductComponent,
-} from './components/hospital-blood-product-manager-consume-blood-product/hospital-blood-product-manager-consume-blood-product.component';
-import {
   HospitalBloodProductManagerTransferBloodProductComponent,
 } from './components/hospital-blood-product-manager-transfer-blood-product/hospital-blood-product-manager-transfer-blood-product.component';
+import {
+  HospitalBloodProductManagerUseBloodProductComponent,
+} from './components/hospital-blood-product-manager-use-blood-product/hospital-blood-product-manager-use-blood-product.component';
 import {
   HospitalBloodProductManagerComponent,
 } from './components/hospital-blood-product-manager/hospital-blood-product-manager.component';
@@ -83,12 +83,6 @@ import {
 import {
   BloodPackUpdateSeparationResultResultModalComponent,
 } from './modals/blood-pack-update-separation-result-result-modal/blood-pack-update-separation-result-result-modal.component';
-import {
-  BloodProductConsumeConfirmModalComponent,
-} from './modals/blood-product-consume-confirm-modal/blood-product-consume-confirm-modal.component';
-import {
-  BloodProductConsumeResultModalComponent,
-} from './modals/blood-product-consume-result-modal/blood-product-consume-result-modal.component';
 import { BloodProductQrcodeModalComponent } from './modals/blood-product-qrcode-modal/blood-product-qrcode-modal.component';
 import {
   BloodProductTransferConfirmModalComponent,
@@ -96,6 +90,12 @@ import {
 import {
   BloodProductTransferResultModalComponent,
 } from './modals/blood-product-transfer-result-modal/blood-product-transfer-result-modal.component';
+import {
+  BloodProductUseConfirmModalComponent,
+} from './modals/blood-product-use-confirm-modal/blood-product-use-confirm-modal.component';
+import {
+  BloodProductUseResultModalComponent,
+} from './modals/blood-product-use-result-modal/blood-product-use-result-modal.component';
 import { UserAddSuccessModalComponent } from './modals/user-add-success-modal/user-add-success-modal.component';
 import { UserQrcodeModalComponent } from './modals/user-qrcode-modal/user-qrcode-modal.component';
 
@@ -128,11 +128,11 @@ import { UserQrcodeModalComponent } from './modals/user-qrcode-modal/user-qrcode
     HospitalBloodProductManagerComponent,
     BloodProductTransferConfirmModalComponent,
     BloodProductTransferResultModalComponent,
-    BloodProductConsumeConfirmModalComponent,
-    BloodProductConsumeResultModalComponent,
+    BloodProductUseConfirmModalComponent,
+    BloodProductUseResultModalComponent,
     BloodBankBloodProductManagerTransferBloodProductComponent,
     HospitalBloodProductManagerTransferBloodProductComponent,
-    HospitalBloodProductManagerConsumeBloodProductComponent,
+    HospitalBloodProductManagerUseBloodProductComponent,
     UserQrcodeModalComponent,
     BloodPackQrcodeModalComponent,
     BloodProductQrcodeModalComponent
@@ -150,8 +150,8 @@ import { UserQrcodeModalComponent } from './modals/user-qrcode-modal/user-qrcode
     BloodPackUpdateSeparationResultResultModalComponent,
     BloodProductTransferConfirmModalComponent,
     BloodProductTransferResultModalComponent,
-    BloodProductConsumeConfirmModalComponent,
-    BloodProductConsumeResultModalComponent,
+    BloodProductUseConfirmModalComponent,
+    BloodProductUseResultModalComponent,
     UserQrcodeModalComponent,
     BloodPackQrcodeModalComponent,
     BloodProductQrcodeModalComponent

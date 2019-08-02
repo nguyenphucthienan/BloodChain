@@ -16,20 +16,20 @@ import { TableCellChange } from 'src/app/datatable/models/table-cell-change.inte
 import { ScanQrcodeModalComponent } from 'src/app/shared/modals/scan-qrcode-modal/scan-qrcode-modal.component';
 
 import {
-  BloodProductConsumeConfirmModalComponent,
-} from '../../modals/blood-product-consume-confirm-modal/blood-product-consume-confirm-modal.component';
+  BloodProductUseConfirmModalComponent,
+} from '../../modals/blood-product-use-confirm-modal/blood-product-use-confirm-modal.component';
 import {
-  BloodProductConsumeResultModalComponent,
-} from '../../modals/blood-product-consume-result-modal/blood-product-consume-result-modal.component';
-import { HospitalBloodProductConsumeTableService } from '../../services/hospital-blood-product-consume-table.service';
+  BloodProductUseResultModalComponent,
+} from '../../modals/blood-product-use-result-modal/blood-product-use-result-modal.component';
+import { HospitalBloodProductUseTableService } from '../../services/hospital-blood-product-use-table.service';
 
 @Component({
-  selector: 'app-hospital-blood-product-manager-consume-blood-product',
-  templateUrl: './hospital-blood-product-manager-consume-blood-product.component.html',
-  styleUrls: ['./hospital-blood-product-manager-consume-blood-product.component.scss'],
-  providers: [HospitalBloodProductConsumeTableService]
+  selector: 'app-hospital-blood-product-manager-use-blood-product',
+  templateUrl: './hospital-blood-product-manager-use-blood-product.component.html',
+  styleUrls: ['./hospital-blood-product-manager-use-blood-product.component.scss'],
+  providers: [HospitalBloodProductUseTableService]
 })
-export class HospitalBloodProductManagerConsumeBloodProductComponent implements OnInit, OnDestroy {
+export class HospitalBloodProductManagerUseBloodProductComponent implements OnInit, OnDestroy {
 
   @ViewChild(DatatableComponent) datatable: DatatableComponent;
 
@@ -37,7 +37,7 @@ export class HospitalBloodProductManagerConsumeBloodProductComponent implements 
   bloodProductsInput$ = new Subject<string>();
   bloodProductsLoading = false;
 
-  consumeForm: FormGroup;
+  useForm: FormGroup;
   modalRef: MDBModalRef;
 
   constructor(
@@ -49,13 +49,13 @@ export class HospitalBloodProductManagerConsumeBloodProductComponent implements 
     private alertService: AlertService,
     private modalService: MDBModalService,
     private spinnerService: NgxSpinnerService,
-    public hospitalBloodProductConsumeTableService: HospitalBloodProductConsumeTableService
+    public hospitalBloodProductUseTableService: HospitalBloodProductUseTableService
   ) {
     const navigation = this.router.getCurrentNavigation();
     if (navigation.extras.state) {
       const { bloodProducts } = navigation.extras.state;
       if (bloodProducts) {
-        this.hospitalBloodProductConsumeTableService.setDataRows(bloodProducts);
+        this.hospitalBloodProductUseTableService.setDataRows(bloodProducts);
       }
     }
   }
@@ -67,7 +67,7 @@ export class HospitalBloodProductManagerConsumeBloodProductComponent implements 
   }
 
   private initForms() {
-    this.consumeForm = this.fb.group({
+    this.useForm = this.fb.group({
       bloodProductIds: [[]],
       patientName: ['', Validators.required],
       description: ['', [Validators.required, Validators.maxLength(1000)]],
@@ -103,7 +103,7 @@ export class HospitalBloodProductManagerConsumeBloodProductComponent implements 
           return;
         }
 
-        this.hospitalBloodProductConsumeTableService.addRawDataRow(bloodProduct);
+        this.hospitalBloodProductUseTableService.addRawDataRow(bloodProduct);
         this.datatable.refresh();
       });
   }
@@ -147,22 +147,22 @@ export class HospitalBloodProductManagerConsumeBloodProductComponent implements 
   }
 
   removeBloodProductFromList(id: string) {
-    this.hospitalBloodProductConsumeTableService.removeDataRow(id);
+    this.hospitalBloodProductUseTableService.removeDataRow(id);
     this.datatable.refresh();
   }
 
-  consumeBloodProducts() {
-    const bloodProductIds = this.hospitalBloodProductConsumeTableService.getAllRowIds();
+  useBloodProducts() {
+    const bloodProductIds = this.hospitalBloodProductUseTableService.getAllRowIds();
     if (bloodProductIds.length === 0) {
       this.alertService.error('bloodProductManager.alert.noBloodProduct');
       return;
     }
 
-    this.openBloodProductConsumeConfirmModal(bloodProductIds);
+    this.openBloodProductUseConfirmModal(bloodProductIds);
   }
 
-  openBloodProductConsumeConfirmModal(bloodProductIds: string[]) {
-    this.modalRef = this.modalService.show(BloodProductConsumeConfirmModalComponent, {
+  openBloodProductUseConfirmModal(bloodProductIds: string[]) {
+    this.modalRef = this.modalService.show(BloodProductUseConfirmModalComponent, {
       backdrop: true,
       keyboard: true,
       focus: true,
@@ -174,24 +174,24 @@ export class HospitalBloodProductManagerConsumeBloodProductComponent implements 
     });
 
     this.modalRef.content.confirmed
-      .subscribe(() => this.onConsumeBloodProductsConfirmed(bloodProductIds));
+      .subscribe(() => this.onUseBloodProductsConfirmed(bloodProductIds));
   }
 
-  onConsumeBloodProductsConfirmed(bloodProductIds: string[]) {
+  onUseBloodProductsConfirmed(bloodProductIds: string[]) {
     this.spinnerService.show();
-    this.consumeForm.patchValue({ bloodProductIds });
-    this.bloodProductService.consumeBloodProducts(this.consumeForm.getRawValue())
+    this.useForm.patchValue({ bloodProductIds });
+    this.bloodProductService.useBloodProducts(this.useForm.getRawValue())
       .subscribe(
         results => {
-          this.openBloodProductConsumeResultModal(results);
+          this.openBloodProductUseResultModal(results);
           this.spinnerService.hide();
         },
         error => this.spinnerService.hide()
       );
   }
 
-  openBloodProductConsumeResultModal({ success, errors }) {
-    this.modalRef = this.modalService.show(BloodProductConsumeResultModalComponent, {
+  openBloodProductUseResultModal({ success, errors }) {
+    this.modalRef = this.modalService.show(BloodProductUseResultModalComponent, {
       backdrop: true,
       keyboard: true,
       focus: true,
@@ -210,14 +210,14 @@ export class HospitalBloodProductManagerConsumeBloodProductComponent implements 
   }
 
   resetForm() {
-    this.consumeForm.reset();
-    this.hospitalBloodProductConsumeTableService.removeAllDataRows();
+    this.useForm.reset();
+    this.hospitalBloodProductUseTableService.removeAllDataRows();
     this.datatable.refresh();
   }
 
   controlHasError(controlName: string, errorName: string): boolean {
-    return this.consumeForm.get(controlName).touched
-      && this.consumeForm.get(controlName).hasError(errorName);
+    return this.useForm.get(controlName).touched
+      && this.useForm.get(controlName).hasError(errorName);
   }
 
   ngOnDestroy() {

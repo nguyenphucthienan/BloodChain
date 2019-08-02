@@ -27,7 +27,7 @@
         {{ transferHistory.id }}
       </div>
       <div *ngIf="transferHistory.transferType === 2">
-        <span class="font-weight-bold">{{ 'timeline.message.bloodProductConsumed' | translate }}</span>
+        <span class="font-weight-bold">{{ 'timeline.message.bloodProductUsed' | translate }}</span>
         <hr>
         <span class="font-weight-bold">{{ 'timeline.label.id' | translate }}: </span>
         {{ transferHistory.id }}
@@ -37,7 +37,7 @@
         {{ transferHistory.fromName }}
       </div>
       <div *ngIf="transferHistory.transferType === 2">
-        <span class="font-weight-bold">{{ 'timeline.label.consumedAt' | translate }}: </span>
+        <span class="font-weight-bold">{{ 'timeline.label.usedAt' | translate }}: </span>
         {{ transferHistory.fromName }}
       </div>
       <div *ngIf="transferHistory.transferType === 0 || transferHistory.transferType === 1">
