@@ -10,22 +10,42 @@
         <ng-container [ngSwitch]="transferHistory.transferType">
           <ng-container *ngSwitchCase="0">{{ 'timeline.title.bloodPack' | translate }}</ng-container>
           <ng-container *ngSwitchCase="1">{{ 'timeline.title.bloodProduct' | translate }}</ng-container>
-          <ng-container *ngSwitchCase="2">{{ 'timeline.title.consume' | translate }}</ng-container>
+          <ng-container *ngSwitchCase="2">{{ 'timeline.title.bloodProduct' | translate }}</ng-container>
         </ng-container>
         - {{ transferHistory.transferedAt | date }}
       </div>
     </mgl-timeline-entry-header>
     <mgl-timeline-entry-content>
+      <div *ngIf="transferHistory.transferType === 0">
+        <span class="font-weight-bold">{{ 'timeline.message.bloodPackTransfered' | translate }}</span>
+        <hr>
+      </div>
       <div *ngIf="transferHistory.transferType === 1">
+        <span class="font-weight-bold">{{ 'timeline.message.bloodProductTransfered' | translate }}</span>
+        <hr>
         <span class="font-weight-bold">{{ 'timeline.label.id' | translate }}: </span>
         {{ transferHistory.id }}
       </div>
-      <div>
+      <div *ngIf="transferHistory.transferType === 2">
+        <span class="font-weight-bold">{{ 'timeline.message.bloodProductConsumed' | translate }}</span>
+        <hr>
+        <span class="font-weight-bold">{{ 'timeline.label.id' | translate }}: </span>
+        {{ transferHistory.id }}
+      </div>
+      <div *ngIf="transferHistory.transferType === 0 || transferHistory.transferType === 1">
         <span class="font-weight-bold">{{ 'timeline.label.from' | translate }}: </span>
         {{ transferHistory.fromName }}
       </div>
-      <div>
+      <div *ngIf="transferHistory.transferType === 2">
+        <span class="font-weight-bold">{{ 'timeline.label.consumedAt' | translate }}: </span>
+        {{ transferHistory.fromName }}
+      </div>
+      <div *ngIf="transferHistory.transferType === 0 || transferHistory.transferType === 1">
         <span class="font-weight-bold">{{ 'timeline.label.to' | translate }}: </span>
+        {{ transferHistory.toName }}
+      </div>
+      <div *ngIf="transferHistory.transferType === 2">
+        <span class="font-weight-bold">{{ 'timeline.label.patientName' | translate }}: </span>
         {{ transferHistory.toName }}
       </div>
       <div>

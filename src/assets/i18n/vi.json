@@ -219,14 +219,21 @@
     "title": {
       "bloodPack": "Túi máu",
       "bloodProduct": "Chế phẩm máu",
-      "consume": "Sử dụng"
+      "consumed": "Sử dụng"
     },
     "label": {
       "id": "ID",
       "from": "Nơi chuyển",
       "to": "Nơi nhận",
+      "consumedAt": "Nơi sử dụng",
+      "patientName": "Bệnh nhân",
       "time": "Thời gian",
       "description": "Miêu tả"
+    },
+    "message": {
+      "bloodPackTransfered": "Túi máu của bạn đã được chuyển đi.",
+      "bloodProductTransfered": "Một chế phẩm máu của bạn đã được chuyển đi.",
+      "bloodProductConsumed": "Một chế phẩm máu của bạn đã được sử dụng."
     }
   },
   "landing": {

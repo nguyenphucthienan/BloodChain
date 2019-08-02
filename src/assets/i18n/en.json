@@ -223,14 +223,21 @@
     "title": {
       "bloodPack": "Blood Pack",
       "bloodProduct": "Blood Product",
-      "consume": "Consume"
+      "consume": "Consumed"
     },
     "label": {
       "id": "ID",
       "from": "From",
       "to": "To",
+      "consumedAt": "Consumed at",
+      "patientName": "Patient's name",
       "time": "Time",
       "description": "Description"
+    },
+    "message": {
+      "bloodPackTransfered": "Your blood pack has been transfer.",
+      "bloodProductTransfered": "One of your blood products has been transfer.",
+      "bloodProductConsumed": "One of your blood products has been consumed."
     }
   },
   "landing": {
