@@ -10,6 +10,7 @@ import { BloodPackService } from 'src/app/core/services/blood-pack.service';
 export class BloodPackTransferHistoriesComponent implements OnInit {
 
   @Input() bloodPackId: string;
+  @Input() showMessages = false;
 
   expandEnabled = true;
   transferHistories: TransferHistory[] = [];

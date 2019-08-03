@@ -17,18 +17,24 @@
     </mgl-timeline-entry-header>
     <mgl-timeline-entry-content>
       <div *ngIf="transferHistory.transferType === 0">
-        <span class="font-weight-bold">{{ 'timeline.message.bloodPackTransfered' | translate }}</span>
-        <hr>
+        <ng-container *ngIf="showMessages">
+          <span class="font-weight-bold">{{ 'timeline.message.bloodPackTransfered' | translate }}</span>
+          <hr>
+        </ng-container>
       </div>
       <div *ngIf="transferHistory.transferType === 1">
-        <span class="font-weight-bold">{{ 'timeline.message.bloodProductTransfered' | translate }}</span>
-        <hr>
+        <ng-container *ngIf="showMessages">
+          <span class="font-weight-bold">{{ 'timeline.message.bloodProductTransfered' | translate }}</span>
+          <hr>
+        </ng-container>
         <span class="font-weight-bold">{{ 'timeline.label.id' | translate }}: </span>
         {{ transferHistory.id }}
       </div>
       <div *ngIf="transferHistory.transferType === 2">
-        <span class="font-weight-bold">{{ 'timeline.message.bloodProductUsed' | translate }}</span>
-        <hr>
+        <ng-container *ngIf="showMessages">
+          <span class="font-weight-bold">{{ 'timeline.message.bloodProductUsed' | translate }}</span>
+          <hr>
+        </ng-container>
         <span class="font-weight-bold">{{ 'timeline.label.id' | translate }}: </span>
         {{ transferHistory.id }}
       </div>
