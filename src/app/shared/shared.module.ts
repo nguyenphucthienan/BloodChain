@@ -13,6 +13,7 @@ import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { MglTimelineModule } from 'angular-mgl-timeline';
 import { QRCodeModule } from 'angularx-qrcode';
+import { CountUpModule } from 'countup.js-angular2';
 import { SidebarModule } from 'ng-sidebar';
 import { NgxPrintModule } from 'ngx-print';
 import { NgxSpinnerModule } from 'ngx-spinner';
@@ -69,7 +70,8 @@ export function createTranslateLoader(http: HttpClient) {
     NgxPrintModule,
     MatNativeDateModule,
     MatDatepickerModule,
-    MglTimelineModule
+    MglTimelineModule,
+    CountUpModule
   ],
   exports: [
     CommonModule,
@@ -86,6 +88,7 @@ export function createTranslateLoader(http: HttpClient) {
     MatNativeDateModule,
     MatDatepickerModule,
     MglTimelineModule,
+    CountUpModule,
     HeaderComponent,
     SidebarComponent,
     PaginationComponent,

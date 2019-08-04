@@ -243,6 +243,11 @@
     "title": {
       "aSingleGeture": "A single gesture can create a million smiles, and",
       "oneBloodDonation": "One blood donation can save up to three lives"
+    },
+    "statistic": {
+      "users": "Users",
+      "bloodPacks": "Blood Packs Collected",
+      "lives": "Lives Saved"
     }
   },
   "about": {

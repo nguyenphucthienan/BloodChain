@@ -239,6 +239,11 @@
     "title": {
       "aSingleGeture": "Một cử chỉ nhỏ có thể tạo nên hàng triệu nụ cười, và",
       "oneBloodDonation": "Một lần hiến máu có thể cứu lấy mạng sống của ba người"
+    },
+    "statistic": {
+      "users": "Người dùng",
+      "bloodPacks": "Túi máu đã được hiến",
+      "lives": "Mạng sống đã được cứu"
     }
   },
   "about": {

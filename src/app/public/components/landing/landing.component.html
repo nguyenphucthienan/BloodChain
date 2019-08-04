@@ -1,12 +1,47 @@
-<div class="container-fluid">
+<div class="container">
   <h1 class="text-center text-danger">
     <mdb-icon fas icon="tint" class="mr-1"></mdb-icon>BloodChain
   </h1>
   <div class="text-center mt-4">
     <h5>{{ 'landing.title.aSingleGeture' | translate }}</h5>
-    <h3>{{ 'landing.title.oneBloodDonation' | translate }}</h3>
-    <div class="mt-5 mb-5">
-      <img [src]="logoPhotoUrl" class="img-fluid not-found">
+    <h2>{{ 'landing.title.oneBloodDonation' | translate }}</h2>
+    <div class="mt-5 mb-2">
+      <img [src]="logoPhotoUrl" class="img-fluid logo-photo">
+    </div>
+    <div class="row mt-5">
+      <div class="col-md-4 d-flex flex-column justify-content-center align-items-center pl-3 pr-3 pt-2 pb-2 statistic">
+        <div class="d-flex flex-column justify-content-center align-items-center p-3 counter-container">
+          <h2>
+            <mdb-icon fas icon="users" class="red-text"></mdb-icon>
+          </h2>
+          <div class="counter d-flex justify-content-center align-items-center m-3">
+            <h1 [countUp]="(statistics && statistics.users) || 0" [options]="statisticOptions">0</h1>
+          </div>
+          <h5>{{ 'landing.statistic.users' | translate }}</h5>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex flex-column justify-content-center align-items-center pl-3 pr-3 pt-2 pb-2 statistic">
+        <div class="d-flex flex-column justify-content-center align-items-center p-3 counter-container">
+          <h2>
+            <mdb-icon fas icon="cube" class="red-text"></mdb-icon>
+          </h2>
+          <div class="counter d-flex justify-content-center align-items-center m-3">
+            <h1 [countUp]="(statistics &&statistics.bloodPacks) || 0" [options]="statisticOptions">0</h1>
+          </div>
+          <h5>{{ 'landing.statistic.bloodPacks' | translate }}</h5>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex flex-column justify-content-center align-items-center pl-3 pr-3 pt-2 pb-2 statistic">
+        <div class="d-flex flex-column justify-content-center align-items-center p-3 counter-container">
+          <h2>
+            <mdb-icon fas icon="heartbeat" class="red-text"></mdb-icon>
+          </h2>
+          <div class="counter d-flex justify-content-center align-items-center m-3">
+            <h1 [countUp]="(statistics &&statistics.savedPatients) || 0" [options]="statisticOptions">0</h1>
+          </div>
+          <h5>{{ 'landing.statistic.lives' | translate }}</h5>
+        </div>
+      </div>
     </div>
   </div>
 </div>
