@@ -41,7 +41,7 @@ export class BloodTestCenterService {
       .applyFilter(filterMode)
       .build();
 
-    return this.http.get<BloodTestCenter[]>(`${this.bloodTestCentersUrl}`, { params });
+    return this.http.get<BloodTestCenter[]>(this.bloodTestCentersUrl, { params });
   }
 
   getBloodTestCenter(id: string): Observable<BloodTestCenter> {
@@ -50,7 +50,7 @@ export class BloodTestCenterService {
   }
 
   createBloodTestCenter(bloodTestCenter: BloodTestCenter): Observable<BloodTestCenter> {
-    return this.http.post<BloodTestCenter>(`${this.bloodTestCentersUrl}`, bloodTestCenter);
+    return this.http.post<BloodTestCenter>(this.bloodTestCentersUrl, bloodTestCenter);
   }
 
   updateBloodTestCenter(id: string, bloodTestCenter: BloodTestCenter): Observable<BloodTestCenter> {

@@ -30,7 +30,7 @@ export class TestTypeService {
   constructor(private http: HttpClient) { }
 
   getAllTestTypes(): Observable<TestType[]> {
-    return this.http.get<TestType[]>(`${this.allTestTypesUrl}`);
+    return this.http.get<TestType[]>(this.allTestTypesUrl);
   }
 
   getTestTypes(
@@ -44,7 +44,7 @@ export class TestTypeService {
       .applyFilter(filterMode)
       .build();
 
-    return this.http.get<TestType[]>(`${this.testTypesUrl}`, { params });
+    return this.http.get<TestType[]>(this.testTypesUrl, { params });
   }
 
   getTestType(id: string): Observable<TestType> {
@@ -53,7 +53,7 @@ export class TestTypeService {
   }
 
   createTestType(testType: TestType): Observable<TestType> {
-    return this.http.post<TestType>(`${this.testTypesUrl}`, testType);
+    return this.http.post<TestType>(this.testTypesUrl, testType);
   }
 
   updateTestType(id: string, testType: TestType): Observable<TestType> {

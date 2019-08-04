@@ -41,7 +41,7 @@ export class BloodCampService {
       .applyFilter(filterMode)
       .build();
 
-    return this.http.get<BloodCamp[]>(`${this.bloodCampsUrl}`, { params });
+    return this.http.get<BloodCamp[]>(this.bloodCampsUrl, { params });
   }
 
   getBloodCamp(id: string): Observable<BloodCamp> {
@@ -50,7 +50,7 @@ export class BloodCampService {
   }
 
   createBloodCamp(bloodCamp: BloodCamp): Observable<BloodCamp> {
-    return this.http.post<BloodCamp>(`${this.bloodCampsUrl}`, bloodCamp);
+    return this.http.post<BloodCamp>(this.bloodCampsUrl, bloodCamp);
   }
 
   updateBloodCamp(id: string, bloodCamp: BloodCamp): Observable<BloodCamp> {

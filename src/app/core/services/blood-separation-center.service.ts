@@ -43,7 +43,7 @@ export class BloodSeparationCenterService {
       .applyFilter(filterMode)
       .build();
 
-    return this.http.get<BloodSeparationCenter[]>(`${this.bloodSeparationCentersUrl}`, { params });
+    return this.http.get<BloodSeparationCenter[]>(this.bloodSeparationCentersUrl, { params });
   }
 
   getBloodSeparationCenter(id: string): Observable<BloodSeparationCenter> {
@@ -52,7 +52,7 @@ export class BloodSeparationCenterService {
   }
 
   createBloodSeparationCenter(bloodSeparationCenter: BloodSeparationCenter): Observable<BloodSeparationCenter> {
-    return this.http.post<BloodSeparationCenter>(`${this.bloodSeparationCentersUrl}`, bloodSeparationCenter);
+    return this.http.post<BloodSeparationCenter>(this.bloodSeparationCentersUrl, bloodSeparationCenter);
   }
 
   updateBloodSeparationCenter(id: string, bloodSeparationCenter: BloodSeparationCenter): Observable<BloodSeparationCenter> {

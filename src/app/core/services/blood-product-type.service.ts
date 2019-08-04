@@ -30,7 +30,7 @@ export class BloodProductTypeService {
   constructor(private http: HttpClient) { }
 
   getAllBloodProductTypes(): Observable<BloodProductType[]> {
-    return this.http.get<BloodProductType[]>(`${this.allBloodProductTypesUrl}`);
+    return this.http.get<BloodProductType[]>(this.allBloodProductTypesUrl);
   }
 
   getBloodProductTypes(
@@ -44,7 +44,7 @@ export class BloodProductTypeService {
       .applyFilter(filterMode)
       .build();
 
-    return this.http.get<BloodProductType[]>(`${this.bloodProductTypesUrl}`, { params });
+    return this.http.get<BloodProductType[]>(this.bloodProductTypesUrl, { params });
   }
 
   getBloodProductType(id: string): Observable<BloodProductType> {
@@ -53,7 +53,7 @@ export class BloodProductTypeService {
   }
 
   createBloodProductType(bloodProductType: BloodProductType): Observable<BloodProductType> {
-    return this.http.post<BloodProductType>(`${this.bloodProductTypesUrl}`, bloodProductType);
+    return this.http.post<BloodProductType>(this.bloodProductTypesUrl, bloodProductType);
   }
 
   updateBloodProductType(id: string, bloodProductType: BloodProductType): Observable<BloodProductType> {

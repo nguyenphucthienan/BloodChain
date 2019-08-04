@@ -41,7 +41,7 @@ export class BloodBankService {
       .applyFilter(filterMode)
       .build();
 
-    return this.http.get<BloodBank[]>(`${this.bloodBanksUrl}`, { params });
+    return this.http.get<BloodBank[]>(this.bloodBanksUrl, { params });
   }
 
   getBloodBank(id: string): Observable<BloodBank> {
@@ -50,7 +50,7 @@ export class BloodBankService {
   }
 
   createBloodBank(bloodBank: BloodBank): Observable<BloodBank> {
-    return this.http.post<BloodBank>(`${this.bloodBanksUrl}`, bloodBank);
+    return this.http.post<BloodBank>(this.bloodBanksUrl, bloodBank);
   }
 
   updateBloodBank(id: string, bloodBank: BloodBank): Observable<BloodBank> {

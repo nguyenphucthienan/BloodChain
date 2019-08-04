@@ -41,7 +41,7 @@ export class UserService {
       .applyFilter(filterMode)
       .build();
 
-    return this.http.get<User[]>(`${this.usersUrl}`, { params });
+    return this.http.get<User[]>(this.usersUrl, { params });
   }
 
   getUser(id: string): Observable<User> {
@@ -50,7 +50,7 @@ export class UserService {
   }
 
   createUser(user: User): Observable<User> {
-    return this.http.post<User>(`${this.usersUrl}`, user);
+    return this.http.post<User>(this.usersUrl, user);
   }
 
   updateUser(id: string, user: User): Observable<User> {

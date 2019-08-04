@@ -42,7 +42,7 @@ export class BloodProductService {
       .applyFilter(filterMode)
       .build();
 
-    return this.http.get<BloodProduct[]>(`${this.bloodProductsUrl}`, { params });
+    return this.http.get<BloodProduct[]>(this.bloodProductsUrl, { params });
   }
 
   getBloodProduct(id: string): Observable<BloodProduct> {

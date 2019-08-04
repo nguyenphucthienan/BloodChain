@@ -18,7 +18,7 @@ export class RoleService {
   constructor(private http: HttpClient) { }
 
   getRoles(): Observable<Role[]> {
-    return this.http.get<Role[]>(`${this.rolesUrl}`);
+    return this.http.get<Role[]>(this.rolesUrl);
   }
 
   getRole(id: string): Observable<Role> {

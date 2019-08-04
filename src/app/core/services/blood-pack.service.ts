@@ -46,7 +46,7 @@ export class BloodPackService {
       .applyFilter(filterMode)
       .build();
 
-    return this.http.get<BloodPack[]>(`${this.bloodPacksUrl}`, { params });
+    return this.http.get<BloodPack[]>(this.bloodPacksUrl, { params });
   }
 
   getMyBloodPacks(
@@ -60,7 +60,7 @@ export class BloodPackService {
       .applyFilter(filterMode)
       .build();
 
-    return this.http.get<BloodPack[]>(`${this.myBloodPacksUrl}`, { params });
+    return this.http.get<BloodPack[]>(this.myBloodPacksUrl, { params });
   }
 
   getBloodPack(id: string): Observable<BloodPack> {
@@ -69,7 +69,7 @@ export class BloodPackService {
   }
 
   createBloodPack(bloodPack: BloodPack): Observable<BloodPack> {
-    return this.http.post<BloodPack>(`${this.bloodPacksUrl}`, bloodPack);
+    return this.http.post<BloodPack>(this.bloodPacksUrl, bloodPack);
   }
 
   updateBloodPack(id: string, bloodPack: BloodPack): Observable<BloodPack> {

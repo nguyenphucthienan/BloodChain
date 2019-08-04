@@ -41,7 +41,7 @@ export class HospitalService {
       .applyFilter(filterMode)
       .build();
 
-    return this.http.get<Hospital[]>(`${this.hospitalsUrl}`, { params });
+    return this.http.get<Hospital[]>(this.hospitalsUrl, { params });
   }
 
   getHospital(id: string): Observable<Hospital> {
@@ -50,7 +50,7 @@ export class HospitalService {
   }
 
   createHospital(hospital: Hospital): Observable<Hospital> {
-    return this.http.post<Hospital>(`${this.hospitalsUrl}`, hospital);
+    return this.http.post<Hospital>(this.hospitalsUrl, hospital);
   }
 
   updateHospital(id: string, hospital: Hospital): Observable<Hospital> {
