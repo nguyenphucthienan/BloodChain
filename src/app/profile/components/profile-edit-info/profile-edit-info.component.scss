@@ -4,6 +4,7 @@
 }
 
 .photo {
-  width: 100%;
-  max-width: 150px;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
 }

@@ -9,13 +9,12 @@ import { environment } from 'src/environments/environment';
 })
 export class LandingComponent implements OnInit {
 
+  readonly logoPhotoUrl = environment.photoUrl.logo;
   readonly statisticOptions = {
     duration: 3
   };
 
   statistics: any;
-
-  readonly logoPhotoUrl = environment.photoUrl.logo;
 
   constructor(private statisticService: StatisticService) { }
 

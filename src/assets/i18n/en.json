@@ -234,8 +234,8 @@
       "description": "Description"
     },
     "message": {
-      "bloodPackTransfered": "Your blood pack has been transfer.",
-      "bloodProductTransfered": "One of your blood products has been transfer.",
+      "bloodPackTransfered": "Your blood pack has been transfered.",
+      "bloodProductTransfered": "One of your blood products has been transfered.",
       "bloodProductUsed": "One of your blood products has been used."
     }
   },

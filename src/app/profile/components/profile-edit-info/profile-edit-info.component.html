@@ -9,7 +9,7 @@
       <div class="card">
         <div class="card-body">
           <div class="d-flex justify-content-center align-items-center">
-            <img [src]="defaultPhotoUrl" class="img-fluid rounded-circle photo">
+            <img [src]="user?.photo?.secureUrl || defaultPhotoUrl" class="img-fluid rounded-circle photo">
           </div>
           <button mdbBtn color="red" outline="true" rounded="true" block="true" class="waves-effect z-depth-0 mt-4"
             mdbWavesEffect (click)="openUploadPhotoModal()">
