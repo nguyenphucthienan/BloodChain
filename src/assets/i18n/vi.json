@@ -235,6 +235,20 @@
       "bloodProductUsed": "Một chế phẩm máu của bạn đã được sử dụng."
     }
   },
+  "photoUpload": {
+    "button": {
+      "upload": "Tải lên",
+      "cancel": "Hủy",
+      "remove": "Xóa"
+    },
+    "label": {
+      "name": "Tên",
+      "size": "Kích thước",
+      "chooseFile": "Chọn file",
+      "dropHere": "Kéo thả hình ảnh vào đây",
+      "uploading": "Đang tải lên"
+    }
+  },
   "landing": {
     "title": {
       "aSingleGeture": "Một cử chỉ nhỏ có thể tạo nên hàng triệu nụ cười, và",

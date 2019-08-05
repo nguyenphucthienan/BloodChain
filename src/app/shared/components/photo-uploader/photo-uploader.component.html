@@ -1,0 +1,49 @@
+<div class="col-xs-12">
+  <div class="custom-file">
+    <input #fileSelect type="file" ng2FileSelect [uploader]="uploader" class="custom-file-input" id="customFile">
+    <label class="custom-file-label" for="customFile">{{ 'photoUpload.label.chooseFile' | translate }}</label>
+  </div>
+</div>
+<div *ngIf="hasDropZone" class="col-xs-12">
+  <div ng2FileDrop (fileOver)="fileOver($event)" [uploader]="uploader" [class.nv-file-over]="hasDropZoneOver"
+    class="card bg-faded p-3 text-center mb-3 my-drop-zone">
+    <i class="fa fa-upload fa-3x"></i>{{ 'photoUpload.label.dropHere' | translate }}
+  </div>
+</div>
+<div *ngIf="uploader?.queue?.length" class="col-xs-12">
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th width="70%">{{ 'photoUpload.label.name' | translate }}</th>
+          <th>{{ 'photoUpload.label.size' | translate }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of uploader.queue">
+          <td><strong>{{ item?.file?.name }}</strong></td>
+          <td *ngIf="uploader.options.isHTML5" nowrap>{{ item?.file?.size/1024/1024 | number:'1.2-2' }} MB</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="uploading" class="mb-2 d-flex flex-row justify-content-center">
+    <div class="spinner-border text-primary" role="status">
+      <span class="sr-only">{{ 'photoUpload.label.uploading' | translate }}...</span>
+    </div>
+  </div>
+  <div class="d-flex flex-row justify-content-center flex-wrap">
+    <button type="button" class="btn btn-sm btn-success" (click)="uploader.uploadAll()"
+      [disabled]="uploading || !uploader.getNotUploadedItems().length">
+      <span class="fa fa-upload"></span> {{ 'photoUpload.button.upload' | translate }}
+    </button>
+    <button type="button" class="btn btn-sm btn-warning" (click)="uploader.cancelAll()"
+      [disabled]="!uploader.isUploading">
+      <span class="fa fa-ban"></span> {{ 'photoUpload.button.cancel' | translate }}
+    </button>
+    <button type="button" class="btn btn-sm btn-danger" (click)="uploader.clearQueue()"
+      [disabled]="!uploader.queue.length">
+      <span class="fa fa-trash"></span> {{ 'photoUpload.button.remove' | translate }}
+    </button>
+  </div>
+</div>

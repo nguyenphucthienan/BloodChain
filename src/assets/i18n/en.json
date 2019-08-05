@@ -239,6 +239,20 @@
       "bloodProductUsed": "One of your blood products has been used."
     }
   },
+  "photoUpload": {
+    "button": {
+      "upload": "Upload",
+      "cancel": "Cancel",
+      "remove": "Remove"
+    },
+    "label": {
+      "name": "Name",
+      "size": "Size",
+      "chooseFile": "Choose file",
+      "dropHere": "Drop photo here",
+      "uploading": "Uploading"
+    }
+  },
   "landing": {
     "title": {
       "aSingleGeture": "A single gesture can create a million smiles, and",

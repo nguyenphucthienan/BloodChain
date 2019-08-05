@@ -15,6 +15,7 @@ import { MglTimelineModule } from 'angular-mgl-timeline';
 import { QRCodeModule } from 'angularx-qrcode';
 import { CountUpModule } from 'countup.js-angular2';
 import { SidebarModule } from 'ng-sidebar';
+import { FileUploadModule } from 'ng2-file-upload';
 import { NgxPrintModule } from 'ngx-print';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { environment } from 'src/environments/environment';
@@ -26,6 +27,7 @@ import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.componen
 import { HeaderComponent } from './components/header/header.component';
 import { MapInputComponent } from './components/map-input/map-input.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
+import { PhotoUploaderComponent } from './components/photo-uploader/photo-uploader.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ScanQrcodeModalComponent } from './modals/scan-qrcode-modal/scan-qrcode-modal.component';
 import { BooleanYesNoPipe } from './pipes/boolean-yes-no.pipe';
@@ -40,6 +42,7 @@ export function createTranslateLoader(http: HttpClient) {
     SidebarComponent,
     PaginationComponent,
     MapInputComponent,
+    PhotoUploaderComponent,
     BreadcrumbComponent,
     ScanQrcodeModalComponent,
     BooleanYesNoPipe,
@@ -63,6 +66,7 @@ export function createTranslateLoader(http: HttpClient) {
       apiKey: environment.mapApiKey,
       libraries: ['places']
     }),
+    FileUploadModule,
     NgxSpinnerModule,
     NgSelectModule,
     QRCodeModule,
@@ -93,6 +97,7 @@ export function createTranslateLoader(http: HttpClient) {
     SidebarComponent,
     PaginationComponent,
     MapInputComponent,
+    PhotoUploaderComponent,
     BreadcrumbComponent,
     ScanQrcodeModalComponent,
     BloodPackTransferHistoriesComponent,
