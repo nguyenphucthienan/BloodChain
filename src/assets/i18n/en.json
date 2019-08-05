@@ -53,7 +53,8 @@
       "assign": "Assign"
     },
     "modal": {
-      "scanQrCode": "Scan QR Code"
+      "scanQrCode": "Scan QR Code",
+      "photoManager": "Photo Manager"
     },
     "message": {
       "noData": "No data",

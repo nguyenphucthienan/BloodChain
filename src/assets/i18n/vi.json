@@ -53,7 +53,8 @@
       "assign": "Cấp quyền"
     },
     "modal": {
-      "scanQrCode": "Quét QR Code"
+      "scanQrCode": "Quét QR Code",
+      "photoManager": "Quản lí hình ảnh"
     },
     "message": {
       "noData": "Không có dữ liệu",

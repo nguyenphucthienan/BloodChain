@@ -13,6 +13,9 @@ import {
   BloodCampAssignStaffsModalComponent,
 } from '../../modals/blood-camp-assign-staffs-modal/blood-camp-assign-staffs-modal.component';
 import { BloodCampDeleteModalComponent } from '../../modals/blood-camp-delete-modal/blood-camp-delete-modal.component';
+import {
+  BloodCampPhotoManagerModalComponent,
+} from '../../modals/blood-camp-photo-manager-modal/blood-camp-photo-manager-modal.component';
 import { BloodCampUpdateModalComponent } from '../../modals/blood-camp-update-modal/blood-camp-update-modal.component';
 import { BloodCampManagerTableService } from '../../services/blood-camp-manager-table.service';
 
@@ -66,6 +69,9 @@ export class AdminBloodCampManagerComponent implements OnInit, AfterViewInit, On
         break;
       case TableActionType.Assign:
         this.openBloodCampAssignStaffsModal(tableCellChange.row.cells._id.value);
+        break;
+      case TableActionType.ManagePhotos:
+        this.openBloodCampPhotoManagerModal(tableCellChange.row.cells._id.value);
         break;
       case TableActionType.Update:
         this.openBloodCampUpdateModal(tableCellChange.row);
@@ -121,6 +127,22 @@ export class AdminBloodCampManagerComponent implements OnInit, AfterViewInit, On
 
   onBloodCampAssignedStaffs(result: any) {
     this.modalRef.hide();
+  }
+
+  openBloodCampPhotoManagerModal(id: string) {
+    this.modalRef = this.modalService.show(BloodCampPhotoManagerModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-lg modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        bloodCampId: id,
+      }
+    });
   }
 
   openBloodCampUpdateModal(rowData: TableRow) {

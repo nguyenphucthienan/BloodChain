@@ -33,6 +33,9 @@ import {
   BloodCampAssignStaffsModalComponent,
 } from './modals/blood-camp-assign-staffs-modal/blood-camp-assign-staffs-modal.component';
 import { BloodCampDeleteModalComponent } from './modals/blood-camp-delete-modal/blood-camp-delete-modal.component';
+import {
+  BloodCampPhotoManagerModalComponent,
+} from './modals/blood-camp-photo-manager-modal/blood-camp-photo-manager-modal.component';
 import { BloodCampUpdateModalComponent } from './modals/blood-camp-update-modal/blood-camp-update-modal.component';
 import {
   BloodProductTypeAddModalComponent,
@@ -101,6 +104,7 @@ import { UserUpdateSuccessModalComponent } from './modals/user-update-success-mo
     BloodCampUpdateModalComponent,
     BloodCampDeleteModalComponent,
     BloodCampAssignStaffsModalComponent,
+    BloodCampPhotoManagerModalComponent,
     BloodTestCenterAddModalComponent,
     BloodTestCenterUpdateModalComponent,
     BloodTestCenterDeleteModalComponent,
@@ -117,7 +121,7 @@ import { UserUpdateSuccessModalComponent } from './modals/user-update-success-mo
     HospitalUpdateModalComponent,
     HospitalDeleteModalComponent,
     HospitalAssignStaffsModalComponent,
-    AdminBloodPackManagerComponent
+    AdminBloodPackManagerComponent,
   ],
   imports: [
     SharedModule,
@@ -136,6 +140,7 @@ import { UserUpdateSuccessModalComponent } from './modals/user-update-success-mo
     BloodCampUpdateModalComponent,
     BloodCampDeleteModalComponent,
     BloodCampAssignStaffsModalComponent,
+    BloodCampPhotoManagerModalComponent,
     BloodTestCenterAddModalComponent,
     BloodTestCenterUpdateModalComponent,
     BloodTestCenterDeleteModalComponent,

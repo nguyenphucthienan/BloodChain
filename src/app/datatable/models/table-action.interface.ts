@@ -11,5 +11,6 @@ export enum TableActionType {
   Update,
   Delete,
   DeleteAll,
-  Assign
+  Assign,
+  ManagePhotos
 }
