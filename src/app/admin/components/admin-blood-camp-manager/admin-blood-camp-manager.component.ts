@@ -92,7 +92,7 @@ export class AdminBloodCampManagerComponent implements OnInit, AfterViewInit, On
       focus: true,
       show: false,
       ignoreBackdropClick: true,
-      class: 'modal-lg modal-dialog-centered',
+      class: 'modal-xl modal-dialog-centered',
       containerClass: 'top',
       animated: true
     });
@@ -152,7 +152,7 @@ export class AdminBloodCampManagerComponent implements OnInit, AfterViewInit, On
       focus: true,
       show: false,
       ignoreBackdropClick: true,
-      class: 'modal-lg modal-dialog-centered',
+      class: 'modal-xl modal-dialog-centered',
       containerClass: 'top',
       animated: true,
       data: {

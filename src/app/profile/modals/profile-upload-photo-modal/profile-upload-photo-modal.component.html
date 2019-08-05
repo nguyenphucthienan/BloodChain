@@ -7,7 +7,7 @@
   </div>
   <div class="modal-body">
     <app-photo-uploader [method]="'PUT'" [uploadUrl]="uploadUrl" [autoUpload]="false" [hasDropZone]="true"
-      (uploadSucceed)="onUploadSucceed($event)" (uploadFailed)="onUploadFailed($event)">
+      (uploadSucceed)="onUploadSucceed($event)" (uploadFailed)="onUploadFailed()">
     </app-photo-uploader>
   </div>
   <div class=" modal-footer">
