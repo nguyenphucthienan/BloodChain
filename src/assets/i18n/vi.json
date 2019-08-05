@@ -54,7 +54,8 @@
     },
     "modal": {
       "scanQrCode": "Quét QR Code",
-      "photoManager": "Quản lí hình ảnh"
+      "photoManager": "Quản lí hình ảnh",
+      "uploadPhoto": "Tải lên hình ảnh"
     },
     "message": {
       "noData": "Không có dữ liệu",
@@ -372,6 +373,8 @@
     "alert": {
       "saveChangesSuccess": "Thay đổi thông tin thành công",
       "saveChangesFailed": "Thay đổi thông tin không thành công",
+      "changePhotoSuccess": "Đổi ảnh đại diện thành công",
+      "changePhotoFailed": "Đối ảnh đại diện không thành công",
       "changePasswordSuccess": "Đổi mật khẩu thành công",
       "changePasswordFailed": "Đổi mật khẩu không thành công"
     }

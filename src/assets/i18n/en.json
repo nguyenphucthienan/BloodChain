@@ -54,7 +54,8 @@
     },
     "modal": {
       "scanQrCode": "Scan QR Code",
-      "photoManager": "Photo Manager"
+      "photoManager": "Photo Manager",
+      "uploadPhoto": "Upload Photo"
     },
     "message": {
       "noData": "No data",
@@ -376,7 +377,9 @@
     "alert": {
       "saveChangesSuccess": "Change user info successfully",
       "saveChangesFailed": "Change password failed",
-      "changePasswordSuccess": "Change user info successfully",
+      "changePhotoSuccess": "Change photo successfully",
+      "changePhotoFailed": "Change photo failed",
+      "changePasswordSuccess": "Change password successfully",
       "changePasswordFailed": "Change password failed"
     }
   },

@@ -13,6 +13,10 @@ import { AlertService } from 'src/app/core/services/alert.service';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { environment } from 'src/environments/environment';
 
+import {
+  ProfileUploadPhotoModalComponent,
+} from '../../modals/profile-upload-photo-modal/profile-upload-photo-modal.component';
+
 @Component({
   selector: 'app-profile-edit-info',
   templateUrl: './profile-edit-info.component.html',
@@ -79,6 +83,24 @@ export class ProfileEditInfoComponent implements OnInit, OnDestroy {
   }
 
   openUploadPhotoModal() {
+    this.modalRef = this.modalService.show(ProfileUploadPhotoModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-lg modal-dialog-centered',
+      containerClass: 'top',
+      animated: true
+    });
+
+    this.modalRef.content.uploadSucceed
+      .subscribe((user: User) => this.onPhotoUploaded());
+  }
+
+  onPhotoUploaded() {
+    this.getUserInfo();
+    this.modalRef.hide();
   }
 
   private getUserInfo() {

@@ -15,6 +15,7 @@ export class PhotoUploaderComponent implements OnInit, OnChanges {
     'image/jpeg'
   ];
 
+  @Input() method = 'POST';
   @Input() uploadUrl: string;
   @Input() autoUpload = false;
   @Input() hasDropZone = false;
@@ -42,6 +43,7 @@ export class PhotoUploaderComponent implements OnInit, OnChanges {
   private initUploader() {
     const token = localStorage.getItem(environment.authTokenName);
     this.uploader = new FileUploader({
+      method: this.method,
       url: this.uploadUrl,
       itemAlias: 'image',
       authToken: `Bearer ${token}`,
