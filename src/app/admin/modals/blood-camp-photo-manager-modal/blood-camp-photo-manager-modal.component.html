@@ -6,9 +6,20 @@
     <h4 class="modal-title w-100">{{ 'common.modal.photoManager' | translate }}</h4>
   </div>
   <div class="modal-body">
-    <app-photo-uploader [uploadUrl]="uploadUrl" [autoUpload]="false" [hasDropZone]="true"
-      (uploadSucceed)="onUploadSucceed($event)" (uploadFailed)="onUploadFailed()">
-    </app-photo-uploader>
+    <div *ngIf="galleryImages.length <= 0">
+      <span class="font-weight-bold">{{ 'common.message.noData' | translate }}</span>
+    </div>
+    <ngx-gallery *ngIf="galleryImages.length > 0" [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+    <hr>
+    <div class="row">
+      <div class="col-md-6">
+      </div>
+      <div class="col-md-6">
+        <app-photo-uploader [uploadUrl]="uploadUrl" (uploadSucceed)="onUploadSucceed($event)"
+          (uploadFailed)="onUploadFailed()">
+        </app-photo-uploader>
+      </div>
+    </div>
   </div>
   <div class=" modal-footer">
     <button type="button" mdbBtn color="secondary" class="waves-light" (click)="close()" mdbWavesEffect>

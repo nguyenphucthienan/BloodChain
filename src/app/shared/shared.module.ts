@@ -16,6 +16,7 @@ import { QRCodeModule } from 'angularx-qrcode';
 import { CountUpModule } from 'countup.js-angular2';
 import { SidebarModule } from 'ng-sidebar';
 import { FileUploadModule } from 'ng2-file-upload';
+import { NgxGalleryModule } from 'ngx-gallery';
 import { NgxPrintModule } from 'ngx-print';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { environment } from 'src/environments/environment';
@@ -75,7 +76,8 @@ export function createTranslateLoader(http: HttpClient) {
     MatNativeDateModule,
     MatDatepickerModule,
     MglTimelineModule,
-    CountUpModule
+    CountUpModule,
+    NgxGalleryModule
   ],
   exports: [
     CommonModule,
@@ -93,6 +95,7 @@ export function createTranslateLoader(http: HttpClient) {
     MatDatepickerModule,
     MglTimelineModule,
     CountUpModule,
+    NgxGalleryModule,
     HeaderComponent,
     SidebarComponent,
     PaginationComponent,

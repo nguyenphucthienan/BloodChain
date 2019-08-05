@@ -1,3 +1,4 @@
+import { Photo } from './photo.interface';
 import { Point } from './point.interface';
 
 export interface BloodCamp {
@@ -7,4 +8,5 @@ export interface BloodCamp {
   phone: string;
   address: string;
   location: Point;
+  photos: Photo[];
 }

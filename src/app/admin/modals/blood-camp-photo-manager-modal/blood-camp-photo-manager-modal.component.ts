@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { MDBModalRef } from 'angular-bootstrap-md';
+import { NgxGalleryAnimation, NgxGalleryComponent, NgxGalleryImage, NgxGalleryOptions } from 'ngx-gallery';
 import { BloodCamp } from 'src/app/core/models/blood-camp.interface';
 import { AlertService } from 'src/app/core/services/alert.service';
 import { BloodCampService } from 'src/app/core/services/blood-camp.service';
@@ -22,6 +23,10 @@ export class BloodCampPhotoManagerModalComponent implements OnInit {
   @Output() uploadFailed = new EventEmitter();
   @Output() closed = new EventEmitter();
 
+  @ViewChild(NgxGalleryComponent) gallery: NgxGalleryComponent;
+
+  galleryOptions: NgxGalleryOptions[] = [];
+  galleryImages: NgxGalleryImage[] = [];
   uploadUrl: string;
 
   constructor(
@@ -34,11 +39,39 @@ export class BloodCampPhotoManagerModalComponent implements OnInit {
     this.uploadUrl = UrlUtils.resolvePathVariables(this.photoUploadUrl, {
       bloodCampId: this.bloodCampId
     });
+
+    this.galleryOptions = [{
+      width: '100%',
+      height: '500px',
+      thumbnailsColumns: 5,
+      imageAnimation: NgxGalleryAnimation.Slide,
+      previewZoom: true
+    }];
+
+    this.getBloodCamp();
+  }
+
+  private getBloodCamp(goToLastPhoto: boolean = false) {
+    this.bloodCampService.getBloodCamp(this.bloodCampId)
+      .subscribe((bloodCamp: BloodCamp) => {
+        this.galleryImages = bloodCamp.photos.map(photo => {
+          return {
+            small: photo.secureUrl,
+            medium: photo.secureUrl,
+            big: photo.secureUrl
+          };
+        });
+
+        if (goToLastPhoto && this.gallery) {
+          this.gallery.show(this.galleryImages.length - 1);
+        }
+      });
   }
 
   onUploadSucceed(bloodCamp: BloodCamp) {
     this.uploadSucceed.emit(bloodCamp);
     this.alertService.success('editUserInfo.alert.changePhotoSuccess');
+    this.getBloodCamp(true);
   }
 
   onUploadFailed() {

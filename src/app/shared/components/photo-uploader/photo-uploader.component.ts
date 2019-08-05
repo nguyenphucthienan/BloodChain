@@ -18,6 +18,7 @@ export class PhotoUploaderComponent implements OnInit, OnChanges {
   @Input() method = 'POST';
   @Input() uploadUrl: string;
   @Input() autoUpload = false;
+  @Input() hasListFiles = false;
   @Input() hasDropZone = false;
   @Output() uploadSucceed = new EventEmitter();
   @Output() uploadFailed = new EventEmitter();
@@ -55,12 +56,16 @@ export class PhotoUploaderComponent implements OnInit, OnChanges {
       maxFileSize: 10 * 1024 * 1024,
     });
 
-    this.uploader.onAfterAddingFile = (item => {
+    this.uploader.onAfterAddingFile = (item: any) => {
       item.withCredentials = false;
-    });
+    };
 
-    this.uploader.onProgressItem = (progress: any) => {
+    this.uploader.onProgressItem = (file: any, progress: any) => {
       this.uploading = true;
+    };
+
+    this.uploader.onCancelItem = (item: any, response: any, status: any, headers: any) => {
+      this.uploading = false;
     };
 
     this.uploader.onSuccessItem = (item: any, response: any, status: any, headers: any) => {

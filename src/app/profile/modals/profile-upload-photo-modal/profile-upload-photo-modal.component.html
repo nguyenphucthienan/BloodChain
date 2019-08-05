@@ -6,7 +6,7 @@
     <h4 class="modal-title w-100">{{ 'common.modal.uploadPhoto' | translate }}</h4>
   </div>
   <div class="modal-body">
-    <app-photo-uploader [method]="'PUT'" [uploadUrl]="uploadUrl" [autoUpload]="false" [hasDropZone]="true"
+    <app-photo-uploader [method]="'PUT'" [uploadUrl]="uploadUrl" [hasDropZone]="true" [hasListFiles]="true"
       (uploadSucceed)="onUploadSucceed($event)" (uploadFailed)="onUploadFailed()">
     </app-photo-uploader>
   </div>
