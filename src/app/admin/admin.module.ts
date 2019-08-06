@@ -27,6 +27,9 @@ import {
   BloodBankAssignStaffsModalComponent,
 } from './modals/blood-bank-assign-staffs-modal/blood-bank-assign-staffs-modal.component';
 import { BloodBankDeleteModalComponent } from './modals/blood-bank-delete-modal/blood-bank-delete-modal.component';
+import {
+  BloodBankPhotoManagerModalComponent,
+} from './modals/blood-bank-photo-manager-modal/blood-bank-photo-manager-modal.component';
 import { BloodBankUpdateModalComponent } from './modals/blood-bank-update-modal/blood-bank-update-modal.component';
 import { BloodCampAddModalComponent } from './modals/blood-camp-add-modal/blood-camp-add-modal.component';
 import {
@@ -125,6 +128,7 @@ import { UserUpdateSuccessModalComponent } from './modals/user-update-success-mo
     BloodBankUpdateModalComponent,
     BloodBankDeleteModalComponent,
     BloodBankAssignStaffsModalComponent,
+    BloodBankPhotoManagerModalComponent,
     HospitalAddModalComponent,
     HospitalUpdateModalComponent,
     HospitalDeleteModalComponent,
@@ -163,6 +167,7 @@ import { UserUpdateSuccessModalComponent } from './modals/user-update-success-mo
     BloodBankUpdateModalComponent,
     BloodBankDeleteModalComponent,
     BloodBankAssignStaffsModalComponent,
+    BloodBankPhotoManagerModalComponent,
     HospitalAddModalComponent,
     HospitalUpdateModalComponent,
     HospitalDeleteModalComponent,

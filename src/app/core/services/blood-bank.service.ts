@@ -17,6 +17,7 @@ export class BloodBankService {
   private readonly bloodBanksUrl = `${environment.apiUrl}/blood-banks`;
   private readonly bloodBankUrl = `${environment.apiUrl}/blood-banks/{id}`;
   private readonly bloodBankStaffsUrl = `${environment.apiUrl}/blood-banks/{id}/staffs`;
+  private readonly deleteBloodBankPhotoUrl = `${environment.apiUrl}/blood-banks/{id}/photos/{photoId}`;
 
   private readonly defaultPagination: Pagination = {
     page: 1,
@@ -75,6 +76,11 @@ export class BloodBankService {
       .build();
 
     return this.http.get<BloodBank[]>(this.bloodBanksUrl, { params });
+  }
+
+  deleteBloodBankPhoto(id: string, photoId: string): Observable<BloodBank> {
+    const url = UrlUtils.resolvePathVariables(this.deleteBloodBankPhotoUrl, { id, photoId });
+    return this.http.delete<BloodBank>(url);
   }
 
 }

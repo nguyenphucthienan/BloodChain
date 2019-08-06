@@ -13,6 +13,9 @@ import {
   BloodBankAssignStaffsModalComponent,
 } from '../../modals/blood-bank-assign-staffs-modal/blood-bank-assign-staffs-modal.component';
 import { BloodBankDeleteModalComponent } from '../../modals/blood-bank-delete-modal/blood-bank-delete-modal.component';
+import {
+  BloodBankPhotoManagerModalComponent,
+} from '../../modals/blood-bank-photo-manager-modal/blood-bank-photo-manager-modal.component';
 import { BloodBankUpdateModalComponent } from '../../modals/blood-bank-update-modal/blood-bank-update-modal.component';
 import { BloodBankManagerTableService } from '../../services/blood-bank-manager-table.service';
 
@@ -66,6 +69,9 @@ export class AdminBloodBankManagerComponent implements OnInit, AfterViewInit, On
         break;
       case TableActionType.Assign:
         this.openBloodBankAssignStaffsModal(tableCellChange.row.cells._id.value);
+        break;
+      case TableActionType.ManagePhotos:
+        this.openBloodBankPhotoManagerModal(tableCellChange.row.cells._id.value);
         break;
       case TableActionType.Update:
         this.openBloodBankUpdateModal(tableCellChange.row);
@@ -121,6 +127,22 @@ export class AdminBloodBankManagerComponent implements OnInit, AfterViewInit, On
 
   onBloodBankAssignedStaffs(result: any) {
     this.modalRef.hide();
+  }
+
+  openBloodBankPhotoManagerModal(id: string) {
+    this.modalRef = this.modalService.show(BloodBankPhotoManagerModalComponent, {
+      backdrop: true,
+      keyboard: false,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-lg modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        bloodBankId: id,
+      }
+    });
   }
 
   openBloodBankUpdateModal(rowData: TableRow) {
