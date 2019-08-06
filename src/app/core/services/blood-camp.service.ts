@@ -17,6 +17,7 @@ export class BloodCampService {
   private readonly bloodCampsUrl = `${environment.apiUrl}/blood-camps`;
   private readonly bloodCampUrl = `${environment.apiUrl}/blood-camps/{id}`;
   private readonly bloodCampStaffsUrl = `${environment.apiUrl}/blood-camps/{id}/staffs`;
+  private readonly deleteBloodCampPhotoUrl = `${environment.apiUrl}/blood-camps/{id}/photos/{photoId}`;
 
   private readonly defaultPagination: Pagination = {
     page: 1,
@@ -66,6 +67,11 @@ export class BloodCampService {
   getStaffsOfBloodCamp(id: string): Observable<User[]> {
     const url = UrlUtils.resolvePathVariables(this.bloodCampStaffsUrl, { id });
     return this.http.get<User[]>(url);
+  }
+
+  deleteBloodCampPhoto(id: string, photoId: string): Observable<BloodCamp> {
+    const url = UrlUtils.resolvePathVariables(this.deleteBloodCampPhotoUrl, { id, photoId });
+    return this.http.delete<BloodCamp>(url);
   }
 
 }

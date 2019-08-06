@@ -1,5 +1,6 @@
 import { Component, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, ViewChild } from '@angular/core';
 import { FileUploader } from 'ng2-file-upload';
+import { AlertService } from 'src/app/core/services/alert.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -20,6 +21,8 @@ export class PhotoUploaderComponent implements OnInit, OnChanges {
   @Input() autoUpload = false;
   @Input() hasListFiles = false;
   @Input() hasDropZone = false;
+  @Input() showLoadingSpinner = false;
+  @Input() showLoadingAlert = false;
   @Output() uploadSucceed = new EventEmitter();
   @Output() uploadFailed = new EventEmitter();
 
@@ -29,7 +32,7 @@ export class PhotoUploaderComponent implements OnInit, OnChanges {
   hasDropZoneOver = false;
   uploading = false;
 
-  constructor() { }
+  constructor(private alertService: AlertService) { }
 
   ngOnInit() {
     this.initUploader();
@@ -62,6 +65,9 @@ export class PhotoUploaderComponent implements OnInit, OnChanges {
 
     this.uploader.onProgressItem = (file: any, progress: any) => {
       this.uploading = true;
+      if (this.showLoadingAlert) {
+        this.alertService.info('common.alert.photoUploading');
+      }
     };
 
     this.uploader.onCancelItem = (item: any, response: any, status: any, headers: any) => {

@@ -25,6 +25,7 @@ export class BloodCampPhotoManagerModalComponent implements OnInit {
 
   @ViewChild(NgxGalleryComponent) gallery: NgxGalleryComponent;
 
+  bloodCamp: BloodCamp;
   galleryOptions: NgxGalleryOptions[] = [];
   galleryImages: NgxGalleryImage[] = [];
   uploadUrl: string;
@@ -45,7 +46,11 @@ export class BloodCampPhotoManagerModalComponent implements OnInit {
       height: '500px',
       thumbnailsColumns: 5,
       imageAnimation: NgxGalleryAnimation.Slide,
-      previewZoom: true
+      imageInfinityMove: true,
+      previewInfinityMove: true,
+      previewZoom: true,
+      previewFullscreen: true,
+      previewCloseOnEsc: true
     }];
 
     this.getBloodCamp();
@@ -54,8 +59,10 @@ export class BloodCampPhotoManagerModalComponent implements OnInit {
   private getBloodCamp(goToLastPhoto: boolean = false) {
     this.bloodCampService.getBloodCamp(this.bloodCampId)
       .subscribe((bloodCamp: BloodCamp) => {
+        this.bloodCamp = bloodCamp;
         this.galleryImages = bloodCamp.photos.map(photo => {
           return {
+            id: photo._id,
             small: photo.secureUrl,
             medium: photo.secureUrl,
             big: photo.secureUrl
@@ -68,15 +75,34 @@ export class BloodCampPhotoManagerModalComponent implements OnInit {
       });
   }
 
+  deletePhoto() {
+    const selectedIndex = this.gallery.selectedIndex;
+    const photoId = this.bloodCamp.photos[selectedIndex]._id;
+    this.bloodCampService.deleteBloodCampPhoto(this.bloodCampId, photoId)
+      .subscribe(
+        (bloodCamp: BloodCamp) => {
+          this.alertService.success('common.alert.deletePhotoSuccess');
+          this.bloodCamp.photos = this.bloodCamp.photos
+            .filter(photo => photo._id !== photoId);
+          this.galleryImages = this.galleryImages
+            .filter(image => this.galleryImages.indexOf(image) !== selectedIndex);
+
+          if (selectedIndex - 1 >= 0) {
+            this.gallery.show(selectedIndex - 1);
+          }
+        },
+        error => this.alertService.error('common.alert.deletePhotoFailed'));
+  }
+
   onUploadSucceed(bloodCamp: BloodCamp) {
     this.uploadSucceed.emit(bloodCamp);
-    this.alertService.success('editUserInfo.alert.changePhotoSuccess');
+    this.alertService.success('common.alert.uploadPhotoSuccess');
     this.getBloodCamp(true);
   }
 
   onUploadFailed() {
     this.uploadFailed.emit();
-    this.alertService.error('editUserInfo.alert.changePhotoFailed');
+    this.alertService.error('common.alert.uploadPhotoFailed');
   }
 
   close() {

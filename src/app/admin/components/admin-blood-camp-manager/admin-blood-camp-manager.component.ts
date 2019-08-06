@@ -132,7 +132,7 @@ export class AdminBloodCampManagerComponent implements OnInit, AfterViewInit, On
   openBloodCampPhotoManagerModal(id: string) {
     this.modalRef = this.modalService.show(BloodCampPhotoManagerModalComponent, {
       backdrop: true,
-      keyboard: true,
+      keyboard: false,
       focus: true,
       show: false,
       ignoreBackdropClick: true,

@@ -10,6 +10,8 @@
       "no": "No",
       "add": "Add",
       "update": "Update",
+      "delete": "Delete",
+      "deletePhoto": "Delete Photo",
       "cancel": "Cancel",
       "reset": "Reset",
       "print": "Print",
@@ -27,7 +29,12 @@
       "getDataFailed": "Get data failed",
       "qrCodeInvalid": "QR Code is invalid",
       "assignStaffsSuccess": "Assign staffs successfully",
-      "assignStaffsFailed": "Assign staffs failed"
+      "assignStaffsFailed": "Assign staffs failed",
+      "photoUploading":"Uploading. Please wait.",
+      "uploadPhotoSuccess": "Upload photo successfully",
+      "uploadPhotoFailed": "Upload photo failed",
+      "deletePhotoSuccess": "Delete photo successfully",
+      "deletePhotoFailed": "Delete photo failed"
     },
     "column": {
       "id": "ID",

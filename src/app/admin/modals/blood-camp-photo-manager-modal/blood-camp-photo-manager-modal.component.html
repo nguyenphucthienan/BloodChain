@@ -6,19 +6,24 @@
     <h4 class="modal-title w-100">{{ 'common.modal.photoManager' | translate }}</h4>
   </div>
   <div class="modal-body">
-    <div *ngIf="galleryImages.length <= 0">
-      <span class="font-weight-bold">{{ 'common.message.noData' | translate }}</span>
+    <div *ngIf="galleryImages.length <= 0" class="text-center">
+      <p class="font-weight-bold">{{ 'common.message.noData' | translate }}</p>
     </div>
-    <ngx-gallery *ngIf="galleryImages.length > 0" [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+    <ng-container *ngIf="galleryImages.length > 0">
+      <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+      <hr>
+      <div class="d-flex flex-row justify-content-end">
+        <button type="button" class="btn btn-sm btn-danger" (click)="deletePhoto()">
+          <span class="fa fa-trash-alt mr-1"></span>{{ 'common.button.deletePhoto' | translate }}
+        </button>
+      </div>
+    </ng-container>
     <hr>
-    <div class="row">
-      <div class="col-md-6">
-      </div>
-      <div class="col-md-6">
-        <app-photo-uploader [uploadUrl]="uploadUrl" (uploadSucceed)="onUploadSucceed($event)"
-          (uploadFailed)="onUploadFailed()">
-        </app-photo-uploader>
-      </div>
+    <div>
+      <p class="font-weight-bold mt-2 mb-2">{{ 'common.modal.uploadPhoto' | translate | uppercase }}</p>
+      <app-photo-uploader [uploadUrl]="uploadUrl" [showLoadingAlert]="true" (uploadSucceed)="onUploadSucceed($event)"
+        (uploadFailed)="onUploadFailed()">
+      </app-photo-uploader>
     </div>
   </div>
   <div class=" modal-footer">

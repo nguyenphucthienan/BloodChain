@@ -10,6 +10,8 @@
       "no": "Không",
       "add": "Thêm",
       "update": "Cập nhật",
+      "delete": "Xóa",
+      "deletePhoto": "Xóa hình ảnh",
       "cancel": "Hủy",
       "reset": "Làm lại",
       "print": "In",
@@ -27,7 +29,12 @@
       "getDataFailed": "Tải dữ liệu không thành công",
       "qrCodeInvalid": "QR Code không hợp lệ",
       "assignStaffsSuccess": "Cấp quyền thành công",
-      "assignStaffsFailed": "Cấp quyền không thành công"
+      "assignStaffsFailed": "Cấp quyền không thành công",
+      "photoUploading":"Đang tải lên. Xin vui lòng đợi giây lát.",
+      "uploadPhotoSuccess": "Tải lên hình ảnh thành công",
+      "uploadPhotoFailed": "Tải lên hình ảnh không thành công",
+      "deletePhotoSuccess": "Xóa hình ảnh thành công",
+      "deletePhotoFailed": "Xóa hình ảnh không thành công"
     },
     "column": {
       "id": "ID",
