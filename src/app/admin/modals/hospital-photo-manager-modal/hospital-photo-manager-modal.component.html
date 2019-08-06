@@ -1,0 +1,34 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close pull-right" (click)="close()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100">{{ 'common.modal.photoManager' | translate }}</h4>
+  </div>
+  <div class="modal-body">
+    <div *ngIf="galleryImages.length <= 0" class="text-center">
+      <p class="font-weight-bold">{{ 'common.message.noData' | translate }}</p>
+    </div>
+    <ng-container *ngIf="galleryImages.length > 0">
+      <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+      <hr>
+      <div class="d-flex flex-row justify-content-end">
+        <button type="button" class="btn btn-sm btn-danger" (click)="deletePhoto()">
+          <span class="fa fa-trash-alt mr-1"></span>{{ 'common.button.deletePhoto' | translate }}
+        </button>
+      </div>
+    </ng-container>
+    <hr>
+    <div>
+      <p class="font-weight-bold mt-2 mb-2">{{ 'common.modal.uploadPhoto' | translate | uppercase }}</p>
+      <app-photo-uploader [uploadUrl]="uploadUrl" [showLoadingAlert]="true" (uploadSucceed)="onUploadSucceed($event)"
+        (uploadFailed)="onUploadFailed()">
+      </app-photo-uploader>
+    </div>
+  </div>
+  <div class=" modal-footer">
+    <button type="button" mdbBtn color="secondary" class="waves-light" (click)="close()" mdbWavesEffect>
+      {{ 'common.button.cancel' | translate }}
+    </button>
+  </div>
+</div>

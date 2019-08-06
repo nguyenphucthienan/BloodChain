@@ -17,6 +17,7 @@ export class HospitalService {
   private readonly hospitalsUrl = `${environment.apiUrl}/hospitals`;
   private readonly hospitalUrl = `${environment.apiUrl}/hospitals/{id}`;
   private readonly hospitalStaffsUrl = `${environment.apiUrl}/hospitals/{id}/staffs`;
+  private readonly deleteHospitalPhotoUrl = `${environment.apiUrl}/hospitals/{id}/photos/{photoId}`;
 
   private readonly defaultPagination: Pagination = {
     page: 1,
@@ -75,6 +76,11 @@ export class HospitalService {
       .build();
 
     return this.http.get<Hospital[]>(this.hospitalsUrl, { params });
+  }
+
+  deleteHospitalPhoto(id: string, photoId: string): Observable<Hospital> {
+    const url = UrlUtils.resolvePathVariables(this.deleteHospitalPhotoUrl, { id, photoId });
+    return this.http.delete<Hospital>(url);
   }
 
 }

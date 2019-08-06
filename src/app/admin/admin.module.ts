@@ -84,6 +84,9 @@ import {
   HospitalAssignStaffsModalComponent,
 } from './modals/hospital-assign-staffs-modal/hospital-assign-staffs-modal.component';
 import { HospitalDeleteModalComponent } from './modals/hospital-delete-modal/hospital-delete-modal.component';
+import {
+  HospitalPhotoManagerModalComponent,
+} from './modals/hospital-photo-manager-modal/hospital-photo-manager-modal.component';
 import { HospitalUpdateModalComponent } from './modals/hospital-update-modal/hospital-update-modal.component';
 import { TestTypeAddModalComponent } from './modals/test-type-add-modal/test-type-add-modal.component';
 import { TestTypeDeleteModalComponent } from './modals/test-type-delete-modal/test-type-delete-modal.component';
@@ -102,6 +105,7 @@ import { UserUpdateSuccessModalComponent } from './modals/user-update-success-mo
     AdminBloodSeparationCenterManagerComponent,
     AdminBloodBankManagerComponent,
     AdminHospitalManagerComponent,
+    AdminBloodPackManagerComponent,
     UserUpdateSuccessModalComponent,
     TestTypeAddModalComponent,
     TestTypeUpdateModalComponent,
@@ -133,7 +137,7 @@ import { UserUpdateSuccessModalComponent } from './modals/user-update-success-mo
     HospitalUpdateModalComponent,
     HospitalDeleteModalComponent,
     HospitalAssignStaffsModalComponent,
-    AdminBloodPackManagerComponent,
+    HospitalPhotoManagerModalComponent
   ],
   imports: [
     SharedModule,
@@ -171,7 +175,8 @@ import { UserUpdateSuccessModalComponent } from './modals/user-update-success-mo
     HospitalAddModalComponent,
     HospitalUpdateModalComponent,
     HospitalDeleteModalComponent,
-    HospitalAssignStaffsModalComponent
+    HospitalAssignStaffsModalComponent,
+    HospitalPhotoManagerModalComponent
   ]
 })
 export class AdminModule { }

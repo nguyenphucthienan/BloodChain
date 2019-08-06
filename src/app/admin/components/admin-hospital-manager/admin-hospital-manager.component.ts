@@ -13,6 +13,9 @@ import {
   HospitalAssignStaffsModalComponent,
 } from '../../modals/hospital-assign-staffs-modal/hospital-assign-staffs-modal.component';
 import { HospitalDeleteModalComponent } from '../../modals/hospital-delete-modal/hospital-delete-modal.component';
+import {
+  HospitalPhotoManagerModalComponent,
+} from '../../modals/hospital-photo-manager-modal/hospital-photo-manager-modal.component';
 import { HospitalUpdateModalComponent } from '../../modals/hospital-update-modal/hospital-update-modal.component';
 import { HospitalManagerTableService } from '../../services/hospital-manager-table.service';
 
@@ -66,6 +69,9 @@ export class AdminHospitalManagerComponent implements OnInit, AfterViewInit, OnD
         break;
       case TableActionType.Assign:
         this.openHospitalAssignStaffsModal(tableCellChange.row.cells._id.value);
+        break;
+      case TableActionType.ManagePhotos:
+        this.openHospitalPhotoManagerModal(tableCellChange.row.cells._id.value);
         break;
       case TableActionType.Update:
         this.openHospitalUpdateModal(tableCellChange.row);
@@ -121,6 +127,22 @@ export class AdminHospitalManagerComponent implements OnInit, AfterViewInit, OnD
 
   onHospitalAssignedStaffs(result: any) {
     this.modalRef.hide();
+  }
+
+  openHospitalPhotoManagerModal(id: string) {
+    this.modalRef = this.modalService.show(HospitalPhotoManagerModalComponent, {
+      backdrop: true,
+      keyboard: false,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-lg modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        hospitalId: id,
+      }
+    });
   }
 
   openHospitalUpdateModal(rowData: TableRow) {
