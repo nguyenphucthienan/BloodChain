@@ -17,6 +17,7 @@ export class BloodTestCenterService {
   private readonly bloodTestCentersUrl = `${environment.apiUrl}/blood-test-centers`;
   private readonly bloodTestCenterUrl = `${environment.apiUrl}/blood-test-centers/{id}`;
   private readonly bloodTestCenterStaffsUrl = `${environment.apiUrl}/blood-test-centers/{id}/staffs`;
+  private readonly deleteBloodCampPhotoUrl = `${environment.apiUrl}/blood-test-centers/{id}/photos/{photoId}`;
 
   private readonly defaultPagination: Pagination = {
     page: 1,
@@ -75,6 +76,11 @@ export class BloodTestCenterService {
       .build();
 
     return this.http.get<BloodTestCenter[]>(this.bloodTestCentersUrl, { params });
+  }
+
+  deleteBloodTestCenterPhoto(id: string, photoId: string): Observable<BloodTestCenter> {
+    const url = UrlUtils.resolvePathVariables(this.deleteBloodCampPhotoUrl, { id, photoId });
+    return this.http.delete<BloodTestCenter>(url);
   }
 
 }

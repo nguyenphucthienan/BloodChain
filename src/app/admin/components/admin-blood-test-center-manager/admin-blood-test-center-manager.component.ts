@@ -18,6 +18,9 @@ import {
   BloodTestCenterDeleteModalComponent,
 } from '../../modals/blood-test-center-delete-modal/blood-test-center-delete-modal.component';
 import {
+  BloodTestCenterPhotoManagerModalComponent,
+} from '../../modals/blood-test-center-photo-manager-modal/blood-test-center-photo-manager-modal.component';
+import {
   BloodTestCenterUpdateModalComponent,
 } from '../../modals/blood-test-center-update-modal/blood-test-center-update-modal.component';
 import { BloodTestCenterManagerTableService } from '../../services/blood-test-center-manager-table.service';
@@ -73,6 +76,9 @@ export class AdminBloodTestCenterManagerComponent implements OnInit, AfterViewIn
       case TableActionType.Assign:
         this.openBloodTestCenterAssignStaffsModal(tableCellChange.row.cells._id.value);
         break;
+      case TableActionType.ManagePhotos:
+        this.openBloodTestCenterPhotoManagerModal(tableCellChange.row.cells._id.value);
+        break;
       case TableActionType.Update:
         this.openBloodTestCenterUpdateModal(tableCellChange.row);
         break;
@@ -127,6 +133,22 @@ export class AdminBloodTestCenterManagerComponent implements OnInit, AfterViewIn
 
   onBloodTestCenterAssignedStaffs(result: any) {
     this.modalRef.hide();
+  }
+
+  openBloodTestCenterPhotoManagerModal(id: string) {
+    this.modalRef = this.modalService.show(BloodTestCenterPhotoManagerModalComponent, {
+      backdrop: true,
+      keyboard: false,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-lg modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        bloodTestCenterId: id,
+      }
+    });
   }
 
   openBloodTestCenterUpdateModal(rowData: TableRow) {

@@ -68,6 +68,9 @@ import {
   BloodTestCenterDeleteModalComponent,
 } from './modals/blood-test-center-delete-modal/blood-test-center-delete-modal.component';
 import {
+  BloodTestCenterPhotoManagerModalComponent,
+} from './modals/blood-test-center-photo-manager-modal/blood-test-center-photo-manager-modal.component';
+import {
   BloodTestCenterUpdateModalComponent,
 } from './modals/blood-test-center-update-modal/blood-test-center-update-modal.component';
 import { HospitalAddModalComponent } from './modals/hospital-add-modal/hospital-add-modal.component';
@@ -109,6 +112,7 @@ import { UserUpdateSuccessModalComponent } from './modals/user-update-success-mo
     BloodTestCenterUpdateModalComponent,
     BloodTestCenterDeleteModalComponent,
     BloodTestCenterAssignStaffsModalComponent,
+    BloodTestCenterPhotoManagerModalComponent,
     BloodSeparationCenterAddModalComponent,
     BloodSeparationCenterUpdateModalComponent,
     BloodSeparationCenterDeleteModalComponent,
@@ -145,6 +149,7 @@ import { UserUpdateSuccessModalComponent } from './modals/user-update-success-mo
     BloodTestCenterUpdateModalComponent,
     BloodTestCenterDeleteModalComponent,
     BloodTestCenterAssignStaffsModalComponent,
+    BloodTestCenterPhotoManagerModalComponent,
     BloodSeparationCenterAddModalComponent,
     BloodSeparationCenterUpdateModalComponent,
     BloodSeparationCenterDeleteModalComponent,
