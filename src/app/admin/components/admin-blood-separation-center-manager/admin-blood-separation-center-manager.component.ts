@@ -18,6 +18,9 @@ import {
   BloodSeparationCenterDeleteModalComponent,
 } from '../../modals/blood-separation-center-delete-modal/blood-separation-center-delete-modal.component';
 import {
+  BloodSeparationCenterPhotoManagerModalComponent,
+} from '../../modals/blood-separation-center-photo-manager-modal/blood-separation-center-photo-manager-modal.component';
+import {
   BloodSeparationCenterUpdateModalComponent,
 } from '../../modals/blood-separation-center-update-modal/blood-separation-center-update-modal.component';
 import { BloodSeparationCenterManagerTableService } from '../../services/blood-separation-center-manager-table.service';
@@ -73,6 +76,9 @@ export class AdminBloodSeparationCenterManagerComponent implements OnInit, After
       case TableActionType.Assign:
         this.openBloodSeparationCenterAssignStaffsModal(tableCellChange.row.cells._id.value);
         break;
+      case TableActionType.ManagePhotos:
+        this.openBloodSeparationCenterPhotoManagerModal(tableCellChange.row.cells._id.value);
+        break;
       case TableActionType.Update:
         this.openBloodSeparationCenterUpdateModal(tableCellChange.row);
         break;
@@ -127,6 +133,22 @@ export class AdminBloodSeparationCenterManagerComponent implements OnInit, After
 
   onBloodSeparationCenterAssignedStaffs(result: any) {
     this.modalRef.hide();
+  }
+
+  openBloodSeparationCenterPhotoManagerModal(id: string) {
+    this.modalRef = this.modalService.show(BloodSeparationCenterPhotoManagerModalComponent, {
+      backdrop: true,
+      keyboard: false,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-lg modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        bloodSeparationCenterId: id,
+      }
+    });
   }
 
   openBloodSeparationCenterUpdateModal(rowData: TableRow) {

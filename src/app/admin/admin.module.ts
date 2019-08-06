@@ -56,6 +56,9 @@ import {
   BloodSeparationCenterDeleteModalComponent,
 } from './modals/blood-separation-center-delete-modal/blood-separation-center-delete-modal.component';
 import {
+  BloodSeparationCenterPhotoManagerModalComponent,
+} from './modals/blood-separation-center-photo-manager-modal/blood-separation-center-photo-manager-modal.component';
+import {
   BloodSeparationCenterUpdateModalComponent,
 } from './modals/blood-separation-center-update-modal/blood-separation-center-update-modal.component';
 import {
@@ -117,6 +120,7 @@ import { UserUpdateSuccessModalComponent } from './modals/user-update-success-mo
     BloodSeparationCenterUpdateModalComponent,
     BloodSeparationCenterDeleteModalComponent,
     BloodSeparationCenterAssignStaffsModalComponent,
+    BloodSeparationCenterPhotoManagerModalComponent,
     BloodBankAddModalComponent,
     BloodBankUpdateModalComponent,
     BloodBankDeleteModalComponent,
@@ -154,6 +158,7 @@ import { UserUpdateSuccessModalComponent } from './modals/user-update-success-mo
     BloodSeparationCenterUpdateModalComponent,
     BloodSeparationCenterDeleteModalComponent,
     BloodSeparationCenterAssignStaffsModalComponent,
+    BloodSeparationCenterPhotoManagerModalComponent,
     BloodBankAddModalComponent,
     BloodBankUpdateModalComponent,
     BloodBankDeleteModalComponent,

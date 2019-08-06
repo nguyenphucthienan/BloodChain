@@ -11,14 +11,13 @@ import { Pagination } from '../models/pagination.interface';
 import { SortMode } from '../models/sort-mode.interface';
 import { User } from '../models/user.interface';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class BloodSeparationCenterService {
 
   private readonly bloodSeparationCentersUrl = `${environment.apiUrl}/blood-separation-centers`;
   private readonly bloodSeparationCenterUrl = `${environment.apiUrl}/blood-separation-centers/{id}`;
   private readonly bloodSeparationCenterStaffsUrl = `${environment.apiUrl}/blood-separation-centers/{id}/staffs`;
+  private readonly deleteBloodSeparationCenterPhotoUrl = `${environment.apiUrl}/blood-separation-centers/{id}/photos/{photoId}`;
 
   private readonly defaultPagination: Pagination = {
     page: 1,
@@ -77,6 +76,11 @@ export class BloodSeparationCenterService {
       .build();
 
     return this.http.get<BloodSeparationCenter[]>(this.bloodSeparationCentersUrl, { params });
+  }
+
+  deleteBloodSeparationCenterPhoto(id: string, photoId: string): Observable<BloodSeparationCenter> {
+    const url = UrlUtils.resolvePathVariables(this.deleteBloodSeparationCenterPhotoUrl, { id, photoId });
+    return this.http.delete<BloodSeparationCenter>(url);
   }
 
 }
