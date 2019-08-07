@@ -24,7 +24,8 @@ export class SidebarComponent implements OnInit {
   readonly managerRoutes = [
     { path: '/manager/users', title: 'sidebar.title.users', icon: 'users' },
     { path: '/manager/blood-packs', title: 'sidebar.title.bloodPacks', icon: 'cube' },
-    { path: '/manager/blood-products', title: 'sidebar.title.bloodProducts', icon: 'cubes' }
+    { path: '/manager/blood-products', title: 'sidebar.title.bloodProducts', icon: 'cubes' },
+    { path: '/manager/campaigns', title: 'sidebar.title.campaigns', icon: 'hand-holding-heart' }
   ];
 
   readonly bloodCampRoutes = [

@@ -87,7 +87,7 @@ export class BloodCampCampaignManagerComponent implements OnInit, AfterViewInit,
   }
 
   navigateToCampaignDetail(id: string) {
-    this.router.navigate(['/manager', 'campaigns', id]);
+    this.router.navigate(['/campaigns', id]);
   }
 
   openCampaignAddModal() {

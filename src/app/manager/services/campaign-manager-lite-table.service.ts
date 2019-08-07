@@ -12,11 +12,12 @@ import { TableRow } from 'src/app/datatable/models/table-row.interface';
 import { TableService } from 'src/app/datatable/services/table.service';
 
 @Injectable()
-export class BloodCampCampaignManagerTableService implements TableService {
+export class CampaignManagerLiteTableService implements TableService {
 
   columns: TableColumn[] = [
     { name: '_id', text: 'common.column.id', type: 'IdTableCellComponent', center: true, sortable: true },
     { name: 'name', text: 'common.column.name', type: 'TextTableCellComponent', sortable: true },
+    { name: 'bloodCamp', text: 'campaignManager.column.bloodCamp', type: 'ObjectTextTableCellComponent', sortable: true },
     { name: 'startDate', text: 'campaignManager.column.startDate', type: 'DateTimeTableCellComponent', sortable: true },
     { name: 'endDate', text: 'campaignManager.column.endDate', type: 'DateTimeTableCellComponent', sortable: true },
     { name: 'actions', text: 'common.column.actions', type: 'ActionsTableCellComponent', center: true }
@@ -34,15 +35,10 @@ export class BloodCampCampaignManagerTableService implements TableService {
     isSortAscending: false
   };
 
-  filterMode: FilterMode = {
-    bloodCamp: null
-  };
+  filterMode: FilterMode = {};
 
   actions: TableAction[] = [
-    { class: 'btn-info', icon: 'fa fa-info-circle', text: 'common.tooltip.detail', type: TableActionType.GetDetail },
-    { class: 'btn-dark', icon: 'fa fa-image', text: 'common.tooltip.assign', type: TableActionType.ManagePhotos },
-    { class: 'btn-dark', icon: 'fa fa-edit', text: 'common.tooltip.update', type: TableActionType.Update },
-    { class: 'btn-danger', icon: 'fa fa-trash-alt', text: 'common.tooltip.delete', type: TableActionType.Delete }
+    { class: 'btn-info', icon: 'fa fa-info-circle', text: 'common.tooltip.detail', type: TableActionType.GetDetail }
   ];
 
   constructor(
@@ -55,20 +51,16 @@ export class BloodCampCampaignManagerTableService implements TableService {
   }
 
   getRawData() {
-    if (this.filterMode.bloodCamp) {
-      return this.campaignService.getCampaigns(
-        this.pagination,
-        this.sortMode,
-        this.filterMode
-      ).pipe(
-        map((response: any) => {
-          this.pagination = response.pagination;
-          return response.items;
-        })
-      ).toPromise();
-    } else {
-      return Promise.resolve([]);
-    }
+    return this.campaignService.getCampaigns(
+      this.pagination,
+      this.sortMode,
+      this.filterMode
+    ).pipe(
+      map((response: any) => {
+        this.pagination = response.pagination;
+        return response.items;
+      })
+    ).toPromise();
   }
 
   async getDataRows() {

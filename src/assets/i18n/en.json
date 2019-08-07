@@ -124,6 +124,9 @@
       "bloodProducts": {
         "main": "Blood Products",
         "bloodProductDetail": "Blood Product Detail"
+      },
+      "campaigns": {
+        "main": "Campaigns"
       }
     },
     "bloodCamp": {
@@ -874,6 +877,7 @@
       "add": "Add Campaign"
     },
     "column": {
+      "bloodCamp": "Blood Camp",
       "startDate": "Start Date",
       "startTime": "Start Time",
       "endDate": "End Date",

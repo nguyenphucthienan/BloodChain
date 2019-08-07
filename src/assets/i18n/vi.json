@@ -124,6 +124,9 @@
       "bloodProducts": {
         "main": "Chế phẩm máu",
         "bloodProductDetail": "Thông tin chế phẩm máu"
+      },
+      "campaigns": {
+        "main": "Chiến dịch"
       }
     },
     "bloodCamp": {
@@ -874,6 +877,7 @@
       "add": "Thêm chiến dịch"
     },
     "column": {
+      "bloodCamp": "Trung tâm hiến máu",
       "startDate": "Ngày bắt đầu",
       "startTime": "Giờ bắt đầu",
       "endDate": "Ngày kết thúc",

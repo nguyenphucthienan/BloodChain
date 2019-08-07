@@ -65,6 +65,7 @@ import {
 import {
   ManagerBloodProductManagerComponent,
 } from './components/manager-blood-product-manager/manager-blood-product-manager.component';
+import { ManagerCampaignManagerComponent } from './components/manager-campaign-manager/manager-campaign-manager.component';
 import {
   ManagerUserManagerAddUserComponent,
 } from './components/manager-user-manager-add-user/manager-user-manager-add-user.component';
@@ -119,6 +120,7 @@ import { UserQrcodeModalComponent } from './modals/user-qrcode-modal/user-qrcode
     ManagerBloodPackManagerDonationHistoryComponent,
     ManagerBloodProductManagerComponent,
     ManagerBloodProductManagerBloodProductDetailComponent,
+    ManagerCampaignManagerComponent,
     BloodPackAddSuccessModalComponent,
     BloodCampBloodPackManagerComponent,
     BloodCampBloodPackManagerAddBloodPackComponent,
@@ -149,7 +151,8 @@ import { UserQrcodeModalComponent } from './modals/user-qrcode-modal/user-qrcode
     CampaignAddModalComponent,
     CampaignUpdateModalComponent,
     CampaignDeleteModalComponent,
-    CampaignPhotoManagerModalComponent
+    CampaignPhotoManagerModalComponent,
+    ManagerCampaignManagerComponent
   ],
   imports: [
     SharedModule,

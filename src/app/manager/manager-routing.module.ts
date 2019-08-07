@@ -66,6 +66,7 @@ import {
 import {
   ManagerBloodProductManagerComponent,
 } from './components/manager-blood-product-manager/manager-blood-product-manager.component';
+import { ManagerCampaignManagerComponent } from './components/manager-campaign-manager/manager-campaign-manager.component';
 import {
   ManagerUserManagerAddUserComponent,
 } from './components/manager-user-manager-add-user/manager-user-manager-add-user.component';
@@ -170,6 +171,28 @@ const routes: Routes = [
             component: ManagerBloodProductManagerBloodProductDetailComponent,
             resolve: { bloodProduct: BloodProductResolver },
             data: { breadcrumb: 'breadcrumb.manager.bloodProducts.bloodProductDetail' }
+          }
+        ]
+      },
+      {
+        path: 'campaigns',
+        canActivate: [HasRoleGuard],
+        data: {
+          roles: [
+            RoleName.ADMIN,
+            RoleName.BLOOD_CAMP,
+            RoleName.BLOOD_TEST_CENTER,
+            RoleName.BLOOD_SEPARATION_CENTER,
+            RoleName.BLOOD_BANK,
+            RoleName.HOSPITAL
+          ],
+          breadcrumb: 'breadcrumb.manager.campaigns.main'
+        },
+        children: [
+          {
+            path: '',
+            pathMatch: 'full',
+            component: ManagerCampaignManagerComponent,
           }
         ]
       },
