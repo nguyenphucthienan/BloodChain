@@ -13,6 +13,9 @@ import { TableRow } from 'src/app/datatable/models/table-row.interface';
 
 import { CampaignAddModalComponent } from '../../modals/campaign-add-modal/campaign-add-modal.component';
 import { CampaignDeleteModalComponent } from '../../modals/campaign-delete-modal/campaign-delete-modal.component';
+import {
+  CampaignPhotoManagerModalComponent,
+} from '../../modals/campaign-photo-manager-modal/campaign-photo-manager-modal.component';
 import { CampaignUpdateModalComponent } from '../../modals/campaign-update-modal/campaign-update-modal.component';
 import { BloodCampCampaignManagerTableService } from '../../services/blood-camp-campaign-manager-table.service';
 
@@ -71,6 +74,9 @@ export class BloodCampCampaignManagerComponent implements OnInit, AfterViewInit,
       case TableActionType.GetDetail:
         this.navigateToCampaignDetail(tableCellChange.row.cells._id.value);
         break;
+      case TableActionType.ManagePhotos:
+        this.openBloodCampPhotoManagerModal(tableCellChange.row.cells._id.value);
+        break;
       case TableActionType.Update:
         this.openCampaignUpdateModal(tableCellChange.row);
         break;
@@ -103,6 +109,22 @@ export class BloodCampCampaignManagerComponent implements OnInit, AfterViewInit,
   onCampaignAdded(campaign: Campaign) {
     this.modalRef.hide();
     this.datatable.refresh();
+  }
+
+  openBloodCampPhotoManagerModal(id: string) {
+    this.modalRef = this.modalService.show(CampaignPhotoManagerModalComponent, {
+      backdrop: true,
+      keyboard: false,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-lg modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        campaignId: id,
+      }
+    });
   }
 
   openCampaignUpdateModal(rowData: TableRow) {

@@ -1,3 +1,5 @@
+import { Photo } from './photo.interface';
+
 export interface Campaign {
   _id: string;
   createdAt: Date;
@@ -5,4 +7,5 @@ export interface Campaign {
   startDate: Date;
   endDate: Date;
   description: string;
+  photos: Photo[];
 }

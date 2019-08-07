@@ -15,6 +15,7 @@ export class CampaignService {
 
   private readonly campaignsUrl = `${environment.apiUrl}/campaigns`;
   private readonly campaignUrl = `${environment.apiUrl}/campaigns/{id}`;
+  private readonly deleteCampaignPhotoUrl = `${environment.apiUrl}/campaigns/{id}/photos/{photoId}`;
 
   private readonly defaultPagination: Pagination = {
     page: 1,
@@ -58,6 +59,11 @@ export class CampaignService {
 
   deleteCampaign(id: string): Observable<Campaign> {
     const url = UrlUtils.resolvePathVariables(this.campaignUrl, { id });
+    return this.http.delete<Campaign>(url);
+  }
+
+  deleteCampaignPhoto(id: string, photoId: string): Observable<Campaign> {
+    const url = UrlUtils.resolvePathVariables(this.deleteCampaignPhotoUrl, { id, photoId });
     return this.http.delete<Campaign>(url);
   }
 

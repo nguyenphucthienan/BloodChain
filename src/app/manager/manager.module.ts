@@ -101,10 +101,12 @@ import {
 } from './modals/blood-product-use-result-modal/blood-product-use-result-modal.component';
 import { CampaignAddModalComponent } from './modals/campaign-add-modal/campaign-add-modal.component';
 import { CampaignDeleteModalComponent } from './modals/campaign-delete-modal/campaign-delete-modal.component';
+import {
+  CampaignPhotoManagerModalComponent,
+} from './modals/campaign-photo-manager-modal/campaign-photo-manager-modal.component';
 import { CampaignUpdateModalComponent } from './modals/campaign-update-modal/campaign-update-modal.component';
 import { UserAddSuccessModalComponent } from './modals/user-add-success-modal/user-add-success-modal.component';
 import { UserQrcodeModalComponent } from './modals/user-qrcode-modal/user-qrcode-modal.component';
-
 
 @NgModule({
   declarations: [
@@ -146,7 +148,8 @@ import { UserQrcodeModalComponent } from './modals/user-qrcode-modal/user-qrcode
     BloodProductQrcodeModalComponent,
     CampaignAddModalComponent,
     CampaignUpdateModalComponent,
-    CampaignDeleteModalComponent
+    CampaignDeleteModalComponent,
+    CampaignPhotoManagerModalComponent
   ],
   imports: [
     SharedModule,
@@ -168,7 +171,8 @@ import { UserQrcodeModalComponent } from './modals/user-qrcode-modal/user-qrcode
     BloodProductQrcodeModalComponent,
     CampaignAddModalComponent,
     CampaignUpdateModalComponent,
-    CampaignDeleteModalComponent
+    CampaignDeleteModalComponent,
+    CampaignPhotoManagerModalComponent
   ]
 })
 export class ManagerModule { }
