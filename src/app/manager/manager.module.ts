@@ -98,6 +98,7 @@ import {
 } from './modals/blood-product-use-result-modal/blood-product-use-result-modal.component';
 import { UserAddSuccessModalComponent } from './modals/user-add-success-modal/user-add-success-modal.component';
 import { UserQrcodeModalComponent } from './modals/user-qrcode-modal/user-qrcode-modal.component';
+import { BloodCampCampaignManagerComponent } from './components/blood-camp-campaign-manager/blood-camp-campaign-manager.component';
 
 @NgModule({
   declarations: [
@@ -135,7 +136,8 @@ import { UserQrcodeModalComponent } from './modals/user-qrcode-modal/user-qrcode
     HospitalBloodProductManagerUseBloodProductComponent,
     UserQrcodeModalComponent,
     BloodPackQrcodeModalComponent,
-    BloodProductQrcodeModalComponent
+    BloodProductQrcodeModalComponent,
+    BloodCampCampaignManagerComponent
   ],
   imports: [
     SharedModule,

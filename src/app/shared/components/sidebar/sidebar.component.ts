@@ -28,7 +28,8 @@ export class SidebarComponent implements OnInit {
   ];
 
   readonly bloodCampRoutes = [
-    { path: '/manager/blood-camp/blood-packs', title: 'sidebar.title.bloodPacks', icon: 'cube' }
+    { path: '/manager/blood-camp/blood-packs', title: 'sidebar.title.bloodPacks', icon: 'cube' },
+    { path: '/manager/blood-camp/campaigns', title: 'sidebar.title.campaigns', icon: 'hand-holding-heart' }
   ];
 
   readonly bloodTestCenterRoutes = [

@@ -30,7 +30,7 @@
       "qrCodeInvalid": "QR Code không hợp lệ",
       "assignStaffsSuccess": "Cấp quyền thành công",
       "assignStaffsFailed": "Cấp quyền không thành công",
-      "photoUploading":"Đang tải lên. Xin vui lòng đợi giây lát.",
+      "photoUploading": "Đang tải lên. Xin vui lòng đợi giây lát.",
       "uploadPhotoSuccess": "Tải lên hình ảnh thành công",
       "uploadPhotoFailed": "Tải lên hình ảnh không thành công",
       "deletePhotoSuccess": "Xóa hình ảnh thành công",
@@ -128,15 +128,22 @@
     },
     "bloodCamp": {
       "main": "Trung tâm hiến máu",
-      "bloodPacks": "Túi máu",
-      "addBloodPack": "Thêm túi máu",
-      "transferBloodPacks": "Chuyển túi máu"
+      "bloodPacks": {
+        "main": "Túi máu",
+        "addBloodPack": "Thêm túi máu",
+        "transferBloodPacks": "Chuyển túi máu"
+      },
+      "campaigns": {
+        "main": "Campaigns"
+      }
     },
     "bloodTestCenter": {
       "main": "Trung tâm xét nghiệm",
-      "bloodPacks": "Túi máu",
-      "updateTestResult": "Cập nhật kết quả",
-      "transferBloodPacks": "Chuyển túi máu"
+      "bloodPacks": {
+        "main": "Túi máu",
+        "updateTestResult": "Cập nhật kết quả",
+        "transferBloodPacks": "Chuyển túi máu"
+      }
     },
     "bloodSeparationCenter": {
       "main": "Trung tâm phân tách máu",
@@ -195,6 +202,7 @@
       "hospitals": "Bệnh viện",
       "bloodPacks": "Túi máu",
       "bloodProducts": "Chế phẩm máu",
+      "campaigns": "Chiến dịch",
       "myProfile": "Hồ sơ",
       "donationHistory": "Lịch sử hiến máu"
     }
@@ -221,7 +229,8 @@
       "hospitalManager": "BỆNH VIỆN",
       "bloodPackManager": "TÚI MÁU",
       "donationHistory": "LỊCH SỬ HIẾN MÁU",
-      "bloodProductManager": "CHẾ PHẨM MÁU"
+      "bloodProductManager": "CHẾ PHẨM MÁU",
+      "campaignManager": "CHIẾN DỊCH"
     }
   },
   "timeline": {
@@ -858,6 +867,38 @@
     "organization": {
       "bloodBank": "Ngân hàng máu",
       "hospital": "Bệnh viện"
+    }
+  },
+  "campaignManager": {
+    "button": {
+      "add": "Thêm chiến dịch"
+    },
+    "column": {
+      "startDate": "Thời gian bắt bắt đầu",
+      "endDate": "Thời gian kết thúc",
+      "description": "Description"
+    },
+    "placeholder": {
+      "search": "Tìm kiếm theo tên (tối thiểu 3 kí tự)"
+    },
+    "modal": {
+      "add": "Thêm chiến dịch",
+      "update": "Cập nhật chiến dịch",
+      "delete": "Xóa chiến dịch"
+    },
+    "label": {
+      "name": "Tên"
+    },
+    "message": {
+      "nameRequired": "Tên không được bỏ trống"
+    },
+    "alert": {
+      "addSuccess": "Thêm chiến dịch thành công",
+      "addFailed": "Thêm chiến dịch không thành công",
+      "updateSuccess": "Cập nhật chiến dịch thành công",
+      "updateFailed": "Cập nhật chiến dịch không thành công",
+      "deleteSuccess": "Xóa chiến dịch thành công",
+      "deleteFailed": "Xóa chiến dịch không thành công"
     }
   }
 }

@@ -30,7 +30,7 @@
       "qrCodeInvalid": "QR Code is invalid",
       "assignStaffsSuccess": "Assign staffs successfully",
       "assignStaffsFailed": "Assign staffs failed",
-      "photoUploading":"Uploading. Please wait.",
+      "photoUploading": "Uploading. Please wait.",
       "uploadPhotoSuccess": "Upload photo successfully",
       "uploadPhotoFailed": "Upload photo failed",
       "deletePhotoSuccess": "Delete photo successfully",
@@ -132,6 +132,9 @@
         "main": "Blood Packs",
         "addBloodPack": "Add Blood Pack",
         "transferBloodPacks": "Transfer Blood Packs"
+      },
+      "campaigns": {
+        "main": "Campaigns"
       }
     },
     "bloodTestCenter": {
@@ -199,6 +202,7 @@
       "hospitals": "Hospitals",
       "bloodPacks": "Blood Packs",
       "bloodProducts": "Blood Products",
+      "campaigns": "Campaigns",
       "myProfile": "My Profile",
       "donationHistory": "Donation History"
     }
@@ -225,7 +229,8 @@
       "hospitalManager": "HOSPITALS",
       "bloodPackManager": "BLOOD PACKS",
       "donationHistory": "DONATION HISTORY",
-      "bloodProductManager": "BLOOD PRODUCTS"
+      "bloodProductManager": "BLOOD PRODUCTS",
+      "campaignManager": "CAMPAIGNS"
     }
   },
   "timeline": {
@@ -862,6 +867,41 @@
     "organization": {
       "bloodBank": "Blood Bank",
       "hospital": "Hospital"
+    }
+  },
+  "campaignManager": {
+    "button": {
+      "add": "Add Campaign"
+    },
+    "column": {
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "description": "Description"
+    },
+    "placeholder": {
+      "search": "Search by name (min 3 characters)"
+    },
+    "modal": {
+      "add": "Add New Campaign",
+      "update": "Update Campaign",
+      "delete": "Delete Campaign"
+    },
+    "label": {
+      "name": "Name",
+      "address": "Address",
+      "email": "Email",
+      "phone": "Phone"
+    },
+    "message": {
+      "nameRequired": "Name is required"
+    },
+    "alert": {
+      "addSuccess": "Add campaign successfully",
+      "addFailed": "Add campaign failed",
+      "updateSuccess": "Update campaign successfully",
+      "updateFailed": "Update campaign failed",
+      "deleteSuccess": "Delete campaign successfully",
+      "deleteFailed": "Delete campaign failed"
     }
   }
 }

@@ -22,6 +22,9 @@ import {
   BloodCampBloodPackManagerComponent,
 } from './components/blood-camp-blood-pack-manager/blood-camp-blood-pack-manager.component';
 import {
+  BloodCampCampaignManagerComponent,
+} from './components/blood-camp-campaign-manager/blood-camp-campaign-manager.component';
+import {
   BloodSeparationCenterBloodPackManagerUpdateResultComponent,
 } from './components/blood-separation-center-blood-pack-manager-update-result/blood-separation-center-blood-pack-manager-update-result.component';
 import {
@@ -201,6 +204,17 @@ const routes: Routes = [
                 path: 'transfer',
                 component: BloodCampBloodPackManagerTransferBloodPackComponent,
                 data: { breadcrumb: 'breadcrumb.bloodCamp.bloodPacks.transferBloodPacks' }
+              }
+            ]
+          },
+          {
+            path: 'campaigns',
+            data: { breadcrumb: 'breadcrumb.bloodCamp.campaigns.main' },
+            children: [
+              {
+                path: '',
+                pathMatch: 'full',
+                component: BloodCampCampaignManagerComponent
               }
             ]
           }
