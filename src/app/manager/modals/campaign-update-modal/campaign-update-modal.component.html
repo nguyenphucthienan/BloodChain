@@ -1,10 +1,10 @@
 <div class="modal-content">
-  <form [formGroup]="addForm" (ngSubmit)="addCampaign()">
+  <form [formGroup]="updateForm" (ngSubmit)="updateCampaign()">
     <div class="modal-header">
       <button type="button" class="close pull-right" (click)="modalRef.hide()">
         <span aria-hidden="true">×</span>
       </button>
-      <h4 class="modal-title w-100" id="myModalLabel">{{ 'campaignManager.modal.add' | translate }}</h4>
+      <h4 class="modal-title w-100" id="myModalLabel">{{ 'campaignManager.modal.update' | translate }}</h4>
     </div>
     <div class="modal-body">
       <div class="md-form">
@@ -73,14 +73,14 @@
             {{ 'campaignManager.message.descriptionRequired' | translate }}
           </span>
           <br *ngIf="controlHasError('description', 'required') 
-            && addForm.hasError('startDateAndEndDate')">
-          <span *ngIf="(addForm.get('startDate').touched
-            || addForm.get('startTime').touched
-            || addForm.get('endDate').touched
-            || addForm.get('endTime').touched)
+            && updateForm.hasError('startDateAndEndDate')">
+          <span *ngIf="(updateForm.get('startDate').touched
+            || updateForm.get('startTime').touched
+            || updateForm.get('endDate').touched
+            || updateForm.get('endTime').touched)
             && !controlHasError('startDate', 'required')
             && !controlHasError('endDate', 'required')
-            && addForm.hasError('startDateAndEndDate')">
+            && updateForm.hasError('startDateAndEndDate')">
             {{ 'campaignManager.message.startDateBeforeEndDate' | translate }}
           </span>
         </mdb-error>
@@ -89,8 +89,8 @@
     <div class="modal-footer">
       <button type="button" mdbBtn color="secondary" class=" waves-light" (click)="modalRef.hide()"
         mdbWavesEffect>{{ 'common.button.cancel' | translate }}</button>
-      <button mdbBtn type="submit" color="primary" mdbWavesEffect [disabled]="addForm.invalid">
-        {{ 'common.button.add' | translate }}
+      <button mdbBtn type="submit" color="primary" mdbWavesEffect [disabled]="updateForm.invalid">
+        {{ 'common.button.update' | translate }}
       </button>
     </div>
   </form>

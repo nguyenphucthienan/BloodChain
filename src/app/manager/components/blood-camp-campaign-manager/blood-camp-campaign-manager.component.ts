@@ -9,8 +9,10 @@ import { AuthService } from 'src/app/core/services/auth.service';
 import { DatatableComponent } from 'src/app/datatable/datatable.component';
 import { TableActionType } from 'src/app/datatable/models/table-action.interface';
 import { TableCellChange } from 'src/app/datatable/models/table-cell-change.interface';
+import { TableRow } from 'src/app/datatable/models/table-row.interface';
 
 import { CampaignAddModalComponent } from '../../modals/campaign-add-modal/campaign-add-modal.component';
+import { CampaignUpdateModalComponent } from '../../modals/campaign-update-modal/campaign-update-modal.component';
 import { BloodCampCampaignManagerTableService } from '../../services/blood-camp-campaign-manager-table.service';
 
 @Component({
@@ -68,6 +70,12 @@ export class BloodCampCampaignManagerComponent implements OnInit, AfterViewInit,
       case TableActionType.GetDetail:
         this.navigateToCampaignDetail(tableCellChange.row.cells._id.value);
         break;
+      case TableActionType.Update:
+        this.openCampaignUpdateModal(tableCellChange.row);
+        break;
+      case TableActionType.Delete:
+        this.openCampaignDeleteModal(tableCellChange.row);
+        break;
     }
   }
 
@@ -92,6 +100,54 @@ export class BloodCampCampaignManagerComponent implements OnInit, AfterViewInit,
   }
 
   onCampaignAdded(campaign: Campaign) {
+    this.modalRef.hide();
+    this.datatable.refresh();
+  }
+
+  openCampaignUpdateModal(rowData: TableRow) {
+    this.modalRef = this.modalService.show(CampaignUpdateModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-lg modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        rowData
+      }
+    });
+
+    this.modalRef.content.campaignUpdated
+      .subscribe((campaign: Campaign) => this.onCampaignUpdated(campaign));
+  }
+
+  onCampaignUpdated(campaign: Campaign) {
+    this.modalRef.hide();
+    this.datatable.refresh();
+  }
+
+  openCampaignDeleteModal(rowData: TableRow) {
+    // this.modalRef = this.modalService.show(CampaignDeleteModalComponent, {
+    //   backdrop: true,
+    //   keyboard: true,
+    //   focus: true,
+    //   show: false,
+    //   ignoreBackdropClick: true,
+    //   class: 'modal-dialog-centered',
+    //   containerClass: 'top',
+    //   animated: true,
+    //   data: {
+    //     rowData
+    //   }
+    // });
+
+    // this.modalRef.content.campaignlDeleted
+    //   .subscribe(() => this.onCampaignDeleted());
+  }
+
+  onCampaignDeleted() {
     this.modalRef.hide();
     this.datatable.refresh();
   }
