@@ -4,6 +4,8 @@ import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { fromEvent, Subscription } from 'rxjs';
 import { debounceTime, map, tap } from 'rxjs/operators';
 import { Campaign } from 'src/app/core/models/campaign.interface';
+import { User } from 'src/app/core/models/user.interface';
+import { AuthService } from 'src/app/core/services/auth.service';
 import { DatatableComponent } from 'src/app/datatable/datatable.component';
 import { TableActionType } from 'src/app/datatable/models/table-action.interface';
 import { TableCellChange } from 'src/app/datatable/models/table-cell-change.interface';
@@ -29,11 +31,17 @@ export class BloodCampCampaignManagerComponent implements OnInit, AfterViewInit,
     public bloodCampCampaignManagerTableService: BloodCampCampaignManagerTableService,
     private router: Router,
     private renderer: Renderer2,
+    private authService: AuthService,
     private modalService: MDBModalService
   ) { }
 
   ngOnInit() {
     this.renderer.addClass(document.body, 'grey-background');
+    this.authService.getMyUserInfo()
+      .subscribe((user: User) => {
+        this.bloodCampCampaignManagerTableService.filterMode.bloodCamp = user.bloodCamp._id;
+        this.datatable.refresh();
+      });
   }
 
   ngAfterViewInit() {

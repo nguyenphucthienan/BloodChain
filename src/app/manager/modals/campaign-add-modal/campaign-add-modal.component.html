@@ -29,7 +29,13 @@
         </div>
         <div class="col">
           <div class="md-form form-col">
-
+            <input type="text" id="startTime" formControlName="startTime" class="form-control"
+              [ngxTimepicker]="startTimePicker" [format]="24" mdbInput readonly>
+            <label for="startTime">{{ 'campaignManager.label.startTime' | translate }}</label>
+            <ngx-material-timepicker #startTimePicker [minutesGap]="5"></ngx-material-timepicker>
+            <mdb-error *ngIf="controlHasError('startTime', 'required')">
+              {{ 'campaignManager.message.startTimeRequired' | translate }}
+            </mdb-error>
           </div>
         </div>
       </div>
@@ -48,7 +54,13 @@
         </div>
         <div class="col">
           <div class="md-form form-col">
-
+            <input type="text" id="endTime" formControlName="endTime" class="form-control"
+              [ngxTimepicker]="endTimePicker" [format]="24" mdbInput readonly>
+            <label for="endTime">{{ 'campaignManager.label.endTime' | translate }}</label>
+            <ngx-material-timepicker #endTimePicker [minutesGap]="5"></ngx-material-timepicker>
+            <mdb-error *ngIf="controlHasError('endTime', 'required')">
+              {{ 'campaignManager.message.endTimeRequired' | translate }}
+            </mdb-error>
           </div>
         </div>
       </div>
@@ -56,8 +68,19 @@
         <textarea type="text" id="description" formControlName="description"
           class="md-textarea md-textarea-auto form-control" mdbInput></textarea>
         <label for="description">{{ 'testTypeManager.label.description' | translate }}</label>
-        <mdb-error *ngIf="controlHasError('description', 'required')">
-          {{ 'campaignManager.message.descriptionRequired' | translate }}
+        <mdb-error>
+          <span *ngIf="controlHasError('description', 'required')">
+            {{ 'campaignManager.message.descriptionRequired' | translate }}
+          </span>
+          <br *ngIf="controlHasError('description', 'required') 
+            && addForm.hasError('startDateAndEndDate')">
+          <span *ngIf="addForm.get('startDate').touched 
+            && addForm.get('endDate').touched
+            && !controlHasError('startDate', 'required')
+            && !controlHasError('endDate', 'required')
+            && addForm.hasError('startDateAndEndDate')">
+            {{ 'campaignManager.message.startDateBeforeEndDate' | translate }}
+          </span>
         </mdb-error>
       </div>
     </div>

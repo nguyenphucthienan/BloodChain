@@ -28,14 +28,17 @@ export class CampaignAddModalComponent implements OnInit {
   ngOnInit() {
     this.addForm = this.fb.group({
       name: ['', Validators.required],
-      startDate: ['', Validators.required],
-      endDate: ['', Validators.required],
+      startDate: [null, Validators.required],
+      startTime: ['', Validators.required],
+      endDate: [null, Validators.required],
+      endTime: ['', Validators.required],
       description: ['', Validators.required],
-    });
+    }, { validator: [this.startDateAndEndDateValidator] });
   }
 
   addCampaign() {
-    this.campaignService.createCampaign(this.addForm.value)
+    const data = this.buildData(this.addForm.value);
+    this.campaignService.createCampaign(data as unknown as Campaign)
       .subscribe(
         (campaign: Campaign) => {
           this.campaignAdded.emit(campaign);
@@ -45,12 +48,52 @@ export class CampaignAddModalComponent implements OnInit {
       );
   }
 
+  private buildData(formValue: any) {
+    const startTime = formValue.startTime.split(':');
+    const startDate = moment(formValue.startDate)
+      .add(startTime[0], 'hours')
+      .add(startTime[1], 'minutes');
+
+    const endTime = formValue.endTime.split(':');
+    const endDate = moment(formValue.endDate)
+      .add(endTime[0], 'hours')
+      .add(endTime[1], 'minutes');
+
+    return {
+      name: formValue.name,
+      startDate,
+      endDate,
+      description: formValue.description
+    };
+  }
+
   openDatePicker(picker: MatDatepicker<Date>) {
     picker.open();
   }
 
   datePickerFilter(momentDate: any): boolean {
     return momentDate.isSameOrAfter(moment().startOf('day'));
+  }
+
+  private startDateAndEndDateValidator(g: FormGroup) {
+    if (!g.controls.startDate.value || !g.controls.endDate.value
+      || !g.controls.startTime.value || !g.controls.endTime.value) {
+      return null;
+    }
+
+    const startTime = g.controls.startTime.value.split(':');
+    const startDate = moment(g.controls.startDate.value)
+      .add(startTime[0], 'hours')
+      .add(startTime[1], 'minutes');
+
+    const endTime = g.controls.endTime.value.split(':');
+    const endDate = moment(g.controls.endDate.value)
+      .add(endTime[0], 'hours')
+      .add(endTime[1], 'minutes');
+
+    return startDate < endDate
+      ? null
+      : { startDateAndEndDate: true };
   }
 
   controlHasError(controlName: string, errorName: string): boolean {

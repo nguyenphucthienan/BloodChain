@@ -902,7 +902,8 @@
       "startTimeRequired": "Giờ bắt đầu không được bỏ trống",
       "endDateRequired": "Ngày kết thúc không được bỏ trống",
       "endTimeRequired": "Giò kết thúc không được bỏ trống",
-      "descriptionRequired": "Miêu tả không được bỏ trống"
+      "descriptionRequired": "Miêu tả không được bỏ trống",
+      "startDateBeforeEndDate": "Thời gian bắt đầu phải sớm hơn thời gian kết thúc"
     },
     "alert": {
       "addSuccess": "Thêm chiến dịch thành công",

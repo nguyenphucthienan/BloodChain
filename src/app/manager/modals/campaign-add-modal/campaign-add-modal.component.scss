@@ -1,3 +1,13 @@
 ::ng-deep .cdk-overlay-container {
   z-index: 1200;
 }
+
+::ng-deep .timepicker__header {
+  background-color: #f44336 !important;
+}
+
+::ng-deep .timepicker-button {
+  span {
+    color: #f44336 !important;
+  }
+}

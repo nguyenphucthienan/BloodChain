@@ -17,6 +17,7 @@ import { CountUpModule } from 'countup.js-angular2';
 import { SidebarModule } from 'ng-sidebar';
 import { FileUploadModule } from 'ng2-file-upload';
 import { NgxGalleryModule } from 'ngx-gallery';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { NgxPrintModule } from 'ngx-print';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { environment } from 'src/environments/environment';
@@ -75,6 +76,7 @@ export function createTranslateLoader(http: HttpClient) {
     NgxPrintModule,
     MatNativeDateModule,
     MatDatepickerModule,
+    NgxMaterialTimepickerModule.forRoot(),
     MglTimelineModule,
     CountUpModule,
     NgxGalleryModule
@@ -93,6 +95,7 @@ export function createTranslateLoader(http: HttpClient) {
     NgxPrintModule,
     MatNativeDateModule,
     MatDatepickerModule,
+    NgxMaterialTimepickerModule.forRoot().ngModule,
     MglTimelineModule,
     CountUpModule,
     NgxGalleryModule,

@@ -17,7 +17,9 @@ export class BloodCampCampaignManagerTableService implements TableService {
 
   columns: TableColumn[] = [
     { name: '_id', text: 'common.column.id', type: 'IdTableCellComponent', center: true, sortable: true },
-    { name: 'name', text: 'common.column.name', type: 'TextTableCellComponent', center: true, sortable: true },
+    { name: 'name', text: 'common.column.name', type: 'TextTableCellComponent', sortable: true },
+    { name: 'startDate', text: 'campaignManager.column.startDate', type: 'DateTimeTableCellComponent', sortable: true },
+    { name: 'endDate', text: 'campaignManager.column.endDate', type: 'DateTimeTableCellComponent', sortable: true },
     { name: 'actions', text: 'common.column.actions', type: 'ActionsTableCellComponent', center: true }
   ];
 
@@ -33,9 +35,7 @@ export class BloodCampCampaignManagerTableService implements TableService {
     isSortAscending: false
   };
 
-  filterMode: FilterMode = {
-    organization: RoleName.BLOOD_CAMP
-  };
+  filterMode: FilterMode = {};
 
   actions: TableAction[] = [
     { class: 'btn-info', icon: 'fa fa-info-circle', text: 'common.tooltip.detail', type: TableActionType.GetDetail }
