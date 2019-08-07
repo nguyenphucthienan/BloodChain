@@ -3,10 +3,12 @@ import { Router } from '@angular/router';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { fromEvent, Subscription } from 'rxjs';
 import { debounceTime, map, tap } from 'rxjs/operators';
+import { Campaign } from 'src/app/core/models/campaign.interface';
 import { DatatableComponent } from 'src/app/datatable/datatable.component';
 import { TableActionType } from 'src/app/datatable/models/table-action.interface';
 import { TableCellChange } from 'src/app/datatable/models/table-cell-change.interface';
 
+import { CampaignAddModalComponent } from '../../modals/campaign-add-modal/campaign-add-modal.component';
 import { BloodCampCampaignManagerTableService } from '../../services/blood-camp-campaign-manager-table.service';
 
 @Component({
@@ -63,6 +65,27 @@ export class BloodCampCampaignManagerComponent implements OnInit, AfterViewInit,
 
   navigateToCampaignDetail(id: string) {
     this.router.navigate(['/manager', 'campaigns', id]);
+  }
+
+  openCampaignAddModal() {
+    this.modalRef = this.modalService.show(CampaignAddModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-lg modal-dialog-centered',
+      containerClass: 'top',
+      animated: true
+    });
+
+    this.modalRef.content.campaignAdded
+      .subscribe((campaign: Campaign) => this.onCampaignAdded(campaign));
+  }
+
+  onCampaignAdded(campaign: Campaign) {
+    this.modalRef.hide();
+    this.datatable.refresh();
   }
 
   ngOnDestroy() {

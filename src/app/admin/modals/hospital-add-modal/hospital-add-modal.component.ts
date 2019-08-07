@@ -58,5 +58,4 @@ export class HospitalAddModalComponent implements OnInit {
       && this.addForm.get(controlName).hasError(errorName);
   }
 
-
 }

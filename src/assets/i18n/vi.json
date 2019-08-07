@@ -874,9 +874,11 @@
       "add": "Thêm chiến dịch"
     },
     "column": {
-      "startDate": "Thời gian bắt bắt đầu",
-      "endDate": "Thời gian kết thúc",
-      "description": "Description"
+      "startDate": "Ngày bắt đầu",
+      "startTime": "Giờ bắt đầu",
+      "endDate": "Ngày kết thúc",
+      "endTime": "Giờ kết thúc",
+      "description": "Miêu tả"
     },
     "placeholder": {
       "search": "Tìm kiếm theo tên (tối thiểu 3 kí tự)"
@@ -887,10 +889,20 @@
       "delete": "Xóa chiến dịch"
     },
     "label": {
-      "name": "Tên"
+      "name": "Tên",
+      "startDate": "Ngày bắt đầu",
+      "startTime": "Giờ bắt đầu",
+      "endDate": "Ngày kết thúc",
+      "endTime": "Giờ kết thúc",
+      "description": "Miêu tả"
     },
     "message": {
-      "nameRequired": "Tên không được bỏ trống"
+      "nameRequired": "Tên không được bỏ trống",
+      "startDateRequired": "Ngày bắt đầu không được bỏ trống",
+      "startTimeRequired": "Giờ bắt đầu không được bỏ trống",
+      "endDateRequired": "Ngày kết thúc không được bỏ trống",
+      "endTimeRequired": "Giò kết thúc không được bỏ trống",
+      "descriptionRequired": "Miêu tả không được bỏ trống"
     },
     "alert": {
       "addSuccess": "Thêm chiến dịch thành công",

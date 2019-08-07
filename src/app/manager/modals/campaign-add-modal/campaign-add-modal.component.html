@@ -1,0 +1,72 @@
+<div class="modal-content">
+  <form [formGroup]="addForm" (ngSubmit)="addCampaign()">
+    <div class="modal-header">
+      <button type="button" class="close pull-right" (click)="modalRef.hide()">
+        <span aria-hidden="true">×</span>
+      </button>
+      <h4 class="modal-title w-100" id="myModalLabel">{{ 'campaignManager.modal.add' | translate }}</h4>
+    </div>
+    <div class="modal-body">
+      <div class="md-form">
+        <input type="text" id="name" formControlName="name" class="form-control" mdbInput>
+        <label for="name">{{ 'campaignManager.label.name' | translate }}</label>
+        <mdb-error *ngIf="controlHasError('name', 'required')">
+          {{ 'campaignManager.message.nameRequired' | translate }}
+        </mdb-error>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <div class="md-form form-col">
+            <input type="text" id="startDate" formControlName="startDate" [matDatepicker]="startDatePicker"
+              [matDatepickerFilter]="datePickerFilter" class="form-control" (focus)="openDatePicker(startDatePicker)"
+              (click)="openDatePicker(startDatePicker)" mdbInput readonly>
+            <label for="startDate">{{ 'campaignManager.label.startDate' | translate }}</label>
+            <mat-datepicker touchUi #startDatePicker="matDatepicker"></mat-datepicker>
+            <mdb-error *ngIf="controlHasError('startDate', 'required')">
+              {{ 'campaignManager.message.startDateRequired' | translate }}
+            </mdb-error>
+          </div>
+        </div>
+        <div class="col">
+          <div class="md-form form-col">
+
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <div class="md-form form-col">
+            <input type="text" id="endDate" formControlName="endDate" [matDatepicker]="endDatePicker"
+              [matDatepickerFilter]="datePickerFilter" class="form-control" (focus)="openDatePicker(endDatePicker)"
+              (click)="openDatePicker(endDatePicker)" mdbInput readonly>
+            <label for="endDate">{{ 'campaignManager.label.endDate' | translate }}</label>
+            <mat-datepicker touchUi #endDatePicker="matDatepicker"></mat-datepicker>
+            <mdb-error *ngIf="controlHasError('endDate', 'required')">
+              {{ 'campaignManager.message.endDateRequired' | translate }}
+            </mdb-error>
+          </div>
+        </div>
+        <div class="col">
+          <div class="md-form form-col">
+
+          </div>
+        </div>
+      </div>
+      <div class="md-form">
+        <textarea type="text" id="description" formControlName="description"
+          class="md-textarea md-textarea-auto form-control" mdbInput></textarea>
+        <label for="description">{{ 'testTypeManager.label.description' | translate }}</label>
+        <mdb-error *ngIf="controlHasError('description', 'required')">
+          {{ 'campaignManager.message.descriptionRequired' | translate }}
+        </mdb-error>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" mdbBtn color="secondary" class=" waves-light" (click)="modalRef.hide()"
+        mdbWavesEffect>{{ 'common.button.cancel' | translate }}</button>
+      <button mdbBtn type="submit" color="primary" mdbWavesEffect [disabled]="addForm.invalid">
+        {{ 'common.button.add' | translate }}
+      </button>
+    </div>
+  </form>
+</div>

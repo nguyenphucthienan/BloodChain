@@ -875,7 +875,9 @@
     },
     "column": {
       "startDate": "Start Date",
+      "startTime": "Start Time",
       "endDate": "End Date",
+      "endTime": "End Time",
       "description": "Description"
     },
     "placeholder": {
@@ -888,12 +890,19 @@
     },
     "label": {
       "name": "Name",
-      "address": "Address",
-      "email": "Email",
-      "phone": "Phone"
+      "startDate": "Start date",
+      "startTime": "Start time",
+      "endDate": "End date",
+      "endTime": "End time",
+      "description": "Description"
     },
     "message": {
-      "nameRequired": "Name is required"
+      "nameRequired": "Name is required",
+      "startDateRequired": "Start date is required",
+      "startTimeRequired": "Start time is required",
+      "endDateRequired": "End date is required",
+      "endTimeRequired": "End time is required",
+      "descriptionRequired": "Description is required"
     },
     "alert": {
       "addSuccess": "Add campaign successfully",

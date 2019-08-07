@@ -18,6 +18,9 @@ import {
   BloodCampBloodPackManagerComponent,
 } from './components/blood-camp-blood-pack-manager/blood-camp-blood-pack-manager.component';
 import {
+  BloodCampCampaignManagerComponent,
+} from './components/blood-camp-campaign-manager/blood-camp-campaign-manager.component';
+import {
   BloodSeparationCenterBloodPackManagerUpdateResultComponent,
 } from './components/blood-separation-center-blood-pack-manager-update-result/blood-separation-center-blood-pack-manager-update-result.component';
 import {
@@ -96,9 +99,9 @@ import {
 import {
   BloodProductUseResultModalComponent,
 } from './modals/blood-product-use-result-modal/blood-product-use-result-modal.component';
+import { CampaignAddModalComponent } from './modals/campaign-add-modal/campaign-add-modal.component';
 import { UserAddSuccessModalComponent } from './modals/user-add-success-modal/user-add-success-modal.component';
 import { UserQrcodeModalComponent } from './modals/user-qrcode-modal/user-qrcode-modal.component';
-import { BloodCampCampaignManagerComponent } from './components/blood-camp-campaign-manager/blood-camp-campaign-manager.component';
 
 @NgModule({
   declarations: [
@@ -115,6 +118,7 @@ import { BloodCampCampaignManagerComponent } from './components/blood-camp-campa
     BloodCampBloodPackManagerComponent,
     BloodCampBloodPackManagerAddBloodPackComponent,
     BloodCampBloodPackManagerTransferBloodPackComponent,
+    BloodCampCampaignManagerComponent,
     BloodPackTransferConfirmModalComponent,
     BloodPackTransferResultModalComponent,
     BloodPackUpdateSeparationResultResultModalComponent,
@@ -137,7 +141,7 @@ import { BloodCampCampaignManagerComponent } from './components/blood-camp-campa
     UserQrcodeModalComponent,
     BloodPackQrcodeModalComponent,
     BloodProductQrcodeModalComponent,
-    BloodCampCampaignManagerComponent
+    CampaignAddModalComponent
   ],
   imports: [
     SharedModule,
@@ -156,7 +160,8 @@ import { BloodCampCampaignManagerComponent } from './components/blood-camp-campa
     BloodProductUseResultModalComponent,
     UserQrcodeModalComponent,
     BloodPackQrcodeModalComponent,
-    BloodProductQrcodeModalComponent
+    BloodProductQrcodeModalComponent,
+    CampaignAddModalComponent
   ]
 })
 export class ManagerModule { }
