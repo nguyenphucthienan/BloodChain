@@ -100,6 +100,7 @@ import {
   BloodProductUseResultModalComponent,
 } from './modals/blood-product-use-result-modal/blood-product-use-result-modal.component';
 import { CampaignAddModalComponent } from './modals/campaign-add-modal/campaign-add-modal.component';
+import { CampaignDeleteModalComponent } from './modals/campaign-delete-modal/campaign-delete-modal.component';
 import { CampaignUpdateModalComponent } from './modals/campaign-update-modal/campaign-update-modal.component';
 import { UserAddSuccessModalComponent } from './modals/user-add-success-modal/user-add-success-modal.component';
 import { UserQrcodeModalComponent } from './modals/user-qrcode-modal/user-qrcode-modal.component';
@@ -144,7 +145,8 @@ import { UserQrcodeModalComponent } from './modals/user-qrcode-modal/user-qrcode
     BloodPackQrcodeModalComponent,
     BloodProductQrcodeModalComponent,
     CampaignAddModalComponent,
-    CampaignUpdateModalComponent
+    CampaignUpdateModalComponent,
+    CampaignDeleteModalComponent
   ],
   imports: [
     SharedModule,
@@ -165,7 +167,8 @@ import { UserQrcodeModalComponent } from './modals/user-qrcode-modal/user-qrcode
     BloodPackQrcodeModalComponent,
     BloodProductQrcodeModalComponent,
     CampaignAddModalComponent,
-    CampaignUpdateModalComponent
+    CampaignUpdateModalComponent,
+    CampaignDeleteModalComponent
   ]
 })
 export class ManagerModule { }

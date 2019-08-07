@@ -12,6 +12,7 @@ import { TableCellChange } from 'src/app/datatable/models/table-cell-change.inte
 import { TableRow } from 'src/app/datatable/models/table-row.interface';
 
 import { CampaignAddModalComponent } from '../../modals/campaign-add-modal/campaign-add-modal.component';
+import { CampaignDeleteModalComponent } from '../../modals/campaign-delete-modal/campaign-delete-modal.component';
 import { CampaignUpdateModalComponent } from '../../modals/campaign-update-modal/campaign-update-modal.component';
 import { BloodCampCampaignManagerTableService } from '../../services/blood-camp-campaign-manager-table.service';
 
@@ -129,22 +130,22 @@ export class BloodCampCampaignManagerComponent implements OnInit, AfterViewInit,
   }
 
   openCampaignDeleteModal(rowData: TableRow) {
-    // this.modalRef = this.modalService.show(CampaignDeleteModalComponent, {
-    //   backdrop: true,
-    //   keyboard: true,
-    //   focus: true,
-    //   show: false,
-    //   ignoreBackdropClick: true,
-    //   class: 'modal-dialog-centered',
-    //   containerClass: 'top',
-    //   animated: true,
-    //   data: {
-    //     rowData
-    //   }
-    // });
+    this.modalRef = this.modalService.show(CampaignDeleteModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        rowData
+      }
+    });
 
-    // this.modalRef.content.campaignlDeleted
-    //   .subscribe(() => this.onCampaignDeleted());
+    this.modalRef.content.campaignDeleted
+      .subscribe(() => this.onCampaignDeleted());
   }
 
   onCampaignDeleted() {
