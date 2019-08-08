@@ -26,7 +26,7 @@ export class MapInputComponent implements OnInit {
   ngOnInit() {
     this.mapsAPILoader.load().then(() => {
       if (!this.lat || !this.lng) {
-        this.setCurrentLocation();
+        this.selectCurrentLocation();
       }
 
       const autocomplete = new google.maps.places.Autocomplete(
@@ -49,7 +49,7 @@ export class MapInputComponent implements OnInit {
     });
   }
 
-  private setCurrentLocation() {
+  selectCurrentLocation() {
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition((position) => {
         this.lat = position.coords.latitude;

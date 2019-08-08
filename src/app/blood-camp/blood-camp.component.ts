@@ -8,6 +8,7 @@ import { FilterMode } from '../core/models/filter-mode.interface';
 import { Pagination } from '../core/models/pagination.interface';
 import { SortMode } from '../core/models/sort-mode.interface';
 import { BloodCampService } from '../core/services/blood-camp.service';
+import { MapInputComponent } from '../shared/components/map-input/map-input.component';
 
 @Component({
   selector: 'app-blood-camp',
@@ -17,6 +18,7 @@ import { BloodCampService } from '../core/services/blood-camp.service';
 export class BloodCampComponent implements OnInit, AfterViewInit, OnDestroy {
 
   @ViewChild('search') search: ElementRef;
+  @ViewChild(MapInputComponent) mapInput: MapInputComponent;
 
   bloodCamps: BloodCamp[] = [];
 
@@ -69,6 +71,19 @@ export class BloodCampComponent implements OnInit, AfterViewInit, OnDestroy {
       this.filterMode.name = value;
       this.getBloodCamps();
     }
+  }
+
+  resetFilters() {
+    this.search.nativeElement.value = null;
+    this.mapInput.selectCurrentLocation();
+    this.filterMode = {};
+    this.getBloodCamps();
+  }
+
+  onLocationChanged(location: any) {
+    this.filterMode.lat = location.lng;
+    this.filterMode.lng = location.lng;
+    this.getBloodCamps();
   }
 
   onPageChanged(page: number) {

@@ -12,8 +12,14 @@
             <input #search type="text" class="form-control"
               [attr.placeholder]="'bloodCampManager.placeholder.search' | translate" mdbInput>
           </div>
-          <app-map-input [height]="'500px'" [placeholder]="'common.placeholder.searchByLocation' | translate">
+          <app-map-input [height]="'500px'" [placeholder]="'common.placeholder.searchByLocation' | translate"
+            (locationChanged)="onLocationChanged($event)">
           </app-map-input>
+          <div class="d-flex flex-sm-row flex-column justify-content-end mt-3">
+            <button type="button" class="btn btn-sm btn-primary" (click)="resetFilters()">
+              {{ 'common.button.resetFilters' | translate }}
+            </button>
+          </div>
         </div>
       </div>
     </div>
