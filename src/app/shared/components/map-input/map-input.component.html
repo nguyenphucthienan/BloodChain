@@ -1,6 +1,8 @@
-<input #search type="text" id="location" class="form-control" (keydown.enter)="$event.preventDefault()" autocorrect="on"
-  autocapitalize="off" spellcheck="off" type="text" [attr.placeholder]="'common.placeholder.searchLocation' | translate"
-  mdbInput>
+<div class="md-form mt-3 mb-3">
+  <input #search type="text" id="location" class="form-control" (keydown.enter)="$event.preventDefault()"
+    autocorrect="on" autocapitalize="off" spellcheck="off" type="text"
+    [attr.placeholder]="placeholder || 'common.placeholder.searchLocation' | translate" mdbInput>
+</div>
 <agm-map [latitude]="lat" [longitude]="lng" [style.height]="height" [zoom]="zoom" (mapClick)="placeMarker($event)">
   <agm-marker [latitude]="lat" [longitude]="lng" [markerDraggable]="true" (dragEnd)="markerDragEnd($event)">
   </agm-marker>

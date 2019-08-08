@@ -4,30 +4,37 @@
       <app-breadcrumb></app-breadcrumb>
     </div>
   </div>
-  <div class="card mt-3">
-    <div class="card-body">
-      <div class="md-form mt-0 mb-0">
-        <input #search type="text" class="form-control"
-          [attr.placeholder]="'bloodCampManager.placeholder.search' | translate" mdbInput>
-      </div>
-      <div class="d-flex flex-sm-row flex-column justify-content-end mt-3">
-        <button type="button" class="btn btn-sm btn-primary">
-          {{ 'common.button.searchByLocation' | translate }}
-        </button>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card mt-3">
+        <div class="card-body">
+          <div class="md-form mt-0 mb-0">
+            <input #search type="text" class="form-control"
+              [attr.placeholder]="'bloodCampManager.placeholder.search' | translate" mdbInput>
+          </div>
+          <app-map-input [height]="'500px'" [placeholder]="'common.placeholder.searchByLocation' | translate">
+          </app-map-input>
+        </div>
       </div>
     </div>
-  </div>
-  <div *ngFor="let bloodCamp of bloodCamps" class="card mt-3">
-    <div class="card-body">
-      {{ bloodCamp | json }}
-    </div>
-  </div>
-  <div *ngIf="pagination" class="card mt-3">
-    <div class="card-body">
-      <div class="d-flex justify-content-center align-items-center">
-        <app-pagination [totalItems]="pagination.totalItems" [itemsPerPage]="pagination.size"
-          (pageChanged)="onPageChanged($event)"></app-pagination>
+    <div class="col-md-8 pl-md-0">
+      <div *ngIf="bloodCamps.length <= 0" class="card mt-3">
+        <div class="card-body">
+          <span class="font-weight-bold">{{ 'common.message.noData' | translate }}</span>
+        </div>
       </div>
+      <ng-container *ngIf="bloodCamps.length > 0">
+        <app-blood-camp-card *ngFor="let bloodCamp of bloodCamps" [bloodCamp]="bloodCamp">
+        </app-blood-camp-card>
+        <div class="card mt-3">
+          <div class="card-body">
+            <div class="d-flex justify-content-center align-items-center">
+              <app-pagination [totalItems]="pagination.totalItems" [itemsPerPage]="pagination.size"
+                (pageChanged)="onPageChanged($event)"></app-pagination>
+            </div>
+          </div>
+        </div>
+      </ng-container>
     </div>
   </div>
 </div>

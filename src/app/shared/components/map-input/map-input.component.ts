@@ -12,6 +12,7 @@ export class MapInputComponent implements OnInit {
   @Input() lng: number;
   @Input() zoom = 15;
   @Input() height = '300px';
+  @Input() placeholder: string;
 
   @Output() locationChanged = new EventEmitter();
 

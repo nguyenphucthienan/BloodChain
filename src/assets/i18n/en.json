@@ -16,8 +16,7 @@
       "reset": "Reset",
       "print": "Print",
       "transfer": "Transfer",
-      "use": "Use",
-      "searchByLocation": "Search By Location"
+      "use": "Use"
     },
     "alert": {
       "success": "Success",
@@ -51,6 +50,7 @@
     },
     "placeholder": {
       "searchLocation": "Search location",
+      "searchByLocation": "Search by location",
       "searchByUsername": "Search by username (min 3 characters)"
     },
     "tooltip": {

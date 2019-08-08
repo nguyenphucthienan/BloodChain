@@ -22,7 +22,7 @@ export class BloodCampComponent implements OnInit, AfterViewInit, OnDestroy {
 
   pagination: Pagination = {
     page: 1,
-    size: 2
+    size: 10
   };
 
   sortMode: SortMode = {

@@ -16,8 +16,7 @@
       "reset": "Làm lại",
       "print": "In",
       "transfer": "Chuyển",
-      "use": "Sử dụng",
-      "searchByLocation": "Tìm theo vị trí"
+      "use": "Sử dụng"
     },
     "alert": {
       "success": "Thành công",
@@ -51,6 +50,7 @@
     },
     "placeholder": {
       "searchLocation": "Tìm kiếm địa điểm",
+      "searchByLocation": "Tìm kiếm theo vị trí",
       "searchByUsername": "Tìm kiếm theo tên đăng nhập (tối thiểu 3 kí tự)"
     },
     "tooltip": {
