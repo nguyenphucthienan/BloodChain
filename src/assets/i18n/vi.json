@@ -16,7 +16,8 @@
       "reset": "Làm lại",
       "print": "In",
       "transfer": "Chuyển",
-      "use": "Sử dụng"
+      "use": "Sử dụng",
+      "searchByLocation": "Tìm theo vị trí"
     },
     "alert": {
       "success": "Thành công",

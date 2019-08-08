@@ -16,7 +16,8 @@
       "reset": "Reset",
       "print": "Print",
       "transfer": "Transfer",
-      "use": "Use"
+      "use": "Use",
+      "searchByLocation": "Search By Location"
     },
     "alert": {
       "success": "Success",

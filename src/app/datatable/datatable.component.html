@@ -71,9 +71,7 @@
   </table>
 </div>
 <hr>
-<div *ngIf="tableService.pagination" class="d-flex flex-column justify-content-center mt-3">
-  <div class="d-flex justify-content-center align-items-center">
-    <app-pagination [totalItems]="tableService.pagination.totalItems" [itemsPerPage]="tableService.pagination.size"
-      (pageChanged)="onPageChanged($event)"></app-pagination>
-  </div>
+<div *ngIf="tableService.pagination" class="d-flex justify-content-center align-items-center mt-3">
+  <app-pagination [totalItems]="tableService.pagination.totalItems" [itemsPerPage]="tableService.pagination.size"
+    (pageChanged)="onPageChanged($event)"></app-pagination>
 </div>

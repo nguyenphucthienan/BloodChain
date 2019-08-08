@@ -1,3 +1,33 @@
-<p>
-  blood-camp works!
-</p>
+<div class="container-fluid">
+  <div class="card mt-3">
+    <div class="card-body">
+      <app-breadcrumb></app-breadcrumb>
+    </div>
+  </div>
+  <div class="card mt-3">
+    <div class="card-body">
+      <div class="md-form mt-0 mb-0">
+        <input #search type="text" class="form-control"
+          [attr.placeholder]="'bloodCampManager.placeholder.search' | translate" mdbInput>
+      </div>
+      <div class="d-flex flex-sm-row flex-column justify-content-end mt-3">
+        <button type="button" class="btn btn-sm btn-primary">
+          {{ 'common.button.searchByLocation' | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+  <div *ngFor="let bloodCamp of bloodCamps" class="card mt-3">
+    <div class="card-body">
+      {{ bloodCamp | json }}
+    </div>
+  </div>
+  <div *ngIf="pagination" class="card mt-3">
+    <div class="card-body">
+      <div class="d-flex justify-content-center align-items-center">
+        <app-pagination [totalItems]="pagination.totalItems" [itemsPerPage]="pagination.size"
+          (pageChanged)="onPageChanged($event)"></app-pagination>
+      </div>
+    </div>
+  </div>
+</div>
