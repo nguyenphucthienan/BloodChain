@@ -87,7 +87,13 @@
       "about": "About",
       "profile": "Profile",
       "editInfo": "Edit Info",
-      "campaigns": "Campaigns"
+      "campaigns": "Campaigns",
+      "organizations": "Organizations",
+      "bloodCamps": "Blood Camps",
+      "bloodTestCenters": "Blood Test Centers",
+      "bloodSeparationCenters": "Blood Separation Centers",
+      "bloodBanks": "Blood Banks",
+      "hospitals": "Hospitals"
     },
     "alert": {
       "logoutSuccess": "Logout successfully"

@@ -4,6 +4,7 @@ import { MatDatepicker } from '@angular/material/datepicker';
 import { TranslateService } from '@ngx-translate/core';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import * as moment from 'moment';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { Observable } from 'rxjs';
 import { debounceTime, map } from 'rxjs/operators';
 import { User } from 'src/app/core/models/user.interface';
@@ -39,7 +40,8 @@ export class ManagerUserManagerAddUserComponent implements OnInit, OnDestroy {
     private renderer: Renderer2,
     private alertService: AlertService,
     private translate: TranslateService,
-    private modalService: MDBModalService
+    private modalService: MDBModalService,
+    private spinnerService: NgxSpinnerService
   ) { }
 
   ngOnInit() {
@@ -74,14 +76,20 @@ export class ManagerUserManagerAddUserComponent implements OnInit, OnDestroy {
   }
 
   addUser() {
+    this.spinnerService.show();
     this.userService.createUser(this.addForm.value)
       .subscribe(
         (user: User) => {
+          this.spinnerService.hide();
+
           this.userAdded.emit(user);
           this.alertService.success('userManager.alert.addSuccess');
           this.openUserAddSuccessModal(user);
         },
-        error => this.alertService.error('userManager.alert.addFailed')
+        error => {
+          this.spinnerService.hide();
+          this.alertService.error('userManager.alert.addFailed');
+        }
       );
   }
 

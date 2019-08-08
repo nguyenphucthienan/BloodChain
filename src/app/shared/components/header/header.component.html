@@ -10,20 +10,47 @@
   <links>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link waves-light" mdbWavesEffect
-          routerLink="/campaigns">{{ 'header.title.campaigns' | translate }}</a>
+        <a class="nav-link waves-light" mdbWavesEffect routerLink="/campaigns">
+          {{ 'header.title.campaigns' | translate }}
+        </a>
+      </li>
+      <li class="nav-item dropdown" dropdown routerLinkActive="active">
+        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+          {{ 'header.title.organizations' | translate }}<span class="caret"></span>
+        </a>
+        <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+          <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/blood-camps">
+            {{ 'header.title.bloodCamps' | translate }}
+          </a>
+          <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/blood-test-centers">
+            {{ 'header.title.bloodTestCenters' | translate }}
+          </a>
+          <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/blood-separation-centers">
+            {{ 'header.title.bloodSeparationCenters' | translate }}
+          </a>
+          <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/blood-banks">
+            {{ 'header.title.bloodBanks' | translate }}
+          </a>
+          <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/hospitals">
+            {{ 'header.title.hospitals' | translate }}
+          </a>
+        </div>
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link waves-light" mdbWavesEffect routerLink="/about">{{ 'header.title.about' | translate }}</a>
+        <a class="nav-link waves-light" mdbWavesEffect routerLink="/about">
+          {{ 'header.title.about' | translate }}
+        </a>
       </li>
       <li *ngIf="!isLoggedIn()" class="nav-item" routerLinkActive="active">
         <a class="nav-link waves-light" mdbWavesEffect
           routerLink="/register">{{ 'header.title.register' | translate }}</a>
       </li>
       <li *ngIf="!isLoggedIn()" class="nav-item" routerLinkActive="active">
-        <a class="nav-link waves-light" mdbWavesEffect routerLink="/login">{{ 'header.title.login' | translate }}</a>
+        <a class="nav-link waves-light" mdbWavesEffect routerLink="/login">
+          {{ 'header.title.login' | translate }}
+        </a>
       </li>
       <li *ngIf="isLoggedIn()" class="nav-item dropdown" dropdown>
         <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>

@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AdminModule } from './admin/admin.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BloodCampModule } from './blood-camp/blood-camp.module';
 import { CoreModule } from './core/core.module';
 import { DonationHistoryModule } from './donation-history/donation-history.module';
 import { ManagerModule } from './manager/manager.module';
@@ -24,6 +25,7 @@ import { SharedModule } from './shared/shared.module';
     ManagerModule,
     ProfileModule,
     DonationHistoryModule,
+    BloodCampModule,
     AppRoutingModule
   ],
   providers: [],

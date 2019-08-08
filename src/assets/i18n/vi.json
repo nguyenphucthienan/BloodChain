@@ -87,7 +87,13 @@
       "about": "Về chúng tôi",
       "profile": "Hồ sơ",
       "editInfo": "Thay đổi thông tin",
-      "campaigns": "Chiến dịch"
+      "campaigns": "Chiến dịch",
+      "organizations": "Cơ quan",
+      "bloodCamps": "Trung tâm hiến máu",
+      "bloodTestCenters": "Trung tâm xét nghiệm",
+      "bloodSeparationCenters": "Trung tâm phân tách",
+      "bloodBanks": "Ngân hàng máu",
+      "hospitals": "Bệnh viện"
     },
     "alert": {
       "logoutSuccess": "Đăng xuất thành công"
