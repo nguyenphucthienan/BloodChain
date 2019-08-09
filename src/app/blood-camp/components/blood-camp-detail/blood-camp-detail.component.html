@@ -6,7 +6,51 @@
   </div>
   <div class="card mt-3">
     <div class="card-body">
-      {{ bloodCamp | json }}
+      <h4>{{ bloodCamp.name }}</h4>
+      <hr>
+      <p>
+        <span class="font-weight-bold">
+          <mdb-icon fas icon="map-marked" class="mr-1"></mdb-icon>Address:
+        </span>
+        {{ bloodCamp.address }}
+      </p>
+      <p>
+        <span class="font-weight-bold">
+          <mdb-icon fas icon="envelope" class="mr-1"></mdb-icon>Email:
+        </span>
+        {{ bloodCamp.email }}
+      </p>
+      <p class="mb-0">
+        <span class="font-weight-bold">
+          <mdb-icon fas icon="phone" class="mr-1"></mdb-icon>Phone:
+        </span>
+        {{ bloodCamp.phone }}
+      </p>
+    </div>
+  </div>
+  <div class="card mt-3">
+    <div class="card-body">
+      <div class="d-flex">
+        <span class="font-weight-bold">{{ 'bloodCampManager.label.mapInfo' | translate }}</span>
+      </div>
+      <div class="mt-3">
+        <agm-map *ngIf="point" [latitude]="point.coordinates[1]" [longitude]="point.coordinates[0]"
+          [style.height]="'500px'" [zoom]="15">
+          <agm-marker [latitude]="point.coordinates[1]" [longitude]="point.coordinates[0]">
+          </agm-marker>
+        </agm-map>
+        <span *ngIf="!point" class="font-weight-bold">{{ 'common.message.noData' | translate }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="card mt-3">
+    <div class="card-body">
+      <div class="d-flex">
+        <span class="font-weight-bold">{{ 'bloodCampManager.label.photos' | translate }}</span>
+      </div>
+      <div class="mt-3">
+        <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+      </div>
     </div>
   </div>
 </div>

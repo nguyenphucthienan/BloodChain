@@ -545,6 +545,8 @@
       "delete": "Delete Blood Camp"
     },
     "label": {
+      "mapInfo": "MAP INFO",
+      "photos": "PHOTOS",
       "name": "Name",
       "address": "Address",
       "email": "Email",
