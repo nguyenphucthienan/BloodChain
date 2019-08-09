@@ -17,18 +17,25 @@ export class BloodCampCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.galleryOptions = [{
-      width: '100%',
-      height: '200px',
-      preview: false,
-      thumbnails: false,
-      imageAutoPlay: true,
-      imageAutoPlayInterval: 3000,
-      imageAutoPlayPauseOnHover: true,
-      imageAnimation: NgxGalleryAnimation.Slide,
-      imageInfinityMove: true,
-      imageArrowsAutoHide: true
-    }];
+    this.galleryOptions = [
+      {
+        width: '100%',
+        height: '100%',
+        preview: false,
+        thumbnails: false,
+        imageAutoPlay: true,
+        imageAutoPlayInterval: 3000,
+        imageAutoPlayPauseOnHover: true,
+        imageAnimation: NgxGalleryAnimation.Slide,
+        imageInfinityMove: true,
+        imageArrows: false
+      },
+      {
+        breakpoint: 576,
+        width: '100%',
+        height: '200px',
+      }
+    ];
 
     this.galleryImages = this.bloodCamp.photos.map(photo => {
       return {
