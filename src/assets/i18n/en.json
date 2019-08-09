@@ -139,6 +139,7 @@
     },
     "bloodCamp": {
       "main": "Blood Camp",
+      "bloodCampDetail": "Blood Camp Detail",
       "bloodPacks": {
         "main": "Blood Packs",
         "addBloodPack": "Add Blood Pack",

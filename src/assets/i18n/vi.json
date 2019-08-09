@@ -139,6 +139,7 @@
     },
     "bloodCamp": {
       "main": "Trung tâm hiến máu",
+      "bloodCampDetail": "Thông tin trung tâm",
       "bloodPacks": {
         "main": "Túi máu",
         "addBloodPack": "Thêm túi máu",

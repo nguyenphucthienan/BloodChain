@@ -11,6 +11,7 @@ import { environment } from 'src/environments/environment';
 import { SharedModule } from '../shared/shared.module';
 import { HasRoleGuard } from './guards/has-role.guard';
 import { NotLoggedInGuard } from './guards/not-logged-in.guard';
+import { BloodCampResolver } from './resolvers/blood-camp.resolver';
 import { BloodPackResolver } from './resolvers/blood-pack.resolver';
 import { BloodProductResolver } from './resolvers/blood-product.resolver';
 import { MyUserResolver } from './resolvers/my-user.resolver';
@@ -81,6 +82,7 @@ const toastrOptions = {
     TestTypesResolver,
     UserResolver,
     MyUserResolver,
+    BloodCampResolver,
     BloodPackResolver,
     BloodProductResolver,
     {
