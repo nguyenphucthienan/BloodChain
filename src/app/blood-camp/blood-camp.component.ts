@@ -75,14 +75,13 @@ export class BloodCampComponent implements OnInit, AfterViewInit, OnDestroy {
 
   resetFilters() {
     this.search.nativeElement.value = null;
-    this.mapInput.selectCurrentLocation();
+    this.mapInput.reset();
     this.filterMode = {};
     this.getBloodCamps();
   }
 
   onLocationChanged(location: any) {
-    this.filterMode.lat = location.lng;
-    this.filterMode.lng = location.lng;
+    this.filterMode.location = `${location.lng},${location.lat}`;
     this.getBloodCamps();
   }
 

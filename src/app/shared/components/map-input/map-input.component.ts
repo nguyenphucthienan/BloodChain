@@ -44,18 +44,24 @@ export class MapInputComponent implements OnInit {
 
           this.lat = place.geometry.location.lat();
           this.lng = place.geometry.location.lng();
+          this.locationChanged.emit({ lat: this.lat, lng: this.lng });
         });
       });
     });
   }
 
-  selectCurrentLocation() {
+  private selectCurrentLocation() {
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition((position) => {
         this.lat = position.coords.latitude;
         this.lng = position.coords.longitude;
       });
     }
+  }
+
+  reset() {
+    this.searchElementRef.nativeElement.value = null;
+    this.selectCurrentLocation();
   }
 
   placeMarker(event: any) {
