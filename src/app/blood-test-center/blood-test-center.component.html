@@ -30,12 +30,11 @@
         </div>
       </div>
       <ng-container *ngIf="bloodTestCenters.length > 0">
-        <!-- <app-blood-test-center-card *ngFor="let bloodTestCenter of bloodTestCenters" [bloodTestCenter]="bloodTestCenter">
-        </app-blood-test-center-card> -->
+        <app-blood-test-center-card *ngFor="let bloodTestCenter of bloodTestCenters"
+          [bloodTestCenter]="bloodTestCenter">
+        </app-blood-test-center-card>
         <div class="card mt-3">
           <div class="card-body">
-            {{ bloodTestCenters | json }}
-            <hr>
             <div class="d-flex justify-content-center align-items-center">
               <app-pagination [totalItems]="pagination.totalItems" [itemsPerPage]="pagination.size"
                 (pageChanged)="onPageChanged($event)"></app-pagination>
