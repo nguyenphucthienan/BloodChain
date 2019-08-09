@@ -582,6 +582,8 @@
       "delete": "Xóa trung tâm"
     },
     "label": {
+      "mapInfo": "BẢN ĐỒ",
+      "photos": "HÌNH ẢNH",
       "name": "Tên",
       "address": "Địa chỉ",
       "email": "Email",

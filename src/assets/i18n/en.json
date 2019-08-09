@@ -582,6 +582,8 @@
       "delete": "Delete Blood Test Center"
     },
     "label": {
+      "mapInfo": "MAP INFO",
+      "photos": "PHOTOS",
       "name": "Name",
       "address": "Address",
       "email": "Email",
