@@ -623,6 +623,8 @@
       "delete": "Xóa trung tâm"
     },
     "label": {
+      "mapInfo": "BẢN ĐỒ",
+      "photos": "HÌNH ẢNH",
       "name": "Tên",
       "address": "Địa chỉ",
       "email": "Email",
@@ -658,6 +660,8 @@
       "delete": "Xóa ngân hàng máu"
     },
     "label": {
+      "mapInfo": "BẢN ĐỒ",
+      "photos": "HÌNH ẢNH",
       "name": "Tên",
       "address": "Địa chỉ",
       "email": "Email",
@@ -693,6 +697,8 @@
       "delete": "Xóa bệnh viện"
     },
     "label": {
+      "mapInfo": "BẢN ĐỒ",
+      "photos": "HÌNH ẢNH",
       "name": "Tên",
       "address": "Địa chỉ",
       "email": "Email",

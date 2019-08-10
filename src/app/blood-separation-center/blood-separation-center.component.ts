@@ -58,11 +58,14 @@ export class BloodSeparationCenterComponent implements OnInit, AfterViewInit, On
   }
 
   private getBloodSeparationCenters() {
-    this.bloodSeparationCenterService.getBloodSeparationCenters(this.pagination, this.sortMode, this.filterMode)
-      .subscribe((response: any) => {
-        this.bloodSeparationCenters = response.items;
-        this.pagination = response.pagination;
-      });
+    this.bloodSeparationCenterService.getBloodSeparationCenters(
+      this.pagination,
+      this.sortMode,
+      this.filterMode
+    ).subscribe((response: any) => {
+      this.bloodSeparationCenters = response.items;
+      this.pagination = response.pagination;
+    });
   }
 
   searchBloodSeparationCenter(value: string) {

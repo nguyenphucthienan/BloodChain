@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { NgxGalleryAnimation, NgxGalleryImage, NgxGalleryOptions, NgxGalleryLayout } from 'ngx-gallery';
+import { NgxGalleryAnimation, NgxGalleryImage, NgxGalleryOptions } from 'ngx-gallery';
 import { BloodCamp } from 'src/app/core/models/blood-camp.interface';
 
 @Component({

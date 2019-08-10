@@ -623,6 +623,8 @@
       "delete": "Delete Blood Separation Center"
     },
     "label": {
+      "mapInfo": "MAP INFO",
+      "photos": "PHOTOS",
       "name": "Name",
       "address": "Address",
       "email": "Email",
@@ -658,6 +660,8 @@
       "delete": "Delete Blood Bank"
     },
     "label": {
+      "mapInfo": "MAP INFO",
+      "photos": "PHOTOS",
       "name": "Name",
       "address": "Address",
       "email": "Email",
@@ -693,6 +697,8 @@
       "delete": "Delete Hospital"
     },
     "label": {
+      "mapInfo": "MAP INFO",
+      "photos": "PHOTOS",
       "name": "Name",
       "address": "Address",
       "email": "Email",

@@ -6,11 +6,15 @@ import { BloodSeparationCenterComponent } from './blood-separation-center.compon
 import {
   BloodSeparationCenterCardComponent,
 } from './components/blood-separation-center-card/blood-separation-center-card.component';
+import {
+  BloodSeparationCenterDetailComponent,
+} from './components/blood-separation-center-detail/blood-separation-center-detail.component';
 
 @NgModule({
   declarations: [
     BloodSeparationCenterComponent,
-    BloodSeparationCenterCardComponent
+    BloodSeparationCenterCardComponent,
+    BloodSeparationCenterDetailComponent
   ],
   imports: [
     SharedModule,
