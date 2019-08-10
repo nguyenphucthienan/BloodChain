@@ -30,12 +30,10 @@
         </div>
       </div>
       <ng-container *ngIf="hospitals.length > 0">
-        <!-- <app-hospital-card *ngFor="let hospital of hospitals" [hospital]="hospital">
-        </app-hospital-card> -->
+        <app-hospital-card *ngFor="let hospital of hospitals" [hospital]="hospital">
+        </app-hospital-card>
         <div class="card mt-3">
           <div class="card-body">
-            {{ hospitals | json }}
-            <hr>
             <div class="d-flex justify-content-center align-items-center">
               <app-pagination [totalItems]="pagination.totalItems" [itemsPerPage]="pagination.size"
                 (pageChanged)="onPageChanged($event)"></app-pagination>
