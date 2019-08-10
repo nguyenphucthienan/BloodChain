@@ -10,6 +10,7 @@ import { BloodSeparationCenterModule } from './blood-separation-center/blood-sep
 import { BloodTestCenterModule } from './blood-test-center/blood-test-center.module';
 import { CoreModule } from './core/core.module';
 import { DonationHistoryModule } from './donation-history/donation-history.module';
+import { HospitalModule } from './hospital/hospital.module';
 import { ManagerModule } from './manager/manager.module';
 import { ProfileModule } from './profile/profile.module';
 import { PublicModule } from './public/public.module';
@@ -32,6 +33,7 @@ import { SharedModule } from './shared/shared.module';
     BloodTestCenterModule,
     BloodSeparationCenterModule,
     BloodBankModule,
+    HospitalModule,
     AppRoutingModule
   ],
   providers: [],
