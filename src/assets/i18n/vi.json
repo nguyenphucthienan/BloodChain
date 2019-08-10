@@ -151,6 +151,7 @@
     },
     "bloodTestCenter": {
       "main": "Trung tâm xét nghiệm",
+      "bloodTestCenterDetail": "Thông tin trung tâm",
       "bloodPacks": {
         "main": "Túi máu",
         "updateTestResult": "Cập nhật kết quả",
@@ -159,6 +160,7 @@
     },
     "bloodSeparationCenter": {
       "main": "Trung tâm phân tách máu",
+      "bloodSeparationCenterDetail": "Thông tin trung tâm",
       "bloodPacks": {
         "main": "Túi máu",
         "updateSeparationResult": "Cập nhật kết quả"
@@ -170,6 +172,7 @@
     },
     "bloodBank": {
       "main": "Ngân hàng máu",
+      "bloodBankDetail": "Thông tin ngân hàng máu",
       "bloodProducts": {
         "main": "Chế phẩm máu",
         "transferBloodProducts": "Chuyển chế phẩm máu"
@@ -177,6 +180,7 @@
     },
     "hospital": {
       "main": "Bệnh viện",
+      "hospitalDetail": "Thông tin bệnh viện",
       "bloodProducts": {
         "main": "Chế phẩm máu",
         "transferBloodProducts": "Chuyển chế phẩm máu",

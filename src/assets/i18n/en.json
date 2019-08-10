@@ -151,6 +151,7 @@
     },
     "bloodTestCenter": {
       "main": "Blood Test Center",
+      "bloodTestCenterDetail": "Blood Test Center Detail",
       "bloodPacks": {
         "main": "Blood Packs",
         "updateTestResult": "Update Test Result",
@@ -159,6 +160,7 @@
     },
     "bloodSeparationCenter": {
       "main": "Blood Separation Center",
+      "bloodSeparationCenterDetail": "Blood Separation Center Detail",
       "bloodPacks": {
         "main": "Blood Packs",
         "updateSeparationResult": "Update Separation Result"
@@ -170,6 +172,7 @@
     },
     "bloodBank": {
       "main": "Blood Bank",
+      "bloodBankDetail": "Blood Bank Detail",
       "bloodProducts": {
         "main": "Blood Products",
         "transferBloodProducts": "Transfer Blood Products"
@@ -177,6 +180,7 @@
     },
     "hospital": {
       "main": "Hospital",
+      "hosipitalDetail": "Hospital Detail",
       "bloodProducts": {
         "main": "Blood Products",
         "transferBloodProducts": "Transfer Blood Products",

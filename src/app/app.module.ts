@@ -5,6 +5,7 @@ import { AdminModule } from './admin/admin.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BloodCampModule } from './blood-camp/blood-camp.module';
+import { BloodSeparationCenterModule } from './blood-separation-center/blood-separation-center.module';
 import { BloodTestCenterModule } from './blood-test-center/blood-test-center.module';
 import { CoreModule } from './core/core.module';
 import { DonationHistoryModule } from './donation-history/donation-history.module';
@@ -28,6 +29,7 @@ import { SharedModule } from './shared/shared.module';
     DonationHistoryModule,
     BloodCampModule,
     BloodTestCenterModule,
+    BloodSeparationCenterModule,
     AppRoutingModule
   ],
   providers: [],

@@ -19,7 +19,7 @@ const routes: Routes = [
         path: ':id',
         component: BloodTestCenterDetailComponent,
         resolve: { bloodTestCenter: BloodTestCenterResolver },
-        data: { breadcrumb: 'breadcrumb.bloodCamp.bloodCampDetail' }
+        data: { breadcrumb: 'breadcrumb.bloodTestCenter.bloodTestCenterDetail' }
       }
     ]
   }
