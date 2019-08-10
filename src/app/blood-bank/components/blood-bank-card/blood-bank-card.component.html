@@ -1,0 +1,31 @@
+<div class="card mt-3">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-lg-4 col-sm-5">
+        <ngx-gallery *ngIf="galleryImages.length > 0" [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+      </div>
+      <div class="col-lg-8 col-sm-7 mt-md-0 mt-3">
+        <h4 class="title" [routerLink]="['/blood-banks', bloodBank._id]">{{ bloodBank.name }}</h4>
+        <hr>
+        <p>
+          <span class="font-weight-bold">
+            <mdb-icon fas icon="map-marked" class="mr-1"></mdb-icon>Address:
+          </span>
+          {{ bloodBank.address }}
+        </p>
+        <p>
+          <span class="font-weight-bold">
+            <mdb-icon fas icon="envelope" class="mr-1"></mdb-icon>Email:
+          </span>
+          {{ bloodBank.email }}
+        </p>
+        <p class="mb-0">
+          <span class="font-weight-bold">
+            <mdb-icon fas icon="phone" class="mr-1"></mdb-icon>Phone:
+          </span>
+          {{ bloodBank.phone }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
