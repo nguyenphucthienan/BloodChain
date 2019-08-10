@@ -10,7 +10,7 @@ import {
 const routes: Routes = [
   {
     path: 'blood-separation-centers',
-    data: { breadcrumb: 'breadcrumb.bloodSeparationCenter.main' },
+    data: { breadcrumb: 'breadcrumb.bloodSeparationCenter.bloodSeparationCenters' },
     children: [
       {
         path: '',

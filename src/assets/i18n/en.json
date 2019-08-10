@@ -139,6 +139,7 @@
     },
     "bloodCamp": {
       "main": "Blood Camp",
+      "bloodCamps": "Blood Camps",
       "bloodCampDetail": "Blood Camp Detail",
       "bloodPacks": {
         "main": "Blood Packs",
@@ -151,6 +152,7 @@
     },
     "bloodTestCenter": {
       "main": "Blood Test Center",
+      "bloodTestCenters": "Blood Test Centers",
       "bloodTestCenterDetail": "Blood Test Center Detail",
       "bloodPacks": {
         "main": "Blood Packs",
@@ -160,6 +162,7 @@
     },
     "bloodSeparationCenter": {
       "main": "Blood Separation Center",
+      "bloodSeparationCenters": "Blood Separation Centers",
       "bloodSeparationCenterDetail": "Blood Separation Center Detail",
       "bloodPacks": {
         "main": "Blood Packs",
@@ -172,6 +175,7 @@
     },
     "bloodBank": {
       "main": "Blood Bank",
+      "bloodBanks": "Blood Banks",
       "bloodBankDetail": "Blood Bank Detail",
       "bloodProducts": {
         "main": "Blood Products",
@@ -180,6 +184,7 @@
     },
     "hospital": {
       "main": "Hospital",
+      "hospitals": "Hospitals",
       "hospitalDetail": "Hospital Detail",
       "bloodProducts": {
         "main": "Blood Products",

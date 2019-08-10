@@ -8,7 +8,7 @@ import { BloodTestCenterDetailComponent } from './components/blood-test-center-d
 const routes: Routes = [
   {
     path: 'blood-test-centers',
-    data: { breadcrumb: 'breadcrumb.bloodTestCenter.main' },
+    data: { breadcrumb: 'breadcrumb.bloodTestCenter.bloodTestCenters' },
     children: [
       {
         path: '',

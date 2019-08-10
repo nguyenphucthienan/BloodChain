@@ -139,6 +139,7 @@
     },
     "bloodCamp": {
       "main": "Trung tâm hiến máu",
+      "bloodCamps": "Trung tâm hiến máu",
       "bloodCampDetail": "Thông tin trung tâm",
       "bloodPacks": {
         "main": "Túi máu",
@@ -151,6 +152,7 @@
     },
     "bloodTestCenter": {
       "main": "Trung tâm xét nghiệm",
+      "bloodTestCenters": "Trung tâm xét nghiệm",
       "bloodTestCenterDetail": "Thông tin trung tâm",
       "bloodPacks": {
         "main": "Túi máu",
@@ -160,6 +162,7 @@
     },
     "bloodSeparationCenter": {
       "main": "Trung tâm phân tách máu",
+      "bloodSeparationCenters": "Trung tâm phân tách máu",
       "bloodSeparationCenterDetail": "Thông tin trung tâm",
       "bloodPacks": {
         "main": "Túi máu",
@@ -172,6 +175,7 @@
     },
     "bloodBank": {
       "main": "Ngân hàng máu",
+      "bloodBanks": "Ngân hàng máu",
       "bloodBankDetail": "Thông tin ngân hàng máu",
       "bloodProducts": {
         "main": "Chế phẩm máu",
@@ -180,6 +184,7 @@
     },
     "hospital": {
       "main": "Bệnh viện",
+      "hospitals": "Bệnh viện",
       "hospitalDetail": "Thông tin bệnh viện",
       "bloodProducts": {
         "main": "Chế phẩm máu",

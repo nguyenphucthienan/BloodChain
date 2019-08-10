@@ -8,7 +8,7 @@ import { HospitalComponent } from './hospital.component';
 const routes: Routes = [
   {
     path: 'hospitals',
-    data: { breadcrumb: 'breadcrumb.hospital.main' },
+    data: { breadcrumb: 'breadcrumb.hospital.hospitals' },
     children: [
       {
         path: '',

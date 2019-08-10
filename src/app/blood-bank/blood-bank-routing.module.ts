@@ -8,7 +8,7 @@ import { BloodBankDetailComponent } from './components/blood-bank-detail/blood-b
 const routes: Routes = [
   {
     path: 'blood-banks',
-    data: { breadcrumb: 'breadcrumb.bloodBank.main' },
+    data: { breadcrumb: 'breadcrumb.bloodBank.bloodBanks' },
     children: [
       {
         path: '',

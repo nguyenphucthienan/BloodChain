@@ -8,7 +8,7 @@ import { BloodCampDetailComponent } from './components/blood-camp-detail/blood-c
 const routes: Routes = [
   {
     path: 'blood-camps',
-    data: { breadcrumb: 'breadcrumb.bloodCamp.main' },
+    data: { breadcrumb: 'breadcrumb.bloodCamp.bloodCamps' },
     children: [
       {
         path: '',
