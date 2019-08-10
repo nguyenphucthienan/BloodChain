@@ -11,6 +11,7 @@ import { environment } from 'src/environments/environment';
 import { SharedModule } from '../shared/shared.module';
 import { HasRoleGuard } from './guards/has-role.guard';
 import { NotLoggedInGuard } from './guards/not-logged-in.guard';
+import { BloodBankResolver } from './resolvers/blood-bank.resolver';
 import { BloodCampResolver } from './resolvers/blood-camp.resolver';
 import { BloodPackResolver } from './resolvers/blood-pack.resolver';
 import { BloodProductResolver } from './resolvers/blood-product.resolver';
@@ -87,6 +88,7 @@ const toastrOptions = {
     BloodCampResolver,
     BloodTestCenterResolver,
     BloodSeparationCenterResolver,
+    BloodBankResolver,
     BloodPackResolver,
     BloodProductResolver,
     {
