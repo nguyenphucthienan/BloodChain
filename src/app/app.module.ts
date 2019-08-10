@@ -8,6 +8,7 @@ import { BloodBankModule } from './blood-bank/blood-bank.module';
 import { BloodCampModule } from './blood-camp/blood-camp.module';
 import { BloodSeparationCenterModule } from './blood-separation-center/blood-separation-center.module';
 import { BloodTestCenterModule } from './blood-test-center/blood-test-center.module';
+import { CampaignModule } from './campaign/campaign.module';
 import { CoreModule } from './core/core.module';
 import { DonationHistoryModule } from './donation-history/donation-history.module';
 import { HospitalModule } from './hospital/hospital.module';
@@ -34,6 +35,7 @@ import { SharedModule } from './shared/shared.module';
     BloodSeparationCenterModule,
     BloodBankModule,
     HospitalModule,
+    CampaignModule,
     AppRoutingModule
   ],
   providers: [],
