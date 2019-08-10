@@ -180,7 +180,7 @@
     },
     "hospital": {
       "main": "Hospital",
-      "hosipitalDetail": "Hospital Detail",
+      "hospitalDetail": "Hospital Detail",
       "bloodProducts": {
         "main": "Blood Products",
         "transferBloodProducts": "Transfer Blood Products",
