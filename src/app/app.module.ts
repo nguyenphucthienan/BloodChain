@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AdminModule } from './admin/admin.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BloodBankModule } from './blood-bank/blood-bank.module';
+import { BloodBankModule } from './blood-banks/blood-banks.module';
 import { BloodCampsModule } from './blood-camps/blood-camps.module';
 import { BloodSeparationCentersModule } from './blood-separation-centers/blood-separation-centers.module';
 import { BloodTestCentersModule } from './blood-test-centers/blood-test-centers.module';

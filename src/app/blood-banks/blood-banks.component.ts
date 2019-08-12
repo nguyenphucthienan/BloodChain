@@ -11,11 +11,11 @@ import { BloodBankService } from '../core/services/blood-bank.service';
 import { MapInputComponent } from '../shared/components/map-input/map-input.component';
 
 @Component({
-  selector: 'app-blood-bank',
-  templateUrl: './blood-bank.component.html',
-  styleUrls: ['./blood-bank.component.scss']
+  selector: 'app-blood-banks',
+  templateUrl: './blood-banks.component.html',
+  styleUrls: ['./blood-banks.component.scss']
 })
-export class BloodBankComponent implements OnInit, AfterViewInit, OnDestroy {
+export class BloodBanksComponent implements OnInit, AfterViewInit, OnDestroy {
 
   @ViewChild('search') search: ElementRef;
   @ViewChild(MapInputComponent) mapInput: MapInputComponent;

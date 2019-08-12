@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { BloodBankResolver } from '../core/resolvers/blood-bank.resolver';
-import { BloodBankComponent } from './blood-bank.component';
+import { BloodBanksComponent } from './blood-banks.component';
 import { BloodBankDetailComponent } from './components/blood-bank-detail/blood-bank-detail.component';
 
 const routes: Routes = [
@@ -13,7 +13,7 @@ const routes: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        component: BloodBankComponent
+        component: BloodBanksComponent
       },
       {
         path: ':id',
@@ -33,4 +33,4 @@ const routes: Routes = [
     RouterModule
   ]
 })
-export class BloodBankRoutingModule { }
+export class BloodBanksRoutingModule { }
