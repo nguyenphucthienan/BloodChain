@@ -1,0 +1,41 @@
+<div class="card mt-3">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-lg-4 col-sm-5">
+        <ngx-gallery *ngIf="galleryImages.length > 0" [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+      </div>
+      <div class="col-lg-8 col-sm-7 mt-md-0 mt-3">
+        <h4 class="title" [routerLink]="['/campaigns', campaign._id]">{{ campaign.name }}</h4>
+        <hr>
+        <p>
+          <span class="font-weight-bold">
+            <mdb-icon fas icon="map" class="mr-1"></mdb-icon>
+            {{ 'campaignManager.label.bloodCamp' | translate }}:
+          </span>
+          {{ campaign.bloodCamp.name }}
+        </p>
+        <p>
+          <span class="font-weight-bold">
+            <mdb-icon fas icon="map-marked" class="mr-1"></mdb-icon>
+            {{ 'campaignManager.label.address' | translate }}:
+          </span>
+          {{ campaign.bloodCamp.address }}
+        </p>
+        <p>
+          <span class="font-weight-bold">
+            <mdb-icon fas icon="calendar-day" class="mr-1"></mdb-icon>
+            {{ 'campaignManager.label.startDate' | translate }}:
+          </span>
+          {{ campaign.startDate | date:'medium' }}
+        </p>
+        <p class="mb-0">
+          <span class="font-weight-bold">
+            <mdb-icon fas icon="calendar-check" class="mr-1"></mdb-icon>
+            {{ 'campaignManager.label.endDate' | translate }}:
+          </span>
+          {{ campaign.endDate | date:'medium' }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

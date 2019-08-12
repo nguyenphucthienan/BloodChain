@@ -81,7 +81,7 @@ export class CampaignsComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   onLocationChanged(location: any) {
-    this.filterMode.location = `${location.lng},${location.lat}`;
+    this.filterMode['bloodCamp.location'] = `${location.lng},${location.lat}`;
     this.getCampaigns();
   }
 

@@ -35,7 +35,7 @@ export class BloodCampCampaignManagerTableService implements TableService {
   };
 
   filterMode: FilterMode = {
-    bloodCamp: null
+    'bloodCamp._id': null
   };
 
   actions: TableAction[] = [
@@ -55,7 +55,7 @@ export class BloodCampCampaignManagerTableService implements TableService {
   }
 
   getRawData() {
-    if (this.filterMode.bloodCamp) {
+    if (this.filterMode['bloodCamp._id']) {
       return this.campaignService.getCampaigns(
         this.pagination,
         this.sortMode,

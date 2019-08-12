@@ -30,12 +30,10 @@
         </div>
       </div>
       <ng-container *ngIf="campaigns.length > 0">
-        <!-- <app-campaign-card *ngFor="let campaign of campaigns" [campaign]="campaign">
-        </app-campaign-card> -->
+        <app-campaign-card *ngFor="let campaign of campaigns" [campaign]="campaign">
+        </app-campaign-card>
         <div class="card mt-3">
           <div class="card-body">
-            {{ campaigns | json }}
-            <hr>
             <div class="d-flex justify-content-center align-items-center">
               <app-pagination [totalItems]="pagination.totalItems" [itemsPerPage]="pagination.size"
                 (pageChanged)="onPageChanged($event)"></app-pagination>

@@ -45,7 +45,7 @@ export class BloodCampCampaignManagerComponent implements OnInit, AfterViewInit,
     this.renderer.addClass(document.body, 'grey-background');
     this.authService.getMyUserInfo()
       .subscribe((user: User) => {
-        this.bloodCampCampaignManagerTableService.filterMode.bloodCamp = user.bloodCamp._id;
+        this.bloodCampCampaignManagerTableService.filterMode['bloodCamp._id'] = user.bloodCamp._id;
         this.datatable.refresh();
       });
   }

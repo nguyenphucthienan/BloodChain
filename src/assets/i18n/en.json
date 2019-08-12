@@ -929,6 +929,8 @@
     },
     "label": {
       "name": "Name",
+      "bloodCamp": "Blood camp",
+      "address": "Address",
       "startDate": "Start date",
       "startTime": "Start time",
       "endDate": "End date",
