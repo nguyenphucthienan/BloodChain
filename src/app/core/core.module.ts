@@ -17,6 +17,7 @@ import { BloodPackResolver } from './resolvers/blood-pack.resolver';
 import { BloodProductResolver } from './resolvers/blood-product.resolver';
 import { BloodSeparationCenterResolver } from './resolvers/blood-separation-center.resolver';
 import { BloodTestCenterResolver } from './resolvers/blood-test-center.resolver';
+import { CampaignResolver } from './resolvers/campaign.resolver';
 import { HospitalResolver } from './resolvers/hospital.resolver';
 import { MyUserResolver } from './resolvers/my-user.resolver';
 import { TestTypesResolver } from './resolvers/test-types.resolver';
@@ -91,6 +92,7 @@ const toastrOptions = {
     BloodSeparationCenterResolver,
     BloodBankResolver,
     HospitalResolver,
+    CampaignResolver,
     BloodPackResolver,
     BloodProductResolver,
     {

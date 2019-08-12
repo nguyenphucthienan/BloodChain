@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { CampaignComponent } from './campaign.component';
+import { CampaignsComponent } from './campaigns.component';
 
 const routes: Routes = [
   {
@@ -11,7 +11,7 @@ const routes: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        component: CampaignComponent
+        component: CampaignsComponent
       },
       // {
       //   path: ':id',
@@ -31,4 +31,4 @@ const routes: Routes = [
     RouterModule
   ]
 })
-export class CampaignRoutingModule { }
+export class CampaignsRoutingModule { }
