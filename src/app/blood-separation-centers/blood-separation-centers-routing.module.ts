@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { BloodSeparationCenterResolver } from '../core/resolvers/blood-separation-center.resolver';
-import { BloodSeparationCenterComponent } from './blood-separation-center.component';
+import { BloodSeparationCentersComponent } from './blood-separation-centers.component';
 import {
   BloodSeparationCenterDetailComponent,
 } from './components/blood-separation-center-detail/blood-separation-center-detail.component';
@@ -15,7 +15,7 @@ const routes: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        component: BloodSeparationCenterComponent
+        component: BloodSeparationCentersComponent
       },
       {
         path: ':id',
@@ -35,4 +35,4 @@ const routes: Routes = [
     RouterModule
   ]
 })
-export class BloodSeparationCenterRoutingModule { }
+export class BloodSeparationCentersRoutingModule { }

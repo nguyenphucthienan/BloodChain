@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BloodBankModule } from './blood-bank/blood-bank.module';
 import { BloodCampsModule } from './blood-camps/blood-camps.module';
-import { BloodSeparationCenterModule } from './blood-separation-center/blood-separation-center.module';
+import { BloodSeparationCentersModule } from './blood-separation-centers/blood-separation-centers.module';
 import { BloodTestCentersModule } from './blood-test-centers/blood-test-centers.module';
 import { CampaignModule } from './campaign/campaign.module';
 import { CoreModule } from './core/core.module';
@@ -32,7 +32,7 @@ import { SharedModule } from './shared/shared.module';
     DonationHistoryModule,
     BloodCampsModule,
     BloodTestCentersModule,
-    BloodSeparationCenterModule,
+    BloodSeparationCentersModule,
     BloodBankModule,
     HospitalModule,
     CampaignModule,

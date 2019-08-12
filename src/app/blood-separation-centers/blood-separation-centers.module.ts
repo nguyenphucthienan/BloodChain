@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 
 import { SharedModule } from '../shared/shared.module';
-import { BloodSeparationCenterRoutingModule } from './blood-separation-center-routing.module';
-import { BloodSeparationCenterComponent } from './blood-separation-center.component';
+import { BloodSeparationCentersRoutingModule } from './blood-separation-centers-routing.module';
+import { BloodSeparationCentersComponent } from './blood-separation-centers.component';
 import {
   BloodSeparationCenterCardComponent,
 } from './components/blood-separation-center-card/blood-separation-center-card.component';
@@ -12,13 +12,13 @@ import {
 
 @NgModule({
   declarations: [
-    BloodSeparationCenterComponent,
+    BloodSeparationCentersComponent,
     BloodSeparationCenterCardComponent,
     BloodSeparationCenterDetailComponent
   ],
   imports: [
     SharedModule,
-    BloodSeparationCenterRoutingModule
+    BloodSeparationCentersRoutingModule
   ]
 })
-export class BloodSeparationCenterModule { }
+export class BloodSeparationCentersModule { }

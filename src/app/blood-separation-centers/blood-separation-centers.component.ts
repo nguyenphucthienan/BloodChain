@@ -11,11 +11,11 @@ import { BloodSeparationCenterService } from '../core/services/blood-separation-
 import { MapInputComponent } from '../shared/components/map-input/map-input.component';
 
 @Component({
-  selector: 'app-blood-separation-center',
-  templateUrl: './blood-separation-center.component.html',
-  styleUrls: ['./blood-separation-center.component.scss']
+  selector: 'app-blood-separation-centers',
+  templateUrl: './blood-separation-centers.component.html',
+  styleUrls: ['./blood-separation-centers.component.scss']
 })
-export class BloodSeparationCenterComponent implements OnInit, AfterViewInit, OnDestroy {
+export class BloodSeparationCentersComponent implements OnInit, AfterViewInit, OnDestroy {
 
   @ViewChild('search') search: ElementRef;
   @ViewChild(MapInputComponent) mapInput: MapInputComponent;
