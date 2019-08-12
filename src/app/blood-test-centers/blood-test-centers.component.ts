@@ -11,11 +11,11 @@ import { BloodTestCenterService } from '../core/services/blood-test-center.servi
 import { MapInputComponent } from '../shared/components/map-input/map-input.component';
 
 @Component({
-  selector: 'app-blood-test-center',
-  templateUrl: './blood-test-center.component.html',
-  styleUrls: ['./blood-test-center.component.scss']
+  selector: 'app-blood-test-centers',
+  templateUrl: './blood-test-centers.component.html',
+  styleUrls: ['./blood-test-centers.component.scss']
 })
-export class BloodTestCenterComponent implements OnInit, AfterViewInit, OnDestroy {
+export class BloodTestCentersComponent implements OnInit, AfterViewInit, OnDestroy {
 
   @ViewChild('search') search: ElementRef;
   @ViewChild(MapInputComponent) mapInput: MapInputComponent;

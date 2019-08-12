@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BloodTestCenterComponent } from './blood-test-center.component';
+import { BloodTestCentersComponent } from './blood-test-centers.component';
 
-describe('BloodTestCenterComponent', () => {
-  let component: BloodTestCenterComponent;
-  let fixture: ComponentFixture<BloodTestCenterComponent>;
+describe('BloodTestCentersComponent', () => {
+  let component: BloodTestCentersComponent;
+  let fixture: ComponentFixture<BloodTestCentersComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BloodTestCenterComponent ]
+      declarations: [ BloodTestCentersComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BloodTestCenterComponent);
+    fixture = TestBed.createComponent(BloodTestCentersComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

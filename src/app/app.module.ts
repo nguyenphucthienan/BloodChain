@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { BloodBankModule } from './blood-bank/blood-bank.module';
 import { BloodCampsModule } from './blood-camps/blood-camps.module';
 import { BloodSeparationCenterModule } from './blood-separation-center/blood-separation-center.module';
-import { BloodTestCenterModule } from './blood-test-center/blood-test-center.module';
+import { BloodTestCentersModule } from './blood-test-centers/blood-test-centers.module';
 import { CampaignModule } from './campaign/campaign.module';
 import { CoreModule } from './core/core.module';
 import { DonationHistoryModule } from './donation-history/donation-history.module';
@@ -31,7 +31,7 @@ import { SharedModule } from './shared/shared.module';
     ProfileModule,
     DonationHistoryModule,
     BloodCampsModule,
-    BloodTestCenterModule,
+    BloodTestCentersModule,
     BloodSeparationCenterModule,
     BloodBankModule,
     HospitalModule,

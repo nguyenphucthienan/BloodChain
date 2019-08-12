@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { BloodTestCenterResolver } from '../core/resolvers/blood-test-center.resolver';
-import { BloodTestCenterComponent } from './blood-test-center.component';
+import { BloodTestCentersComponent } from './blood-test-centers.component';
 import { BloodTestCenterDetailComponent } from './components/blood-test-center-detail/blood-test-center-detail.component';
 
 const routes: Routes = [
@@ -13,7 +13,7 @@ const routes: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        component: BloodTestCenterComponent
+        component: BloodTestCentersComponent
       },
       {
         path: ':id',
@@ -33,4 +33,4 @@ const routes: Routes = [
     RouterModule
   ]
 })
-export class BloodTestCenterRoutingModule { }
+export class BloodTestCentersRoutingModule { }
