@@ -17,4 +17,4 @@ import { BloodBankDetailComponent } from './components/blood-bank-detail/blood-b
     BloodBanksRoutingModule
   ]
 })
-export class BloodBankModule { }
+export class BloodBanksModule { }

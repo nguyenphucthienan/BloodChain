@@ -11,11 +11,11 @@ import { HospitalService } from '../core/services/hospital.service';
 import { MapInputComponent } from '../shared/components/map-input/map-input.component';
 
 @Component({
-  selector: 'app-hospital',
-  templateUrl: './hospital.component.html',
-  styleUrls: ['./hospital.component.scss']
+  selector: 'app-hospitals',
+  templateUrl: './hospitals.component.html',
+  styleUrls: ['./hospitals.component.scss']
 })
-export class HospitalComponent implements OnInit, AfterViewInit, OnDestroy {
+export class HospitalsComponent implements OnInit, AfterViewInit, OnDestroy {
 
   @ViewChild('search') search: ElementRef;
   @ViewChild(MapInputComponent) mapInput: MapInputComponent;

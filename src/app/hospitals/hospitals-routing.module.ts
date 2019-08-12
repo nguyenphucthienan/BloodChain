@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { HospitalResolver } from '../core/resolvers/hospital.resolver';
 import { HospitalDetailComponent } from './components/hospital-detail/hospital-detail.component';
-import { HospitalComponent } from './hospital.component';
+import { HospitalsComponent } from './hospitals.component';
 
 const routes: Routes = [
   {
@@ -13,7 +13,7 @@ const routes: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        component: HospitalComponent
+        component: HospitalsComponent
       },
       {
         path: ':id',
@@ -33,4 +33,4 @@ const routes: Routes = [
     RouterModule
   ]
 })
-export class HospitalRoutingModule { }
+export class HospitalsRoutingModule { }

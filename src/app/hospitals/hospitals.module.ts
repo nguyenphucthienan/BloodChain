@@ -3,18 +3,18 @@ import { NgModule } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
 import { HospitalCardComponent } from './components/hospital-card/hospital-card.component';
 import { HospitalDetailComponent } from './components/hospital-detail/hospital-detail.component';
-import { HospitalRoutingModule } from './hospital-routing.module';
-import { HospitalComponent } from './hospital.component';
+import { HospitalsRoutingModule } from './hospitals-routing.module';
+import { HospitalsComponent } from './hospitals.component';
 
 @NgModule({
   declarations: [
-    HospitalComponent,
+    HospitalsComponent,
     HospitalCardComponent,
     HospitalDetailComponent
   ],
   imports: [
     SharedModule,
-    HospitalRoutingModule
+    HospitalsRoutingModule
   ]
 })
-export class HospitalModule { }
+export class HospitalsModule { }
