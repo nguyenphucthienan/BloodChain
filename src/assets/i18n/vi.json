@@ -193,6 +193,9 @@
         "useBloodProducts": "Sử dụng chế phẩm máu"
       }
     },
+    "campaign": {
+      "campaigns": "Chiến dịch"
+    },
     "profile": {
       "main": "Hồ sơ",
       "editInfo": "Thay đổi thông tin"

@@ -1,3 +1,48 @@
-<p>
-  campaign works!
-</p>
+<div class="container-fluid">
+  <div class="card mt-3">
+    <div class="card-body">
+      <app-breadcrumb></app-breadcrumb>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="card mt-3">
+        <div class="card-body">
+          <div class="md-form mt-0 mb-0">
+            <input #search type="text" class="form-control"
+              [attr.placeholder]="'campaignManager.placeholder.search' | translate" mdbInput>
+          </div>
+          <app-map-input [height]="'500px'" [placeholder]="'common.placeholder.searchByLocation' | translate"
+            (locationChanged)="onLocationChanged($event)">
+          </app-map-input>
+          <div class="d-flex flex-sm-row flex-column justify-content-end mt-3">
+            <button type="button" class="btn btn-sm btn-primary" (click)="resetFilters()">
+              {{ 'common.button.resetFilters' | translate }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 pl-md-0">
+      <div *ngIf="campaigns.length <= 0" class="card mt-3">
+        <div class="card-body">
+          <span class="font-weight-bold">{{ 'common.message.noData' | translate }}</span>
+        </div>
+      </div>
+      <ng-container *ngIf="campaigns.length > 0">
+        <!-- <app-campaign-card *ngFor="let campaign of campaigns" [campaign]="campaign">
+        </app-campaign-card> -->
+        <div class="card mt-3">
+          <div class="card-body">
+            {{ campaigns | json }}
+            <hr>
+            <div class="d-flex justify-content-center align-items-center">
+              <app-pagination [totalItems]="pagination.totalItems" [itemsPerPage]="pagination.size"
+                (pageChanged)="onPageChanged($event)"></app-pagination>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

@@ -193,6 +193,9 @@
         "useBloodProducts": "Use Blood Products"
       }
     },
+    "campaign": {
+      "campaigns": "Campaigns"
+    },
     "profile": {
       "main": "Profile",
       "editInfo": "Edit Info"
