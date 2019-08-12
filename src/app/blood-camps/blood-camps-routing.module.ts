@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { BloodCampResolver } from '../core/resolvers/blood-camp.resolver';
-import { BloodCampComponent } from './blood-camp.component';
+import { BloodCampsComponent } from './blood-camps.component';
 import { BloodCampDetailComponent } from './components/blood-camp-detail/blood-camp-detail.component';
 
 const routes: Routes = [
@@ -13,7 +13,7 @@ const routes: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        component: BloodCampComponent
+        component: BloodCampsComponent
       },
       {
         path: ':id',
@@ -33,4 +33,4 @@ const routes: Routes = [
     RouterModule
   ]
 })
-export class BloodCampRoutingModule { }
+export class BloodCampsRoutingModule { }

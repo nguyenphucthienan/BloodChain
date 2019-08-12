@@ -11,11 +11,11 @@ import { BloodCampService } from '../core/services/blood-camp.service';
 import { MapInputComponent } from '../shared/components/map-input/map-input.component';
 
 @Component({
-  selector: 'app-blood-camp',
-  templateUrl: './blood-camp.component.html',
-  styleUrls: ['./blood-camp.component.scss']
+  selector: 'app-blood-camps',
+  templateUrl: './blood-camps.component.html',
+  styleUrls: ['./blood-camps.component.scss']
 })
-export class BloodCampComponent implements OnInit, AfterViewInit, OnDestroy {
+export class BloodCampsComponent implements OnInit, AfterViewInit, OnDestroy {
 
   @ViewChild('search') search: ElementRef;
   @ViewChild(MapInputComponent) mapInput: MapInputComponent;

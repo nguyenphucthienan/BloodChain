@@ -1,20 +1,20 @@
 import { NgModule } from '@angular/core';
 
 import { SharedModule } from '../shared/shared.module';
-import { BloodCampRoutingModule } from './blood-camp-routing.module';
-import { BloodCampComponent } from './blood-camp.component';
+import { BloodCampsRoutingModule } from './blood-camps-routing.module';
+import { BloodCampsComponent } from './blood-camps.component';
 import { BloodCampCardComponent } from './components/blood-camp-card/blood-camp-card.component';
 import { BloodCampDetailComponent } from './components/blood-camp-detail/blood-camp-detail.component';
 
 @NgModule({
   declarations: [
-    BloodCampComponent,
+    BloodCampsComponent,
     BloodCampCardComponent,
     BloodCampDetailComponent
   ],
   imports: [
     SharedModule,
-    BloodCampRoutingModule
+    BloodCampsRoutingModule
   ]
 })
-export class BloodCampModule { }
+export class BloodCampsModule { }
