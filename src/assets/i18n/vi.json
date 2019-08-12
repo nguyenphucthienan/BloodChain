@@ -95,7 +95,8 @@
       "bloodTestCenters": "Trung tâm xét nghiệm",
       "bloodSeparationCenters": "Trung tâm phân tách",
       "bloodBanks": "Ngân hàng máu",
-      "hospitals": "Bệnh viện"
+      "hospitals": "Bệnh viện",
+      "hi": "Xin chào"
     },
     "alert": {
       "logoutSuccess": "Đăng xuất thành công"
@@ -226,6 +227,9 @@
       "campaigns": "Chiến dịch",
       "myProfile": "Hồ sơ",
       "donationHistory": "Lịch sử hiến máu"
+    },
+    "button": {
+      "logout": "Đăng xuất"
     }
   },
   "pagination": {

@@ -95,7 +95,8 @@
       "bloodTestCenters": "Blood Test Centers",
       "bloodSeparationCenters": "Blood Separation Centers",
       "bloodBanks": "Blood Banks",
-      "hospitals": "Hospitals"
+      "hospitals": "Hospitals",
+      "hi": "Hi"
     },
     "alert": {
       "logoutSuccess": "Logout successfully"
@@ -226,6 +227,9 @@
       "campaigns": "Campaigns",
       "myProfile": "My Profile",
       "donationHistory": "Donation History"
+    },
+    "button": {
+      "logout": "Logout"
     }
   },
   "pagination": {

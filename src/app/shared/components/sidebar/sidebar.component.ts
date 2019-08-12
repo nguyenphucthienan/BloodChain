@@ -1,5 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { RoleName } from 'src/app/core/constant/role-name';
+import { AlertService } from 'src/app/core/services/alert.service';
 import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
@@ -68,7 +70,11 @@ export class SidebarComponent implements OnInit {
     donor: false
   };
 
-  constructor(private authService: AuthService) { }
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+    private alertService: AlertService
+  ) { }
 
   ngOnInit() {
     this.authService.decodedToken$
@@ -113,6 +119,13 @@ export class SidebarComponent implements OnInit {
 
   toggleSidebar() {
     this.sidebarToggled.emit();
+  }
+
+  logout() {
+    this.toggleSidebar();
+    this.authService.logout();
+    this.router.navigate(['/']);
+    this.alertService.info('header.alert.logoutSuccess');
   }
 
   private resetSidebar() {
