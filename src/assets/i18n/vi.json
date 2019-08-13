@@ -227,6 +227,7 @@
       "bloodSeparationCenters": "Trung tâm phân tách",
       "bloodBanks": "Ngân hàng máu",
       "hospitals": "Bệnh viện",
+      "awards": "Quà thưởng",
       "bloodPacks": "Túi máu",
       "bloodProducts": "Chế phẩm máu",
       "campaigns": "Chiến dịch",
@@ -968,6 +969,7 @@
     },
     "column": {
       "point": "Điểm",
+      "quantity": "Số lượng",
       "description": "Miêu tả"
     },
     "placeholder": {
@@ -981,12 +983,16 @@
     "label": {
       "name": "Tên",
       "Điểm": "Điểm",
-      "description": "Miêu tả"
+      "quantity": "Số lượng",
+      "description": "Miêu tả",
+      "codes": "Mã quà thưởng (cách nhau bởi một dấu phẩy \",\" và một khoảng trắng \" \")"
     },
     "message": {
       "nameRequired": "Tên không được bỏ trống",
       "codesRequired": "Mã quà thưởng không được bỏ trống",
       "pointRequired": "Điểm không được bỏ trống",
+      "minPoint": "Tối thiểu 100 điểm",
+      "maxPoint": "Tối đa 1000 điểm",
       "descriptionRequired": "Miêu tả không được bỏ trống"
     },
     "alert": {

@@ -23,6 +23,7 @@ import {
   AdminUserManagerUpdateUserComponent,
 } from './components/admin-user-manager-update-user/admin-user-manager-update-user.component';
 import { AdminUserManagerComponent } from './components/admin-user-manager/admin-user-manager.component';
+import { AwardAddModalComponent } from './modals/award-add-modal/award-add-modal.component';
 import { BloodBankAddModalComponent } from './modals/blood-bank-add-modal/blood-bank-add-modal.component';
 import {
   BloodBankAssignStaffsModalComponent,
@@ -140,6 +141,7 @@ import { UserUpdateSuccessModalComponent } from './modals/user-update-success-mo
     HospitalDeleteModalComponent,
     HospitalAssignStaffsModalComponent,
     HospitalPhotoManagerModalComponent,
+    AwardAddModalComponent
   ],
   imports: [
     SharedModule,
@@ -178,7 +180,8 @@ import { UserUpdateSuccessModalComponent } from './modals/user-update-success-mo
     HospitalUpdateModalComponent,
     HospitalDeleteModalComponent,
     HospitalAssignStaffsModalComponent,
-    HospitalPhotoManagerModalComponent
+    HospitalPhotoManagerModalComponent,
+    AwardAddModalComponent
   ]
 })
 export class AdminModule { }

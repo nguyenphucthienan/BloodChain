@@ -8,6 +8,7 @@ import { TableActionType } from 'src/app/datatable/models/table-action.interface
 import { TableCellChange } from 'src/app/datatable/models/table-cell-change.interface';
 import { TableRow } from 'src/app/datatable/models/table-row.interface';
 
+import { AwardAddModalComponent } from '../../modals/award-add-modal/award-add-modal.component';
 import { AwardManagerTableService } from '../../services/award-manager-table.service';
 
 @Component({
@@ -74,19 +75,19 @@ export class AdminAwardManagerComponent implements OnInit, AfterViewInit, OnDest
   }
 
   openAwardAddModal() {
-    // this.modalRef = this.modalService.show(AwardAddModalComponent, {
-    //   backdrop: true,
-    //   keyboard: true,
-    //   focus: true,
-    //   show: false,
-    //   ignoreBackdropClick: true,
-    //   class: 'modal-lg modal-dialog-centered',
-    //   containerClass: 'top',
-    //   animated: true
-    // });
+    this.modalRef = this.modalService.show(AwardAddModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-lg modal-dialog-centered',
+      containerClass: 'top',
+      animated: true
+    });
 
-    // this.modalRef.content.awardAdded
-    //   .subscribe((award: Award) => this.onAwardAdded(award));
+    this.modalRef.content.awardAdded
+      .subscribe((award: Award) => this.onAwardAdded(award));
   }
 
   onAwardAdded(award: Award) {

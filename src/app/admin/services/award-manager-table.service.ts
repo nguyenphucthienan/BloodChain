@@ -18,7 +18,7 @@ export class AwardManagerTableService implements TableService {
     { name: '_id', text: 'common.column.id', type: 'IdTableCellComponent', center: true, sortable: true },
     { name: 'name', text: 'common.column.name', type: 'TextTableCellComponent', sortable: true },
     { name: 'point', text: 'awardManager.column.point', type: 'TextTableCellComponent', sortable: true },
-    { name: 'description', text: 'awardManager.column.description', type: 'TextTableCellComponent', sortable: true },
+    { name: 'quantity', text: 'awardManager.column.quantity', type: 'TextTableCellComponent', sortable: true },
     { name: 'actions', text: 'common.column.actions', type: 'ActionsTableCellComponent', center: true }
   ];
 
@@ -38,7 +38,6 @@ export class AwardManagerTableService implements TableService {
 
   actions: TableAction[] = [
     { class: 'btn-info', icon: 'fa fa-info-circle', text: 'common.tooltip.detail', type: TableActionType.GetDetail },
-    { class: 'btn-dark', icon: 'fa fa-user-tag', text: 'common.tooltip.assign', type: TableActionType.Assign },
     { class: 'btn-dark', icon: 'fa fa-image', text: 'common.tooltip.assign', type: TableActionType.ManagePhotos },
     { class: 'btn-dark', icon: 'fa fa-edit', text: 'common.tooltip.update', type: TableActionType.Update },
     { class: 'btn-danger', icon: 'fa fa-trash-alt', text: 'common.tooltip.delete', type: TableActionType.Delete }
