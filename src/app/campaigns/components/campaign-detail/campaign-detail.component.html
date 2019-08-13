@@ -1,0 +1,75 @@
+<div class="container-fluid">
+  <div class="card mt-3">
+    <div class="card-body">
+      <app-breadcrumb></app-breadcrumb>
+    </div>
+  </div>
+  <div class="card mt-3">
+    <div class="card-body">
+      <h4>{{ campaign.name }}</h4>
+      <hr>
+      <p>
+        <span class="font-weight-bold">
+          <mdb-icon fas icon="map" class="mr-1"></mdb-icon>
+          {{ 'campaignManager.label.bloodCamp' | translate }}:
+        </span>
+        <a [routerLink]="['/blood-camps', campaign.bloodCamp._id]">
+          {{ campaign.bloodCamp.name }}
+        </a>
+      </p>
+      <p>
+        <span class="font-weight-bold">
+          <mdb-icon fas icon="map-marked" class="mr-1"></mdb-icon>
+          {{ 'campaignManager.label.address' | translate }}:
+        </span>
+        {{ campaign.bloodCamp.address }}
+      </p>
+      <p>
+        <span class="font-weight-bold">
+          <mdb-icon fas icon="calendar-day" class="mr-1"></mdb-icon>
+          {{ 'campaignManager.label.startDate' | translate }}:
+        </span>
+        {{ campaign.startDate | date:'medium' }}
+      </p>
+      <p>
+        <span class="font-weight-bold">
+          <mdb-icon fas icon="calendar-check" class="mr-1"></mdb-icon>
+          {{ 'campaignManager.label.endDate' | translate }}:
+        </span>
+        {{ campaign.endDate | date:'medium' }}
+      </p>
+      <p class="mb-0">
+        <span class="font-weight-bold">
+          <mdb-icon fas icon="comment-alt" class="mr-1"></mdb-icon>
+          {{ 'campaignManager.label.description' | translate }}:
+        </span>
+        {{ campaign.description }}
+      </p>
+    </div>
+  </div>
+  <div class="card mt-3">
+    <div class="card-body">
+      <div class="d-flex">
+        <span class="font-weight-bold">{{ 'campaignManager.label.mapInfo' | translate }}</span>
+      </div>
+      <div class="mt-3">
+        <agm-map *ngIf="point" [latitude]="point.coordinates[1]" [longitude]="point.coordinates[0]"
+          [style.height]="'500px'" [zoom]="15">
+          <agm-marker [latitude]="point.coordinates[1]" [longitude]="point.coordinates[0]">
+          </agm-marker>
+        </agm-map>
+        <span *ngIf="!point" class="font-weight-bold">{{ 'common.message.noData' | translate }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="card mt-3">
+    <div class="card-body">
+      <div class="d-flex">
+        <span class="font-weight-bold">{{ 'campaignManager.label.photos' | translate }}</span>
+      </div>
+      <div class="mt-3">
+        <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+      </div>
+    </div>
+  </div>
+</div>

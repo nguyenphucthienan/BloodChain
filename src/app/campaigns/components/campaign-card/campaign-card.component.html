@@ -12,7 +12,9 @@
             <mdb-icon fas icon="map" class="mr-1"></mdb-icon>
             {{ 'campaignManager.label.bloodCamp' | translate }}:
           </span>
-          {{ campaign.bloodCamp.name }}
+          <a [routerLink]="['/blood-camps', campaign.bloodCamp._id]">
+            {{ campaign.bloodCamp.name }}
+          </a>
         </p>
         <p>
           <span class="font-weight-bold">

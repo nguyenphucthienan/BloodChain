@@ -1,17 +1,17 @@
 import { Component, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgxGalleryAnimation, NgxGalleryImage, NgxGalleryOptions } from 'ngx-gallery';
-import { Hospital } from 'src/app/core/models/hospital.interface';
+import { Campaign } from 'src/app/core/models/campaign.interface';
 import { Point } from 'src/app/core/models/point.interface';
 
 @Component({
-  selector: 'app-hospital-detail',
-  templateUrl: './hospital-detail.component.html',
-  styleUrls: ['./hospital-detail.component.scss']
+  selector: 'app-campaign-detail',
+  templateUrl: './campaign-detail.component.html',
+  styleUrls: ['./campaign-detail.component.scss']
 })
-export class HospitalDetailComponent implements OnInit, OnDestroy {
+export class CampaignDetailComponent implements OnInit, OnDestroy {
 
-  hospital: Hospital;
+  campaign: Campaign;
   point: Point;
 
   galleryOptions: NgxGalleryOptions[] = [];
@@ -39,9 +39,9 @@ export class HospitalDetailComponent implements OnInit, OnDestroy {
     }];
 
     this.route.data.subscribe((data: any) => {
-      this.hospital = data.hospital;
-      this.point = this.hospital.location;
-      this.galleryImages = this.hospital.photos.map(photo => {
+      this.campaign = data.campaign;
+      this.point = this.campaign.bloodCamp.location;
+      this.galleryImages = this.campaign.photos.map(photo => {
         return {
           id: photo._id,
           small: photo.secureUrl,

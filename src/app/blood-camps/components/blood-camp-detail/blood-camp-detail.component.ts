@@ -35,7 +35,7 @@ export class BloodCampDetailComponent implements OnInit, OnDestroy {
       previewInfinityMove: true,
       previewZoom: true,
       previewFullscreen: true,
-      previewCloseOnEsc: true,
+      previewCloseOnEsc: true
     }];
 
     this.route.data.subscribe((data: any) => {

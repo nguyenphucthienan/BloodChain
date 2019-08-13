@@ -194,7 +194,8 @@
       }
     },
     "campaign": {
-      "campaigns": "Campaigns"
+      "campaigns": "Campaigns",
+      "campaignDetail": "Campaign Detail"
     },
     "profile": {
       "main": "Profile",
@@ -928,6 +929,8 @@
       "delete": "Delete Campaign"
     },
     "label": {
+      "mapInfo": "MAP INFO",
+      "photos": "PHOTOS",
       "name": "Name",
       "bloodCamp": "Blood camp",
       "address": "Address",

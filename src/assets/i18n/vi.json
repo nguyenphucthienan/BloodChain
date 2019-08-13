@@ -194,7 +194,8 @@
       }
     },
     "campaign": {
-      "campaigns": "Chiến dịch"
+      "campaigns": "Chiến dịch",
+      "campaignDetail": "Thông tin chiến dịch"
     },
     "profile": {
       "main": "Hồ sơ",
@@ -928,6 +929,8 @@
       "delete": "Xóa chiến dịch"
     },
     "label": {
+      "mapInfo": "BẢN ĐỒ",
+      "photos": "HÌNH ẢNH",
       "name": "Tên",
       "bloodCamp": "Trung tâm hiến máu",
       "address": "Địa chỉ",
