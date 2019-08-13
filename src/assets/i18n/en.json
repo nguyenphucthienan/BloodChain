@@ -198,6 +198,9 @@
       "campaigns": "Campaigns",
       "campaignDetail": "Campaign Detail"
     },
+    "award": {
+      "awards": "Awards"
+    },
     "profile": {
       "main": "Profile",
       "editInfo": "Edit Info"

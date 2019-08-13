@@ -198,6 +198,9 @@
       "campaigns": "Chiến dịch",
       "campaignDetail": "Thông tin chiến dịch"
     },
+    "award": {
+      "awards": "Đổi thưởng"
+    },
     "profile": {
       "main": "Hồ sơ",
       "editInfo": "Thay đổi thông tin"
