@@ -1,8 +1,9 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { MatDatepicker } from '@angular/material/datepicker';
 import { MDBModalRef } from 'angular-bootstrap-md';
+import { Moment } from 'moment';
 import { fromEvent, Subscription } from 'rxjs';
 import { debounceTime, map, tap } from 'rxjs/operators';
-
 import { Campaign } from '../core/models/campaign.interface';
 import { FilterMode } from '../core/models/filter-mode.interface';
 import { Pagination } from '../core/models/pagination.interface';
@@ -18,6 +19,8 @@ import { MapInputComponent } from '../shared/components/map-input/map-input.comp
 export class CampaignsComponent implements OnInit, AfterViewInit, OnDestroy {
 
   @ViewChild('search') search: ElementRef;
+  @ViewChild('fromDatePicker') fromDatePicker: MatDatepicker<Date>;
+  @ViewChild('toDatePicker') toDatePicker: MatDatepicker<Date>;
   @ViewChild(MapInputComponent) mapInput: MapInputComponent;
 
   campaigns: Campaign[] = [];
@@ -73,10 +76,30 @@ export class CampaignsComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
+  openDatePicker(picker: MatDatepicker<Date>) {
+    picker.open();
+  }
+
   resetFilters() {
+    this.fromDatePicker.select(null);
+    this.toDatePicker.select(null);
     this.search.nativeElement.value = null;
     this.mapInput.reset();
     this.filterMode = {};
+    this.getCampaigns();
+  }
+
+  onDateChange(event: any) {
+    const fromDate = this.fromDatePicker._selected as unknown as Moment;
+    if (fromDate) {
+      this.filterMode.fromDate = fromDate.startOf('day').toISOString();
+    }
+
+    const toDate = this.toDatePicker._selected as unknown as Moment;
+    if (toDate) {
+      this.filterMode.toDate = toDate.endOf('day').toISOString();
+    }
+
     this.getCampaigns();
   }
 

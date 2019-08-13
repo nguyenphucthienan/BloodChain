@@ -938,7 +938,9 @@
       "startTime": "Start time",
       "endDate": "End date",
       "endTime": "End time",
-      "description": "Description"
+      "description": "Description",
+      "fromDate": "From date",
+      "toDate": "To date"
     },
     "message": {
       "nameRequired": "Name is required",

@@ -938,7 +938,9 @@
       "startTime": "Giờ bắt đầu",
       "endDate": "Ngày kết thúc",
       "endTime": "Giờ kết thúc",
-      "description": "Miêu tả"
+      "description": "Miêu tả",
+      "fromDate": "Từ ngày",
+      "toDate": "Đến ngày"
     },
     "message": {
       "nameRequired": "Tên không được bỏ trống",
