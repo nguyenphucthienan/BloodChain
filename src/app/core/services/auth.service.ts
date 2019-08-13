@@ -14,7 +14,8 @@ export class AuthService {
   private readonly checkEmailUrl = `${environment.apiUrl}/auth/check-email`;
   private readonly registerUrl = `${environment.apiUrl}/auth/register`;
   private readonly meUrl = `${environment.apiUrl}/auth/me`;
-  private readonly meOnBlockchainUrl = `${environment.apiUrl}/auth/me/blockchain`;
+  private readonly userInfoOnBlockchainUrl = `${environment.apiUrl}/auth/me/user-info`;
+  private readonly pointHistoriesOnBlockchainUrl = `${environment.apiUrl}/auth/me/point-histories`;
   private readonly changePasswordUrl = `${environment.apiUrl}/auth/me/password`;
 
   private jwtHelper = new JwtHelperService();
@@ -93,12 +94,6 @@ export class AuthService {
     return this.http.get(this.meUrl, { headers });
   }
 
-  getMyUserInfoOnBlockchain() {
-    const token = localStorage.getItem(environment.authTokenName);
-    const headers = new HttpHeaders({ Authorization: `Bearer ${token}` });
-    return this.http.get(this.meOnBlockchainUrl, { headers });
-  }
-
   updateUserInfo(updateModel: any) {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders({ Authorization: `Bearer ${token}` });
@@ -109,6 +104,18 @@ export class AuthService {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders({ Authorization: `Bearer ${token}` });
     return this.http.put(this.changePasswordUrl, changePasswordModel, { headers });
+  }
+
+  getMyUserInfoOnBlockchain() {
+    const token = localStorage.getItem(environment.authTokenName);
+    const headers = new HttpHeaders({ Authorization: `Bearer ${token}` });
+    return this.http.get(this.userInfoOnBlockchainUrl, { headers });
+  }
+
+  getMyPointHistoriesOnBlockchain() {
+    const token = localStorage.getItem(environment.authTokenName);
+    const headers = new HttpHeaders({ Authorization: `Bearer ${token}` });
+    return this.http.get(this.pointHistoriesOnBlockchainUrl, { headers });
   }
 
   isRoleMatch(allowedRoles: string[]): boolean {

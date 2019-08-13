@@ -265,7 +265,8 @@
       "donationHistory": "DONATION HISTORY",
       "bloodProductManager": "BLOOD PRODUCTS",
       "campaignManager": "CAMPAIGNS",
-      "awardManager": "AWARDS"
+      "awardManager": "AWARDS",
+      "pointHistory": "POINT HISTORY"
     }
   },
   "timeline": {
@@ -973,6 +974,9 @@
     "column": {
       "point": "Point",
       "quantity": "Quantity",
+      "updatePointType": "Update Point Type",
+      "updatedAt": "Time",
+      "amount": "Amount",
       "description": "Description"
     },
     "placeholder": {
@@ -986,6 +990,7 @@
     "label": {
       "name": "Name",
       "point": "Point",
+      "points": "Points",
       "quantity": "Quantity",
       "description": "Description",
       "codes": "Codes (separated by a comma \",\" and a space \" \")"

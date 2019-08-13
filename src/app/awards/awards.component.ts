@@ -4,22 +4,28 @@ import { environment } from 'src/environments/environment';
 
 import { User } from '../core/models/user.interface';
 import { AuthService } from '../core/services/auth.service';
+import { TableActionType } from '../datatable/models/table-action.interface';
+import { TableCellChange } from '../datatable/models/table-cell-change.interface';
+import { PointHistoryTableService } from './services/point-history-table.service';
 
 @Component({
   selector: 'app-awards',
   templateUrl: './awards.component.html',
-  styleUrls: ['./awards.component.scss']
+  styleUrls: ['./awards.component.scss'],
+  providers: [PointHistoryTableService]
 })
 export class AwardsComponent implements OnInit, OnDestroy {
 
   readonly defaultPhotoUrl = environment.photoUrl.defaultUser;
 
   user: User;
-  userOnBlockchain: any;
+  userInfoOnBlockchain: any;
+  pointHistoriesOnBlockchain: any[] = [];
 
   modalRef: MDBModalRef;
 
   constructor(
+    public pointHistoryTableService: PointHistoryTableService,
     private renderer: Renderer2,
     private authService: AuthService
   ) { }
@@ -31,8 +37,20 @@ export class AwardsComponent implements OnInit, OnDestroy {
     });
 
     this.authService.getMyUserInfoOnBlockchain().subscribe((user: any) => {
-      this.userOnBlockchain = user;
+      this.userInfoOnBlockchain = user;
     });
+
+    this.authService.getMyPointHistoriesOnBlockchain().subscribe((pointHistories: any[]) => {
+      this.pointHistoriesOnBlockchain = pointHistories;
+    });
+  }
+
+  onTableCellChanged(tableCellChange: TableCellChange) {
+    const action = tableCellChange.newValue;
+    switch (action.type) {
+      case TableActionType.GetDetail:
+        break;
+    }
   }
 
   ngOnDestroy() {

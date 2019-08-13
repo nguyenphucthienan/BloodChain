@@ -10,20 +10,18 @@
         <img [src]="user?.photo?.secureUrl || defaultPhotoUrl" class="img-fluid rounded-circle photo">
       </div>
       <h3 class="h3 text-center mt-2">@{{ user?.username }}</h3>
-      <div class="d-flex flex-sm-row flex-column justify-content-center">
-        <h5>
-          <mdb-icon fas icon="star" class="mr-1"></mdb-icon>
-          <span class="font-weight-bold">Award Points:</span>
-          {{ userOnBlockchain ? userOnBlockchain.point : 0 }}
-        </h5>
-      </div>
+      <h5 class="text-center mt-2 mb-0">
+        <mdb-icon fas icon="sun" class="mr-1"></mdb-icon>
+        <span class="font-weight-bold">{{ 'awardManager.label.points' | translate }}:</span>
+        {{ userInfoOnBlockchain ? userInfoOnBlockchain.point : 0 }}
+      </h5>
     </div>
   </div>
   <div class="card mt-3">
     <div class="card-body">
-      {{ user | json}}
-      <hr>
-      {{ userOnBlockchain | json }}
+      <app-datatable [tableName]="'table.name.pointHistory' | translate" [tableService]="pointHistoryTableService"
+        (cellChanged)="onTableCellChanged($event)">
+      </app-datatable>
     </div>
   </div>
 </div>

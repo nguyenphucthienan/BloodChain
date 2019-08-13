@@ -16,6 +16,7 @@ export class UserService {
 
   private readonly usersUrl = `${environment.apiUrl}/users`;
   private readonly userUrl = `${environment.apiUrl}/users/{id}`;
+  private readonly userPointHistoriesUrl = `${environment.apiUrl}/users/{id}/point-histories`;
   private readonly userAssignOrganizationUrl = `${environment.apiUrl}/users/organizations`;
 
   private readonly defaultPagination: Pagination = {
@@ -78,6 +79,14 @@ export class UserService {
       roleName,
       organizationId
     });
+  }
+
+  getPointHistories(id: string, pagination: Pagination = this.defaultPagination): Observable<any[]> {
+    const params = new ParamsBuilder()
+      .applyPagination(pagination)
+      .build();
+
+    return this.http.get<any[]>(this.userPointHistoriesUrl, { params });
   }
 
 }

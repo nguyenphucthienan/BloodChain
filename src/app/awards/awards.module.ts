@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 
+import { DatatableModule } from '../datatable/datatable.module';
 import { SharedModule } from '../shared/shared.module';
 import { AwardsRoutingModule } from './awards-routing.module';
 import { AwardsComponent } from './awards.component';
@@ -10,7 +11,8 @@ import { AwardsComponent } from './awards.component';
   ],
   imports: [
     SharedModule,
-    AwardsRoutingModule
+    AwardsRoutingModule,
+    DatatableModule
   ]
 })
 export class AwardsModule { }

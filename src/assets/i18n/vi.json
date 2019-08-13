@@ -265,7 +265,8 @@
       "donationHistory": "LỊCH SỬ HIẾN MÁU",
       "bloodProductManager": "CHẾ PHẨM MÁU",
       "campaignManager": "CHIẾN DỊCH",
-      "awardManager": "QUÀ THƯỞNG"
+      "awardManager": "QUÀ THƯỞNG",
+      "pointHistory": "LỊCH SỬ ĐIỂM THƯỞNG"
     }
   },
   "timeline": {
@@ -973,6 +974,9 @@
     "column": {
       "point": "Điểm",
       "quantity": "Số lượng",
+      "updatePointType": "Loại cập nhật",
+      "updatedAt": "Thời gian",
+      "amount": "Số điểm thưởng",
       "description": "Miêu tả"
     },
     "placeholder": {
@@ -985,7 +989,8 @@
     },
     "label": {
       "name": "Tên",
-      "Điểm": "Điểm",
+      "point": "Điểm",
+      "points": "Điểm thưởng",
       "quantity": "Số lượng",
       "description": "Miêu tả",
       "codes": "Mã quà thưởng (cách nhau bởi một dấu phẩy \",\" và một khoảng trắng \" \")"
