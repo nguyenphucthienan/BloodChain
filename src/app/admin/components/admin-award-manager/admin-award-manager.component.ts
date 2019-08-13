@@ -9,6 +9,7 @@ import { TableCellChange } from 'src/app/datatable/models/table-cell-change.inte
 import { TableRow } from 'src/app/datatable/models/table-row.interface';
 
 import { AwardAddModalComponent } from '../../modals/award-add-modal/award-add-modal.component';
+import { AwardDeleteModalComponent } from '../../modals/award-delete-modal/award-delete-modal.component';
 import { AwardPhotoManagerModalComponent } from '../../modals/award-photo-manager-modal/award-photo-manager-modal.component';
 import { AwardUpdateModalComponent } from '../../modals/award-update-modal/award-update-modal.component';
 import { AwardManagerTableService } from '../../services/award-manager-table.service';
@@ -138,22 +139,22 @@ export class AdminAwardManagerComponent implements OnInit, AfterViewInit, OnDest
   }
 
   openAwardDeleteModal(rowData: TableRow) {
-    // this.modalRef = this.modalService.show(AwardDeleteModalComponent, {
-    //   backdrop: true,
-    //   keyboard: true,
-    //   focus: true,
-    //   show: false,
-    //   ignoreBackdropClick: true,
-    //   class: 'modal-dialog-centered',
-    //   containerClass: 'top',
-    //   animated: true,
-    //   data: {
-    //     rowData
-    //   }
-    // });
+    this.modalRef = this.modalService.show(AwardDeleteModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        rowData
+      }
+    });
 
-    // this.modalRef.content.awardDeleted
-    //   .subscribe(() => this.onAwardDeleted());
+    this.modalRef.content.awardDeleted
+      .subscribe(() => this.onAwardDeleted());
   }
 
   onAwardDeleted() {

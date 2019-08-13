@@ -1,0 +1,20 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close pull-right" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100">{{ 'awardManager.modal.delete' | translate }}</h4>
+  </div>
+  <div class="modal-body">
+    {{ 'common.message.areYouSureDelete' | translate }}
+    <span class="font-weight-bold">{{ awardName }}</span>?
+  </div>
+  <div class="modal-footer">
+    <button type="button" mdbBtn color="secondary" class="waves-light" (click)="modalRef.hide()" mdbWavesEffect>
+      {{ 'common.button.no' | translate }}
+    </button>
+    <button mdbBtn type="submit" color="primary" (click)="deleteAward()" mdbWavesEffect>
+      {{ 'common.button.yes' | translate }}
+    </button>
+  </div>
+</div>
