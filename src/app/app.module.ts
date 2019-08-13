@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AdminModule } from './admin/admin.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AwardsModule } from './awards/awards.module';
 import { BloodBanksModule } from './blood-banks/blood-banks.module';
 import { BloodCampsModule } from './blood-camps/blood-camps.module';
 import { BloodSeparationCentersModule } from './blood-separation-centers/blood-separation-centers.module';
@@ -36,6 +37,7 @@ import { SharedModule } from './shared/shared.module';
     BloodBanksModule,
     HospitalsModule,
     CampaignsModule,
+    AwardsModule,
     AppRoutingModule
   ],
   providers: [],
