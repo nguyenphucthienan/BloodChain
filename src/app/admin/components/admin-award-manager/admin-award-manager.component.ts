@@ -9,6 +9,7 @@ import { TableCellChange } from 'src/app/datatable/models/table-cell-change.inte
 import { TableRow } from 'src/app/datatable/models/table-row.interface';
 
 import { AwardAddModalComponent } from '../../modals/award-add-modal/award-add-modal.component';
+import { AwardPhotoManagerModalComponent } from '../../modals/award-photo-manager-modal/award-photo-manager-modal.component';
 import { AwardUpdateModalComponent } from '../../modals/award-update-modal/award-update-modal.component';
 import { AwardManagerTableService } from '../../services/award-manager-table.service';
 
@@ -97,19 +98,19 @@ export class AdminAwardManagerComponent implements OnInit, AfterViewInit, OnDest
   }
 
   openAwardPhotoManagerModal(id: string) {
-    // this.modalRef = this.modalService.show(AwardPhotoManagerModalComponent, {
-    //   backdrop: true,
-    //   keyboard: false,
-    //   focus: true,
-    //   show: false,
-    //   ignoreBackdropClick: true,
-    //   class: 'modal-lg modal-dialog-centered',
-    //   containerClass: 'top',
-    //   animated: true,
-    //   data: {
-    //     awardId: id,
-    //   }
-    // });
+    this.modalRef = this.modalService.show(AwardPhotoManagerModalComponent, {
+      backdrop: true,
+      keyboard: false,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-lg modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        awardId: id,
+      }
+    });
   }
 
   openAwardUpdateModal(rowData: TableRow) {
