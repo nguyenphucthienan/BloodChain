@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { RoleName } from '../core/constant/role-name';
 import { HasRoleGuard } from '../core/guards/has-role.guard';
 import { UserResolver } from '../core/resolvers/user.resolver';
+import { AdminAwardManagerComponent } from './components/admin-award-manager/admin-award-manager.component';
 import { AdminBloodBankManagerComponent } from './components/admin-blood-bank-manager/admin-blood-bank-manager.component';
 import { AdminBloodCampManagerComponent } from './components/admin-blood-camp-manager/admin-blood-camp-manager.component';
 import { AdminBloodPackManagerComponent } from './components/admin-blood-pack-manager/admin-blood-pack-manager.component';
@@ -88,6 +89,11 @@ const routes: Routes = [
         path: 'hospitals',
         component: AdminHospitalManagerComponent,
         data: { breadcrumb: 'breadcrumb.admin.hospitals' }
+      },
+      {
+        path: 'awards',
+        component: AdminAwardManagerComponent,
+        data: { breadcrumb: 'breadcrumb.admin.awards' }
       },
       {
         path: 'blood-packs',

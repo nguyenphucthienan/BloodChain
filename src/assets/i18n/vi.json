@@ -116,6 +116,7 @@
       "bloodSeparationCenters": "Trung tâm phân tách",
       "bloodBanks": "Ngân hàng máu",
       "hospitals": "Bệnh viện",
+      "awards": "Quà thưởng",
       "bloodPacks": "Túi máu",
       "bloodProducts": "Chế phẩm máu"
     },
@@ -259,7 +260,8 @@
       "bloodPackManager": "TÚI MÁU",
       "donationHistory": "LỊCH SỬ HIẾN MÁU",
       "bloodProductManager": "CHẾ PHẨM MÁU",
-      "campaignManager": "CHIẾN DỊCH"
+      "campaignManager": "CHIẾN DỊCH",
+      "awardManager": "QUÀ THƯỞNG"
     }
   },
   "timeline": {
@@ -958,6 +960,42 @@
       "updateFailed": "Cập nhật chiến dịch không thành công",
       "deleteSuccess": "Xóa chiến dịch thành công",
       "deleteFailed": "Xóa chiến dịch không thành công"
+    }
+  },
+  "awardManager": {
+    "button": {
+      "add": "Thêm quà thưởng"
+    },
+    "column": {
+      "point": "Điểm",
+      "description": "Miêu tả"
+    },
+    "placeholder": {
+      "search": "Tìm kiếm theo tên (tối thiểu 3 kí tự)"
+    },
+    "modal": {
+      "add": "Thêm quà thưởng",
+      "update": "Cập nhật quà thưởng",
+      "delete": "Xóa quà thưởng"
+    },
+    "label": {
+      "name": "Tên",
+      "Điểm": "Điểm",
+      "description": "Miêu tả"
+    },
+    "message": {
+      "nameRequired": "Tên không được bỏ trống",
+      "codesRequired": "Mã quà thưởng không được bỏ trống",
+      "pointRequired": "Điểm không được bỏ trống",
+      "descriptionRequired": "Miêu tả không được bỏ trống"
+    },
+    "alert": {
+      "addSuccess": "Thêm quà thưởng thành công",
+      "addFailed": "Thêm quà thưởng không thành công",
+      "updateSuccess": "Cập nhật quà thưởng thành công",
+      "updateFailed": "Cập nhật quà thưởng không thành công",
+      "deleteSuccess": "Xóa quà thưởng thành công",
+      "deleteFailed": "Xóa quà thưởng không thành công"
     }
   }
 }

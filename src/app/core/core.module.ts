@@ -24,6 +24,7 @@ import { TestTypesResolver } from './resolvers/test-types.resolver';
 import { UserResolver } from './resolvers/user.resolver';
 import { AlertService } from './services/alert.service';
 import { AuthService } from './services/auth.service';
+import { AwardService } from './services/award.service';
 import { BloodBankService } from './services/blood-bank.service';
 import { BloodCampService } from './services/blood-camp.service';
 import { BloodPackService } from './services/blood-pack.service';
@@ -83,6 +84,7 @@ const toastrOptions = {
     BloodPackService,
     BloodProductService,
     CampaignService,
+    AwardService,
     StatisticService,
     TestTypesResolver,
     UserResolver,

@@ -116,6 +116,7 @@
       "bloodSeparationCenters": "Blood Separation Centers",
       "bloodBanks": "Blood Banks",
       "hospitals": "Hospitals",
+      "awards": "Awards",
       "bloodPacks": "Blood Packs",
       "bloodProducts": "Blood Products"
     },
@@ -259,7 +260,8 @@
       "bloodPackManager": "BLOOD PACKS",
       "donationHistory": "DONATION HISTORY",
       "bloodProductManager": "BLOOD PRODUCTS",
-      "campaignManager": "CAMPAIGNS"
+      "campaignManager": "CAMPAIGNS",
+      "awardManager": "AWARDS"
     }
   },
   "timeline": {
@@ -958,6 +960,42 @@
       "updateFailed": "Update campaign failed",
       "deleteSuccess": "Delete campaign successfully",
       "deleteFailed": "Delete campaign failed"
+    }
+  },
+  "awardManager": {
+    "button": {
+      "add": "Add Award"
+    },
+    "column": {
+      "point": "Point",
+      "description": "Description"
+    },
+    "placeholder": {
+      "search": "Search by name (min 3 characters)"
+    },
+    "modal": {
+      "add": "Add New Award",
+      "update": "Update Award",
+      "delete": "Delete Award"
+    },
+    "label": {
+      "name": "Name",
+      "point": "Point",
+      "description": "Description"
+    },
+    "message": {
+      "nameRequired": "Name is required",
+      "codesRequired": "Codes are required",
+      "pointRequired": "Name is required",
+      "descriptionRequired": "Description is required"
+    },
+    "alert": {
+      "addSuccess": "Add award successfully",
+      "addFailed": "Add award failed",
+      "updateSuccess": "Update award successfully",
+      "updateFailed": "Update award failed",
+      "deleteSuccess": "Delete award successfully",
+      "deleteFailed": "Delete award failed"
     }
   }
 }

@@ -4,6 +4,7 @@ import { DatatableModule } from '../datatable/datatable.module';
 import { SharedModule } from '../shared/shared.module';
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
+import { AdminAwardManagerComponent } from './components/admin-award-manager/admin-award-manager.component';
 import { AdminBloodBankManagerComponent } from './components/admin-blood-bank-manager/admin-blood-bank-manager.component';
 import { AdminBloodCampManagerComponent } from './components/admin-blood-camp-manager/admin-blood-camp-manager.component';
 import { AdminBloodPackManagerComponent } from './components/admin-blood-pack-manager/admin-blood-pack-manager.component';
@@ -105,6 +106,7 @@ import { UserUpdateSuccessModalComponent } from './modals/user-update-success-mo
     AdminBloodSeparationCenterManagerComponent,
     AdminBloodBankManagerComponent,
     AdminHospitalManagerComponent,
+    AdminAwardManagerComponent,
     AdminBloodPackManagerComponent,
     UserUpdateSuccessModalComponent,
     TestTypeAddModalComponent,
@@ -137,7 +139,7 @@ import { UserUpdateSuccessModalComponent } from './modals/user-update-success-mo
     HospitalUpdateModalComponent,
     HospitalDeleteModalComponent,
     HospitalAssignStaffsModalComponent,
-    HospitalPhotoManagerModalComponent
+    HospitalPhotoManagerModalComponent,
   ],
   imports: [
     SharedModule,

@@ -20,6 +20,7 @@ export class SidebarComponent implements OnInit {
     { path: '/admin/blood-separation-centers', title: 'sidebar.title.bloodSeparationCenters', icon: 'columns' },
     { path: '/admin/blood-banks', title: 'sidebar.title.bloodBanks', icon: 'university' },
     { path: '/admin/hospitals', title: 'sidebar.title.hospitals', icon: 'hospital' },
+    { path: '/admin/awards', title: 'sidebar.title.awards', icon: 'gift' },
     // { path: '/admin/blood-packs', title: 'sidebar.title.bloodPacks', icon: 'cube' }
   ];
 
