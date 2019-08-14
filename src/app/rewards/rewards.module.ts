@@ -2,17 +2,17 @@ import { NgModule } from '@angular/core';
 
 import { DatatableModule } from '../datatable/datatable.module';
 import { SharedModule } from '../shared/shared.module';
-import { AwardsRoutingModule } from './awards-routing.module';
-import { AwardsComponent } from './awards.component';
+import { RewardsRoutingModule } from './rewards-routing.module';
+import { RewardsComponent } from './rewards.component';
 
 @NgModule({
   declarations: [
-    AwardsComponent
+    RewardsComponent
   ],
   imports: [
     SharedModule,
-    AwardsRoutingModule,
+    RewardsRoutingModule,
     DatatableModule
   ]
 })
-export class AwardsModule { }
+export class RewardsModule { }

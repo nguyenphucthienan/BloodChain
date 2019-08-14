@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AwardsComponent } from './awards.component';
+import { RewardsComponent } from './rewards.component';
 
 const routes: Routes = [
   {
-    path: 'awards',
-    data: { breadcrumb: 'breadcrumb.award.awards' },
+    path: 'rewards',
+    data: { breadcrumb: 'breadcrumb.reward.rewards' },
     children: [
       {
         path: '',
         pathMatch: 'full',
-        component: AwardsComponent
+        component: RewardsComponent
       }
     ]
   }
@@ -25,4 +25,4 @@ const routes: Routes = [
     RouterModule
   ]
 })
-export class AwardsRoutingModule { }
+export class RewardsRoutingModule { }

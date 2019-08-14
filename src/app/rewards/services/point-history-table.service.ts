@@ -13,10 +13,10 @@ import { TableService } from 'src/app/datatable/services/table.service';
 export class PointHistoryTableService implements TableService {
 
   columns: TableColumn[] = [
-    { name: 'updatedAt', text: 'awardManager.column.updatedAt', type: 'DateTimeTableCellComponent' },
-    { name: 'updatePointType', text: 'awardManager.column.updatePointType', type: 'UpdatePointTypeTableCellComponent' },
-    { name: 'amount', text: 'awardManager.column.amount', type: 'TextTableCellComponent' },
-    { name: 'description', text: 'awardManager.column.description', type: 'TextTableCellComponent' },
+    { name: 'updatedAt', text: 'rewardManager.column.updatedAt', type: 'DateTimeTableCellComponent' },
+    { name: 'updatePointType', text: 'rewardManager.column.updatePointType', type: 'UpdatePointTypeTableCellComponent' },
+    { name: 'amount', text: 'rewardManager.column.amount', type: 'TextTableCellComponent' },
+    { name: 'description', text: 'rewardManager.column.description', type: 'TextTableCellComponent' },
     { name: 'actions', text: 'common.column.actions', type: 'ActionsTableCellComponent', center: true }
   ];
 

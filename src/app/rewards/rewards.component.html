@@ -12,7 +12,7 @@
       <h3 class="h3 text-center mt-2">@{{ user?.username }}</h3>
       <h5 class="h5 text-center mt-2 mb-0">
         <mdb-icon fas icon="sun" class="mr-1"></mdb-icon>
-        <span class="font-weight-bold">{{ 'awardManager.label.points' | translate }}:</span>
+        <span class="font-weight-bold">{{ 'rewardManager.label.points' | translate }}:</span>
         {{ userInfoOnBlockchain ? userInfoOnBlockchain.point : 0 }}
       </h5>
     </div>
@@ -20,21 +20,21 @@
   <div class="card mt-3">
     <div class="card-body">
       <div class="d-flex">
-        <span class="font-weight-bold">{{ 'awardManager.label.redeem' | translate }}</span>
+        <span class="font-weight-bold">{{ 'rewardManager.label.redeem' | translate }}</span>
       </div>
       <div class="d-flex flex-sm-row flex-column justify-content-center align-items-center">
         <div class="d-flex flex-column justify-content-center align-items-center mt-sm-2 mt-4 mb-0 ml-5 mr-5">
           <mdb-icon fas icon="gifts" size="7x" class="red-text"></mdb-icon>
-          <h5 class="text-center mt-2 mb-0">{{ 'awardManager.label.vouchers' | translate }}</h5>
-          <button type="button" class="btn btn-sm btn-secondary" [routerLink]="['/awards/gift-cards']">
-            {{ 'awardManager.button.redeem' | translate }}
+          <h5 class="text-center mt-2 mb-0">{{ 'rewardManager.label.vouchers' | translate }}</h5>
+          <button type="button" class="btn btn-sm btn-secondary" [routerLink]="['/rewards/gift-cards']">
+            {{ 'rewardManager.button.redeem' | translate }}
           </button>
         </div>
         <div class="d-flex flex-column justify-content-center align-items-center mt-sm-2 mt-4 mb-0 ml-5 mr-5">
           <mdb-icon fab icon="ethereum" size="7x" class="blue-text"></mdb-icon>
           <h5 class="text-center mt-2 mb-0">Ethereum</h5>
-          <button type="button" class="btn btn-sm btn-secondary" [routerLink]="['/awards/ethereum']">
-            {{ 'awardManager.button.redeem' | translate }}
+          <button type="button" class="btn btn-sm btn-secondary" [routerLink]="['/rewards/ethereum']">
+            {{ 'rewardManager.button.redeem' | translate }}
           </button>
         </div>
       </div>

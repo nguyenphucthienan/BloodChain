@@ -9,12 +9,12 @@ import { TableCellChange } from '../datatable/models/table-cell-change.interface
 import { PointHistoryTableService } from './services/point-history-table.service';
 
 @Component({
-  selector: 'app-awards',
-  templateUrl: './awards.component.html',
-  styleUrls: ['./awards.component.scss'],
+  selector: 'app-rewards',
+  templateUrl: './rewards.component.html',
+  styleUrls: ['./rewards.component.scss'],
   providers: [PointHistoryTableService]
 })
-export class AwardsComponent implements OnInit, OnDestroy {
+export class RewardsComponent implements OnInit, OnDestroy {
 
   readonly defaultPhotoUrl = environment.photoUrl.defaultUser;
 
