@@ -969,7 +969,8 @@
   },
   "awardManager": {
     "button": {
-      "add": "Thêm quà thưởng"
+      "add": "Thêm quà thưởng",
+      "redeem": "Đổi"
     },
     "column": {
       "point": "Điểm",
@@ -988,6 +989,7 @@
       "delete": "Xóa quà thưởng"
     },
     "label": {
+      "redeem": "ĐỔI QUÀ THƯỞNG",
       "name": "Tên",
       "point": "Điểm",
       "points": "Điểm thưởng",
@@ -995,7 +997,8 @@
       "description": "Miêu tả",
       "codes": "Mã quà thưởng (cách nhau bởi một dấu phẩy \",\" và một khoảng trắng \" \")",
       "add": "Cộng thêm",
-      "subtract": "Trừ đi"
+      "subtract": "Trừ đi",
+      "vouchers": "Thẻ quà tặng"
     },
     "message": {
       "nameRequired": "Tên không được bỏ trống",

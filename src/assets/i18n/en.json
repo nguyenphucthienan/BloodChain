@@ -969,7 +969,8 @@
   },
   "awardManager": {
     "button": {
-      "add": "Add Award"
+      "add": "Add Award",
+      "redeem": "Redeem"
     },
     "column": {
       "point": "Point",
@@ -988,6 +989,7 @@
       "delete": "Delete Award"
     },
     "label": {
+      "redeem": "REDEEM",
       "name": "Name",
       "point": "Point",
       "points": "Points",
@@ -995,7 +997,8 @@
       "description": "Description",
       "codes": "Codes (separated by a comma \",\" and a space \" \")",
       "add": "Add",
-      "subtract": "Subtract"
+      "subtract": "Subtract",
+      "vouchers": "Vouchers"
     },
     "message": {
       "nameRequired": "Name is required",
