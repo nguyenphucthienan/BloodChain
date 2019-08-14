@@ -116,7 +116,7 @@
       "bloodSeparationCenters": "Trung tâm phân tách",
       "bloodBanks": "Ngân hàng máu",
       "hospitals": "Bệnh viện",
-      "awards": "Quà thưởng",
+      "rewards": "Quà thưởng",
       "bloodPacks": "Túi máu",
       "bloodProducts": "Chế phẩm máu"
     },
@@ -198,8 +198,8 @@
       "campaigns": "Chiến dịch",
       "campaignDetail": "Thông tin chiến dịch"
     },
-    "award": {
-      "awards": "Đổi thưởng"
+    "reward": {
+      "rewards": "Đổi thưởng"
     },
     "profile": {
       "main": "Hồ sơ",
@@ -230,7 +230,7 @@
       "bloodSeparationCenters": "Trung tâm phân tách",
       "bloodBanks": "Ngân hàng máu",
       "hospitals": "Bệnh viện",
-      "awards": "Quà thưởng",
+      "rewards": "Quà thưởng",
       "bloodPacks": "Túi máu",
       "bloodProducts": "Chế phẩm máu",
       "campaigns": "Chiến dịch",
@@ -265,7 +265,7 @@
       "donationHistory": "LỊCH SỬ HIẾN MÁU",
       "bloodProductManager": "CHẾ PHẨM MÁU",
       "campaignManager": "CHIẾN DỊCH",
-      "awardManager": "QUÀ THƯỞNG",
+      "rewardManager": "QUÀ THƯỞNG",
       "pointHistory": "LỊCH SỬ ĐIỂM THƯỞNG"
     }
   },
@@ -967,7 +967,7 @@
       "deleteFailed": "Xóa chiến dịch không thành công"
     }
   },
-  "awardManager": {
+  "rewardManager": {
     "button": {
       "add": "Thêm quà thưởng",
       "redeem": "Đổi"

@@ -1,6 +1,6 @@
 import { Photo } from './photo.interface';
 
-export interface Award {
+export interface Reward {
   _id: string;
   createdAt: Date;
   name: string;

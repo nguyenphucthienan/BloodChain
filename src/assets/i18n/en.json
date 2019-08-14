@@ -116,7 +116,7 @@
       "bloodSeparationCenters": "Blood Separation Centers",
       "bloodBanks": "Blood Banks",
       "hospitals": "Hospitals",
-      "awards": "Awards",
+      "rewards": "Rewards",
       "bloodPacks": "Blood Packs",
       "bloodProducts": "Blood Products"
     },
@@ -198,8 +198,8 @@
       "campaigns": "Campaigns",
       "campaignDetail": "Campaign Detail"
     },
-    "award": {
-      "awards": "Awards"
+    "reward": {
+      "rewards": "Rewards"
     },
     "profile": {
       "main": "Profile",
@@ -230,7 +230,7 @@
       "bloodSeparationCenters": "Blood Separation Centers",
       "bloodBanks": "Blood Banks",
       "hospitals": "Hospitals",
-      "awards": "Awards",
+      "rewards": "Rewards",
       "bloodPacks": "Blood Packs",
       "bloodProducts": "Blood Products",
       "campaigns": "Campaigns",
@@ -265,7 +265,7 @@
       "donationHistory": "DONATION HISTORY",
       "bloodProductManager": "BLOOD PRODUCTS",
       "campaignManager": "CAMPAIGNS",
-      "awardManager": "AWARDS",
+      "rewardManager": "REWARDS",
       "pointHistory": "POINT HISTORY"
     }
   },
@@ -967,9 +967,9 @@
       "deleteFailed": "Delete campaign failed"
     }
   },
-  "awardManager": {
+  "rewardManager": {
     "button": {
-      "add": "Add Award",
+      "add": "Add Reward",
       "redeem": "Redeem"
     },
     "column": {
@@ -984,9 +984,9 @@
       "search": "Search by name (min 3 characters)"
     },
     "modal": {
-      "add": "Add New Award",
-      "update": "Update Award",
-      "delete": "Delete Award"
+      "add": "Add New Reward",
+      "update": "Update Reward",
+      "delete": "Delete Reward"
     },
     "label": {
       "redeem": "REDEEM",
@@ -1009,12 +1009,12 @@
       "descriptionRequired": "Description is required"
     },
     "alert": {
-      "addSuccess": "Add award successfully",
-      "addFailed": "Add award failed",
-      "updateSuccess": "Update award successfully",
-      "updateFailed": "Update award failed",
-      "deleteSuccess": "Delete award successfully",
-      "deleteFailed": "Delete award failed"
+      "addSuccess": "Add reward successfully",
+      "addFailed": "Add reward failed",
+      "updateSuccess": "Update reward successfully",
+      "updateFailed": "Update reward failed",
+      "deleteSuccess": "Delete reward successfully",
+      "deleteFailed": "Delete reward failed"
     }
   }
 }

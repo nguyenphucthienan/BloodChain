@@ -1,25 +1,25 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MDBModalRef } from 'angular-bootstrap-md';
-import { Award } from 'src/app/core/models/award.interface';
+import { Reward } from 'src/app/core/models/reward.interface';
 import { AlertService } from 'src/app/core/services/alert.service';
-import { AwardService } from 'src/app/core/services/award.service';
+import { RewardService } from 'src/app/core/services/reward.service';
 
 @Component({
-  selector: 'app-award-add-modal',
-  templateUrl: './award-add-modal.component.html',
-  styleUrls: ['./award-add-modal.component.scss']
+  selector: 'app-reward-add-modal',
+  templateUrl: './reward-add-modal.component.html',
+  styleUrls: ['./reward-add-modal.component.scss']
 })
-export class AwardAddModalComponent implements OnInit {
+export class RewardAddModalComponent implements OnInit {
 
-  @Output() awardAdded = new EventEmitter();
+  @Output() rewardAdded = new EventEmitter();
 
   addForm: FormGroup;
 
   constructor(
     public modalRef: MDBModalRef,
     private fb: FormBuilder,
-    private awardService: AwardService,
+    private rewardService: RewardService,
     private alertService: AlertService
   ) { }
 
@@ -32,15 +32,15 @@ export class AwardAddModalComponent implements OnInit {
     });
   }
 
-  addAward() {
+  addReward() {
     const codes = this.addForm.value.codes.split(', ');
-    this.awardService.createAward({ ...this.addForm.value, codes })
+    this.rewardService.createReward({ ...this.addForm.value, codes })
       .subscribe(
-        (award: Award) => {
-          this.awardAdded.emit(award);
-          this.alertService.success('awardManager.alert.addSuccess');
+        (reward: Reward) => {
+          this.rewardAdded.emit(reward);
+          this.alertService.success('rewardManager.alert.addSuccess');
         },
-        error => this.alertService.error('awardManager.alert.addFailed')
+        error => this.alertService.error('rewardManager.alert.addFailed')
       );
   }
 

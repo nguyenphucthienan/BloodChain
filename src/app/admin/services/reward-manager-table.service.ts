@@ -4,7 +4,7 @@ import { FilterMode } from 'src/app/core/models/filter-mode.interface';
 import { Pagination } from 'src/app/core/models/pagination.interface';
 import { SortMode } from 'src/app/core/models/sort-mode.interface';
 import { AlertService } from 'src/app/core/services/alert.service';
-import { AwardService } from 'src/app/core/services/award.service';
+import { RewardService } from 'src/app/core/services/reward.service';
 import { TableAction, TableActionType } from 'src/app/datatable/models/table-action.interface';
 import { TableCell } from 'src/app/datatable/models/table-cell.interface';
 import { TableColumn } from 'src/app/datatable/models/table-column.interface';
@@ -12,13 +12,13 @@ import { TableRow } from 'src/app/datatable/models/table-row.interface';
 import { TableService } from 'src/app/datatable/services/table.service';
 
 @Injectable()
-export class AwardManagerTableService implements TableService {
+export class RewardManagerTableService implements TableService {
 
   columns: TableColumn[] = [
     { name: '_id', text: 'common.column.id', type: 'IdTableCellComponent', center: true, sortable: true },
     { name: 'name', text: 'common.column.name', type: 'TextTableCellComponent', sortable: true },
-    { name: 'point', text: 'awardManager.column.point', type: 'TextTableCellComponent', sortable: true },
-    { name: 'quantity', text: 'awardManager.column.quantity', type: 'TextTableCellComponent', sortable: true },
+    { name: 'point', text: 'rewardManager.column.point', type: 'TextTableCellComponent', sortable: true },
+    { name: 'quantity', text: 'rewardManager.column.quantity', type: 'TextTableCellComponent', sortable: true },
     { name: 'actions', text: 'common.column.actions', type: 'ActionsTableCellComponent', center: true }
   ];
 
@@ -44,7 +44,7 @@ export class AwardManagerTableService implements TableService {
   ];
 
   constructor(
-    private awardService: AwardService,
+    private rewardService: RewardService,
     private alertService: AlertService
   ) { }
 
@@ -53,7 +53,7 @@ export class AwardManagerTableService implements TableService {
   }
 
   getRawData() {
-    return this.awardService.getAwards(
+    return this.rewardService.getRewards(
       this.pagination,
       this.sortMode,
       this.filterMode

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AwardAddModalComponent } from './award-add-modal.component';
+import { RewardUpdateModalComponent } from './reward-update-modal.component';
 
-describe('AwardAddModalComponent', () => {
-  let component: AwardAddModalComponent;
-  let fixture: ComponentFixture<AwardAddModalComponent>;
+describe('RewardUpdateModalComponent', () => {
+  let component: RewardUpdateModalComponent;
+  let fixture: ComponentFixture<RewardUpdateModalComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AwardAddModalComponent ]
+      declarations: [ RewardUpdateModalComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AwardAddModalComponent);
+    fixture = TestBed.createComponent(RewardUpdateModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

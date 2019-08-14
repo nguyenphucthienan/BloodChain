@@ -1,23 +1,23 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { MDBModalRef } from 'angular-bootstrap-md';
 import { NgxGalleryAnimation, NgxGalleryComponent, NgxGalleryImage, NgxGalleryOptions } from 'ngx-gallery';
-import { Award } from 'src/app/core/models/award.interface';
+import { Reward } from 'src/app/core/models/reward.interface';
 import { AlertService } from 'src/app/core/services/alert.service';
-import { AwardService } from 'src/app/core/services/award.service';
+import { RewardService } from 'src/app/core/services/reward.service';
 import { TableRow } from 'src/app/datatable/models/table-row.interface';
 import { UrlUtils } from 'src/app/utils/url-utils';
 import { environment } from 'src/environments/environment';
 
 @Component({
-  selector: 'app-award-photo-manager-modal',
-  templateUrl: './award-photo-manager-modal.component.html',
-  styleUrls: ['./award-photo-manager-modal.component.scss']
+  selector: 'app-reward-photo-manager-modal',
+  templateUrl: './reward-photo-manager-modal.component.html',
+  styleUrls: ['./reward-photo-manager-modal.component.scss']
 })
-export class AwardPhotoManagerModalComponent implements OnInit {
+export class RewardPhotoManagerModalComponent implements OnInit {
 
-  private readonly photoUploadUrl = `${environment.apiUrl}/awards/{awardId}/photos`;
+  private readonly photoUploadUrl = `${environment.apiUrl}/rewards/{rewardId}/photos`;
 
-  @Input() awardId: string;
+  @Input() rewardId: string;
   @Input() rowData: TableRow;
   @Output() uploadSucceed = new EventEmitter();
   @Output() uploadFailed = new EventEmitter();
@@ -25,20 +25,20 @@ export class AwardPhotoManagerModalComponent implements OnInit {
 
   @ViewChild(NgxGalleryComponent) gallery: NgxGalleryComponent;
 
-  award: Award;
+  reward: Reward;
   galleryOptions: NgxGalleryOptions[] = [];
   galleryImages: NgxGalleryImage[] = [];
   uploadUrl: string;
 
   constructor(
     public modalRef: MDBModalRef,
-    private awardService: AwardService,
+    private rewardService: RewardService,
     private alertService: AlertService
   ) { }
 
   ngOnInit() {
     this.uploadUrl = UrlUtils.resolvePathVariables(this.photoUploadUrl, {
-      awardId: this.awardId
+      rewardId: this.rewardId
     });
 
     this.galleryOptions = [{
@@ -53,14 +53,14 @@ export class AwardPhotoManagerModalComponent implements OnInit {
       previewCloseOnEsc: true
     }];
 
-    this.getAward();
+    this.getReward();
   }
 
-  private getAward(goToLastPhoto: boolean = false) {
-    this.awardService.getAward(this.awardId)
-      .subscribe((award: Award) => {
-        this.award = award;
-        this.galleryImages = award.photos.map(photo => {
+  private getReward(goToLastPhoto: boolean = false) {
+    this.rewardService.getReward(this.rewardId)
+      .subscribe((reward: Reward) => {
+        this.reward = reward;
+        this.galleryImages = reward.photos.map(photo => {
           return {
             id: photo._id,
             small: photo.secureUrl,
@@ -77,12 +77,12 @@ export class AwardPhotoManagerModalComponent implements OnInit {
 
   deletePhoto() {
     const selectedIndex = this.gallery.selectedIndex;
-    const photoId = this.award.photos[selectedIndex]._id;
-    this.awardService.deleteAwardPhoto(this.awardId, photoId)
+    const photoId = this.reward.photos[selectedIndex]._id;
+    this.rewardService.deleteRewardPhoto(this.rewardId, photoId)
       .subscribe(
-        (award: Award) => {
+        (reward: Reward) => {
           this.alertService.success('common.alert.deletePhotoSuccess');
-          this.award.photos = this.award.photos
+          this.reward.photos = this.reward.photos
             .filter(photo => photo._id !== photoId);
           this.galleryImages = this.galleryImages
             .filter(image => this.galleryImages.indexOf(image) !== selectedIndex);
@@ -94,10 +94,10 @@ export class AwardPhotoManagerModalComponent implements OnInit {
         error => this.alertService.error('common.alert.deletePhotoFailed'));
   }
 
-  onUploadSucceed(award: Award) {
-    this.uploadSucceed.emit(award);
+  onUploadSucceed(reward: Reward) {
+    this.uploadSucceed.emit(reward);
     this.alertService.success('common.alert.uploadPhotoSuccess');
-    this.getAward(true);
+    this.getReward(true);
   }
 
   onUploadFailed() {

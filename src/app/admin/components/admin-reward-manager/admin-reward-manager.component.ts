@@ -2,25 +2,27 @@ import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, Renderer2, Vie
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { fromEvent, Subscription } from 'rxjs';
 import { debounceTime, map, tap } from 'rxjs/operators';
-import { Award } from 'src/app/core/models/award.interface';
+import { Reward } from 'src/app/core/models/reward.interface';
 import { DatatableComponent } from 'src/app/datatable/datatable.component';
 import { TableActionType } from 'src/app/datatable/models/table-action.interface';
 import { TableCellChange } from 'src/app/datatable/models/table-cell-change.interface';
 import { TableRow } from 'src/app/datatable/models/table-row.interface';
 
-import { AwardAddModalComponent } from '../../modals/award-add-modal/award-add-modal.component';
-import { AwardDeleteModalComponent } from '../../modals/award-delete-modal/award-delete-modal.component';
-import { AwardPhotoManagerModalComponent } from '../../modals/award-photo-manager-modal/award-photo-manager-modal.component';
-import { AwardUpdateModalComponent } from '../../modals/award-update-modal/award-update-modal.component';
-import { AwardManagerTableService } from '../../services/award-manager-table.service';
+import { RewardAddModalComponent } from '../../modals/reward-add-modal/reward-add-modal.component';
+import { RewardDeleteModalComponent } from '../../modals/reward-delete-modal/reward-delete-modal.component';
+import {
+  RewardPhotoManagerModalComponent,
+} from '../../modals/reward-photo-manager-modal/reward-photo-manager-modal.component';
+import { RewardUpdateModalComponent } from '../../modals/reward-update-modal/reward-update-modal.component';
+import { RewardManagerTableService } from '../../services/reward-manager-table.service';
 
 @Component({
-  selector: 'app-admin-award-manager',
-  templateUrl: './admin-award-manager.component.html',
-  styleUrls: ['./admin-award-manager.component.scss'],
-  providers: [AwardManagerTableService]
+  selector: 'app-admin-reward-manager',
+  templateUrl: './admin-reward-manager.component.html',
+  styleUrls: ['./admin-reward-manager.component.scss'],
+  providers: [RewardManagerTableService]
 })
-export class AdminAwardManagerComponent implements OnInit, AfterViewInit, OnDestroy {
+export class AdminRewardManagerComponent implements OnInit, AfterViewInit, OnDestroy {
 
   @ViewChild(DatatableComponent) datatable: DatatableComponent;
   @ViewChild('search') search: ElementRef;
@@ -29,7 +31,7 @@ export class AdminAwardManagerComponent implements OnInit, AfterViewInit, OnDest
   modalRef: MDBModalRef;
 
   constructor(
-    public awardManagerTableService: AwardManagerTableService,
+    public rewardManagerTableService: RewardManagerTableService,
     private renderer: Renderer2,
     private modalService: MDBModalService
   ) { }
@@ -43,15 +45,15 @@ export class AdminAwardManagerComponent implements OnInit, AfterViewInit, OnDest
       .pipe(
         map((event: any) => event.target.value),
         debounceTime(250),
-        tap((value: string) => this.searchAward(value))
+        tap((value: string) => this.searchReward(value))
       )
       .subscribe();
   }
 
-  searchAward(value: string) {
+  searchReward(value: string) {
     if (value.length === 0 || value.length > 2) {
-      this.awardManagerTableService.pagination.page = 1;
-      this.awardManagerTableService.filterMode.name = value;
+      this.rewardManagerTableService.pagination.page = 1;
+      this.rewardManagerTableService.filterMode.name = value;
       this.datatable.refresh();
     }
   }
@@ -60,25 +62,25 @@ export class AdminAwardManagerComponent implements OnInit, AfterViewInit, OnDest
     const action = tableCellChange.newValue;
     switch (action.type) {
       case TableActionType.GetDetail:
-        this.navigateToAwardDetail(tableCellChange.row.cells._id.value);
+        this.navigateToRewardDetail(tableCellChange.row.cells._id.value);
         break;
       case TableActionType.ManagePhotos:
-        this.openAwardPhotoManagerModal(tableCellChange.row.cells._id.value);
+        this.openRewardPhotoManagerModal(tableCellChange.row.cells._id.value);
         break;
       case TableActionType.Update:
-        this.openAwardUpdateModal(tableCellChange.row);
+        this.openRewardUpdateModal(tableCellChange.row);
         break;
       case TableActionType.Delete:
-        this.openAwardDeleteModal(tableCellChange.row);
+        this.openRewardDeleteModal(tableCellChange.row);
         break;
     }
   }
 
-  navigateToAwardDetail(id: string) {
+  navigateToRewardDetail(id: string) {
   }
 
-  openAwardAddModal() {
-    this.modalRef = this.modalService.show(AwardAddModalComponent, {
+  openRewardAddModal() {
+    this.modalRef = this.modalService.show(RewardAddModalComponent, {
       backdrop: true,
       keyboard: true,
       focus: true,
@@ -89,17 +91,17 @@ export class AdminAwardManagerComponent implements OnInit, AfterViewInit, OnDest
       animated: true
     });
 
-    this.modalRef.content.awardAdded
-      .subscribe((award: Award) => this.onAwardAdded(award));
+    this.modalRef.content.rewardAdded
+      .subscribe((reward: Reward) => this.onRewardAdded(reward));
   }
 
-  onAwardAdded(award: Award) {
+  onRewardAdded(reward: Reward) {
     this.modalRef.hide();
     this.datatable.refresh();
   }
 
-  openAwardPhotoManagerModal(id: string) {
-    this.modalRef = this.modalService.show(AwardPhotoManagerModalComponent, {
+  openRewardPhotoManagerModal(id: string) {
+    this.modalRef = this.modalService.show(RewardPhotoManagerModalComponent, {
       backdrop: true,
       keyboard: false,
       focus: true,
@@ -109,13 +111,13 @@ export class AdminAwardManagerComponent implements OnInit, AfterViewInit, OnDest
       containerClass: 'top',
       animated: true,
       data: {
-        awardId: id,
+        rewardId: id,
       }
     });
   }
 
-  openAwardUpdateModal(rowData: TableRow) {
-    this.modalRef = this.modalService.show(AwardUpdateModalComponent, {
+  openRewardUpdateModal(rowData: TableRow) {
+    this.modalRef = this.modalService.show(RewardUpdateModalComponent, {
       backdrop: true,
       keyboard: true,
       focus: true,
@@ -129,17 +131,17 @@ export class AdminAwardManagerComponent implements OnInit, AfterViewInit, OnDest
       }
     });
 
-    this.modalRef.content.awardUpdated
-      .subscribe((award: Award) => this.onAwardUpdated(award));
+    this.modalRef.content.rewardUpdated
+      .subscribe((reward: Reward) => this.onRewardUpdated(reward));
   }
 
-  onAwardUpdated(award: Award) {
+  onRewardUpdated(reward: Reward) {
     this.modalRef.hide();
     this.datatable.refresh();
   }
 
-  openAwardDeleteModal(rowData: TableRow) {
-    this.modalRef = this.modalService.show(AwardDeleteModalComponent, {
+  openRewardDeleteModal(rowData: TableRow) {
+    this.modalRef = this.modalService.show(RewardDeleteModalComponent, {
       backdrop: true,
       keyboard: true,
       focus: true,
@@ -153,11 +155,11 @@ export class AdminAwardManagerComponent implements OnInit, AfterViewInit, OnDest
       }
     });
 
-    this.modalRef.content.awardDeleted
-      .subscribe(() => this.onAwardDeleted());
+    this.modalRef.content.rewardDeleted
+      .subscribe(() => this.onRewardDeleted());
   }
 
-  onAwardDeleted() {
+  onRewardDeleted() {
     this.modalRef.hide();
     this.datatable.refresh();
   }

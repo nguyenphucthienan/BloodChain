@@ -1,28 +1,28 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MDBModalRef } from 'angular-bootstrap-md';
-import { Award } from 'src/app/core/models/award.interface';
+import { Reward } from 'src/app/core/models/reward.interface';
 import { AlertService } from 'src/app/core/services/alert.service';
-import { AwardService } from 'src/app/core/services/award.service';
+import { RewardService } from 'src/app/core/services/reward.service';
 import { TableRow } from 'src/app/datatable/models/table-row.interface';
 
 @Component({
-  selector: 'app-award-update-modal',
-  templateUrl: './award-update-modal.component.html',
-  styleUrls: ['./award-update-modal.component.scss']
+  selector: 'app-reward-update-modal',
+  templateUrl: './reward-update-modal.component.html',
+  styleUrls: ['./reward-update-modal.component.scss']
 })
-export class AwardUpdateModalComponent implements OnInit {
+export class RewardUpdateModalComponent implements OnInit {
 
   @Input() rowData: TableRow;
 
-  @Output() awardUpdated = new EventEmitter();
+  @Output() rewardUpdated = new EventEmitter();
 
   updateForm: FormGroup;
 
   constructor(
     public modalRef: MDBModalRef,
     private fb: FormBuilder,
-    private awardService: AwardService,
+    private rewardService: RewardService,
     private alertService: AlertService
   ) { }
 
@@ -40,17 +40,17 @@ export class AwardUpdateModalComponent implements OnInit {
     });
   }
 
-  updateAward() {
+  updateReward() {
     const codes = this.updateForm.value.codes.split(', ');
-    this.awardService.updateAward(
+    this.rewardService.updateReward(
       this.rowData.cells._id.value,
       { ...this.updateForm.value, codes }
     ).subscribe(
-      (award: Award) => {
-        this.awardUpdated.emit(award);
-        this.alertService.success('awardManager.alert.updateSuccess');
+      (reward: Reward) => {
+        this.rewardUpdated.emit(reward);
+        this.alertService.success('rewardManager.alert.updateSuccess');
       },
-      error => this.alertService.error('awardManager.alert.updateFailed')
+      error => this.alertService.error('rewardManager.alert.updateFailed')
     );
   }
 

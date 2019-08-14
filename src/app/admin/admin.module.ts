@@ -4,7 +4,6 @@ import { DatatableModule } from '../datatable/datatable.module';
 import { SharedModule } from '../shared/shared.module';
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
-import { AdminAwardManagerComponent } from './components/admin-award-manager/admin-award-manager.component';
 import { AdminBloodBankManagerComponent } from './components/admin-blood-bank-manager/admin-blood-bank-manager.component';
 import { AdminBloodCampManagerComponent } from './components/admin-blood-camp-manager/admin-blood-camp-manager.component';
 import { AdminBloodPackManagerComponent } from './components/admin-blood-pack-manager/admin-blood-pack-manager.component';
@@ -18,15 +17,12 @@ import {
   AdminBloodTestCenterManagerComponent,
 } from './components/admin-blood-test-center-manager/admin-blood-test-center-manager.component';
 import { AdminHospitalManagerComponent } from './components/admin-hospital-manager/admin-hospital-manager.component';
+import { AdminRewardManagerComponent } from './components/admin-reward-manager/admin-reward-manager.component';
 import { AdminTestTypeManagerComponent } from './components/admin-test-type-manager/admin-test-type-manager.component';
 import {
   AdminUserManagerUpdateUserComponent,
 } from './components/admin-user-manager-update-user/admin-user-manager-update-user.component';
 import { AdminUserManagerComponent } from './components/admin-user-manager/admin-user-manager.component';
-import { AwardAddModalComponent } from './modals/award-add-modal/award-add-modal.component';
-import { AwardDeleteModalComponent } from './modals/award-delete-modal/award-delete-modal.component';
-import { AwardPhotoManagerModalComponent } from './modals/award-photo-manager-modal/award-photo-manager-modal.component';
-import { AwardUpdateModalComponent } from './modals/award-update-modal/award-update-modal.component';
 import { BloodBankAddModalComponent } from './modals/blood-bank-add-modal/blood-bank-add-modal.component';
 import {
   BloodBankAssignStaffsModalComponent,
@@ -93,6 +89,10 @@ import {
   HospitalPhotoManagerModalComponent,
 } from './modals/hospital-photo-manager-modal/hospital-photo-manager-modal.component';
 import { HospitalUpdateModalComponent } from './modals/hospital-update-modal/hospital-update-modal.component';
+import { RewardAddModalComponent } from './modals/reward-add-modal/reward-add-modal.component';
+import { RewardDeleteModalComponent } from './modals/reward-delete-modal/reward-delete-modal.component';
+import { RewardPhotoManagerModalComponent } from './modals/reward-photo-manager-modal/reward-photo-manager-modal.component';
+import { RewardUpdateModalComponent } from './modals/reward-update-modal/reward-update-modal.component';
 import { TestTypeAddModalComponent } from './modals/test-type-add-modal/test-type-add-modal.component';
 import { TestTypeDeleteModalComponent } from './modals/test-type-delete-modal/test-type-delete-modal.component';
 import { TestTypeUpdateModalComponent } from './modals/test-type-update-modal/test-type-update-modal.component';
@@ -110,7 +110,7 @@ import { UserUpdateSuccessModalComponent } from './modals/user-update-success-mo
     AdminBloodSeparationCenterManagerComponent,
     AdminBloodBankManagerComponent,
     AdminHospitalManagerComponent,
-    AdminAwardManagerComponent,
+    AdminRewardManagerComponent,
     AdminBloodPackManagerComponent,
     UserUpdateSuccessModalComponent,
     TestTypeAddModalComponent,
@@ -144,10 +144,10 @@ import { UserUpdateSuccessModalComponent } from './modals/user-update-success-mo
     HospitalDeleteModalComponent,
     HospitalAssignStaffsModalComponent,
     HospitalPhotoManagerModalComponent,
-    AwardAddModalComponent,
-    AwardUpdateModalComponent,
-    AwardDeleteModalComponent,
-    AwardPhotoManagerModalComponent
+    RewardAddModalComponent,
+    RewardUpdateModalComponent,
+    RewardDeleteModalComponent,
+    RewardPhotoManagerModalComponent
   ],
   imports: [
     SharedModule,
@@ -187,10 +187,10 @@ import { UserUpdateSuccessModalComponent } from './modals/user-update-success-mo
     HospitalDeleteModalComponent,
     HospitalAssignStaffsModalComponent,
     HospitalPhotoManagerModalComponent,
-    AwardAddModalComponent,
-    AwardUpdateModalComponent,
-    AwardDeleteModalComponent,
-    AwardPhotoManagerModalComponent
+    RewardAddModalComponent,
+    RewardUpdateModalComponent,
+    RewardDeleteModalComponent,
+    RewardPhotoManagerModalComponent
   ]
 })
 export class AdminModule { }
