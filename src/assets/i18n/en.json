@@ -199,7 +199,9 @@
       "campaignDetail": "Campaign Detail"
     },
     "reward": {
-      "rewards": "Rewards"
+      "rewards": "Rewards",
+      "redeemVouchers": "Redeem Vouchers",
+      "redeemEthereum": "Redeem Ethereum"
     },
     "profile": {
       "main": "Profile",

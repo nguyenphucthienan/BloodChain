@@ -199,7 +199,9 @@
       "campaignDetail": "Thông tin chiến dịch"
     },
     "reward": {
-      "rewards": "Đổi thưởng"
+      "rewards": "Đổi thưởng",
+      "redeemVouchers": "Đổi thẻ quà tặng",
+      "redeemEthereum": "Đổi Ethereum"
     },
     "profile": {
       "main": "Hồ sơ",

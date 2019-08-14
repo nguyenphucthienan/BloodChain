@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <div class="card mt-3">
+    <div class="card-body">
+      <app-breadcrumb></app-breadcrumb>
+    </div>
+  </div>
+  <div class="card mt-3">
+    <div class="card-body">
+      <div class="d-flex justify-content-center align-items-center">
+        <img [src]="user?.photo?.secureUrl || defaultPhotoUrl" class="img-fluid rounded-circle photo">
+      </div>
+      <h3 class="h3 text-center mt-2">@{{ user?.username }}</h3>
+      <h5 class="h5 text-center mt-2 mb-0">
+        <mdb-icon fas icon="sun" class="mr-1"></mdb-icon>
+        <span class="font-weight-bold">{{ 'rewardManager.label.points' | translate }}:</span>
+        {{ userInfoOnBlockchain ? userInfoOnBlockchain.point : 0 }}
+      </h5>
+    </div>
+  </div>
+  <div class="card mt-3">
+    <div class="card-body">
+      <div class="d-flex">
+        <span class="font-weight-bold">{{ 'rewardManager.label.redeem' | translate }}</span>
+      </div>
+    </div>
+  </div>
+</div>
