@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { map } from 'rxjs/operators';
 import { Pagination } from 'src/app/core/models/pagination.interface';
 import { AlertService } from 'src/app/core/services/alert.service';
 import { AuthService } from 'src/app/core/services/auth.service';
@@ -13,7 +14,7 @@ export class PointHistoryTableService implements TableService {
 
   columns: TableColumn[] = [
     { name: 'updatedAt', text: 'awardManager.column.updatedAt', type: 'DateTimeTableCellComponent' },
-    { name: 'updatePointType', text: 'awardManager.column.updatePointType', type: 'TextTableCellComponent' },
+    { name: 'updatePointType', text: 'awardManager.column.updatePointType', type: 'UpdatePointTypeTableCellComponent' },
     { name: 'amount', text: 'awardManager.column.amount', type: 'TextTableCellComponent' },
     { name: 'description', text: 'awardManager.column.description', type: 'TextTableCellComponent' },
     { name: 'actions', text: 'common.column.actions', type: 'ActionsTableCellComponent', center: true }
@@ -23,7 +24,9 @@ export class PointHistoryTableService implements TableService {
 
   pagination: Pagination = {
     page: 1,
-    size: 10
+    size: 10,
+    totalItems: 0,
+    totalPages: 0
   };
 
   actions: TableAction[] = [
@@ -40,9 +43,19 @@ export class PointHistoryTableService implements TableService {
   }
 
   getRawData() {
-    return this.authService
-      .getMyPointHistoriesOnBlockchain()
-      .toPromise();
+    return this.authService.getMyPointHistoriesOnBlockchain()
+      .pipe(
+        map((response: any[]) => {
+          this.pagination = {
+            page: 1,
+            size: response.length,
+            totalItems: response.length,
+            totalPages: 1
+          };
+
+          return response;
+        })
+      ).toPromise();
   }
 
   async getDataRows() {

@@ -993,7 +993,9 @@
       "points": "Điểm thưởng",
       "quantity": "Số lượng",
       "description": "Miêu tả",
-      "codes": "Mã quà thưởng (cách nhau bởi một dấu phẩy \",\" và một khoảng trắng \" \")"
+      "codes": "Mã quà thưởng (cách nhau bởi một dấu phẩy \",\" và một khoảng trắng \" \")",
+      "add": "Cộng thêm",
+      "subtract": "Trừ đi"
     },
     "message": {
       "nameRequired": "Tên không được bỏ trống",

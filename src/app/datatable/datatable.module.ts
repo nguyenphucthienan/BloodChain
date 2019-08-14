@@ -16,6 +16,9 @@ import { ObjectTextTableCellComponent } from './cells/object-text-table-cell/obj
 import { PipedTextTableCellComponent } from './cells/piped-text-table-cell/piped-text-table-cell.component';
 import { TableCellComponent } from './cells/table-cell/table-cell.component';
 import { TextTableCellComponent } from './cells/text-table-cell/text-table-cell.component';
+import {
+  UpdatePointTypeTableCellComponent,
+} from './cells/update-point-type-table-cell/update-point-type-table-cell.component';
 import { DatatableComponent } from './datatable.component';
 
 @NgModule({
@@ -32,7 +35,8 @@ import { DatatableComponent } from './datatable.component';
     ImageTableCellComponent,
     DateTableCellComponent,
     DateTimeTableCellComponent,
-    ArrayListTableCellComponent
+    ArrayListTableCellComponent,
+    UpdatePointTypeTableCellComponent
   ],
   imports: [
     SharedModule,

@@ -10,7 +10,7 @@
         <img [src]="user?.photo?.secureUrl || defaultPhotoUrl" class="img-fluid rounded-circle photo">
       </div>
       <h3 class="h3 text-center mt-2">@{{ user?.username }}</h3>
-      <h5 class="text-center mt-2 mb-0">
+      <h5 class="h5 text-center mt-2 mb-0">
         <mdb-icon fas icon="sun" class="mr-1"></mdb-icon>
         <span class="font-weight-bold">{{ 'awardManager.label.points' | translate }}:</span>
         {{ userInfoOnBlockchain ? userInfoOnBlockchain.point : 0 }}

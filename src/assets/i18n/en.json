@@ -993,7 +993,9 @@
       "points": "Points",
       "quantity": "Quantity",
       "description": "Description",
-      "codes": "Codes (separated by a comma \",\" and a space \" \")"
+      "codes": "Codes (separated by a comma \",\" and a space \" \")",
+      "add": "Add",
+      "subtract": "Subtract"
     },
     "message": {
       "nameRequired": "Name is required",
