@@ -14,6 +14,7 @@ import { SortMode } from '../models/sort-mode.interface';
 export class RewardService {
 
   private readonly rewardsUrl = `${environment.apiUrl}/rewards`;
+  private readonly publicRewardsUrl = `${environment.apiUrl}/rewards/public`;
   private readonly rewardUrl = `${environment.apiUrl}/rewards/{id}`;
   private readonly deleteRewardPhotoUrl = `${environment.apiUrl}/rewards/{id}/photos/{photoId}`;
 
@@ -41,6 +42,20 @@ export class RewardService {
       .build();
 
     return this.http.get<Reward[]>(this.rewardsUrl, { params });
+  }
+
+  getPublicRewards(
+    pagination: Pagination = this.defaultPagination,
+    sortMode: SortMode = this.defaultSortMode,
+    filterMode?: FilterMode
+  ): Observable<Reward[]> {
+    const params = new ParamsBuilder()
+      .applyPagination(pagination)
+      .applySort(sortMode)
+      .applyFilter(filterMode)
+      .build();
+
+    return this.http.get<Reward[]>(this.publicRewardsUrl, { params });
   }
 
   getReward(id: string): Observable<Reward> {

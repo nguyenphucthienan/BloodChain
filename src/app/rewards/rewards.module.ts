@@ -4,6 +4,7 @@ import { DatatableModule } from '../datatable/datatable.module';
 import { SharedModule } from '../shared/shared.module';
 import { RewardRedeemEthereumComponent } from './components/reward-redeem-ethereum/reward-redeem-ethereum.component';
 import { RewardRedeemVouchersComponent } from './components/reward-redeem-vouchers/reward-redeem-vouchers.component';
+import { RewardVoucherCardComponent } from './components/reward-voucher-card/reward-voucher-card.component';
 import { RewardsRoutingModule } from './rewards-routing.module';
 import { RewardsComponent } from './rewards.component';
 
@@ -11,7 +12,8 @@ import { RewardsComponent } from './rewards.component';
   declarations: [
     RewardsComponent,
     RewardRedeemVouchersComponent,
-    RewardRedeemEthereumComponent
+    RewardRedeemEthereumComponent,
+    RewardVoucherCardComponent
   ],
   imports: [
     SharedModule,
