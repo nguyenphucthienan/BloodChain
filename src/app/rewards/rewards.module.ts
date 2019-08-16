@@ -11,6 +11,7 @@ import {
 import {
   RewardRedeemVoucherSuccessModalComponent,
 } from './modals/reward-redeem-voucher-success-modal/reward-redeem-voucher-success-modal.component';
+import { RewardVoucherInfoModalComponent } from './modals/reward-voucher-info-modal/reward-voucher-info-modal.component';
 import { RewardsRoutingModule } from './rewards-routing.module';
 import { RewardsComponent } from './rewards.component';
 
@@ -20,6 +21,7 @@ import { RewardsComponent } from './rewards.component';
     RewardRedeemVouchersComponent,
     RewardRedeemEthereumComponent,
     RewardVoucherCardComponent,
+    RewardVoucherInfoModalComponent,
     RewardRedeemVoucherSuccessModalComponent,
     RewardRedeemVoucherConfirmModalComponent
   ],
@@ -29,6 +31,7 @@ import { RewardsComponent } from './rewards.component';
     DatatableModule
   ],
   entryComponents: [
+    RewardVoucherInfoModalComponent,
     RewardRedeemVoucherConfirmModalComponent,
     RewardRedeemVoucherSuccessModalComponent
   ]

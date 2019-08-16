@@ -6,6 +6,7 @@ import { Reward } from 'src/app/core/models/reward.interface';
 import {
   RewardRedeemVoucherConfirmModalComponent,
 } from '../../modals/reward-redeem-voucher-confirm-modal/reward-redeem-voucher-confirm-modal.component';
+import { RewardVoucherInfoModalComponent } from '../../modals/reward-voucher-info-modal/reward-voucher-info-modal.component';
 
 @Component({
   selector: 'app-reward-voucher-card',
@@ -75,6 +76,19 @@ export class RewardVoucherCardComponent implements OnInit {
   }
 
   openRewardInfoModal() {
+    this.modalRef = this.modalService.show(RewardVoucherInfoModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        reward: this.reward
+      }
+    });
   }
 
 }

@@ -1,0 +1,26 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close pull-right" (click)="close()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100">{{ 'rewardManager.modal.voucherInfo' | translate }}</h4>
+  </div>
+  <div id="print-section" class="modal-body">
+    <h4 class="h4 mb-3">{{ reward?.name }}</h4>
+    <p class="font-weight-bold mb-2">
+      <mdb-icon fas icon="sun" class="mr-1"></mdb-icon>
+      {{ reward.point }}
+      {{ 'rewardManager.label.points' | translate }}
+    </p>
+    <p class="mb-0">
+      <mdb-icon fas icon="comment-alt" class="mr-1"></mdb-icon>
+      <span class="font-weight-bold">{{ 'rewardManager.label.description' | translate }}: </span>
+      {{ reward?.description }}
+    </p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" mdbBtn color="secondary" class="waves-light" (click)="close()" mdbWavesEffect>
+      {{ 'common.button.cancel' | translate }}
+    </button>
+  </div>
+</div>
