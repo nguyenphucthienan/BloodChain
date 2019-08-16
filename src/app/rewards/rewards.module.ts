@@ -6,8 +6,8 @@ import { RewardRedeemEthereumComponent } from './components/reward-redeem-ethere
 import { RewardRedeemVouchersComponent } from './components/reward-redeem-vouchers/reward-redeem-vouchers.component';
 import { RewardVoucherCardComponent } from './components/reward-voucher-card/reward-voucher-card.component';
 import {
-  RewardRedeemConfirmModalComponent,
-} from './modals/reward-redeem-confirm-modal/reward-redeem-confirm-modal.component';
+  RewardRedeemVoucherConfirmModalComponent,
+} from './modals/reward-redeem-voucher-confirm-modal/reward-redeem-voucher-confirm-modal.component';
 import {
   RewardRedeemVoucherSuccessModalComponent,
 } from './modals/reward-redeem-voucher-success-modal/reward-redeem-voucher-success-modal.component';
@@ -20,8 +20,8 @@ import { RewardsComponent } from './rewards.component';
     RewardRedeemVouchersComponent,
     RewardRedeemEthereumComponent,
     RewardVoucherCardComponent,
-    RewardRedeemConfirmModalComponent,
-    RewardRedeemVoucherSuccessModalComponent
+    RewardRedeemVoucherSuccessModalComponent,
+    RewardRedeemVoucherConfirmModalComponent
   ],
   imports: [
     SharedModule,
@@ -29,7 +29,7 @@ import { RewardsComponent } from './rewards.component';
     DatatableModule
   ],
   entryComponents: [
-    RewardRedeemConfirmModalComponent,
+    RewardRedeemVoucherConfirmModalComponent,
     RewardRedeemVoucherSuccessModalComponent
   ]
 })

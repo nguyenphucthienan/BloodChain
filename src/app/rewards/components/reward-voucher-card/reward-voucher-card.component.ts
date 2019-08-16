@@ -4,8 +4,8 @@ import { NgxGalleryAnimation, NgxGalleryImage, NgxGalleryOptions } from 'ngx-gal
 import { Reward } from 'src/app/core/models/reward.interface';
 
 import {
-  RewardRedeemConfirmModalComponent,
-} from '../../modals/reward-redeem-confirm-modal/reward-redeem-confirm-modal.component';
+  RewardRedeemVoucherConfirmModalComponent,
+} from '../../modals/reward-redeem-voucher-confirm-modal/reward-redeem-voucher-confirm-modal.component';
 
 @Component({
   selector: 'app-reward-voucher-card',
@@ -51,7 +51,7 @@ export class RewardVoucherCardComponent implements OnInit {
   }
 
   openRewardRedeemConfirmModal() {
-    this.modalRef = this.modalService.show(RewardRedeemConfirmModalComponent, {
+    this.modalRef = this.modalService.show(RewardRedeemVoucherConfirmModalComponent, {
       backdrop: true,
       keyboard: true,
       focus: true,

@@ -990,7 +990,8 @@
       "add": "Add New Reward",
       "update": "Update Reward",
       "delete": "Delete Reward",
-      "redeem": "Redeem Reward",
+      "redeemVoucher": "Redeem Voucher",
+      "redeemEthereum": "Redeem Ethereum",
       "voucherInfo": "Voucher Info",
       "ethreumInfo": "Ethereum Info"
     },
@@ -1019,8 +1020,10 @@
       "minPoint": "Point must be greater than or equal 100",
       "maxPoint": "Point must be less than or equal 1000",
       "descriptionRequired": "Description is required",
-      "redeemRewardSuccess": "Redeem reward successfully",
-      "redeemRewardFailed": "Redeem reward failed"
+      "redeemVoucherSuccess": "Redeem voucher successfully",
+      "redeemVoucherFailed": "Redeem voucher failed",
+      "redeemEthereumSuccess": "Redeem ethereum successfully",
+      "redeemEthereumFailed": "Redeem ethereum failed"
     },
     "alert": {
       "addSuccess": "Add reward successfully",

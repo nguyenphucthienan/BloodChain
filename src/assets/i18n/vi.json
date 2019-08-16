@@ -990,7 +990,8 @@
       "add": "Thêm quà thưởng",
       "update": "Cập nhật quà thưởng",
       "delete": "Xóa quà thưởng",
-      "redeem": "Đổi quà thưởng",
+      "redeemVoucher": "Đổi quà thưởng",
+      "redeemEthereum": "Đổi Ethereum",
       "voucherInfo": "Thông tin quà thưởng",
       "ethreumInfo": "Thông tin Ethereum"
     },

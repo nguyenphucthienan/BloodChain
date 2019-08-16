@@ -1,17 +1,17 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { MDBModalRef } from 'angular-bootstrap-md';
-import { NgxSpinnerService } from 'ngx-spinner';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Reward } from 'src/app/core/models/reward.interface';
-import { AlertService } from 'src/app/core/services/alert.service';
+import { MDBModalRef } from 'angular-bootstrap-md';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { RewardService } from 'src/app/core/services/reward.service';
+import { AlertService } from 'src/app/core/services/alert.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
-  selector: 'app-reward-redeem-confirm-modal',
-  templateUrl: './reward-redeem-confirm-modal.component.html',
-  styleUrls: ['./reward-redeem-confirm-modal.component.scss']
+  selector: 'app-reward-redeem-voucher-confirm-modal',
+  templateUrl: './reward-redeem-voucher-confirm-modal.component.html',
+  styleUrls: ['./reward-redeem-voucher-confirm-modal.component.scss']
 })
-export class RewardRedeemConfirmModalComponent implements OnInit {
+export class RewardRedeemVoucherConfirmModalComponent implements OnInit {
 
   @Input() reward: Reward;
   @Output() rewardRedeemed = new EventEmitter();
@@ -44,7 +44,7 @@ export class RewardRedeemConfirmModalComponent implements OnInit {
       .subscribe(
         (response) => {
           this.spinnerService.hide();
-          this.alertService.success('rewardManager.message.redeemRewardSuccess');
+          this.alertService.success('rewardManager.message.redeemVoucherSuccess');
           this.rewardRedeemed.emit({
             reward: this.reward,
             code: response.code
@@ -52,7 +52,7 @@ export class RewardRedeemConfirmModalComponent implements OnInit {
         },
         (error) => {
           this.spinnerService.hide();
-          this.alertService.error('rewardManager.message.redeemRewardFailed');
+          this.alertService.error('rewardManager.message.redeemVoucherFailed');
         }
       );
   }
