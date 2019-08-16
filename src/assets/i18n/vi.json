@@ -59,7 +59,8 @@
       "detail": "Chi tiết",
       "update": "Cập nhật",
       "delete": "Xóa",
-      "assign": "Cấp quyền"
+      "assign": "Cấp quyền",
+      "managePhotos": "Quản lí hình ảnh"
     },
     "modal": {
       "scanQrCode": "Quét QR Code",
@@ -982,6 +983,9 @@
       "updatedAt": "Thời gian",
       "amount": "Số điểm thưởng",
       "description": "Miêu tả"
+    },
+    "tooltip":{
+      "manageCodes": "Quản lí mã đổi thưởng"
     },
     "placeholder": {
       "search": "Tìm kiếm theo tên (tối thiểu 3 kí tự)"

@@ -27,7 +27,6 @@ export class RewardUpdateModalComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const codes = this.rowData.cells.codes.value.join(', ');
     this.updateForm = this.fb.group({
       name: [this.rowData.cells.name.value, Validators.required],
       point: [this.rowData.cells.point.value, [
@@ -35,16 +34,14 @@ export class RewardUpdateModalComponent implements OnInit {
         Validators.min(100),
         Validators.max(1000)
       ]],
-      description: [this.rowData.cells.description.value, Validators.required],
-      codes: [codes, Validators.required]
+      description: [this.rowData.cells.description.value, Validators.required]
     });
   }
 
   updateReward() {
-    const codes = this.updateForm.value.codes.split(', ');
     this.rewardService.updateReward(
       this.rowData.cells._id.value,
-      { ...this.updateForm.value, codes }
+      this.updateForm.value,
     ).subscribe(
       (reward: Reward) => {
         this.rewardUpdated.emit(reward);

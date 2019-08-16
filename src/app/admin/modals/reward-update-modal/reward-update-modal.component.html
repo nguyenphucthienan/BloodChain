@@ -35,14 +35,6 @@
           {{ 'rewardManager.message.descriptionRequired' | translate }}
         </mdb-error>
       </div>
-      <div class="md-form">
-        <textarea type="text" id="codes" formControlName="codes" class="md-textarea md-textarea-auto form-control"
-          mdbInput></textarea>
-        <label for="codes">{{ 'rewardManager.label.codes' | translate }}</label>
-        <mdb-error *ngIf="controlHasError('codes', 'required')">
-          {{ 'rewardManager.message.codesRequired' | translate }}
-        </mdb-error>
-      </div>
     </div>
     <div class="modal-footer">
       <button type="button" mdbBtn color="secondary" class="waves-light" (click)="modalRef.hide()"

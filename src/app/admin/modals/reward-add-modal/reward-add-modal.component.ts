@@ -27,14 +27,12 @@ export class RewardAddModalComponent implements OnInit {
     this.addForm = this.fb.group({
       name: ['', Validators.required],
       point: [100, [Validators.required, Validators.min(100), Validators.max(1000)]],
-      description: ['', Validators.required],
-      codes: ['', Validators.required]
+      description: ['', Validators.required]
     });
   }
 
   addReward() {
-    const codes = this.addForm.value.codes.split(', ');
-    this.rewardService.createReward({ ...this.addForm.value, codes })
+    this.rewardService.createReward(this.addForm.value)
       .subscribe(
         (reward: Reward) => {
           this.rewardAdded.emit(reward);

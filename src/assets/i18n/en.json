@@ -59,7 +59,8 @@
       "detail": "Detail",
       "update": "Update",
       "delete": "Delete",
-      "assign": "Assign"
+      "assign": "Assign",
+      "managePhotos": "Manage Photos"
     },
     "modal": {
       "scanQrCode": "Scan QR Code",
@@ -982,6 +983,9 @@
       "updatedAt": "Time",
       "amount": "Amount",
       "description": "Description"
+    },
+    "tooltip": {
+      "manageCodes": "Manage Codes"
     },
     "placeholder": {
       "search": "Search by name (min 3 characters)"

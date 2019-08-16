@@ -40,7 +40,7 @@ export class BloodBankManagerTableService {
   actions: TableAction[] = [
     { class: 'btn-info', icon: 'fa fa-info-circle', text: 'common.tooltip.detail', type: TableActionType.GetDetail },
     { class: 'btn-dark', icon: 'fa fa-user-tag', text: 'common.tooltip.assign', type: TableActionType.Assign },
-    { class: 'btn-dark', icon: 'fa fa-image', text: 'common.tooltip.assign', type: TableActionType.ManagePhotos },
+    { class: 'btn-dark', icon: 'fa fa-image', text: 'common.tooltip.managePhotos', type: TableActionType.ManagePhotos },
     { class: 'btn-dark', icon: 'fa fa-edit', text: 'common.tooltip.update', type: TableActionType.Update },
     { class: 'btn-danger', icon: 'fa fa-trash-alt', text: 'common.tooltip.delete', type: TableActionType.Delete }
   ];
