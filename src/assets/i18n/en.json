@@ -990,7 +990,9 @@
       "add": "Add New Reward",
       "update": "Update Reward",
       "delete": "Delete Reward",
-      "redeem": "Redeem Reward"
+      "redeem": "Redeem Reward",
+      "voucherInfo": "Voucher Info",
+      "ethreumInfo": "Ethereum Info"
     },
     "label": {
       "redeemVouchers": "REDEEM VOUCHERS",
@@ -1000,6 +1002,7 @@
       "points": "Points",
       "quantity": "Quantity",
       "description": "Description",
+      "code": "Code",
       "codes": "Codes (separated by a comma \",\" and a space \" \")",
       "add": "Add",
       "subtract": "Subtract",
@@ -1015,7 +1018,9 @@
       "pointRequired": "Name is required",
       "minPoint": "Point must be greater than or equal 100",
       "maxPoint": "Point must be less than or equal 1000",
-      "descriptionRequired": "Description is required"
+      "descriptionRequired": "Description is required",
+      "redeemRewardSuccess": "Redeem reward successfully",
+      "redeemRewardFailed": "Redeem reward failed"
     },
     "alert": {
       "addSuccess": "Add reward successfully",

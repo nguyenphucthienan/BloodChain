@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit, Renderer2 } from '@angular/core';
-import { MDBModalRef } from 'angular-bootstrap-md';
+import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { FilterMode } from 'src/app/core/models/filter-mode.interface';
 import { Pagination } from 'src/app/core/models/pagination.interface';
 import { Reward } from 'src/app/core/models/reward.interface';
@@ -8,6 +8,10 @@ import { User } from 'src/app/core/models/user.interface';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { RewardService } from 'src/app/core/services/reward.service';
 import { environment } from 'src/environments/environment';
+
+import {
+  RewardRedeemVoucherSuccessModalComponent,
+} from '../../modals/reward-redeem-voucher-success-modal/reward-redeem-voucher-success-modal.component';
 
 @Component({
   selector: 'app-reward-redeem-vouchers',
@@ -40,7 +44,8 @@ export class RewardRedeemVouchersComponent implements OnInit, OnDestroy {
   constructor(
     private renderer: Renderer2,
     private authService: AuthService,
-    private rewardService: RewardService
+    private rewardService: RewardService,
+    private modalService: MDBModalService
   ) { }
 
   ngOnInit() {
@@ -72,9 +77,27 @@ export class RewardRedeemVouchersComponent implements OnInit, OnDestroy {
     this.getRewards();
   }
 
-  onRewardRedeemed(result: boolean) {
+  onRewardRedeemed(data: { reward: Reward, code: string }) {
     this.getUserInfo();
     this.getRewards();
+    this.openRewardRedeemSuccessModal(data.reward, data.code);
+  }
+
+  openRewardRedeemSuccessModal(reward: Reward, code: string) {
+    this.modalRef = this.modalService.show(RewardRedeemVoucherSuccessModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        reward,
+        code
+      }
+    });
   }
 
   ngOnDestroy() {

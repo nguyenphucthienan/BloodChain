@@ -990,7 +990,9 @@
       "add": "Thêm quà thưởng",
       "update": "Cập nhật quà thưởng",
       "delete": "Xóa quà thưởng",
-      "redeem": "Đổi quà thưởng"
+      "redeem": "Đổi quà thưởng",
+      "voucherInfo": "Thông tin quà thưởng",
+      "ethreumInfo": "Thông tin Ethereum"
     },
     "label": {
       "redeemVouchers": "ĐỔI QUÀ THƯỞNG",
@@ -1000,6 +1002,7 @@
       "points": "Điểm thưởng",
       "quantity": "Số lượng",
       "description": "Miêu tả",
+      "code": "Mã quà thưởng",
       "codes": "Mã quà thưởng (cách nhau bởi một dấu phẩy \",\" và một khoảng trắng \" \")",
       "add": "Cộng thêm",
       "subtract": "Trừ đi",
@@ -1015,7 +1018,9 @@
       "pointRequired": "Điểm không được bỏ trống",
       "minPoint": "Tối thiểu 100 điểm",
       "maxPoint": "Tối đa 1000 điểm",
-      "descriptionRequired": "Miêu tả không được bỏ trống"
+      "descriptionRequired": "Miêu tả không được bỏ trống",
+      "redeemRewardSuccess": "Đổi thưởng thành công",
+      "redeemRewardFailed": "Đổi thưởng không thành công"
     },
     "alert": {
       "addSuccess": "Thêm quà thưởng thành công",

@@ -27,7 +27,7 @@
       {{ 'common.button.no' | translate }}
     </button>
     <button mdbBtn type="submit" color="primary" class="waves-light" (click)="redeemAward()"
-      [disabled]="!remainingPoint || remainingPoint < 0" mdbWavesEffect>
+      [disabled]="loading || remainingPoint < 0" mdbWavesEffect>
       {{ 'common.button.yes' | translate }}
     </button>
   </div>

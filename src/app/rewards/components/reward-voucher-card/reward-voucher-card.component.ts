@@ -15,7 +15,7 @@ import {
 export class RewardVoucherCardComponent implements OnInit {
 
   @Input() reward: Reward;
-  @Output() rewardRedeemed = new EventEmitter<boolean>();
+  @Output() rewardRedeemed = new EventEmitter();
 
   galleryOptions: NgxGalleryOptions[] = [];
   galleryImages: NgxGalleryImage[] = [];
@@ -66,12 +66,12 @@ export class RewardVoucherCardComponent implements OnInit {
     });
 
     this.modalRef.content.rewardRedeemed
-      .subscribe((result: boolean) => this.onRewardRedeemed(result));
+      .subscribe((data: any) => this.onRewardRedeemed(data));
   }
 
-  onRewardRedeemed(result: boolean) {
+  onRewardRedeemed(data: any) {
     this.modalRef.hide();
-    this.rewardRedeemed.emit(result);
+    this.rewardRedeemed.emit(data);
   }
 
   openRewardInfoModal() {
