@@ -16,7 +16,7 @@ export class PointHistoryTableService implements TableService {
     { name: 'updatedAt', text: 'rewardManager.column.updatedAt', type: 'DateTimeTableCellComponent' },
     { name: 'updatePointType', text: 'rewardManager.column.updatePointType', type: 'UpdatePointTypeTableCellComponent' },
     { name: 'amount', text: 'rewardManager.column.amount', type: 'TextTableCellComponent' },
-    { name: 'description', text: 'rewardManager.column.description', type: 'TextTableCellComponent' },
+    { name: 'descriptionType', text: 'rewardManager.column.description', type: 'TextTableCellComponent' },
     { name: 'actions', text: 'common.column.actions', type: 'ActionsTableCellComponent', center: true }
   ];
 

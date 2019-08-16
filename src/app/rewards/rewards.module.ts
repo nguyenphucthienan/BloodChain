@@ -6,6 +6,9 @@ import { RewardRedeemEthereumComponent } from './components/reward-redeem-ethere
 import { RewardRedeemVouchersComponent } from './components/reward-redeem-vouchers/reward-redeem-vouchers.component';
 import { RewardVoucherCardComponent } from './components/reward-voucher-card/reward-voucher-card.component';
 import {
+  RewardPointHistoryInfoModalComponent,
+} from './modals/reward-point-history-info-modal/reward-point-history-info-modal.component';
+import {
   RewardRedeemVoucherConfirmModalComponent,
 } from './modals/reward-redeem-voucher-confirm-modal/reward-redeem-voucher-confirm-modal.component';
 import {
@@ -22,8 +25,9 @@ import { RewardsComponent } from './rewards.component';
     RewardRedeemEthereumComponent,
     RewardVoucherCardComponent,
     RewardVoucherInfoModalComponent,
+    RewardPointHistoryInfoModalComponent,
     RewardRedeemVoucherSuccessModalComponent,
-    RewardRedeemVoucherConfirmModalComponent
+    RewardRedeemVoucherConfirmModalComponent,
   ],
   imports: [
     SharedModule,
@@ -32,6 +36,7 @@ import { RewardsComponent } from './rewards.component';
   ],
   entryComponents: [
     RewardVoucherInfoModalComponent,
+    RewardPointHistoryInfoModalComponent,
     RewardRedeemVoucherConfirmModalComponent,
     RewardRedeemVoucherSuccessModalComponent
   ]

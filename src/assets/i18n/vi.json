@@ -992,6 +992,7 @@
       "delete": "Xóa quà thưởng",
       "redeemVoucher": "Đổi quà thưởng",
       "redeemEthereum": "Đổi Ethereum",
+      "pointInfo": "Thông tin điểm thưởng",
       "voucherInfo": "Thông tin quà thưởng",
       "ethreumInfo": "Thông tin Ethereum"
     },
@@ -1008,6 +1009,13 @@
       "add": "Cộng thêm",
       "subtract": "Trừ đi",
       "vouchers": "Thẻ quà tặng",
+      "type": "Loại",
+      "bloodPackId": "ID túi máu",
+      "rewardId": "ID quà thưởng",
+      "rewardName": "Quà thưởng",
+      "ethAddress": "Địa chỉ ETH",
+      "ethAmount": "Số lượng ETH",
+      "transactionId": "ID giao dịch",
       "currentPoints": "Điểm hiện tại",
       "rewardPoints": "Điểm của quà thưởng",
       "remainingPoints": "Điểm còn lại"

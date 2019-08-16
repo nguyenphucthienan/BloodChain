@@ -992,6 +992,7 @@
       "delete": "Delete Reward",
       "redeemVoucher": "Redeem Voucher",
       "redeemEthereum": "Redeem Ethereum",
+      "pointInfo": "Point Info",
       "voucherInfo": "Voucher Info",
       "ethreumInfo": "Ethereum Info"
     },
@@ -1008,6 +1009,13 @@
       "add": "Add",
       "subtract": "Subtract",
       "vouchers": "Vouchers",
+      "type": "Type",
+      "bloodPackId": "Blood Pack ID",
+      "rewardId": "Reward ID",
+      "rewardName": "Reward name",
+      "ethAddress": "ETH Address",
+      "ethAmount": "ETH Amount",
+      "transactionId": "Transaction ID",
       "currentPoints": "Current points",
       "rewardPoints": "Reward points",
       "remainingPoints": "Remaining points"

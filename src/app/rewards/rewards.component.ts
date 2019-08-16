@@ -1,11 +1,15 @@
 import { Component, OnDestroy, OnInit, Renderer2 } from '@angular/core';
-import { MDBModalRef } from 'angular-bootstrap-md';
+import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { environment } from 'src/environments/environment';
 
 import { User } from '../core/models/user.interface';
 import { AuthService } from '../core/services/auth.service';
 import { TableActionType } from '../datatable/models/table-action.interface';
 import { TableCellChange } from '../datatable/models/table-cell-change.interface';
+import { TableRow } from '../datatable/models/table-row.interface';
+import {
+  RewardPointHistoryInfoModalComponent,
+} from './modals/reward-point-history-info-modal/reward-point-history-info-modal.component';
 import { PointHistoryTableService } from './services/point-history-table.service';
 
 @Component({
@@ -29,7 +33,8 @@ export class RewardsComponent implements OnInit, OnDestroy {
   constructor(
     public pointHistoryTableService: PointHistoryTableService,
     private renderer: Renderer2,
-    private authService: AuthService
+    private authService: AuthService,
+    private modalService: MDBModalService,
   ) { }
 
   ngOnInit() {
@@ -51,8 +56,25 @@ export class RewardsComponent implements OnInit, OnDestroy {
     const action = tableCellChange.newValue;
     switch (action.type) {
       case TableActionType.GetDetail:
+        this.openPointHistoryInfoModal(tableCellChange.row);
         break;
     }
+  }
+
+  openPointHistoryInfoModal(rowData: TableRow) {
+    this.modalRef = this.modalService.show(RewardPointHistoryInfoModalComponent, {
+      backdrop: true,
+      keyboard: false,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        rowData
+      }
+    });
   }
 
   ngOnDestroy() {
