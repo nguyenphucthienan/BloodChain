@@ -9,6 +9,7 @@ import { TableCellChange } from 'src/app/datatable/models/table-cell-change.inte
 import { TableRow } from 'src/app/datatable/models/table-row.interface';
 
 import { RewardAddModalComponent } from '../../modals/reward-add-modal/reward-add-modal.component';
+import { RewardCodeManagerModalComponent } from '../../modals/reward-code-manager-modal/reward-code-manager-modal.component';
 import { RewardDeleteModalComponent } from '../../modals/reward-delete-modal/reward-delete-modal.component';
 import {
   RewardPhotoManagerModalComponent,
@@ -63,6 +64,9 @@ export class AdminRewardManagerComponent implements OnInit, AfterViewInit, OnDes
     switch (action.type) {
       case TableActionType.GetDetail:
         this.navigateToRewardDetail(tableCellChange.row.cells._id.value);
+        break;
+      case TableActionType.Assign:
+        this.openRewardCodeManagerModal(tableCellChange.row);
         break;
       case TableActionType.ManagePhotos:
         this.openRewardPhotoManagerModal(tableCellChange.row.cells._id.value);
@@ -136,6 +140,30 @@ export class AdminRewardManagerComponent implements OnInit, AfterViewInit, OnDes
   }
 
   onRewardUpdated(reward: Reward) {
+    this.modalRef.hide();
+    this.datatable.refresh();
+  }
+
+  openRewardCodeManagerModal(rowData: TableRow) {
+    this.modalRef = this.modalService.show(RewardCodeManagerModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-lg modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        rowData,
+      }
+    });
+
+    this.modalRef.content.rewardUpdated
+      .subscribe((reward: Reward) => this.onRewardCodesUpdated(reward));
+  }
+
+  onRewardCodesUpdated(reward: Reward) {
     this.modalRef.hide();
     this.datatable.refresh();
   }

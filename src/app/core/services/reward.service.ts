@@ -16,6 +16,7 @@ export class RewardService {
   private readonly rewardsUrl = `${environment.apiUrl}/rewards`;
   private readonly publicRewardsUrl = `${environment.apiUrl}/rewards/public`;
   private readonly rewardUrl = `${environment.apiUrl}/rewards/{id}`;
+  private readonly rewardCodesUrl = `${environment.apiUrl}/rewards/{id}/codes`;
   private readonly redeemRewardUrl = `${environment.apiUrl}/rewards/{id}/redeem`;
   private readonly deleteRewardPhotoUrl = `${environment.apiUrl}/rewards/{id}/photos/{photoId}`;
 
@@ -81,6 +82,11 @@ export class RewardService {
   deleteRewardPhoto(id: string, photoId: string): Observable<Reward> {
     const url = UrlUtils.resolvePathVariables(this.deleteRewardPhotoUrl, { id, photoId });
     return this.http.delete<Reward>(url);
+  }
+
+  updateRewardCodes(id: string, model: { codesToAdd: string[], codesToRemove: string[] }): Observable<any> {
+    const url = UrlUtils.resolvePathVariables(this.rewardCodesUrl, { id });
+    return this.http.put<Reward>(url, model);
   }
 
   redeemReward(id: string): Observable<any> {

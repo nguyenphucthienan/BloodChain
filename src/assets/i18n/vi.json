@@ -984,7 +984,7 @@
       "amount": "Số điểm thưởng",
       "description": "Miêu tả"
     },
-    "tooltip":{
+    "tooltip": {
       "manageCodes": "Quản lí mã đổi thưởng"
     },
     "placeholder": {
@@ -994,6 +994,7 @@
       "add": "Thêm quà thưởng",
       "update": "Cập nhật quà thưởng",
       "delete": "Xóa quà thưởng",
+      "codeManager": "Quản lí mã quà thưởng",
       "redeemVoucher": "Đổi quà thưởng",
       "redeemEthereum": "Đổi Ethereum",
       "pointInfo": "Thông tin điểm thưởng",
@@ -1010,6 +1011,8 @@
       "description": "Miêu tả",
       "code": "Mã quà thưởng",
       "codes": "Mã quà thưởng (cách nhau bởi một dấu phẩy \",\" và một khoảng trắng \" \")",
+      "codesToAdd": "Mã quà thưởng thêm vào (cách nhau bởi một dấu phẩy \",\" và một khoảng trắng \" \")",
+      "codesToRemove": "Mã quà thưởng xóa đi (cách nhau bởi một dấu phẩy \",\" và một khoảng trắng \" \")",
       "add": "Cộng thêm",
       "subtract": "Trừ đi",
       "vouchers": "Thẻ quà tặng",

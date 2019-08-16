@@ -90,6 +90,7 @@ import {
 } from './modals/hospital-photo-manager-modal/hospital-photo-manager-modal.component';
 import { HospitalUpdateModalComponent } from './modals/hospital-update-modal/hospital-update-modal.component';
 import { RewardAddModalComponent } from './modals/reward-add-modal/reward-add-modal.component';
+import { RewardCodeManagerModalComponent } from './modals/reward-code-manager-modal/reward-code-manager-modal.component';
 import { RewardDeleteModalComponent } from './modals/reward-delete-modal/reward-delete-modal.component';
 import { RewardPhotoManagerModalComponent } from './modals/reward-photo-manager-modal/reward-photo-manager-modal.component';
 import { RewardUpdateModalComponent } from './modals/reward-update-modal/reward-update-modal.component';
@@ -147,6 +148,7 @@ import { UserUpdateSuccessModalComponent } from './modals/user-update-success-mo
     RewardAddModalComponent,
     RewardUpdateModalComponent,
     RewardDeleteModalComponent,
+    RewardCodeManagerModalComponent,
     RewardPhotoManagerModalComponent
   ],
   imports: [
@@ -190,6 +192,7 @@ import { UserUpdateSuccessModalComponent } from './modals/user-update-success-mo
     RewardAddModalComponent,
     RewardUpdateModalComponent,
     RewardDeleteModalComponent,
+    RewardCodeManagerModalComponent,
     RewardPhotoManagerModalComponent
   ]
 })
