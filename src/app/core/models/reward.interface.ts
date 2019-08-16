@@ -7,5 +7,6 @@ export interface Reward {
   point: number;
   description: string;
   codes?: string[];
-  photos: Photo[];
+  quantity?: string[];
+  photos?: Photo[];
 }

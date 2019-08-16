@@ -972,7 +972,8 @@
   "rewardManager": {
     "button": {
       "add": "Thêm quà thưởng",
-      "redeem": "Đổi"
+      "redeem": "Đổi",
+      "moreInfo": "Xem thêm"
     },
     "column": {
       "point": "Điểm",

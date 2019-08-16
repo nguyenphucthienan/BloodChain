@@ -972,7 +972,8 @@
   "rewardManager": {
     "button": {
       "add": "Add Reward",
-      "redeem": "Redeem"
+      "redeem": "Redeem",
+      "moreInfo": "More Info"
     },
     "column": {
       "point": "Point",

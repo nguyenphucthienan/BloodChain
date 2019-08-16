@@ -1,5 +1,35 @@
 <div class="card d-flex h-100">
   <div class="card-body">
-    {{ reward | json }}
+    <ngx-gallery *ngIf="galleryImages.length > 0" [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+    <hr>
+    <h4 class="mb-3">{{ reward.name }}</h4>
+    <p class="font-weight-bold mb-2">
+      <mdb-icon fas icon="sun" class="mr-1"></mdb-icon>
+      {{ reward.point }}
+      {{ 'rewardManager.label.point' | translate }}
+    </p>
+    <p class="mb-0">
+      <span class="font-weight-bold">
+        <mdb-icon fas icon="list-ul" class="mr-1"></mdb-icon>
+        {{ 'rewardManager.label.quantity' | translate }}:
+      </span>
+      {{ reward.quantity }}
+    </p>
+  </div>
+  <div class="card-footer">
+    <div class="row">
+      <div class="col">
+        <button type="button" mdbBtn size="sm" color="primary" block="true" class="waves-light h-100"
+          (click)="openRedeemRewardConfirmModal()" mdbWavesEffect>
+          {{ 'rewardManager.button.redeem' | translate }}
+        </button>
+      </div>
+      <div class="col ml-0">
+        <button type="button" mdbBtn size="sm" color="secondary" block="true" class="waves-light h-100"
+          (click)="openRewardInfoModal()" mdbWavesEffect>
+          {{ 'rewardManager.button.moreInfo' | translate }}
+        </button>
+      </div>
+    </div>
   </div>
 </div>
