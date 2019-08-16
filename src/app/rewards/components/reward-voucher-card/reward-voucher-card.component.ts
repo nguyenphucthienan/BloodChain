@@ -1,6 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { NgxGalleryAnimation, NgxGalleryImage, NgxGalleryOptions } from 'ngx-gallery';
 import { Reward } from 'src/app/core/models/reward.interface';
+
+import {
+  RewardRedeemConfirmModalComponent,
+} from '../../modals/reward-redeem-confirm-modal/reward-redeem-confirm-modal.component';
 
 @Component({
   selector: 'app-reward-voucher-card',
@@ -10,11 +15,14 @@ import { Reward } from 'src/app/core/models/reward.interface';
 export class RewardVoucherCardComponent implements OnInit {
 
   @Input() reward: Reward;
+  @Output() rewardRedeemed = new EventEmitter<boolean>();
 
   galleryOptions: NgxGalleryOptions[] = [];
   galleryImages: NgxGalleryImage[] = [];
 
-  constructor() { }
+  modalRef: MDBModalRef;
+
+  constructor(private modalService: MDBModalService) { }
 
   ngOnInit() {
     this.galleryOptions = [
@@ -42,12 +50,31 @@ export class RewardVoucherCardComponent implements OnInit {
     });
   }
 
-  openRedeemRewardConfirmModal() {
+  openRewardRedeemConfirmModal() {
+    this.modalRef = this.modalService.show(RewardRedeemConfirmModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        reward: this.reward
+      }
+    });
 
+    this.modalRef.content.rewardRedeemed
+      .subscribe((result: boolean) => this.onRewardRedeemed(result));
+  }
+
+  onRewardRedeemed(result: boolean) {
+    this.modalRef.hide();
+    this.rewardRedeemed.emit(result);
   }
 
   openRewardInfoModal() {
-
   }
 
 }

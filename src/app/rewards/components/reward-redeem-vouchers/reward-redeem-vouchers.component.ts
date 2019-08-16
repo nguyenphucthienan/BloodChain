@@ -72,6 +72,11 @@ export class RewardRedeemVouchersComponent implements OnInit, OnDestroy {
     this.getRewards();
   }
 
+  onRewardRedeemed(result: boolean) {
+    this.getUserInfo();
+    this.getRewards();
+  }
+
   ngOnDestroy() {
     this.renderer.removeClass(document.body, 'grey-background');
   }

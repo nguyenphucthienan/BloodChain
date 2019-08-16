@@ -989,7 +989,8 @@
     "modal": {
       "add": "Thêm quà thưởng",
       "update": "Cập nhật quà thưởng",
-      "delete": "Xóa quà thưởng"
+      "delete": "Xóa quà thưởng",
+      "redeem": "Đổi quà thưởng"
     },
     "label": {
       "redeem": "ĐỔI QUÀ THƯỞNG",
@@ -1001,9 +1002,13 @@
       "codes": "Mã quà thưởng (cách nhau bởi một dấu phẩy \",\" và một khoảng trắng \" \")",
       "add": "Cộng thêm",
       "subtract": "Trừ đi",
-      "vouchers": "Thẻ quà tặng"
+      "vouchers": "Thẻ quà tặng",
+      "currentPoints": "Điểm hiện tại",
+      "rewardPoints": "Điểm của quà thưởng",
+      "remainingPoints": "Điểm còn lại"
     },
     "message": {
+      "areYouSureRedeem": "Bạn có chắc chắn rằng bạn muốn đổi",
       "nameRequired": "Tên không được bỏ trống",
       "codesRequired": "Mã quà thưởng không được bỏ trống",
       "pointRequired": "Điểm không được bỏ trống",

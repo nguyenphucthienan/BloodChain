@@ -16,6 +16,7 @@ export class RewardService {
   private readonly rewardsUrl = `${environment.apiUrl}/rewards`;
   private readonly publicRewardsUrl = `${environment.apiUrl}/rewards/public`;
   private readonly rewardUrl = `${environment.apiUrl}/rewards/{id}`;
+  private readonly redeemRewardUrl = `${environment.apiUrl}/rewards/{id}/redeem`;
   private readonly deleteRewardPhotoUrl = `${environment.apiUrl}/rewards/{id}/photos/{photoId}`;
 
   private readonly defaultPagination: Pagination = {
@@ -80,6 +81,11 @@ export class RewardService {
   deleteRewardPhoto(id: string, photoId: string): Observable<Reward> {
     const url = UrlUtils.resolvePathVariables(this.deleteRewardPhotoUrl, { id, photoId });
     return this.http.delete<Reward>(url);
+  }
+
+  redeemReward(id: string): Observable<any> {
+    const url = UrlUtils.resolvePathVariables(this.redeemRewardUrl, { id });
+    return this.http.post<Reward>(url, null);
   }
 
 }

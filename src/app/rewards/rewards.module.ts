@@ -5,6 +5,9 @@ import { SharedModule } from '../shared/shared.module';
 import { RewardRedeemEthereumComponent } from './components/reward-redeem-ethereum/reward-redeem-ethereum.component';
 import { RewardRedeemVouchersComponent } from './components/reward-redeem-vouchers/reward-redeem-vouchers.component';
 import { RewardVoucherCardComponent } from './components/reward-voucher-card/reward-voucher-card.component';
+import {
+  RewardRedeemConfirmModalComponent,
+} from './modals/reward-redeem-confirm-modal/reward-redeem-confirm-modal.component';
 import { RewardsRoutingModule } from './rewards-routing.module';
 import { RewardsComponent } from './rewards.component';
 
@@ -13,12 +16,16 @@ import { RewardsComponent } from './rewards.component';
     RewardsComponent,
     RewardRedeemVouchersComponent,
     RewardRedeemEthereumComponent,
-    RewardVoucherCardComponent
+    RewardVoucherCardComponent,
+    RewardRedeemConfirmModalComponent
   ],
   imports: [
     SharedModule,
     RewardsRoutingModule,
     DatatableModule
+  ],
+  entryComponents: [
+    RewardRedeemConfirmModalComponent
   ]
 })
 export class RewardsModule { }

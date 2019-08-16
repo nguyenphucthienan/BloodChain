@@ -989,7 +989,8 @@
     "modal": {
       "add": "Add New Reward",
       "update": "Update Reward",
-      "delete": "Delete Reward"
+      "delete": "Delete Reward",
+      "redeem": "Redeem Reward"
     },
     "label": {
       "redeem": "REDEEM",
@@ -1001,9 +1002,13 @@
       "codes": "Codes (separated by a comma \",\" and a space \" \")",
       "add": "Add",
       "subtract": "Subtract",
-      "vouchers": "Vouchers"
+      "vouchers": "Vouchers",
+      "currentPoints": "Current points",
+      "rewardPoints": "Reward points",
+      "remainingPoints": "Remaining points"
     },
     "message": {
+      "areYouSureRedeem": "Are you sure you want to redeem",
       "nameRequired": "Name is required",
       "codesRequired": "Codes are required",
       "pointRequired": "Name is required",

@@ -19,7 +19,8 @@
   </div>
   <div class="row pl-2 pr-2">
     <div class="col-xl-3 col-lg-4 col-sm-6 pl-2 pr-2 mt-3" *ngFor="let reward of rewards">
-      <app-reward-voucher-card [reward]="reward"></app-reward-voucher-card>
+      <app-reward-voucher-card [reward]="reward" (rewardRedeemed)="onRewardRedeemed($event)">
+      </app-reward-voucher-card>
     </div>
   </div>
   <div class="card mt-3">
