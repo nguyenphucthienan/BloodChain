@@ -17,13 +17,13 @@
       </h5>
     </div>
   </div>
-  <div class="row pl-2 pr-2">
+  <div *ngIf="rewards.length > 0" class="row pl-2 pr-2">
     <div class="col-xl-3 col-lg-4 col-sm-6 pl-2 pr-2 mt-3" *ngFor="let reward of rewards">
       <app-reward-voucher-card [reward]="reward" (rewardRedeemed)="onRewardRedeemed($event)">
       </app-reward-voucher-card>
     </div>
   </div>
-  <div class="card mt-3">
+  <div *ngIf="rewards.length > 0" class="card mt-3">
     <div class="card-body">
       <div class="d-flex justify-content-center align-items-center">
         <app-pagination [totalItems]="pagination.totalItems" [itemsPerPage]="pagination.size"

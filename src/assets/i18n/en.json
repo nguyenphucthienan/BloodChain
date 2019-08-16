@@ -993,7 +993,8 @@
       "redeem": "Redeem Reward"
     },
     "label": {
-      "redeem": "REDEEM",
+      "redeemVouchers": "REDEEM VOUCHERS",
+      "redeemEthereum": "REDEEM ETHEREUM",
       "name": "Name",
       "point": "Point",
       "points": "Points",

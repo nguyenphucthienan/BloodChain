@@ -993,7 +993,8 @@
       "redeem": "Đổi quà thưởng"
     },
     "label": {
-      "redeem": "ĐỔI QUÀ THƯỞNG",
+      "redeemVouchers": "ĐỔI QUÀ THƯỞNG",
+      "redeemEthereum": "ĐỔI ETHEREUM",
       "name": "Tên",
       "point": "Điểm",
       "points": "Điểm thưởng",

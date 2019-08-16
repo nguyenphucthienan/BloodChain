@@ -18,13 +18,13 @@
   </div>
   <div class="card-footer">
     <div class="row">
-      <div class="col">
+      <div class="col pr-2">
         <button type="button" mdbBtn size="sm" color="secondary" block="true" class="waves-light h-100"
           (click)="openRewardInfoModal()" mdbWavesEffect>
           {{ 'rewardManager.button.moreInfo' | translate }}
         </button>
       </div>
-      <div class="col ml-0">
+      <div class="col pl-2">
         <button type="button" mdbBtn size="sm" color="primary" block="true" class="waves-light h-100"
           (click)="openRewardRedeemConfirmModal()" [disabled]="reward.quantity <= 0" mdbWavesEffect>
           {{ 'rewardManager.button.redeem' | translate }}
