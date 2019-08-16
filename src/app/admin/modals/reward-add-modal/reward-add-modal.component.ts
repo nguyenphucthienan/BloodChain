@@ -26,7 +26,7 @@ export class RewardAddModalComponent implements OnInit {
   ngOnInit() {
     this.addForm = this.fb.group({
       name: ['', Validators.required],
-      point: [100, [Validators.required, Validators.min(100), Validators.max(1000)]],
+      point: [100, [Validators.required, Validators.min(100), Validators.max(10000)]],
       description: ['', Validators.required]
     });
   }

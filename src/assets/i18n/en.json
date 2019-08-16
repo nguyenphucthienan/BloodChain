@@ -1033,7 +1033,7 @@
       "codesRequired": "Codes are required",
       "pointRequired": "Name is required",
       "minPoint": "Point must be greater than or equal 100",
-      "maxPoint": "Point must be less than or equal 1000",
+      "maxPoint": "Point must be less than or equal 10000",
       "descriptionRequired": "Description is required",
       "redeemVoucherSuccess": "Redeem voucher successfully",
       "redeemVoucherFailed": "Redeem voucher failed",

@@ -1033,7 +1033,7 @@
       "codesRequired": "Mã quà thưởng không được bỏ trống",
       "pointRequired": "Điểm không được bỏ trống",
       "minPoint": "Tối thiểu 100 điểm",
-      "maxPoint": "Tối đa 1000 điểm",
+      "maxPoint": "Tối đa 10000 điểm",
       "descriptionRequired": "Miêu tả không được bỏ trống",
       "redeemRewardSuccess": "Đổi thưởng thành công",
       "redeemRewardFailed": "Đổi thưởng không thành công"

@@ -6,31 +6,31 @@
     <h4 class="modal-title w-100">{{ 'rewardManager.modal.pointInfo' | translate }}</h4>
   </div>
   <div class="modal-body">
-    <p *ngIf="info?.bloodPackId" class="mb-0">
+    <p *ngIf="info?.bloodPackId" class="text-break mb-0">
       <span class="font-weight-bold">{{ 'rewardManager.label.bloodPackId' | translate }}: </span>
       {{ info.bloodPackId }}
     </p>
-    <p *ngIf="info?.rewardId" class="mb-2">
+    <p *ngIf="info?.rewardId" class="text-break mb-2">
       <span class="font-weight-bold">{{ 'rewardManager.label.rewardId' | translate }}: </span>
       {{ info.rewardId }}
     </p>
-    <p *ngIf="info?.rewardName" class="mb-2">
+    <p *ngIf="info?.rewardName" class="text-break mb-2">
       <span class="font-weight-bold">{{ 'rewardManager.label.rewardName' | translate }}: </span>
       {{ info.rewardName }}
     </p>
-    <p *ngIf="info?.code" class="mb-0">
+    <p *ngIf="info?.code" class="text-break mb-0">
       <span class="font-weight-bold">{{ 'rewardManager.label.code' | translate }}: </span>
       {{ info.code }}
     </p>
-    <p *ngIf="info?.ethAddress" class="mb-2">
+    <p *ngIf="info?.ethAddress" class="text-break mb-2">
       <span class="font-weight-bold">{{ 'rewardManager.label.ethAddress' | translate }}: </span>
       {{ info.ethAddress }}
     </p>
-    <p *ngIf="info?.ethAmount" class="mb-2">
+    <p *ngIf="info?.ethAmount" class="text-break mb-2">
       <span class="font-weight-bold">{{ 'rewardManager.label.ethAmount' | translate }}: </span>
-      {{ info.ethAmount }}
+      {{ info.ethAmount / 1e18 }}
     </p>
-    <p *ngIf="info?.transactionId" class="mb-0">
+    <p *ngIf="info?.transactionId" class="text-break mb-0">
       <span class="font-weight-bold">{{ 'rewardManager.label.transactionId' | translate }}: </span>
       {{ info.transactionId }}
     </p>

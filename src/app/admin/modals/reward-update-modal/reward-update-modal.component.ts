@@ -32,7 +32,7 @@ export class RewardUpdateModalComponent implements OnInit {
       point: [this.rowData.cells.point.value, [
         Validators.required,
         Validators.min(100),
-        Validators.max(1000)
+        Validators.max(10000)
       ]],
       description: [this.rowData.cells.description.value, Validators.required]
     });
