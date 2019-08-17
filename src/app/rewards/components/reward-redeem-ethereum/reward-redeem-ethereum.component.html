@@ -17,4 +17,33 @@
       </h5>
     </div>
   </div>
+  <div *ngIf="ethereumPlans.length > 0" class="row mt-3">
+    <div class="col-4 pr-2">
+      <div class="card">
+        <div class="card-body text-center">
+          <h3>{{ ethereumPlans[1].name }}</h3>
+          <h5>{{ ethereumPlans[1].eth }}</h5>
+          <h5>{{ ethereumPlans[1].point }}</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-4 pl-2 pr-2">
+      <div class="card">
+        <div class="card-body text-center">
+          <h3>{{ ethereumPlans[0].name }}</h3>
+          <h5>{{ ethereumPlans[0].eth }}</h5>
+          <h5>{{ ethereumPlans[0].point }}</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-4 pl-2">
+      <div class="card">
+        <div class="card-body text-center">
+          <h3>{{ ethereumPlans[2].name }}</h3>
+          <h5>{{ ethereumPlans[2].eth }}</h5>
+          <h5>{{ ethereumPlans[2].point }}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

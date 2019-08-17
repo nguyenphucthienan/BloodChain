@@ -51,7 +51,7 @@ export class RewardVoucherCardComponent implements OnInit {
     });
   }
 
-  openRewardRedeemConfirmModal() {
+  openRewardRedeemVoucherConfirmModal() {
     this.modalRef = this.modalService.show(RewardRedeemVoucherConfirmModalComponent, {
       backdrop: true,
       keyboard: true,
@@ -75,7 +75,7 @@ export class RewardVoucherCardComponent implements OnInit {
     this.rewardRedeemed.emit(data);
   }
 
-  openRewardInfoModal() {
+  openRewardVoucherInfoModal() {
     this.modalRef = this.modalService.show(RewardVoucherInfoModalComponent, {
       backdrop: true,
       keyboard: true,

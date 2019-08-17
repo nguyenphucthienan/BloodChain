@@ -5,6 +5,7 @@ import { ParamsBuilder } from 'src/app/utils/params-builder';
 import { UrlUtils } from 'src/app/utils/url-utils';
 import { environment } from 'src/environments/environment';
 
+import { EthereumPlanName } from '../constant/ethereum-plan-name';
 import { FilterMode } from '../models/filter-mode.interface';
 import { Pagination } from '../models/pagination.interface';
 import { Reward } from '../models/reward.interface';
@@ -17,8 +18,10 @@ export class RewardService {
   private readonly publicRewardsUrl = `${environment.apiUrl}/rewards/public`;
   private readonly rewardUrl = `${environment.apiUrl}/rewards/{id}`;
   private readonly rewardCodesUrl = `${environment.apiUrl}/rewards/{id}/codes`;
-  private readonly redeemRewardUrl = `${environment.apiUrl}/rewards/{id}/redeem`;
   private readonly deleteRewardPhotoUrl = `${environment.apiUrl}/rewards/{id}/photos/{photoId}`;
+  private readonly redeemRewardUrl = `${environment.apiUrl}/rewards/{id}/redeem`;
+  private readonly ethereumPlansUrl = `${environment.apiUrl}/rewards/ethereum/plans`;
+  private readonly redeemEthereumUrl = `${environment.apiUrl}/rewards/ethereum/redeem`;
 
   private readonly defaultPagination: Pagination = {
     page: 1,
@@ -92,6 +95,14 @@ export class RewardService {
   redeemReward(id: string): Observable<any> {
     const url = UrlUtils.resolvePathVariables(this.redeemRewardUrl, { id });
     return this.http.post<Reward>(url, null);
+  }
+
+  getEthereumPlans(): Observable<any[]> {
+    return this.http.get<any[]>(this.ethereumPlansUrl);
+  }
+
+  redeemEthereum(planName: EthereumPlanName, address: string): Observable<any> {
+    return this.http.post<Reward>(this.redeemEthereumUrl, { planName, address });
   }
 
 }

@@ -80,10 +80,10 @@ export class RewardRedeemVouchersComponent implements OnInit, OnDestroy {
   onRewardRedeemed(data: { reward: Reward, code: string }) {
     this.getUserInfo();
     this.getRewards();
-    this.openRewardRedeemSuccessModal(data.reward, data.code);
+    this.openRewardRedeemVoucherSuccessModal(data.reward, data.code);
   }
 
-  openRewardRedeemSuccessModal(reward: Reward, code: string) {
+  openRewardRedeemVoucherSuccessModal(reward: Reward, code: string) {
     this.modalRef = this.modalService.show(RewardRedeemVoucherSuccessModalComponent, {
       backdrop: true,
       keyboard: true,

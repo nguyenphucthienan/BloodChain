@@ -1,7 +1,8 @@
 import { Component, OnDestroy, OnInit, Renderer2 } from '@angular/core';
-import { MDBModalRef } from 'angular-bootstrap-md';
+import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { User } from 'src/app/core/models/user.interface';
 import { AuthService } from 'src/app/core/services/auth.service';
+import { RewardService } from 'src/app/core/services/reward.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -16,15 +17,24 @@ export class RewardRedeemEthereumComponent implements OnInit, OnDestroy {
   user: User;
   userInfoOnBlockchain: any;
 
+  ethereumPlans: any[] = [];
+
   modalRef: MDBModalRef;
 
   constructor(
     private renderer: Renderer2,
-    private authService: AuthService
+    private authService: AuthService,
+    private rewardService: RewardService,
+    private modalService: MDBModalService
   ) { }
 
   ngOnInit() {
     this.renderer.addClass(document.body, 'grey-background');
+    this.getUserInfo();
+    this.getEthereumPlans();
+  }
+
+  private getUserInfo() {
     this.authService.getMyUserInfo().subscribe((user: User) => {
       this.user = user;
     });
@@ -32,6 +42,49 @@ export class RewardRedeemEthereumComponent implements OnInit, OnDestroy {
     this.authService.getMyUserInfoOnBlockchain().subscribe((user: any) => {
       this.userInfoOnBlockchain = user;
     });
+  }
+
+  private getEthereumPlans() {
+    this.rewardService.getEthereumPlans()
+      .subscribe((ethereumPlans: any[]) => this.ethereumPlans = ethereumPlans);
+  }
+
+  openRewardEthreumConfirmModal() {
+    // this.modalRef = this.modalService.show(RewardRedeemEthereumConfirmModalComponent, {
+    //   backdrop: true,
+    //   keyboard: true,
+    //   focus: true,
+    //   show: false,
+    //   ignoreBackdropClick: true,
+    //   class: 'modal-dialog-centered',
+    //   containerClass: 'top',
+    //   animated: true,
+    //   data: {
+    //   }
+    // });
+
+    // this.modalRef.content.rewardRedeemed
+    //   .subscribe((data: any) => this.onRewardRedeemed(data));
+  }
+
+  onRewardRedeemed(data: any) {
+    // this.getUserInfo();
+    // this.openRewardRedeemEthereumSuccessModal();
+  }
+
+  openRewardRedeemEthereumSuccessModal() {
+    // this.modalRef = this.modalService.show(RewardRedeemEthereumSuccessModalComponent, {
+    //   backdrop: true,
+    //   keyboard: true,
+    //   focus: true,
+    //   show: false,
+    //   ignoreBackdropClick: true,
+    //   class: 'modal-dialog-centered',
+    //   containerClass: 'top',
+    //   animated: true,
+    //   data: {
+    //   }
+    // });
   }
 
   ngOnDestroy() {

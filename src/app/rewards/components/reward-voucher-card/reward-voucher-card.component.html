@@ -20,13 +20,13 @@
     <div class="row">
       <div class="col pr-2">
         <button type="button" mdbBtn size="sm" color="secondary" block="true" class="waves-light h-100"
-          (click)="openRewardInfoModal()" mdbWavesEffect>
+          (click)="openRewardVoucherInfoModal()" mdbWavesEffect>
           {{ 'rewardManager.button.moreInfo' | translate }}
         </button>
       </div>
       <div class="col pl-2">
         <button type="button" mdbBtn size="sm" color="primary" block="true" class="waves-light h-100"
-          (click)="openRewardRedeemConfirmModal()" [disabled]="reward.quantity <= 0" mdbWavesEffect>
+          (click)="openRewardRedeemVoucherConfirmModal()" [disabled]="reward.quantity <= 0" mdbWavesEffect>
           {{ 'rewardManager.button.redeem' | translate }}
         </button>
       </div>
