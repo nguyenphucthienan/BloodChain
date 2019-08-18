@@ -35,8 +35,11 @@ export class RewardCodeManagerModalComponent implements OnInit {
   }
 
   updateRewardCodes() {
-    const codesToAdd = this.updateForm.value.codesToAdd.split(', ');
-    const codesToRemove = this.updateForm.value.codesToRemove.split(', ');
+    const codesToAdd = this.updateForm.value.codesToAdd
+      && this.updateForm.value.codesToAdd.split(', ');
+    const codesToRemove = this.updateForm.value.codesToRemove
+      && this.updateForm.value.codesToRemove.split(', ');
+
     this.rewardService.updateRewardCodes(
       this.rowData.cells._id.value,
       { codesToAdd, codesToRemove }
