@@ -163,10 +163,9 @@ export class BloodBankBloodProductManagerTransferBloodProductComponent implement
       location: [null, Validators.required]
     });
 
-    this.organizationForm.disable();
     this.transferForm = this.fb.group({
       bloodProductIds: [[]],
-      toOrganizationId: [{ value: '', disabled: true }, Validators.required],
+      toOrganizationId: ['', Validators.required],
       description: ['', [Validators.required, Validators.maxLength(1000)]],
     });
   }
