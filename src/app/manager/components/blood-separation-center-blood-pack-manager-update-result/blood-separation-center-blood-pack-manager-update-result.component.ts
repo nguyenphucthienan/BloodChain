@@ -143,9 +143,6 @@ export class BloodSeparationCenterBloodPackManagerUpdateResultComponent implemen
       separationResults: this.fb.array([this.createSeparationField()], Validators.required),
       separationDescription: ['', Validators.required]
     }, { validator: [this.separationResultRepeatedValidator] });
-
-    this.userForm.disable();
-    this.bloodPackForm.disable();
   }
 
   selectBloodPack(bloodPack: BloodPack) {

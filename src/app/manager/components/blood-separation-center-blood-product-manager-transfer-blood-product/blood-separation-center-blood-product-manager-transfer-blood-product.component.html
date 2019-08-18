@@ -54,19 +54,19 @@
           </div>
           <form [formGroup]="organizationForm">
             <div class="md-form">
-              <input type="text" id="name" formControlName="name" class="form-control" mdbInput>
+              <input type="text" id="name" formControlName="name" class="form-control" mdbInput readonly>
               <label for="name">{{ 'bloodSeparationCenterManager.label.name' | translate }}</label>
             </div>
             <div class="md-form">
-              <input type="text" id="address" formControlName="address" class="form-control" mdbInput>
+              <input type="text" id="address" formControlName="address" class="form-control" mdbInput readonly>
               <label for="address">{{ 'bloodSeparationCenterManager.label.address' | translate }}</label>
             </div>
             <div class="md-form">
-              <input type="text" id="email" formControlName="email" class="form-control" mdbInput>
+              <input type="text" id="email" formControlName="email" class="form-control" mdbInput readonly>
               <label for="email">{{ 'bloodSeparationCenterManager.label.email' | translate }}</label>
             </div>
             <div class="md-form mb-0">
-              <input type="text" id="phone" formControlName="phone" class="form-control" mdbInput>
+              <input type="text" id="phone" formControlName="phone" class="form-control" mdbInput readonly>
               <label for="phone">{{ 'bloodSeparationCenterManager.label.phone' | translate }}</label>
             </div>
           </form>
@@ -81,10 +81,11 @@
       </div>
       <form [formGroup]="transferForm" (ngSubmit)="transferBloodProducts()">
         <div class="md-form">
-          <input type="text" id="toOrganizationId" formControlName="toOrganizationId" class="form-control" mdbInput>
+          <input type="text" id="toOrganizationId" formControlName="toOrganizationId" class="form-control" mdbInput
+            readonly>
           <label for="toOrganizationId">{{ 'bloodProductManager.label.organizationId' | translate }}</label>
           <mdb-error *ngIf="controlHasError('toOrganizationId', 'required')">
-            {{ 'bloodProductManager.message.bloodTestCenterIdRequired' | translate }}
+            {{ 'bloodProductManager.message.organizationIdRequired' | translate }}
           </mdb-error>
         </div>
         <div class="md-form">

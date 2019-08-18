@@ -900,6 +900,7 @@
       "searchBloodProduct": "Search blood product"
     },
     "message": {
+      "organizationIdRequired": "Organization ID is required",
       "descriptionRequired": "Description is required",
       "patientNameRequired": "Patient's name is required",
       "transferTheseBloodProducts": "transfer these blood products",
