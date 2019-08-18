@@ -22,7 +22,7 @@ export class RewardsComponent implements OnInit, OnDestroy {
 
   readonly defaultPhotoUrl = environment.photoUrl.defaultUser;
   readonly rewardGiftPhotoUrl = environment.photoUrl.rewardGift;
-  readonly rewardEthereumPhotoUrl = environment.photoUrl.rewardEthereum;
+  readonly rewardEthereumPhotoUrl = environment.photoUrl.rewardEthereum.main;
 
   user: User;
   userInfoOnBlockchain: any;

@@ -21,6 +21,9 @@ import {
 export class RewardRedeemEthereumComponent implements OnInit, OnDestroy {
 
   readonly defaultPhotoUrl = environment.photoUrl.defaultUser;
+  readonly goldPhotoUrl = environment.photoUrl.rewardEthereum.gold;
+  readonly silverPhotoUrl = environment.photoUrl.rewardEthereum.silver;
+  readonly bronzePhotoUrl = environment.photoUrl.rewardEthereum.bronze;
 
   user: User;
   userInfoOnBlockchain: any;
