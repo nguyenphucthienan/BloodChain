@@ -5,7 +5,6 @@ import { ParamsBuilder } from 'src/app/utils/params-builder';
 import { UrlUtils } from 'src/app/utils/url-utils';
 import { environment } from 'src/environments/environment';
 
-import { EthereumPlanName } from '../constant/ethereum-plan-name';
 import { FilterMode } from '../models/filter-mode.interface';
 import { Pagination } from '../models/pagination.interface';
 import { Reward } from '../models/reward.interface';
@@ -101,8 +100,8 @@ export class RewardService {
     return this.http.get<any[]>(this.ethereumPlansUrl);
   }
 
-  redeemEthereum(planName: EthereumPlanName, address: string): Observable<any> {
-    return this.http.post<Reward>(this.redeemEthereumUrl, { planName, address });
+  redeemEthereum(model: { planName: string, address: string }): Observable<any> {
+    return this.http.post<Reward>(this.redeemEthereumUrl, model);
   }
 
 }

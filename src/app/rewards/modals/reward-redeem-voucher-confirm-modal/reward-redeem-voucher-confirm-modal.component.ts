@@ -38,7 +38,7 @@ export class RewardRedeemVoucherConfirmModalComponent implements OnInit {
     });
   }
 
-  redeemAward() {
+  redeemReward() {
     this.spinnerService.show();
     this.rewardService.redeemReward(this.reward._id)
       .subscribe(

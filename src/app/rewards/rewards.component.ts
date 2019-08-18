@@ -21,8 +21,8 @@ import { PointHistoryTableService } from './services/point-history-table.service
 export class RewardsComponent implements OnInit, OnDestroy {
 
   readonly defaultPhotoUrl = environment.photoUrl.defaultUser;
-  readonly rewardGiftPhotoUrl = environment.photoUrl.awardGift;
-  readonly rewardEthereumPhotoUrl = environment.photoUrl.awardEthereum;
+  readonly rewardGiftPhotoUrl = environment.photoUrl.rewardGift;
+  readonly rewardEthereumPhotoUrl = environment.photoUrl.rewardEthereum;
 
   user: User;
   userInfoOnBlockchain: any;

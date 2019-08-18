@@ -25,6 +25,12 @@
           <h5>{{ ethereumPlans[1].eth }}</h5>
           <h5>{{ ethereumPlans[1].point }}</h5>
         </div>
+        <div class="card-footer">
+          <button type="button" mdbBtn size="sm" color="primary" block="true" class="waves-light h-100"
+            (click)="openRewardRedeemEthreumConfirmModal('SILVER')" mdbWavesEffect>
+            {{ 'rewardManager.button.redeem' | translate }}
+          </button>
+        </div>
       </div>
     </div>
     <div class="col-4 pl-2 pr-2">
@@ -34,6 +40,12 @@
           <h5>{{ ethereumPlans[0].eth }}</h5>
           <h5>{{ ethereumPlans[0].point }}</h5>
         </div>
+        <div class="card-footer">
+          <button type="button" mdbBtn size="sm" color="primary" block="true" class="waves-light h-100"
+            (click)="openRewardRedeemEthreumConfirmModal('GOLD')" mdbWavesEffect>
+            {{ 'rewardManager.button.redeem' | translate }}
+          </button>
+        </div>
       </div>
     </div>
     <div class="col-4 pl-2">
@@ -42,6 +54,12 @@
           <h3>{{ ethereumPlans[2].name }}</h3>
           <h5>{{ ethereumPlans[2].eth }}</h5>
           <h5>{{ ethereumPlans[2].point }}</h5>
+        </div>
+        <div class="card-footer">
+          <button type="button" mdbBtn size="sm" color="primary" block="true" class="waves-light h-100"
+            (click)="openRewardRedeemEthreumConfirmModal('BRONZE')" mdbWavesEffect>
+            {{ 'rewardManager.button.redeem' | translate }}
+          </button>
         </div>
       </div>
     </div>

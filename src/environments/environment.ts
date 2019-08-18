@@ -13,8 +13,8 @@ export const environment = {
     logo: './assets/images/landing/logo.svg',
     notFound: './assets/images/pages/not-found.svg',
     defaultUser: './assets/images/users/default.png',
-    awardGift: './assets/images/rewards/gift.svg',
-    awardEthereum: './assets/images/rewards/ethereum.svg'
+    rewardGift: './assets/images/rewards/gift.svg',
+    rewardEthereum: './assets/images/rewards/ethereum.svg'
   }
 };
 

@@ -373,7 +373,7 @@
       "usernameExists": "Username has been used",
       "emailRequired": "Email is required",
       "emailMaxLength": "Email must be at most 255 characters",
-      "emailNotValid": "Email is not valid",
+      "emailNotValid": "Email is invalid",
       "emailExists": "Email has been used",
       "firstNameRequired": "First name is required",
       "firstNameLength": "First name must be between 1-50 characters",
@@ -412,7 +412,7 @@
     "message": {
       "emailRequired": "Email is required",
       "emailMaxLength": "Email must be at most 255 characters",
-      "emailNotValid": "Email is not valid",
+      "emailNotValid": "Email is invalid",
       "emailExists": "Email has been used",
       "firstNameRequired": "First name is required",
       "firstNameLength": "First name must be between 1-50 characters",
@@ -472,7 +472,7 @@
       "usernameExists": "Username has been used",
       "emailRequired": "Email is required",
       "emailMaxLength": "Email must be at most 255 characters",
-      "emailNotValid": "Email is not valid",
+      "emailNotValid": "Email is invalid",
       "emailExists": "Email has been used",
       "firstNameRequired": "First name is required",
       "firstNameLength": "First name must be between 1-50 characters",
@@ -1038,7 +1038,9 @@
       "redeemVoucherSuccess": "Redeem voucher successfully",
       "redeemVoucherFailed": "Redeem voucher failed",
       "redeemEthereumSuccess": "Redeem ethereum successfully",
-      "redeemEthereumFailed": "Redeem ethereum failed"
+      "redeemEthereumFailed": "Redeem ethereum failed",
+      "ethAddressRequired": "ETH address is required",
+      "ethAddressNotValid": "ETH address is invalid"
     },
     "alert": {
       "addSuccess": "Add reward successfully",

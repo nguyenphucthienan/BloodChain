@@ -26,7 +26,7 @@
     <button type="button" mdbBtn color="secondary" class="waves-light" (click)="modalRef.hide()" mdbWavesEffect>
       {{ 'common.button.no' | translate }}
     </button>
-    <button mdbBtn type="submit" color="primary" class="waves-light" (click)="redeemAward()"
+    <button mdbBtn type="submit" color="primary" class="waves-light" (click)="redeemReward()"
       [disabled]="loading || remainingPoint < 0" mdbWavesEffect>
       {{ 'common.button.yes' | translate }}
     </button>

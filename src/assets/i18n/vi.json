@@ -1036,7 +1036,9 @@
       "maxPoint": "Tối đa 10000 điểm",
       "descriptionRequired": "Miêu tả không được bỏ trống",
       "redeemRewardSuccess": "Đổi thưởng thành công",
-      "redeemRewardFailed": "Đổi thưởng không thành công"
+      "redeemRewardFailed": "Đổi thưởng không thành công",
+      "ethAddressRequired": "Địa chỉ ETH không được bỏ trống",
+      "ethAddressNotValid": "Địa chỉ ETH không hợp lệ"
     },
     "alert": {
       "addSuccess": "Thêm quà thưởng thành công",

@@ -1,9 +1,14 @@
 import { Component, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
+import { EthereumPlanName } from 'src/app/core/constant/ethereum-plan-name';
 import { User } from 'src/app/core/models/user.interface';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { RewardService } from 'src/app/core/services/reward.service';
 import { environment } from 'src/environments/environment';
+
+import {
+  RewardRedeemEthereumConfirmModalComponent,
+} from '../../modals/reward-redeem-ethereum-confirm-modal/reward-redeem-ethereum-confirm-modal.component';
 
 @Component({
   selector: 'app-reward-redeem-ethereum',
@@ -49,30 +54,33 @@ export class RewardRedeemEthereumComponent implements OnInit, OnDestroy {
       .subscribe((ethereumPlans: any[]) => this.ethereumPlans = ethereumPlans);
   }
 
-  openRewardEthreumConfirmModal() {
-    // this.modalRef = this.modalService.show(RewardRedeemEthereumConfirmModalComponent, {
-    //   backdrop: true,
-    //   keyboard: true,
-    //   focus: true,
-    //   show: false,
-    //   ignoreBackdropClick: true,
-    //   class: 'modal-dialog-centered',
-    //   containerClass: 'top',
-    //   animated: true,
-    //   data: {
-    //   }
-    // });
+  openRewardRedeemEthreumConfirmModal(planName: EthereumPlanName) {
+    const ethereumPlan = this.ethereumPlans.find(plan => plan.name === planName);
+    this.modalRef = this.modalService.show(RewardRedeemEthereumConfirmModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        ethereumPlan
+      }
+    });
 
-    // this.modalRef.content.rewardRedeemed
-    //   .subscribe((data: any) => this.onRewardRedeemed(data));
+    this.modalRef.content.rewardRedeemed
+      .subscribe((data: any) => this.onRewardRedeemed(data));
   }
 
-  onRewardRedeemed(data: any) {
-    // this.getUserInfo();
-    // this.openRewardRedeemEthereumSuccessModal();
+  onRewardRedeemed(data: { transactionId: string }) {
+    this.modalRef.hide();
+    this.getUserInfo();
+    this.openRewardRedeemEthereumSuccessModal(data.transactionId);
   }
 
-  openRewardRedeemEthereumSuccessModal() {
+  openRewardRedeemEthereumSuccessModal(transactionId: string) {
     // this.modalRef = this.modalService.show(RewardRedeemEthereumSuccessModalComponent, {
     //   backdrop: true,
     //   keyboard: true,

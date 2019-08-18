@@ -1,0 +1,47 @@
+<div class="modal-content">
+  <form [formGroup]="redeemForm" (ngSubmit)="redeemReward()">
+    <div class="modal-header">
+      <button type="button" class="close pull-right" (click)="modalRef.hide()">
+        <span aria-hidden="true">×</span>
+      </button>
+      <h4 class="modal-title w-100">{{ 'rewardManager.modal.redeemEthereum' | translate }}</h4>
+    </div>
+    <div class="modal-body">
+      <p>
+        <span class="font-weight-bold">{{ 'rewardManager.label.currentPoints' | translate }}:</span>
+        {{ currentPoint }}
+      </p>
+      <p>
+        <span class="font-weight-bold">{{ 'rewardManager.label.rewardPoints' | translate }}:</span>
+        {{ rewardPoint }}
+      </p>
+      <p>
+        <span class="font-weight-bold">{{ 'rewardManager.label.remainingPoints' | translate }}:</span>
+        {{ remainingPoint }}
+      </p>
+      <hr>
+      <div class="md-form">
+        <input #address type="text" id="address" formControlName="address" class="form-control" mdbInput>
+        <label for="address">{{ 'rewardManager.label.ethAddress' | translate }}</label>
+        <mdb-error *ngIf="controlHasError('address', 'required')">
+          {{ 'rewardManager.message.ethAddressRequired' | translate }}
+        </mdb-error>
+        <mdb-error *ngIf="!controlHasError('address', 'required') && controlHasError('address', 'ethAddressNotValid')">
+          {{ 'rewardManager.message.ethAddressNotValid' | translate }}
+        </mdb-error>
+      </div>
+      <hr>
+      {{ 'rewardManager.message.areYouSureRedeem' | translate }}
+      <span class="font-weight-bold">{{ ethereumPlan.name }}</span>?
+    </div>
+    <div class="modal-footer">
+      <button type="button" mdbBtn color="secondary" class="waves-light" (click)="modalRef.hide()" mdbWavesEffect>
+        {{ 'common.button.no' | translate }}
+      </button>
+      <button mdbBtn type="submit" color="primary" class="waves-light"
+        [disabled]="loading || remainingPoint < 0 || !redeemForm.valid" mdbWavesEffect>
+        {{ 'common.button.yes' | translate }}
+      </button>
+    </div>
+  </form>
+</div>
