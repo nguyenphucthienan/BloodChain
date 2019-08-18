@@ -27,19 +27,19 @@
               <span class="font-weight-bold">{{ 'bloodPackManager.label.donorInfo' | translate }}</span>
             </div>
             <div class="md-form">
-              <input type="text" id="username" formControlName="username" class="form-control" mdbInput>
+              <input type="text" id="username" formControlName="username" class="form-control" mdbInput readonly>
               <label for="username">{{ 'bloodPackManager.label.username' | translate }}</label>
             </div>
             <div class="form-row">
               <div class="col">
                 <div class="md-form form-col">
-                  <input type="text" id="firstName" formControlName="firstName" class="form-control" mdbInput>
+                  <input type="text" id="firstName" formControlName="firstName" class="form-control" mdbInput readonly>
                   <label for="firstName">{{ 'bloodPackManager.label.firstName' | translate }}</label>
                 </div>
               </div>
               <div class="col">
                 <div class="md-form form-col">
-                  <input type="text" id="lastName" formControlName="lastName" class="form-control" mdbInput>
+                  <input type="text" id="lastName" formControlName="lastName" class="form-control" mdbInput readonly>
                   <label for="lastName">{{ 'bloodPackManager.label.lastName' | translate }}</label>
                 </div>
               </div>
@@ -48,7 +48,7 @@
               <div class="col">
                 <div class="md-form form-col">
                   <div class="md-form">
-                    <input type="text" id="email" formControlName="email" class="form-control" mdbInput>
+                    <input type="text" id="email" formControlName="email" class="form-control" mdbInput readonly>
                     <label for="email">{{ 'bloodPackManager.label.email' | translate }}</label>
                   </div>
                 </div>
@@ -56,7 +56,7 @@
               <div class="col">
                 <div class="md-form form-col">
                   <div class="md-form">
-                    <input type="text" id="phone" formControlName="phone" class="form-control" mdbInput>
+                    <input type="text" id="phone" formControlName="phone" class="form-control" mdbInput readonly>
                     <label for="phone">{{ 'bloodPackManager.label.phone' | translate }}</label>
                   </div>
                 </div>
@@ -65,7 +65,7 @@
             <div class="form-row">
               <div class="col">
                 <div class="md-form form-col">
-                  <input type="text" id="gender" formControlName="gender" class="form-control" mdbInput>
+                  <input type="text" id="gender" formControlName="gender" class="form-control" mdbInput readonly>
                   <label for="gender">{{ 'bloodPackManager.label.gender' | translate }}</label>
                 </div>
               </div>
@@ -79,7 +79,7 @@
               </div>
             </div>
             <div class="md-form">
-              <input type="text" id="address" formControlName="address" class="form-control" mdbInput>
+              <input type="text" id="address" formControlName="address" class="form-control" mdbInput readonly>
               <label for="address">{{ 'bloodPackManager.label.address' | translate }}</label>
             </div>
           </form>
@@ -102,7 +102,7 @@
       </div>
       <form [formGroup]="addForm" (ngSubmit)="addBloodPack()">
         <div class="md-form">
-          <input type="text" id="donor" formControlName="donor" class="form-control" mdbInput>
+          <input type="text" id="donor" formControlName="donor" class="form-control" mdbInput readonly>
           <label for="donor">{{ 'bloodPackManager.label.donorId' | translate }}</label>
           <mdb-error *ngIf="controlHasError('donor', 'required')">
             {{ 'bloodPackManager.message.donorRequired' | translate }}

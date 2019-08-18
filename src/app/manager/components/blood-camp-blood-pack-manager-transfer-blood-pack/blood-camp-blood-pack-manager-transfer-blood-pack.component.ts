@@ -110,10 +110,9 @@ export class BloodCampBloodPackManagerTransferBloodPackComponent implements OnIn
       location: [null, Validators.required]
     });
 
-    this.bloodTestCenterForm.disable();
     this.transferForm = this.fb.group({
       bloodPackIds: [[]],
-      bloodTestCenterId: [{ value: '', disabled: true }, Validators.required],
+      bloodTestCenterId: ['', Validators.required],
       description: ['', [Validators.required, Validators.maxLength(1000)]],
     });
   }

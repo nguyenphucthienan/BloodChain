@@ -44,19 +44,19 @@
           </div>
           <form [formGroup]="bloodTestCenterForm">
             <div class="md-form">
-              <input type="text" id="name" formControlName="name" class="form-control" mdbInput>
+              <input type="text" id="name" formControlName="name" class="form-control" mdbInput readonly>
               <label for="name">{{ 'bloodTestCenterManager.label.name' | translate }}</label>
             </div>
             <div class="md-form">
-              <input type="text" id="address" formControlName="address" class="form-control" mdbInput>
+              <input type="text" id="address" formControlName="address" class="form-control" mdbInput readonly>
               <label for="address">{{ 'bloodTestCenterManager.label.address' | translate }}</label>
             </div>
             <div class="md-form">
-              <input type="text" id="email" formControlName="email" class="form-control" mdbInput>
+              <input type="text" id="email" formControlName="email" class="form-control" mdbInput readonly>
               <label for="email">{{ 'bloodTestCenterManager.label.email' | translate }}</label>
             </div>
             <div class="md-form">
-              <input type="text" id="phone" formControlName="phone" class="form-control" mdbInput>
+              <input type="text" id="phone" formControlName="phone" class="form-control" mdbInput readonly>
               <label for="phone">{{ 'bloodTestCenterManager.label.phone' | translate }}</label>
             </div>
           </form>
@@ -71,7 +71,8 @@
       </div>
       <form [formGroup]="transferForm" (ngSubmit)="transferBloodPacks()">
         <div class="md-form">
-          <input type="text" id="bloodTestCenterId" formControlName="bloodTestCenterId" class="form-control" mdbInput>
+          <input type="text" id="bloodTestCenterId" formControlName="bloodTestCenterId" class="form-control" mdbInput
+            readonly>
           <label for="bloodTestCenterId">{{ 'bloodPackManager.label.bloodTestCenterId' | translate }}</label>
           <mdb-error *ngIf="controlHasError('bloodTestCenterId', 'required')">
             {{ 'bloodPackManager.message.bloodTestCenterIdRequired' | translate }}
