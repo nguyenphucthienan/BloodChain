@@ -57,7 +57,6 @@ export class ProfileComponent implements OnInit, OnDestroy {
       location: [null, Validators.required]
     });
 
-    this.userForm.disable();
     this.authService.getMyUserInfo().subscribe((user: User) => {
       this.user = user;
       this.point = this.user.location;

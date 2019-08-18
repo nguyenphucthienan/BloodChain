@@ -61,10 +61,6 @@ export class DonationHistoryBloodPackDetailComponent implements OnInit, OnDestro
       testResults: this.fb.array([], Validators.required),
       testDescription: ['', Validators.required]
     });
-
-    this.bloodPackForm.disable();
-    this.testResultFormArray.disable();
-    this.testResultForm.disable();
   }
 
   private initDataFields() {
@@ -124,13 +120,10 @@ export class DonationHistoryBloodPackDetailComponent implements OnInit, OnDestro
   }
 
   createTestField() {
-    const testField = this.fb.group({
+    return this.fb.group({
       testType: [null, Validators.required],
       passed: [null, Validators.required]
     });
-
-    testField.disable();
-    return testField;
   }
 
   addTestField() {
