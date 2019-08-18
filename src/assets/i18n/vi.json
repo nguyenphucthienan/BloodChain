@@ -817,6 +817,7 @@
       "volumeRequired": "Thể tích không được bỏ trống",
       "bloodCampRequired": "Trung tâm hiến máu không được bỏ trống",
       "bloodTestCenterIdRequired": "ID trung tâm xét nghiệm không được bỏ trống",
+      "bloodSeparationCenterIdRequired": "ID trung tâm phân tách không được bỏ trống",
       "descriptionRequired": "Miêu tả không được bỏ trống",
       "transferTheseBloodPacks": "chuyển những túi máu này",
       "testTypeRequired": "Tên xét nghiệm không được bỏ trống",

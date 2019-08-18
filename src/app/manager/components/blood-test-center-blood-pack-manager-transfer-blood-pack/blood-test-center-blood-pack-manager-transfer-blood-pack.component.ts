@@ -113,10 +113,9 @@ export class BloodTestCenterBloodPackManagerTransferBloodPackComponent implement
       location: [null, Validators.required]
     });
 
-    this.bloodSeparationCenterForm.disable();
     this.transferForm = this.fb.group({
       bloodPackIds: [[]],
-      bloodSeparationCenterId: [{ value: '', disabled: true }, Validators.required],
+      bloodSeparationCenterId: ['', Validators.required],
       description: ['', [Validators.required, Validators.maxLength(1000)]],
     });
   }

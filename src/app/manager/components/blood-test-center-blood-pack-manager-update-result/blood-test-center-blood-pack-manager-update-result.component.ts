@@ -148,9 +148,6 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
       bloodType: [null, Validators.required],
       testDescription: ['', Validators.required]
     }, { validator: [this.testResultRepeatedValidator] });
-
-    this.userForm.disable();
-    this.bloodPackForm.disable();
   }
 
   selectBloodPack(bloodPack: BloodPack) {

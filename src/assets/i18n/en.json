@@ -817,6 +817,7 @@
       "volumeRequired": "Volume is required",
       "bloodCampRequired": "Blood camp is required",
       "bloodTestCenterIdRequired": "Blood test center ID is required",
+      "bloodSeparationCenterIdRequired": "Blood separation center ID is required",
       "descriptionRequired": "Description is required",
       "transferTheseBloodPacks": "transfer these blood packs",
       "testTypeRequired": "Test type is required",
