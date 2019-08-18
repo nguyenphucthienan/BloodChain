@@ -12,6 +12,9 @@ import {
   RewardRedeemEthereumConfirmModalComponent,
 } from './modals/reward-redeem-ethereum-confirm-modal/reward-redeem-ethereum-confirm-modal.component';
 import {
+  RewardRedeemEthereumSuccessModalComponent,
+} from './modals/reward-redeem-ethereum-success-modal/reward-redeem-ethereum-success-modal.component';
+import {
   RewardRedeemVoucherConfirmModalComponent,
 } from './modals/reward-redeem-voucher-confirm-modal/reward-redeem-voucher-confirm-modal.component';
 import {
@@ -31,7 +34,8 @@ import { RewardsComponent } from './rewards.component';
     RewardPointHistoryInfoModalComponent,
     RewardRedeemVoucherConfirmModalComponent,
     RewardRedeemVoucherSuccessModalComponent,
-    RewardRedeemEthereumConfirmModalComponent
+    RewardRedeemEthereumConfirmModalComponent,
+    RewardRedeemEthereumSuccessModalComponent
   ],
   imports: [
     SharedModule,
@@ -43,7 +47,8 @@ import { RewardsComponent } from './rewards.component';
     RewardPointHistoryInfoModalComponent,
     RewardRedeemVoucherConfirmModalComponent,
     RewardRedeemVoucherSuccessModalComponent,
-    RewardRedeemEthereumConfirmModalComponent
+    RewardRedeemEthereumConfirmModalComponent,
+    RewardRedeemEthereumSuccessModalComponent
   ]
 })
 export class RewardsModule { }

@@ -28,7 +28,7 @@
     </p>
     <p *ngIf="info?.ethAmount" class="text-break mb-2">
       <span class="font-weight-bold">{{ 'rewardManager.label.ethAmount' | translate }}: </span>
-      {{ info.ethAmount / 1e18 }}
+      {{ info.ethAmount }}
     </p>
     <p *ngIf="info?.transactionId" class="text-break mb-0">
       <span class="font-weight-bold">{{ 'rewardManager.label.transactionId' | translate }}: </span>

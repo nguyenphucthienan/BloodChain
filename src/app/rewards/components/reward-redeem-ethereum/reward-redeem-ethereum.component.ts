@@ -9,6 +9,9 @@ import { environment } from 'src/environments/environment';
 import {
   RewardRedeemEthereumConfirmModalComponent,
 } from '../../modals/reward-redeem-ethereum-confirm-modal/reward-redeem-ethereum-confirm-modal.component';
+import {
+  RewardRedeemEthereumSuccessModalComponent,
+} from '../../modals/reward-redeem-ethereum-success-modal/reward-redeem-ethereum-success-modal.component';
 
 @Component({
   selector: 'app-reward-redeem-ethereum',
@@ -71,28 +74,30 @@ export class RewardRedeemEthereumComponent implements OnInit, OnDestroy {
     });
 
     this.modalRef.content.rewardRedeemed
-      .subscribe((data: any) => this.onRewardRedeemed(data));
+      .subscribe((data: any) => this.onRewardRedeemed(ethereumPlan, data.transactionId));
   }
 
-  onRewardRedeemed(data: { transactionId: string }) {
+  onRewardRedeemed(ethereumPlan: any, transactionId: string) {
     this.modalRef.hide();
     this.getUserInfo();
-    this.openRewardRedeemEthereumSuccessModal(data.transactionId);
+    this.openRewardRedeemEthereumSuccessModal(ethereumPlan, transactionId);
   }
 
-  openRewardRedeemEthereumSuccessModal(transactionId: string) {
-    // this.modalRef = this.modalService.show(RewardRedeemEthereumSuccessModalComponent, {
-    //   backdrop: true,
-    //   keyboard: true,
-    //   focus: true,
-    //   show: false,
-    //   ignoreBackdropClick: true,
-    //   class: 'modal-dialog-centered',
-    //   containerClass: 'top',
-    //   animated: true,
-    //   data: {
-    //   }
-    // });
+  openRewardRedeemEthereumSuccessModal(ethereumPlan: any, transactionId: string) {
+    this.modalRef = this.modalService.show(RewardRedeemEthereumSuccessModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        ethereumPlan,
+        transactionId
+      }
+    });
   }
 
   ngOnDestroy() {

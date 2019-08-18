@@ -1,0 +1,20 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close pull-right" (click)="close()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100">{{ 'rewardManager.modal.ethereumInfo' | translate }}</h4>
+  </div>
+  <div class="modal-body">
+    <h3 class="h3 text-center">{{ ethereumPlan?.name }}</h3>
+    <h5 class="mt-3">
+      <p class="font-weight-bold text-center mb-1">{{ 'rewardManager.label.transactionId' | translate }}: </p>
+      <span class="text-break">{{ transactionId }}</span>
+    </h5>
+  </div>
+  <div class="modal-footer">
+    <button type="button" mdbBtn color="secondary" class="waves-light" (click)="close()" mdbWavesEffect>
+      {{ 'common.button.cancel' | translate }}
+    </button>
+  </div>
+</div>

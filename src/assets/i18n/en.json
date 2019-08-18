@@ -999,7 +999,7 @@
       "redeemEthereum": "Redeem Ethereum",
       "pointInfo": "Point Info",
       "voucherInfo": "Voucher Info",
-      "ethreumInfo": "Ethereum Info"
+      "ethereumInfo": "Ethereum Info"
     },
     "label": {
       "redeemVouchers": "REDEEM VOUCHERS",
