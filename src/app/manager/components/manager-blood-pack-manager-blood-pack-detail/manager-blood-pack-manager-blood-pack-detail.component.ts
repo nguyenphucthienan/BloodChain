@@ -116,9 +116,6 @@ export class ManagerBloodPackManagerBloodPackDetailComponent implements OnInit, 
       testPassed: [null, Validators.required],
       separated: [null, Validators.required]
     });
-
-    this.userForm.disable();
-    this.bloodPackForm.disable();
   }
 
   openBloodPackQrCodeModal() {

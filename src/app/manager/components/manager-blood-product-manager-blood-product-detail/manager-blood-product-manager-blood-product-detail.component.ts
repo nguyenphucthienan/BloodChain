@@ -111,10 +111,6 @@ export class ManagerBloodProductManagerBloodProductDetailComponent implements On
       expirationDate: [null, Validators.required],
       used: [null, Validators.required]
     });
-
-    this.userForm.disable();
-    this.bloodPackForm.disable();
-    this.bloodProductForm.disable();
   }
 
   openBloodProductQrCodeModal() {

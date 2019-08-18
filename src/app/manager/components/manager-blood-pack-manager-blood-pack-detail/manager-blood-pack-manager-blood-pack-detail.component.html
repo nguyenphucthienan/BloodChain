@@ -7,8 +7,7 @@
   <div class="card mt-3">
     <div class="card-body">
       <div class="d-flex flex-sm-row flex-column justify-content-end">
-        <button type="button" class="btn btn-sm btn-primary"
-          [routerLink]="['/manager', 'users', bloodPack.donor._id]">
+        <button type="button" class="btn btn-sm btn-primary" [routerLink]="['/manager', 'users', bloodPack.donor._id]">
           {{ 'bloodPackManager.button.viewDonorDetail' | translate }}
         </button>
         <button type="button" class="btn btn-sm btn-primary" (click)="openBloodPackQrCodeModal()">
@@ -26,23 +25,23 @@
               <span class="font-weight-bold">{{ 'bloodPackManager.label.donorInfo' | translate }}</span>
             </div>
             <div class="md-form">
-              <input type="text" id="id" formControlName="id" class="form-control" mdbInput>
+              <input type="text" id="id" formControlName="id" class="form-control" mdbInput readonly>
               <label for="id">{{ 'bloodPackManager.label.id' | translate }}</label>
             </div>
             <div class="md-form">
-              <input type="text" id="username" formControlName="username" class="form-control" mdbInput>
+              <input type="text" id="username" formControlName="username" class="form-control" mdbInput readonly>
               <label for="username">{{ 'bloodPackManager.label.username' | translate }}</label>
             </div>
             <div class="form-row">
               <div class="col">
                 <div class="md-form form-col">
-                  <input type="text" id="firstName" formControlName="firstName" class="form-control" mdbInput>
+                  <input type="text" id="firstName" formControlName="firstName" class="form-control" mdbInput readonly>
                   <label for="firstName">{{ 'bloodPackManager.label.firstName' | translate }}</label>
                 </div>
               </div>
               <div class="col">
                 <div class="md-form form-col">
-                  <input type="text" id="lastName" formControlName="lastName" class="form-control" mdbInput>
+                  <input type="text" id="lastName" formControlName="lastName" class="form-control" mdbInput readonly>
                   <label for="lastName">{{ 'bloodPackManager.label.lastName' | translate }}</label>
                 </div>
               </div>
@@ -51,7 +50,7 @@
               <div class="col">
                 <div class="md-form form-col">
                   <div class="md-form">
-                    <input type="text" id="email" formControlName="email" class="form-control" mdbInput>
+                    <input type="text" id="email" formControlName="email" class="form-control" mdbInput readonly>
                     <label for="email">{{ 'bloodPackManager.label.email' | translate }}</label>
                   </div>
                 </div>
@@ -59,7 +58,7 @@
               <div class="col">
                 <div class="md-form form-col">
                   <div class="md-form">
-                    <input type="text" id="phone" formControlName="phone" class="form-control" mdbInput>
+                    <input type="text" id="phone" formControlName="phone" class="form-control" mdbInput readonly>
                     <label for="phone">{{ 'bloodPackManager.label.phone' | translate }}</label>
                   </div>
                 </div>
@@ -68,7 +67,7 @@
             <div class="form-row">
               <div class="col">
                 <div class="md-form form-col">
-                  <input type="text" id="gender" formControlName="gender" class="form-control" mdbInput>
+                  <input type="text" id="gender" formControlName="gender" class="form-control" mdbInput readonly>
                   <label for="gender">{{ 'bloodPackManager.label.gender' | translate }}</label>
                 </div>
               </div>
@@ -82,7 +81,7 @@
               </div>
             </div>
             <div class="md-form">
-              <input type="text" id="address" formControlName="address" class="form-control" mdbInput>
+              <input type="text" id="address" formControlName="address" class="form-control" mdbInput readonly>
               <label for="address">{{ 'bloodPackManager.label.address' | translate }}</label>
             </div>
           </form>
@@ -97,19 +96,20 @@
               <span class="font-weight-bold">{{ 'bloodPackManager.label.bloodPackInfo' | translate }}</span>
             </div>
             <div class="md-form">
-              <input type="text" id="time" formControlName="time" class="form-control" mdbInput>
+              <input type="text" id="time" formControlName="time" class="form-control" mdbInput readonly>
               <label for="time">{{ 'bloodPackManager.label.time' | translate }}</label>
             </div>
             <div class="md-form">
-              <input type="text" id="volume" formControlName="volume" class="form-control" mdbInput>
+              <input type="text" id="volume" formControlName="volume" class="form-control" mdbInput readonly>
               <label for="volume">{{ 'bloodPackManager.label.volume' | translate }}</label>
             </div>
             <div class="md-form">
-              <input type="text" id="bloodCamp" formControlName="bloodCamp" class="form-control" mdbInput>
+              <input type="text" id="bloodCamp" formControlName="bloodCamp" class="form-control" mdbInput readonly>
               <label for="bloodCamp">{{ 'bloodPackManager.label.bloodCamp' | translate }}</label>
             </div>
             <div class="md-form">
-              <input type="text" id="bloodTestCenter" formControlName="bloodTestCenter" class="form-control" mdbInput>
+              <input type="text" id="bloodTestCenter" formControlName="bloodTestCenter" class="form-control" mdbInput
+                readonly>
               <label for="bloodTestCenter">{{ 'bloodPackManager.label.bloodTestCenter' | translate }}</label>
             </div>
             <div class="md-form">
@@ -122,22 +122,24 @@
               <div class="col">
                 <div class="md-form form-col">
                   <input type="text" id="tested" formControlName="tested"
-                    [value]="bloodPackForm.get('tested').value | booleanYesNo | async" class="form-control" mdbInput>
+                    [value]="bloodPackForm.get('tested').value | booleanYesNo | async" class="form-control" mdbInput
+                    readonly>
                   <label for="tested">{{ 'bloodPackManager.label.tested' | translate }}</label>
                 </div>
               </div>
               <div class="col">
                 <div class="md-form form-col">
                   <input type="text" id="testPassed" formControlName="testPassed"
-                    [value]="bloodPackForm.get('testPassed').value | booleanYesNo | async" class="form-control"
-                    mdbInput>
+                    [value]="bloodPackForm.get('testPassed').value | booleanYesNo | async" class="form-control" mdbInput
+                    readonly>
                   <label for="testPassed">{{ 'bloodPackManager.label.testPassed' | translate }}</label>
                 </div>
               </div>
               <div class="col">
                 <div class="md-form form-col">
                   <input type="text" id="separated" formControlName="separated"
-                    [value]="bloodPackForm.get('separated').value | booleanYesNo | async" class="form-control" mdbInput>
+                    [value]="bloodPackForm.get('separated').value | booleanYesNo | async" class="form-control" mdbInput
+                    readonly>
                   <label for="separated">{{ 'bloodPackManager.label.separated' | translate }}</label>
                 </div>
               </div>
