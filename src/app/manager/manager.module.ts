@@ -87,6 +87,7 @@ import {
 import {
   BloodPackTransferResultModalComponent,
 } from './modals/blood-pack-transfer-result-modal/blood-pack-transfer-result-modal.component';
+import { BloodPackUpdateModalComponent } from './modals/blood-pack-update-modal/blood-pack-update-modal.component';
 import {
   BloodPackUpdateSeparationResultResultModalComponent,
 } from './modals/blood-pack-update-separation-result-result-modal/blood-pack-update-separation-result-result-modal.component';
@@ -126,6 +127,7 @@ import { UserQrcodeModalComponent } from './modals/user-qrcode-modal/user-qrcode
     ManagerCampaignManagerComponent,
     BloodPackAddConfirmModalComponent,
     BloodPackAddSuccessModalComponent,
+    BloodPackUpdateModalComponent,
     BloodCampBloodPackManagerComponent,
     BloodCampBloodPackManagerAddBloodPackComponent,
     BloodCampBloodPackManagerTransferBloodPackComponent,
@@ -167,6 +169,7 @@ import { UserQrcodeModalComponent } from './modals/user-qrcode-modal/user-qrcode
     UserAddSuccessModalComponent,
     BloodPackAddConfirmModalComponent,
     BloodPackAddSuccessModalComponent,
+    BloodPackUpdateModalComponent,
     BloodPackTransferConfirmModalComponent,
     BloodPackTransferResultModalComponent,
     BloodPackUpdateSeparationResultResultModalComponent,

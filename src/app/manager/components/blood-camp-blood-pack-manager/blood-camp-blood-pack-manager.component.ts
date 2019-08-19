@@ -3,11 +3,14 @@ import { Router } from '@angular/router';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { fromEvent, Subscription } from 'rxjs';
 import { debounceTime, map, tap } from 'rxjs/operators';
+import { BloodPack } from 'src/app/core/models/blood-pack.interface';
 import { DatatableComponent } from 'src/app/datatable/datatable.component';
 import { TableActionType } from 'src/app/datatable/models/table-action.interface';
 import { TableCellChange } from 'src/app/datatable/models/table-cell-change.interface';
+import { TableRow } from 'src/app/datatable/models/table-row.interface';
 import { ScanQrcodeModalComponent } from 'src/app/shared/modals/scan-qrcode-modal/scan-qrcode-modal.component';
 
+import { BloodPackUpdateModalComponent } from '../../modals/blood-pack-update-modal/blood-pack-update-modal.component';
 import { BloodCampBloodPackManagerTableService } from '../../services/blood-camp-blood-pack-manager-table.service';
 
 @Component({
@@ -80,6 +83,9 @@ export class BloodCampBloodPackManagerComponent implements OnInit, AfterViewInit
       case TableActionType.GetDetail:
         this.navigateToBloodPackDetail(tableCellChange.row.cells._id.value);
         break;
+      case TableActionType.Update:
+        this.openBloodPackUpdateModal(tableCellChange.row);
+        break;
     }
   }
 
@@ -95,6 +101,30 @@ export class BloodCampBloodPackManagerComponent implements OnInit, AfterViewInit
 
   navigateToBloodPackDetail(id: string) {
     this.router.navigate(['/manager', 'blood-packs', id]);
+  }
+
+  openBloodPackUpdateModal(rowData: TableRow) {
+    this.modalRef = this.modalService.show(BloodPackUpdateModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        rowData
+      }
+    });
+
+    this.modalRef.content.bloodPackUpdated
+      .subscribe((bloodPack: BloodPack) => this.onBloodPackUpdated(bloodPack));
+  }
+
+  onBloodPackUpdated(bloodPack: BloodPack) {
+    this.modalRef.hide();
+    this.datatable.refresh();
   }
 
   ngOnDestroy() {

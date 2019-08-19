@@ -766,7 +766,7 @@
       "separated": "Separated"
     },
     "modal": {
-      "add": "Add Blood Pack",
+      "update": "Update Blood Pack",
       "bloodPackInfo": "Blood Pack Info",
       "bloodSeparationResults": "Blood Separation Results",
       "transferBloodPacks": "Transfer Blood Packs"
@@ -831,6 +831,10 @@
     "alert": {
       "addSuccess": "Add blood pack successfully",
       "addFailed": "Add blood pack failed",
+      "updateSuccess": "Update blood pack successfully",
+      "updateFailed": "Update blood pack failed",
+      "deleteSuccess": "Delete blood pack successfully",
+      "deleteFailed": "Delete blood pack failed",
       "updateTestResultSuccess": "Update test result successfully",
       "updateTestResultFailed": "Update test result failed",
       "updateSeparationResultSuccess": "Update separation result successfully",

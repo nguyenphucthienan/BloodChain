@@ -766,7 +766,7 @@
       "separated": "Đã phân tách"
     },
     "modal": {
-      "add": "Thêm túi máu",
+      "update": "Cập nhật túi máu",
       "bloodPackInfo": "Thông tin túi máu",
       "bloodSeparationResults": "Kết quả phân tách",
       "transferBloodPacks": "Chuyển túi máu"
@@ -831,6 +831,10 @@
     "alert": {
       "addSuccess": "Thêm túi máu thành công",
       "addFailed": "Thêm túi máu không thành công",
+      "updateSuccess": "Cập nhật túi máu thành công",
+      "updateFailed": "Cập nhật túi máu không thành công",
+      "deleteSuccess": "Xóa túi máu thành công",
+      "deleteFailed": "Xóa túi máu không thành công",
       "updateTestResultSuccess": "Cập nhật kết quả xét nghiệm thành công",
       "updateTestResultFailed": "Cập nhật kết quả xét nghiệm không thành công",
       "updateSeparationResultSuccess": "Cập nhật kết quả phân tách thành công",
