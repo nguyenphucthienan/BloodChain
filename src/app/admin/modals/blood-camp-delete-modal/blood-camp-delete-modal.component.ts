@@ -34,7 +34,7 @@ export class BloodCampDeleteModalComponent implements OnInit {
           this.bloodCampDeleted.emit();
           this.alertService.success('bloodCampManager.alert.deleteSuccess');
         },
-        error => this.alertService.success('bloodCampManager.alert.deleteFailed')
+        error => this.alertService.error('bloodCampManager.alert.deleteFailed')
       );
   }
 

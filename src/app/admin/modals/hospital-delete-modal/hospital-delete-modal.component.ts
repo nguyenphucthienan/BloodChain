@@ -34,7 +34,7 @@ export class HospitalDeleteModalComponent implements OnInit {
           this.hospitalDeleted.emit();
           this.alertService.success('hospitalManager.alert.deleteSuccess');
         },
-        error => this.alertService.success('hospitalManager.alert.deleteFailed')
+        error => this.alertService.error('hospitalManager.alert.deleteFailed')
       );
   }
 

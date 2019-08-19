@@ -34,7 +34,7 @@ export class BloodBankDeleteModalComponent implements OnInit {
           this.bloodBankDeleted.emit();
           this.alertService.success('bloodBankManager.alert.deleteSuccess');
         },
-        error => this.alertService.success('bloodBankManager.alert.deleteFailed')
+        error => this.alertService.error('bloodBankManager.alert.deleteFailed')
       );
   }
 

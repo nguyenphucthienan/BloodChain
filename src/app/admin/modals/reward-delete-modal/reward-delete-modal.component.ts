@@ -34,7 +34,7 @@ export class RewardDeleteModalComponent implements OnInit {
           this.rewardDeleted.emit();
           this.alertService.success('rewardManager.alert.deleteSuccess');
         },
-        error => this.alertService.success('rewardManager.alert.deleteFailed')
+        error => this.alertService.error('rewardManager.alert.deleteFailed')
       );
   }
 

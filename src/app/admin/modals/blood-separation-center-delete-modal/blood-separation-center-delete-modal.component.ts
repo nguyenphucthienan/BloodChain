@@ -34,7 +34,7 @@ export class BloodSeparationCenterDeleteModalComponent implements OnInit {
           this.bloodSeparationCenterDeleted.emit();
           this.alertService.success('bloodSeparationCenterManager.alert.deleteSuccess');
         },
-        error => this.alertService.success('bloodSeparationCenterManager.alert.deleteFailed')
+        error => this.alertService.error('bloodSeparationCenterManager.alert.deleteFailed')
       );
   }
 

@@ -34,7 +34,7 @@ export class TestTypeDeleteModalComponent implements OnInit {
           this.testTypeDeleted.emit();
           this.alertService.success('testTypeManager.alert.deleteSuccess');
         },
-        error => this.alertService.success('testTypeManager.alert.deleteFailed')
+        error => this.alertService.error('testTypeManager.alert.deleteFailed')
       );
   }
 

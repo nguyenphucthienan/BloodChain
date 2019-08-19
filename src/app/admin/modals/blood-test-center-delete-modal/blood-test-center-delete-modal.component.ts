@@ -34,7 +34,7 @@ export class BloodTestCenterDeleteModalComponent implements OnInit {
           this.bloodTestCenterDeleted.emit();
           this.alertService.success('bloodTestCenterManager.alert.deleteSuccess');
         },
-        error => this.alertService.success('bloodTestCenterManager.alert.deleteFailed')
+        error => this.alertService.error('bloodTestCenterManager.alert.deleteFailed')
       );
   }
 

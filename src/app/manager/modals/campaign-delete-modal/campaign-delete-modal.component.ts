@@ -34,7 +34,7 @@ export class CampaignDeleteModalComponent implements OnInit {
           this.campaignDeleted.emit();
           this.alertService.success('campaignManager.alert.deleteSuccess');
         },
-        error => this.alertService.success('campaignManager.alert.deleteFailed')
+        error => this.alertService.error('campaignManager.alert.deleteFailed')
       );
   }
 

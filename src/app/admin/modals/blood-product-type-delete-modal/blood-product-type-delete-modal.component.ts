@@ -34,7 +34,7 @@ export class BloodProductTypeDeleteModalComponent implements OnInit {
           this.bloodProductTypeDeleted.emit();
           this.alertService.success('bloodProductTypeManager.alert.deleteSuccess');
         },
-        error => this.alertService.success('bloodProductTypeManager.alert.deleteFailed')
+        error => this.alertService.error('bloodProductTypeManager.alert.deleteFailed')
       );
   }
 
