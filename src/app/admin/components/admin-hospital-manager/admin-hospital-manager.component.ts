@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { fromEvent, Subscription } from 'rxjs';
 import { debounceTime, map, tap } from 'rxjs/operators';
@@ -35,6 +36,7 @@ export class AdminHospitalManagerComponent implements OnInit, AfterViewInit, OnD
 
   constructor(
     public hospitalManagerTableService: HospitalManagerTableService,
+    private router: Router,
     private renderer: Renderer2,
     private modalService: MDBModalService
   ) { }
@@ -83,6 +85,7 @@ export class AdminHospitalManagerComponent implements OnInit, AfterViewInit, OnD
   }
 
   navigateToHospitalDetail(id: string) {
+    this.router.navigate(['hospitals', id]);
   }
 
   openHospitalAddModal() {

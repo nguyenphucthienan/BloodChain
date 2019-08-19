@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { MDBModalRef } from 'angular-bootstrap-md';
 import { fromEvent, Subscription } from 'rxjs';
 import { debounceTime, map, tap } from 'rxjs/operators';
@@ -24,6 +25,7 @@ export class AdminBloodPackManagerComponent implements OnInit, AfterViewInit, On
 
   constructor(
     public bloodPackManagerTableService: BloodPackManagerTableService,
+    private router: Router,
     private renderer: Renderer2
   ) { }
 
@@ -59,6 +61,7 @@ export class AdminBloodPackManagerComponent implements OnInit, AfterViewInit, On
   }
 
   navigateToBloodPackDetail(id: string) {
+    this.router.navigate(['/manager', 'blood-packs', id]);
   }
 
   ngOnDestroy() {

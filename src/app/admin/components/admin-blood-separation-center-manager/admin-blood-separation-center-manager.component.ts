@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { fromEvent, Subscription } from 'rxjs';
 import { debounceTime, map, tap } from 'rxjs/operators';
@@ -41,6 +42,7 @@ export class AdminBloodSeparationCenterManagerComponent implements OnInit, After
 
   constructor(
     public bloodSeparationCenterManagerTableService: BloodSeparationCenterManagerTableService,
+    private router: Router,
     private renderer: Renderer2,
     private modalService: MDBModalService
   ) { }
@@ -89,6 +91,7 @@ export class AdminBloodSeparationCenterManagerComponent implements OnInit, After
   }
 
   navigateToBloodSeparationCenterDetail(id: string) {
+    this.router.navigate(['/blood-separation-centers', id]);
   }
 
   openBloodSeparationCenterAddModal() {
