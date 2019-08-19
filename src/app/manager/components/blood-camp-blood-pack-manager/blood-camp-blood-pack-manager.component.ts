@@ -10,6 +10,7 @@ import { TableCellChange } from 'src/app/datatable/models/table-cell-change.inte
 import { TableRow } from 'src/app/datatable/models/table-row.interface';
 import { ScanQrcodeModalComponent } from 'src/app/shared/modals/scan-qrcode-modal/scan-qrcode-modal.component';
 
+import { BloodPackDeleteModalComponent } from '../../modals/blood-pack-delete-modal/blood-pack-delete-modal.component';
 import { BloodPackUpdateModalComponent } from '../../modals/blood-pack-update-modal/blood-pack-update-modal.component';
 import { BloodCampBloodPackManagerTableService } from '../../services/blood-camp-blood-pack-manager-table.service';
 
@@ -86,6 +87,9 @@ export class BloodCampBloodPackManagerComponent implements OnInit, AfterViewInit
       case TableActionType.Update:
         this.openBloodPackUpdateModal(tableCellChange.row);
         break;
+      case TableActionType.Delete:
+        this.openBloodPackDeleteModal(tableCellChange.row);
+        break;
     }
   }
 
@@ -123,6 +127,30 @@ export class BloodCampBloodPackManagerComponent implements OnInit, AfterViewInit
   }
 
   onBloodPackUpdated(bloodPack: BloodPack) {
+    this.modalRef.hide();
+    this.datatable.refresh();
+  }
+
+  openBloodPackDeleteModal(rowData: TableRow) {
+    this.modalRef = this.modalService.show(BloodPackDeleteModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        rowData
+      }
+    });
+
+    this.modalRef.content.bloodPackDeleted
+      .subscribe(() => this.onBloodPackDeleted());
+  }
+
+  onBloodPackDeleted() {
     this.modalRef.hide();
     this.datatable.refresh();
   }

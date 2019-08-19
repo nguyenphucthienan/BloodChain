@@ -80,6 +80,7 @@ import {
 import {
   BloodPackAddSuccessModalComponent,
 } from './modals/blood-pack-add-success-modal/blood-pack-add-success-modal.component';
+import { BloodPackDeleteModalComponent } from './modals/blood-pack-delete-modal/blood-pack-delete-modal.component';
 import { BloodPackQrcodeModalComponent } from './modals/blood-pack-qrcode-modal/blood-pack-qrcode-modal.component';
 import {
   BloodPackTransferConfirmModalComponent,
@@ -128,6 +129,7 @@ import { UserQrcodeModalComponent } from './modals/user-qrcode-modal/user-qrcode
     BloodPackAddConfirmModalComponent,
     BloodPackAddSuccessModalComponent,
     BloodPackUpdateModalComponent,
+    BloodPackDeleteModalComponent,
     BloodCampBloodPackManagerComponent,
     BloodCampBloodPackManagerAddBloodPackComponent,
     BloodCampBloodPackManagerTransferBloodPackComponent,
@@ -183,7 +185,8 @@ import { UserQrcodeModalComponent } from './modals/user-qrcode-modal/user-qrcode
     CampaignAddModalComponent,
     CampaignUpdateModalComponent,
     CampaignDeleteModalComponent,
-    CampaignPhotoManagerModalComponent
+    CampaignPhotoManagerModalComponent,
+    BloodPackDeleteModalComponent
   ]
 })
 export class ManagerModule { }

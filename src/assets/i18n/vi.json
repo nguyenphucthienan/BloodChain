@@ -767,6 +767,7 @@
     },
     "modal": {
       "update": "Cập nhật túi máu",
+      "delete": "Xóa túi máu",
       "bloodPackInfo": "Thông tin túi máu",
       "bloodSeparationResults": "Kết quả phân tách",
       "transferBloodPacks": "Chuyển túi máu"
@@ -822,6 +823,7 @@
       "descriptionRequired": "Miêu tả không được bỏ trống",
       "addThisBloodPack": "thêm túi máu này",
       "transferTheseBloodPacks": "chuyển những túi máu này",
+      "bloodPackWithId": "túi máu với ID",
       "testTypeRequired": "Tên xét nghiệm không được bỏ trống",
       "resultRequired": "Kết quả không được bỏ trống",
       "bloodTypeRequired": "Nhóm máu không được bỏ trống",

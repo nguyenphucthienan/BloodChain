@@ -767,6 +767,7 @@
     },
     "modal": {
       "update": "Update Blood Pack",
+      "delete": "Delete Blood Pack",
       "bloodPackInfo": "Blood Pack Info",
       "bloodSeparationResults": "Blood Separation Results",
       "transferBloodPacks": "Transfer Blood Packs"
@@ -822,6 +823,7 @@
       "descriptionRequired": "Description is required",
       "addThisBloodPack": "add this blood pack",
       "transferTheseBloodPacks": "transfer these blood packs",
+      "bloodPackWithId": "the blood pack with ID",
       "testTypeRequired": "Test type is required",
       "resultRequired": "Result is required",
       "bloodTypeRequired": "Blood type is required",
