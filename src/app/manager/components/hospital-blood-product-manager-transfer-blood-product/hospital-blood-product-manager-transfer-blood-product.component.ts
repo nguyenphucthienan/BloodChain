@@ -205,7 +205,7 @@ export class HospitalBloodProductManagerTransferBloodProductComponent implements
     this.authService.getMyUserInfo()
       .subscribe((user: User) => {
         if (user.bloodCamp._id !== bloodProduct.currentLocation) {
-          this.alertService.error('bloodProductManager.alert.cannotSelect');
+          this.alertService.error('bloodProductManager.alert.cannotSelectBloodProduct');
           return;
         }
 

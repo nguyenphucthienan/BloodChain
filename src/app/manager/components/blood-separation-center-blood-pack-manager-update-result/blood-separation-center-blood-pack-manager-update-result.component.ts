@@ -153,7 +153,7 @@ export class BloodSeparationCenterBloodPackManagerUpdateResultComponent implemen
     this.bloodPack = bloodPack;
     this.authService.getMyUserInfo().subscribe((user: User) => {
       if (user.bloodSeparationCenter._id !== bloodPack.currentLocation) {
-        this.alertService.error('bloodPackManager.alert.cannotSelect');
+        this.alertService.error('bloodPackManager.alert.cannotSelectBloodPack');
         return;
       }
 
@@ -284,7 +284,7 @@ export class BloodSeparationCenterBloodPackManagerUpdateResultComponent implemen
       focus: true,
       show: false,
       ignoreBackdropClick: true,
-      class: 'modal-lg modal-dialog-centered',
+      class: 'modal-xl modal-dialog-centered',
       containerClass: 'top',
       animated: true,
       data: {

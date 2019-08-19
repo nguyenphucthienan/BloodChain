@@ -138,7 +138,7 @@ export class BloodTestCenterBloodPackManagerTransferBloodPackComponent implement
     this.authService.getMyUserInfo()
       .subscribe((user: User) => {
         if (user.bloodTestCenter._id !== bloodPack.currentLocation) {
-          this.alertService.error('bloodPackManager.alert.cannotSelect');
+          this.alertService.error('bloodPackManager.alert.cannotSelectBloodPack');
           return;
         }
 

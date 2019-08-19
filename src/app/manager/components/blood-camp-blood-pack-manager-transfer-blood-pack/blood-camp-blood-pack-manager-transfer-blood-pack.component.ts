@@ -125,7 +125,7 @@ export class BloodCampBloodPackManagerTransferBloodPackComponent implements OnIn
     this.authService.getMyUserInfo()
       .subscribe((user: User) => {
         if (user.bloodCamp._id !== bloodPack.currentLocation) {
-          this.alertService.error('bloodPackManager.alert.cannotSelect');
+          this.alertService.error('bloodPackManager.alert.cannotSelectBloodPack');
           return;
         }
 

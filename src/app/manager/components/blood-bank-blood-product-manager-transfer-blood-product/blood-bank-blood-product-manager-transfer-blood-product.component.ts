@@ -45,7 +45,7 @@ export class BloodBankBloodProductManagerTransferBloodProductComponent implement
   @ViewChild('organizationTypeSelect') organizationTypeSelect: NgSelectComponent;
   @ViewChild('organizationSelect') organizationSelect: NgSelectComponent;
 
-  modalRef: MDBModalRef;
+  user: User;
 
   bloodProducts$: Observable<BloodProduct[]>;
   bloodProductsInput$ = new Subject<string>();
@@ -61,6 +61,8 @@ export class BloodBankBloodProductManagerTransferBloodProductComponent implement
 
   organizationForm: FormGroup;
   transferForm: FormGroup;
+
+  modalRef: MDBModalRef;
 
   constructor(
     private router: Router,
@@ -87,6 +89,9 @@ export class BloodBankBloodProductManagerTransferBloodProductComponent implement
 
   ngOnInit() {
     this.renderer.addClass(document.body, 'grey-background');
+    this.authService.getMyUserInfo()
+      .subscribe((user: User) => this.user = user);
+
     this.initForms();
     this.initDataFields();
   }
@@ -101,6 +106,7 @@ export class BloodBankBloodProductManagerTransferBloodProductComponent implement
           }));
 
         this.organizationTypeSelect.select(this.organizationTypes[0]);
+        this.selectOrganizationType(this.organizationTypes[0]);
         this.initOrganizationDataField(this.organizationTypes[0].value);
       });
 
@@ -184,6 +190,12 @@ export class BloodBankBloodProductManagerTransferBloodProductComponent implement
       return;
     }
 
+    if (this.toOrganizationType === RoleName.BLOOD_BANK
+      && this.user.bloodBank._id === organization._id) {
+      this.alertService.error('bloodProductManager.alert.cannotSelectBloodBank');
+      return;
+    }
+
     this.organizationForm.patchValue({
       name: organization.name,
       address: organization.address,
@@ -202,16 +214,13 @@ export class BloodBankBloodProductManagerTransferBloodProductComponent implement
       return;
     }
 
-    this.authService.getMyUserInfo()
-      .subscribe((user: User) => {
-        if (user.bloodCamp._id !== bloodProduct.currentLocation) {
-          this.alertService.error('bloodProductManager.alert.cannotSelect');
-          return;
-        }
+    if (this.user.bloodCamp._id !== bloodProduct.currentLocation) {
+      this.alertService.error('bloodProductManager.alert.cannotSelectBloodProduct');
+      return;
+    }
 
-        this.bloodBankBloodProductTransferTableService.addRawDataRow(bloodProduct);
-        this.datatable.refresh();
-      });
+    this.bloodBankBloodProductTransferTableService.addRawDataRow(bloodProduct);
+    this.datatable.refresh();
   }
 
   openScanQrCodeModal() {

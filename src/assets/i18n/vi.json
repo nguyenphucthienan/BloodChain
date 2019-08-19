@@ -834,7 +834,7 @@
       "updateSeparationResultSuccess": "Cập nhật kết quả phân tách thành công",
       "updateSeparationResultFailed": "Cập nhật kết quả phân tách không thành công",
       "alreadySelected": "Túi máu đã được chọn",
-      "cannotSelect": "Không thể chọn túi máu này",
+      "cannotSelectBloodPack": "Không thể chọn túi máu này",
       "noBloodPack": "Không có túi máu nào được chọn",
       "hasNotBeenTested": "Túi máu chưa được xét nghiệm",
       "testFailed": "Túi máu không đạt yêu cầu"
@@ -908,7 +908,9 @@
     },
     "alert": {
       "alreadySelected": "Chế phẩm máu đã được chọn",
-      "cannotSelect": "Không thể chọn chế phẩm máu này",
+      "cannotSelectBloodProduct": "Không thể chọn chế phẩm máu này",
+      "cannotSelectBloodBank": "Không thể chọn ngân hàng máu này",
+      "cannotSelectHospital": "Không thể chọn bệnh viện này",
       "noBloodProduct": "Không có chế phẩm máu nào được chọn"
     },
     "placeholder": {
