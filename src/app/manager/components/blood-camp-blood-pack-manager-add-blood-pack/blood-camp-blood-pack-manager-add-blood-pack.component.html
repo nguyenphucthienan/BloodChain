@@ -100,7 +100,7 @@
       <div class="d-flex">
         <span class="font-weight-bold">{{ 'bloodPackManager.label.addBloodPack' | translate }}</span>
       </div>
-      <form [formGroup]="addForm" (ngSubmit)="addBloodPack()">
+      <form [formGroup]="addForm" (ngSubmit)="openBloodPackAddConfirmModal()">
         <div class="md-form">
           <input type="text" id="donor" formControlName="donor" class="form-control" mdbInput readonly>
           <label for="donor">{{ 'bloodPackManager.label.donorId' | translate }}</label>

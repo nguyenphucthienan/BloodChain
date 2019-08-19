@@ -766,6 +766,7 @@
       "separated": "Separated"
     },
     "modal": {
+      "add": "Add Blood Pack",
       "bloodPackInfo": "Blood Pack Info",
       "bloodSeparationResults": "Blood Separation Results",
       "transferBloodPacks": "Transfer Blood Packs"
@@ -819,6 +820,7 @@
       "bloodTestCenterIdRequired": "Blood test center ID is required",
       "bloodSeparationCenterIdRequired": "Blood separation center ID is required",
       "descriptionRequired": "Description is required",
+      "addThisBloodPack": "add this blood pack",
       "transferTheseBloodPacks": "transfer these blood packs",
       "testTypeRequired": "Test type is required",
       "resultRequired": "Result is required",

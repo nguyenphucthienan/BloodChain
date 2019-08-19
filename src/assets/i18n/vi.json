@@ -766,6 +766,7 @@
       "separated": "Đã phân tách"
     },
     "modal": {
+      "add": "Thêm túi máu",
       "bloodPackInfo": "Thông tin túi máu",
       "bloodSeparationResults": "Kết quả phân tách",
       "transferBloodPacks": "Chuyển túi máu"
@@ -819,6 +820,7 @@
       "bloodTestCenterIdRequired": "ID trung tâm xét nghiệm không được bỏ trống",
       "bloodSeparationCenterIdRequired": "ID trung tâm phân tách không được bỏ trống",
       "descriptionRequired": "Miêu tả không được bỏ trống",
+      "addThisBloodPack": "thêm túi máu này",
       "transferTheseBloodPacks": "chuyển những túi máu này",
       "testTypeRequired": "Tên xét nghiệm không được bỏ trống",
       "resultRequired": "Kết quả không được bỏ trống",

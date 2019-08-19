@@ -75,6 +75,9 @@ import {
 import { ManagerUserManagerComponent } from './components/manager-user-manager/manager-user-manager.component';
 import { ManagerRoutingModule } from './manager-routing.module';
 import {
+  BloodPackAddConfirmModalComponent,
+} from './modals/blood-pack-add-confirm-modal/blood-pack-add-confirm-modal.component';
+import {
   BloodPackAddSuccessModalComponent,
 } from './modals/blood-pack-add-success-modal/blood-pack-add-success-modal.component';
 import { BloodPackQrcodeModalComponent } from './modals/blood-pack-qrcode-modal/blood-pack-qrcode-modal.component';
@@ -121,6 +124,7 @@ import { UserQrcodeModalComponent } from './modals/user-qrcode-modal/user-qrcode
     ManagerBloodProductManagerComponent,
     ManagerBloodProductManagerBloodProductDetailComponent,
     ManagerCampaignManagerComponent,
+    BloodPackAddConfirmModalComponent,
     BloodPackAddSuccessModalComponent,
     BloodCampBloodPackManagerComponent,
     BloodCampBloodPackManagerAddBloodPackComponent,
@@ -161,6 +165,7 @@ import { UserQrcodeModalComponent } from './modals/user-qrcode-modal/user-qrcode
   ],
   entryComponents: [
     UserAddSuccessModalComponent,
+    BloodPackAddConfirmModalComponent,
     BloodPackAddSuccessModalComponent,
     BloodPackTransferConfirmModalComponent,
     BloodPackTransferResultModalComponent,

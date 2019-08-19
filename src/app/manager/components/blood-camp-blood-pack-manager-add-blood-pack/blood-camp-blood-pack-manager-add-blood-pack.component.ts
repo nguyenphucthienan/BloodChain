@@ -12,6 +12,9 @@ import { UserService } from 'src/app/core/services/user.service';
 import { ScanQrcodeModalComponent } from 'src/app/shared/modals/scan-qrcode-modal/scan-qrcode-modal.component';
 
 import {
+  BloodPackAddConfirmModalComponent,
+} from '../../modals/blood-pack-add-confirm-modal/blood-pack-add-confirm-modal.component';
+import {
   BloodPackAddSuccessModalComponent,
 } from '../../modals/blood-pack-add-success-modal/blood-pack-add-success-modal.component';
 import {
@@ -97,6 +100,7 @@ export class BloodCampBloodPackManagerAddBloodPackComponent implements OnInit, O
       return;
     }
 
+    this.user = user;
     this.userForm.patchValue({
       username: user.username,
       firstName: user.firstName,
@@ -140,7 +144,28 @@ export class BloodCampBloodPackManagerAddBloodPackComponent implements OnInit, O
       );
   }
 
-  addBloodPack() {
+  openBloodPackAddConfirmModal() {
+    const volume = this.addForm.value.volume;
+    this.modalRef = this.modalService.show(BloodPackAddConfirmModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        user: this.user,
+        volume
+      }
+    });
+
+    this.modalRef.content.confirmed
+      .subscribe(() => this.onAddBloodPacksConfirmed());
+  }
+
+  onAddBloodPacksConfirmed() {
     this.spinnerService.show();
     this.bloodPackService.createBloodPack(this.addForm.getRawValue())
       .subscribe(
