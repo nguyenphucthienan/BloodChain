@@ -193,6 +193,8 @@ export class BloodBankBloodProductManagerTransferBloodProductComponent implement
     if (this.toOrganizationType === RoleName.BLOOD_BANK
       && this.user.bloodBank._id === organization._id) {
       this.alertService.error('bloodProductManager.alert.cannotSelectBloodBank');
+      this.organizationForm.reset();
+      this.transferForm.reset();
       return;
     }
 

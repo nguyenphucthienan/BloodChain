@@ -45,7 +45,7 @@ export class HospitalBloodProductManagerTransferBloodProductComponent implements
   @ViewChild('organizationTypeSelect') organizationTypeSelect: NgSelectComponent;
   @ViewChild('organizationSelect') organizationSelect: NgSelectComponent;
 
-  modalRef: MDBModalRef;
+  user: User;
 
   bloodProducts$: Observable<BloodProduct[]>;
   bloodProductsInput$ = new Subject<string>();
@@ -61,6 +61,8 @@ export class HospitalBloodProductManagerTransferBloodProductComponent implements
 
   organizationForm: FormGroup;
   transferForm: FormGroup;
+
+  modalRef: MDBModalRef;
 
   constructor(
     private router: Router,
@@ -87,6 +89,9 @@ export class HospitalBloodProductManagerTransferBloodProductComponent implements
 
   ngOnInit() {
     this.renderer.addClass(document.body, 'grey-background');
+    this.authService.getMyUserInfo()
+      .subscribe((user: User) => this.user = user);
+
     this.initForms();
     this.initDataFields();
   }
@@ -101,6 +106,7 @@ export class HospitalBloodProductManagerTransferBloodProductComponent implements
           }));
 
         this.organizationTypeSelect.select(this.organizationTypes[0]);
+        this.selectOrganizationType(this.organizationTypes[0]);
         this.initOrganizationDataField(this.organizationTypes[0].value);
       });
 
@@ -179,6 +185,14 @@ export class HospitalBloodProductManagerTransferBloodProductComponent implements
 
   selectOrganization(organization: any) {
     if (!organization) {
+      this.organizationForm.reset();
+      this.transferForm.reset();
+      return;
+    }
+
+    if (this.toOrganizationType === RoleName.HOSPITAL
+      && this.user.hospital._id === organization._id) {
+      this.alertService.error('bloodProductManager.alert.cannotSelectHospital');
       this.organizationForm.reset();
       this.transferForm.reset();
       return;
