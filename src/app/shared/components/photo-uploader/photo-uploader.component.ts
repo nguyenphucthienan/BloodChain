@@ -45,7 +45,7 @@ export class PhotoUploaderComponent implements OnInit, OnChanges {
   }
 
   private initUploader() {
-    const token = localStorage.getItem(environment.authTokenName);
+    const token = localStorage.getItem(environment.tokenName.auth);
     this.uploader = new FileUploader({
       method: this.method,
       url: this.uploadUrl,

@@ -7,12 +7,19 @@ export const environment = {
   apiUrl: 'http://localhost:3000/api',
   whitelistedDomains: ['localhost:3000'],
   blacklistedRoutes: ['localhost:3000/api/auth'],
-  authTokenName: 'auth-token',
+  tokenName: {
+    auth: 'auth-token',
+    language: 'language-token'
+  },
   mapApiKey: 'AIzaSyB2MsjvYImNAUWNxbWSiZGQ5TdxNaPbPcY',
   photoUrl: {
     logo: './assets/images/landing/logo.svg',
     notFound: './assets/images/pages/not-found.svg',
     defaultUser: './assets/images/users/default.png',
+    language: {
+      english: './assets/images/languages/english.png',
+      vietnamese: './assets/images/languages/vietnamese.png',
+    },
     rewardGift: './assets/images/rewards/gift.svg',
     rewardEthereum: {
       main: './assets/images/rewards/ethereum.svg',

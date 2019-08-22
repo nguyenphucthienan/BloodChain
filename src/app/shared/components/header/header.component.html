@@ -38,6 +38,10 @@
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">
+      <li class="nav-item d-flex justity-content-center align-items-center p-2">
+        <img [src]="englishPhotoUrl" class="img-fluid mr-2 language-icon" (click)="selectEnglish()">
+        <img [src]="vietnamesePhotoUrl" class="img-fluid language-icon" (click)="selectVietnamese()">
+      </li>
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link waves-light" mdbWavesEffect routerLink="/about">
           {{ 'header.title.about' | translate }}

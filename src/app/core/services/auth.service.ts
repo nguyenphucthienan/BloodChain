@@ -27,7 +27,7 @@ export class AuthService {
 
   readTokenFromStorage() {
     if (this.isLoggedIn()) {
-      const token = localStorage.getItem(environment.authTokenName);
+      const token = localStorage.getItem(environment.tokenName.auth);
       this.changeDecodedToken(token);
     } else {
       this.logout();
@@ -35,7 +35,7 @@ export class AuthService {
   }
 
   isLoggedIn() {
-    const token = localStorage.getItem(environment.authTokenName);
+    const token = localStorage.getItem(environment.tokenName.auth);
     return !this.jwtHelper.isTokenExpired(token);
   }
 
@@ -68,7 +68,7 @@ export class AuthService {
             const userRoleNames = decodedToken.roles;
 
             if (userRoleNames.length > 0) {
-              localStorage.setItem(environment.authTokenName, accessToken);
+              localStorage.setItem(environment.tokenName.auth, accessToken);
               this.changeDecodedToken(accessToken);
             } else {
               throw new Error('Not User');
@@ -80,7 +80,7 @@ export class AuthService {
 
   logout() {
     this.changeDecodedToken(null);
-    localStorage.removeItem(environment.authTokenName);
+    localStorage.removeItem(environment.tokenName.auth);
   }
 
   private changeDecodedToken(token: string) {
@@ -89,7 +89,7 @@ export class AuthService {
   }
 
   getMyUserInfo() {
-    const token = localStorage.getItem(environment.authTokenName);
+    const token = localStorage.getItem(environment.tokenName.auth);
     const headers = new HttpHeaders({ Authorization: `Bearer ${token}` });
     return this.http.get(this.meUrl, { headers });
   }
@@ -107,13 +107,13 @@ export class AuthService {
   }
 
   getMyUserInfoOnBlockchain() {
-    const token = localStorage.getItem(environment.authTokenName);
+    const token = localStorage.getItem(environment.tokenName.auth);
     const headers = new HttpHeaders({ Authorization: `Bearer ${token}` });
     return this.http.get(this.userInfoOnBlockchainUrl, { headers });
   }
 
   getMyPointHistoriesOnBlockchain() {
-    const token = localStorage.getItem(environment.authTokenName);
+    const token = localStorage.getItem(environment.tokenName.auth);
     const headers = new HttpHeaders({ Authorization: `Bearer ${token}` });
     return this.http.get(this.pointHistoriesOnBlockchainUrl, { headers });
   }

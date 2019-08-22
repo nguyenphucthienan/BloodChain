@@ -3,12 +3,19 @@ export const environment = {
   apiUrl: 'https://bloodchain.herokuapp.com/api',
   whitelistedDomains: ['bloodchain.herokuapp.com'],
   blacklistedRoutes: ['bloodchain.herokuapp.com/api/auth'],
-  authTokenName: 'auth-token',
+  tokenName: {
+    auth: 'auth-token',
+    language: 'language-token'
+  },
   mapApiKey: 'AIzaSyB2MsjvYImNAUWNxbWSiZGQ5TdxNaPbPcY',
   photoUrl: {
     logo: './assets/images/landing/logo.svg',
     notFound: './assets/images/pages/not-found.svg',
     defaultUser: './assets/images/users/default.png',
+    language: {
+      english: './assets/images/languages/english.png',
+      vietnamese: './assets/images/languages/vietnamese.png',
+    },
     rewardGift: './assets/images/rewards/gift.svg',
     rewardEthereum: {
       main: './assets/images/rewards/ethereum.svg',

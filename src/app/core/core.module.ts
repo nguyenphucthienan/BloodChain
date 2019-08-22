@@ -33,6 +33,7 @@ import { BloodSeparationCenterService } from './services/blood-separation-center
 import { BloodTestCenterService } from './services/blood-test-center.service';
 import { CampaignService } from './services/campaign.service';
 import { HospitalService } from './services/hospital.service';
+import { LanguageService } from './services/language.service';
 import { RewardService } from './services/reward.service';
 import { RoleService } from './services/role.service';
 import { StatisticService } from './services/statistic.service';
@@ -40,7 +41,7 @@ import { TestTypeService } from './services/test-type.service';
 import { UserService } from './services/user.service';
 
 export function tokenGetter() {
-  return localStorage.getItem(environment.authTokenName);
+  return localStorage.getItem(environment.tokenName.auth);
 }
 
 const jwtOptions = {
@@ -69,6 +70,7 @@ const toastrOptions = {
   ],
   providers: [
     AuthService,
+    LanguageService,
     NotLoggedInGuard,
     HasRoleGuard,
     AlertService,

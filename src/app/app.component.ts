@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 
 import { AuthService } from './core/services/auth.service';
+import { LanguageService } from './core/services/language.service';
 
 @Component({
   selector: 'app-root',
@@ -14,16 +14,12 @@ export class AppComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private translate: TranslateService
-  ) {
-    const browserLang = translate.getBrowserLang();
-    translate.addLangs(['en', 'vi']);
-    translate.setDefaultLang('en');
-    translate.use(browserLang.match(/en|vi/) ? browserLang : 'en');
-  }
+    private languageService: LanguageService
+    ) { }
 
   ngOnInit() {
     this.authService.readTokenFromStorage();
+    this.languageService.readLanguageSettingFromStorage();
   }
 
   toggleSidebar() {
