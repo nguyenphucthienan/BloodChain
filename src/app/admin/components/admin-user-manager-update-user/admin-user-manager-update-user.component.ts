@@ -64,6 +64,11 @@ export class AdminUserManagerUpdateUserComponent implements OnInit, OnDestroy {
         Validators.minLength(3),
         Validators.maxLength(20)
       ], this.usernameExistsValidator.bind(this)],
+      idCardNumber: ['', [
+        Validators.required,
+        Validators.maxLength(255),
+        Validators.pattern('^[0-9]*$')
+      ], this.idCardNumberExistsValidator.bind(this)],
       email: ['', [
         Validators.required,
         Validators.email,
@@ -118,7 +123,6 @@ export class AdminUserManagerUpdateUserComponent implements OnInit, OnDestroy {
   }
 
   onUserUpdateSuccessModalClosed() {
-    // this.resetForm();
   }
 
   cancel() {
@@ -144,6 +148,7 @@ export class AdminUserManagerUpdateUserComponent implements OnInit, OnDestroy {
 
     this.updateForm.patchValue({
       username: this.user.username,
+      idCardNumber: this.user.idCardNumber,
       email: this.user.email,
       firstName: this.user.firstName,
       lastName: this.user.lastName,
@@ -169,6 +174,23 @@ export class AdminUserManagerUpdateUserComponent implements OnInit, OnDestroy {
     }
 
     return this.authService.checkUsernameExists(c.value)
+      .pipe(
+        debounceTime(250),
+        map((result: any) => {
+          if (result.exists) {
+            return { exists: true };
+          }
+          return null;
+        })
+      );
+  }
+
+  private idCardNumberExistsValidator(c: FormControl) {
+    if (c.value === this.user.idCardNumber) {
+      return of(null);
+    }
+
+    return this.authService.checkIdCardNumberExists(c.value)
       .pipe(
         debounceTime(250),
         map((result: any) => {

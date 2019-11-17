@@ -7,18 +7,45 @@
   <div class="card mt-3">
     <div class="card-body">
       <form [formGroup]="updateForm" (ngSubmit)="updateUser()">
-        <div class="md-form">
-          <input type="text" id="username" formControlName="username" class="form-control" mdbInput>
-          <label for="username">{{ 'userManager.label.username' | translate }}</label>
-          <mdb-error *ngIf="controlHasError('username', 'required')">
-            {{ 'userManager.message.usernameRequired' | translate }}
-          </mdb-error>
-          <mdb-error *ngIf="controlHasError('username', 'minlength') || controlHasError('username', 'maxlength')">
-            {{ 'userManager.message.usernameLength' | translate }}
-          </mdb-error>
-          <mdb-error *ngIf="controlHasError('username', 'exists')">
-            {{ 'userManager.message.usernameExists' | translate }}
-          </mdb-error>
+        <div class="form-row">
+          <div class="col">
+            <div class="md-form form-col">
+              <div class="md-form">
+                <input type="text" id="username" formControlName="username" class="form-control" mdbInput>
+                <label for="username">{{ 'userManager.label.username' | translate }}</label>
+                <mdb-error *ngIf="controlHasError('username', 'required')">
+                  {{ 'userManager.message.usernameRequired' | translate }}
+                </mdb-error>
+                <mdb-error *ngIf="controlHasError('username', 'minlength') || controlHasError('username', 'maxlength')">
+                  {{ 'userManager.message.usernameLength' | translate }}
+                </mdb-error>
+                <mdb-error *ngIf="controlHasError('username', 'exists')">
+                  {{ 'userManager.message.usernameExists' | translate }}
+                </mdb-error>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="md-form form-col">
+              <div class="md-form">
+                <input type="text" id="idCardNumber" formControlName="idCardNumber" class="form-control" mdbInput>
+                <label for="idCardNumber">{{ 'userManager.label.idCardNumber' | translate }}</label>
+                <mdb-error *ngIf="controlHasError('idCardNumber', 'required')">
+                  {{ 'userManager.message.idCardNumberRequired' | translate }}
+                </mdb-error>
+                <mdb-error
+                  *ngIf="controlHasError('idCardNumber', 'minlength') || controlHasError('idCardNumber', 'maxlength')">
+                  {{ 'userManager.message.idCardNumberLength' | translate }}
+                </mdb-error>
+                <mdb-error *ngIf="controlHasError('idCardNumber', 'pattern')">
+                  {{ 'userManager.message.idCardNumberPattern' | translate }}
+                </mdb-error>
+                <mdb-error *ngIf="controlHasError('idCardNumber', 'exists')">
+                  {{ 'userManager.message.idCardNumberExists' | translate }}
+                </mdb-error>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="form-row">
           <div class="col">
