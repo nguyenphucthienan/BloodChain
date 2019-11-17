@@ -60,6 +60,11 @@ export class ManagerUserManagerAddUserComponent implements OnInit, OnDestroy {
         Validators.minLength(3),
         Validators.maxLength(20)
       ], this.usernameExistsValidator.bind(this)],
+      idCardNumber: ['', [
+        Validators.required,
+        Validators.maxLength(255),
+        Validators.pattern('^[0-9]*$')
+      ], this.idCardNumberExistsValidator.bind(this)],
       email: ['', [
         Validators.required,
         Validators.email,
@@ -81,7 +86,6 @@ export class ManagerUserManagerAddUserComponent implements OnInit, OnDestroy {
       .subscribe(
         (user: User) => {
           this.spinnerService.hide();
-
           this.userAdded.emit(user);
           this.alertService.success('userManager.alert.addSuccess');
           this.openUserAddSuccessModal(user);
@@ -143,6 +147,19 @@ export class ManagerUserManagerAddUserComponent implements OnInit, OnDestroy {
 
   private usernameExistsValidator(c: FormControl) {
     return this.authService.checkUsernameExists(c.value)
+      .pipe(
+        debounceTime(250),
+        map((result: any) => {
+          if (result.exists) {
+            return { exists: true };
+          }
+          return null;
+        })
+      );
+  }
+
+  private idCardNumberExistsValidator(c: FormControl) {
+    return this.authService.checkIdCardNumberExists(c.value)
       .pipe(
         debounceTime(250),
         map((result: any) => {

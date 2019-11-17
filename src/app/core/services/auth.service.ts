@@ -11,6 +11,7 @@ export class AuthService {
 
   private readonly loginUrl = `${environment.apiUrl}/auth/login`;
   private readonly checkUsernameUrl = `${environment.apiUrl}/auth/check-username`;
+  private readonly checkIdCardNumberUrl = `${environment.apiUrl}/auth/check-id-card-number`;
   private readonly checkEmailUrl = `${environment.apiUrl}/auth/check-email`;
   private readonly registerUrl = `${environment.apiUrl}/auth/register`;
   private readonly meUrl = `${environment.apiUrl}/auth/me`;
@@ -45,6 +46,14 @@ export class AuthService {
       .build();
 
     return this.http.get<boolean>(this.checkUsernameUrl, { params });
+  }
+
+  checkIdCardNumberExists(idCardNumber: string): Observable<boolean> {
+    const params = new ParamsBuilder()
+      .setParam('idCardNumber', idCardNumber)
+      .build();
+
+    return this.http.get<boolean>(this.checkIdCardNumberUrl, { params });
   }
 
   checkEmailExists(email: string): Observable<boolean> {
