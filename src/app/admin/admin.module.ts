@@ -97,6 +97,9 @@ import { RewardUpdateModalComponent } from './modals/reward-update-modal/reward-
 import { TestTypeAddModalComponent } from './modals/test-type-add-modal/test-type-add-modal.component';
 import { TestTypeDeleteModalComponent } from './modals/test-type-delete-modal/test-type-delete-modal.component';
 import { TestTypeUpdateModalComponent } from './modals/test-type-update-modal/test-type-update-modal.component';
+import {
+  UserResetPasswordConfirmModalComponent,
+} from './modals/user-reset-password-confirm-modal/user-reset-password-confirm-modal.component';
 import { UserUpdateSuccessModalComponent } from './modals/user-update-success-modal/user-update-success-modal.component';
 
 @NgModule({
@@ -149,7 +152,8 @@ import { UserUpdateSuccessModalComponent } from './modals/user-update-success-mo
     RewardUpdateModalComponent,
     RewardDeleteModalComponent,
     RewardCodeManagerModalComponent,
-    RewardPhotoManagerModalComponent
+    RewardPhotoManagerModalComponent,
+    UserResetPasswordConfirmModalComponent
   ],
   imports: [
     SharedModule,
@@ -158,6 +162,7 @@ import { UserUpdateSuccessModalComponent } from './modals/user-update-success-mo
   ],
   entryComponents: [
     UserUpdateSuccessModalComponent,
+    UserResetPasswordConfirmModalComponent,
     TestTypeAddModalComponent,
     TestTypeUpdateModalComponent,
     TestTypeDeleteModalComponent,

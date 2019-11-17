@@ -137,8 +137,12 @@
         </div>
         <hr>
         <div class="d-flex flex-sm-row flex-column justify-content-end">
+          <button type="button" mdbBtn color="secondary" class="waves-light" mdbWavesEffect (click)="cancel()">
+            {{ 'common.button.cancel' | translate }}
+          </button>
           <button type="button" mdbBtn color="secondary" class="waves-light" mdbWavesEffect
-            (click)="cancel()">{{ 'common.button.cancel' | translate }}
+            (click)="openUserResetPasswordConfirmModal()">
+            {{ 'userManager.button.resetPassword' | translate }}
           </button>
           <button mdbBtn type="submit" color="primary" mdbWavesEffect [disabled]="updateForm.invalid">
             {{ 'common.button.update' | translate }}

@@ -13,6 +13,9 @@ import { AlertService } from 'src/app/core/services/alert.service';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { UserService } from 'src/app/core/services/user.service';
 
+import {
+  UserResetPasswordConfirmModalComponent,
+} from '../../modals/user-reset-password-confirm-modal/user-reset-password-confirm-modal.component';
 import { UserUpdateSuccessModalComponent } from '../../modals/user-update-success-modal/user-update-success-modal.component';
 
 @Component({
@@ -123,6 +126,29 @@ export class AdminUserManagerUpdateUserComponent implements OnInit, OnDestroy {
   }
 
   onUserUpdateSuccessModalClosed() {
+  }
+
+  openUserResetPasswordConfirmModal() {
+    this.modalRef = this.modalService.show(UserResetPasswordConfirmModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        user: this.user
+      }
+    });
+
+    this.modalRef.content.passwordResetted
+      .subscribe((user: User) => this.onUserPasswordResetted(user));
+  }
+
+  onUserPasswordResetted(user: User) {
+    console.log('user', user);
   }
 
   cancel() {

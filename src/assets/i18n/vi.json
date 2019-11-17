@@ -445,7 +445,8 @@
       "add": "Thêm người dùng",
       "scanQrCode": "Quét QR Code",
       "printQrCode": "In QR Code",
-      "editInfo": "Thay đổi thông tin"
+      "editInfo": "Thay đổi thông tin",
+      "resetPassword": "Đặt lại mật khẩu"
     },
     "column": {
       "roles": "Vai trò"
@@ -484,19 +485,23 @@
       "lastNameRequired": "Tên không được bỏ trống",
       "lastNameLength": "Tên phải từ 3 đến 50 kí tự",
       "phoneRequired": "Số điện thoại không được bỏ trống",
-      "addressRequired": "Địa chỉ không được bỏ trống"
+      "addressRequired": "Địa chỉ không được bỏ trống",
+      "areYouSureResetPassword": "Bạn có chắc rằng bạn muốn đặt lại mật khẩu cho người dùng "
     },
     "alert": {
       "addSuccess": "Thêm người dùng thành công",
       "addFailed": "Thêm người dùng không thành công",
       "updateSuccess": "Cập nhật người dùng thành công",
-      "updateFailed": "Cập nhật người dùng không thành công"
+      "updateFailed": "Cập nhật người dùng không thành công",
+      "resetPasswordSuccess": "Đặt lại mật khẩu thành công",
+      "resetPasswordFailed": "Đặt lại mật khẩu không thành công"
     },
     "placeholder": {
       "search": "Tìm kiếm theo tên đăng nhập (tối thiểu 3 kí tự)"
     },
     "modal": {
-      "userInfo": "Thông tin người dùng"
+      "userInfo": "Thông tin người dùng",
+      "resetPassword": "Đặt lại mật khẩu"
     }
   },
   "testTypeManager": {

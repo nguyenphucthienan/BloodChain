@@ -445,7 +445,8 @@
       "add": "Add User",
       "scanQrCode": "Scan QR Code",
       "printQrCode": "Print QR Code",
-      "editInfo": "Edit Info"
+      "editInfo": "Edit Info",
+      "resetPassword": "Reset Password"
     },
     "column": {
       "roles": "Roles"
@@ -484,19 +485,23 @@
       "lastNameRequired": "Last name is required",
       "lastNameLength": "Last name must be between 1-50 characters",
       "phoneRequired": "Phone is required",
-      "addressRequired": "Address is required"
+      "addressRequired": "Address is required",
+      "areYouSureResetPassword": "Are you sure you want to reset the password for user "
     },
     "alert": {
       "addSuccess": "Add user successfully",
       "addFailed": "Add user failed",
       "updateSuccess": "Update user successfully",
-      "updateFailed": "Update user failed"
+      "updateFailed": "Update user failed",
+      "resetPasswordSuccess": "Reset password successfully",
+      "resetPasswordFailed": "Reset password failed"
     },
     "placeholder": {
       "search": "Search by username (min 3 characters)"
     },
     "modal": {
-      "userInfo": "User Info"
+      "userInfo": "User Info",
+      "resetPassword": "Reset Password"
     }
   },
   "testTypeManager": {

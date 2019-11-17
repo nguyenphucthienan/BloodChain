@@ -16,6 +16,7 @@ export class UserService {
 
   private readonly usersUrl = `${environment.apiUrl}/users`;
   private readonly userUrl = `${environment.apiUrl}/users/{id}`;
+  private readonly userResetPasswordUrl = `${environment.apiUrl}/users/{id}/reset-password`;
   private readonly userPointHistoriesUrl = `${environment.apiUrl}/users/{id}/point-histories`;
   private readonly userAssignOrganizationUrl = `${environment.apiUrl}/users/organizations`;
 
@@ -62,6 +63,11 @@ export class UserService {
   deleteUser(id: string): Observable<User> {
     const url = UrlUtils.resolvePathVariables(this.userUrl, { id });
     return this.http.delete<User>(url);
+  }
+
+  resetPassword(id: string): Observable<User> {
+    const url = UrlUtils.resolvePathVariables(this.userResetPasswordUrl, { id });
+    return this.http.put<User>(url, null);
   }
 
   searchUsers(username: string): Observable<User[]> {
