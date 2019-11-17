@@ -11,6 +11,7 @@ export interface User {
   _id: string;
   createdAt: Date;
   username: string;
+  idCardNumber: string;
   firstName: string;
   lastName: string;
   gender: string;

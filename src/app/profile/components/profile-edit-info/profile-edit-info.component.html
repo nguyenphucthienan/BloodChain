@@ -54,6 +54,21 @@
       <div class="card">
         <div class="card-body">
           <form [formGroup]="updateInfoForm" (ngSubmit)="updateInfo()" class="text-center">
+            <div class="form-row">
+              <div class="col">
+                <div class="md-form form-col">
+                  <input type="text" id="username" formControlName="username" class="form-control" mdbInput readonly>
+                  <label for="username">{{ 'userManager.label.username' | translate }}</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="md-form form-col">
+                  <input type="text" id="idCardNumber" formControlName="idCardNumber" class="form-control" mdbInput
+                    readonly>
+                  <label for="idCardNumber">{{ 'userManager.label.idCardNumber' | translate }}</label>
+                </div>
+              </div>
+            </div>
             <div class="md-form">
               <input type="text" id="email" formControlName="email" class="form-control" mdbInput>
               <label for="email">{{ 'editUserInfo.label.email' | translate }}</label>
@@ -74,7 +89,7 @@
             <div class="form-row">
               <div class="col">
                 <div class="md-form form-col">
-                  <input type="text" id="firstName" formControlName="firstName" class="form-control" mdbInput>
+                  <input type="text" id="firstName" formControlName="firstName" class="form-control" mdbInput readonly>
                   <label for="firstName">{{ 'editUserInfo.label.firstName' | translate }}</label>
                   <mdb-error *ngIf="updateInfoFormControlHasError('firstName', 'required')">
                     {{ 'editUserInfo.message.firstNameRequired' | translate }}
@@ -87,7 +102,7 @@
               </div>
               <div class="col">
                 <div class="md-form form-col">
-                  <input type="text" id="lastName" formControlName="lastName" class="form-control" mdbInput>
+                  <input type="text" id="lastName" formControlName="lastName" class="form-control" mdbInput readonly>
                   <label for="lastName">{{ 'editUserInfo.label.lastName' | translate }}</label>
                   <mdb-error *ngIf="updateInfoFormControlHasError('lastName', 'required')">
                     {{ 'editUserInfo.message.lastNameRequired' | translate }}
@@ -100,9 +115,8 @@
               </div>
             </div>
             <div class="md-form">
-              <ng-select id="gender" [items]="genders$ | async" bindValue="value" bindLabel="label" [multiple]="false"
-                [clearable]="false" [placeholder]="'editUserInfo.label.gender' | translate" formControlName="gender">
-              </ng-select>
+              <input type="text" id="phone" formControlName="gender" class="form-control" mdbInput>
+              <label for="gender">{{ 'editUserInfo.label.gender' | translate }}</label>
             </div>
             <div class="md-form">
               <input type="text" id="birthdate" formControlName="birthdate" [matDatepicker]="birthdatePicker"

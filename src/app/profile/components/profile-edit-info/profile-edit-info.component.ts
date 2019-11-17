@@ -60,15 +60,35 @@ export class ProfileEditInfoComponent implements OnInit, OnDestroy {
       );
 
     this.updateInfoForm = this.fb.group({
+      username: [{
+        value: '',
+        disabled: true
+      }, [Validators.required]],
+      idCardNumber: [{
+        value: '',
+        disabled: true
+      }, [Validators.required]],
       email: ['', [
         Validators.required,
         Validators.email,
         Validators.maxLength(255)
       ], this.emailExistsValidator.bind(this)],
-      firstName: ['', [Validators.required, Validators.maxLength(50)]],
-      lastName: ['', [Validators.required, Validators.maxLength(50)]],
-      gender: [this.genders[0].value, Validators.required],
-      birthdate: [moment('1990-01-01').startOf('day'), Validators.required],
+      firstName: [{
+        value: '',
+        disabled: true
+      }, [Validators.required, Validators.maxLength(50)]],
+      lastName: [{
+        value: '',
+        disabled: true
+      }, [Validators.required, Validators.maxLength(50)]],
+      gender: [{
+        value: this.genders[0].value,
+        disabled: true
+      }, Validators.required],
+      birthdate: [{
+        value: moment('1990-01-01').startOf('day'),
+        disabled: true
+      }, Validators.required],
       phone: ['', Validators.required],
       address: ['', Validators.required],
       location: [null, Validators.required]
@@ -115,6 +135,8 @@ export class ProfileEditInfoComponent implements OnInit, OnDestroy {
         }
 
         this.updateInfoForm.patchValue({
+          username: this.user.username,
+          idCardNumber: this.user.idCardNumber,
           email: this.user.email,
           firstName: this.user.firstName,
           lastName: this.user.lastName,
@@ -127,7 +149,7 @@ export class ProfileEditInfoComponent implements OnInit, OnDestroy {
   }
 
   updateInfo() {
-    this.authService.updateUserInfo(this.updateInfoForm.value)
+    this.authService.updateUserInfo(this.updateInfoForm.getRawValue())
       .subscribe(
         () => {
           this.getUserInfo();
