@@ -466,7 +466,8 @@
       "birthdate": "Birthdate",
       "phone": "Phone",
       "address": "Address",
-      "temporaryPassword": "Temporary password"
+      "temporaryPassword": "Temporary password",
+      "newPassword": "New password"
     },
     "message": {
       "usernameRequired": "Username is required",

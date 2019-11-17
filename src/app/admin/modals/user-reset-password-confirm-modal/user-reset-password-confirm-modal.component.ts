@@ -35,7 +35,10 @@ export class UserResetPasswordConfirmModalComponent implements OnInit {
           this.passwordResetted.emit(user);
           this.alertService.success('userManager.alert.resetPasswordSuccess');
         },
-        error => this.alertService.error('hospitalManager.alert.resetPasswordFailed')
+        error => {
+          this.modalRef.hide();
+          this.alertService.error('hospitalManager.alert.resetPasswordFailed');
+        }
       );
   }
 

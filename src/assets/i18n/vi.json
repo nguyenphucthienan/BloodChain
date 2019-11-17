@@ -466,7 +466,8 @@
       "birthdate": "Ngày sinh",
       "phone": "Số điện thoại",
       "address": "Địa chỉ",
-      "temporaryPassword": "Mật khẩu tạm thời"
+      "temporaryPassword": "Mật khẩu tạm thời",
+      "newPassword": "Mật khẩu mới"
     },
     "message": {
       "usernameRequired": "Tên đăng nhập không được bỏ trống",
