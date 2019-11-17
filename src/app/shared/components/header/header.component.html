@@ -48,11 +48,6 @@
         </a>
       </li>
       <li *ngIf="!isLoggedIn()" class="nav-item" routerLinkActive="active">
-        <a class="nav-link waves-light" mdbWavesEffect routerLink="/register">
-          {{ 'header.title.register' | translate }}
-        </a>
-      </li>
-      <li *ngIf="!isLoggedIn()" class="nav-item" routerLinkActive="active">
         <a class="nav-link waves-light" mdbWavesEffect routerLink="/login">
           {{ 'header.title.login' | translate }}
         </a>

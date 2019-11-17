@@ -6,7 +6,6 @@ import { AboutComponent } from './public/components/about/about.component';
 import { LandingComponent } from './public/components/landing/landing.component';
 import { LoginComponent } from './public/components/login/login.component';
 import { NotFoundComponent } from './public/components/not-found/not-found.component';
-import { RegisterComponent } from './public/components/register/register.component';
 
 const routes: Routes = [
   {
@@ -21,11 +20,6 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-    canActivate: [NotLoggedInGuard]
-  },
-  {
-    path: 'register',
-    component: RegisterComponent,
     canActivate: [NotLoggedInGuard]
   },
   {
