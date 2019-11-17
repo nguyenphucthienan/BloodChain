@@ -35,7 +35,6 @@ export class BloodProductTypeManagerTableService {
   filterMode: FilterMode = {};
 
   actions: TableAction[] = [
-    { class: 'btn-info', icon: 'fa fa-info-circle', text: 'common.tooltip.detail', type: TableActionType.GetDetail },
     { class: 'btn-dark', icon: 'fa fa-edit', text: 'common.tooltip.update', type: TableActionType.Update },
     { class: 'btn-danger', icon: 'fa fa-trash-alt', text: 'common.tooltip.delete', type: TableActionType.Delete }
   ];

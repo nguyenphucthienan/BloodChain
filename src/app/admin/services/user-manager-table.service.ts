@@ -18,7 +18,7 @@ export class UserManagerTableService implements TableService {
     { name: '_id', text: 'common.column.id', type: 'IdTableCellComponent', center: true, sortable: true },
     { name: 'username', text: 'common.column.username', type: 'TextTableCellComponent', sortable: true },
     { name: 'roles', text: 'userManager.column.roles', type: 'ArrayListTableCellComponent', sortable: true },
-    { name: 'email', text: 'common.column.email', type: 'TextTableCellComponent', sortable: true },
+    { name: 'idCardNumber', text: 'common.column.idCardNumber', type: 'TextTableCellComponent', sortable: true },
     { name: 'gender', text: 'common.column.gender', type: 'TextTableCellComponent', sortable: true },
     { name: 'firstName', text: 'common.column.firstName', type: 'TextTableCellComponent', sortable: true },
     { name: 'lastName', text: 'common.column.lastName', type: 'TextTableCellComponent', sortable: true },
@@ -42,8 +42,7 @@ export class UserManagerTableService implements TableService {
 
   actions: TableAction[] = [
     { class: 'btn-info', icon: 'fa fa-info-circle', text: 'common.tooltip.detail', type: TableActionType.GetDetail },
-    { class: 'btn-dark', icon: 'fa fa-edit', text: 'common.tooltip.update', type: TableActionType.Update },
-    { class: 'btn-danger', icon: 'fa fa-trash-alt', text: 'common.tooltip.delete', type: TableActionType.Delete }
+    { class: 'btn-dark', icon: 'fa fa-edit', text: 'common.tooltip.update', type: TableActionType.Update }
   ];
 
   constructor(

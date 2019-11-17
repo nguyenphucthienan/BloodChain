@@ -41,6 +41,7 @@
       "id": "ID",
       "name": "Name",
       "username": "Username",
+      "idCardNumber": "ID Card Number",
       "firstName": "First Name",
       "lastName": "Last Name",
       "gender": "Gender",

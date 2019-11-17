@@ -41,6 +41,7 @@
       "id": "ID",
       "name": "Tên",
       "username": "Tên đăng nhập",
+      "idCardNumber": "Số CMND",
       "firstName": "Họ",
       "lastName": "Tên",
       "gender": "Giới tính",

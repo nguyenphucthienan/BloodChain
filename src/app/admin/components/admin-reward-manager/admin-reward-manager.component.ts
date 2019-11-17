@@ -3,10 +3,14 @@ import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { fromEvent, Subscription } from 'rxjs';
 import { debounceTime, map, tap } from 'rxjs/operators';
 import { Reward } from 'src/app/core/models/reward.interface';
+import { RewardService } from 'src/app/core/services/reward.service';
 import { DatatableComponent } from 'src/app/datatable/datatable.component';
 import { TableActionType } from 'src/app/datatable/models/table-action.interface';
 import { TableCellChange } from 'src/app/datatable/models/table-cell-change.interface';
 import { TableRow } from 'src/app/datatable/models/table-row.interface';
+import {
+  RewardVoucherInfoModalComponent,
+} from 'src/app/rewards/modals/reward-voucher-info-modal/reward-voucher-info-modal.component';
 
 import { RewardAddModalComponent } from '../../modals/reward-add-modal/reward-add-modal.component';
 import { RewardCodeManagerModalComponent } from '../../modals/reward-code-manager-modal/reward-code-manager-modal.component';
@@ -33,6 +37,7 @@ export class AdminRewardManagerComponent implements OnInit, AfterViewInit, OnDes
 
   constructor(
     public rewardManagerTableService: RewardManagerTableService,
+    private rewardService: RewardService,
     private renderer: Renderer2,
     private modalService: MDBModalService
   ) { }
@@ -63,7 +68,7 @@ export class AdminRewardManagerComponent implements OnInit, AfterViewInit, OnDes
     const action = tableCellChange.newValue;
     switch (action.type) {
       case TableActionType.GetDetail:
-        this.navigateToRewardDetail(tableCellChange.row.cells._id.value);
+        this.openRewardDetailModal(tableCellChange.row.cells._id.value);
         break;
       case TableActionType.Assign:
         this.openRewardCodeManagerModal(tableCellChange.row);
@@ -80,7 +85,23 @@ export class AdminRewardManagerComponent implements OnInit, AfterViewInit, OnDes
     }
   }
 
-  navigateToRewardDetail(id: string) {
+  openRewardDetailModal(id: string) {
+    this.rewardService.getReward(id)
+      .subscribe((reward: Reward) => {
+        this.modalRef = this.modalService.show(RewardVoucherInfoModalComponent, {
+          backdrop: true,
+          keyboard: true,
+          focus: true,
+          show: false,
+          ignoreBackdropClick: true,
+          class: 'modal-dialog-centered',
+          containerClass: 'top',
+          animated: true,
+          data: {
+            reward
+          }
+        });
+      });
   }
 
   openRewardAddModal() {
