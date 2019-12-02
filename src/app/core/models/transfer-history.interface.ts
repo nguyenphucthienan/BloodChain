@@ -1,5 +1,5 @@
 export interface TransferHistory {
-  transferType: number;
+  historyType: number;
   id: string;
   fromType: string;
   fromId: string;

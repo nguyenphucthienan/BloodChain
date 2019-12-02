@@ -7,7 +7,7 @@ export const environment = {
     auth: 'auth-token',
     language: 'language-token'
   },
-  mapApiKey: 'AIzaSyB2MsjvYImNAUWNxbWSiZGQ5TdxNaPbPcY',
+  mapApiKey: 'AIzaSyAIr3pEFQlaw8zbT-F7pltgLfwQCuPOvjA',
   photoUrl: {
     logo: './assets/images/landing/logo.svg',
     notFound: './assets/images/pages/not-found.svg',
