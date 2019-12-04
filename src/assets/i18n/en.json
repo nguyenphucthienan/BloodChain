@@ -284,6 +284,9 @@
       "to": "To",
       "usedAt": "Used at",
       "patientName": "Patient's name",
+      "patientIdCardNumber": "Patient's ID card number",
+      "patientPhone": "Patient's phone",
+      "operatedBy": "Operated by",
       "time": "Time",
       "description": "Description"
     },
@@ -917,6 +920,8 @@
       "organizationName": "Organization name",
       "organizationId": "Organization ID",
       "patientName": "Patient's name",
+      "patientIdCardNumber": "Patient's ID card number",
+      "patientPhone": "Patient's phone",
       "searchDonor": "Search donor",
       "searchBloodProduct": "Search blood product"
     },
@@ -924,6 +929,8 @@
       "organizationIdRequired": "Organization ID is required",
       "descriptionRequired": "Description is required",
       "patientNameRequired": "Patient's name is required",
+      "patientIdCardNumber": "Patient's ID card number is required",
+      "patientPhone": "Patient's phone is required",
       "transferTheseBloodProducts": "transfer these blood products",
       "useTheseBloodProducts": "use these blood products"
     },

@@ -70,6 +70,8 @@ export class HospitalBloodProductManagerUseBloodProductComponent implements OnIn
     this.useForm = this.fb.group({
       bloodProductIds: [[]],
       patientName: ['', Validators.required],
+      patientIdCardNumber: ['', Validators.required],
+      patientPhone: ['', Validators.required],
       description: ['', [Validators.required, Validators.maxLength(1000)]],
     });
   }
@@ -180,7 +182,21 @@ export class HospitalBloodProductManagerUseBloodProductComponent implements OnIn
   onUseBloodProductsConfirmed(bloodProductIds: string[]) {
     this.spinnerService.show();
     this.useForm.patchValue({ bloodProductIds });
-    this.bloodProductService.useBloodProducts(this.useForm.getRawValue())
+
+    const {
+      patientName,
+      patientIdCardNumber,
+      patientPhone,
+      description
+    } = this.useForm.value;
+
+    const useData = {
+      bloodProductIds,
+      patientInfo: `${patientName};;;${patientIdCardNumber};;;${patientPhone}`,
+      description
+    };
+
+    this.bloodProductService.useBloodProducts(useData)
       .subscribe(
         results => {
           this.openBloodProductUseResultModal(results);

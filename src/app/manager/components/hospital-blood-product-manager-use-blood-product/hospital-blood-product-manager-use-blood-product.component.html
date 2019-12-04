@@ -40,6 +40,21 @@
           </mdb-error>
         </div>
         <div class="md-form">
+          <input type="text" id="patientIdCardNumber" formControlName="patientIdCardNumber" class="form-control"
+            mdbInput>
+          <label for="patientIdCardNumber">{{ 'bloodProductManager.label.patientIdCardNumber' | translate }}</label>
+          <mdb-error *ngIf="controlHasError('patientIdCardNumber', 'required')">
+            {{ 'bloodProductManager.message.patientIdCardNumber' | translate }}
+          </mdb-error>
+        </div>
+        <div class="md-form">
+          <input type="text" id="patientPhone" formControlName="patientPhone" class="form-control" mdbInput>
+          <label for="patientPhone">{{ 'bloodProductManager.label.patientPhone' | translate }}</label>
+          <mdb-error *ngIf="controlHasError('patientPhone', 'required')">
+            {{ 'bloodProductManager.message.patientPhone' | translate }}
+          </mdb-error>
+        </div>
+        <div class="md-form">
           <div class="md-form">
             <textarea type="text" id="description" formControlName="description"
               class="md-textarea md-textarea-auto form-control" mdbInput></textarea>

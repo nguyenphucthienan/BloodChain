@@ -284,6 +284,9 @@
       "to": "Nơi nhận",
       "usedAt": "Nơi sử dụng",
       "patientName": "Bệnh nhân",
+      "patientIdCardNumber": "Số CMND bệnh nhân",
+      "patientPhone": "Số điện thoại bệnh nhân",
+      "operatedBy": "Thực hiện bởi",
       "time": "Thời gian",
       "description": "Miêu tả"
     },
@@ -917,6 +920,8 @@
       "organizationName": "Tên tổ chức",
       "organizationId": "ID tổ chức",
       "patientName": "Tên bệnh nhân",
+      "patientIdCardNumber": "Số CMND bệnh nhân",
+      "patientPhone": "Số điện thoại bệnh nhân",
       "searchDonor": "Tìm người hiến",
       "searchBloodProduct": "Tìm chế phẩm máu"
     },
@@ -924,6 +929,8 @@
       "organizationIdRequired": "ID tổ chức không được bỏ trống",
       "descriptionRequired": "Miêu tả không được bỏ trống",
       "patientNameRequired": "Tên bệnh nhân không được bỏ trống",
+      "patientIdCardNumber": "Số CMND bệnh nhân không được bỏ trống",
+      "patientPhone": "Số điện thoại bệnh nhân không được bỏ trống",
       "transferTheseBloodProducts": "chuyển những chế phẩm máu này",
       "useTheseBloodProducts": "sử dụng những chế phẩm máu này"
     },

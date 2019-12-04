@@ -52,7 +52,15 @@
       </div>
       <div *ngIf="transferHistory.historyType === 4">
         <span class="font-weight-bold">{{ 'timeline.label.patientName' | translate }}: </span>
-        {{ transferHistory.toName }}
+        {{ transferHistory.toName.split(';;;')[0] || '' }}
+      </div>
+      <div *ngIf="transferHistory.historyType === 4 && auditable">
+        <span class="font-weight-bold">{{ 'timeline.label.patientIdCardNumber' | translate }}: </span>
+        {{ transferHistory.toName.split(';;;')[1] || '' }}
+      </div>
+      <div *ngIf="transferHistory.historyType === 4">
+        <span class="font-weight-bold">{{ 'timeline.label.patientPhone' | translate }}: </span>
+        {{ transferHistory.toName.split(';;;')[2] || '' }}
       </div>
       <div *ngIf="auditable">
         <span class="font-weight-bold">{{ 'timeline.label.operatedBy' | translate }}: </span>
