@@ -778,6 +778,7 @@
       "separated": "Đã phân tách"
     },
     "modal": {
+      "add": "Thêm túi máu",
       "update": "Cập nhật túi máu",
       "delete": "Xóa túi máu",
       "bloodPackInfo": "Thông tin túi máu",

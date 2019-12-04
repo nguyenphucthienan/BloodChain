@@ -54,11 +54,15 @@
         <span class="font-weight-bold">{{ 'timeline.label.patientName' | translate }}: </span>
         {{ transferHistory.toName }}
       </div>
+      <div *ngIf="auditable">
+        <span class="font-weight-bold">{{ 'timeline.label.operatedBy' | translate }}: </span>
+        {{ transferHistory.operatedBy }}
+      </div>
       <div>
         <span class="font-weight-bold">{{ 'timeline.label.time' | translate }}: </span>
         {{ transferHistory.transferedAt | date:'medium' }}
       </div>
-      <div>
+      <div div *ngIf="auditable">
         <span class="font-weight-bold">{{ 'timeline.label.description' | translate }}: </span>
         {{ transferHistory.description }}
       </div>

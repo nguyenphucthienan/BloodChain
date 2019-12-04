@@ -162,7 +162,8 @@
         <span class="font-weight-bold">{{ 'bloodPackManager.label.transferHistory' | translate }}</span>
       </div>
       <div class="mt-3">
-        <app-blood-pack-transfer-histories [bloodPackId]="bloodPack._id"></app-blood-pack-transfer-histories>
+        <app-blood-pack-transfer-histories [bloodPackId]="bloodPack._id" [auditable]="true">
+        </app-blood-pack-transfer-histories>
       </div>
     </div>
   </div>

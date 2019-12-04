@@ -11,6 +11,7 @@ export class BloodPackTransferHistoriesComponent implements OnInit {
 
   @Input() bloodPackId: string;
   @Input() showMessages = false;
+  @Input() auditable = false;
 
   expandEnabled = true;
   transferHistories: TransferHistory[] = [];

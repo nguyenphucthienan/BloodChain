@@ -7,6 +7,7 @@ export interface TransferHistory {
   toType: string;
   toId: string;
   toName: string;
-  description: string;
+  operatedBy: string;
   transferedAt: Date;
+  description: string;
 }
