@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { MDBModalRef } from 'angular-bootstrap-md';
+import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { RoleName } from 'src/app/core/constant/role-name';
 import { User } from 'src/app/core/models/user.interface';
@@ -7,6 +7,10 @@ import { AlertService } from 'src/app/core/services/alert.service';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { BloodPackService } from 'src/app/core/services/blood-pack.service';
 import { TableRow } from 'src/app/datatable/models/table-row.interface';
+
+import {
+  BloodPackDisposeResultModalComponent,
+} from '../blood-pack-dispose-result-modal/blood-pack-dispose-result-modal.component';
 
 @Component({
   selector: 'app-blood-pack-delete-modal',
@@ -23,6 +27,7 @@ export class BloodPackDeleteModalComponent implements OnInit {
 
   constructor(
     public modalRef: MDBModalRef,
+    private modalService: MDBModalService,
     private authService: AuthService,
     private bloodPackService: BloodPackService,
     private alertService: AlertService,
@@ -56,10 +61,10 @@ export class BloodPackDeleteModalComponent implements OnInit {
           bloodPackIds: this.bloodPackIds
         })
           .subscribe(
-            () => {
+            (results) => {
               this.spinnerService.hide();
               this.bloodPackDeleted.emit();
-              this.alertService.success('bloodPackManager.alert.disposeSuccess');
+              this.openBloodPackDisposeResultModal(results);
             },
             error => {
               this.spinnerService.hide();
@@ -71,6 +76,23 @@ export class BloodPackDeleteModalComponent implements OnInit {
         this.spinnerService.hide();
         this.alertService.error('bloodPackManager.alert.disposeFailed');
       });
+  }
+
+  openBloodPackDisposeResultModal({ success, errors }) {
+    this.modalRef = this.modalService.show(BloodPackDisposeResultModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        success,
+        errors
+      }
+    });
   }
 
 }
