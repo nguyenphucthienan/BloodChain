@@ -766,6 +766,7 @@
       "updateTestResult": "Update Test Result",
       "updateSeparationResult": "Update Separation Result",
       "transfer": "Transfer Blood Packs",
+      "dispose": "Dispose Blood Packs",
       "viewDonorDetail": "View Donor Detail",
       "scanQrCode": "Scan QR Code"
     },
@@ -778,7 +779,8 @@
       "createdAt": "Time",
       "tested": "Tested",
       "testPassed": "Test Passed",
-      "separated": "Separated"
+      "separated": "Separated",
+      "disposed": "Disposed"
     },
     "modal": {
       "add": "Add Blood Pack",
@@ -786,7 +788,8 @@
       "delete": "Delete Blood Pack",
       "bloodPackInfo": "Blood Pack Info",
       "bloodSeparationResults": "Blood Separation Results",
-      "transferBloodPacks": "Transfer Blood Packs"
+      "transferBloodPacks": "Transfer Blood Packs",
+      "disposeBloodPacks": "Dispose Blood Packs"
     },
     "label": {
       "donorInfo": "DONOR INFO",
@@ -844,7 +847,8 @@
       "resultRequired": "Result is required",
       "bloodTypeRequired": "Blood type is required",
       "testTypeRepeated": "Test types have been repeated",
-      "bloodProductTypeRepeated": "Blood product types have been repeated"
+      "bloodProductTypeRepeated": "Blood product types have been repeated",
+      "areYouSureDispose": "Are you sure you want to dispose these blood pack"
     },
     "alert": {
       "addSuccess": "Add blood pack successfully",

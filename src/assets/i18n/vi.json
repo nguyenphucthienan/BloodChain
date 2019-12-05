@@ -766,6 +766,7 @@
       "updateTestResult": "Cập nhật kết quả xét nghiệm",
       "updateSeparationResult": "Cập nhật kết quả phân tách",
       "transfer": "Chuyển túi máu",
+      "dispose": "Hủy túi máu",
       "viewDonorDetail": "Xem thông tin người hiến",
       "scanQrCode": "Quét QR Code"
     },
@@ -778,7 +779,8 @@
       "createdAt": "Thời gian",
       "tested": "Đã xét nghiệm",
       "testPassed": "Kết quả",
-      "separated": "Đã phân tách"
+      "separated": "Đã phân tách",
+      "disposed": "Đã hủy"
     },
     "modal": {
       "add": "Thêm túi máu",
@@ -786,7 +788,8 @@
       "delete": "Xóa túi máu",
       "bloodPackInfo": "Thông tin túi máu",
       "bloodSeparationResults": "Kết quả phân tách",
-      "transferBloodPacks": "Chuyển túi máu"
+      "transferBloodPacks": "Chuyển túi máu",
+      "disposeBloodPacks": "Hủy túi máu"
     },
     "label": {
       "donorInfo": "THÔNG TIN NGƯỜI HIẾN",
@@ -844,7 +847,8 @@
       "resultRequired": "Kết quả không được bỏ trống",
       "bloodTypeRequired": "Nhóm máu không được bỏ trống",
       "testTypeRepeated": "Loại xét nghiệm bị trùng lặp",
-      "bloodProductTypeRepeated": "Loại chế phẩm máu không được trùng lặp"
+      "bloodProductTypeRepeated": "Loại chế phẩm máu không được trùng lặp",
+      "areYouSureDispose": "Bạn có chắc rằng bạn muốn hủy những túi máu này"
     },
     "alert": {
       "addSuccess": "Thêm túi máu thành công",

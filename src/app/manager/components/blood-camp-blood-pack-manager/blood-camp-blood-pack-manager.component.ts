@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { fromEvent, Subscription } from 'rxjs';
 import { debounceTime, map, tap } from 'rxjs/operators';
+import { RoleName } from 'src/app/core/constant/role-name';
 import { BloodPack } from 'src/app/core/models/blood-pack.interface';
 import { DatatableComponent } from 'src/app/datatable/datatable.component';
 import { TableActionType } from 'src/app/datatable/models/table-action.interface';
@@ -87,9 +88,6 @@ export class BloodCampBloodPackManagerComponent implements OnInit, AfterViewInit
       case TableActionType.Update:
         this.openBloodPackUpdateModal(tableCellChange.row);
         break;
-      case TableActionType.Delete:
-        this.openBloodPackDeleteModal(tableCellChange.row);
-        break;
     }
   }
 
@@ -131,7 +129,8 @@ export class BloodCampBloodPackManagerComponent implements OnInit, AfterViewInit
     this.datatable.refresh();
   }
 
-  openBloodPackDeleteModal(rowData: TableRow) {
+  openBloodPackDeleteModal() {
+    const selectedIds = Array.from(this.datatable.getSelectedRowIds().selectedIds);
     this.modalRef = this.modalService.show(BloodPackDeleteModalComponent, {
       backdrop: true,
       keyboard: true,
@@ -142,7 +141,8 @@ export class BloodCampBloodPackManagerComponent implements OnInit, AfterViewInit
       containerClass: 'top',
       animated: true,
       data: {
-        rowData
+        organizationType: RoleName.BLOOD_CAMP,
+        bloodPackIds: selectedIds
       }
     });
 

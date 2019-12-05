@@ -20,6 +20,7 @@ export class BloodCampBloodPackManagerTableService implements TableService {
     { name: 'createdAt', text: 'bloodPackManager.column.createdAt', type: 'DateTimeTableCellComponent', sortable: true },
     { name: 'donor', text: 'bloodPackManager.column.donor', type: 'ObjectTextTableCellComponent', sortable: true },
     { name: 'volume', text: 'bloodPackManager.column.volume', type: 'TextTableCellComponent', sortable: true },
+    { name: 'disposed', text: 'bloodPackManager.column.disposed', type: 'BooleanTableCellComponent', center: true, sortable: true },
     { name: 'actions', text: 'common.column.actions', type: 'ActionsTableCellComponent', center: true }
   ];
 
@@ -42,7 +43,6 @@ export class BloodCampBloodPackManagerTableService implements TableService {
   actions: TableAction[] = [
     { class: 'btn-info', icon: 'fa fa-info-circle', text: 'common.tooltip.detail', type: TableActionType.GetDetail },
     { class: 'btn-dark', icon: 'fa fa-edit', text: 'common.tooltip.update', type: TableActionType.Update },
-    { class: 'btn-danger', icon: 'fa fa-trash-alt', text: 'common.tooltip.delete', type: TableActionType.Delete }
   ];
 
   constructor(
@@ -92,7 +92,7 @@ export class BloodCampBloodPackManagerTableService implements TableService {
 
           cells.actions = {
             value: this.actions,
-            showText: false
+            showText: false,
           };
 
           return { cells };
