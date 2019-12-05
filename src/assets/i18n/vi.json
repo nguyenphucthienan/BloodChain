@@ -857,6 +857,8 @@
       "updateFailed": "Cập nhật túi máu không thành công",
       "deleteSuccess": "Xóa túi máu thành công",
       "deleteFailed": "Xóa túi máu không thành công",
+      "disposeSuccess": "Hủy túi máu thành công",
+      "disposeFailed": "Hủy túi máu không thành công",
       "updateTestResultSuccess": "Cập nhật kết quả xét nghiệm thành công",
       "updateTestResultFailed": "Cập nhật kết quả xét nghiệm không thành công",
       "updateSeparationResultSuccess": "Cập nhật kết quả phân tách thành công",

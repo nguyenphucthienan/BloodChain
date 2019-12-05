@@ -857,6 +857,8 @@
       "updateFailed": "Update blood pack failed",
       "deleteSuccess": "Delete blood pack successfully",
       "deleteFailed": "Delete blood pack failed",
+      "disposeSuccess": "Dispose blood pack successfully",
+      "disposeFailed": "Dispose blood pack failed",
       "updateTestResultSuccess": "Update test result successfully",
       "updateTestResultFailed": "Update test result failed",
       "updateSeparationResultSuccess": "Update separation result successfully",

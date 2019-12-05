@@ -59,17 +59,17 @@ export class BloodPackDeleteModalComponent implements OnInit {
             () => {
               this.spinnerService.hide();
               this.bloodPackDeleted.emit();
-              this.alertService.success('bloodPackManager.alert.deleteSuccess');
+              this.alertService.success('bloodPackManager.alert.disposeSuccess');
             },
             error => {
               this.spinnerService.hide();
-              this.alertService.error('bloodPackManager.alert.deleteFailed');
+              this.alertService.error('bloodPackManager.alert.disposeFailed');
             }
           );
       },
       error => {
         this.spinnerService.hide();
-        this.alertService.error('bloodPackManager.alert.deleteFailed');
+        this.alertService.error('bloodPackManager.alert.disposeFailed');
       });
   }
 
