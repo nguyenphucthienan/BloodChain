@@ -953,7 +953,8 @@
       "cannotSelectBloodBank": "Không thể chọn ngân hàng máu này",
       "cannotSelectHospital": "Không thể chọn bệnh viện này",
       "noBloodProduct": "Không có chế phẩm máu nào được chọn",
-      "alreadyDisposed": "Chế phẩm máu này đã được hủy"
+      "alreadyDisposed": "Chế phẩm máu này đã được hủy",
+      "alreadyUsed": "Chế phẩm máu này đã được sử dụng"
     },
     "placeholder": {
       "search": "Tìm kiếm (tối thiểu 3 kí tự)",

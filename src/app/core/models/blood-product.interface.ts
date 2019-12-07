@@ -14,6 +14,7 @@ export interface BloodProduct {
   bloodType: string;
   expirationDate: Date;
   used: boolean;
+  disposed: boolean;
   description: string;
   currentLocation: string;
 }

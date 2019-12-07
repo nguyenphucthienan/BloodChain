@@ -92,7 +92,8 @@ export class BloodBankBloodProductManagerComponent implements OnInit, AfterViewI
   async navigateToTransferBloodProduct() {
     const selectedIds = Array.from(this.datatable.getSelectedRowIds().selectedIds);
     const selectedRows = this.datatable.rows
-      .filter(row => selectedIds.includes(row.cells._id.value));
+      .filter(row => selectedIds.includes(row.cells._id.value)
+        && !row.cells.disposed.value);
 
     this.router.navigate(['/manager', 'blood-bank', 'blood-products', 'transfer'], {
       state: { bloodProducts: selectedRows }
@@ -102,7 +103,6 @@ export class BloodBankBloodProductManagerComponent implements OnInit, AfterViewI
   navigateToBloodProductDetail(id: string) {
     this.router.navigate(['/manager', 'blood-products', id]);
   }
-
 
   openBloodProductDeleteModal() {
     const selectedIds = Array.from(this.datatable.getSelectedRowIds().selectedIds);

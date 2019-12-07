@@ -98,6 +98,16 @@ export class HospitalBloodProductManagerUseBloodProductComponent implements OnIn
       return;
     }
 
+    if (bloodProduct.disposed) {
+      this.alertService.error('bloodProductManager.alert.alreadyDisposed');
+      return;
+    }
+
+    if (bloodProduct.used) {
+      this.alertService.error('bloodProductManager.alert.alreadyUsed');
+      return;
+    }
+
     this.authService.getMyUserInfo()
       .subscribe((user: User) => {
         if (user.bloodCamp._id !== bloodProduct.currentLocation) {

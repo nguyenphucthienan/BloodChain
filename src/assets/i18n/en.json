@@ -953,7 +953,8 @@
       "cannotSelectBloodBank": "You cannot select this blood bank",
       "cannotSelectHospital": "You cannot select this hospital",
       "noBloodProduct": "No blood product was selected",
-      "alreadyDisposed": "This blood product has already been disposed"
+      "alreadyDisposed": "This blood product has already been disposed",
+      "alreadyUsed": "This blood product has already been used"
     },
     "placeholder": {
       "search": "Search (min 3 characters)",
