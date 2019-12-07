@@ -18,6 +18,7 @@ export class BloodProductService {
   private readonly bloodProductUrl = `${environment.apiUrl}/blood-products/{id}`;
   private readonly transferProductsUrl = `${environment.apiUrl}/blood-products/transfer`;
   private readonly useProductsUrl = `${environment.apiUrl}/blood-products/use`;
+  private readonly disposeProductUrl = `${environment.apiUrl}/blood-products/dispose`;
 
   private readonly defaultPagination: Pagination = {
     page: 1,
@@ -71,6 +72,10 @@ export class BloodProductService {
 
   useBloodProducts(transferModel: any): Observable<any> {
     return this.http.post<any>(this.useProductsUrl, transferModel);
+  }
+
+  disposeBloodProducts(disposeModel: any): Observable<any> {
+    return this.http.post<any>(this.disposeProductUrl, disposeModel);
   }
 
 }

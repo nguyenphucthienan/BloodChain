@@ -5,31 +5,31 @@ import { RoleName } from 'src/app/core/constant/role-name';
 import { User } from 'src/app/core/models/user.interface';
 import { AlertService } from 'src/app/core/services/alert.service';
 import { AuthService } from 'src/app/core/services/auth.service';
-import { BloodPackService } from 'src/app/core/services/blood-pack.service';
+import { BloodProductService } from 'src/app/core/services/blood-product.service';
 import { TableRow } from 'src/app/datatable/models/table-row.interface';
 
 import {
-  BloodPackDisposeResultModalComponent,
-} from '../blood-pack-dispose-result-modal/blood-pack-dispose-result-modal.component';
+  BloodProductDisposeResultModalComponent,
+} from '../blood-product-dispose-result-modal/blood-product-dispose-result-modal.component';
 
 @Component({
-  selector: 'app-blood-pack-delete-modal',
-  templateUrl: './blood-pack-delete-modal.component.html',
-  styleUrls: ['./blood-pack-delete-modal.component.scss']
+  selector: 'app-blood-product-delete-modal',
+  templateUrl: './blood-product-delete-modal.component.html',
+  styleUrls: ['./blood-product-delete-modal.component.scss']
 })
-export class BloodPackDeleteModalComponent implements OnInit {
+export class BloodProductDeleteModalComponent implements OnInit {
 
   @Input() rowData: TableRow;
   @Input() organizationType: RoleName;
-  @Input() bloodPackIds: string[] = [];
+  @Input() bloodProductIds: string[] = [];
 
-  @Output() bloodPackDeleted = new EventEmitter();
+  @Output() bloodProductDeleted = new EventEmitter();
 
   constructor(
     public modalRef: MDBModalRef,
     private modalService: MDBModalService,
     private authService: AuthService,
-    private bloodPackService: BloodPackService,
+    private bloodProductService: BloodProductService,
     private alertService: AlertService,
     private spinnerService: NgxSpinnerService
   ) { }
@@ -37,7 +37,7 @@ export class BloodPackDeleteModalComponent implements OnInit {
   ngOnInit() {
   }
 
-  deleteBloodPacks() {
+  deleteBloodProducts() {
     this.spinnerService.show();
     this.authService.getMyUserInfo().subscribe(
       (user: User) => {
@@ -54,32 +54,32 @@ export class BloodPackDeleteModalComponent implements OnInit {
             break;
         }
 
-        this.bloodPackService.disposeBloodPacks({
+        this.bloodProductService.disposeBloodProducts({
           organizationType: this.organizationType,
           organizationId,
-          description: 'Dispose Blood Pack',
-          bloodPackIds: this.bloodPackIds
+          description: 'Dispose Blood Product',
+          bloodProductIds: this.bloodProductIds
         })
           .subscribe(
             (results) => {
               this.spinnerService.hide();
-              this.bloodPackDeleted.emit();
-              this.openBloodPackDisposeResultModal(results);
+              this.bloodProductDeleted.emit();
+              this.openBloodProductDisposeResultModal(results);
             },
             error => {
               this.spinnerService.hide();
-              this.alertService.error('bloodPackManager.alert.disposeFailed');
+              this.alertService.error('bloodProductManager.alert.disposeFailed');
             }
           );
       },
       error => {
         this.spinnerService.hide();
-        this.alertService.error('bloodPackManager.alert.disposeFailed');
+        this.alertService.error('bloodProductManager.alert.disposeFailed');
       });
   }
 
-  openBloodPackDisposeResultModal({ success, errors }) {
-    this.modalRef = this.modalService.show(BloodPackDisposeResultModalComponent, {
+  openBloodProductDisposeResultModal({ success, errors }) {
+    this.modalRef = this.modalService.show(BloodProductDisposeResultModalComponent, {
       backdrop: true,
       keyboard: true,
       focus: true,

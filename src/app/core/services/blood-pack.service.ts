@@ -106,7 +106,7 @@ export class BloodPackService {
     return this.http.post<any>(this.transferToBloodSeparationCenterUrl, transferModel);
   }
 
-  disposeBloodPack(disposeModel: any): Observable<any> {
+  disposeBloodPacks(disposeModel: any): Observable<any> {
     return this.http.post<any>(this.disposeUrl, disposeModel);
   }
 

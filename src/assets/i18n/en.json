@@ -848,7 +848,7 @@
       "bloodTypeRequired": "Blood type is required",
       "testTypeRepeated": "Test types have been repeated",
       "bloodProductTypeRepeated": "Blood product types have been repeated",
-      "areYouSureDispose": "Are you sure you want to dispose these blood pack"
+      "areYouSureDispose": "Are you sure you want to dispose these blood packs"
     },
     "alert": {
       "addSuccess": "Add blood pack successfully",
@@ -880,6 +880,7 @@
       "transfer": "Transfer Blood Products",
       "use": "Use Blood Products",
       "scanQrCode": "Scan QR Code",
+      "dispose": "Dispose Blood Products",
       "viewDonorDetail": "View Donor Detail",
       "viewBloodPackDetail": "View Blood Pack Detail"
     },
@@ -892,12 +893,14 @@
       "bloodSeparationCenter": "Blood Separation Center",
       "createdAt": "Time",
       "expirationDate": "Expiration Date",
-      "used": "Used"
+      "used": "Used",
+      "disposed": "Disposed"
     },
     "modal": {
       "bloodProductInfo": "Blood Product Info",
       "transferBloodProducts": "Transfer Blood Products",
-      "useBloodProducts": "Use Blood Products"
+      "useBloodProducts": "Use Blood Products",
+      "disposeBloodProducts": "Dispose Blood Products"
     },
     "label": {
       "donorInfo": "DONOR INFO",
@@ -923,6 +926,7 @@
       "bloodType": "Blood type",
       "expirationDate": "Expiration date",
       "used": "Used",
+      "disposed": "Disposed",
       "organizationType": "Organization type",
       "organizationName": "Organization name",
       "organizationId": "Organization ID",
@@ -939,14 +943,16 @@
       "patientIdCardNumber": "Patient's ID card number is required",
       "patientPhone": "Patient's phone is required",
       "transferTheseBloodProducts": "transfer these blood products",
-      "useTheseBloodProducts": "use these blood products"
+      "useTheseBloodProducts": "use these blood products",
+      "areYouSureDispose": "Are you sure you want to dispose these blood products"
     },
     "alert": {
       "alreadySelected": "Blood product has already been selected",
       "cannotSelectBloodProduct": "You cannot select this blood product",
       "cannotSelectBloodBank": "You cannot select this blood bank",
       "cannotSelectHospital": "You cannot select this hospital",
-      "noBloodProduct": "No blood product was selected"
+      "noBloodProduct": "No blood product was selected",
+      "alreadyDisposed": "This blood product has already been disposed"
     },
     "placeholder": {
       "search": "Search (min 3 characters)",

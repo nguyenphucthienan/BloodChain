@@ -3,11 +3,16 @@ import { Router } from '@angular/router';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { fromEvent, Subscription } from 'rxjs';
 import { debounceTime, map, tap } from 'rxjs/operators';
+import { RoleName } from 'src/app/core/constant/role-name';
+import { AlertService } from 'src/app/core/services/alert.service';
 import { DatatableComponent } from 'src/app/datatable/datatable.component';
 import { TableActionType } from 'src/app/datatable/models/table-action.interface';
 import { TableCellChange } from 'src/app/datatable/models/table-cell-change.interface';
 import { ScanQrcodeModalComponent } from 'src/app/shared/modals/scan-qrcode-modal/scan-qrcode-modal.component';
 
+import {
+  BloodProductDeleteModalComponent,
+} from '../../modals/blood-product-delete-modal/blood-product-delete-modal.component';
 import {
   BloodSeparationCenterBloodProductManagerTableService,
 } from '../../services/blood-separation-center-blood-product-manager-table.service';
@@ -30,7 +35,8 @@ export class BloodSeparationCenterBloodProductManagerComponent implements OnInit
     public bloodSeparationCenterBloodProductManagerTableService: BloodSeparationCenterBloodProductManagerTableService,
     private router: Router,
     private renderer: Renderer2,
-    private modalService: MDBModalService
+    private modalService: MDBModalService,
+    private alertService: AlertService
   ) { }
 
   ngOnInit() {
@@ -97,6 +103,37 @@ export class BloodSeparationCenterBloodProductManagerComponent implements OnInit
 
   navigateToBloodProductDetail(id: string) {
     this.router.navigate(['/manager', 'blood-products', id]);
+  }
+
+  openBloodProductDeleteModal() {
+    const selectedIds = Array.from(this.datatable.getSelectedRowIds().selectedIds);
+    if (!selectedIds || selectedIds.length <= 0) {
+      this.alertService.error('bloodProductManager.alert.noBloodProduct');
+      return;
+    }
+
+    this.modalRef = this.modalService.show(BloodProductDeleteModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        organizationType: RoleName.BLOOD_SEPARATION_CENTER,
+        bloodProductIds: selectedIds
+      }
+    });
+
+    this.modalRef.content.bloodProductDeleted
+      .subscribe(() => this.onBloodProductDeleted());
+  }
+
+  onBloodProductDeleted() {
+    this.modalRef.hide();
+    this.datatable.refresh();
   }
 
   ngOnDestroy() {

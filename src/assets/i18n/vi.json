@@ -880,6 +880,7 @@
       "transfer": "Chuyển chế phẩm máu",
       "use": "Sử dụng chế phẩm máu",
       "scanQrCode": "Quét QR Code",
+      "dispose": "Hủy chế phẩm máu",
       "viewDonorDetail": "Xem thông tin người hiến",
       "viewBloodPackDetail": "Xem thông tin túi máu"
     },
@@ -892,12 +893,14 @@
       "bloodSeparationCenter": "Trung tâm phân tách máu",
       "createdAt": "Thời gian",
       "expirationDate": "Hạn sử dụng",
-      "used": "Đã sử dụng"
+      "used": "Đã sử dụng",
+      "disposed": "Đã hủy"
     },
     "modal": {
       "bloodProductInfo": "Thông tin chế phẩm máu",
       "transferBloodProducts": "Chuyển chế phẩm máu",
-      "useBloodProducts": "Sử dụng chế phẩm máu"
+      "useBloodProducts": "Sử dụng chế phẩm máu",
+      "disposeBloodProducts": "Hùy chế phẩm máu"
     },
     "label": {
       "donorInfo": "THÔNG TIN NGƯỜI HIẾN",
@@ -923,6 +926,7 @@
       "bloodType": "Nhóm máu",
       "expirationDate": "Hạn sử dụng",
       "used": "Đã sử dụng",
+      "disposed": "Đã hủy",
       "organizationType": "Loại tổ chức",
       "organizationName": "Tên tổ chức",
       "organizationId": "ID tổ chức",
@@ -939,14 +943,16 @@
       "patientIdCardNumber": "Số CMND bệnh nhân không được bỏ trống",
       "patientPhone": "Số điện thoại bệnh nhân không được bỏ trống",
       "transferTheseBloodProducts": "chuyển những chế phẩm máu này",
-      "useTheseBloodProducts": "sử dụng những chế phẩm máu này"
+      "useTheseBloodProducts": "sử dụng những chế phẩm máu này",
+      "areYouSureDispose": "Bạn có chắc rằng bạn muốn hủy những chế phẩm máu này"
     },
     "alert": {
       "alreadySelected": "Chế phẩm máu đã được chọn",
       "cannotSelectBloodProduct": "Không thể chọn chế phẩm máu này",
       "cannotSelectBloodBank": "Không thể chọn ngân hàng máu này",
       "cannotSelectHospital": "Không thể chọn bệnh viện này",
-      "noBloodProduct": "Không có chế phẩm máu nào được chọn"
+      "noBloodProduct": "Không có chế phẩm máu nào được chọn",
+      "alreadyDisposed": "Chế phẩm máu này đã được hủy"
     },
     "placeholder": {
       "search": "Tìm kiếm (tối thiểu 3 kí tự)",

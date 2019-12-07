@@ -130,6 +130,11 @@ export class BloodTestCenterBloodPackManagerComponent implements OnInit, AfterVi
 
   openBloodPackDeleteModal() {
     const selectedIds = Array.from(this.datatable.getSelectedRowIds().selectedIds);
+    if (!selectedIds || selectedIds.length <= 0) {
+      this.alertService.error('bloodPackManager.alert.noBloodPack');
+      return;
+    }
+
     this.modalRef = this.modalService.show(BloodPackDeleteModalComponent, {
       backdrop: true,
       keyboard: true,
