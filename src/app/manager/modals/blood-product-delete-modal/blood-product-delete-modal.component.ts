@@ -43,14 +43,14 @@ export class BloodProductDeleteModalComponent implements OnInit {
       (user: User) => {
         let organizationId: string;
         switch (this.organizationType) {
-          case RoleName.BLOOD_CAMP:
-            organizationId = user.bloodCamp._id;
-            break;
-          case RoleName.BLOOD_TEST_CENTER:
-            organizationId = user.bloodTestCenter._id;
-            break;
           case RoleName.BLOOD_SEPARATION_CENTER:
             organizationId = user.bloodSeparationCenter._id;
+            break;
+          case RoleName.BLOOD_BANK:
+            organizationId = user.bloodBank._id;
+            break;
+          case RoleName.HOSPITAL:
+            organizationId = user.hospital._id;
             break;
         }
 
