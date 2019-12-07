@@ -29,6 +29,7 @@ export class DonationHistoryTableService implements TableService {
       sortable: true
     },
     { name: 'separated', text: 'bloodPackManager.column.separated', type: 'BooleanTableCellComponent', center: true, sortable: true },
+    { name: 'disposed', text: 'bloodProductManager.column.disposed', type: 'BooleanTableCellComponent', center: true, sortable: true },
     { name: 'actions', text: 'common.column.actions', type: 'ActionsTableCellComponent', center: true }
   ];
 
