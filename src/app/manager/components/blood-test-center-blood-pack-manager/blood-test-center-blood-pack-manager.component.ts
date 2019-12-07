@@ -3,11 +3,13 @@ import { Router } from '@angular/router';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { fromEvent, Subscription } from 'rxjs';
 import { debounceTime, map, tap } from 'rxjs/operators';
+import { RoleName } from 'src/app/core/constant/role-name';
 import { DatatableComponent } from 'src/app/datatable/datatable.component';
 import { TableActionType } from 'src/app/datatable/models/table-action.interface';
 import { TableCellChange } from 'src/app/datatable/models/table-cell-change.interface';
 import { ScanQrcodeModalComponent } from 'src/app/shared/modals/scan-qrcode-modal/scan-qrcode-modal.component';
 
+import { BloodPackDeleteModalComponent } from '../../modals/blood-pack-delete-modal/blood-pack-delete-modal.component';
 import {
   BloodTestCenterBloodPackManagerTableService,
 } from '../../services/blood-test-center-blood-pack-manager-table.service';
@@ -93,7 +95,8 @@ export class BloodTestCenterBloodPackManagerComponent implements OnInit, AfterVi
     const selectedRows = this.datatable.rows
       .filter(row => selectedIds.includes(row.cells._id.value)
         && row.cells.tested.value
-        && row.cells.testPassed.value);
+        && row.cells.testPassed.value
+        && !row.cells.disposed.value);
 
     this.router.navigate(['/manager', 'blood-test-center', 'blood-packs', 'transfer'], {
       state: { bloodPacks: selectedRows }
@@ -108,6 +111,32 @@ export class BloodTestCenterBloodPackManagerComponent implements OnInit, AfterVi
     this.router.navigate(['/manager', 'blood-test-center', 'blood-packs', 'update'], {
       state: { bloodPackId: id }
     });
+  }
+
+  openBloodPackDeleteModal() {
+    const selectedIds = Array.from(this.datatable.getSelectedRowIds().selectedIds);
+    this.modalRef = this.modalService.show(BloodPackDeleteModalComponent, {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: true,
+      class: 'modal-dialog-centered',
+      containerClass: 'top',
+      animated: true,
+      data: {
+        organizationType: RoleName.BLOOD_TEST_CENTER,
+        bloodPackIds: selectedIds
+      }
+    });
+
+    this.modalRef.content.bloodPackDeleted
+      .subscribe(() => this.onBloodPackDeleted());
+  }
+
+  onBloodPackDeleted() {
+    this.modalRef.hide();
+    this.datatable.refresh();
   }
 
   ngOnDestroy() {

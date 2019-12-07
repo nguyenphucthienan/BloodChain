@@ -30,6 +30,7 @@ export class BloodTestCenterBloodPackManagerTableService implements TableService
       center: true,
       sortable: true
     },
+    { name: 'disposed', text: 'bloodPackManager.column.disposed', type: 'BooleanTableCellComponent', center: true, sortable: true },
     { name: 'actions', text: 'common.column.actions', type: 'ActionsTableCellComponent', center: true }
   ];
 
