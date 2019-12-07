@@ -868,6 +868,7 @@
       "noBloodPack": "Không có túi máu nào được chọn",
       "hasNotBeenTested": "Túi máu chưa được xét nghiệm",
       "testFailed": "Túi máu không đạt yêu cầu",
+      "alreadySeparated": "Túi máu này đã được phân tách",
       "alreadyDisposed": "Túi máu này đã được hủy"
     },
     "placeholder": {

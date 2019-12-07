@@ -105,6 +105,11 @@ export class BloodSeparationCenterBloodPackManagerComponent implements OnInit, A
       return;
     }
 
+    if (rowData.cells.separated && rowData.cells.separated.value) {
+      this.alertService.error('bloodPackManager.alert.alreadySeparated');
+      return;
+    }
+
     if (rowData.cells.disposed && rowData.cells.disposed.value) {
       this.alertService.error('bloodPackManager.alert.alreadyDisposed');
       return;

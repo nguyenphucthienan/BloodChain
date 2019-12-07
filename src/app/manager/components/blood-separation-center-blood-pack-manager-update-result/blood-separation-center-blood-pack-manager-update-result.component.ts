@@ -150,6 +150,11 @@ export class BloodSeparationCenterBloodPackManagerUpdateResultComponent implemen
       return;
     }
 
+    if (bloodPack.separated) {
+      this.alertService.error('bloodPackManager.alert.alreadySeparated');
+      return;
+    }
+
     if (bloodPack.disposed) {
       this.alertService.error('bloodPackManager.alert.alreadyDisposed');
       return;

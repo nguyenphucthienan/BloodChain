@@ -94,7 +94,8 @@ export class BloodSeparationCenterBloodProductManagerComponent implements OnInit
   navigateToTransferBloodProduct() {
     const selectedIds = Array.from(this.datatable.getSelectedRowIds().selectedIds);
     const selectedRows = this.datatable.rows
-      .filter(row => selectedIds.includes(row.cells._id.value));
+      .filter(row => selectedIds.includes(row.cells._id.value)
+        && !row.cells.disposed.value);
 
     this.router.navigate(['/manager', 'blood-separation-center', 'blood-products', 'transfer'], {
       state: { bloodProducts: selectedRows }
