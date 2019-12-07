@@ -867,7 +867,8 @@
       "cannotSelectBloodPack": "You cannot select this blood pack",
       "noBloodPack": "No blood pack was selected",
       "hasNotBeenTested": "This blood pack has not been tested yet",
-      "testFailed": "This blood pack was failed the test"
+      "testFailed": "This blood pack was failed the test",
+      "alreadyDisposed": "This blood pack has already been disposed"
     },
     "placeholder": {
       "search": "Search (min 3 characters)",

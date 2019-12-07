@@ -19,5 +19,6 @@ export interface BloodPack {
   bloodSeparationCenter?: BloodSeparationCenter;
   separated: boolean;
   separationDescription?: string;
+  disposed: boolean;
   currentLocation: string;
 }

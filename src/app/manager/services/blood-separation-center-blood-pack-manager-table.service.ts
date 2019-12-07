@@ -23,6 +23,7 @@ export class BloodSeparationCenterBloodPackManagerTableService implements TableS
     { name: 'bloodTestCenter', text: 'bloodPackManager.column.bloodTestCenter', type: 'ObjectTextTableCellComponent', sortable: true },
     { name: 'bloodType', text: 'bloodPackManager.column.bloodType', type: 'TextTableCellComponent', sortable: true },
     { name: 'separated', text: 'bloodPackManager.column.separated', type: 'BooleanTableCellComponent', center: true, sortable: true },
+    { name: 'disposed', text: 'bloodPackManager.column.disposed', type: 'BooleanTableCellComponent', center: true, sortable: true },
     { name: 'actions', text: 'common.column.actions', type: 'ActionsTableCellComponent', center: true }
   ];
 

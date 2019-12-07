@@ -5,6 +5,7 @@ import { fromEvent, Subscription } from 'rxjs';
 import { debounceTime, map, tap } from 'rxjs/operators';
 import { RoleName } from 'src/app/core/constant/role-name';
 import { BloodPack } from 'src/app/core/models/blood-pack.interface';
+import { AlertService } from 'src/app/core/services/alert.service';
 import { DatatableComponent } from 'src/app/datatable/datatable.component';
 import { TableActionType } from 'src/app/datatable/models/table-action.interface';
 import { TableCellChange } from 'src/app/datatable/models/table-cell-change.interface';
@@ -33,7 +34,8 @@ export class BloodCampBloodPackManagerComponent implements OnInit, AfterViewInit
     public bloodCampBloodPackManagerTableService: BloodCampBloodPackManagerTableService,
     private router: Router,
     private renderer: Renderer2,
-    private modalService: MDBModalService
+    private modalService: MDBModalService,
+    private alertService: AlertService
   ) { }
 
   ngOnInit() {
@@ -94,7 +96,8 @@ export class BloodCampBloodPackManagerComponent implements OnInit, AfterViewInit
   async navigateToTransferBloodPack() {
     const selectedIds = Array.from(this.datatable.getSelectedRowIds().selectedIds);
     const selectedRows = this.datatable.rows
-      .filter(row => selectedIds.includes(row.cells._id.value));
+      .filter(row => selectedIds.includes(row.cells._id.value)
+        && !row.cells.disposed.value);
 
     this.router.navigate(['/manager', 'blood-camp', 'blood-packs', 'transfer'], {
       state: { bloodPacks: selectedRows }
@@ -106,6 +109,11 @@ export class BloodCampBloodPackManagerComponent implements OnInit, AfterViewInit
   }
 
   openBloodPackUpdateModal(rowData: TableRow) {
+    if (rowData.cells.disposed && rowData.cells.disposed.value) {
+      this.alertService.error('bloodPackManager.alert.alreadyDisposed');
+      return;
+    }
+
     this.modalRef = this.modalService.show(BloodPackUpdateModalComponent, {
       backdrop: true,
       keyboard: true,

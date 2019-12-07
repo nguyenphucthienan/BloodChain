@@ -150,6 +150,11 @@ export class BloodSeparationCenterBloodPackManagerUpdateResultComponent implemen
       return;
     }
 
+    if (bloodPack.disposed) {
+      this.alertService.error('bloodPackManager.alert.alreadyDisposed');
+      return;
+    }
+
     this.bloodPack = bloodPack;
     this.authService.getMyUserInfo().subscribe((user: User) => {
       if (user.bloodSeparationCenter._id !== bloodPack.currentLocation) {

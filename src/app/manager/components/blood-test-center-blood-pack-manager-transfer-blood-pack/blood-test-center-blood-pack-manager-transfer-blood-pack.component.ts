@@ -135,6 +135,11 @@ export class BloodTestCenterBloodPackManagerTransferBloodPackComponent implement
       return;
     }
 
+    if (bloodPack.disposed) {
+      this.alertService.error('bloodPackManager.alert.alreadyDisposed');
+      return;
+    }
+
     this.authService.getMyUserInfo()
       .subscribe((user: User) => {
         if (user.bloodTestCenter._id !== bloodPack.currentLocation) {

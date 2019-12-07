@@ -4,9 +4,11 @@ import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { fromEvent, Subscription } from 'rxjs';
 import { debounceTime, map, tap } from 'rxjs/operators';
 import { RoleName } from 'src/app/core/constant/role-name';
+import { AlertService } from 'src/app/core/services/alert.service';
 import { DatatableComponent } from 'src/app/datatable/datatable.component';
 import { TableActionType } from 'src/app/datatable/models/table-action.interface';
 import { TableCellChange } from 'src/app/datatable/models/table-cell-change.interface';
+import { TableRow } from 'src/app/datatable/models/table-row.interface';
 import { ScanQrcodeModalComponent } from 'src/app/shared/modals/scan-qrcode-modal/scan-qrcode-modal.component';
 
 import { BloodPackDeleteModalComponent } from '../../modals/blood-pack-delete-modal/blood-pack-delete-modal.component';
@@ -32,7 +34,8 @@ export class BloodTestCenterBloodPackManagerComponent implements OnInit, AfterVi
     public bloodTestCenterBloodPackManagerTableService: BloodTestCenterBloodPackManagerTableService,
     private router: Router,
     private renderer: Renderer2,
-    private modalService: MDBModalService
+    private modalService: MDBModalService,
+    private alertService: AlertService
   ) { }
 
   ngOnInit() {
@@ -85,7 +88,7 @@ export class BloodTestCenterBloodPackManagerComponent implements OnInit, AfterVi
         this.navigateToBloodPackDetail(tableCellChange.row.cells._id.value);
         break;
       case TableActionType.Update:
-        this.navigateToUpdateBloodPackResult(tableCellChange.row.cells._id.value);
+        this.navigateToUpdateBloodPackResult(tableCellChange.row);
         break;
     }
   }
@@ -107,9 +110,21 @@ export class BloodTestCenterBloodPackManagerComponent implements OnInit, AfterVi
     this.router.navigate(['/manager', 'blood-packs', id]);
   }
 
-  navigateToUpdateBloodPackResult(id?: string) {
+  navigateToUpdateBloodPackResult(rowData?: TableRow) {
+    if (!rowData) {
+      this.router.navigate(['/manager', 'blood-test-center', 'blood-packs', 'update'], {
+        state: { bloodPackId: null }
+      });
+      return;
+    }
+
+    if (rowData.cells.disposed && rowData.cells.disposed.value) {
+      this.alertService.error('bloodPackManager.alert.alreadyDisposed');
+      return;
+    }
+
     this.router.navigate(['/manager', 'blood-test-center', 'blood-packs', 'update'], {
-      state: { bloodPackId: id }
+      state: { bloodPackId: rowData.cells._id.value }
     });
   }
 

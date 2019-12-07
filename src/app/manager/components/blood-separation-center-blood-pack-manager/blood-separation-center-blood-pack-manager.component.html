@@ -17,12 +17,15 @@
         <button type="button" class="btn btn-sm btn-primary" (click)="navigateToUpdateBloodPackResult()">
           {{ 'bloodPackManager.button.updateSeparationResult' | translate }}
         </button>
+        <button type="button" class="btn btn-sm btn-primary" (click)="openBloodPackDeleteModal()">
+          {{ 'bloodPackManager.button.dispose' | translate }}
+        </button>
       </div>
     </div>
   </div>
   <div class="card mt-3">
     <div class="card-body">
-      <app-datatable [tableName]="'table.name.bloodPackManager' | translate"
+      <app-datatable [tableName]="'table.name.bloodPackManager' | translate" [selectableRow]="true"
         [tableService]="bloodSeparationCenterBloodPackManagerTableService" (cellChanged)="onTableCellChanged($event)">
       </app-datatable>
     </div>

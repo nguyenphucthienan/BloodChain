@@ -155,6 +155,11 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
       return;
     }
 
+    if (bloodPack.disposed) {
+      this.alertService.error('bloodPackManager.alert.alreadyDisposed');
+      return;
+    }
+
     this.bloodPack = bloodPack;
     this.authService.getMyUserInfo().subscribe((user: User) => {
       if (user.bloodTestCenter._id !== bloodPack.currentLocation) {

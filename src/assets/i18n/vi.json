@@ -867,7 +867,8 @@
       "cannotSelectBloodPack": "Không thể chọn túi máu này",
       "noBloodPack": "Không có túi máu nào được chọn",
       "hasNotBeenTested": "Túi máu chưa được xét nghiệm",
-      "testFailed": "Túi máu không đạt yêu cầu"
+      "testFailed": "Túi máu không đạt yêu cầu",
+      "alreadyDisposed": "Túi máu này đã được hủy"
     },
     "placeholder": {
       "search": "Tìm kiếm (tối thiểu 3 kí tự)",

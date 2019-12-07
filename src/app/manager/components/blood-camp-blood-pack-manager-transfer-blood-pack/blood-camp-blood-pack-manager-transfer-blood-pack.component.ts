@@ -122,6 +122,11 @@ export class BloodCampBloodPackManagerTransferBloodPackComponent implements OnIn
       return;
     }
 
+    if (bloodPack.disposed) {
+      this.alertService.error('bloodPackManager.alert.alreadyDisposed');
+      return;
+    }
+
     this.authService.getMyUserInfo()
       .subscribe((user: User) => {
         if (user.bloodCamp._id !== bloodPack.currentLocation) {
