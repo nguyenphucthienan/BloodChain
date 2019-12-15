@@ -68,6 +68,14 @@
                   <label for="separated">{{ 'bloodPackManager.label.separated' | translate }}</label>
                 </div>
               </div>
+              <div class="col">
+                <div class="md-form form-col">
+                  <input type="text" id="disposed" formControlName="disposed"
+                    [value]="bloodPackForm.get('disposed').value | booleanYesNo | async" class="form-control" mdbInput
+                    readonly>
+                  <label for="disposed">{{ 'bloodPackManager.label.disposed' | translate }}</label>
+                </div>
+              </div>
             </div>
           </form>
         </div>

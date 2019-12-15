@@ -54,7 +54,8 @@ export class DonationHistoryBloodPackDetailComponent implements OnInit, OnDestro
       bloodSeparationCenter: ['', Validators.required],
       tested: [null, Validators.required],
       testPassed: [null, Validators.required],
-      separated: [null, Validators.required]
+      separated: [null, Validators.required],
+      disposed: [null, Validators.required]
     });
 
     this.testResultForm = this.fb.group({
@@ -85,7 +86,8 @@ export class DonationHistoryBloodPackDetailComponent implements OnInit, OnDestro
           && this.bloodPack.bloodSeparationCenter.name,
         tested: this.bloodPack.tested,
         testPassed: this.bloodPack.testPassed,
-        separated: this.bloodPack.separated
+        separated: this.bloodPack.separated,
+        disposed: this.bloodPack.separated
       });
 
       if (this.bloodPack.tested) {

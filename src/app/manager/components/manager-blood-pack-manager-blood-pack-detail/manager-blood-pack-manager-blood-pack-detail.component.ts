@@ -74,7 +74,8 @@ export class ManagerBloodPackManagerBloodPackDetailComponent implements OnInit, 
             && this.bloodPack.bloodSeparationCenter.name,
           tested: this.bloodPack.tested,
           testPassed: this.bloodPack.testPassed,
-          separated: this.bloodPack.separated
+          separated: this.bloodPack.separated,
+          disposed: this.bloodPack.disposed
         });
 
         this.bloodPackDetailBloodProductTableService.filterMode.bloodPack = this.bloodPack._id;
@@ -114,7 +115,8 @@ export class ManagerBloodPackManagerBloodPackDetailComponent implements OnInit, 
       bloodSeparationCenter: ['', Validators.required],
       tested: [null, Validators.required],
       testPassed: [null, Validators.required],
-      separated: [null, Validators.required]
+      separated: [null, Validators.required],
+      disposed: [null, Validators.required]
     });
   }
 

@@ -60,7 +60,8 @@ export class ManagerBloodProductManagerBloodProductDetailComponent implements On
             bloodType: bloodPack.bloodType,
             tested: bloodPack.tested,
             testPassed: bloodPack.testPassed,
-            separated: bloodPack.separated
+            separated: bloodPack.separated,
+            disposed: bloodPack.disposed
           });
 
           this.bloodProductForm.patchValue({
@@ -70,7 +71,8 @@ export class ManagerBloodProductManagerBloodProductDetailComponent implements On
             bloodType: this.bloodProduct.bloodType,
             bloodProductType: this.bloodProduct.bloodProductType && this.bloodProduct.bloodProductType.name,
             expirationDate: this.datePipe.transform(new Date(this.bloodProduct.expirationDate)),
-            used: this.bloodProduct.used
+            used: this.bloodProduct.used,
+            disposed: this.bloodProduct.disposed
           });
         });
     });
@@ -98,7 +100,8 @@ export class ManagerBloodProductManagerBloodProductDetailComponent implements On
       bloodType: [null, Validators.required],
       tested: [null, Validators.required],
       testPassed: [null, Validators.required],
-      separated: [null, Validators.required]
+      separated: [null, Validators.required],
+      disposed: [null, Validators.required]
     });
 
     this.bloodProductForm = this.fb.group({
@@ -109,7 +112,8 @@ export class ManagerBloodProductManagerBloodProductDetailComponent implements On
       bloodProductType: [null, Validators.required],
       bloodSeparationCenter: ['', Validators.required],
       expirationDate: [null, Validators.required],
-      used: [null, Validators.required]
+      used: [null, Validators.required],
+      disposed: [null, Validators.required]
     });
   }
 
