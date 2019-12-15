@@ -195,6 +195,8 @@ export class BloodCampBloodPackManagerTransferBloodPackComponent implements OnIn
   }
 
   navigateToBloodPackDetail(id: string) {
+    const url = this.router.createUrlTree(['/manager', 'blood-packs', id]);
+    window.open(url.toString(), '_blank');
   }
 
   removeBloodPackFromList(id: string) {

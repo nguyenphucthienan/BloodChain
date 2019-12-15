@@ -208,6 +208,8 @@ export class BloodTestCenterBloodPackManagerTransferBloodPackComponent implement
   }
 
   navigateToBloodPackDetail(id: string) {
+    const url = this.router.createUrlTree(['/manager', 'blood-packs', id]);
+    window.open(url.toString(), '_blank');
   }
 
   removeBloodPackFromList(id: string) {
