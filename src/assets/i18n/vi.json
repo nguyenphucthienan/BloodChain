@@ -836,6 +836,7 @@
     "message": {
       "donorRequired": "Người hiến không được bỏ trống",
       "volumeRequired": "Thể tích không được bỏ trống",
+      "volumeMinMax": "Thể tích không được nhỏ hơn 1 ml hoặc lớn hơn 500 ml",
       "bloodCampRequired": "Trung tâm hiến máu không được bỏ trống",
       "bloodTestCenterIdRequired": "ID trung tâm xét nghiệm không được bỏ trống",
       "bloodSeparationCenterIdRequired": "ID trung tâm phân tách không được bỏ trống",

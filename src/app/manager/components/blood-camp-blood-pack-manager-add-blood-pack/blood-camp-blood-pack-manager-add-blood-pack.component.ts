@@ -91,7 +91,7 @@ export class BloodCampBloodPackManagerAddBloodPackComponent implements OnInit, O
 
     this.addForm = this.fb.group({
       donor: [null, Validators.required],
-      volume: [null, [Validators.required, Validators.min(1)]]
+      volume: [null, [Validators.required, Validators.min(1), Validators.max(500)]]
     });
   }
 

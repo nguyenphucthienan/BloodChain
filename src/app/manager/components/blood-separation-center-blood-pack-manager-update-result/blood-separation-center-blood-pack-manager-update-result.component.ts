@@ -318,7 +318,7 @@ export class BloodSeparationCenterBloodPackManagerUpdateResultComponent implemen
     return this.fb.group({
       _id: [null],
       bloodProductType: [null, Validators.required],
-      volume: [null, [Validators.required, Validators.min(1)]],
+      volume: [null, [Validators.required, Validators.min(1), Validators.max(500)]],
       expirationDate: [null, Validators.required]
     });
   }

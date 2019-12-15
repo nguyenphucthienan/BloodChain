@@ -836,6 +836,7 @@
     "message": {
       "donorRequired": "Donor is required",
       "volumeRequired": "Volume is required",
+      "volumeMinMax": "Volume must be between 1 ml and 500 ml",
       "bloodCampRequired": "Blood camp is required",
       "bloodTestCenterIdRequired": "Blood test center ID is required",
       "bloodSeparationCenterIdRequired": "Blood separation center ID is required",
