@@ -84,7 +84,8 @@ export class ManagerBloodPackManagerComponent implements OnInit, AfterViewInit, 
   }
 
   navigateToBloodPackDetail(id: string) {
-    this.router.navigate(['/manager', 'blood-packs', id]);
+    const url = this.router.createUrlTree(['/manager', 'blood-packs', id]);
+    window.open(url.toString(), '_blank');
   }
 
   ngOnDestroy() {

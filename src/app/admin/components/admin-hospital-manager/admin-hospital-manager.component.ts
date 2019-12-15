@@ -85,7 +85,8 @@ export class AdminHospitalManagerComponent implements OnInit, AfterViewInit, OnD
   }
 
   navigateToHospitalDetail(id: string) {
-    this.router.navigate(['hospitals', id]);
+    const url = this.router.createUrlTree(['/hospitals', id]);
+    window.open(url.toString(), '_blank');
   }
 
   openHospitalAddModal() {

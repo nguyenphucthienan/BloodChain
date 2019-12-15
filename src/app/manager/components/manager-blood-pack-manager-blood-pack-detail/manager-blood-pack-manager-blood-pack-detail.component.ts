@@ -144,7 +144,8 @@ export class ManagerBloodPackManagerBloodPackDetailComponent implements OnInit, 
   }
 
   navigateToBloodProductDetail(id: string) {
-    this.router.navigate(['/manager', 'blood-products', id]);
+    const url = this.router.createUrlTree(['/manager', 'blood-products', id]);
+    window.open(url.toString(), '_blank');
   }
 
   ngOnDestroy() {

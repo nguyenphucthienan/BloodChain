@@ -85,7 +85,8 @@ export class AdminBloodBankManagerComponent implements OnInit, AfterViewInit, On
   }
 
   navigateToBloodBankDetail(id: string) {
-    this.router.navigate(['/blood-banks', id]);
+    const url = this.router.createUrlTree(['/blood-banks', id]);
+    window.open(url.toString(), '_blank');
   }
 
   openBloodBankAddModal() {

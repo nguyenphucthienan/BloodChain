@@ -85,7 +85,8 @@ export class AdminBloodCampManagerComponent implements OnInit, AfterViewInit, On
   }
 
   navigateToBloodCampDetail(id: string) {
-    this.router.navigate(['/blood-camps', id]);
+    const url = this.router.createUrlTree(['/blood-camps', id]);
+    window.open(url.toString(), '_blank');
   }
 
   openBloodCampAddModal() {

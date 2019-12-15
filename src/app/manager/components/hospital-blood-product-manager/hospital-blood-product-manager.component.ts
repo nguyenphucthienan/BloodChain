@@ -114,7 +114,8 @@ export class HospitalBloodProductManagerComponent implements OnInit, AfterViewIn
   }
 
   navigateToBloodProductDetail(id: string) {
-    this.router.navigate(['/manager', 'blood-products', id]);
+    const url = this.router.createUrlTree(['/manager', 'blood-products', id]);
+    window.open(url.toString(), '_blank');
   }
 
   openBloodProductDeleteModal() {

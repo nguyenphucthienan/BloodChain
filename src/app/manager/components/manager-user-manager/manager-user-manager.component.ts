@@ -84,7 +84,8 @@ export class ManagerUserManagerComponent implements OnInit, AfterViewInit, OnDes
   }
 
   navigateToUserDetail(id: string) {
-    this.router.navigate(['/manager', 'users', id]);
+    const url = this.router.createUrlTree(['/manager', 'users', id]);
+    window.open(url.toString(), '_blank');
   }
 
   ngOnDestroy() {

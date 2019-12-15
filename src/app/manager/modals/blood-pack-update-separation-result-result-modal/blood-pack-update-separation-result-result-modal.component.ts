@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { MDBModalRef } from 'angular-bootstrap-md';
 import { BloodPack } from 'src/app/core/models/blood-pack.interface';
 import { TableActionType } from 'src/app/datatable/models/table-action.interface';
@@ -22,7 +23,8 @@ export class BloodPackUpdateSeparationResultResultModalComponent implements OnIn
 
   constructor(
     public bloodPackUpdateSeparationResultResultTableService: BloodPackUpdateSeparationResultResultTableService,
-    public modalRef: MDBModalRef
+    public modalRef: MDBModalRef,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -38,12 +40,14 @@ export class BloodPackUpdateSeparationResultResultModalComponent implements OnIn
     const action = tableCellChange.newValue;
     switch (action.type) {
       case TableActionType.GetDetail:
-        this.navigateToBloodPackDetail(tableCellChange.row.cells._id.value);
+        this.navigateToBloodProductDetail(tableCellChange.row.cells._id.value);
         break;
     }
   }
 
-  navigateToBloodPackDetail(id: string) {
+  navigateToBloodProductDetail(id: string) {
+    const url = this.router.createUrlTree(['/manager', 'blood-products', id]);
+    window.open(url.toString(), '_blank');
   }
 
 }

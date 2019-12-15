@@ -91,7 +91,8 @@ export class AdminBloodSeparationCenterManagerComponent implements OnInit, After
   }
 
   navigateToBloodSeparationCenterDetail(id: string) {
-    this.router.navigate(['/blood-separation-centers', id]);
+    const url = this.router.createUrlTree(['/blood-separation-centers', id]);
+    window.open(url.toString(), '_blank');
   }
 
   openBloodSeparationCenterAddModal() {

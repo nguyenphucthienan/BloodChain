@@ -156,6 +156,8 @@ export class HospitalBloodProductManagerUseBloodProductComponent implements OnIn
   }
 
   navigateToBloodProductDetail(id: string) {
+    const url = this.router.createUrlTree(['/manager', 'blood-products', id]);
+    window.open(url.toString(), '_blank');
   }
 
   removeBloodProductFromList(id: string) {

@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
+import { Router } from '@angular/router';
+import { MDBModalRef } from 'angular-bootstrap-md';
 import { User } from 'src/app/core/models/user.interface';
 import { DatatableComponent } from 'src/app/datatable/datatable.component';
 import { TableActionType } from 'src/app/datatable/models/table-action.interface';
@@ -21,7 +22,7 @@ export class ManagerBloodPackManagerDonationHistoryComponent implements OnInit {
 
   constructor(
     public bloodDonationHistoryLiteTableService: BloodDonationHistoryLiteTableService,
-    private modalService: MDBModalService
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -46,6 +47,8 @@ export class ManagerBloodPackManagerDonationHistoryComponent implements OnInit {
   }
 
   navigateToBloodPackDetail(id: string) {
+    const url = this.router.createUrlTree(['/manager', 'blood-packs', id]);
+    window.open(url.toString(), '_blank');
   }
 
 }

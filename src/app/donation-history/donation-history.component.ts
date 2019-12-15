@@ -44,7 +44,8 @@ export class DonationHistoryComponent implements OnInit, OnDestroy {
   }
 
   navigateToBloodPackDetail(id: string) {
-    this.router.navigate(['/donation-history', 'blood-packs', id]);
+    const url = this.router.createUrlTree(['/donation-history', 'blood-packs', id]);
+    window.open(url.toString(), '_blank');
   }
 
   ngOnDestroy() {

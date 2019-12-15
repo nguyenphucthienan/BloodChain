@@ -70,7 +70,8 @@ export class AdminUserManagerComponent implements OnInit, AfterViewInit, OnDestr
   }
 
   navigateToUserDetail(id: string) {
-    this.router.navigate(['/manager', 'users', id]);
+    const url = this.router.createUrlTree(['/manager', 'users', id]);
+    window.open(url.toString(), '_blank');
   }
 
   openUserAddModal() {

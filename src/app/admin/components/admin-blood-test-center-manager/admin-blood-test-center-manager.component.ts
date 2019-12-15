@@ -91,7 +91,8 @@ export class AdminBloodTestCenterManagerComponent implements OnInit, AfterViewIn
   }
 
   navigateToBloodTestCenterDetail(id: string) {
-    this.router.navigate(['/blood-test-centers', id]);
+    const url = this.router.createUrlTree(['/blood-test-centers', id]);
+    window.open(url.toString(), '_blank');
   }
 
   openBloodTestCenterAddModal() {

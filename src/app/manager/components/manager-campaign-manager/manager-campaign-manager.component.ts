@@ -61,7 +61,8 @@ export class ManagerCampaignManagerComponent implements OnInit, AfterViewInit, O
   }
 
   navigateToCampaignDetail(id: string) {
-    this.router.navigate(['/campaigns', id]);
+    const url = this.router.createUrlTree(['/campaigns', id]);
+    window.open(url.toString(), '_blank');
   }
 
   ngOnDestroy() {
