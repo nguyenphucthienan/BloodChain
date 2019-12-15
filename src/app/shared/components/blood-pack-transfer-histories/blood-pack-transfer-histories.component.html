@@ -10,6 +10,8 @@
         <ng-container [ngSwitch]="transferHistory.historyType">
           <ng-container *ngSwitchCase="0">{{ 'timeline.title.bloodPack' | translate }}</ng-container>
           <ng-container *ngSwitchCase="1">{{ 'timeline.title.bloodProduct' | translate }}</ng-container>
+          <ng-container *ngSwitchCase="2">{{ 'timeline.title.bloodPack' | translate }}</ng-container>
+          <ng-container *ngSwitchCase="3">{{ 'timeline.title.bloodProduct' | translate }}</ng-container>
           <ng-container *ngSwitchCase="4">{{ 'timeline.title.bloodProduct' | translate }}</ng-container>
         </ng-container>
         - {{ transferHistory.transferedAt | date }}
@@ -30,6 +32,22 @@
         <span class="font-weight-bold">{{ 'timeline.label.id' | translate }}: </span>
         {{ transferHistory.id }}
       </div>
+      <div *ngIf="transferHistory.historyType === 2">
+        <ng-container *ngIf="showMessages">
+          <span class="font-weight-bold">{{ 'timeline.message.bloodPackDisposed' | translate }}</span>
+          <hr>
+          <span class="font-weight-bold">{{ 'timeline.label.id' | translate }}: </span>
+          {{ transferHistory.id }}
+        </ng-container>
+      </div>
+      <div *ngIf="transferHistory.historyType === 3">
+        <ng-container *ngIf="showMessages">
+          <span class="font-weight-bold">{{ 'timeline.message.bloodProductDisposed' | translate }}</span>
+          <hr>
+          <span class="font-weight-bold">{{ 'timeline.label.id' | translate }}: </span>
+          {{ transferHistory.id }}
+        </ng-container>
+      </div>
       <div *ngIf="transferHistory.historyType === 4">
         <ng-container *ngIf="showMessages">
           <span class="font-weight-bold">{{ 'timeline.message.bloodProductUsed' | translate }}</span>
@@ -40,6 +58,10 @@
       </div>
       <div *ngIf="transferHistory.historyType === 0 || transferHistory.historyType === 1">
         <span class="font-weight-bold">{{ 'timeline.label.from' | translate }}: </span>
+        {{ transferHistory.fromName }}
+      </div>
+      <div *ngIf="transferHistory.historyType === 2 || transferHistory.historyType === 3">
+        <span class="font-weight-bold">{{ 'timeline.label.disposedAt' | translate }}: </span>
         {{ transferHistory.fromName }}
       </div>
       <div *ngIf="transferHistory.historyType === 4">

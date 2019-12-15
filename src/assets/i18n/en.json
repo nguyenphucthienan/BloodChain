@@ -280,9 +280,10 @@
     },
     "label": {
       "id": "ID",
-      "from": "From",
-      "to": "To",
+      "from": "Transfered from",
+      "to": "Transfered to",
       "usedAt": "Used at",
+      "disposedAt": "Disposed at",
       "patientName": "Patient's name",
       "patientIdCardNumber": "Patient's ID card number",
       "patientPhone": "Patient's phone",
@@ -293,6 +294,8 @@
     "message": {
       "bloodPackTransfered": "Your blood pack has been transfered.",
       "bloodProductTransfered": "One of your blood products has been transfered.",
+      "bloodPackDisposed": "Your blood pack has been disposed.",
+      "bloodProductDisposed": "One of your blood products has been disposed.",
       "bloodProductUsed": "One of your blood products has been used."
     }
   },

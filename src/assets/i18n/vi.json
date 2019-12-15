@@ -283,6 +283,7 @@
       "from": "Nơi chuyển",
       "to": "Nơi nhận",
       "usedAt": "Nơi sử dụng",
+      "disposedAt": "Nơi hủy",
       "patientName": "Bệnh nhân",
       "patientIdCardNumber": "Số CMND bệnh nhân",
       "patientPhone": "Số điện thoại bệnh nhân",
@@ -293,6 +294,8 @@
     "message": {
       "bloodPackTransfered": "Túi máu của bạn đã được chuyển đi.",
       "bloodProductTransfered": "Một chế phẩm máu của bạn đã được chuyển đi.",
+      "bloodPackDisposed": "Túi máu của bạn đã bị hủy.",
+      "bloodProductDisposed": "Một chế phẩm máu của bạn đã bị hủy.",
       "bloodProductUsed": "Một chế phẩm máu của bạn đã được sử dụng."
     }
   },
