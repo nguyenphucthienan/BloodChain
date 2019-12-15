@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { RoleName } from 'src/app/core/constant/role-name';
@@ -25,9 +26,12 @@ export class BloodProductDeleteModalComponent implements OnInit {
 
   @Output() bloodProductDeleted = new EventEmitter();
 
+  deleteForm: FormGroup;
+
   constructor(
     public modalRef: MDBModalRef,
     private modalService: MDBModalService,
+    private fb: FormBuilder,
     private authService: AuthService,
     private bloodProductService: BloodProductService,
     private alertService: AlertService,
@@ -35,6 +39,9 @@ export class BloodProductDeleteModalComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.deleteForm = this.fb.group({
+      description: ['', Validators.required]
+    });
   }
 
   deleteBloodProducts() {
@@ -57,7 +64,7 @@ export class BloodProductDeleteModalComponent implements OnInit {
         this.bloodProductService.disposeBloodProducts({
           organizationType: this.organizationType,
           organizationId,
-          description: 'Dispose Blood Product',
+          description: this.deleteForm.value.description,
           bloodProductIds: this.bloodProductIds
         })
           .subscribe(
@@ -93,6 +100,11 @@ export class BloodProductDeleteModalComponent implements OnInit {
         errors
       }
     });
+  }
+
+  controlHasError(controlName: string, errorName: string): boolean {
+    return this.deleteForm.get(controlName).touched
+      && this.deleteForm.get(controlName).hasError(errorName);
   }
 
 }

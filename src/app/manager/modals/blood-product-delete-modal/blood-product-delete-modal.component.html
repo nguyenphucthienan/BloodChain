@@ -1,19 +1,29 @@
 <div class="modal-content">
-  <div class="modal-header">
-    <button type="button" class="close pull-right" (click)="modalRef.hide()">
-      <span aria-hidden="true">×</span>
-    </button>
-    <h4 class="modal-title w-100">{{ 'bloodProductManager.modal.disposeBloodProducts' | translate }}</h4>
-  </div>
-  <div class="modal-body">
-    {{ 'bloodProductManager.message.areYouSureDispose' | translate }}?
-  </div>
-  <div class="modal-footer">
-    <button type="button" mdbBtn color="secondary" class="waves-light" (click)="modalRef.hide()" mdbWavesEffect>
-      {{ 'common.button.no' | translate }}
-    </button>
-    <button mdbBtn type="submit" color="primary" (click)="deleteBloodProducts()" mdbWavesEffect>
-      {{ 'common.button.yes' | translate }}
-    </button>
-  </div>
+  <form [formGroup]="deleteForm" (ngSubmit)="deleteBloodProducts()">
+    <div class="modal-header">
+      <button type="button" class="close pull-right" (click)="modalRef.hide()">
+        <span aria-hidden="true">×</span>
+      </button>
+      <h4 class="modal-title w-100">{{ 'bloodProductManager.modal.disposeBloodProducts' | translate }}</h4>
+    </div>
+    <div class="modal-body">
+      {{ 'bloodProductManager.message.areYouSureDispose' | translate }}?
+      <div class="md-form">
+        <textarea type="text" id="description" formControlName="description"
+          class="md-textarea md-textarea-auto form-control" mdbInput></textarea>
+        <label for="description">{{ 'bloodPackManager.label.description' | translate }}</label>
+        <mdb-error *ngIf="controlHasError('description', 'required')">
+          {{ 'bloodPackManager.message.descriptionRequired' | translate }}
+        </mdb-error>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" mdbBtn color="secondary" class="waves-light" (click)="modalRef.hide()" mdbWavesEffect>
+        {{ 'common.button.no' | translate }}
+      </button>
+      <button mdbBtn type="submit" color="primary" mdbWavesEffect>
+        {{ 'common.button.yes' | translate }}
+      </button>
+    </div>
+  </form>
 </div>
