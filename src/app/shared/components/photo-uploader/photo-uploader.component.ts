@@ -65,9 +65,9 @@ export class PhotoUploaderComponent implements OnInit, OnChanges {
 
     this.uploader.onProgressItem = (file: any, progress: any) => {
       this.uploading = true;
-      if (this.showLoadingAlert) {
-        this.alertService.info('common.alert.photoUploading');
-      }
+      // if (this.showLoadingAlert) {
+      //   this.alertService.info('common.alert.photoUploading');
+      // }
     };
 
     this.uploader.onCancelItem = (item: any, response: any, status: any, headers: any) => {
