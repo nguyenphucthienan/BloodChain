@@ -28,6 +28,12 @@ import {
 })
 export class BloodCampBloodPackManagerAddBloodPackComponent implements OnInit, OnDestroy {
 
+  readonly volumes = [
+    { label: '250', value: '250' },
+    { label: '350', value: '350' },
+    { label: '450', value: '450' }
+  ];
+
   @ViewChild(ManagerBloodPackManagerDonationHistoryComponent)
   donationHistory: ManagerBloodPackManagerDonationHistoryComponent;
 
@@ -91,7 +97,7 @@ export class BloodCampBloodPackManagerAddBloodPackComponent implements OnInit, O
 
     this.addForm = this.fb.group({
       donor: [null, Validators.required],
-      volume: [null, [Validators.required, Validators.min(1), Validators.max(500)]]
+      volume: [this.volumes[0].value, [Validators.required, Validators.min(1), Validators.max(500)]]
     });
   }
 
@@ -206,9 +212,12 @@ export class BloodCampBloodPackManagerAddBloodPackComponent implements OnInit, O
   }
 
   resetForm() {
+    this.donationHistory.changeUser(null);
     this.userForm.reset();
     this.addForm.reset();
-    this.donationHistory.changeUser(null);
+    this.addForm.patchValue({
+      volume: this.volumes[0].value
+    });
   }
 
   controlHasError(controlName: string, errorName: string): boolean {

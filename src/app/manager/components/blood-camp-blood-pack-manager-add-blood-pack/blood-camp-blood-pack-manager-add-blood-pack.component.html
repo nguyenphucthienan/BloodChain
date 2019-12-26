@@ -109,8 +109,9 @@
           </mdb-error>
         </div>
         <div class="md-form">
-          <input type="number" [min]="1" id="volume" formControlName="volume" class="form-control" mdbInput>
-          <label for="volume">{{ 'bloodPackManager.label.volume' | translate }}</label>
+          <ng-select id="volume" [items]="volumes" bindValue="value" bindLabel="label" [multiple]="false"
+            [clearable]="false" [placeholder]="'bloodPackManager.label.volume' | translate" formControlName="volume">
+          </ng-select>
           <mdb-error *ngIf="controlHasError('volume', 'required')">
             {{ 'bloodPackManager.message.volumeRequired' | translate }}
           </mdb-error>
