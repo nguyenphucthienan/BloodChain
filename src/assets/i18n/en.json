@@ -322,6 +322,9 @@
       "users": "Users",
       "bloodPacks": "Blood Packs Collected",
       "lives": "Lives Saved"
+    },
+    "message": {
+      "underDevelopment": "The app is under development"
     }
   },
   "about": {

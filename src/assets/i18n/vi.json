@@ -322,6 +322,9 @@
       "users": "Người dùng",
       "bloodPacks": "Túi máu đã được hiến",
       "lives": "Mạng sống đã được cứu"
+    },
+    "message": {
+      "underDevelopment": "Ứng dụng đang trong quá trình phát triển"
     }
   },
   "about": {

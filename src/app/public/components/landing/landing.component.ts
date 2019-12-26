@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertService } from 'src/app/core/services/alert.service';
 import { StatisticService } from 'src/app/core/services/statistic.service';
 import { environment } from 'src/environments/environment';
 
@@ -16,11 +17,22 @@ export class LandingComponent implements OnInit {
 
   statistics: any;
 
-  constructor(private statisticService: StatisticService) { }
+  constructor(
+    private statisticService: StatisticService,
+    private alertService: AlertService
+  ) { }
 
   ngOnInit() {
     this.statisticService.getLandingStatistics()
       .subscribe(statistics => this.statistics = statistics);
+  }
+
+  downloadApp(type: string) {
+    if (type === 'android') {
+      window.open('https://bloodchain.best/releases/BloodChain.apk', '_blank');
+    } else if (type === 'ios') {
+      this.alertService.info('landing.message.underDevelopment');
+    }
   }
 
 }
