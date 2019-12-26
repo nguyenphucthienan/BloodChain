@@ -38,8 +38,16 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
   ];
 
   readonly resultTranslations = [
-    { translation: 'common.result.passed', value: true },
-    { translation: 'common.result.failed', value: false }
+    {
+      translation: 'common.result.passed',
+      value: true,
+      color: '#28a745'
+    },
+    {
+      translation: 'common.result.failed',
+      value: false,
+      color: '#dc3545'
+    }
   ];
 
   bloodPacks$: Observable<BloodPack[]>;
@@ -108,7 +116,8 @@ export class BloodTestCenterBloodPackManagerUpdateResultComponent implements OnI
     this.translate.get(this.resultTranslations.map(resultTranslation => resultTranslation.translation))
       .subscribe(translations => this.results = this.resultTranslations.map(resultTranslation => ({
         label: translations[resultTranslation.translation],
-        value: resultTranslation.value
+        value: resultTranslation.value,
+        color: resultTranslation.color
       })));
   }
 

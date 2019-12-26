@@ -158,6 +158,12 @@
                       <ng-select [items]="results" bindValue="value" bindLabel="label" [multiple]="false"
                         [clearable]="false" [placeholder]="'bloodPackManager.label.result' | translate"
                         formControlName="passed">
+                        <ng-template ng-option-tmp let-item="item" let-index="index">
+                          <span [style.color]="item.color">{{ item.label }}</span>
+                        </ng-template>
+                        <ng-template ng-label-tmp let-item="item" let-index="index">
+                          <span [style.color]="item.color">{{ item.label }}</span>
+                        </ng-template>
                       </ng-select>
                       <mdb-error *ngIf="testResultFormArrayControlHasError(index, 'passed', 'required')">
                         {{ 'bloodPackManager.message.resultRequired' | translate }}
