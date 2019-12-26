@@ -26,7 +26,7 @@ export class BloodTestCenterBloodPackManagerTableService implements TableService
     {
       name: 'testPassed',
       text: 'bloodPackManager.column.testPassed',
-      type: 'BooleanTwoValuesTableCellComponent',
+      type: 'BooleanWithColorTableCellComponent',
       center: true,
       sortable: true
     },

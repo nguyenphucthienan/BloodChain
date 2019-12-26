@@ -20,6 +20,7 @@ import {
   UpdatePointTypeTableCellComponent,
 } from './cells/update-point-type-table-cell/update-point-type-table-cell.component';
 import { DatatableComponent } from './datatable.component';
+import { BooleanWithColorTableCellComponent } from './cells/boolean-with-color-table-cell/boolean-with-color-table-cell.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { DatatableComponent } from './datatable.component';
     DateTableCellComponent,
     DateTimeTableCellComponent,
     ArrayListTableCellComponent,
-    UpdatePointTypeTableCellComponent
+    UpdatePointTypeTableCellComponent,
+    BooleanWithColorTableCellComponent
   ],
   imports: [
     SharedModule,

@@ -20,7 +20,7 @@ export class BloodTestCenterBloodPackTransferTableService implements TableServic
     {
       name: 'testPassed',
       text: 'bloodPackManager.column.testPassed',
-      type: 'BooleanTwoValuesTableCellComponent',
+      type: 'BooleanWithColorTableCellComponent',
       center: true,
       sortable: true
     },
