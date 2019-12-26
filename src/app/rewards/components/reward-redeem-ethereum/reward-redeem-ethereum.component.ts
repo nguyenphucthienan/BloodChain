@@ -81,8 +81,12 @@ export class RewardRedeemEthereumComponent implements OnInit, OnDestroy {
   }
 
   onRewardRedeemed(ethereumPlan: any, transactionId: string) {
+    this.userInfoOnBlockchain = {
+      ...this.userInfoOnBlockchain,
+      point: this.userInfoOnBlockchain.point - ethereumPlan.point
+    };
+
     this.modalRef.hide();
-    this.getUserInfo();
     this.openRewardRedeemEthereumSuccessModal(ethereumPlan, transactionId);
   }
 
