@@ -66,55 +66,56 @@ export class DonationHistoryBloodPackDetailComponent implements OnInit, OnDestro
 
   private initDataFields() {
     this.translate.get(this.resultTranslations.map(resultTranslation => resultTranslation.translation))
-      .subscribe(translations => this.results = this.resultTranslations.map(resultTranslation => ({
-        label: translations[resultTranslation.translation],
-        value: resultTranslation.value
-      })));
+      .subscribe(translations => {
+        this.results = this.resultTranslations.map(resultTranslation => ({
+          label: translations[resultTranslation.translation],
+          value: resultTranslation.value
+        }));
+        this.route.data.subscribe((data: any) => {
+          this.bloodPack = data.bloodPack;
+          this.testTypes = data.testTypes;
+          this.bloodPackForm.patchValue({
+            id: this.bloodPack._id,
+            volume: this.bloodPack.volume,
+            time: this.datePipe.transform(new Date(this.bloodPack.createdAt), 'medium'),
+            bloodType: this.bloodPack.bloodType,
+            bloodCamp: this.bloodPack.bloodCamp.name,
+            bloodTestCenter: this.bloodPack.bloodTestCenter
+              && this.bloodPack.bloodTestCenter.name,
+            bloodSeparationCenter: this.bloodPack.bloodSeparationCenter
+              && this.bloodPack.bloodSeparationCenter.name,
+            tested: this.bloodPack.tested,
+            testPassed: this.bloodPack.testPassed,
+            separated: this.bloodPack.separated,
+            disposed: this.bloodPack.separated
+          });
 
-    this.route.data.subscribe((data: any) => {
-      this.bloodPack = data.bloodPack;
-      this.testTypes = data.testTypes;
-      this.bloodPackForm.patchValue({
-        id: this.bloodPack._id,
-        volume: this.bloodPack.volume,
-        time: this.datePipe.transform(new Date(this.bloodPack.createdAt), 'medium'),
-        bloodType: this.bloodPack.bloodType,
-        bloodCamp: this.bloodPack.bloodCamp.name,
-        bloodTestCenter: this.bloodPack.bloodTestCenter
-          && this.bloodPack.bloodTestCenter.name,
-        bloodSeparationCenter: this.bloodPack.bloodSeparationCenter
-          && this.bloodPack.bloodSeparationCenter.name,
-        tested: this.bloodPack.tested,
-        testPassed: this.bloodPack.testPassed,
-        separated: this.bloodPack.separated,
-        disposed: this.bloodPack.separated
+          if (this.bloodPack.tested) {
+            let numOfFields = 0;
+            if (this.bloodPack.testResults && this.bloodPack.testResults.length > 0) {
+              numOfFields = this.bloodPack.testResults.length;
+            }
+
+            for (let i = 0; i < numOfFields; i++) {
+              this.addTestField();
+            }
+
+            const extractedTestResults = this.bloodPack.testResults.map(testResult => {
+              const type = this.testTypes.filter((testType: TestType) => testType._id === testResult.testType);
+              const result = testResult.passed ? this.results[0].label : this.results[1].label;
+              return {
+                testType: type && type[0].name,
+                passed: result
+              };
+            });
+
+            this.testResultForm.patchValue({
+              testResults: extractedTestResults,
+              testDescription: this.bloodPack.testDescription
+            });
+          }
+        });
       });
-
-      if (this.bloodPack.tested) {
-        let numOfFields = 0;
-        if (this.bloodPack.testResults && this.bloodPack.testResults.length > 0) {
-          numOfFields = this.bloodPack.testResults.length;
-        }
-
-        for (let i = 0; i < numOfFields; i++) {
-          this.addTestField();
-        }
-
-        const extractedTestResults = this.bloodPack.testResults.map(testResult => {
-          const type = this.testTypes.filter((testType: TestType) => testType._id === testResult.testType);
-          const result = testResult.passed ? this.results[0].label : this.results[1].label;
-          return {
-            testType: type && type[0].name,
-            passed: result
-          };
-        });
-
-        this.testResultForm.patchValue({
-          testResults: extractedTestResults,
-          testDescription: this.bloodPack.testDescription
-        });
-      }
-    });
   }
 
   get testResultFormArray() {
